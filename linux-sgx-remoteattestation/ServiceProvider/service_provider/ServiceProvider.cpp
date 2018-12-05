@@ -102,6 +102,7 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         sample_ec256_public_t pub_key = {{0},{0}};
         sample_ec256_private_t priv_key = {{0}};
         sample_ret = sample_ecc256_create_key_pair(&priv_key, &pub_key, ecc_state);
+
         // read public and sealed private key from file
         ifstream pri_stream(Settings::ec_pri_key_path_server);
         ifstream pub_stream(Settings::ec_pub_key_path_server);
@@ -116,6 +117,8 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         memcpy(&priv_key,ppri,sizeof(sample_ec256_private_t));
         Log("\tpublic  key:%s",pub_str);
         Log("\tprivate key:%s",pri_str);
+        /*
+        */
 
         if (SAMPLE_SUCCESS != sample_ret) {
             Log("Error, cannot get key pair", log::error);
@@ -130,6 +133,10 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
             ret = SP_INTERNAL_ERROR;
             break;
         }
+        unsigned char tmp_b_buf[sizeof(sgx_ec256_private_t)];
+        memcpy(tmp_b_buf,(unsigned char *)&g_sp_db.b,sizeof(sgx_ec256_private_t));
+        Log("\tb  : (%s)", ByteArrayToString(tmp_b_buf, sizeof(sgx_ec256_private_t)));
+
         sgx_ec256_public_t *tmp_ga = &g_sp_db.g_a;
         unsigned char tmp_ga_buf[sizeof(sgx_ec256_public_t)];
         memcpy(tmp_ga_buf,(unsigned char *)(tmp_ga),sizeof(sgx_ec256_public_t));
