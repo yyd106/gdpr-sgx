@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38d31fd8-8165-44a4-a782-3b7fc5c30ab7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../linux-sgx-remoteattestation/GeneralSettings.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../linux-sgx-remoteattestation/GeneralSettings.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../linux-sgx-remoteattestation/MessageHandler/MessageHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../linux-sgx-remoteattestation/MessageHandler/MessageHandler.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../linux-sgx-remoteattestation/ServiceProvider/ec256_private_key" beforeDir="false" afterPath="$PROJECT_DIR$/../../../linux-sgx-remoteattestation/ServiceProvider/ec256_private_key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../linux-sgx-remoteattestation/ServiceProvider/ec256_public_key" beforeDir="false" afterPath="$PROJECT_DIR$/../../../linux-sgx-remoteattestation/ServiceProvider/ec256_public_key" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/decimal.txt" beforeDir="false" afterPath="$PROJECT_DIR$/decimal.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BigCompute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BigCompute.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BigCompute.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BigCompute.class" afterDir="false" />
     </list>
@@ -40,13 +37,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6890" />
+          <entry key="java" value="7277" />
           <entry key="txt" value="151" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6890" />
+          <entry key="JAVA" value="7277" />
           <entry key="PLAIN_TEXT" value="151" />
         </counts>
       </usages-collector>
@@ -57,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/BigCompute.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+            <state relative-caret-position="236">
+              <caret line="112" column="102" selection-start-line="112" selection-start-column="102" selection-end-line="112" selection-end-column="102" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,7 +128,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544021058222" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544058367188" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -171,7 +168,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -186,7 +182,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.3294979" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28870293" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35460252" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39958158" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -210,8 +206,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BigCompute.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+        <state relative-caret-position="236">
+          <caret line="112" column="102" selection-start-line="112" selection-start-column="102" selection-end-line="112" selection-end-column="102" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

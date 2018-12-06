@@ -99,9 +99,15 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         }
 
 
-        sample_ec256_public_t pub_key = {{0},{0}};
-        sample_ec256_private_t priv_key = {{0}};
-        sample_ret = sample_ecc256_create_key_pair(&priv_key, &pub_key, ecc_state);
+        //sample_ec256_public_t pub_key = {{0},{0}};
+        //sample_ec256_private_t priv_key = {{0}};
+        sample_ec256_public_t pub_key;
+        char *tmp1 =  "1570df083bca9d123f0c109ea0bd9d2fb964adebdf50710c878939d3aa8db46a";
+        char *tmp2 =  "d5233b38e13fa5fcedb200ef095849943aa0ca29f3902b9f6432ca48cc55e2dc";
+        memcpy(&pub_key.gx, tmp1,sizeof(tmp1));
+        memcpy(&pub_key.gy, tmp2,sizeof(tmp2));
+        sample_ec256_private_t priv_key; //= {"682ec1aa3fc5da56fecb96538835035a4dc613d4a44042729e8c6d48de9196a4"};
+        //sample_ret = sample_ecc256_create_key_pair(&priv_key, &pub_key, ecc_state);
 
         // read public and sealed private key from file
         ifstream pri_stream(Settings::ec_pri_key_path_server);
@@ -113,7 +119,7 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         uint8_t *ppri;
         HexStringToByteArray(pub_str,&ppub);
         HexStringToByteArray(pri_str,&ppri);
-        memcpy(&pub_key,ppub,sizeof(sample_ec256_public_t));
+        //memcpy(&pub_key,ppub,sizeof(sample_ec256_public_t));
         memcpy(&priv_key,ppri,sizeof(sample_ec256_private_t));
         Log("\tpublic  key:%s",pub_str);
         Log("\tprivate key:%s",pri_str);
