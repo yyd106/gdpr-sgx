@@ -30,7 +30,7 @@ sgx_status_t MessageHandler::initEnclave() {
     Log("========== STATUS IS ==========");
     Log("\tmy flag is:%d",this->my_flag);
     this->enclave = Enclave::getInstance();
-    sgx_status_t ret = this->enclave->createEnclave(this->my_flag);
+    sgx_status_t ret = this->enclave->createEnclave();
     if(this->my_flag == 0) {
         this->my_flag = 1;
     } 
@@ -87,15 +87,21 @@ string MessageHandler::generateMSG1() {
     while (1) {
         // read public and sealed private key from file
         ifstream pri_stream(Settings::ec_pri_key_path);
+        //ifstream pri_stream_u(Settings::ec_pri_key_path_u);
         ifstream pub_stream(Settings::ec_pub_key_path);
-        string pri_s_str,pub_str;
+        string pri_s_str,pub_str; 
+        //string pri_s_str_u;
         getline(pri_stream,pri_s_str);
+        //getline(pri_stream_u,pri_s_str_u);
         getline(pub_stream,pub_str);
         uint8_t *ppub;
         uint8_t *ppri_s;
+        //uint8_t *ppri_u;
         HexStringToByteArray(pub_str,&ppub);
         HexStringToByteArray(pri_s_str,&ppri_s);
+        //HexStringToByteArray(pri_s_str_u,&ppri_u);
         memcpy(&local_ec256_fix_data.ec256_public_key,ppub,sizeof(sgx_ec256_public_t));
+        //memcpy(&local_ec256_fix_data.ec256_private_key,ppri_u,sizeof(sgx_ec256_private_t));
         memcpy(local_ec256_fix_data.p_sealed_data,ppri_s,592);
         local_ec256_fix_data.sealed_data_size = 592;
 

@@ -32,7 +32,7 @@ public:
     void setLocalEnclaveStatus(sgx_status_t status);
 
     virtual ~Enclave();
-    sgx_status_t createEnclave(uint32_t createENCLAVE);
+    sgx_status_t createEnclave();
     sgx_enclave_id_t getID();
     sgx_status_t getStatus();
     sgx_ra_context_t getContext();

@@ -209,6 +209,6 @@ sgx_status_t sgx_ra_proc_msg2(
 CLEANUP:
     if(ret)
         SAFE_FREE(p_msg3);
-    //return ret;
-    return SGX_ERR_MAC_FIX_SPB;
+    return ret;
+    //return SGX_ERR_MAC_FIX_SPB;
 }

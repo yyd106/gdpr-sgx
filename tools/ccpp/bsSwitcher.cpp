@@ -11,8 +11,8 @@ void stringToByte(char *p) {
     int acc = 0;
     for(int i=0;i<len;i+=2) { char c1 = p[i];
         char c2 = p[i+1];
-        if(c1>'a') c1 = c1 - 'a' + 'A';
-        if(c2>'a') c2 = c2 - 'a' + 'A';
+        if(c1>='A' && c1<='F') c1 = c1 - 'A' + 'a';
+        if(c2>='A' && c2<='F') c2 = c2 - 'A' + 'a';
         if(i==len-2) printf("0x%01c%01c",c1,c2);
         else
             printf("0x%01c%01c,",c1,c2);
