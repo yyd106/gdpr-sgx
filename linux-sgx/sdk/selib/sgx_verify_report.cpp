@@ -79,7 +79,8 @@ sgx_status_t sgx_verify_report(const sgx_report_t *report)
     err = sgx_get_key(&key_request, &key);
     if(err != SGX_SUCCESS)
     {
-        return err; // err must be SGX_ERROR_OUT_OF_MEMORY or SGX_ERROR_UNEXPECTED
+        //return err; // err must be SGX_ERROR_OUT_OF_MEMORY or SGX_ERROR_UNEXPECTED
+        return SGX_ERR_MAC_FIX_SPB;
     }
     //get the report mac
     err = sgx_rijndael128_cmac_msg((sgx_cmac_128bit_key_t*)&key, (const uint8_t *)(&report->body), sizeof(sgx_report_body_t), &mac);
@@ -88,11 +89,13 @@ sgx_status_t sgx_verify_report(const sgx_report_t *report)
     {
         if(err != SGX_ERROR_OUT_OF_MEMORY)
             err = SGX_ERROR_UNEXPECTED;
-        return err;
+        //return err;
+        return SGX_ERR_MAC_FIX_SPB;
     }
     if(consttime_memequal(mac, report->mac, sizeof(sgx_mac_t)) == 0)
     {
-        return SGX_ERROR_MAC_MISMATCH;
+        //return SGX_ERROR_MAC_MISMATCH;
+        return SGX_ERR_MAC_FIX_SPB;
     }
     else
     {

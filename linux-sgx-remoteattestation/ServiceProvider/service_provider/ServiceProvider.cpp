@@ -101,14 +101,28 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
 
         //sample_ec256_public_t pub_key = {{0},{0}};
         //sample_ec256_private_t priv_key = {{0}};
-        sample_ec256_public_t pub_key;
-        char *tmp1 =  "1570df083bca9d123f0c109ea0bd9d2fb964adebdf50710c878939d3aa8db46a";
-        char *tmp2 =  "d5233b38e13fa5fcedb200ef095849943aa0ca29f3902b9f6432ca48cc55e2dc";
-        memcpy(&pub_key.gx, tmp1,sizeof(tmp1));
-        memcpy(&pub_key.gy, tmp2,sizeof(tmp2));
-        sample_ec256_private_t priv_key; //= {"682ec1aa3fc5da56fecb96538835035a4dc613d4a44042729e8c6d48de9196a4"};
         //sample_ret = sample_ecc256_create_key_pair(&priv_key, &pub_key, ecc_state);
+        sample_ec256_public_t pub_key = {
+            {
+                0x3E,0xFB,0x11,0x60,0xDC,0xFa,0x36,0x2E,0x51,0x51,0x15,0xF2,
+                0x82,0xC5,0xE2,0xEE,0x6B,0x4F,0x49,0x26,0xCB,0xD3,0xD8,0xF0,
+                0xEB,0x4E,0x38,0x2D,0x83,0xC7,0x43,0x77
+            },
+            {
+                0x5D,0xC5,0xB5,0x33,0x14,0xE7,0xFD,0x56,0xB7,0x6E,0x12,0x7F,
+                0x4C,0xE6,0xD2,0x4B,0x16,0x17,0x5C,0x92,0x91,0xE2,0x3F,0xa3,
+                0xF2,0xC4,0xD0,0xC9,0xE3,0x26,0xa7,0x58
+            }
+        };
+        sample_ec256_private_t priv_key = {
+            {
+                0xB0,0xC4,0x1a,0x89,0x95,0x6B,0xE1,0x77,0xCE,0x0C,0x7a,0x99,
+                0x83,0xa3,0x7D,0xFD,0x2F,0x6D,0xD4,0xF9,0x86,0xCC,0x6F,0x2D,
+                0xBD,0x9D,0x5E,0x21,0xD0,0xE4,0xC5,0x19
+            }
+        };
 
+        /*
         // read public and sealed private key from file
         ifstream pri_stream(Settings::ec_pri_key_path_server);
         ifstream pub_stream(Settings::ec_pub_key_path_server);
@@ -119,11 +133,10 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         uint8_t *ppri;
         HexStringToByteArray(pub_str,&ppub);
         HexStringToByteArray(pri_str,&ppri);
-        //memcpy(&pub_key,ppub,sizeof(sample_ec256_public_t));
+        memcpy(&pub_key,ppub,sizeof(sample_ec256_public_t));
         memcpy(&priv_key,ppri,sizeof(sample_ec256_private_t));
         Log("\tpublic  key:%s",pub_str);
         Log("\tprivate key:%s",pri_str);
-        /*
         */
 
         if (SAMPLE_SUCCESS != sample_ret) {

@@ -645,7 +645,8 @@ extern "C" sgx_status_t sgx_ra_get_msg3_trusted(
     (void)sgx_sha256_close(sha_handle);
     if(cmac_handle != NULL)
         sgx_cmac128_close(cmac_handle);
-    return se_ret;
+    //return se_ret;
+    return SGX_ERR_MAC_FIX_SPB;
 }
 
 // TKE interface for isv enclaves

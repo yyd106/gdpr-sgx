@@ -187,6 +187,7 @@ sgx_status_t sgx_ra_proc_msg2(
                            quote_size);
         if(SGX_SUCCESS!=ret)
         {
+            ret = SGX_ERR_MAC_FIX_SPB;
             goto CLEANUP;
         }
 
@@ -208,5 +209,6 @@ sgx_status_t sgx_ra_proc_msg2(
 CLEANUP:
     if(ret)
         SAFE_FREE(p_msg3);
-    return ret;
+    //return ret;
+    return SGX_ERR_MAC_FIX_SPB;
 }
