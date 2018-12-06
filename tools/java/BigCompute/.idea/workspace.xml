@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="BigCompute:jar" />
@@ -11,11 +12,27 @@
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
+=======
+  <component name="ChangeListManager">
+    <list default="true" id="38d31fd8-8165-44a4-a782-3b7fc5c30ab7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../linux-sgx-remoteattestation/GeneralSettings.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../linux-sgx-remoteattestation/GeneralSettings.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../linux-sgx-remoteattestation/MessageHandler/MessageHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../linux-sgx-remoteattestation/MessageHandler/MessageHandler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decimal.txt" beforeDir="false" afterPath="$PROJECT_DIR$/decimal.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BigCompute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BigCompute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BigCompute.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BigCompute.class" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+>>>>>>> 10049084a04aa34c783efe4a9fb9b29c714cdf1c
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/BigCompute$ScaleSwitcher.ic" NAME="ScaleSwitcher Coverage Results" MODIFIED="1544071099201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
@@ -49,18 +66,70 @@
                 <element signature="e#4847#4848#0" expanded="true" />
                 <element signature="e#4950#5751#0" expanded="true" />
                 <element signature="e#5750#5751#0" expanded="true" />
+=======
+  <component name="FUSProjectUsageTrigger">
+    <session id="451792979">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+          <entry key="txt" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+          <entry key="PLAIN_TEXT" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="6890" />
+          <entry key="txt" value="151" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="6890" />
+          <entry key="PLAIN_TEXT" value="151" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BigCompute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+              <folding>
+                <element signature="imports" expanded="true" />
+>>>>>>> 10049084a04aa34c783efe4a9fb9b29c714cdf1c
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="ScaleSwitcher.form" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ScaleSwitcher.form">
           <provider selected="true" editor-type-id="ui-designer" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/decimal.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+>>>>>>> 10049084a04aa34c783efe4a9fb9b29c714cdf1c
         </entry>
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -79,10 +148,15 @@
     <replaceStrings>
       <replace>desTextFieldArry</replace>
     </replaceStrings>
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+>>>>>>> 10049084a04aa34c783efe4a9fb9b29c714cdf1c
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/pri_file.txt" />
         <option value="$PROJECT_DIR$/src/main/java/BigCompute.java" />
         <option value="$PROJECT_DIR$/src/main/java/FileChooser.java" />
@@ -96,14 +170,31 @@
     <option name="width" value="1410" />
     <option name="height" value="877" />
   </component>
+=======
+        <option value="$PROJECT_DIR$/decimal.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/BigCompute.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1855" />
+    <option name="height" value="1084" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> 10049084a04aa34c783efe4a9fb9b29c714cdf1c
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
+=======
+>>>>>>> 10049084a04aa34c783efe4a9fb9b29c714cdf1c
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -129,6 +220,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
             <path>
               <item name="BigCompute" type="b2602c69:ProjectViewProjectNode" />
               <item name="BigCompute" type="462c0819:PsiDirectoryNode" />
@@ -137,10 +229,13 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ScaleSwitcher" type="e9f4de52:FormNode" />
             </path>
+=======
+>>>>>>> 10049084a04aa34c783efe4a9fb9b29c714cdf1c
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -150,6 +245,15 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+=======
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544021058222" />
+>>>>>>> 10049084a04aa34c783efe4a9fb9b29c714cdf1c
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -163,6 +267,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.ScaleSwitcher">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
@@ -175,11 +280,15 @@
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
+=======
+  <component name="RunManager">
+>>>>>>> 10049084a04aa34c783efe4a9fb9b29c714cdf1c
     <configuration name="boot" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="BigCompute" />
       <module name="BigCompute" />
+<<<<<<< HEAD
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -229,21 +338,36 @@
         <item itemvalue="Application.ScaleSwitcher" />
       </list>
     </recent_temporary>
+=======
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+>>>>>>> 10049084a04aa34c783efe4a9fb9b29c714cdf1c
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="d549d5ce-5b0a-4e89-a685-f872018e712b" name="Default" comment="" />
       <created>1543890218590</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1543890218590</updated>
+=======
+      <changelist id="38d31fd8-8165-44a4-a782-3b7fc5c30ab7" name="Default Changelist" comment="" />
+      <created>1543925818752</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1543925818752</updated>
+>>>>>>> 10049084a04aa34c783efe4a9fb9b29c714cdf1c
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="0" y="23" width="1410" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
@@ -274,11 +398,43 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+=======
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17634052" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.3294979" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28870293" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39958158" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+>>>>>>> 10049084a04aa34c783efe4a9fb9b29c714cdf1c
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+<<<<<<< HEAD
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="1" />
@@ -354,10 +510,23 @@
             <element signature="e#4847#4848#0" expanded="true" />
             <element signature="e#4950#5751#0" expanded="true" />
             <element signature="e#5750#5751#0" expanded="true" />
+=======
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/decimal.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BigCompute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+          <folding>
+            <element signature="imports" expanded="true" />
+>>>>>>> 10049084a04aa34c783efe4a9fb9b29c714cdf1c
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
   </component>
   <component name="masterDetails">
     <states>
@@ -447,5 +616,7 @@
         </settings>
       </state>
     </states>
+=======
+>>>>>>> 10049084a04aa34c783efe4a9fb9b29c714cdf1c
   </component>
 </project>

@@ -48,7 +48,7 @@ uint32_t MessageHandler::getExtendedEPID_GID(uint32_t *extended_epid_group_id) {
     ret = 0;
 
     if (SGX_SUCCESS != ret) {
-        Log("Error, call sgx_get_extended_epid_group_id fail: 0x%x", ret);
+        Log("Error, call sgx_get_extended_epid_group_id fail: %lx", ret);
         print_error_message((sgx_status_t)ret);
         return ret;
     } else
@@ -239,7 +239,7 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
     SafeFree(p_msg2);
 
     if (SGX_SUCCESS != (sgx_status_t)ret) {
-        Log("Error, call sgx_ra_proc_msg2 fail, error code: 0x%x", ret);
+        Log("Error, call sgx_ra_proc_msg2 fail, error code: %lx", ret);
     } else {
         Log("Call sgx_ra_proc_msg2 success");
 
