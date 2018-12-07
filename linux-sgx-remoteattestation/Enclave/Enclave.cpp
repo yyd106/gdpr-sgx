@@ -63,7 +63,7 @@ Enclave::~Enclave() {
 
 
 
-sgx_status_t Enclave::createEnclave(uint32_t createENCLAVE) {
+sgx_status_t Enclave::createEnclave() {
     sgx_status_t ret;
     int launch_token_update = 0;
     int enclave_lost_retry_time = 1;
@@ -72,17 +72,6 @@ sgx_status_t Enclave::createEnclave(uint32_t createENCLAVE) {
     memset(&launch_token, 0, sizeof(sgx_launch_token_t));
 
     do {
-        if(createENCLAVE == 0) {
-            //ret = sgx_create_enclave(this->enclave_path,
-            //                         SGX_DEBUG_FLAG,
-            //                         &launch_token,
-            //                         &launch_token_update,
-            //                         &this->enclave_id, NULL);
-            ret = SGX_SUCCESS;
-        } 
-        else {
-            ret = SGX_SUCCESS;
-        }
         ret = sgx_create_enclave(this->enclave_path,
                                  SGX_DEBUG_FLAG,
                                  &launch_token,

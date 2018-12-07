@@ -97,13 +97,40 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
             ret = -1;
             break;
         }
+        
+        // print ecc state
+        unsigned char statbuf[sizeof(ecc_state)];
+        memcpy(statbuf, (unsigned char*)&ecc_state, sizeof(ecc_state));
+        Log("\tecc state:%s",ByteArrayToString(statbuf,sizeof(statbuf)));
 
 
-        sample_ec256_public_t pub_key = {{0},{0}};
-        sample_ec256_private_t priv_key = {{0}};
-        sample_ret = sample_ecc256_create_key_pair(&priv_key, &pub_key, ecc_state);
+        //sample_ec256_public_t pub_key = {{0},{0}};
+        //sample_ec256_private_t priv_key = {{0}};
+        //sample_ret = sample_ecc256_create_key_pair(&priv_key, &pub_key, ecc_state);
+        sample_ec256_public_t pub_key = {
+            {
+                0x3e,0xfb,0x11,0x60,0xdc,0xfa,0x36,0x2e,0x51,0x51,0x15,0xf2,
+                0x82,0xc5,0xe2,0xee,0x6b,0x4f,0x49,0x26,0xcb,0xd3,0xd8,0xf0,
+                0xeb,0x4e,0x38,0x2d,0x83,0xc7,0x43,0x77
+            },
+            {
+                0x5d,0xc5,0xb5,0x33,0x14,0xe7,0xfd,0x56,0xb7,0x6e,0x12,0x7f,
+                0x4c,0xe6,0xd2,0x4b,0x16,0x17,0x5c,0x92,0x91,0xe2,0x3f,0xa3,
+                0xf2,0xc4,0xd0,0xc9,0xe3,0x26,0xa7,0x58
+            }
+        };
+        sample_ec256_private_t priv_key = {
+            {
+                0xb0,0xc4,0x1a,0x89,0x95,0x6b,0xe1,0x77,0xce,0x0c,0x7a,0x99,
+                0x83,0xa3,0x7d,0xfd,0x2f,0x6d,0xd4,0xf9,0x86,0xcc,0x6f,0x2d,
+                0xbd,0x9d,0x5e,0x21,0xd0,0xe4,0xc5,0x19
+            }
+        };
+        /*
+        */
 
         // read public and sealed private key from file
+        /*
         ifstream pri_stream(Settings::ec_pri_key_path_server);
         ifstream pub_stream(Settings::ec_pub_key_path_server);
         string pri_str,pub_str;
@@ -117,7 +144,6 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         memcpy(&priv_key,ppri,sizeof(sample_ec256_private_t));
         Log("\tpublic  key:%s",pub_str);
         Log("\tprivate key:%s",pri_str);
-        /*
         */
 
         if (SAMPLE_SUCCESS != sample_ret) {

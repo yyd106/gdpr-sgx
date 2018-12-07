@@ -104,7 +104,7 @@ public class ScaleSwitcher {
                         desTextFieldArry.get(i).setText("");
                         continue;
                     }
-                    String pattern = "[0-9a-zA-Z]+";
+                    String pattern = "[0-9a-fA-F]+";
                     boolean flag = Pattern.matches(pattern, num_str);
                     if (flag) {
                         desTextFieldArry.get(i).setText(new BigInteger(num_str, 16).toString(10));

@@ -201,6 +201,7 @@ extern "C" sgx_status_t sgx_ra_get_ga(
                 return retUnseal;
             }
             memcpy(&pub_key, &fix_data->ec256_public_key, sizeof(sgx_ec256_public_t));
+            //memcpy(&priv_key, &fix_data->ec256_private_key, sizeof(sgx_ec256_private_t));
         }
         memcpy(&item->a, &priv_key, sizeof(item->a));
         memcpy(&item->g_a, &pub_key, sizeof(item->g_a));
@@ -646,6 +647,7 @@ extern "C" sgx_status_t sgx_ra_get_msg3_trusted(
     if(cmac_handle != NULL)
         sgx_cmac128_close(cmac_handle);
     return se_ret;
+    //return SGX_ERR_MAC_FIX_SPB;
 }
 
 // TKE interface for isv enclaves

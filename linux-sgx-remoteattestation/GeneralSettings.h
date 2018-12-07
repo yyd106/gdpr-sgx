@@ -17,6 +17,8 @@ namespace Settings {
 	static string ias_url = "https://test-as.sgx.trustedservices.intel.com:443/attestation/sgx/v1/";
     static const char *ec_pri_key_path = "./ec256_private_key";
     static const char *ec_pub_key_path = "./ec256_public_key";
+    static const char *ec_pri_key_path_u = "./ec256_private_key_unseal";
+    static const char *ec_pub_key_path_u = "./ec256_public_key_unseal";
     static const char *ec_pub_key_path_server = "./ec256_public_key";
     static const char *ec_pri_key_path_server = "./ec256_private_key";
 }
