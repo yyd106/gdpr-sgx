@@ -87,26 +87,30 @@ string MessageHandler::generateMSG1() {
     while (1) {
         // read public and sealed private key from file
         ifstream pri_stream(Settings::ec_pri_key_path);
-        //ifstream pri_stream_u(Settings::ec_pri_key_path_u);
+        ifstream pri_stream_u(Settings::ec_pri_key_path_u);
         ifstream pub_stream(Settings::ec_pub_key_path);
         string pri_s_str,pub_str; 
-        //string pri_s_str_u;
+        string pri_s_str_u;
         getline(pri_stream,pri_s_str);
-        //getline(pri_stream_u,pri_s_str_u);
+        getline(pri_stream_u,pri_s_str_u);
         getline(pub_stream,pub_str);
         uint8_t *ppub;
         uint8_t *ppri_s;
-        //uint8_t *ppri_u;
+        uint8_t *ppri_u;
         HexStringToByteArray(pub_str,&ppub);
         HexStringToByteArray(pri_s_str,&ppri_s);
-        //HexStringToByteArray(pri_s_str_u,&ppri_u);
+        HexStringToByteArray(pri_s_str_u,&ppri_u);
         memcpy(&local_ec256_fix_data.ec256_public_key,ppub,sizeof(sgx_ec256_public_t));
-        //memcpy(&local_ec256_fix_data.ec256_private_key,ppri_u,sizeof(sgx_ec256_private_t));
+        memcpy(&local_ec256_fix_data.ec256_private_key,ppri_u,sizeof(sgx_ec256_private_t));
         memcpy(local_ec256_fix_data.p_sealed_data,ppri_s,592);
         local_ec256_fix_data.sealed_data_size = 592;
 
         Log("\tbefore public  key:%s",pub_str);
         Log("\tsealed private dat:%s",pri_s_str);
+        //unsigned char bpeccbuf[sizeof(local_ec256_fix_data.p_ecc_state)];
+        unsigned char bpeccbuf[16];
+        memcpy(bpeccbuf, (unsigned char*)local_ec256_fix_data.p_ecc_state, sizeof(bpeccbuf));
+        Log("\tp ecc state   is  :%s",ByteArrayToString(bpeccbuf,sizeof(bpeccbuf)));
 
 
         retGIDStatus = sgx_ra_get_msg1(this->enclave->getContext(),
@@ -125,6 +129,10 @@ string MessageHandler::generateMSG1() {
         unsigned char psealedbuf[local_ec256_fix_data.sealed_data_size];
         memcpy(psealedbuf, (unsigned char*)local_ec256_fix_data.p_sealed_data, local_ec256_fix_data.sealed_data_size);
         Log("\tp sealed data is  :%s",ByteArrayToString(psealedbuf,sizeof(psealedbuf)));
+        //unsigned char peccbuf[sizeof(local_ec256_fix_data.p_ecc_state)];
+        unsigned char peccbuf[16];
+        memcpy(peccbuf, (unsigned char*)local_ec256_fix_data.p_ecc_state, sizeof(peccbuf));
+        Log("\tp ecc state   is  :%s",ByteArrayToString(peccbuf,sizeof(peccbuf)));
         
 
         if (retGIDStatus == SGX_SUCCESS) {
@@ -366,6 +374,8 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
     if (0 != p_att_result_msg_full->status[0] || 0 != p_att_result_msg_full->status[1]) {
         Log("Error, attestation mac result message MK based cmac failed", log::error);
     } else {
+        unsigned char *p_sk = (unsigned char*)malloc(sizeof(sgx_ec_key_128bit_t));
+        memset(p_sk, 0, sizeof(sgx_ec_key_128bit_t));
         ret = verify_secret_data(this->enclave->getID(),
                                  &status,
                                  this->enclave->getContext(),
@@ -373,7 +383,10 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
                                  p_att_result_msg_body->secret.payload_size,
                                  p_att_result_msg_body->secret.payload_tag,
                                  MAX_VERIFICATION_RESULT,
-                                 NULL);
+                                 NULL,
+                                 p_sk);
+        Log("========== SK ==========");
+        Log("\t SK:%s",ByteArrayToString(p_sk,sizeof(sgx_ec_key_128bit_t)));
 
         SafeFree(p_att_result_msg_full);
 
