@@ -137,6 +137,7 @@ bool WebService::sendToIAS(string url,
     CURLcode res = CURLE_OK;
 
     curl_easy_setopt( curl, CURLOPT_URL, url.c_str());
+    Log("========== send to IAS ==========");
 
     if (headers) {
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
@@ -152,6 +153,7 @@ bool WebService::sendToIAS(string url,
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, ias_response_container);
 
     res = curl_easy_perform(curl);
+    Log("\tcurl:%s",url);
     if (res != CURLE_OK) {
         Log("curl_easy_perform() failed: %s", curl_easy_strerror(res));
         return false;
@@ -165,13 +167,13 @@ bool WebService::getSigRL(string gid, string *sigrl) {
     Log("Retrieving SigRL from IAS");
 
     //check if the sigrl for the gid has already been retrieved once -> to save time
-    /*
     for (auto x : retrieved_sigrl) {
         if (x.first == gid) {
             *sigrl = x.second;
             return false;
         }
     }
+    /*
     */
 
     ias_response_container_t ias_response_container;
@@ -179,7 +181,6 @@ bool WebService::getSigRL(string gid, string *sigrl) {
 
     string url = Settings::ias_url + "sigrl/" + gid;
 
-    /*
     this->sendToIAS(url, IAS::sigrl, "", NULL, &ias_response_container, &response_header);
 
     Log("\tResponse status is: %d" , response_header.response_status);
@@ -193,6 +194,7 @@ bool WebService::getSigRL(string gid, string *sigrl) {
         retrieved_sigrl.push_back({gid, *sigrl});
     } else
         return true;
+    /*
     */
 
     return false;

@@ -203,7 +203,7 @@ extern "C" sgx_status_t sgx_ra_get_ga(
             memcpy(&pub_key, &fix_data->ec256_public_key, sizeof(sgx_ec256_public_t));
             memcpy(fix_data->p_ecc_state, (uint8_t*)ecc_state, 16);
             //memcpy(fix_data->p_ecc_state, (uint8_t*)ecc_state, sizeof(ecc_state));
-            memcpy(&priv_key, &fix_data->ec256_private_key, sizeof(sgx_ec256_private_t));
+            //memcpy(&priv_key, &fix_data->ec256_private_key, sizeof(sgx_ec256_private_t));
         }
         memcpy(&item->a, &priv_key, sizeof(item->a));
         memcpy(&item->g_a, &pub_key, sizeof(item->g_a));
