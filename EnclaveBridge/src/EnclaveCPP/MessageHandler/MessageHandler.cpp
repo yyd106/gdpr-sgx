@@ -2,6 +2,7 @@
 #include "sgx_tseal.h"
 
 using namespace util;
+//using namespace Messages;
 
 MessageHandler::MessageHandler(int port) {
     //this->nm = NetworkManagerServer::getInstance(port);
@@ -75,6 +76,9 @@ string MessageHandler::generateMSG0() {
         msg.set_status(TYPE_TERMINATE);
         msg.set_epid(0);
     }
+    string s;
+    msg.SerializeToString(&s);
+    return s;
     //return nm->serialize(msg);
 }
 
@@ -162,6 +166,9 @@ string MessageHandler::generateMSG1() {
             msg.add_gid(x);
         }
 
+        string s;
+        msg.SerializeToString(&s);
+        return s;
         //return nm->serialize(msg);
     }
 
@@ -221,8 +228,15 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
 }
 
 
-string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
+//string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
+string MessageHandler::handleMSG2(string v) {
     Log("Received MSG2");
+    Messages::MessageMSG2 msg;
+    int retp = msg.ParseFromString(v);
+    if(!retp) {
+        Log("Error, Parse MSG2 failed!", log::error);
+        return "";
+    }
 
     uint32_t size = msg.size();
 
@@ -275,6 +289,9 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
 
         SafeFree(p_msg3);
 
+        string s;
+        msg3.SerializeToString(&s);
+        return s;
         //return nm->serialize(msg3);
     }
 
@@ -341,8 +358,15 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
 }
 
 
-string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg) {
+//string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg) {
+string MessageHandler::handleAttestationResult(string v) {
     Log("Received Attestation result");
+    Messages::AttestationMessage msg;
+    int retp = msg.ParseFromString(v);
+    if(!retp) {
+        Log("Error, Parse MSG2 failed!", log::error);
+        return "";
+    }
 
     ra_samp_response_header_t *p_att_result_msg_full = NULL;
     this->assembleAttestationMSG(msg, &p_att_result_msg_full);
@@ -392,6 +416,9 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
             msg.set_type(RA_APP_ATT_OK);
             msg.set_size(0);
 
+            string s;
+            msg.SerializeToString(&s);
+            return s;
             //return nm->serialize(msg);
         }
     }
@@ -402,8 +429,15 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
 }
 
 
-string MessageHandler::handleMSG0(Messages::MessageMsg0 msg) {
+//string MessageHandler::handleMSG0(Messages::MessageMsg0 msg) {
+string MessageHandler::handleMSG0(string v) {
     Log("MSG0 response received");
+    Messages::MessageMsg0 msg;
+    int ret = msg.ParseFromString(v);
+    if(!ret) {
+        Log("Error, Parse MSG0 failed!", log::error);
+        return "";
+    }
 
     if (msg.status() == TYPE_OK) {
         sgx_status_t ret = this->initEnclave();
@@ -438,10 +472,14 @@ string MessageHandler::createInitMsg(int type, string msg) {
     init_msg.set_type(type);
     init_msg.set_size(msg.size());
 
+    string s;
+    init_msg.SerializeToString(&s);
+    return s;
     //return nm->serialize(init_msg);
 }
 
 
+/*
 vector<string> MessageHandler::incomingHandler(string v, int type) {
     vector<string> res;
     string s;
@@ -505,5 +543,4 @@ vector<string> MessageHandler::incomingHandler(string v, int type) {
 
     return res;
 }
-/*
 */

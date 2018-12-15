@@ -49,7 +49,7 @@ endif
 App_Cpp_Files := MessageHandler/MessageHandler.cpp Util/LogBase.cpp GoogleMessages/Messages.pb.cpp \
 Util/UtilityFunctions.cpp Enclave/Enclave.cpp Util/Base64.cpp
 
-App_Include_Paths := -IUtil -I$(SGX_SDK)/include -Iheaders -IMessageHandler -INetworking -IGoogleMessages -I/usr/local/include -IEnclave \
+App_Include_Paths := -IUtil -I$(SGX_SDK)/include -Iheaders -IMessageHandler -IEnclave -IGoogleMessages -I/usr/local/include -IEnclave \
 
 App_C_Flags := $(SGX_COMMON_CFLAGS) -fPIC -Wno-attributes $(App_Include_Paths)
 
@@ -67,9 +67,10 @@ endif
 
 App_Cpp_Flags := $(App_C_Flags) -std=c++11 -DEnableServer
 App_Link_Flags := -fPIC -shared $(SGX_COMMON_CFLAGS) -L$(SGX_LIBRARY_PATH) -l$(Urts_Library_Name) -L. -lsgx_ukey_exchange -lpthread -Wl,-rpath=$(CURDIR)/sample_libcrypto -Wl,-rpath=$(CURDIR) -llog4cpp -lboost_system -lssl -lcrypto -lboost_thread -lprotobuf -L /usr/local/lib -ljsoncpp
+Java_Link_Flags := -I/opt/java/jdk1.8.0_191/include -I/opt/java/jdk1.8.0_191/include/linux
 #Target_Link_Flags := -fPIC -shared $(SGX_COMMON_CFLAGS) -L$(SGX_LIBRARY_PATH) -l$(Urts_Library_Name) -L. -lsgx_ukey_exchange -lpthread -Wl,-rpath=$(CURDIR)/sample_libcrypto -Wl,-rpath=$(CURDIR) -llog4cpp -lboost_system -lssl -lcrypto -lboost_thread -lprotobuf -L /usr/local/lib -ljsoncpp
 
-Target_Cpp_Objects := Networking/isv_enclave_u.o MessageHandler/MessageHandler.o Util/LogBase.o Util/UtilityFunctions.o Util/Base64.o Enclave/Enclave.o
+Target_Cpp_Objects := GoogleMessages/Messages.pb.o Enclave/EnclaveBridge.o Enclave/isv_enclave_u.o MessageHandler/MessageHandler.o Util/LogBase.o Util/UtilityFunctions.o Util/Base64.o Enclave/Enclave.o
 
 ifneq ($(SGX_MODE), HW)
 	App_Link_Flags += -lsgx_uae_service_sim
@@ -79,7 +80,7 @@ endif
 
 App_Cpp_Objects := $(App_Cpp_Files:.cpp=.o)
 
-Target_Name := Networking/app_enclave.so
+Target_Name := libEnclaveBridge.so
 Enclave_OBJ := Enclave/Enclave.o
 MessageHandler_OBJ := MessageHandler/MessageHandler.o
 Util_OBJ := Util/Base64.o Util/LogBase.o Util/UtilityFunctions.o
@@ -155,13 +156,17 @@ endif
 
 ######## App Objects ########
 
-Networking/isv_enclave_u.c: $(SGX_EDGER8R) isv_enclave/isv_enclave.edl
-	@cd Networking && $(SGX_EDGER8R) --untrusted ../isv_enclave/isv_enclave.edl --search-path ../isv_enclave --search-path $(SGX_SDK)/include
+Enclave/isv_enclave_u.c: $(SGX_EDGER8R) isv_enclave/isv_enclave.edl
+	@cd Enclave && $(SGX_EDGER8R) --untrusted ../isv_enclave/isv_enclave.edl --search-path ../isv_enclave --search-path $(SGX_SDK)/include
 	@echo "GEN  =>  $@"
 
-Networking/isv_enclave_u.o: Networking/isv_enclave_u.c
+Enclave/isv_enclave_u.o: Enclave/isv_enclave_u.c
 	@$(CC) $(App_C_Flags) -c $< -o $@
 	@echo "CC   <=  $<"
+
+GoogleMessages/Messages.pb.o: GoogleMessages/Messages.pb.cc
+	@$(CXX) -c $< -fPIC -o $@
+	@echo "CXX  <=  $<"
 
 MessageHandler/%.o: MessageHandler/%.cpp
 	@$(CXX) $(App_Cpp_Flags) -c $< -o $@
@@ -176,8 +181,12 @@ Enclave/%.o: Enclave/%.cpp
 	@$(CXX) $(App_Cpp_Flags) -c $< -o $@
 	@echo "CXX  <=  $<"
 
-$(Target_Name): $(Target_Cpp_Objects)
-	@$(CXX) $^ -o $@ $(App_Link_Flags) /opt/intel/sgxsdk/lib64/libsgx_capable.so
+Enclave/EnclaveBridge.o: EnclaveBridge.c
+	@$(CXX) $(App_Cpp_Flags) $(Java_Link_Flags) -c $< -o $@
+	@echo "CXX  <=  $<"
+
+$(Target_Name): $(Target_Cpp_Objects) 
+	@$(CXX) $^ -o $@ $(App_Link_Flags) $(Java_Link_Flags) /opt/intel/sgxsdk/lib64/libsgx_capable.so
 	@echo "LINK >= $@"
 
 
@@ -206,4 +215,4 @@ $(Signed_Enclave_Name): $(Enclave_Name)
 .PHONY: clean
 
 clean:
-	@rm -f $(Target_Name) $(Enclave_Name) $(Signed_Enclave_Name) $(App_Cpp_Objects) Networking/isv_enclave_u.* $(Enclave_Cpp_Objects) isv_enclave/isv_enclave_t.* libservice_provider.* $(ServiceProvider_Cpp_Objects)
+	@rm -f $(Target_Name) $(Enclave_Name) $(Signed_Enclave_Name) $(App_Cpp_Objects) Enclave/isv_enclave_u.* $(Enclave_Cpp_Objects) isv_enclave/isv_enclave_t.* libservice_provider.* $(ServiceProvider_Cpp_Objects)

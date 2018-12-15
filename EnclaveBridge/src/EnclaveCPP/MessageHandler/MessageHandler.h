@@ -35,16 +35,18 @@ public:
         printf("========== MessageHandler ==========\n");
     }
 
-private:
     sgx_status_t initEnclave();
     uint32_t getExtendedEPID_GID(uint32_t *extended_epid_group_id);
     sgx_status_t getEnclaveStatus();
 
     void assembleAttestationMSG(Messages::AttestationMessage msg, ra_samp_response_header_t **pp_att_msg);
-    string handleAttestationResult(Messages::AttestationMessage msg);
+    //string handleAttestationResult(Messages::AttestationMessage msg);
+    string handleAttestationResult(string v);
     void assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_msg2);
-    string handleMSG2(Messages::MessageMSG2 msg);
-    string handleMSG0(Messages::MessageMsg0 msg);
+    //string handleMSG2(Messages::MessageMSG2 msg);
+    string handleMSG2(string v);
+    //string handleMSG0(Messages::MessageMsg0 msg);
+    string handleMSG0(string v);
     string generateMSG1();
     string handleVerification();
     string generateMSG0();
