@@ -9,35 +9,43 @@ extern "C" {
 #endif
 /*
  * Class:     EnclaveBridge
- * Method:    handleVerification
- * Signature: ()Ljava/lang/String;
+ * Method:    createMessageHandlerOBJ
+ * Signature: ()J
  */
-JNIEXPORT jstring JNICALL Java_EnclaveBridge_handleVerification
+JNIEXPORT jlong JNICALL Java_EnclaveBridge_createMessageHandlerOBJ
   (JNIEnv *, jobject);
 
 /*
  * Class:     EnclaveBridge
+ * Method:    handleVerification
+ * Signature: (J)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_EnclaveBridge_handleVerification
+  (JNIEnv *, jobject, jlong);
+
+/*
+ * Class:     EnclaveBridge
  * Method:    handleMSG0
- * Signature: (Ljava/lang/String;)Ljava/lang/String;
+ * Signature: (JLjava/lang/String;)Ljava/lang/String;
  */
 JNIEXPORT jstring JNICALL Java_EnclaveBridge_handleMSG0
-  (JNIEnv *, jobject, jstring);
+  (JNIEnv *, jobject, jlong, jstring);
 
 /*
  * Class:     EnclaveBridge
  * Method:    handleMSG2
- * Signature: (Ljava/lang/String;)Ljava/lang/String;
+ * Signature: (JLjava/lang/String;)Ljava/lang/String;
  */
 JNIEXPORT jstring JNICALL Java_EnclaveBridge_handleMSG2
-  (JNIEnv *, jobject, jstring);
+  (JNIEnv *, jobject, jlong, jstring);
 
 /*
  * Class:     EnclaveBridge
  * Method:    handleAttestationResult
- * Signature: (Ljava/lang/String;)Ljava/lang/String;
+ * Signature: (JLjava/lang/String;)Ljava/lang/String;
  */
 JNIEXPORT jstring JNICALL Java_EnclaveBridge_handleAttestationResult
-  (JNIEnv *, jobject, jstring);
+  (JNIEnv *, jobject, jlong, jstring);
 
 #ifdef __cplusplus
 }
