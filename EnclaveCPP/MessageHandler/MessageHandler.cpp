@@ -474,7 +474,6 @@ string MessageHandler::handleVerification() {
 }
 
 
-/*
 string MessageHandler::createInitMsg(int type, string msg) {
     Messages::SecretMessage init_msg;
     init_msg.set_type(type);
@@ -485,6 +484,7 @@ string MessageHandler::createInitMsg(int type, string msg) {
     return s;
     //return nm->serialize(init_msg);
 }
+/*
 */
 
 

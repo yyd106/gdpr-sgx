@@ -9,7 +9,7 @@ public class TestEnclaveBridge
         try {
             byte[] data = res.getBytes();
             Messages.MessageMsg0 result = Messages.MessageMsg0.parseFrom(data);
-            System.out.println(result.getEpid());
+            System.out.println(result.getStatus());
         } catch (InvalidProtocolBufferException e) {
             System.out.println(e.getMessage());
         }

@@ -484,10 +484,10 @@ sample_status_t sample_ecc256_open_context(sample_ecc_state_handle_t* ecc_handle
     IppsBigNumState* pOr = nBN(sizeof(Or)/4,Or); 
     int cof=0x1; 
     */
-    printf("========== before set ==========\n");
+    //printf("========== before set ==========\n");
     //ipp_ret = ippsECCPSet(pP,pA,pB,pGX,pGY,pOr,cof,p_ecc_state);
     ipp_ret = ippsECCPSetStd256r1(p_ecc_state);
-    printf("========== after set ==========\n");
+    //printf("========== after set ==========\n");
     //ipp_ret = ippsECCPSetStd(IppECCPStd256r1, p_ecc_state);
     if (ipp_ret != ippStsNoErr)
     {

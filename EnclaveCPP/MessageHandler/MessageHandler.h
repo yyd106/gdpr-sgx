@@ -50,7 +50,7 @@ public:
     string generateMSG1();
     string handleVerification();
     string generateMSG0();
-    //string createInitMsg(int type, string msg);
+    string createInitMsg(int type, string msg);
     uint32_t my_flag = 0;
     sgx_enclave_id_t local_enclave_id;
     sgx_ra_context_t local_enclave_context;

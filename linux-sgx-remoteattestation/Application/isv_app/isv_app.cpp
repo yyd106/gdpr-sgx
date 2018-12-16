@@ -13,12 +13,14 @@ int Main(int argc, char* argv[]) {
     LogBase::Inst();
 
     int ret = 0;
+    printf("========== msg life is started ==========\n");
 
     MessageHandler msg;
     msg.init();
     msg.start();
+    /*
+    */
 
-    printf("========== msg life is over ==========\n");
 
     return ret;
 }

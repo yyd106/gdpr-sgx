@@ -84,8 +84,8 @@ int ias_verify_attestation_evidence(
         return -1;
     }
 
-    //string report_id;
-    string report_id = "1103";
+    string report_id;
+    //string report_id = "1103";
     uintmax_t test;
     ias_quote_status_t quoteStatus;
     string timestamp, epidPseudonym, isvEnclaveQuoteStatus;
