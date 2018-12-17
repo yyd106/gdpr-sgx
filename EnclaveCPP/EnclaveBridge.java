@@ -10,9 +10,9 @@ public class EnclaveBridge {
     }
 
     public native long createMessageHandlerOBJ();
-    public native String handleVerification(long msgHandlerAddr);
-    public native String handleMSG0(long msgHandlerAddr, String msg0);
-    public native String handleMSG2(long msgHandlerAddr, String msg2);
-    public native String handleAttestationResult(long msgHandlerAddr, String msg);
+    public native byte[] handleVerification(long msgHandlerAddr);
+    public native byte[] handleMSG0(long msgHandlerAddr, String msg0);
+    public native byte[] handleMSG2(long msgHandlerAddr, String msg2);
+    public native byte[] handleAttestationResult(long msgHandlerAddr, String msg);
 
 }

@@ -51,34 +51,43 @@ string jstring2string(JNIEnv *env, jstring jStr) {
     return ret;
 }
 
+jbyteArray string2jbyteArray(JNIEnv *env, string str) {
+    jbyteArray arr = env->NewByteArray(str.length());
+    env->SetByteArrayRegion(arr, 0, str.length(), (jbyte*)str.c_str());
+    return arr;
+}
+
+
+//=============== MAIN FUNCTION ===============//
+
 JNIEXPORT jlong JNICALL Java_EnclaveBridge_createMessageHandlerOBJ(JNIEnv *env, jobject obj)
 {
     return (jlong) new MessageHandler();
 }
 
-JNIEXPORT jstring JNICALL Java_EnclaveBridge_handleVerification(JNIEnv *env, jobject obj, jlong msgHandlerAddr)
+JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleVerification(JNIEnv *env, jobject obj, jlong msgHandlerAddr)
 {
-    string resbuf = ((MessageHandler*)msgHandlerAddr)->handleVerification();
-    return charTojstring(env, resbuf.c_str());
+    string res = ((MessageHandler*)msgHandlerAddr)->handleVerification();
+    return string2jbyteArray(env, res);
 }
 
-JNIEXPORT jstring JNICALL Java_EnclaveBridge_handleMSG0(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jstring msg0)
+JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleMSG0(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jstring msg0)
 {
     string MSG0 = jstring2string(env, msg0);
     string res = ((MessageHandler*)msgHandlerAddr)->handleMSG0(MSG0);
-    return charTojstring(env, res.c_str());
+    return string2jbyteArray(env, res);
 }
 
-JNIEXPORT jstring JNICALL Java_EnclaveBridge_handleMSG2(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jstring msg2)
+JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleMSG2(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jstring msg2)
 {
     string MSG2 = jstring2string(env, msg2);
     string res = ((MessageHandler*)msgHandlerAddr)->handleMSG2(MSG2);
-    return charTojstring(env, res.c_str());
+    return string2jbyteArray(env, res);
 }
 
-JNIEXPORT jstring JNICALL Java_EnclaveBridge_handleAttestationResult(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jstring msg)
+JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleAttestationResult(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jstring msg)
 {
     string MSG = jstring2string(env, msg);
     string res = ((MessageHandler*)msgHandlerAddr)->handleAttestationResult(MSG);
-    return charTojstring(env, res.c_str());
+    return string2jbyteArray(env, res);
 }
