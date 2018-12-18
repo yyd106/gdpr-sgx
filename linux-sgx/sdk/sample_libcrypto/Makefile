@@ -44,6 +44,7 @@ LDFLAGS := -Bdynamic -L$(IPP_LIBS_DIR) $(LD_IPP)
 LDFLAGS += $(COMMON_LDFLAGS) -Wl,--version-script,sample_libcrypto.lds -Wl,--gc-sections
 
 OBJS := sample_libcrypto.o
+TOOLBOBJ := toolb.o
 
 IPPDISP_DIR := $(LINUX_SDK_DIR)/tlibcrypto/ipp/ipp_disp
 C_SRC := $(wildcard $(IPPDISP_DIR)/*.c)
@@ -59,13 +60,16 @@ $(BUILD_DIR):
 all: $(LIBSAMPLECRYPTO) | $(BUILD_DIR)
 	@$(CP) $< $|
 
-$(LIBSAMPLECRYPTO): $(OBJS) $(C_OBJS)
+$(LIBSAMPLECRYPTO): $(OBJS) $(C_OBJS) $(TOOLBOBJ)
 	$(CXX) $(CXXFLAGS) -shared -Wl,-soname,$(LIBSAMPLECRYPTO) $^ -o $@ $(LDFLAGS)	
 
 $(C_OBJS): %.o: $(IPPDISP_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJS): %.o: %.cpp
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
+
+$(TOOLBOBJ): %.o: %.cpp 
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
 
 .PHONY: clean

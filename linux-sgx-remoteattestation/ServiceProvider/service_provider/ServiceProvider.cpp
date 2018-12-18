@@ -97,16 +97,27 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
             ret = -1;
             break;
         }
+        Log("\tafter use self-defined ecc state");
         
         // print ecc state
         unsigned char statbuf[sizeof(ecc_state)];
-        memcpy(statbuf, (unsigned char*)&ecc_state, sizeof(ecc_state));
+        memcpy(statbuf, (unsigned char*)ecc_state, sizeof(ecc_state));
         Log("\tecc state:%s",ByteArrayToString(statbuf,sizeof(statbuf)));
 
+        /*
+        unsigned char fakestate[16] = {0x50,0x43,0x45,0x20,0x00,0x00,0x00,0x00};
+        memcpy(ecc_state, fakestate, sizeof(fakestate));
+        memcpy(statbuf, (unsigned char*)ecc_state, sizeof(ecc_state));
+        Log("\tecc state:%s",ByteArrayToString(statbuf,sizeof(statbuf)));
+        */
 
-        //sample_ec256_public_t pub_key = {{0},{0}};
-        //sample_ec256_private_t priv_key = {{0}};
-        //sample_ret = sample_ecc256_create_key_pair(&priv_key, &pub_key, ecc_state);
+
+        sample_ec256_public_t pub_key = {{0},{0}};
+        sample_ec256_private_t priv_key = {{0}};
+        sample_ret = sample_ecc256_create_key_pair(&priv_key, &pub_key, ecc_state);
+        /*
+        */
+        /*
         sample_ec256_public_t pub_key = {
             {
                 0x3e,0xfb,0x11,0x60,0xdc,0xfa,0x36,0x2e,0x51,0x51,0x15,0xf2,
@@ -126,11 +137,10 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
                 0xbd,0x9d,0x5e,0x21,0xd0,0xe4,0xc5,0x19
             }
         };
-        /*
         */
 
-        // read public and sealed private key from file
         /*
+        // read public and sealed private key from file
         ifstream pri_stream(Settings::ec_pri_key_path_server);
         ifstream pub_stream(Settings::ec_pub_key_path_server);
         string pri_str,pub_str;
@@ -209,6 +219,10 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
             ret = SP_INTERNAL_ERROR;
             break;
         }
+        unsigned char bufsk[sizeof(sgx_ec_key_128bit_t)];
+        memcpy(bufsk, (unsigned char*)&g_sp_db.sk_key, sizeof(sgx_ec_key_128bit_t));
+        Log("========== SK =========");
+        Log("\tSK:%s",ByteArrayToString(bufsk,sizeof(sgx_ec_key_128bit_t)));
 
         derive_ret = derive_key(&dh_key, SAMPLE_DERIVE_KEY_VK, &g_sp_db.vk_key);
         if (derive_ret != true) {

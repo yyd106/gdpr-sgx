@@ -75,17 +75,17 @@ int ias_verify_attestation_evidence(
     sample_ecc_state_handle_t ecc_state = NULL;
 
     vector<pair<string, string>> result;
-    //bool error = ws->verifyQuote(p_isv_quote, pse_manifest, NULL, &result);
+    bool error = ws->verifyQuote(p_isv_quote, pse_manifest, NULL, &result);
+    //bool error = false;
     printf("[INFO] === add debug === ias_ra.cpp escape verifyQuote\n");
-    bool error = false;
 
 
     if (error || (NULL == p_isv_quote) || (NULL == p_attestation_verification_report)) {
         return -1;
     }
 
-    //string report_id;
-    string report_id = "1103";
+    string report_id;
+    //string report_id = "1103";
     uintmax_t test;
     ias_quote_status_t quoteStatus;
     string timestamp, epidPseudonym, isvEnclaveQuoteStatus;

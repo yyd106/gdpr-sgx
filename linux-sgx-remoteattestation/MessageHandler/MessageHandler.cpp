@@ -107,6 +107,12 @@ string MessageHandler::generateMSG1() {
 
         Log("\tbefore public  key:%s",pub_str);
         Log("\tsealed private dat:%s",pri_s_str);
+        //unsigned char bpeccbuf[sizeof(local_ec256_fix_data.p_ecc_state)];
+        /*
+        unsigned char bpeccbuf[16];
+        memcpy(bpeccbuf, (unsigned char*)local_ec256_fix_data.p_ecc_state, sizeof(bpeccbuf));
+        Log("\tp ecc state   is  :%s",ByteArrayToString(bpeccbuf,sizeof(bpeccbuf)));
+        */
 
 
         retGIDStatus = sgx_ra_get_msg1(this->enclave->getContext(),
@@ -125,6 +131,12 @@ string MessageHandler::generateMSG1() {
         unsigned char psealedbuf[local_ec256_fix_data.sealed_data_size];
         memcpy(psealedbuf, (unsigned char*)local_ec256_fix_data.p_sealed_data, local_ec256_fix_data.sealed_data_size);
         Log("\tp sealed data is  :%s",ByteArrayToString(psealedbuf,sizeof(psealedbuf)));
+        //unsigned char peccbuf[sizeof(local_ec256_fix_data.p_ecc_state)];
+        /*
+        unsigned char peccbuf[16];
+        memcpy(peccbuf, (unsigned char*)local_ec256_fix_data.p_ecc_state, sizeof(peccbuf));
+        Log("\tp ecc state   is  :%s",ByteArrayToString(peccbuf,sizeof(peccbuf)));
+        */
         
 
         if (retGIDStatus == SGX_SUCCESS) {
@@ -366,6 +378,8 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
     if (0 != p_att_result_msg_full->status[0] || 0 != p_att_result_msg_full->status[1]) {
         Log("Error, attestation mac result message MK based cmac failed", log::error);
     } else {
+        unsigned char p_sk[sizeof(sgx_ec_key_128bit_t)];
+        //memset(p_sk, 0, sizeof(sgx_ec_key_128bit_t));
         ret = verify_secret_data(this->enclave->getID(),
                                  &status,
                                  this->enclave->getContext(),
@@ -373,15 +387,21 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
                                  p_att_result_msg_body->secret.payload_size,
                                  p_att_result_msg_body->secret.payload_tag,
                                  MAX_VERIFICATION_RESULT,
-                                 NULL);
+                                 NULL,
+                                 p_sk);
+        /*
+        Log("========== SK ==========");
+        Log("\t SK:%s",ByteArrayToString(p_sk,sizeof(sgx_ec_key_128bit_t)));
+        */
+        //SafeFree(p_sk);
 
         SafeFree(p_att_result_msg_full);
 
         if (SGX_SUCCESS != ret) {
-            Log("Error, attestation result message secret using SK based AESGCM failed", log::error);
+            Log("Error, attestation result message secret using SK based AESGCM failed(ret)", log::error);
             print_error_message(ret);
         } else if (SGX_SUCCESS != status) {
-            Log("Error, attestation result message secret using SK based AESGCM failed", log::error);
+            Log("Error, attestation result message secret using SK based AESGCM failed(status)", log::error);
             print_error_message(status);
         } else {
             Log("Send attestation okay");
@@ -438,6 +458,8 @@ string MessageHandler::createInitMsg(int type, string msg) {
 
     return nm->serialize(init_msg);
 }
+/*
+*/
 
 
 vector<string> MessageHandler::incomingHandler(string v, int type) {
@@ -452,6 +474,7 @@ vector<string> MessageHandler::incomingHandler(string v, int type) {
         Log("========== verify attestation ==========");
         if (ret && init_msg.type() == RA_VERIFICATION) {
             s = this->handleVerification();
+            Log("\ts:%s",s);
             res.push_back(to_string(RA_MSG0));
         }
     }

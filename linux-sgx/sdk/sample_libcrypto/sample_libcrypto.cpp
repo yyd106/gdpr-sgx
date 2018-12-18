@@ -43,6 +43,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdio.h>
 
 #include "ippcp.h"
 
@@ -52,7 +53,7 @@
 
 #include "sample_libcrypto.h"
 #include <errno.h>
-
+#include "toolb.h"
 #ifdef __linux__
 /*
  * __memset_vp is a volatile pointer to a function.
@@ -460,7 +461,34 @@ sample_status_t sample_ecc256_open_context(sample_ecc_state_handle_t* ecc_handle
         *ecc_handle = NULL;
         return SAMPLE_ERROR_UNEXPECTED;
     }
-    ipp_ret = ippsECCPSetStd(IppECCPStd256r1, p_ecc_state);
+    /*
+    const Ipp32u P[]= {0x7EC8C0FF,0x97DA89F5,0xB09F0757,0x75D1D787,0x2A183025,0x26436686,0xD7C134AA}; 
+    const Ipp32u A[]= {0xCAD29F43,0xB0042A59,0x4E182AD8,0xC1530B51,0x299803A6,0xA9CE6C1C,0x68A5E62C}; 
+    const Ipp32u B[]= {0x386C400B,0x66DBB372,0x3E2135D2,0xA92369E3,0x870713B1,0xCFE44138,0x2580F63C}; 
+    const Ipp32u GX[]={0xEE12C07D,0x4C1E6EFD,0x9E4CE317,0xA87DC68C,0x340823B2,0x2C7E5CF4,0x0D9029AD}; 
+    const Ipp32u GY[]={0x761402CD,0xCAA3F6D3,0x354B9E99,0x4ECDAC24,0x24C6B89E,0x72C0726F,0x58AA56F7}; 
+    const Ipp32u Or[]={0xa5a7939f,0x6ddebca3,0xd116bc4b,0x75d0fb98,0x2a183025,0x26436686,0xd7c134aa}; 
+
+    const Ipp32u P[]= {0xFFFFFFFF,0x00000001,0x00000000,0x00000000,0x00000000,0xFFFFFFFF,0xFFFFFFFF,0xFFFFFFFF}; 
+    const Ipp32u A[]= {0xFFFFFFFF,0x00000001,0x00000000,0x00000000,0x00000000,0xFFFFFFFF,0xFFFFFFFF,0xFFFFFFFC}; 
+    const Ipp32u B[]= {0x5AC635D8,0xAA3A93E7,0xB3EBBD55,0x769886BC,0x651D06B0,0xCC53B0F6,0x3BCE3C3E,0x27D2604B}; 
+    const Ipp32u GX[]={0x6B17D1F2,0xE12C4247,0xF8BCE6E5,0x63A440F2,0x77037D81,0x2DEB33A0,0xF4A13945,0xD898C296}; 
+    const Ipp32u GY[]={0x4FE342E2,0xFE1A7F9B,0x8EE7EB4A,0x7C0F9E16,0x2BCE3357,0x6B315ECE,0xCBB64068,0x37BF51F5}; 
+    const Ipp32u Or[]={0xFFFFFFFF,0x00000000,0xFFFFFFFF,0xFFFFFFFF,0xBCE6FAAD,0xA7179E84,0xF3B9CAC2,0xFC632551}; 
+
+    IppsBigNumState* pP = nBN(sizeof(P)/4,P); 
+    IppsBigNumState* pA = nBN(sizeof(A)/4,A); 
+    IppsBigNumState* pB = nBN(sizeof(B)/4,B); 
+    IppsBigNumState* pGX = nBN(sizeof(GX)/4,GX); 
+    IppsBigNumState* pGY = nBN(sizeof(GY)/4,GY); 
+    IppsBigNumState* pOr = nBN(sizeof(Or)/4,Or); 
+    int cof=0x1; 
+    */
+    //printf("========== before set ==========\n");
+    //ipp_ret = ippsECCPSet(pP,pA,pB,pGX,pGY,pOr,cof,p_ecc_state);
+    ipp_ret = ippsECCPSetStd256r1(p_ecc_state);
+    //printf("========== after set ==========\n");
+    //ipp_ret = ippsECCPSetStd(IppECCPStd256r1, p_ecc_state);
     if (ipp_ret != ippStsNoErr)
     {
         SAFE_FREE(p_ecc_state);

@@ -128,6 +128,8 @@ string VerificationManager::createInitMsg(int type, string msg) {
 
     return nm->serialize(init_msg);
 }
+/*
+*/
 
 
 vector<string> VerificationManager::incomingHandler(string v, int type) {
