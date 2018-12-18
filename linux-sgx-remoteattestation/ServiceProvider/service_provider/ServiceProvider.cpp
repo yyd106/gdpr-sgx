@@ -197,40 +197,14 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         }
 
 
-        // smk is only needed for msg2 generation.
-        derive_ret = derive_key(&dh_key, SAMPLE_DERIVE_KEY_SMK, &g_sp_db.smk_key);
-        if (derive_ret != true) {
-            Log("Error, derive key fail", log::error);
-            ret = SP_INTERNAL_ERROR;
-            break;
-        }
-
-        // The rest of the keys are the shared secrets for future communication.
-        derive_ret = derive_key(&dh_key, SAMPLE_DERIVE_KEY_MK, &g_sp_db.mk_key);
-        if (derive_ret != true) {
-            Log("Error, derive key fail", log::error);
-            ret = SP_INTERNAL_ERROR;
-            break;
-        }
-
-        derive_ret = derive_key(&dh_key, SAMPLE_DERIVE_KEY_SK, &g_sp_db.sk_key);
-        if (derive_ret != true) {
-            Log("Error, derive key fail", log::error);
-            ret = SP_INTERNAL_ERROR;
-            break;
-        }
+        memcpy(&g_sp_db.smk_key, &dh_key, sizeof(g_sp_db.smk_key));
+        memcpy(&g_sp_db.mk_key, &dh_key, sizeof(g_sp_db.smk_key));
+        memcpy(&g_sp_db.sk_key, &dh_key, sizeof(g_sp_db.smk_key));
+        memcpy(&g_sp_db.vk_key, &dh_key, sizeof(g_sp_db.smk_key));
         unsigned char bufsk[sizeof(sgx_ec_key_128bit_t)];
         memcpy(bufsk, (unsigned char*)&g_sp_db.sk_key, sizeof(sgx_ec_key_128bit_t));
         Log("========== SK =========");
         Log("\tSK:%s",ByteArrayToString(bufsk,sizeof(sgx_ec_key_128bit_t)));
-
-        derive_ret = derive_key(&dh_key, SAMPLE_DERIVE_KEY_VK, &g_sp_db.vk_key);
-        if (derive_ret != true) {
-            Log("Error, derive key fail", log::error);
-            ret = SP_INTERNAL_ERROR;
-            break;
-        }
-
 
         uint32_t msg2_size = sizeof(sgx_ra_msg2_t) + sig_rl_size;
         p_msg2_full = (ra_samp_response_header_t*)malloc(msg2_size + sizeof(ra_samp_response_header_t));

@@ -317,53 +317,18 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
     {
         if(NULL != ra_key_cb)
         {
-            se_ret = ra_key_cb(&dh_key,
-                               p_msg2->kdf_id,
-                               &smkey,
-                               &skey,
-                               &mkey,
-                               &vkey);
-            if (SGX_SUCCESS != se_ret)
-            {
-                if(SGX_ERROR_OUT_OF_MEMORY != se_ret &&
-                    SGX_ERROR_INVALID_PARAMETER != se_ret &&
-                    SGX_ERROR_KDF_MISMATCH != se_ret)
-                    se_ret = SGX_ERROR_UNEXPECTED;
-                break;
-            }
+            memcpy(&smkey, &dh_key, sizeof(smkey));
+            memcpy(&skey, &dh_key, sizeof(smkey));
+            memcpy(&mkey, &dh_key, sizeof(smkey));
+            memcpy(&vkey, &dh_key, sizeof(smkey));
         }
         else if (p_msg2->kdf_id == 0x0001)
         {
-            se_ret = derive_key(&dh_key, "SMK", (uint32_t)(sizeof("SMK") -1), &smkey);
-            if (SGX_SUCCESS != se_ret)
-            {
-                if(SGX_ERROR_OUT_OF_MEMORY != se_ret)
-                    se_ret = SGX_ERROR_UNEXPECTED;
-                break;
-            }
-            se_ret = derive_key(&dh_key, "SK", (uint32_t)(sizeof("SK") -1), &skey);
-            if (SGX_SUCCESS != se_ret)
-            {
-                if(SGX_ERROR_OUT_OF_MEMORY != se_ret)
-                    se_ret = SGX_ERROR_UNEXPECTED;
-                break;
-            }
+            memcpy(&smkey, &dh_key, sizeof(smkey));
+            memcpy(&skey, &dh_key, sizeof(smkey));
+            memcpy(&mkey, &dh_key, sizeof(smkey));
+            memcpy(&vkey, &dh_key, sizeof(smkey));
 
-            se_ret = derive_key(&dh_key, "MK", (uint32_t)(sizeof("MK") -1), &mkey);
-            if (SGX_SUCCESS != se_ret)
-            {
-                if(SGX_ERROR_OUT_OF_MEMORY != se_ret)
-                    se_ret = SGX_ERROR_UNEXPECTED;
-                break;
-            }
-
-            se_ret = derive_key(&dh_key, "VK", (uint32_t)(sizeof("VK") -1), &vkey);
-            if (SGX_SUCCESS != se_ret)
-            {
-                if(SGX_ERROR_OUT_OF_MEMORY != se_ret)
-                    se_ret = SGX_ERROR_UNEXPECTED;
-                break;
-            }
         }
         else
         {
