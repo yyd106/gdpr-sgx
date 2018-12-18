@@ -1,46 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f94eede-ccba-4b35-923d-1f17550e186c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../EnclaveCPP/Enclave/EnclaveBridge.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../EnclaveCPP/Enclave/EnclaveBridge.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../EnclaveCPP/EnclaveBridge.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../EnclaveCPP/EnclaveBridge.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../EnclaveCPP/EnclaveBridge.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../EnclaveCPP/EnclaveBridge.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../EnclaveCPP/TestEnclaveBridge.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../EnclaveCPP/isv_enclave.signed.so" beforeDir="false" afterPath="$PROJECT_DIR$/../../EnclaveCPP/isv_enclave.signed.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../EnclaveCPP/libEnclaveBridge.so" beforeDir="false" afterPath="$PROJECT_DIR$/../../EnclaveCPP/libEnclaveBridge.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EnclaveBridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EnclaveBridge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TestEnclaveBridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestEnclaveBridge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/jnilib/libEnclaveBridge.so" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/jnilib/libEnclaveBridge.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EnclaveBridge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EnclaveBridge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$AttestationMessage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$AttestationMessage$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$AttestationMessage$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$AttestationMessage$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$AttestationMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$AttestationMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$AttestationMessageOrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$AttestationMessageOrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$InitialMessage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$InitialMessage$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$InitialMessage$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$InitialMessage$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$InitialMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$InitialMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$InitialMessageOrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$InitialMessageOrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG1$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG1$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG1OrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG1OrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG2$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG2$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG2OrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG2OrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG3$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG3$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG3$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG3OrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMSG3OrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMsg0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMsg0$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMsg0$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMsg0$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMsg0.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMsg0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMsg0OrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages$MessageMsg0OrBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Messages/Messages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Messages/Messages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestEnclaveBridge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestEnclaveBridge.class" afterDir="false" />
-    </list>
+    <list default="true" id="2f94eede-ccba-4b35-923d-1f17550e186c" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,7 +14,7 @@
     <session id="-284719475">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
@@ -681,7 +642,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/TestEnclaveBridge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
+            <state relative-caret-position="400">
               <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -793,7 +754,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/vdeadmin/errands/gdpr-sgx/tools/EnclaveBridge/src/main/java/TestEnclaveBridge.java" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545056887279" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545057869998" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/EnclaveCPP" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -855,7 +816,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25538972" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -866,7 +826,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294979" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29079497" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29079497" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39958158" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1478,7 +1438,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TestEnclaveBridge.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
+        <state relative-caret-position="400">
           <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
