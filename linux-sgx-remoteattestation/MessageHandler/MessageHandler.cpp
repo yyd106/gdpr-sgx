@@ -400,10 +400,12 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
         if (SGX_SUCCESS != ret) {
             Log("Error, attestation result message secret using SK based AESGCM failed(ret)", log::error);
             print_error_message(ret);
-        } else if (SGX_SUCCESS != status) {
+        }
+        /*else if (SGX_SUCCESS != status) {
             Log("Error, attestation result message secret using SK based AESGCM failed(status)", log::error);
             print_error_message(status);
-        } else {
+        } */
+        else {
             Log("Send attestation okay");
 
             Messages::InitialMessage msg;
