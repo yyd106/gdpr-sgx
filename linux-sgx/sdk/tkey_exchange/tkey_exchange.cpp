@@ -216,7 +216,6 @@ extern "C" sgx_status_t sgx_ra_get_ga(
     sgx_spin_unlock(&item->item_lock);
     if(ecc_state!=NULL)
         sgx_ecc256_close_context(ecc_state);
-    se_ret = SGX_ERROR_INVALID_STATE;
     return se_ret;
 }
 
