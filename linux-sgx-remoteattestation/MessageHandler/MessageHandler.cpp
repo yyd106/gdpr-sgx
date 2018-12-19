@@ -114,7 +114,7 @@ string MessageHandler::generateMSG1() {
         Log("\tp ecc state   is  :%s",ByteArrayToString(bpeccbuf,sizeof(bpeccbuf)));
         */
 
-	    local_ec256_fix_data.g_key_flag = 1;
+	    local_ec256_fix_data.g_key_flag = 0;
         retGIDStatus = sgx_ra_get_msg1(this->enclave->getContext(),
                                        this->enclave->getID(),
                                        sgx_ra_get_ga,
