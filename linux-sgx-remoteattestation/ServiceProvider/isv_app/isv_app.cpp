@@ -13,8 +13,13 @@ int Main(int argc, char *argv[]) {
 
     int ret = 0;
 
+    int isVerify = 0;
+    if(argc != 0) {
+        isVerify = atoi(argv[0]);
+    }
+
     VerificationManager *vm = VerificationManager::getInstance();
-    vm->init();
+    vm->init(isVerify);
     vm->start();
 
     return ret;

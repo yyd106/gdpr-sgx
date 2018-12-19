@@ -17,6 +17,10 @@ ServiceProvider::ServiceProvider(WebService *ws) : ws(ws) {}
 
 ServiceProvider::~ServiceProvider() {}
 
+void ServiceProvider::setIsVerify(int isVerify) {
+    this->isVerify = isVerify;
+}
+
 
 int ServiceProvider::sp_ra_proc_msg0_req(const uint32_t id) {
     int ret = -1;
@@ -57,7 +61,9 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
 
         string sigRl;
         bool error = false;
-        error = this->ws->getSigRL(ByteArrayToString(GID, 4), &sigRl);
+        if(this->isVerify == 1) {
+            error = this->ws->getSigRL(ByteArrayToString(GID, 4), &sigRl);
+        }
 
         if (error) {
             return SP_RETRIEVE_SIGRL_ERROR;
@@ -491,7 +497,7 @@ int ServiceProvider::sp_ra_proc_msg3_req(Messages::MessageMSG3 msg, Messages::At
 
         // Verify quote with attestation server.
         ias_att_report_t attestation_report = {0};
-        ret = ias_verify_attestation_evidence(p_msg3->quote, p_msg3->ps_sec_prop.sgx_ps_sec_prop_desc, &attestation_report, ws);
+        ret = ias_verify_attestation_evidence(p_msg3->quote, p_msg3->ps_sec_prop.sgx_ps_sec_prop_desc, &attestation_report, ws, this->isVerify);
 
         if (0 != ret) {
             ret = SP_IAS_FAILED;

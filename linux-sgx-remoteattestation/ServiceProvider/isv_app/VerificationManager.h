@@ -17,9 +17,8 @@ using namespace std;
 class VerificationManager {
 
 public:
-    static VerificationManager* getInstance();
-    virtual ~VerificationManager();
-    int init();
+    static VerificationManager* getInstance(); virtual ~VerificationManager();
+    int init(int isVerify);
     vector<string> incomingHandler(string v, int type);
     void start();
 
@@ -37,6 +36,10 @@ private:
     NetworkManagerClient *nm = NULL;
     ServiceProvider *sp = NULL;
     WebService *ws = NULL;
+    // isVerify used to indicate whether verify through IAS
+    // 0: indicate don't need verify
+    // 1: indicate need verify
+    int isVerify = 1;
 };
 
 #endif

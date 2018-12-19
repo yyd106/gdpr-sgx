@@ -26,9 +26,11 @@ public:
     virtual ~MessageHandler();
 
     sgx_ra_msg3_t* getMSG3();
-    int init();
+    int init(int keymode);
     void start();
     vector<string> incomingHandler(string v, int type);
+
+    void setKeymode(int mode);
 
 private:
     sgx_status_t initEnclave();
@@ -44,7 +46,6 @@ private:
     string handleVerification();
     string generateMSG0();
     string createInitMsg(int type, string msg);
-    uint32_t my_flag = 0;
     sgx_enclave_id_t local_enclave_id;
     sgx_ra_context_t local_enclave_context;
     sgx_status_t local_enclave_status;
@@ -56,6 +57,10 @@ protected:
 private:
     int busy_retry_time = 4;
     NetworkManagerServer *nm = NULL;
+    // keymode:
+    // 0: indicates use enclave generate ecc key pair
+    // 1: indicates read enclave ecc key pair from file
+    int keymode = 1;
 
 };
 

@@ -14,12 +14,14 @@ int Main(int argc, char* argv[]) {
 
     int ret = 0;
     printf("========== msg life is started ==========\n");
+    int keymode = 0;
+    if(argc != 0) {
+        keymode = atoi(argv[0]);
+    }
 
     MessageHandler msg;
-    msg.init();
+    msg.init(keymode);
     msg.start();
-    /*
-    */
 
 
     return ret;
