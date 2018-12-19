@@ -147,7 +147,6 @@ extern "C" sgx_status_t sgx_ra_get_ga(
                     se_ret = SGX_ERROR_UNEXPECTED;
                 break;
             }
-        fix_data->g_key_flag = 0;
 
         if(fix_data->g_key_flag == 0){
             // ecc_state should be closed when exit.
