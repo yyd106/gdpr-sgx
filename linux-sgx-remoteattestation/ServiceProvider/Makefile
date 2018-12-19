@@ -1,6 +1,7 @@
 ######## SGX SDK Settings ########
 SGX_SDK ?= /opt/intel/sgxsdk
-SGX_MODE ?= SIM SGX_ARCH ?= x64
+SGX_MODE ?= SIM 
+SGX_ARCH ?= x64
 
 ifeq ($(shell getconf LONG_BIT), 32)
 	SGX_ARCH := x86
@@ -44,12 +45,12 @@ else
 	Urts_Library_Name := sgx_urts
 endif
 
-#App_Cpp_Files := isv_app/isv_app.cpp ../Util/LogBase.cpp ../Networking/NetworkManager.cpp \
+App_Cpp_Files := isv_app/isv_app.cpp ../Util/LogBase.cpp ../Networking/NetworkManager.cpp \
 ../Networking/Session.cpp ../Networking/Client.cpp ../Networking/Server.cpp isv_app/VerificationManager.cpp ../Networking/NetworkManagerClient.cpp \
 ../GoogleMessages/Messages.pb.cpp ../Networking/AbstractNetworkOps.cpp ../Util/UtilityFunctions.cpp ../WebService/WebService.cpp \
 ../Util/Base64.cpp 
 
-App_Cpp_Files := isv_app/isv_app.cpp ../Util/LogBase.cpp ../Networking/NetworkManager.cpp \
+#App_Cpp_Files := isv_app/isv_app.cpp ../Util/LogBase.cpp ../Networking/NetworkManager.cpp \
 ../Networking/Session.cpp ../Networking/Client.cpp ../Networking/Server.cpp isv_app/VerificationManager.cpp ../Networking/NetworkManagerClient.cpp \
 ../Networking/AbstractNetworkOps.cpp ../Util/UtilityFunctions.cpp ../WebService/WebService.cpp \
 ../Util/Base64.cpp 
@@ -119,9 +120,9 @@ isv_app/%.o: isv_app/%.cpp
 	@$(CXX) $(App_Cpp_Flags) -c $< -o $@
 	@echo "CXX  <=  $<"
 
-../GoogleMessages/%.o: ../GoogleMessages/%.cc
-	@$(CXX) -c $< -std=c++11 -lpthread -lprotobuf -o $@
-	@echo "CXX  <=  $<"
+#../GoogleMessages/%.o: ../GoogleMessages/%.cc
+#	@$(CXX) -c $< -fPIC -std=c++11 -lpthread -lprotobuf -o $@
+#	@echo "CXX  <=  $<"
 
 #../GoogleMessages/%.o: ../GoogleMessages/%.cpp
 #	@$(CXX) $(App_Cpp_Flags) -c $< -o $@
@@ -135,7 +136,7 @@ CertificateHandler/%.o: CertificateHandler/%.cpp
 	@$(CXX) $(App_Cpp_Flags) -c $< -o $@
 	@echo "CXX  <=  $<"
 
-$(App_Name): $(App_Cpp_Objects) ../GoogleMessages/Messages.pb.o
+$(App_Name): $(App_Cpp_Objects)
 	@$(CXX) $^ -o $@ $(App_Link_Flags)
 	@echo "LINK =>  $@"
 
