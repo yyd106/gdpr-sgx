@@ -14,8 +14,10 @@ int Main(int argc, char *argv[]) {
     int ret = 0;
 
     int isVerify = 0;
-    if(argc != 0) {
-        isVerify = atoi(argv[0]);
+    if(argc > 1) {
+        Log("========== set main argv ==========");
+        Log("\targv[0]:%s",argv[1]);
+        isVerify = atoi(argv[1]);
     }
 
     VerificationManager *vm = VerificationManager::getInstance();

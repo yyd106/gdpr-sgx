@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f94eede-ccba-4b35-923d-1f17550e186c" name="Default Changelist" comment="" />
+    <list default="true" id="2f94eede-ccba-4b35-923d-1f17550e186c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/Application/isv_app/isv_app.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/Application/isv_app/isv_app.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/Application/isv_enclave/isv_enclave.edl" beforeDir="false" afterPath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/Application/isv_enclave/isv_enclave.edl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/GoogleMessages/Messages.pb.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/GoogleMessages/Messages.pb.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/ServiceProvider/isv_app/isv_app.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/ServiceProvider/isv_app/isv_app.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../linux-sgx/sdk/tkey_exchange/tkey_exchange.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../linux-sgx/sdk/tkey_exchange/tkey_exchange.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/EnclaveBridge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EnclaveBridge.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,7 +60,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -639,7 +647,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/TestEnclaveBridge.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="400">
@@ -706,6 +714,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -747,9 +758,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -816,8 +824,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25538972" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25815368" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -826,7 +835,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294979" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29079497" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29079497" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39958158" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

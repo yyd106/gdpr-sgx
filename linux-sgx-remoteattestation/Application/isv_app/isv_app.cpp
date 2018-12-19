@@ -15,8 +15,8 @@ int Main(int argc, char* argv[]) {
     int ret = 0;
     printf("========== msg life is started ==========\n");
     int keymode = 0;
-    if(argc != 0) {
-        keymode = atoi(argv[0]);
+    if(argc > 1) {
+        keymode = atoi(argv[1]);
     }
 
     MessageHandler msg;
