@@ -136,7 +136,7 @@ string MessageHandler::generateMSG1() {
         Log("\tsealed data size  :%d",local_data->sealed_data_size);
         //unsigned char psealedbuf[local_data->sealed_data_size];
         //memcpy(psealedbuf, (unsigned char*)local_data->p_sealed_data, local_data->sealed_data_size);
-        Log("\tp sealed data is  :%s",ByteArrayToString(psealedbuf,sizeof(psealedbuf)));
+        //Log("\tp sealed data is  :%s",ByteArrayToString(psealedbuf,sizeof(psealedbuf)));
         //unsigned char peccbuf[sizeof(local_data->p_ecc_state)];
         /*
         unsigned char peccbuf[16];
