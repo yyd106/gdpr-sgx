@@ -108,11 +108,11 @@ string MessageHandler::generateMSG1() {
         Log("\tbefore public  key:%s",pub_str);
         Log("\tsealed private dat:%s",pri_s_str);
         //unsigned char bpeccbuf[sizeof(local_ec256_fix_data.p_ecc_state)];
-        
+        /*
         unsigned char bpeccbuf[16];
         memcpy(bpeccbuf, (unsigned char*)local_ec256_fix_data.p_ecc_state, sizeof(bpeccbuf));
         Log("\tp ecc state   is  :%s",ByteArrayToString(bpeccbuf,sizeof(bpeccbuf)));
-        
+        */
 
 	    local_ec256_fix_data.g_key_flag = 1;
         retGIDStatus = sgx_ra_get_msg1(this->enclave->getContext(),
