@@ -315,7 +315,6 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
 
     do
     {
-        /* old sdk code logic
         if(NULL != ra_key_cb)
         {
             se_ret = ra_key_cb(&dh_key,
@@ -366,7 +365,12 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
                 break;
             }
         }
-        */
+        else
+        {
+            se_ret = SGX_ERROR_KDF_MISMATCH;
+            break;
+        }
+        /*
         if(NULL != ra_key_cb)
         {
             memcpy(&smkey, &dh_key, sizeof(smkey));
@@ -382,11 +386,7 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
             memcpy(&vkey, &dh_key, sizeof(smkey));
 
         }
-        else
-        {
-            se_ret = SGX_ERROR_KDF_MISMATCH;
-            break;
-        }
+        */
 
         sgx_cmac_128bit_tag_t mac;
         uint32_t maced_size = offsetof(sgx_ra_msg2_t, mac);
