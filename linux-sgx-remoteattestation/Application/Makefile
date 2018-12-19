@@ -184,7 +184,7 @@ isv_app/%.o: isv_app/%.cpp
 	@echo "CXX  <=  $<"
 
 #../GoogleMessages/%.o: ../GoogleMessages/%.cc
-#	@$(CXX) -c $< -fPIC -std=c++11 -lpthread -lprotobuf -o $@
+#	@$(CXX) -c $< -std=c++11 -lpthread -lprotobuf -o $@
 #	@echo "CXX  <=  $<"
 
 $(App_Name): isv_app/isv_enclave_u.o $(App_Cpp_Objects)

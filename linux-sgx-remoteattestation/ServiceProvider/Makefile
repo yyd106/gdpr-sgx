@@ -121,11 +121,7 @@ isv_app/%.o: isv_app/%.cpp
 	@echo "CXX  <=  $<"
 
 #../GoogleMessages/%.o: ../GoogleMessages/%.cc
-#	@$(CXX) -c $< -fPIC -std=c++11 -lpthread -lprotobuf -o $@
-#	@echo "CXX  <=  $<"
-
-#../GoogleMessages/%.o: ../GoogleMessages/%.cpp
-#	@$(CXX) $(App_Cpp_Flags) -c $< -o $@
+#	@$(CXX) -c $< -std=c++11 -lpthread -lprotobuf -o $@
 #	@echo "CXX  <=  $<"
 
 ../WebService/%.o: ../WebService/%.cpp

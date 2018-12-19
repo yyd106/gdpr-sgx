@@ -128,7 +128,7 @@ typedef struct _ias_att_report_t {
 extern "C" {
 #endif
 
-int ias_verify_attestation_evidence(uint8_t* p_isv_quote, uint8_t* pse_manifest, ias_att_report_t* attestation_verification_report, WebService *ws);
+int ias_verify_attestation_evidence(uint8_t* p_isv_quote, uint8_t* pse_manifest, ias_att_report_t* attestation_verification_report, WebService *ws, int isVerify);
 
 #ifdef  __cplusplus
 }

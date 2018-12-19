@@ -316,6 +316,23 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
 
     do
     {
+        /* old sdk code logic
+        if(NULL != ra_key_cb)
+        {
+            memcpy(&smkey, &dh_key, sizeof(smkey));
+            memcpy(&skey, &dh_key, sizeof(smkey));
+            memcpy(&mkey, &dh_key, sizeof(smkey));
+            memcpy(&vkey, &dh_key, sizeof(smkey));
+        }
+        else if (p_msg2->kdf_id == 0x0001)
+        {
+            memcpy(&smkey, &dh_key, sizeof(smkey));
+            memcpy(&skey, &dh_key, sizeof(smkey));
+            memcpy(&mkey, &dh_key, sizeof(smkey));
+            memcpy(&vkey, &dh_key, sizeof(smkey));
+
+        }
+        */
         if(NULL != ra_key_cb)
         {
             memcpy(&smkey, &dh_key, sizeof(smkey));
