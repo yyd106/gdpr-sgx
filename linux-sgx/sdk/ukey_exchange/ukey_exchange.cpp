@@ -76,6 +76,8 @@ sgx_status_t sgx_ra_get_msg1(
     sgx_status_t ret = sgx_init_quote(&qe_target_info, &gid);
     if(SGX_SUCCESS != ret)
         return ret;
+
+    return SGX_ERROR_UNEXPECTED; // failed after this
     g_ukey_spin_lock.lock();
     if(memcpy_s(&g_qe_target_info, sizeof(g_qe_target_info),
              &qe_target_info, sizeof(qe_target_info)) != 0)
