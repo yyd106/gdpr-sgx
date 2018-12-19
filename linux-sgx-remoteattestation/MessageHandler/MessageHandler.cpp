@@ -134,8 +134,8 @@ string MessageHandler::generateMSG1() {
         memcpy(pribuf_r, (unsigned char*)&local_data->ec256_private_key, sizeof(sgx_ec256_private_t));
         Log("\tenclave privat key:%s",ByteArrayToString(pribuf_r,sizeof(pribuf_r)));
         Log("\tsealed data size  :%d",local_data->sealed_data_size);
-        unsigned char psealedbuf[local_data->sealed_data_size];
-        memcpy(psealedbuf, (unsigned char*)local_data->p_sealed_data, local_data->sealed_data_size);
+        //unsigned char psealedbuf[local_data->sealed_data_size];
+        //memcpy(psealedbuf, (unsigned char*)local_data->p_sealed_data, local_data->sealed_data_size);
         Log("\tp sealed data is  :%s",ByteArrayToString(psealedbuf,sizeof(psealedbuf)));
         //unsigned char peccbuf[sizeof(local_data->p_ecc_state)];
         /*
