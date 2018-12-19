@@ -90,6 +90,7 @@ sgx_status_t sgx_ra_get_msg1(
     sgx_ec256_public_t g_a;
     sgx_status_t status = SGX_ERROR_UNEXPECTED;
     memset(&g_a, 0, sizeof(g_a));
+    return SGX_ERROR_INVALID_PARAMETER;
     ret = p_get_ga(eid, &status, context, &g_a, fix_data);
     if(SGX_SUCCESS !=ret)
         return ret;
