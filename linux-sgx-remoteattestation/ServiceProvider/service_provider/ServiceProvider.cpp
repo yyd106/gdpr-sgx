@@ -300,10 +300,10 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         uint32_t cmac_size = offsetof(sgx_ra_msg2_t, mac);
         sample_ret = sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&p_msg2->g_b, cmac_size, &mac);
 
-        sgx_ec256_public_t *tmp_gb = &p_msg2.g_b;
-        unsigned char tmp_gb_buf[sizeof(sgx_ec256_public_t)];
-        memcpy(tmp_gb_buf,(unsigned char *)(tmp_gb),sizeof(sgx_ec256_public_t));
-        Log("\tgb : (%s)", ByteArrayToString(tmp_gb_buf, sizeof(sgx_ec256_public_t)));
+        sgx_ec256_public_t *tool_gb = &p_msg2.g_b;
+        unsigned char tool_gb_buf[sizeof(sgx_ec256_public_t)];
+        memcpy(tool_gb_buf,(unsigned char *)(tool_gb),sizeof(sgx_ec256_public_t));
+        Log("\tgb : (%s)", ByteArrayToString(tool_gb_buf, sizeof(sgx_ec256_public_t)));
 
         sgx_ec_key_128bit_t *tmp_smk = &g_sp_db.smk_key;
         unsigned char tmp_smk_buf[sizeof(sgx_ec_key_128bit_t)];
