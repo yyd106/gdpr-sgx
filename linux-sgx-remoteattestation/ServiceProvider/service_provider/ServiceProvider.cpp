@@ -298,25 +298,29 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         // Generate the CMACsmk for gb||SPID||TYPE||KDF_ID||Sigsp(gb,ga)
         uint8_t mac[SAMPLE_EC_MAC_SIZE] = {0};
         uint8_t tmac[SAMPLE_EC_MAC_SIZE] = {0};
-        uint8_t test_v[32] = {
+        _sgx_ec256_private_t test_v = {
             0x2b,0xc3,0xcb,0x9c,0xfb,0x80,0xb3,0x4f,
             0xc6,0x5c,0x03,0x3a,0x29,0x3a,0x0b,0x71,
             0x2b,0xc3,0xcb,0x9c,0xfb,0x80,0xb3,0x4f,
             0xc6,0x5c,0x03,0x3a,0x29,0x3a,0x0b,0x71
             };
+        sgx_ec_key_128bit_t test_k = {
+            0x2b,0xc3,0xcb,0x9c,0xfb,0x80,0xb3,0x4f,
+            0xc6,0x5c,0x03,0x3a,0x29,0x3a,0x0b,0x71
+            };
         uint32_t cmac_size = offsetof(sgx_ra_msg2_t, mac);
         sample_ret = sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&p_msg2->g_b, cmac_size, &mac);
-        sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&test_v, 32, &tmac);
+        sample_rijndael128_cmac_msg(&test_k, (uint8_t *)&test_v, sizeof(_sgx_ec256_private_t), &tmac);
 
-        //(uint8_t *) *tool_gb = &test_v;
+        _sgx_ec256_private_t *tool_gb = &test_v;
         unsigned char tool_gb_buf[32];
-        memcpy(tool_gb_buf,(unsigned char *)(test_v),32);
-        Log("\tgb : (%s)", ByteArrayToString(tool_gb_buf, 32));
+        memcpy(tool_gb_buf,(unsigned char *)(tool_gb),_sgx_ec256_private_t);
+        Log("\t msg: (%s)", ByteArrayToString(tool_gb_buf, _sgx_ec256_private_t));
 
-        sgx_ec_key_128bit_t *tmp_smk = &g_sp_db.smk_key;
+        sgx_ec_key_128bit_t *tmp_smk = &test_k;
         unsigned char tmp_smk_buf[sizeof(sgx_ec_key_128bit_t)];
         memcpy(tmp_smk_buf,(unsigned char *)(tmp_smk),sizeof(sgx_ec_key_128bit_t));
-        Log("\tsmk : (%s)", ByteArrayToString(tmp_smk_buf, sizeof(sgx_ec_key_128bit_t)));
+        Log("\t key : (%s)", ByteArrayToString(tmp_smk_buf, sizeof(sgx_ec_key_128bit_t)));
 
         sample_mac_t *tmp_mac = &tmac;
         unsigned char tmp_mac_buf[sizeof(sample_mac_t)];
