@@ -296,20 +296,46 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
 
 
         // Generate the CMACsmk for gb||SPID||TYPE||KDF_ID||Sigsp(gb,ga)
-        uint8_t mac[SAMPLE_EC_MAC_SIZE] = {0};
-        uint8_t tmac[SAMPLE_EC_MAC_SIZE] = {0};
+        
         _sgx_ec256_private_t test_v = {
             0x2b,0xc3,0xcb,0x9c,0xfb,0x80,0xb3,0x4f,
             0xc6,0x5c,0x03,0x3a,0x29,0x3a,0x0b,0x71,
             0x2b,0xc3,0xcb,0x9c,0xfb,0x80,0xb3,0x4f,
             0xc6,0x5c,0x03,0x3a,0x29,0x3a,0x0b,0x71
             };
+
+        _sgx_ec256_private_t test_des = {0};
         sgx_ec_key_128bit_t test_k = {
             0x2b,0xc3,0xcb,0x9c,0xfb,0x80,0xb3,0x4f,
             0xc6,0x5c,0x03,0x3a,0x29,0x3a,0x0b,0x71
             };
-        uint32_t cmac_size = offsetof(sgx_ra_msg2_t, mac);
-        sample_ret = sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&p_msg2->g_b, cmac_size, &mac);
+        Log("\t Aes Mac size: %d", sizeof(sample_aes_gcm_128bit_tag_t));
+        //uint8_t aes_mac[SAMPLE_AESGCM_MAC_SIZE] = {0};
+        uint8_t aes_gcm_iv[SAMPLE_SP_IV_SIZE] = {0};
+        sample_aes_gcm_128bit_tag_t aes_mac = {0};
+        ret = sample_rijndael128GCM_encrypt(&test_k,
+                                                &test_v,
+                                                sizeof(_sgx_ec256_private_t),
+                                                &test_des,
+                                                &aes_gcm_iv[0],
+                                                SAMPLE_SP_IV_SIZE,
+                                                NULL,
+                                                0,
+                                                &aes_mac);
+
+
+        _sgx_ec256_private_t *tmp_des = &test_des;
+        unsigned char tmp_des_buf[sizeof(_sgx_ec256_private_t)];
+        memcpy(tmp_des_buf,(unsigned char *)(tmp_des),sizeof(_sgx_ec256_private_t));
+        Log("\tEncrypted as : (%s)", ByteArrayToString(tmp_des_buf, sizeof(_sgx_ec256_private_t)));
+
+        sample_aes_gcm_128bit_tag_t *tmp_mac = &aes_mac;
+        unsigned char tmp_mac_buf[sizeof(sample_aes_gcm_128bit_tag_t)];
+        memcpy(tmp_mac_buf,(unsigned char *)(tmp_mac),sizeof(sample_aes_gcm_128bit_tag_t));
+        Log("\taes mac : (%s)", ByteArrayToString(tmp_mac_buf, sizeof(sample_aes_gcm_128bit_tag_t)));
+
+        /*
+        uint8_t tmac[SAMPLE_EC_MAC_SIZE] = {0};
         sample_rijndael128_cmac_msg(&test_k, (uint8_t *)&test_v, sizeof(_sgx_ec256_private_t), &tmac);
 
         _sgx_ec256_private_t *tool_gb = &test_v;
@@ -326,7 +352,14 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         unsigned char tmp_mac_buf[sizeof(sample_mac_t)];
         memcpy(tmp_mac_buf,(unsigned char *)(tmp_mac),sizeof(sample_mac_t));
         Log("\tmac : (%s)", ByteArrayToString(tmp_mac_buf, sizeof(sample_mac_t)));
+        */
 
+        
+        uint8_t mac[SAMPLE_EC_MAC_SIZE] = {0};
+
+        uint32_t cmac_size = offsetof(sgx_ra_msg2_t, mac);
+        sample_ret = sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&p_msg2->g_b, cmac_size, &mac);
+        
 
         if (SAMPLE_SUCCESS != sample_ret) {
             Log("Error, cmac fail", log::error);
