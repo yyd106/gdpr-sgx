@@ -298,15 +298,15 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         // Generate the CMACsmk for gb||SPID||TYPE||KDF_ID||Sigsp(gb,ga)
         uint8_t mac[SAMPLE_EC_MAC_SIZE] = {0};
         uint8_t tmac[SAMPLE_EC_MAC_SIZE] = {0};
-
+        uint8_t test_v[32] = {0x2bc3cb9cfb80b34fc65c033a293a0b712bc3cb9cfb80b34fc65c033a293a0b71};
         uint32_t cmac_size = offsetof(sgx_ra_msg2_t, mac);
         sample_ret = sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&p_msg2->g_b, cmac_size, &mac);
-        sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&p_msg2->g_b, sizeof(sgx_ec256_public_t), &tmac);
+        sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&test_v, 32, &tmac);
 
-        sgx_ec256_public_t *tool_gb = &p_msg2->g_b;
-        unsigned char tool_gb_buf[sizeof(sgx_ec256_public_t)];
-        memcpy(tool_gb_buf,(unsigned char *)(tool_gb),sizeof(sgx_ec256_public_t));
-        Log("\tgb : (%s)", ByteArrayToString(tool_gb_buf, sizeof(sgx_ec256_public_t)));
+        (uint8_t *) *tool_gb = &test_v;
+        unsigned char tool_gb_buf[32];
+        memcpy(tool_gb_buf,(unsigned char *)(tool_gb),32);
+        Log("\tgb : (%s)", ByteArrayToString(tool_gb_buf, 32));
 
         sgx_ec_key_128bit_t *tmp_smk = &g_sp_db.smk_key;
         unsigned char tmp_smk_buf[sizeof(sgx_ec_key_128bit_t)];
