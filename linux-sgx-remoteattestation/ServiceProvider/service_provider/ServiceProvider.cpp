@@ -303,9 +303,9 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         sample_ret = sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&p_msg2->g_b, cmac_size, &mac);
         sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&test_v, 32, &tmac);
 
-        (uint8_t *) *tool_gb = &test_v;
+        //(uint8_t *) *tool_gb = &test_v;
         unsigned char tool_gb_buf[32];
-        memcpy(tool_gb_buf,(unsigned char *)(tool_gb),32);
+        memcpy(tool_gb_buf,(unsigned char *)(test_v),32);
         Log("\tgb : (%s)", ByteArrayToString(tool_gb_buf, 32));
 
         sgx_ec_key_128bit_t *tmp_smk = &g_sp_db.smk_key;
