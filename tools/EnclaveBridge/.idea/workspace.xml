@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f94eede-ccba-4b35-923d-1f17550e186c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/Application/isv_app/isv_app.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/Application/isv_app/isv_app.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/Application/isv_enclave/isv_enclave.edl" beforeDir="false" afterPath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/Application/isv_enclave/isv_enclave.edl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EnclaveCPP/scripts/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../EnclaveCPP/scripts/build.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/GoogleMessages/Messages.pb.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/GoogleMessages/Messages.pb.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/ServiceProvider/isv_app/isv_app.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../linux-sgx-remoteattestation/ServiceProvider/isv_app/isv_app.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../linux-sgx/sdk/tkey_exchange/tkey_exchange.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../linux-sgx/sdk/tkey_exchange/tkey_exchange.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EnclaveBridge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EnclaveBridge.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />

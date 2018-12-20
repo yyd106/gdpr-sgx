@@ -386,6 +386,10 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
     } else {
         unsigned char p_sk[sizeof(sgx_ec_key_128bit_t)];
         //memset(p_sk, 0, sizeof(sgx_ec_key_128bit_t));
+        unsigned char secretbuf[sizeof(sp_aes_gcm_data_t)];
+        memcpy(secretbuf, &p_att_result_msg_body->secret, sizeof(sp_aes_gcm_data_t));
+        Log("========== att secret ===========");
+        Log("\tatt secret:%s",ByteArrayToString(secretbuf,sizeof(sp_aes_gcm_data_t)));
         ret = verify_secret_data(this->enclave->getID(),
                                  &status,
                                  this->enclave->getContext(),
@@ -408,6 +412,8 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
             print_error_message(ret);
         } else if (SGX_SUCCESS != status) {
             Log("Error, attestation result message secret using SK based AESGCM failed(status)", log::error);
+            Log("========== status ==========");
+            Log("\tstatus:%lx",status);
             print_error_message(status);
         } else {
             Log("Send attestation okay");

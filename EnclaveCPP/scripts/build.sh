@@ -73,8 +73,6 @@ while true; do
 done
 
 
-cd $homedir
-
 if [ x"$rebuild" = x"yes" ]; then
     if [ ! -d "$jnidir" ]; then
         verbose ERROR "JNI directory($jnidir) doesn't exist"
@@ -84,6 +82,7 @@ if [ x"$rebuild" = x"yes" ]; then
         verbose ERROR "JAVA directory($javadir) doesn't exist"
         exit 1
     fi
+    cd $homedir
     javac $javafile
     javah ${javafile%.*}
     #line=`sed -n '/^#include/h;${x;=}' $headerfile`
