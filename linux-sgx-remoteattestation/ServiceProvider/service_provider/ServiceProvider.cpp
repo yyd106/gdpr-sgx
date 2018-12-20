@@ -298,7 +298,12 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         // Generate the CMACsmk for gb||SPID||TYPE||KDF_ID||Sigsp(gb,ga)
         uint8_t mac[SAMPLE_EC_MAC_SIZE] = {0};
         uint8_t tmac[SAMPLE_EC_MAC_SIZE] = {0};
-        uint8_t test_v[32] = {0x2bc3cb9cfb80b34fc65c033a293a0b712bc3cb9cfb80b34fc65c033a293a0b71};
+        uint8_t test_v[32] = {
+            0x2b,0xc3,0xcb,0x9c,0xfb,0x80,0xb3,0x4f,
+            0xc6,0x5c,0x03,0x3a,0x29,0x3a,0x0b,0x71,
+            0x2b,0xc3,0xcb,0x9c,0xfb,0x80,0xb3,0x4f,
+            0xc6,0x5c,0x03,0x3a,0x29,0x3a,0x0b,0x71
+            };
         uint32_t cmac_size = offsetof(sgx_ra_msg2_t, mac);
         sample_ret = sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&p_msg2->g_b, cmac_size, &mac);
         sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&test_v, 32, &tmac);
