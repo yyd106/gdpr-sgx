@@ -314,7 +314,7 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
 
         _sgx_ec256_private_t *tool_gb = &test_v;
         unsigned char tool_gb_buf[32];
-        memcpy(tool_gb_buf,(unsigned char *)(tool_gb),sizeof(_sgx_ec256_private_t);
+        memcpy(tool_gb_buf,(unsigned char *)(tool_gb),sizeof(_sgx_ec256_private_t));
         Log("\t msg: (%s)", ByteArrayToString(tool_gb_buf, sizeof(_sgx_ec256_private_t)));
 
         sgx_ec_key_128bit_t *tmp_smk = &test_k;
