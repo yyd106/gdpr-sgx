@@ -297,14 +297,12 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
 
         // Generate the CMACsmk for gb||SPID||TYPE||KDF_ID||Sigsp(gb,ga)
         
-        _sgx_ec256_private_t test_v = {
-            0x2b,0xc3,0xcb,0x9c,0xfb,0x80,0xb3,0x4f,
-            0xc6,0x5c,0x03,0x3a,0x29,0x3a,0x0b,0x71,
+        sgx_ec_key_128bit_t test_v = {
             0x2b,0xc3,0xcb,0x9c,0xfb,0x80,0xb3,0x4f,
             0xc6,0x5c,0x03,0x3a,0x29,0x3a,0x0b,0x71
             };
 
-        _sgx_ec256_private_t test_des = {0};
+        sgx_ec_key_128bit_t test_des = {0};
         sgx_ec_key_128bit_t test_k = {
             0x2b,0xc3,0xcb,0x9c,0xfb,0x80,0xb3,0x4f,
             0xc6,0x5c,0x03,0x3a,0x29,0x3a,0x0b,0x71
@@ -315,7 +313,7 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         sample_aes_gcm_128bit_tag_t aes_mac = {0};
         ret = sample_rijndael128GCM_encrypt(&test_k,
                                                 &test_v,
-                                                sizeof(_sgx_ec256_private_t),
+                                                sizeof(sgx_ec_key_128bit_t),
                                                 &test_des,
                                                 &aes_gcm_iv[0],
                                                 SAMPLE_SP_IV_SIZE,
@@ -324,10 +322,10 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
                                                 &aes_mac);
 
 
-        _sgx_ec256_private_t *tmp_des = &test_des;
-        unsigned char tmp_des_buf[sizeof(_sgx_ec256_private_t)];
-        memcpy(tmp_des_buf,(unsigned char *)(tmp_des),sizeof(_sgx_ec256_private_t));
-        Log("\tEncrypted as : (%s)", ByteArrayToString(tmp_des_buf, sizeof(_sgx_ec256_private_t)));
+        sgx_ec_key_128bit_t *tmp_des = &test_des;
+        unsigned char tmp_des_buf[sizeof(sgx_ec_key_128bit_t)];
+        memcpy(tmp_des_buf,(unsigned char *)(tmp_des),sizeof(sgx_ec_key_128bit_t));
+        Log("\tEncrypted as : (%s)", ByteArrayToString(tmp_des_buf, sizeof(sgx_ec_key_128bit_t)));
 
         sample_aes_gcm_128bit_tag_t *tmp_mac = &aes_mac;
         unsigned char tmp_mac_buf[sizeof(sample_aes_gcm_128bit_tag_t)];
