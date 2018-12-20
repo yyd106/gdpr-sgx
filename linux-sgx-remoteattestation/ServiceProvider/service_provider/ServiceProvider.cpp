@@ -300,6 +300,22 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         uint32_t cmac_size = offsetof(sgx_ra_msg2_t, mac);
         sample_ret = sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&p_msg2->g_b, cmac_size, &mac);
 
+        sgx_ec256_public_t *tmp_gb = &p_msg2.g_b;
+        unsigned char tmp_gb_buf[sizeof(sgx_ec256_public_t)];
+        memcpy(tmp_gb_buf,(unsigned char *)(tmp_gb),sizeof(sgx_ec256_public_t));
+        Log("\tgb : (%s)", ByteArrayToString(tmp_gb_buf, sizeof(sgx_ec256_public_t)));
+
+        sgx_ec_key_128bit_t *tmp_smk = &g_sp_db.smk_key;
+        unsigned char tmp_smk_buf[sizeof(sgx_ec_key_128bit_t)];
+        memcpy(tmp_smk_buf,(unsigned char *)(tmp_smk),sizeof(sgx_ec_key_128bit_t));
+        Log("\tsmk : (%s)", ByteArrayToString(tmp_smk_buf, sizeof(sgx_ec_key_128bit_t)));
+
+        sample_mac_t *tmp_mac = &mac;
+        unsigned char tmp_mac_buf[sizeof(sample_mac_t)];
+        memcpy(tmp_mac_buf,(unsigned char *)(tmp_mac),sizeof(sample_mac_t));
+        Log("\tmac : (%s)", ByteArrayToString(tmp_mac_buf, sizeof(sample_mac_t)));
+
+
         if (SAMPLE_SUCCESS != sample_ret) {
             Log("Error, cmac fail", log::error);
             ret = SP_INTERNAL_ERROR;
