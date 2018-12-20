@@ -28,11 +28,13 @@ VerificationManager* VerificationManager::getInstance() {
 }
 
 
-int VerificationManager::init() {
+int VerificationManager::init(int isVerify) {
+    this->isVerify = isVerify;
     if (this->sp) {
         delete this->sp;
         this->sp = new ServiceProvider(this->ws);
     }
+    this->sp->setIsVerify(isVerify);
 
     this->nm->Init();
     this->nm->connectCallbackHandler([this](string v, int type) {
@@ -128,6 +130,8 @@ string VerificationManager::createInitMsg(int type, string msg) {
 
     return nm->serialize(init_msg);
 }
+/*
+*/
 
 
 vector<string> VerificationManager::incomingHandler(string v, int type) {

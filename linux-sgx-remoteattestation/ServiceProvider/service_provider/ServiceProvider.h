@@ -63,6 +63,8 @@ public:
     sgx_ra_msg3_t* assembleMSG3(Messages::MessageMSG3 msg);
     int sp_ra_proc_app_att_hmac(Messages::SecretMessage *new_msg, string hmac_key, string hmac_key_filename);
 
+    void setIsVerify(int isVerify);
+
 private:
     WebService *ws = NULL;
     bool g_is_sp_registered = false;
@@ -70,6 +72,8 @@ private:
     sp_db_item_t g_sp_db;
     const uint16_t AES_CMAC_KDF_ID = 0x0001;
     uint8_t validation_result[MAX_VERIFICATION_RESULT];
+
+    int isVerify = 1;
 };
 
 #endif

@@ -269,7 +269,8 @@ sgx_status_t verify_secret_data (
     uint32_t secret_size,
     uint8_t *p_gcm_mac,
     uint32_t max_verification_length,
-    uint8_t *p_ret) {
+    uint8_t *p_ret,
+    unsigned char *p_sk) {
     sgx_status_t ret = SGX_SUCCESS;
     sgx_ec_key_128bit_t sk_key;
 
@@ -291,6 +292,7 @@ sgx_status_t verify_secret_data (
                                          NULL,
                                          0,
                                          (const sgx_aes_gcm_128bit_tag_t *) (p_gcm_mac));
+        memcpy(p_sk, (unsigned char*)&sk_key, sizeof(sgx_ec_key_128bit_t));
 
         if (SGX_SUCCESS == ret) {
             if (decrypted[0] == 0) {

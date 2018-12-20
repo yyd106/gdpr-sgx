@@ -1,4 +1,15 @@
 #!/bin/bash
+usage()
+{
+cat << EOF
+    ./genApp.sh [option] -d <maketype>
+        options:
+                -h: use hardware mode to build
+                -s: use simulation mode to build
+                -d: make type which can only be server, app and clean
+EOF
+}
+
 function makeServer()
 {
     echo "[INFO] making service provider..."
@@ -12,7 +23,7 @@ function makeApp()
     echo "[INFO] making enclave application..."
     cd $AppDir
     make clean
-    make SGX_MODE=HW SGX_PRERELEASE=1
+    make SGX_MODE=$runtype SGX_PRERELEASE=1
 }
 
 function makeClean() 
@@ -27,20 +38,38 @@ function makeClean()
 ########## MAIN BODY ##########
 basedir=`dirname $0`
 basedir=`cd $basedir;pwd`
-
-makeType=$1
-
 AppDir=$basedir/../Application
 SerDir=$basedir/../ServiceProvider
 
-if [ "$makeType" = "server" ]; then
+runtype="HW"
+maketype=""
+
+while getopts 'hsd:' OPT; do
+    case $OPT in
+        h)
+            runtype="HW";;
+        s)
+            runtype="SIM";;
+        d)
+            maketype=$OPTARG;;
+        ?)
+            usage; exit 1 ;;
+    esac
+done
+
+usage
+
+if [ x"$runtype" = x"" ]; then
+    echo "[INFO] use HW mode to build app. If you don't have sgx hardware, please use '-s' to set simulation mode."
+fi
+
+if [ x"$maketype" = x"server" ]; then
     makeServer
-elif [ "$makeType" = "app" ]; then
+elif [ x"$maketype" = x"app" ]; then
     makeApp
-elif [ "$makeType" = "clean" ]; then
+elif [ x"$maketype" = x"clean" ]; then
     makeClean
 else
     makeServer
     makeApp
 fi
-

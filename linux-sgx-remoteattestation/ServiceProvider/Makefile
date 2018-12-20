@@ -1,7 +1,6 @@
 ######## SGX SDK Settings ########
 SGX_SDK ?= /opt/intel/sgxsdk
-SGX_MODE ?= SIM
-SGX_ARCH ?= x64
+SGX_MODE ?= SIM SGX_ARCH ?= x64
 
 ifeq ($(shell getconf LONG_BIT), 32)
 	SGX_ARCH := x86
@@ -48,6 +47,11 @@ endif
 App_Cpp_Files := isv_app/isv_app.cpp ../Util/LogBase.cpp ../Networking/NetworkManager.cpp \
 ../Networking/Session.cpp ../Networking/Client.cpp ../Networking/Server.cpp isv_app/VerificationManager.cpp ../Networking/NetworkManagerClient.cpp \
 ../GoogleMessages/Messages.pb.cpp ../Networking/AbstractNetworkOps.cpp ../Util/UtilityFunctions.cpp ../WebService/WebService.cpp \
+../Util/Base64.cpp 
+
+#App_Cpp_Files := isv_app/isv_app.cpp ../Util/LogBase.cpp ../Networking/NetworkManager.cpp \
+../Networking/Session.cpp ../Networking/Client.cpp ../Networking/Server.cpp isv_app/VerificationManager.cpp ../Networking/NetworkManagerClient.cpp \
+../Networking/AbstractNetworkOps.cpp ../Util/UtilityFunctions.cpp ../WebService/WebService.cpp \
 ../Util/Base64.cpp 
 
 App_Include_Paths := -Iservice_provider -I$(SGX_SDK)/include -Iheaders -I../Util -I../Networking -Iisv_app -I../GoogleMessages -I/usr/local/include -I../WebService
@@ -115,9 +119,9 @@ isv_app/%.o: isv_app/%.cpp
 	@$(CXX) $(App_Cpp_Flags) -c $< -o $@
 	@echo "CXX  <=  $<"
 
-../GoogleMessages/%.o: ../GoogleMessages/%.cpp
-	@$(CXX) $(App_Cpp_Flags) -c $< -o $@
-	@echo "CXX  <=  $<"
+#../GoogleMessages/%.o: ../GoogleMessages/%.cc
+#	@$(CXX) -c $< -std=c++11 -lpthread -lprotobuf -o $@
+#	@echo "CXX  <=  $<"
 
 ../WebService/%.o: ../WebService/%.cpp
 	@$(CXX) $(App_Cpp_Flags) -c $< -o $@

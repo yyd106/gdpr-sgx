@@ -13,12 +13,16 @@ int Main(int argc, char* argv[]) {
     LogBase::Inst();
 
     int ret = 0;
+    printf("========== msg life is started ==========\n");
+    int keymode = 0;
+    if(argc > 1) {
+        keymode = atoi(argv[1]);
+    }
 
     MessageHandler msg;
-    msg.init();
+    msg.init(keymode);
     msg.start();
 
-    printf("========== msg life is over ==========\n");
 
     return ret;
 }

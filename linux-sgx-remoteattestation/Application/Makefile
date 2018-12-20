@@ -50,6 +50,10 @@ App_Cpp_Files := isv_app/isv_app.cpp ../Util/LogBase.cpp ../Networking/NetworkMa
 ../Networking/Client.cpp ../Networking/NetworkManagerServer.cpp ../GoogleMessages/Messages.pb.cpp ../Networking/AbstractNetworkOps.cpp \
 ../Util/UtilityFunctions.cpp ../Enclave/Enclave.cpp ../MessageHandler/MessageHandler.cpp ../Util/Base64.cpp
 
+#App_Cpp_Files := isv_app/isv_app.cpp ../Util/LogBase.cpp ../Networking/NetworkManager.cpp ../Networking/Session.cpp ../Networking/Server.cpp \
+../Networking/Client.cpp ../Networking/NetworkManagerServer.cpp ../Networking/AbstractNetworkOps.cpp \
+../Util/UtilityFunctions.cpp ../Enclave/Enclave.cpp ../MessageHandler/MessageHandler.cpp ../Util/Base64.cpp
+
 App_Include_Paths := -I../Util -Iservice_provider -I$(SGX_SDK)/include -Iheaders  -I../Networking -Iisv_app -I../GoogleMessages -I/usr/local/include -I../Enclave \
 -I../MessageHandler
 
@@ -178,6 +182,10 @@ isv_app/%.o: isv_app/%.cpp
 ../Enclave/%.o: ../Enclave/%.cpp
 	@$(CXX) $(App_Cpp_Flags) -c $< -o $@
 	@echo "CXX  <=  $<"
+
+#../GoogleMessages/%.o: ../GoogleMessages/%.cc
+#	@$(CXX) -c $< -std=c++11 -lpthread -lprotobuf -o $@
+#	@echo "CXX  <=  $<"
 
 $(App_Name): isv_app/isv_enclave_u.o $(App_Cpp_Objects)
 	@$(CXX) $^ -o $@ $(App_Link_Flags) /opt/intel/sgxsdk/lib64/libsgx_capable.so

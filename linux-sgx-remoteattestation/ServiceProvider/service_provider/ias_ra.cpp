@@ -70,22 +70,27 @@ int ias_verify_attestation_evidence(
     uint8_t *p_isv_quote,
     uint8_t* pse_manifest,
     ias_att_report_t* p_attestation_verification_report,
-    WebService *ws) {
+    WebService *ws,
+    int isVerify) {
     int ret = 0;
     sample_ecc_state_handle_t ecc_state = NULL;
 
     vector<pair<string, string>> result;
-    //bool error = ws->verifyQuote(p_isv_quote, pse_manifest, NULL, &result);
-    printf("[INFO] === add debug === ias_ra.cpp escape verifyQuote\n");
     bool error = false;
+    if(isVerify == 1) {
+        error = ws->verifyQuote(p_isv_quote, pse_manifest, NULL, &result);
+    }
+    printf("[INFO] === add debug === ias_ra.cpp escape verifyQuote\n");
 
 
     if (error || (NULL == p_isv_quote) || (NULL == p_attestation_verification_report)) {
         return -1;
     }
 
-    //string report_id;
-    string report_id = "1103";
+    string report_id;
+    if(isVerify == 0) {
+        report_id = "testid";
+    }
     uintmax_t test;
     ias_quote_status_t quoteStatus;
     string timestamp, epidPseudonym, isvEnclaveQuoteStatus;
