@@ -538,21 +538,3 @@ vector<string> MessageHandler::incomingHandler(string v, int type) {
 
     return res;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
