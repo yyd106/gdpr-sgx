@@ -12,7 +12,9 @@
   * including protobuf_msg.js for serializing and deserializing Messages.Msg0-4.
   * others are for ECDH encryptions.
 * main logic for sending/receving Messages.MsgX is in webclient.html.
-* to involve new javascript libraries from nodejs, you need to install browserify to make it work for browser javascript.
+* Node.js javascript has some minor different Language Grammar than Browser javascript.
+  * to involve new javascript libraries from nodejs in browser, you need to install browserify to make it work.
+  * http://browserify.org/
 
 ## java files
 * EnclaveThreadManager is a file to init EnclaveBridge
