@@ -200,23 +200,3 @@ vector<string> VerificationManager::incomingHandler(string v, int type) {
 
     return res;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
