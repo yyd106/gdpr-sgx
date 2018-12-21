@@ -15,6 +15,9 @@
 * Node.js javascript has some minor different Language Grammar than Browser javascript.
   * to involve new javascript libraries from nodejs in browser, you need to install browserify to make it work.
   * http://browserify.org/
+* build protobuf for javascript
+  * https://hk.saowen.com/a/9e4dfeeb783b55b3e1003f9aacf176ac7175b3979805a4317e27c7255a67a1b4
+  * https://zhuanlan.zhihu.com/p/34664727
 
 ## java files
 * EnclaveThreadManager is a file to init EnclaveBridge
