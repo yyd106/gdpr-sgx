@@ -11,6 +11,7 @@
 * current javascript libraries are in resources/js/
   * including protobuf_msg.js for serializing and deserializing Messages.Msg0-4.
   * others are for ECDH encryptions.
+* main logic for sending/receving Messages.MsgX is in webclient.html.
 * to involve new javascript libraries from nodejs, you need to install browserify to make it work for browser javascript.
 
 ## java files
