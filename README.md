@@ -1,9 +1,9 @@
 # gdpr-sgx
 ## compile and deploy
- $ cd comsgxtrial
- $ mvn package
- $ ls target/
+1. $ cd comsgxtrial
+2. $ mvn package
+3. $ ls target/
  com.sgxtrial.war
- $ cp com.sgxtrial.war $TOMCAT/webapps/
- $ restart tomcat, then visit http://localhost:8080/com.sgxtrial/webclient.html
+4. $ cp com.sgxtrial.war $TOMCAT/webapps/
+5. $ restart tomcat, then visit http://localhost:8080/com.sgxtrial/webclient.html
 ## 
