@@ -14,11 +14,12 @@ verbose()
 {
     local type=$1
     local info=$2
+    local time=`date "+%Y/%m/%d %T.%3N"`
     if [ x"$type" = x"ERROR" ]; then
-        echo -e "${RED}`date "+%s"` $type $info${NC}" >&2 
+        echo -e "${RED}$time [$type] $info${NC}" >&2 
         return
     fi
-    echo -e "${GREEN}`date "+%s"` $type $info${NC}"
+    echo -e "${GREEN}$time [$type] $info${NC}"
 }
 
 ############### MAIN BODY ###############
@@ -75,7 +76,7 @@ done
 
 if [ x"$rebuild" = x"yes" ]; then
     if [ ! -d "$jnidir" ]; then
-        verbose ERROR "JNI directory($jnidir) doesn't exist"
+        verbose ERROR "JNI  directory($jnidir) doesn't exist"
         exit 1
     fi
     if [ ! -d "$javadir" ]; then
@@ -91,7 +92,7 @@ if [ x"$rebuild" = x"yes" ]; then
 fi
 
 verbose INFO "Rebuilding jnilib file..."
-verbose INFO "JNI des dir is:$jnidir"
+verbose INFO "JNI  des dir is:$jnidir"
 verbose INFO "JAVA des dir is:$javadir"
 
 make clean

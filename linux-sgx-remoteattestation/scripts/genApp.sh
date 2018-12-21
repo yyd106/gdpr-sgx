@@ -14,11 +14,12 @@ verbose()
 {
     local type="$1"
     local info="$2"
-    local color=$GREEN
+    local time=`date "+%Y/%m/%d %T.%3N"`
     if [ x"$type" = x"ERROR" ]; then
-        color=$RED
+        echo -e "${RED}$time [$type] $info${NC}" >&2 
+        return
     fi
-    echo -e "${color}`date '+%s'` $type $info${NC}"
+    echo -e "${GREEN}$time [$type] $info${NC}"
 }
 
 function makeServer()
