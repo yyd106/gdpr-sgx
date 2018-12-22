@@ -66,12 +66,18 @@ function install_sdk_deps()
     sudo dpkg -i $psw_file || { verbose ERROR "Install SGX PSW failed!"; exit 1; }
     
     rm $driver_file $psw_file
+
+    verbose INFO "Downloading prebuilt binaries to prebuilt folder..."
+    cd $sdkdir
+    ./download_prebuilt.sh
+    cd -
 }
 
 ############### MAIN BODY ###############
 
 basedir=`dirname $0`
 basedir=`cd $basedir; pwd`
+sdkdir=$basedir/../linux-sgx
 sourcedir=$basedir/../sources
 sourcedir=`cd $sourcedir;pwd`
 
