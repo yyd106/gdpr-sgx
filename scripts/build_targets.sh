@@ -7,7 +7,9 @@ cat << EOF
                 -s: build sdk
                 -r: build remote attestation
                 -j: build enclave cpp jni library
-                -m: remote attestation build mode, could just be HW/SIM
+                -m: remote attestation build mode, could just be HW/SIM.
+                    HW is hardware mod while SIM is simulation mode.
+                    Default value is HW.
 EOF
 }
 
@@ -36,6 +38,10 @@ function buildSDK()
     cd $sdkdir
     verbose INFO "Building SGX SDK..."
     ./scripts/build_sdk.sh
+    if [ $? -ne 0 ]; then
+        verbose ERROR "Build SGX SDK failed!"
+        exit 1
+    fi
 }
 
 function buildEnclaveJNI()
@@ -56,8 +62,12 @@ function buildRemoteAttestation()
         verbose INFO "Build attestation app with software mode..."
         ./scripts/genApp.sh -s
     else
-        verbose INFO "Please indicate correct type for building remote attestation code(HW/SIM)!" >&2
+        verbose ERROR "Please indicate correct type for building remote attestation code(HW/SIM)!" >&2
+        return
     fi
+    echo "LD_LIBRARY_PATH=/opt/intel/sgxsdk/sdk_libs:$LD_LIBRARY_PATH" >> ~/.bashrc
+    verbose INFO "<<< Attention!!! >>>\tIf tip \"libsgx_xxx.so: No such file or directory\"\n\
+        \tPlease run 'source ~/.bashrc' to refresh LD_LIBRARY_PATH\n<<< Attention!!! >>>"
 }
 
 ############### MAIN BODY ###############
@@ -89,13 +99,17 @@ mkdir -p $targetdir || { verbose ERROR "Create $targetdir failed!"; exit 1; }
 while getopts "srjhm:" OPT; do
     case $OPT in
         s)
-            doBuildSDK="yes";;
+            doBuildSDK="yes"
+            ;;
         r)
-            doBuildAttest="yes";;
+            doBuildAttest="yes"
+            ;;
         j)
-            doBuildJNI="yes";;
+            doBuildJNI="yes"
+            ;;
         m)
-            attestMode=$OPTARG;;
+            attestMode=$OPTARG
+            ;;
         h)
             usage;;
         ?)
