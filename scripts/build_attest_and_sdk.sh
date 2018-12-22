@@ -2,7 +2,7 @@
 usage()
 {
 cat << EOF
-    ./attest_and_sdk_build.sh [option]
+    ./build_attest_and_sdk.sh [option]
         options:
                 -s: build sdk
                 -r: build remote attestation

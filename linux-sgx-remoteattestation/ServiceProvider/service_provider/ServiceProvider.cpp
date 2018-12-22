@@ -597,12 +597,21 @@ int ServiceProvider::sp_ra_proc_msg3_req(Messages::MessageMSG3 msg, Messages::At
         uint8_t aes_gcm_iv[SAMPLE_SP_IV_SIZE] = {0};
         p_att_result_msg->secret.payload_size = MAX_VERIFICATION_RESULT;
 
+        Log("============ IAS STATUS ===========");
+        Log("\treport status:%d",attestation_report.status);
+        Log("\tpse status   :%d",attestation_report.pse_status);
+
         if ((IAS_QUOTE_OK == attestation_report.status) &&
                 (IAS_PSE_OK == attestation_report.pse_status) &&
                 (isv_policy_passed == true)) {
             memset(validation_result, '\0', MAX_VERIFICATION_RESULT);
             validation_result[0] = 0;
             validation_result[1] = 1;
+
+            Log("========== sk key ==========");
+            unsigned char skbuf[sizeof(sgx_ec_key_128bit_t)];
+            memcpy(skbuf, (unsigned char*)&g_sp_db.sk_key, sizeof(sgx_ec_key_128bit_t));
+            Log("\tsp sk_key:%s",ByteArrayToString(skbuf,sizeof(sgx_ec_key_128bit_t)));
 
             ret = sample_rijndael128GCM_encrypt(&g_sp_db.sk_key,
                                                 &validation_result[0],
@@ -658,6 +667,10 @@ int ServiceProvider::sp_ra_proc_msg3_req(Messages::MessageMSG3 msg, Messages::At
 
         for (int i=0; i<p_att_result_msg->secret.payload_size; i++)
             att_msg->add_payload(p_att_result_msg->secret.payload[i]);
+        Log("========== ATT SECRET ==========");
+        unsigned char secretbuf[sizeof(sp_aes_gcm_data_t)];
+        memcpy(secretbuf, &p_att_result_msg->secret, sizeof(sp_aes_gcm_data_t));
+        Log("\tatt secret:%s",ByteArrayToString(secretbuf,sizeof(sp_aes_gcm_data_t)));
     }
 
     return ret;
