@@ -26,11 +26,12 @@ verbose()
 
 basedir=`dirname $0`
 basedir=`cd $basedir; pwd`
-target="libEnclaveBridge.so"
+libfile="libEnclaveBridge.so"
 javafile="EnclaveBridge.java"
 headerfile="EnclaveBridge.h"
-jnidir=`cd $basedir/../../tools/EnclaveBridge/src/main/jnilib; pwd`
-javadir=`cd $basedir/../../tools/EnclaveBridge/src/main/java; pwd`
+projectdir=`cd $basedir/../../tools/EnclaveBridge/src/main/;pwd`
+jnidir=$projectdir/jnilib
+javadir=$projectdir/java
 homedir=$basedir/..
 
 RED='\033[0;31m'
@@ -39,7 +40,7 @@ NC='\033[0m'
 
 rebuild="no"
 
-CMD=`getopt -o "rl:j:" -a -l "rebuild,jnilib:,javafile:" -n "usage" -- "$@"`
+CMD=`getopt -o "rl:j:d:" -a -l "rebuild,jnilib:,javafile:,targetdir:" -n "usage" -- "$@"`
 if [ $? != 0 ]; then
     verbose ERROR "Parameter error, terminate" >&2
     exit 1
@@ -62,6 +63,10 @@ while true; do
             javadir=$2
             shift 2
             ;;
+        -d|--targetdir|-targetdir)
+            targetdir=$2
+            shift 2
+            ;;
         --)
             shift
             break
@@ -73,6 +78,10 @@ while true; do
     esac
 done
 
+if [ ! -d "$targetdir" ]; then
+    verbose ERROR "$targetdir doesn't exist or is not a directory"
+    exit 1
+fi
 
 if [ x"$rebuild" = x"yes" ]; then
     if [ ! -d "$jnidir" ]; then
@@ -92,10 +101,18 @@ if [ x"$rebuild" = x"yes" ]; then
 fi
 
 verbose INFO "Rebuilding jnilib file..."
-verbose INFO "JNI  des dir is:$jnidir"
-verbose INFO "JAVA des dir is:$javadir"
 
 make clean
 make
-cp $target $jnidir
-cp $javafile $javadir
+if [ $? -ne 0 ]; then
+    verbose ERROR "Building jni library failed!"
+    exit 1
+fi
+cp $libfile $javafile $targetdir
+
+#verbose INFO "Please copy $libfile and $javafile to your webserver project"
+#verbose INFO "Copying jnilib file and java file to indicated directory..."
+#verbose INFO "JNI  des dir is:$jnidir"
+#verbose INFO "JAVA des dir is:$javadir"
+#cp $libfile $jnidir
+#cp $javafile $javadir

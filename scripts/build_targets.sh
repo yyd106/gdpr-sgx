@@ -2,10 +2,11 @@
 usage()
 {
 cat << EOF
-    ./build_attest_and_sdk.sh [option]
+    ./build_targets.sh [option]
         options:
                 -s: build sdk
                 -r: build remote attestation
+                -j: build enclave cpp jni library
                 -m: remote attestation build mode, could just be HW/SIM
 EOF
 }
@@ -37,6 +38,13 @@ function buildSDK()
     ./scripts/build_sdk.sh
 }
 
+function buildEnclaveJNI()
+{
+    cd $jnidir
+    verbose INFO "Building jni library..."
+    ./scripts/build.sh -r -d "$targetdir"
+}
+
 function buildRemoteAttestation()
 {
     checkPrerequisite
@@ -56,24 +64,36 @@ function buildRemoteAttestation()
 
 basedir=`dirname $0`
 basedir=`cd $basedir; pwd`
-sdkdir=$basedir/../linux-sgx
-attestdir=$basedir/../linux-sgx-remoteattestation
+homedir=`cd $basedir/..; pwd`
+sdkdir=$homedir/linux-sgx
+attestdir=$homedir/linux-sgx-remoteattestation
+jnidir=$homedir/EnclaveCPP
+targetdir=$homedir/target
 libcryptodir=$attestdir/ServiceProvider/sample_libcrypto
+
 attestMode="HW"
 doBuildSDK=no
 doBuildAttest=no
+doBuildJNI=no
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
+# clean previous packages
+if [ -e "$targetdir" ]; then
+    rm -rf $targetdir
+fi
+mkdir -p $targetdir || { verbose ERROR "Create $targetdir failed!"; exit 1; }
 
-while getopts "srhm:" OPT; do
+while getopts "srjhm:" OPT; do
     case $OPT in
         s)
             doBuildSDK="yes";;
         r)
             doBuildAttest="yes";;
+        j)
+            doBuildJNI="yes";;
         m)
             attestMode=$OPTARG;;
         h)
@@ -83,7 +103,7 @@ while getopts "srhm:" OPT; do
     esac
 done
 
-if [ x"$doBuildSDK" = x"no" -a x"$doBuildAttest" = x"no" ]; then
+if [ x"$doBuildSDK" = x"no" -a x"$doBuildAttest" = x"no" -a x"$doBuildJNI" = x"no" ]; then
     usage
     exit 1
 fi
@@ -94,5 +114,9 @@ fi
 
 if [ x"$doBuildAttest" = x"yes" ]; then
     buildRemoteAttestation
+fi
+
+if [ x"$doBuildJNI" = x"yes" ]; then
+    buildEnclaveJNI
 fi
 
