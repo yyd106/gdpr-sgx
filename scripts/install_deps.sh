@@ -34,6 +34,8 @@ function apply_pkg_result()
 function install_attest_deps()
 {
     verbose INFO "Installing remote attestation dependencies..."
+    sudo apt-get install libboost-thread-dev libboost-system-dev curl libcurl4-openssl-dev libssl-dev liblog4cpp5-dev libjsoncpp-dev
+    apply_pkg_result $? "common tools"
     sudo dpkg -i $lib9v5pkg
     apply_pkg_result $? "$lib9v5pkg"
     sudo dpkg -i $liblite9v5pkg
@@ -44,13 +46,26 @@ function install_attest_deps()
     apply_pkg_result $? "$libc9v5pkg"
     sudo dpkg -i $compilerpkg
     apply_pkg_result $? "$compilerpkg"
-    sudo apt-get install libboost-thread-dev libboost-system-dev curl libcurl4-openssl-dev libssl-dev liblog4cpp5-dev libjsoncpp-dev
-    apply_pkg_result $? "common tools"
 }
 
 function install_sdk_deps()
 {
+    local driver_url="https://download.01.org/intel-sgx/linux-2.3.1/ubuntu16.04/sgx_linux_x64_driver_4d69b9c.bin"
+    local psw_url="https://download.01.org/intel-sgx/linux-2.3.1/ubuntu16.04/libsgx-enclave-common_2.3.101.46683-1_amd64.deb"
+    local driver_file=`basename $driver_url`
+    local psw_file=`basename $psw_url`
+
     verbose INFO "Installing SGX SDK dependencies..."
+    verbose INFO "===== Installing SGX SDK tools..."
+    sudo apt-get install build-essential ocaml automake autoconf libtool wget python libssl-dev libcurl4-openssl-dev
+    verbose INFO "===== Installing SGX Driver..."
+    wget $driver_url || { verbose ERROR "Get SDK Driver failed!"; exit 1; }
+    sudo chmod +x $driver_file && sudo ./$driver_file || { verbose ERROR "Install SGX Driver failed!"; exit 1; }
+    verbose INFO "===== Installing SGX PSW..."
+    wget $psw_url || { verbose ERROR "Get SGX PSW failed!"; exit 1; }
+    sudo dpkg -i $psw_file || { verbose ERROR "Install SGX PSW failed!"; exit 1; }
+    
+    rm $driver_file $psw_file
 }
 
 ############### MAIN BODY ###############
