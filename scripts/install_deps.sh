@@ -40,6 +40,8 @@ function install_attest_deps()
     apply_pkg_result $? "$liblite9v5pkg"
     sudo dpkg -i $libdevpkg
     apply_pkg_result $? "$libdevpkg"
+    sudo dpkg -i $libc9v5pkg
+    apply_pkg_result $? "$libc9v5pkg"
     sudo dpkg -i $compilerpkg
     apply_pkg_result $? "$compilerpkg"
     sudo apt-get install libboost-thread-dev libboost-system-dev curl libcurl4-openssl-dev libssl-dev liblog4cpp5-dev libjsoncpp-dev
@@ -65,6 +67,7 @@ NC='\033[0m'
 lib9v5pkg=$sourcedir/`ls $sourcedir | grep "f9v5" | grep "2.6.1"`
 liblite9v5pkg=$sourcedir/`ls $sourcedir | grep "\-lite9v5" | grep "2.6.1"`
 libdevpkg=$sourcedir/`ls $sourcedir | grep "\-dev" | grep "2.6.1"`
+libc9v5pkg=$sourcedir/`ls $sourcedir | grep "libprotoc9v5" | grep "2.6.1"`
 compilerpkg=$sourcedir/`ls $sourcedir | grep "compiler" | grep "2.6.1"`
 
 installed="no"
