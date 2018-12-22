@@ -10,9 +10,21 @@ cat << EOF
 EOF
 }
 
+verbose()
+{
+    local type="$1"
+    local info="$2"
+    local time=`date "+%Y/%m/%d %T.%3N"`
+    if [ x"$type" = x"ERROR" ]; then
+        echo -e "${RED}$time [$type] $info${NC}" >&2 
+        return
+    fi
+    echo -e "${GREEN}$time [$type] $info${NC}"
+}
+
 function makeServer()
 {
-    echo "[INFO] making service provider..."
+    verbose INFO "Making service provider..."
     cd $SerDir
     make clean
     make
@@ -20,7 +32,7 @@ function makeServer()
 
 function makeApp()
 {
-    echo "[INFO] making enclave application..."
+    verbose INFO "Making enclave application..."
     cd $AppDir
     make clean
     make SGX_MODE=$runtype SGX_PRERELEASE=1
@@ -41,6 +53,10 @@ basedir=`cd $basedir;pwd`
 AppDir=$basedir/../Application
 SerDir=$basedir/../ServiceProvider
 
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
 runtype="HW"
 maketype=""
 
@@ -52,15 +68,17 @@ while getopts 'hsd:' OPT; do
             runtype="SIM";;
         d)
             maketype=$OPTARG;;
+        h)
+            usage;;
         ?)
             usage; exit 1 ;;
     esac
 done
 
-usage
+verbose INFO "Type -h to get help info"
 
 if [ x"$runtype" = x"" ]; then
-    echo "[INFO] use HW mode to build app. If you don't have sgx hardware, please use '-s' to set simulation mode."
+    verbose INFO "Use HW mode to build app. If you don't have sgx hardware, please use '-s' to set simulation mode."
 fi
 
 if [ x"$maketype" = x"server" ]; then
