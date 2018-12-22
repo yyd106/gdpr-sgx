@@ -51,7 +51,7 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
     }
 
     do {
-        //=====================  RETRIEVE SIGRL FROM IAS =======================
+        //@@@@@@@@@@@@@@@@@@  =====================  RETRIEVE SIGRL FROM IAS =======================
         uint8_t GID[4];
 
         for (int i=0; i<4; i++)
