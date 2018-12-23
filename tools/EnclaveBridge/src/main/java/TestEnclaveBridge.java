@@ -7,11 +7,21 @@ public class TestEnclaveBridge
 {
     public static void main(String[] args) {
         EnclaveBridge eb = new EnclaveBridge();
+        String para[] = new String[2];
+        //System.out.println(Messages.Type.RA_VERIFICATION.ordinal());
+        Messages.InitialMessage init_msg = Messages.InitialMessage.newBuilder()
+                .setType(Messages.Type.RA_VERIFICATION_VALUE)
+                .build();
+        para[0] = String.valueOf(Messages.Type.RA_VERIFICATION_VALUE);
+        para[1] = init_msg.toString();
+        String res[] = eb.handleMessages(eb.messageHandlerOBJ, para[0], init_msg.toByteArray());
+        System.out.println(res[0]);
         //String res = eb.handleVerification(eb.messageHandlerOBJ);
-        byte[] res = eb.handleVerification(eb.messageHandlerOBJ);
+        //byte[] res = eb.handleVerification(eb.messageHandlerOBJ);
         //System.out.println((res.length()));
         //System.out.println("("+res+")");
         //byte[] res = eb.handleVerification(eb.messageHandlerOBJ);
+        /*
         try {
             //byte[] data = res.getBytes();
             //System.out.println("byte size:" + res.length());
@@ -26,5 +36,6 @@ public class TestEnclaveBridge
         } catch (InvalidProtocolBufferException  e) {
             System.out.println(e.getMessage());
         }
+        */
     }
 }

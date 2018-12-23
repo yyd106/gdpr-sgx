@@ -18,35 +18,11 @@ JNIEXPORT jlong JNICALL Java_EnclaveBridge_createMessageHandlerOBJ
 
 /*
  * Class:     EnclaveBridge
- * Method:    handleVerification
- * Signature: (J)[B
+ * Method:    handleMessages
+ * Signature: (JLjava/lang/String;[B)[Ljava/lang/String;
  */
-JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleVerification
-  (JNIEnv *, jobject, jlong);
-
-/*
- * Class:     EnclaveBridge
- * Method:    handleMSG0
- * Signature: (JLjava/lang/String;)[B
- */
-JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleMSG0
-  (JNIEnv *, jobject, jlong, jstring);
-
-/*
- * Class:     EnclaveBridge
- * Method:    handleMSG2
- * Signature: (JLjava/lang/String;)[B
- */
-JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleMSG2
-  (JNIEnv *, jobject, jlong, jstring);
-
-/*
- * Class:     EnclaveBridge
- * Method:    handleAttestationResult
- * Signature: (JLjava/lang/String;)[B
- */
-JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleAttestationResult
-  (JNIEnv *, jobject, jlong, jstring);
+JNIEXPORT jobjectArray JNICALL Java_EnclaveBridge_handleMessages
+  (JNIEnv *, jobject, jlong, jstring, jbyteArray);
 
 #ifdef __cplusplus
 }

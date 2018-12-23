@@ -18,7 +18,9 @@ message SecretMessage {
 message InitialMessage {
 	required uint32 type = 1;
 	optional uint32 size = 2;
-} message MessageMsg0 {
+}
+
+message MessageMsg0 {
 	required uint32 type = 1;
 	required uint32 epid = 2;
 	optional uint32 status = 3;

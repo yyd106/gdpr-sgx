@@ -65,29 +65,42 @@ JNIEXPORT jlong JNICALL Java_EnclaveBridge_createMessageHandlerOBJ(JNIEnv *env, 
     return (jlong) new MessageHandler();
 }
 
-JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleVerification(JNIEnv *env, jobject obj, jlong msgHandlerAddr)
+JNIEXPORT jobjectArray JNICALL Java_EnclaveBridge_handleMessages(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jstring type, jbyteArray msg)
 {
-    string res = ((MessageHandler*)msgHandlerAddr)->handleVerification();
-    return string2jbyteArray(env, res);
-}
+    /*
+    printf("call sgx\n");
+    jclass cls = env->FindClass("java/lang/String");
+    jobjectArray result = (jobjectArray)env->NewObjectArray(2, cls, NULL);
 
-JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleMSG0(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jstring msg0)
-{
-    string MSG0 = jstring2string(env, msg0);
-    string res = ((MessageHandler*)msgHandlerAddr)->handleMSG0(MSG0);
-    return string2jbyteArray(env, res);
-}
+    int len = env->GetArrayLength(data);
+    if(len != 2) {
+        printf("[ERROR] Input array length can only be two!");
+        return result;
+    }
+    jstring jType = (jstring) (env->GetObjectArrayElement(data, 0));
+    jstring jMsg = (jstring) (env->GetObjectArrayElement(data, 1));
+    string TYPE = jstring2string(env, jType);
+    printf("type is:%s\n",TYPE.c_str());
+    int rType = atoi(TYPE.c_str());
+    string MSG = jstring2string(env, jMsg);
 
-JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleMSG2(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jstring msg2)
-{
-    string MSG2 = jstring2string(env, msg2);
-    string res = ((MessageHandler*)msgHandlerAddr)->handleMSG2(MSG2);
-    return string2jbyteArray(env, res);
-}
+    string *res = ((MessageHandler*)msgHandlerAddr)->handleMessages(MSG,rType);
+    env->SetObjectArrayElement(result, 0, charTojstring(env, res[0].c_str()));
+    env->SetObjectArrayElement(result, 1, charTojstring(env, res[1].c_str()));
+    return result;
+    */
+    string TYPE = jstring2string(env, type);
+    int rType = atoi(TYPE.c_str());
+    //char p_msg[env->GetArrayLength(msg)]
+    const char *p_msg = (const char*)env->GetByteArrayElements(msg,0);
+    string MSG(p_msg);
+    vector<string> res = ((MessageHandler*)msgHandlerAddr)->handleMessages(MSG,rType);
+    //printf("res[0]:%s\n",res[0].c_str());
 
-JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleAttestationResult(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jstring msg)
-{
-    string MSG = jstring2string(env, msg);
-    string res = ((MessageHandler*)msgHandlerAddr)->handleAttestationResult(MSG);
-    return string2jbyteArray(env, res);
+    jclass cls = env->FindClass("java/lang/String");
+    jobjectArray result = (jobjectArray)env->NewObjectArray(2, cls, NULL);
+    env->SetObjectArrayElement(result, 0, charTojstring(env, res[0].c_str()));
+    env->SetObjectArrayElement(result, 1, charTojstring(env, res[1].c_str()));
+    return result;
+    //return string2jbyteArray(env, res);
 }

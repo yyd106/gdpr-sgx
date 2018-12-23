@@ -6,8 +6,7 @@
 #include <limits.h>
 #include <unistd.h>
 #include <iostream>
-#include <iomanip>
-
+#include <iomanip> 
 #include "Enclave.h"
 //#include "NetworkManagerServer.h"
 #include "Messages.pb.h"
@@ -40,13 +39,15 @@ public:
     sgx_status_t getEnclaveStatus();
 
     void assembleAttestationMSG(Messages::AttestationMessage msg, ra_samp_response_header_t **pp_att_msg);
-    //string handleAttestationResult(Messages::AttestationMessage msg);
-    string handleAttestationResult(string v);
+    string handleAttestationResult(Messages::AttestationMessage msg);
+    //string* handleMessages(string v, int type);
+    vector<string> handleMessages(string v, int type);
+    //string handleAttestationResult(string v);
     void assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_msg2);
-    //string handleMSG2(Messages::MessageMSG2 msg);
-    string handleMSG2(string v);
-    //string handleMSG0(Messages::MessageMsg0 msg);
-    string handleMSG0(string v);
+    string handleMSG2(Messages::MessageMSG2 msg);
+    //string handleMSG2(string v);
+    string handleMSG0(Messages::MessageMsg0 msg);
+    //string handleMSG0(string v);
     string generateMSG1();
     string handleVerification();
     string generateMSG0();
