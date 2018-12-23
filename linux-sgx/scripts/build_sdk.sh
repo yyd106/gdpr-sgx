@@ -12,11 +12,13 @@ verbose()
 
 function auto_install()
 {
-    verbose INFO "Installing auto tcl tools..."
-    sudo apt-get install tcl tk expect
-    if [ $? -ne 0 ]; then
-        verbose INFO "Install tcl tools failed! Input manually."
-        return 1
+    if ! which expect &>/dev/null; then
+        verbose INFO "Installing auto tcl tools..."
+        sudo apt-get install tcl tk expect
+        if [ $? -ne 0 ]; then
+            verbose INFO "Install tcl tools failed! Input manually."
+            return 1
+        fi
     fi
 
 cat << EOF > $autoscript
@@ -41,7 +43,7 @@ EOF
 
     envline=`cat $TMPFILE | tail -n 1`
     envline=`echo "$envline" | grep -Po "(?<=[a-z]).*(?=t)"`t
-    if ! grep "\b$envline\b" ~/.bashrc &>/dev/null; then
+    if ! grep "^$envline$" ~/.bashrc &>/dev/null; then
         echo "$envline" >> ~/.bashrc
         verbose INFO "\t<<< Attetion >>>\n\t\t\t\tIf tips 'libsgx_xx: No such file or directory'\n\
             \t\t\tPlease run 'source ~/.bashrc' to refresh environment\n\t\t\t\t<<< Attetion >>>"
