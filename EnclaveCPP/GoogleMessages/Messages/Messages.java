@@ -8,6 +8,133 @@ public final class Messages {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
+  /**
+   * Protobuf enum {@code Messages.Type}
+   */
+  public enum Type
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>RA_MSG0 = 0;</code>
+     */
+    RA_MSG0(0, 0),
+    /**
+     * <code>RA_MSG1 = 1;</code>
+     */
+    RA_MSG1(1, 1),
+    /**
+     * <code>RA_MSG2 = 2;</code>
+     */
+    RA_MSG2(2, 2),
+    /**
+     * <code>RA_MSG3 = 3;</code>
+     */
+    RA_MSG3(3, 3),
+    /**
+     * <code>RA_ATT_RESULT = 4;</code>
+     */
+    RA_ATT_RESULT(4, 4),
+    /**
+     * <code>RA_VERIFICATION = 5;</code>
+     */
+    RA_VERIFICATION(5, 5),
+    /**
+     * <code>RA_APP_ATT_OK = 6;</code>
+     */
+    RA_APP_ATT_OK(6, 6),
+    ;
+
+    /**
+     * <code>RA_MSG0 = 0;</code>
+     */
+    public static final int RA_MSG0_VALUE = 0;
+    /**
+     * <code>RA_MSG1 = 1;</code>
+     */
+    public static final int RA_MSG1_VALUE = 1;
+    /**
+     * <code>RA_MSG2 = 2;</code>
+     */
+    public static final int RA_MSG2_VALUE = 2;
+    /**
+     * <code>RA_MSG3 = 3;</code>
+     */
+    public static final int RA_MSG3_VALUE = 3;
+    /**
+     * <code>RA_ATT_RESULT = 4;</code>
+     */
+    public static final int RA_ATT_RESULT_VALUE = 4;
+    /**
+     * <code>RA_VERIFICATION = 5;</code>
+     */
+    public static final int RA_VERIFICATION_VALUE = 5;
+    /**
+     * <code>RA_APP_ATT_OK = 6;</code>
+     */
+    public static final int RA_APP_ATT_OK_VALUE = 6;
+
+
+    public final int getNumber() { return value; }
+
+    public static Type valueOf(int value) {
+      switch (value) {
+        case 0: return RA_MSG0;
+        case 1: return RA_MSG1;
+        case 2: return RA_MSG2;
+        case 3: return RA_MSG3;
+        case 4: return RA_ATT_RESULT;
+        case 5: return RA_VERIFICATION;
+        case 6: return RA_APP_ATT_OK;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Type>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<Type>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+            public Type findValueByNumber(int number) {
+              return Type.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return Messages.Messages.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Type[] VALUES = values();
+
+    public static Type valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private Type(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:Messages.Type)
+  }
+
   public interface SecretMessageOrBuilder extends
       // @@protoc_insertion_point(interface_extends:Messages.SecretMessage)
       com.google.protobuf.MessageOrBuilder {
@@ -8147,7 +8274,10 @@ public final class Messages {
       "256_x\030\n \003(\rB\002\020\001\022\030\n\014ec_sign256_y\030\013 \003(\rB\002\020" +
       "\001\022\023\n\007mac_smk\030\014 \003(\rB\002\020\001\022\023\n\013result_size\030\r " +
       "\001(\r\022\024\n\010reserved\030\016 \003(\rB\002\020\001\022\027\n\013payload_tag" +
-      "\030\017 \003(\rB\002\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001"
+      "\030\017 \003(\rB\002\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001*u\n\004Type\022" +
+      "\013\n\007RA_MSG0\020\000\022\013\n\007RA_MSG1\020\001\022\013\n\007RA_MSG2\020\002\022\013" +
+      "\n\007RA_MSG3\020\003\022\021\n\rRA_ATT_RESULT\020\004\022\023\n\017RA_VER",
+      "IFICATION\020\005\022\021\n\rRA_APP_ATT_OK\020\006"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

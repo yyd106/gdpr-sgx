@@ -51,7 +51,7 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
     }
 
     do {
-        // =====================  RETRIEVE SIGRL FROM IAS =======================
+        //=====================  RETRIEVE SIGRL FROM IAS =======================
         uint8_t GID[4];
 
         for (int i=0; i<4; i++)
@@ -97,8 +97,6 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         Log("========== [SP INFO] ==========");
 
         // Generate the Service providers ECCDH key pair.
-
-        //@@@@@@@@@@@@@@@@@@ Use Stanford JS module, change endian before publicKey been sending.
         sample_ret = sample_ecc256_open_context(&ecc_state);
         if(SAMPLE_SUCCESS != sample_ret) {
             Log("Error, cannot get ECC context", log::error);
@@ -107,7 +105,6 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         }
         Log("\tafter use self-defined ecc state");
         
-        //@@@@@@@@@@@@@@@@@@ JS code does not have state, you could ignore
         // print ecc state
         unsigned char statbuf[sizeof(ecc_state)];
         memcpy(statbuf, (unsigned char*)ecc_state, sizeof(ecc_state));
@@ -171,7 +168,6 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
             break;
         }
 
-
         // Need to save the SP ECCDH key pair to local storage.
         if (memcpy_s(&g_sp_db.b, sizeof(g_sp_db.b), &priv_key,sizeof(priv_key)) ||
                 memcpy_s(&g_sp_db.g_b, sizeof(g_sp_db.g_b), &pub_key,sizeof(pub_key))) {
@@ -179,9 +175,6 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
             ret = SP_INTERNAL_ERROR;
             break;
         }
-
-        //@@@@@@@@@@@@@@@@@@ >>>>>>>>>>>>>>>folowing is for console print, you could ignore>>>>>>>>>>>>>>>>>>>>>>>
-
         unsigned char tmp_b_buf[sizeof(sgx_ec256_private_t)];
         memcpy(tmp_b_buf,(unsigned char *)&g_sp_db.b,sizeof(sgx_ec256_private_t));
         Log("\tb  : (%s)", ByteArrayToString(tmp_b_buf, sizeof(sgx_ec256_private_t)));
@@ -195,7 +188,6 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         unsigned char tmp_gb_buf[sizeof(sgx_ec256_public_t)];
         memcpy(tmp_gb_buf,(unsigned char *)(tmp_gb),sizeof(sgx_ec256_public_t));
         Log("\tgb : (%s)", ByteArrayToString(tmp_gb_buf, sizeof(sgx_ec256_public_t)));
-        //@@@@@@@@@@@@@@@@@@ <<<<<<<<<<<<<<<<<<<<<< Upper is for console print >>>>>>>>>>>>>>>>>>>>
 
         // Generate the client/SP shared secret
         sample_ec_dh_shared_t dh_key = {{0}};
@@ -210,13 +202,7 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
             break;
         }
 
-        //@@@@@@@@@@@@@@@@@@ My new simplified keys derivation logic
-        memcpy(&g_sp_db.smk_key, &dh_key, sizeof(sgx_ec_key_128bit_t));
-        memcpy(&g_sp_db.mk_key, &dh_key, sizeof(sgx_ec_key_128bit_t));
-        memcpy(&g_sp_db.sk_key, &dh_key, sizeof(sgx_ec_key_128bit_t));
-        memcpy(&g_sp_db.vk_key, &dh_key, sizeof(sgx_ec_key_128bit_t));
 
-/*
         // smk is only needed for msg2 generation.
         derive_ret = derive_key(&dh_key, SAMPLE_DERIVE_KEY_SMK, &g_sp_db.smk_key);
         if (derive_ret != true) {
@@ -250,7 +236,7 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
             ret = SP_INTERNAL_ERROR;
             break;
         }
-*/
+
 
         uint32_t msg2_size = sizeof(sgx_ra_msg2_t) + sig_rl_size;
         p_msg2_full = (ra_samp_response_header_t*)malloc(msg2_size + sizeof(ra_samp_response_header_t));
@@ -310,73 +296,9 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
 
 
         // Generate the CMACsmk for gb||SPID||TYPE||KDF_ID||Sigsp(gb,ga)
-
-        
-        //Test AES method
-        /* 
-        uint8_t test_v[16] = {
-            0x2b,0xc3,0xcb,0x9c,0xfb,0x80,0xb3,0x4f,
-            0xc6,0x5c,0x03,0x3a,0x29,0x3a,0x0b,0x71
-            };
-
-        sgx_ec_key_128bit_t test_k = {
-            0x2b,0xc3,0xcb,0x9c,0xfb,0x80,0xb3,0x4f,
-            0xc6,0x5c,0x03,0x3a,0x29,0x3a,0x0b,0x71
-            };
-        Log("\t Aes Mac size: %d", sizeof(sample_aes_gcm_128bit_tag_t));
-        //uint8_t aes_mac[SAMPLE_AESGCM_MAC_SIZE] = {0};
-        uint8_t aes_gcm_iv[SAMPLE_SP_IV_SIZE] = {0};
-        uint8_t test_des[16] = {0};
-        sample_aes_gcm_128bit_tag_t aes_mac = {0};
-        ret = sample_rijndael128GCM_encrypt(&test_k,
-                                                &test_v[0],
-                                                sizeof(sgx_ec_key_128bit_t),
-                                                &test_des[0],
-                                                &aes_gcm_iv[0],
-                                                SAMPLE_SP_IV_SIZE,
-                                                NULL,
-                                                0,
-                                                &aes_mac);
-
-
-        sgx_ec_key_128bit_t *tmp_des = &test_des;
-        unsigned char tmp_des_buf[sizeof(sgx_ec_key_128bit_t)];
-        memcpy(tmp_des_buf,(unsigned char *)(tmp_des),sizeof(sgx_ec_key_128bit_t));
-        Log("\tEncrypted as : (%s)", ByteArrayToString(tmp_des_buf, sizeof(sgx_ec_key_128bit_t)));
-
-        sample_aes_gcm_128bit_tag_t *tmp_mac = &aes_mac;
-        unsigned char tmp_mac_buf[sizeof(sample_aes_gcm_128bit_tag_t)];
-        memcpy(tmp_mac_buf,(unsigned char *)(tmp_mac),sizeof(sample_aes_gcm_128bit_tag_t));
-        Log("\taes mac : (%s)", ByteArrayToString(tmp_mac_buf, sizeof(sample_aes_gcm_128bit_tag_t)));
-        */
-
-        // Test CMAC method
-        /*
-        uint8_t tmac[SAMPLE_EC_MAC_SIZE] = {0};
-        sample_rijndael128_cmac_msg(&test_k, (uint8_t *)&test_v, sizeof(_sgx_ec256_private_t), &tmac);
-
-        _sgx_ec256_private_t *tool_gb = &test_v;
-        unsigned char tool_gb_buf[32];
-        memcpy(tool_gb_buf,(unsigned char *)(tool_gb),sizeof(_sgx_ec256_private_t));
-        Log("\t msg: (%s)", ByteArrayToString(tool_gb_buf, sizeof(_sgx_ec256_private_t)));
-
-        sgx_ec_key_128bit_t *tmp_smk = &test_k;
-        unsigned char tmp_smk_buf[sizeof(sgx_ec_key_128bit_t)];
-        memcpy(tmp_smk_buf,(unsigned char *)(tmp_smk),sizeof(sgx_ec_key_128bit_t));
-        Log("\t key : (%s)", ByteArrayToString(tmp_smk_buf, sizeof(sgx_ec_key_128bit_t)));
-
-        sample_mac_t *tmp_mac = &tmac;
-        unsigned char tmp_mac_buf[sizeof(sample_mac_t)];
-        memcpy(tmp_mac_buf,(unsigned char *)(tmp_mac),sizeof(sample_mac_t));
-        Log("\tmac : (%s)", ByteArrayToString(tmp_mac_buf, sizeof(sample_mac_t)));
-        */
-
-        
         uint8_t mac[SAMPLE_EC_MAC_SIZE] = {0};
-        //@@@@@@@@@@@@@@@@@@ Please use node-aes-cmac function instead of sample_rijndael128_cmac_msg
         uint32_t cmac_size = offsetof(sgx_ra_msg2_t, mac);
         sample_ret = sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&p_msg2->g_b, cmac_size, &mac);
-        
 
         if (SAMPLE_SUCCESS != sample_ret) {
             Log("Error, cmac fail", log::error);
@@ -492,14 +414,12 @@ int ServiceProvider::sp_ra_proc_msg3_req(Messages::MessageMSG3 msg, Messages::At
     }
 
     do {
-
         // Compare g_a in message 3 with local g_a.
         if (memcmp(&g_sp_db.g_a, &p_msg3->g_a, sizeof(sgx_ec256_public_t))) {
             Log("Error, g_a is not same", log::error);
             ret = SP_PROTOCOL_ERROR;
             break;
         }
-        //@@@@@@@@@@@@@@@@@@ >>>>>>>>>>>>>>>>>>>> let's ignore all Following verification >>>>>>>>>>>>>>>>>>>>>>
 
         //Make sure that msg3_size is bigger than sample_mac_t.
         uint32_t mac_size = msg.size() - sizeof(sample_mac_t);
@@ -630,7 +550,6 @@ int ServiceProvider::sp_ra_proc_msg3_req(Messages::MessageMSG3 msg, Messages::At
         unsigned char t_buf[sizeof(sgx_quote_t)];
         memcpy(t_buf,(unsigned char *)p_quote,sizeof(sgx_quote_t));
         Log("\tquote content: (%s)", ByteArrayToString(t_buf, sizeof(sgx_quote_t)));
-        //@@@@@@@@@@@@@@@@@@ <<<<<<<<<<<<<<<<<<<<< let's ignore all Upper verification <<<<<<<<<<<<<<<<<<<<<<<<<
 
 
         // Respond the client with the results of the attestation.
@@ -644,7 +563,7 @@ int ServiceProvider::sp_ra_proc_msg3_req(Messages::MessageMSG3 msg, Messages::At
         }
 
         memset(p_att_result_msg_full, 0, att_result_msg_size + sizeof(ra_samp_response_header_t) + sizeof(validation_result));
-        p_att_result_msg_full->type = RA_ATT_RESULT;
+        p_att_result_msg_full->type = Messages::Type::RA_ATT_RESULT;
         p_att_result_msg_full->size = att_result_msg_size;
 
         if (IAS_QUOTE_OK != attestation_report.status) {

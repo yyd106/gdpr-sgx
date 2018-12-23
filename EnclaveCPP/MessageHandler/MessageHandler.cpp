@@ -68,7 +68,7 @@ string MessageHandler::generateMSG0() {
     int ret = this->getExtendedEPID_GID(&extended_epid_group_id);
 
     Messages::MessageMsg0 msg;
-    msg.set_type(RA_MSG0);
+    msg.set_type(Messages::Type::RA_MSG0);
 
     if (ret == SGX_SUCCESS) {
         msg.set_epid(extended_epid_group_id);
@@ -161,7 +161,7 @@ string MessageHandler::generateMSG1() {
         Log("MSG1 generated Successfully");
 
         Messages::MessageMSG1 msg;
-        msg.set_type(RA_MSG1);
+        msg.set_type(Messages::Type::RA_MSG1);
 
         for (auto x : sgxMsg1Obj.g_a.gx)
             msg.add_gax(x);
@@ -274,7 +274,7 @@ string MessageHandler::handleMSG2(string v) {
 
         Messages::MessageMSG3 msg3;
 
-        msg3.set_type(RA_MSG3);
+        msg3.set_type(Messages::Type::RA_MSG3);
         msg3.set_size(msg3_size);
 
         for (int i=0; i<SGX_MAC_SIZE; i++)
@@ -316,7 +316,7 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     p_att_result_msg_full = (ra_samp_response_header_t*) malloc(total_size);
 
     memset(p_att_result_msg_full, 0, total_size);
-    p_att_result_msg_full->type = RA_ATT_RESULT;
+    p_att_result_msg_full->type = Messages::Type::RA_ATT_RESULT;
     p_att_result_msg_full->size = msg.size();
 
     p_att_result_msg = (sample_ra_att_result_msg_t *) p_att_result_msg_full->body;
@@ -420,7 +420,7 @@ string MessageHandler::handleAttestationResult(string v) {
             Log("Send attestation okay");
 
             Messages::InitialMessage msg;
-            msg.set_type(RA_APP_ATT_OK);
+            msg.set_type(Messages::Type::RA_APP_ATT_OK);
             msg.set_size(0);
 
             string s;

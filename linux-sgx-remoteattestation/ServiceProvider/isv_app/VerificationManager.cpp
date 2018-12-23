@@ -72,7 +72,7 @@ string VerificationManager::handleMSG1(Messages::MessageMSG1 msg1) {
     Log("MSG1 received");
 
     Messages::MessageMSG2 msg2;
-    msg2.set_type(RA_MSG2);
+    msg2.set_type(Messages::Type::RA_MSG2);
 
     int ret = this->sp->sp_ra_proc_msg1_req(msg1, &msg2);
 
@@ -92,7 +92,7 @@ string VerificationManager::handleMSG3(Messages::MessageMSG3 msg) {
     Log("MSG3 received");
 
     Messages::AttestationMessage att_msg;
-    att_msg.set_type(RA_ATT_RESULT);
+    att_msg.set_type(Messages::Type::RA_ATT_RESULT);
 
     int ret = this->sp->sp_ra_proc_msg3_req(msg, &att_msg);
 
@@ -117,7 +117,7 @@ string VerificationManager::prepareVerificationRequest() {
     Log("Prepare Verification request");
 
     Messages::InitialMessage msg;
-    msg.set_type(RA_VERIFICATION);
+    msg.set_type(Messages::Type::RA_VERIFICATION);
 
     return nm->serialize(msg);
 }
@@ -142,40 +142,40 @@ vector<string> VerificationManager::incomingHandler(string v, int type) {
         bool ret;
 
         switch (type) {
-        case RA_MSG0: {
+        case Messages::Type::RA_MSG0: {
             Messages::MessageMsg0 msg0;
             ret = msg0.ParseFromString(v);
-            if (ret && (msg0.type() == RA_MSG0)) {
+            if (ret && (msg0.type() == Messages::Type::RA_MSG0)) {
                 s = this->handleMSG0(msg0);
-                res.push_back(to_string(RA_MSG0));
+                res.push_back(to_string(Messages::Type::RA_MSG0));
             }
         }
         break;
-        case RA_MSG1: {
+        case Messages::Type::RA_MSG1: {
             Messages::MessageMSG1 msg1;
             ret = msg1.ParseFromString(v);
-            if (ret && (msg1.type() == RA_MSG1)) {
+            if (ret && (msg1.type() == Messages::Type::RA_MSG1)) {
                 // generate MSG2 and send to enclave
                 s = this->handleMSG1(msg1);
-                res.push_back(to_string(RA_MSG2));
+                res.push_back(to_string(Messages::Type::RA_MSG2));
             }
         }
         break;
-        case RA_MSG3: {
+        case Messages::Type::RA_MSG3: {
             Messages::MessageMSG3 msg3;
             ret = msg3.ParseFromString(v);
-            if (ret && (msg3.type() == RA_MSG3)) {
+            if (ret && (msg3.type() == Messages::Type::RA_MSG3)) {
                 // generate MSG4 and send to enclave
                 s = this->handleMSG3(msg3);
-                res.push_back(to_string(RA_ATT_RESULT));
+                res.push_back(to_string(Messages::Type::RA_ATT_RESULT));
             }
         }
         break;
-        case RA_APP_ATT_OK: {   // recieve ACK from enclave
+        case Messages::Type::RA_APP_ATT_OK: {   // recieve ACK from enclave
             Messages::SecretMessage sec_msg;
             ret = sec_msg.ParseFromString(v);
             if (ret) {
-                if (sec_msg.type() == RA_APP_ATT_OK) {
+                if (sec_msg.type() == Messages::Type::RA_APP_ATT_OK) {
                     this->handleAppAttOk();
                     Log("========== send a secret to app ==========");
                     res.push_back(to_string(SGX_SEAL_SECRET));
@@ -194,7 +194,7 @@ vector<string> VerificationManager::incomingHandler(string v, int type) {
 
         res.push_back(s);
     } else { 	//after handshake
-        res.push_back(to_string(RA_VERIFICATION));
+        res.push_back(to_string(Messages::Type::RA_VERIFICATION));
         res.push_back(this->prepareVerificationRequest());
     }
 

@@ -7,6 +7,7 @@ cat << EOF
                 -r: indicate rebuilding java file to create new c header file
                 -l: the destination path of the new created jni library
                 -j: the destination path of the new java file
+                -t: for test, copy java and .so file to my test project
 EOF
 }
 
@@ -14,12 +15,15 @@ verbose()
 {
     local type=$1
     local info=$2
+    local tips=$3
+    local color=$GREEN
     local time=`date "+%Y/%m/%d %T.%3N"`
     if [ x"$type" = x"ERROR" ]; then
-        echo -e "${RED}$time [$type] $info${NC}" >&2 
+        echo -e "${HRED}$time [$type] $info${NC}" >&2 
         return
     fi
-    echo -e "${GREEN}$time [$type] $info${NC}"
+    if [ x"$tips" != x"" ]; then color=$HGREEN; fi
+    echo -e "${color}$time [$type] $info${NC}"
 }
 
 ############### MAIN BODY ###############
@@ -33,14 +37,18 @@ projectdir=`cd $basedir/../../tools/EnclaveBridge/src/main/;pwd`
 jnidir=$projectdir/jnilib
 javadir=$projectdir/java
 homedir=$basedir/..
+targetdir=`cd $homedir/../target; pwd`
 
 RED='\033[0;31m'
+HRED='\033[1;31m'
 GREEN='\033[0;32m'
+HGREEN='\033[1;32m'
 NC='\033[0m'
 
 rebuild="no"
+is_test="no"
 
-CMD=`getopt -o "rl:j:d:" -a -l "rebuild,jnilib:,javafile:,targetdir:" -n "usage" -- "$@"`
+CMD=`getopt -o "trl:j:d:" -a -l "test,rebuild,jnilib:,javafile:,targetdir:" -n "usage" -- "$@"`
 if [ $? != 0 ]; then
     verbose ERROR "Parameter error, terminate" >&2
     exit 1
@@ -51,6 +59,10 @@ eval set -- "$CMD"
 
 while true; do
     case "$1" in
+        -t|--test|-test)
+            is_test="yes"
+            shift
+            ;;
         -r|--rebuild|-rebuild)
             rebuild="yes"
             shift
@@ -83,6 +95,7 @@ if [ ! -d "$targetdir" ]; then
     exit 1
 fi
 
+### regenerate header file according to java file {{{
 if [ x"$rebuild" = x"yes" ]; then
     if [ ! -d "$jnidir" ]; then
         verbose ERROR "JNI  directory($jnidir) doesn't exist"
@@ -98,21 +111,32 @@ if [ x"$rebuild" = x"yes" ]; then
     #line=`sed -n '/^#include/h;${x;=}' $headerfile`
     line=`grep -rin "^#include" $headerfile | tail -n 1 | awk -F: '{print $1}'`
     sed -i "$line a#include \"MessageHandler.h\"" $headerfile
+    cd -
 fi
+### }}}
 
+### building .so file {{{
+cd $homedir
 verbose INFO "Rebuilding jnilib file..."
-
 make clean
 make
 if [ $? -ne 0 ]; then
     verbose ERROR "Building jni library failed!"
     exit 1
 fi
+verbose INFO "Copying java and .so file to $targetdir..."
 cp $libfile $javafile $targetdir
+cd -
+### }}}
 
-#verbose INFO "Please copy $libfile and $javafile to your webserver project"
-#verbose INFO "Copying jnilib file and java file to indicated directory..."
-#verbose INFO "JNI  des dir is:$jnidir"
-#verbose INFO "JAVA des dir is:$javadir"
-#cp $libfile $jnidir
-#cp $javafile $javadir
+### for test {{{
+if [ x"$is_test" = x"yes" ]; then
+    verbose INFO "Copying jnilib file and java file to indicated directory"
+    verbose INFO "JNI  des dir is:$jnidir"
+    verbose INFO "JAVA des dir is:$javadir"
+    cp $libfile $jnidir
+    cp $javafile $javadir
+fi
+### }}}
+
+verbose INFO "Build jni library Succeed!" h

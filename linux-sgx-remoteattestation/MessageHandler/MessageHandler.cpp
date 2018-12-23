@@ -69,7 +69,7 @@ string MessageHandler::generateMSG0() {
     int ret = this->getExtendedEPID_GID(&extended_epid_group_id);
 
     Messages::MessageMsg0 msg;
-    msg.set_type(RA_MSG0);
+    msg.set_type(Messages::Type::RA_MSG0);
 
     if (ret == SGX_SUCCESS) {
         msg.set_epid(extended_epid_group_id);
@@ -166,7 +166,7 @@ string MessageHandler::generateMSG1() {
         Log("MSG1 generated Successfully");
 
         Messages::MessageMSG1 msg;
-        msg.set_type(RA_MSG1);
+        msg.set_type(Messages::Type::RA_MSG1);
 
         for (auto x : sgxMsg1Obj.g_a.gx)
             msg.add_gax(x);
@@ -269,7 +269,7 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
 
         Messages::MessageMSG3 msg3;
 
-        msg3.set_type(RA_MSG3);
+        msg3.set_type(Messages::Type::RA_MSG3);
         msg3.set_size(msg3_size);
 
         for (int i=0; i<SGX_MAC_SIZE; i++)
@@ -308,7 +308,7 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     p_att_result_msg_full = (ra_samp_response_header_t*) malloc(total_size);
 
     memset(p_att_result_msg_full, 0, total_size);
-    p_att_result_msg_full->type = RA_ATT_RESULT;
+    p_att_result_msg_full->type = Messages::Type::RA_ATT_RESULT;
     p_att_result_msg_full->size = msg.size();
 
     p_att_result_msg = (sample_ra_att_result_msg_t *) p_att_result_msg_full->body;
@@ -419,7 +419,7 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
             Log("Send attestation okay");
 
             Messages::InitialMessage msg;
-            msg.set_type(RA_APP_ATT_OK);
+            msg.set_type(Messages::Type::RA_APP_ATT_OK);
             msg.set_size(0);
 
             return nm->serialize(msg);
@@ -480,44 +480,44 @@ vector<string> MessageHandler::incomingHandler(string v, int type) {
     bool ret;
 
     switch (type) {
-    case RA_VERIFICATION: {	//Verification request
+    case Messages::Type::RA_VERIFICATION: {	//Verification request
         Messages::InitialMessage init_msg;
         ret = init_msg.ParseFromString(v);
         Log("========== verify attestation ==========");
-        if (ret && init_msg.type() == RA_VERIFICATION) {
+        if (ret && init_msg.type() == Messages::Type::RA_VERIFICATION) {
             s = this->handleVerification();
             Log("\ts:%s",s);
-            res.push_back(to_string(RA_MSG0));
+            res.push_back(to_string(Messages::Type::RA_MSG0));
         }
     }
     break;
-    case RA_MSG0: {		//Reply to MSG0
+    case Messages::Type::RA_MSG0: {		//Reply to MSG0
         Messages::MessageMsg0 msg0;
         ret = msg0.ParseFromString(v);
-        if (ret && (msg0.type() == RA_MSG0)) {
+        if (ret && (msg0.type() == Messages::Type::RA_MSG0)) {
             // generate MSG1 and send to SP
             s = this->handleMSG0(msg0);
-            res.push_back(to_string(RA_MSG1));
+            res.push_back(to_string(Messages::Type::RA_MSG1));
         }
     }
     break;
-    case RA_MSG2: {		//MSG2
+    case Messages::Type::RA_MSG2: {		//MSG2
         Messages::MessageMSG2 msg2;
         ret = msg2.ParseFromString(v);
-        if (ret && (msg2.type() == RA_MSG2)) {
+        if (ret && (msg2.type() == Messages::Type::RA_MSG2)) {
             // generate MSG3 and send to SP
             s = this->handleMSG2(msg2);
-            res.push_back(to_string(RA_MSG3));
+            res.push_back(to_string(Messages::Type::RA_MSG3));
         }
     }
     break;
-    case RA_ATT_RESULT: {	//Reply to MSG3
+    case Messages::Type::RA_ATT_RESULT: {	//Reply to MSG3
         Messages::AttestationMessage att_msg;
         ret = att_msg.ParseFromString(v);
-        if (ret && att_msg.type() == RA_ATT_RESULT) {
+        if (ret && att_msg.type() == Messages::Type::RA_ATT_RESULT) {
             // receive MSG4 and verify encrypted secret
             s = this->handleAttestationResult(att_msg);
-            res.push_back(to_string(RA_APP_ATT_OK));
+            res.push_back(to_string(Messages::Type::RA_APP_ATT_OK));
         }
     }
     break;

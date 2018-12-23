@@ -3,6 +3,7 @@
 
 #define MAX_VERIFICATION_RESULT 2
 
+/*
 typedef enum _ra_msg_types {
     RA_MSG0,
     RA_MSG1,
@@ -13,6 +14,7 @@ typedef enum _ra_msg_types {
     RA_APP_ATT_OK,
     SGX_SEAL_SECRET
 } ra_msg_types;
+*/
 
 
 typedef enum _ra_msg {

@@ -23,6 +23,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/extension_set.h>
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
@@ -41,6 +42,30 @@ class MessageMSG2;
 class MessageMSG3;
 class AttestationMessage;
 
+enum Type {
+  RA_MSG0 = 0,
+  RA_MSG1 = 1,
+  RA_MSG2 = 2,
+  RA_MSG3 = 3,
+  RA_ATT_RESULT = 4,
+  RA_VERIFICATION = 5,
+  RA_APP_ATT_OK = 6
+};
+bool Type_IsValid(int value);
+const Type Type_MIN = RA_MSG0;
+const Type Type_MAX = RA_APP_ATT_OK;
+const int Type_ARRAYSIZE = Type_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* Type_descriptor();
+inline const ::std::string& Type_Name(Type value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    Type_descriptor(), value);
+}
+inline bool Type_Parse(
+    const ::std::string& name, Type* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Type>(
+    Type_descriptor(), name, value);
+}
 // ===================================================================
 
 class SecretMessage : public ::google::protobuf::Message {
@@ -2378,6 +2403,11 @@ AttestationMessage::mutable_payload() {
 namespace google {
 namespace protobuf {
 
+template <> struct is_proto_enum< ::Messages::Type> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Messages::Type>() {
+  return ::Messages::Type_descriptor();
+}
 
 }  // namespace google
 }  // namespace protobuf
