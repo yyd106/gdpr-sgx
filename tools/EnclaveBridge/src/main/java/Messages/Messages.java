@@ -140,13 +140,13 @@ public final class Messages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     boolean hasType();
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    int getType();
+    Messages.Type getType();
 
     /**
      * <code>optional uint32 size = 2;</code>
@@ -210,8 +210,14 @@ public final class Messages {
               break;
             }
             case 8: {
-              bitField0_ |= 0x00000001;
-              type_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
               break;
             }
             case 16: {
@@ -260,17 +266,17 @@ public final class Messages {
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private Messages.Type type_;
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    public int getType() {
+    public Messages.Type getType() {
       return type_;
     }
 
@@ -290,7 +296,7 @@ public final class Messages {
     }
 
     private void initFields() {
-      type_ = 0;
+      type_ = Messages.Type.RA_MSG0;
       size_ = 0;
     }
     private byte memoizedIsInitialized = -1;
@@ -311,7 +317,7 @@ public final class Messages {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, type_);
+        output.writeEnum(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, size_);
@@ -327,7 +333,7 @@ public final class Messages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, type_);
+          .computeEnumSize(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -450,7 +456,7 @@ public final class Messages {
 
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
         size_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -543,34 +549,37 @@ public final class Messages {
       }
       private int bitField0_;
 
-      private int type_ ;
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public int getType() {
+      public Messages.Type getType() {
         return type_;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public Builder setType(int value) {
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         onChanged();
         return this;
       }
@@ -623,13 +632,13 @@ public final class Messages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     boolean hasType();
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    int getType();
+    Messages.Type getType();
 
     /**
      * <code>optional uint32 size = 2;</code>
@@ -693,8 +702,14 @@ public final class Messages {
               break;
             }
             case 8: {
-              bitField0_ |= 0x00000001;
-              type_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
               break;
             }
             case 16: {
@@ -743,17 +758,17 @@ public final class Messages {
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private Messages.Type type_;
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    public int getType() {
+    public Messages.Type getType() {
       return type_;
     }
 
@@ -773,7 +788,7 @@ public final class Messages {
     }
 
     private void initFields() {
-      type_ = 0;
+      type_ = Messages.Type.RA_MSG0;
       size_ = 0;
     }
     private byte memoizedIsInitialized = -1;
@@ -794,7 +809,7 @@ public final class Messages {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, type_);
+        output.writeEnum(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, size_);
@@ -810,7 +825,7 @@ public final class Messages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, type_);
+          .computeEnumSize(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -933,7 +948,7 @@ public final class Messages {
 
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
         size_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -1026,34 +1041,37 @@ public final class Messages {
       }
       private int bitField0_;
 
-      private int type_ ;
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public int getType() {
+      public Messages.Type getType() {
         return type_;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public Builder setType(int value) {
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         onChanged();
         return this;
       }
@@ -1101,18 +1119,18 @@ public final class Messages {
     // @@protoc_insertion_point(class_scope:Messages.InitialMessage)
   }
 
-  public interface MessageMsg0OrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Messages.MessageMsg0)
+  public interface MessageMSG0OrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Messages.MessageMSG0)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     boolean hasType();
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    int getType();
+    Messages.Type getType();
 
     /**
      * <code>required uint32 epid = 2;</code>
@@ -1133,25 +1151,25 @@ public final class Messages {
     int getStatus();
   }
   /**
-   * Protobuf type {@code Messages.MessageMsg0}
+   * Protobuf type {@code Messages.MessageMSG0}
    */
-  public static final class MessageMsg0 extends
+  public static final class MessageMSG0 extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:Messages.MessageMsg0)
-      MessageMsg0OrBuilder {
-    // Use MessageMsg0.newBuilder() to construct.
-    private MessageMsg0(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:Messages.MessageMSG0)
+      MessageMSG0OrBuilder {
+    // Use MessageMSG0.newBuilder() to construct.
+    private MessageMSG0(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private MessageMsg0(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private MessageMSG0(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final MessageMsg0 defaultInstance;
-    public static MessageMsg0 getDefaultInstance() {
+    private static final MessageMSG0 defaultInstance;
+    public static MessageMSG0 getDefaultInstance() {
       return defaultInstance;
     }
 
-    public MessageMsg0 getDefaultInstanceForType() {
+    public MessageMSG0 getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -1161,7 +1179,7 @@ public final class Messages {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private MessageMsg0(
+    private MessageMSG0(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1185,8 +1203,14 @@ public final class Messages {
               break;
             }
             case 8: {
-              bitField0_ |= 0x00000001;
-              type_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
               break;
             }
             case 16: {
@@ -1213,44 +1237,44 @@ public final class Messages {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Messages.internal_static_Messages_MessageMsg0_descriptor;
+      return Messages.internal_static_Messages_MessageMSG0_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Messages.internal_static_Messages_MessageMsg0_fieldAccessorTable
+      return Messages.internal_static_Messages_MessageMSG0_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Messages.MessageMsg0.class, Messages.MessageMsg0.Builder.class);
+              Messages.MessageMSG0.class, Messages.MessageMSG0.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<MessageMsg0> PARSER =
-        new com.google.protobuf.AbstractParser<MessageMsg0>() {
-      public MessageMsg0 parsePartialFrom(
+    public static com.google.protobuf.Parser<MessageMSG0> PARSER =
+        new com.google.protobuf.AbstractParser<MessageMSG0>() {
+      public MessageMSG0 parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MessageMsg0(input, extensionRegistry);
+        return new MessageMSG0(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MessageMsg0> getParserForType() {
+    public com.google.protobuf.Parser<MessageMSG0> getParserForType() {
       return PARSER;
     }
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private Messages.Type type_;
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    public int getType() {
+    public Messages.Type getType() {
       return type_;
     }
 
@@ -1285,7 +1309,7 @@ public final class Messages {
     }
 
     private void initFields() {
-      type_ = 0;
+      type_ = Messages.Type.RA_MSG0;
       epid_ = 0;
       status_ = 0;
     }
@@ -1311,7 +1335,7 @@ public final class Messages {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, type_);
+        output.writeEnum(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, epid_);
@@ -1330,7 +1354,7 @@ public final class Messages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, type_);
+          .computeEnumSize(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -1352,53 +1376,53 @@ public final class Messages {
       return super.writeReplace();
     }
 
-    public static Messages.MessageMsg0 parseFrom(
+    public static Messages.MessageMSG0 parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Messages.MessageMsg0 parseFrom(
+    public static Messages.MessageMSG0 parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Messages.MessageMsg0 parseFrom(byte[] data)
+    public static Messages.MessageMSG0 parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Messages.MessageMsg0 parseFrom(
+    public static Messages.MessageMSG0 parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Messages.MessageMsg0 parseFrom(java.io.InputStream input)
+    public static Messages.MessageMSG0 parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static Messages.MessageMsg0 parseFrom(
+    public static Messages.MessageMSG0 parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static Messages.MessageMsg0 parseDelimitedFrom(java.io.InputStream input)
+    public static Messages.MessageMSG0 parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static Messages.MessageMsg0 parseDelimitedFrom(
+    public static Messages.MessageMSG0 parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static Messages.MessageMsg0 parseFrom(
+    public static Messages.MessageMSG0 parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static Messages.MessageMsg0 parseFrom(
+    public static Messages.MessageMSG0 parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1407,7 +1431,7 @@ public final class Messages {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(Messages.MessageMsg0 prototype) {
+    public static Builder newBuilder(Messages.MessageMSG0 prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -1419,25 +1443,25 @@ public final class Messages {
       return builder;
     }
     /**
-     * Protobuf type {@code Messages.MessageMsg0}
+     * Protobuf type {@code Messages.MessageMSG0}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Messages.MessageMsg0)
-        Messages.MessageMsg0OrBuilder {
+        // @@protoc_insertion_point(builder_implements:Messages.MessageMSG0)
+        Messages.MessageMSG0OrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Messages.internal_static_Messages_MessageMsg0_descriptor;
+        return Messages.internal_static_Messages_MessageMSG0_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Messages.internal_static_Messages_MessageMsg0_fieldAccessorTable
+        return Messages.internal_static_Messages_MessageMSG0_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Messages.MessageMsg0.class, Messages.MessageMsg0.Builder.class);
+                Messages.MessageMSG0.class, Messages.MessageMSG0.Builder.class);
       }
 
-      // Construct using Messages.MessageMsg0.newBuilder()
+      // Construct using Messages.MessageMSG0.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1457,7 +1481,7 @@ public final class Messages {
 
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
         epid_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -1472,23 +1496,23 @@ public final class Messages {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Messages.internal_static_Messages_MessageMsg0_descriptor;
+        return Messages.internal_static_Messages_MessageMSG0_descriptor;
       }
 
-      public Messages.MessageMsg0 getDefaultInstanceForType() {
-        return Messages.MessageMsg0.getDefaultInstance();
+      public Messages.MessageMSG0 getDefaultInstanceForType() {
+        return Messages.MessageMSG0.getDefaultInstance();
       }
 
-      public Messages.MessageMsg0 build() {
-        Messages.MessageMsg0 result = buildPartial();
+      public Messages.MessageMSG0 build() {
+        Messages.MessageMSG0 result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public Messages.MessageMsg0 buildPartial() {
-        Messages.MessageMsg0 result = new Messages.MessageMsg0(this);
+      public Messages.MessageMSG0 buildPartial() {
+        Messages.MessageMSG0 result = new Messages.MessageMSG0(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1509,16 +1533,16 @@ public final class Messages {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Messages.MessageMsg0) {
-          return mergeFrom((Messages.MessageMsg0)other);
+        if (other instanceof Messages.MessageMSG0) {
+          return mergeFrom((Messages.MessageMSG0)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Messages.MessageMsg0 other) {
-        if (other == Messages.MessageMsg0.getDefaultInstance()) return this;
+      public Builder mergeFrom(Messages.MessageMSG0 other) {
+        if (other == Messages.MessageMSG0.getDefaultInstance()) return this;
         if (other.hasType()) {
           setType(other.getType());
         }
@@ -1548,11 +1572,11 @@ public final class Messages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Messages.MessageMsg0 parsedMessage = null;
+        Messages.MessageMSG0 parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Messages.MessageMsg0) e.getUnfinishedMessage();
+          parsedMessage = (Messages.MessageMSG0) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -1563,34 +1587,37 @@ public final class Messages {
       }
       private int bitField0_;
 
-      private int type_ ;
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public int getType() {
+      public Messages.Type getType() {
         return type_;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public Builder setType(int value) {
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         onChanged();
         return this;
       }
@@ -1659,15 +1686,15 @@ public final class Messages {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:Messages.MessageMsg0)
+      // @@protoc_insertion_point(builder_scope:Messages.MessageMSG0)
     }
 
     static {
-      defaultInstance = new MessageMsg0(true);
+      defaultInstance = new MessageMSG0(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:Messages.MessageMsg0)
+    // @@protoc_insertion_point(class_scope:Messages.MessageMSG0)
   }
 
   public interface MessageMSG1OrBuilder extends
@@ -1675,13 +1702,13 @@ public final class Messages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     boolean hasType();
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    int getType();
+    Messages.Type getType();
 
     /**
      * <code>repeated uint32 GaX = 2 [packed = true];</code>
@@ -1775,8 +1802,14 @@ public final class Messages {
               break;
             }
             case 8: {
-              bitField0_ |= 0x00000001;
-              type_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
               break;
             }
             case 16: {
@@ -1892,17 +1925,17 @@ public final class Messages {
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private Messages.Type type_;
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    public int getType() {
+    public Messages.Type getType() {
       return type_;
     }
 
@@ -1976,7 +2009,7 @@ public final class Messages {
     private int gIDMemoizedSerializedSize = -1;
 
     private void initFields() {
-      type_ = 0;
+      type_ = Messages.Type.RA_MSG0;
       gaX_ = java.util.Collections.emptyList();
       gaY_ = java.util.Collections.emptyList();
       gID_ = java.util.Collections.emptyList();
@@ -1999,7 +2032,7 @@ public final class Messages {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, type_);
+        output.writeEnum(1, type_.getNumber());
       }
       if (getGaXList().size() > 0) {
         output.writeRawVarint32(18);
@@ -2033,7 +2066,7 @@ public final class Messages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, type_);
+          .computeEnumSize(1, type_.getNumber());
       }
       {
         int dataSize = 0;
@@ -2194,7 +2227,7 @@ public final class Messages {
 
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
         gaX_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2329,34 +2362,37 @@ public final class Messages {
       }
       private int bitField0_;
 
-      private int type_ ;
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public int getType() {
+      public Messages.Type getType() {
         return type_;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public Builder setType(int value) {
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         onChanged();
         return this;
       }
@@ -2575,13 +2611,13 @@ public final class Messages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     boolean hasType();
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    int getType();
+    Messages.Type getType();
 
     /**
      * <code>optional uint32 size = 2;</code>
@@ -2763,8 +2799,14 @@ public final class Messages {
               break;
             }
             case 8: {
-              bitField0_ |= 0x00000001;
-              type_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
               break;
             }
             case 16: {
@@ -2996,17 +3038,17 @@ public final class Messages {
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private Messages.Type type_;
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    public int getType() {
+    public Messages.Type getType() {
       return type_;
     }
 
@@ -3232,7 +3274,7 @@ public final class Messages {
     private int sigrlMemoizedSerializedSize = -1;
 
     private void initFields() {
-      type_ = 0;
+      type_ = Messages.Type.RA_MSG0;
       size_ = 0;
       publicKeyGx_ = java.util.Collections.emptyList();
       publicKeyGy_ = java.util.Collections.emptyList();
@@ -3263,7 +3305,7 @@ public final class Messages {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, type_);
+        output.writeEnum(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, size_);
@@ -3337,7 +3379,7 @@ public final class Messages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, type_);
+          .computeEnumSize(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -3570,7 +3612,7 @@ public final class Messages {
 
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
         size_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3809,34 +3851,37 @@ public final class Messages {
       }
       private int bitField0_;
 
-      private int type_ ;
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public int getType() {
+      public Messages.Type getType() {
         return type_;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public Builder setType(int value) {
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         onChanged();
         return this;
       }
@@ -4447,13 +4492,13 @@ public final class Messages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     boolean hasType();
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    int getType();
+    Messages.Type getType();
 
     /**
      * <code>optional uint32 size = 2;</code>
@@ -4582,8 +4627,14 @@ public final class Messages {
               break;
             }
             case 8: {
-              bitField0_ |= 0x00000001;
-              type_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
               break;
             }
             case 16: {
@@ -4752,17 +4803,17 @@ public final class Messages {
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private Messages.Type type_;
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    public int getType() {
+    public Messages.Type getType() {
       return type_;
     }
 
@@ -4897,7 +4948,7 @@ public final class Messages {
     private int quoteMemoizedSerializedSize = -1;
 
     private void initFields() {
-      type_ = 0;
+      type_ = Messages.Type.RA_MSG0;
       size_ = 0;
       sgxMac_ = java.util.Collections.emptyList();
       gaxMsg3_ = java.util.Collections.emptyList();
@@ -4923,7 +4974,7 @@ public final class Messages {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, type_);
+        output.writeEnum(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, size_);
@@ -4974,7 +5025,7 @@ public final class Messages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, type_);
+          .computeEnumSize(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -5167,7 +5218,7 @@ public final class Messages {
 
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
         size_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -5345,34 +5396,37 @@ public final class Messages {
       }
       private int bitField0_;
 
-      private int type_ ;
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public int getType() {
+      public Messages.Type getType() {
         return type_;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public Builder setType(int value) {
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         onChanged();
         return this;
       }
@@ -5755,13 +5809,13 @@ public final class Messages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     boolean hasType();
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    int getType();
+    Messages.Type getType();
 
     /**
      * <code>required uint32 size = 2;</code>
@@ -5991,8 +6045,14 @@ public final class Messages {
               break;
             }
             case 8: {
-              bitField0_ |= 0x00000001;
-              type_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
               break;
             }
             case 16: {
@@ -6301,17 +6361,17 @@ public final class Messages {
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private Messages.Type type_;
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    public int getType() {
+    public Messages.Type getType() {
       return type_;
     }
 
@@ -6621,7 +6681,7 @@ public final class Messages {
     private int payloadMemoizedSerializedSize = -1;
 
     private void initFields() {
-      type_ = 0;
+      type_ = Messages.Type.RA_MSG0;
       size_ = 0;
       epidGroupStatus_ = 0;
       tcbEvaluationStatus_ = 0;
@@ -6660,7 +6720,7 @@ public final class Messages {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, type_);
+        output.writeEnum(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, size_);
@@ -6758,7 +6818,7 @@ public final class Messages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, type_);
+          .computeEnumSize(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -7037,7 +7097,7 @@ public final class Messages {
 
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
         size_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -7340,34 +7400,37 @@ public final class Messages {
       }
       private int bitField0_;
 
-      private int type_ ;
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public int getType() {
+      public Messages.Type getType() {
         return type_;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public Builder setType(int value) {
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         onChanged();
         return this;
       }
@@ -8203,6 +8266,1827 @@ public final class Messages {
     // @@protoc_insertion_point(class_scope:Messages.AttestationMessage)
   }
 
+  public interface AllInOneMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Messages.AllInOneMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required .Messages.Type type = 1;</code>
+     */
+    boolean hasType();
+    /**
+     * <code>required .Messages.Type type = 1;</code>
+     */
+    Messages.Type getType();
+
+    /**
+     * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+     */
+    boolean hasSerectMsg();
+    /**
+     * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+     */
+    Messages.SecretMessage getSerectMsg();
+    /**
+     * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+     */
+    Messages.SecretMessageOrBuilder getSerectMsgOrBuilder();
+
+    /**
+     * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+     */
+    boolean hasInitMsg();
+    /**
+     * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+     */
+    Messages.InitialMessage getInitMsg();
+    /**
+     * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+     */
+    Messages.InitialMessageOrBuilder getInitMsgOrBuilder();
+
+    /**
+     * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+     */
+    boolean hasMsg0();
+    /**
+     * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+     */
+    Messages.MessageMSG0 getMsg0();
+    /**
+     * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+     */
+    Messages.MessageMSG0OrBuilder getMsg0OrBuilder();
+
+    /**
+     * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+     */
+    boolean hasMsg1();
+    /**
+     * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+     */
+    Messages.MessageMSG1 getMsg1();
+    /**
+     * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+     */
+    Messages.MessageMSG1OrBuilder getMsg1OrBuilder();
+
+    /**
+     * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+     */
+    boolean hasMsg2();
+    /**
+     * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+     */
+    Messages.MessageMSG2 getMsg2();
+    /**
+     * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+     */
+    Messages.MessageMSG2OrBuilder getMsg2OrBuilder();
+
+    /**
+     * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+     */
+    boolean hasMsg3();
+    /**
+     * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+     */
+    Messages.MessageMSG3 getMsg3();
+    /**
+     * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+     */
+    Messages.MessageMSG3OrBuilder getMsg3OrBuilder();
+
+    /**
+     * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+     */
+    boolean hasAttestMsg();
+    /**
+     * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+     */
+    Messages.AttestationMessage getAttestMsg();
+    /**
+     * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+     */
+    Messages.AttestationMessageOrBuilder getAttestMsgOrBuilder();
+  }
+  /**
+   * Protobuf type {@code Messages.AllInOneMessage}
+   */
+  public static final class AllInOneMessage extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:Messages.AllInOneMessage)
+      AllInOneMessageOrBuilder {
+    // Use AllInOneMessage.newBuilder() to construct.
+    private AllInOneMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private AllInOneMessage(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final AllInOneMessage defaultInstance;
+    public static AllInOneMessage getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public AllInOneMessage getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AllInOneMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
+              break;
+            }
+            case 18: {
+              Messages.SecretMessage.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = serectMsg_.toBuilder();
+              }
+              serectMsg_ = input.readMessage(Messages.SecretMessage.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(serectMsg_);
+                serectMsg_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 26: {
+              Messages.InitialMessage.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = initMsg_.toBuilder();
+              }
+              initMsg_ = input.readMessage(Messages.InitialMessage.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(initMsg_);
+                initMsg_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            case 34: {
+              Messages.MessageMSG0.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                subBuilder = msg0_.toBuilder();
+              }
+              msg0_ = input.readMessage(Messages.MessageMSG0.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(msg0_);
+                msg0_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000008;
+              break;
+            }
+            case 42: {
+              Messages.MessageMSG1.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = msg1_.toBuilder();
+              }
+              msg1_ = input.readMessage(Messages.MessageMSG1.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(msg1_);
+                msg1_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
+              break;
+            }
+            case 50: {
+              Messages.MessageMSG2.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000020) == 0x00000020)) {
+                subBuilder = msg2_.toBuilder();
+              }
+              msg2_ = input.readMessage(Messages.MessageMSG2.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(msg2_);
+                msg2_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000020;
+              break;
+            }
+            case 58: {
+              Messages.MessageMSG3.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000040) == 0x00000040)) {
+                subBuilder = msg3_.toBuilder();
+              }
+              msg3_ = input.readMessage(Messages.MessageMSG3.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(msg3_);
+                msg3_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000040;
+              break;
+            }
+            case 66: {
+              Messages.AttestationMessage.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000080) == 0x00000080)) {
+                subBuilder = attestMsg_.toBuilder();
+              }
+              attestMsg_ = input.readMessage(Messages.AttestationMessage.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(attestMsg_);
+                attestMsg_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000080;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return Messages.internal_static_Messages_AllInOneMessage_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Messages.internal_static_Messages_AllInOneMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Messages.AllInOneMessage.class, Messages.AllInOneMessage.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<AllInOneMessage> PARSER =
+        new com.google.protobuf.AbstractParser<AllInOneMessage>() {
+      public AllInOneMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AllInOneMessage(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AllInOneMessage> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private Messages.Type type_;
+    /**
+     * <code>required .Messages.Type type = 1;</code>
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .Messages.Type type = 1;</code>
+     */
+    public Messages.Type getType() {
+      return type_;
+    }
+
+    public static final int SERECT_MSG_FIELD_NUMBER = 2;
+    private Messages.SecretMessage serectMsg_;
+    /**
+     * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+     */
+    public boolean hasSerectMsg() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+     */
+    public Messages.SecretMessage getSerectMsg() {
+      return serectMsg_;
+    }
+    /**
+     * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+     */
+    public Messages.SecretMessageOrBuilder getSerectMsgOrBuilder() {
+      return serectMsg_;
+    }
+
+    public static final int INIT_MSG_FIELD_NUMBER = 3;
+    private Messages.InitialMessage initMsg_;
+    /**
+     * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+     */
+    public boolean hasInitMsg() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+     */
+    public Messages.InitialMessage getInitMsg() {
+      return initMsg_;
+    }
+    /**
+     * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+     */
+    public Messages.InitialMessageOrBuilder getInitMsgOrBuilder() {
+      return initMsg_;
+    }
+
+    public static final int MSG0_FIELD_NUMBER = 4;
+    private Messages.MessageMSG0 msg0_;
+    /**
+     * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+     */
+    public boolean hasMsg0() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+     */
+    public Messages.MessageMSG0 getMsg0() {
+      return msg0_;
+    }
+    /**
+     * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+     */
+    public Messages.MessageMSG0OrBuilder getMsg0OrBuilder() {
+      return msg0_;
+    }
+
+    public static final int MSG1_FIELD_NUMBER = 5;
+    private Messages.MessageMSG1 msg1_;
+    /**
+     * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+     */
+    public boolean hasMsg1() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+     */
+    public Messages.MessageMSG1 getMsg1() {
+      return msg1_;
+    }
+    /**
+     * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+     */
+    public Messages.MessageMSG1OrBuilder getMsg1OrBuilder() {
+      return msg1_;
+    }
+
+    public static final int MSG2_FIELD_NUMBER = 6;
+    private Messages.MessageMSG2 msg2_;
+    /**
+     * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+     */
+    public boolean hasMsg2() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+     */
+    public Messages.MessageMSG2 getMsg2() {
+      return msg2_;
+    }
+    /**
+     * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+     */
+    public Messages.MessageMSG2OrBuilder getMsg2OrBuilder() {
+      return msg2_;
+    }
+
+    public static final int MSG3_FIELD_NUMBER = 7;
+    private Messages.MessageMSG3 msg3_;
+    /**
+     * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+     */
+    public boolean hasMsg3() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+     */
+    public Messages.MessageMSG3 getMsg3() {
+      return msg3_;
+    }
+    /**
+     * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+     */
+    public Messages.MessageMSG3OrBuilder getMsg3OrBuilder() {
+      return msg3_;
+    }
+
+    public static final int ATTEST_MSG_FIELD_NUMBER = 8;
+    private Messages.AttestationMessage attestMsg_;
+    /**
+     * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+     */
+    public boolean hasAttestMsg() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+     */
+    public Messages.AttestationMessage getAttestMsg() {
+      return attestMsg_;
+    }
+    /**
+     * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+     */
+    public Messages.AttestationMessageOrBuilder getAttestMsgOrBuilder() {
+      return attestMsg_;
+    }
+
+    private void initFields() {
+      type_ = Messages.Type.RA_MSG0;
+      serectMsg_ = Messages.SecretMessage.getDefaultInstance();
+      initMsg_ = Messages.InitialMessage.getDefaultInstance();
+      msg0_ = Messages.MessageMSG0.getDefaultInstance();
+      msg1_ = Messages.MessageMSG1.getDefaultInstance();
+      msg2_ = Messages.MessageMSG2.getDefaultInstance();
+      msg3_ = Messages.MessageMSG3.getDefaultInstance();
+      attestMsg_ = Messages.AttestationMessage.getDefaultInstance();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (hasSerectMsg()) {
+        if (!getSerectMsg().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasInitMsg()) {
+        if (!getInitMsg().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasMsg0()) {
+        if (!getMsg0().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasMsg1()) {
+        if (!getMsg1().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasMsg2()) {
+        if (!getMsg2().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasMsg3()) {
+        if (!getMsg3().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasAttestMsg()) {
+        if (!getAttestMsg().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, serectMsg_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeMessage(3, initMsg_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeMessage(4, msg0_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeMessage(5, msg1_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeMessage(6, msg2_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeMessage(7, msg3_);
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeMessage(8, attestMsg_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, serectMsg_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, initMsg_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, msg0_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, msg1_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, msg2_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, msg3_);
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, attestMsg_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static Messages.AllInOneMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Messages.AllInOneMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Messages.AllInOneMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Messages.AllInOneMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Messages.AllInOneMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static Messages.AllInOneMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static Messages.AllInOneMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static Messages.AllInOneMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static Messages.AllInOneMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static Messages.AllInOneMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(Messages.AllInOneMessage prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Messages.AllInOneMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Messages.AllInOneMessage)
+        Messages.AllInOneMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Messages.internal_static_Messages_AllInOneMessage_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Messages.internal_static_Messages_AllInOneMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Messages.AllInOneMessage.class, Messages.AllInOneMessage.Builder.class);
+      }
+
+      // Construct using Messages.AllInOneMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getSerectMsgFieldBuilder();
+          getInitMsgFieldBuilder();
+          getMsg0FieldBuilder();
+          getMsg1FieldBuilder();
+          getMsg2FieldBuilder();
+          getMsg3FieldBuilder();
+          getAttestMsgFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        type_ = Messages.Type.RA_MSG0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (serectMsgBuilder_ == null) {
+          serectMsg_ = Messages.SecretMessage.getDefaultInstance();
+        } else {
+          serectMsgBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (initMsgBuilder_ == null) {
+          initMsg_ = Messages.InitialMessage.getDefaultInstance();
+        } else {
+          initMsgBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        if (msg0Builder_ == null) {
+          msg0_ = Messages.MessageMSG0.getDefaultInstance();
+        } else {
+          msg0Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (msg1Builder_ == null) {
+          msg1_ = Messages.MessageMSG1.getDefaultInstance();
+        } else {
+          msg1Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        if (msg2Builder_ == null) {
+          msg2_ = Messages.MessageMSG2.getDefaultInstance();
+        } else {
+          msg2Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000020);
+        if (msg3Builder_ == null) {
+          msg3_ = Messages.MessageMSG3.getDefaultInstance();
+        } else {
+          msg3Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000040);
+        if (attestMsgBuilder_ == null) {
+          attestMsg_ = Messages.AttestationMessage.getDefaultInstance();
+        } else {
+          attestMsgBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return Messages.internal_static_Messages_AllInOneMessage_descriptor;
+      }
+
+      public Messages.AllInOneMessage getDefaultInstanceForType() {
+        return Messages.AllInOneMessage.getDefaultInstance();
+      }
+
+      public Messages.AllInOneMessage build() {
+        Messages.AllInOneMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public Messages.AllInOneMessage buildPartial() {
+        Messages.AllInOneMessage result = new Messages.AllInOneMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (serectMsgBuilder_ == null) {
+          result.serectMsg_ = serectMsg_;
+        } else {
+          result.serectMsg_ = serectMsgBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        if (initMsgBuilder_ == null) {
+          result.initMsg_ = initMsg_;
+        } else {
+          result.initMsg_ = initMsgBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        if (msg0Builder_ == null) {
+          result.msg0_ = msg0_;
+        } else {
+          result.msg0_ = msg0Builder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        if (msg1Builder_ == null) {
+          result.msg1_ = msg1_;
+        } else {
+          result.msg1_ = msg1Builder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        if (msg2Builder_ == null) {
+          result.msg2_ = msg2_;
+        } else {
+          result.msg2_ = msg2Builder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        if (msg3Builder_ == null) {
+          result.msg3_ = msg3_;
+        } else {
+          result.msg3_ = msg3Builder_.build();
+        }
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        if (attestMsgBuilder_ == null) {
+          result.attestMsg_ = attestMsg_;
+        } else {
+          result.attestMsg_ = attestMsgBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Messages.AllInOneMessage) {
+          return mergeFrom((Messages.AllInOneMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Messages.AllInOneMessage other) {
+        if (other == Messages.AllInOneMessage.getDefaultInstance()) return this;
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        if (other.hasSerectMsg()) {
+          mergeSerectMsg(other.getSerectMsg());
+        }
+        if (other.hasInitMsg()) {
+          mergeInitMsg(other.getInitMsg());
+        }
+        if (other.hasMsg0()) {
+          mergeMsg0(other.getMsg0());
+        }
+        if (other.hasMsg1()) {
+          mergeMsg1(other.getMsg1());
+        }
+        if (other.hasMsg2()) {
+          mergeMsg2(other.getMsg2());
+        }
+        if (other.hasMsg3()) {
+          mergeMsg3(other.getMsg3());
+        }
+        if (other.hasAttestMsg()) {
+          mergeAttestMsg(other.getAttestMsg());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasType()) {
+          
+          return false;
+        }
+        if (hasSerectMsg()) {
+          if (!getSerectMsg().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasInitMsg()) {
+          if (!getInitMsg().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasMsg0()) {
+          if (!getMsg0().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasMsg1()) {
+          if (!getMsg1().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasMsg2()) {
+          if (!getMsg2().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasMsg3()) {
+          if (!getMsg3().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasAttestMsg()) {
+          if (!getAttestMsg().isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Messages.AllInOneMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (Messages.AllInOneMessage) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
+      /**
+       * <code>required .Messages.Type type = 1;</code>
+       */
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .Messages.Type type = 1;</code>
+       */
+      public Messages.Type getType() {
+        return type_;
+      }
+      /**
+       * <code>required .Messages.Type type = 1;</code>
+       */
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .Messages.Type type = 1;</code>
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        type_ = Messages.Type.RA_MSG0;
+        onChanged();
+        return this;
+      }
+
+      private Messages.SecretMessage serectMsg_ = Messages.SecretMessage.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.SecretMessage, Messages.SecretMessage.Builder, Messages.SecretMessageOrBuilder> serectMsgBuilder_;
+      /**
+       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       */
+      public boolean hasSerectMsg() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       */
+      public Messages.SecretMessage getSerectMsg() {
+        if (serectMsgBuilder_ == null) {
+          return serectMsg_;
+        } else {
+          return serectMsgBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       */
+      public Builder setSerectMsg(Messages.SecretMessage value) {
+        if (serectMsgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          serectMsg_ = value;
+          onChanged();
+        } else {
+          serectMsgBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       */
+      public Builder setSerectMsg(
+          Messages.SecretMessage.Builder builderForValue) {
+        if (serectMsgBuilder_ == null) {
+          serectMsg_ = builderForValue.build();
+          onChanged();
+        } else {
+          serectMsgBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       */
+      public Builder mergeSerectMsg(Messages.SecretMessage value) {
+        if (serectMsgBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              serectMsg_ != Messages.SecretMessage.getDefaultInstance()) {
+            serectMsg_ =
+              Messages.SecretMessage.newBuilder(serectMsg_).mergeFrom(value).buildPartial();
+          } else {
+            serectMsg_ = value;
+          }
+          onChanged();
+        } else {
+          serectMsgBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       */
+      public Builder clearSerectMsg() {
+        if (serectMsgBuilder_ == null) {
+          serectMsg_ = Messages.SecretMessage.getDefaultInstance();
+          onChanged();
+        } else {
+          serectMsgBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      /**
+       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       */
+      public Messages.SecretMessage.Builder getSerectMsgBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getSerectMsgFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       */
+      public Messages.SecretMessageOrBuilder getSerectMsgOrBuilder() {
+        if (serectMsgBuilder_ != null) {
+          return serectMsgBuilder_.getMessageOrBuilder();
+        } else {
+          return serectMsg_;
+        }
+      }
+      /**
+       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.SecretMessage, Messages.SecretMessage.Builder, Messages.SecretMessageOrBuilder> 
+          getSerectMsgFieldBuilder() {
+        if (serectMsgBuilder_ == null) {
+          serectMsgBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              Messages.SecretMessage, Messages.SecretMessage.Builder, Messages.SecretMessageOrBuilder>(
+                  getSerectMsg(),
+                  getParentForChildren(),
+                  isClean());
+          serectMsg_ = null;
+        }
+        return serectMsgBuilder_;
+      }
+
+      private Messages.InitialMessage initMsg_ = Messages.InitialMessage.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.InitialMessage, Messages.InitialMessage.Builder, Messages.InitialMessageOrBuilder> initMsgBuilder_;
+      /**
+       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       */
+      public boolean hasInitMsg() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       */
+      public Messages.InitialMessage getInitMsg() {
+        if (initMsgBuilder_ == null) {
+          return initMsg_;
+        } else {
+          return initMsgBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       */
+      public Builder setInitMsg(Messages.InitialMessage value) {
+        if (initMsgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          initMsg_ = value;
+          onChanged();
+        } else {
+          initMsgBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       */
+      public Builder setInitMsg(
+          Messages.InitialMessage.Builder builderForValue) {
+        if (initMsgBuilder_ == null) {
+          initMsg_ = builderForValue.build();
+          onChanged();
+        } else {
+          initMsgBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       */
+      public Builder mergeInitMsg(Messages.InitialMessage value) {
+        if (initMsgBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              initMsg_ != Messages.InitialMessage.getDefaultInstance()) {
+            initMsg_ =
+              Messages.InitialMessage.newBuilder(initMsg_).mergeFrom(value).buildPartial();
+          } else {
+            initMsg_ = value;
+          }
+          onChanged();
+        } else {
+          initMsgBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       */
+      public Builder clearInitMsg() {
+        if (initMsgBuilder_ == null) {
+          initMsg_ = Messages.InitialMessage.getDefaultInstance();
+          onChanged();
+        } else {
+          initMsgBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      /**
+       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       */
+      public Messages.InitialMessage.Builder getInitMsgBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getInitMsgFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       */
+      public Messages.InitialMessageOrBuilder getInitMsgOrBuilder() {
+        if (initMsgBuilder_ != null) {
+          return initMsgBuilder_.getMessageOrBuilder();
+        } else {
+          return initMsg_;
+        }
+      }
+      /**
+       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.InitialMessage, Messages.InitialMessage.Builder, Messages.InitialMessageOrBuilder> 
+          getInitMsgFieldBuilder() {
+        if (initMsgBuilder_ == null) {
+          initMsgBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              Messages.InitialMessage, Messages.InitialMessage.Builder, Messages.InitialMessageOrBuilder>(
+                  getInitMsg(),
+                  getParentForChildren(),
+                  isClean());
+          initMsg_ = null;
+        }
+        return initMsgBuilder_;
+      }
+
+      private Messages.MessageMSG0 msg0_ = Messages.MessageMSG0.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG0, Messages.MessageMSG0.Builder, Messages.MessageMSG0OrBuilder> msg0Builder_;
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public boolean hasMsg0() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public Messages.MessageMSG0 getMsg0() {
+        if (msg0Builder_ == null) {
+          return msg0_;
+        } else {
+          return msg0Builder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public Builder setMsg0(Messages.MessageMSG0 value) {
+        if (msg0Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msg0_ = value;
+          onChanged();
+        } else {
+          msg0Builder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public Builder setMsg0(
+          Messages.MessageMSG0.Builder builderForValue) {
+        if (msg0Builder_ == null) {
+          msg0_ = builderForValue.build();
+          onChanged();
+        } else {
+          msg0Builder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public Builder mergeMsg0(Messages.MessageMSG0 value) {
+        if (msg0Builder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008) &&
+              msg0_ != Messages.MessageMSG0.getDefaultInstance()) {
+            msg0_ =
+              Messages.MessageMSG0.newBuilder(msg0_).mergeFrom(value).buildPartial();
+          } else {
+            msg0_ = value;
+          }
+          onChanged();
+        } else {
+          msg0Builder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public Builder clearMsg0() {
+        if (msg0Builder_ == null) {
+          msg0_ = Messages.MessageMSG0.getDefaultInstance();
+          onChanged();
+        } else {
+          msg0Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public Messages.MessageMSG0.Builder getMsg0Builder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getMsg0FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public Messages.MessageMSG0OrBuilder getMsg0OrBuilder() {
+        if (msg0Builder_ != null) {
+          return msg0Builder_.getMessageOrBuilder();
+        } else {
+          return msg0_;
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG0, Messages.MessageMSG0.Builder, Messages.MessageMSG0OrBuilder> 
+          getMsg0FieldBuilder() {
+        if (msg0Builder_ == null) {
+          msg0Builder_ = new com.google.protobuf.SingleFieldBuilder<
+              Messages.MessageMSG0, Messages.MessageMSG0.Builder, Messages.MessageMSG0OrBuilder>(
+                  getMsg0(),
+                  getParentForChildren(),
+                  isClean());
+          msg0_ = null;
+        }
+        return msg0Builder_;
+      }
+
+      private Messages.MessageMSG1 msg1_ = Messages.MessageMSG1.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG1, Messages.MessageMSG1.Builder, Messages.MessageMSG1OrBuilder> msg1Builder_;
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public boolean hasMsg1() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public Messages.MessageMSG1 getMsg1() {
+        if (msg1Builder_ == null) {
+          return msg1_;
+        } else {
+          return msg1Builder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public Builder setMsg1(Messages.MessageMSG1 value) {
+        if (msg1Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msg1_ = value;
+          onChanged();
+        } else {
+          msg1Builder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public Builder setMsg1(
+          Messages.MessageMSG1.Builder builderForValue) {
+        if (msg1Builder_ == null) {
+          msg1_ = builderForValue.build();
+          onChanged();
+        } else {
+          msg1Builder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public Builder mergeMsg1(Messages.MessageMSG1 value) {
+        if (msg1Builder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              msg1_ != Messages.MessageMSG1.getDefaultInstance()) {
+            msg1_ =
+              Messages.MessageMSG1.newBuilder(msg1_).mergeFrom(value).buildPartial();
+          } else {
+            msg1_ = value;
+          }
+          onChanged();
+        } else {
+          msg1Builder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public Builder clearMsg1() {
+        if (msg1Builder_ == null) {
+          msg1_ = Messages.MessageMSG1.getDefaultInstance();
+          onChanged();
+        } else {
+          msg1Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public Messages.MessageMSG1.Builder getMsg1Builder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getMsg1FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public Messages.MessageMSG1OrBuilder getMsg1OrBuilder() {
+        if (msg1Builder_ != null) {
+          return msg1Builder_.getMessageOrBuilder();
+        } else {
+          return msg1_;
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG1, Messages.MessageMSG1.Builder, Messages.MessageMSG1OrBuilder> 
+          getMsg1FieldBuilder() {
+        if (msg1Builder_ == null) {
+          msg1Builder_ = new com.google.protobuf.SingleFieldBuilder<
+              Messages.MessageMSG1, Messages.MessageMSG1.Builder, Messages.MessageMSG1OrBuilder>(
+                  getMsg1(),
+                  getParentForChildren(),
+                  isClean());
+          msg1_ = null;
+        }
+        return msg1Builder_;
+      }
+
+      private Messages.MessageMSG2 msg2_ = Messages.MessageMSG2.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG2, Messages.MessageMSG2.Builder, Messages.MessageMSG2OrBuilder> msg2Builder_;
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public boolean hasMsg2() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public Messages.MessageMSG2 getMsg2() {
+        if (msg2Builder_ == null) {
+          return msg2_;
+        } else {
+          return msg2Builder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public Builder setMsg2(Messages.MessageMSG2 value) {
+        if (msg2Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msg2_ = value;
+          onChanged();
+        } else {
+          msg2Builder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public Builder setMsg2(
+          Messages.MessageMSG2.Builder builderForValue) {
+        if (msg2Builder_ == null) {
+          msg2_ = builderForValue.build();
+          onChanged();
+        } else {
+          msg2Builder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public Builder mergeMsg2(Messages.MessageMSG2 value) {
+        if (msg2Builder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020) &&
+              msg2_ != Messages.MessageMSG2.getDefaultInstance()) {
+            msg2_ =
+              Messages.MessageMSG2.newBuilder(msg2_).mergeFrom(value).buildPartial();
+          } else {
+            msg2_ = value;
+          }
+          onChanged();
+        } else {
+          msg2Builder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public Builder clearMsg2() {
+        if (msg2Builder_ == null) {
+          msg2_ = Messages.MessageMSG2.getDefaultInstance();
+          onChanged();
+        } else {
+          msg2Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000020);
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public Messages.MessageMSG2.Builder getMsg2Builder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getMsg2FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public Messages.MessageMSG2OrBuilder getMsg2OrBuilder() {
+        if (msg2Builder_ != null) {
+          return msg2Builder_.getMessageOrBuilder();
+        } else {
+          return msg2_;
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG2, Messages.MessageMSG2.Builder, Messages.MessageMSG2OrBuilder> 
+          getMsg2FieldBuilder() {
+        if (msg2Builder_ == null) {
+          msg2Builder_ = new com.google.protobuf.SingleFieldBuilder<
+              Messages.MessageMSG2, Messages.MessageMSG2.Builder, Messages.MessageMSG2OrBuilder>(
+                  getMsg2(),
+                  getParentForChildren(),
+                  isClean());
+          msg2_ = null;
+        }
+        return msg2Builder_;
+      }
+
+      private Messages.MessageMSG3 msg3_ = Messages.MessageMSG3.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG3, Messages.MessageMSG3.Builder, Messages.MessageMSG3OrBuilder> msg3Builder_;
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public boolean hasMsg3() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public Messages.MessageMSG3 getMsg3() {
+        if (msg3Builder_ == null) {
+          return msg3_;
+        } else {
+          return msg3Builder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public Builder setMsg3(Messages.MessageMSG3 value) {
+        if (msg3Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msg3_ = value;
+          onChanged();
+        } else {
+          msg3Builder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public Builder setMsg3(
+          Messages.MessageMSG3.Builder builderForValue) {
+        if (msg3Builder_ == null) {
+          msg3_ = builderForValue.build();
+          onChanged();
+        } else {
+          msg3Builder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public Builder mergeMsg3(Messages.MessageMSG3 value) {
+        if (msg3Builder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040) &&
+              msg3_ != Messages.MessageMSG3.getDefaultInstance()) {
+            msg3_ =
+              Messages.MessageMSG3.newBuilder(msg3_).mergeFrom(value).buildPartial();
+          } else {
+            msg3_ = value;
+          }
+          onChanged();
+        } else {
+          msg3Builder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public Builder clearMsg3() {
+        if (msg3Builder_ == null) {
+          msg3_ = Messages.MessageMSG3.getDefaultInstance();
+          onChanged();
+        } else {
+          msg3Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000040);
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public Messages.MessageMSG3.Builder getMsg3Builder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getMsg3FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public Messages.MessageMSG3OrBuilder getMsg3OrBuilder() {
+        if (msg3Builder_ != null) {
+          return msg3Builder_.getMessageOrBuilder();
+        } else {
+          return msg3_;
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG3, Messages.MessageMSG3.Builder, Messages.MessageMSG3OrBuilder> 
+          getMsg3FieldBuilder() {
+        if (msg3Builder_ == null) {
+          msg3Builder_ = new com.google.protobuf.SingleFieldBuilder<
+              Messages.MessageMSG3, Messages.MessageMSG3.Builder, Messages.MessageMSG3OrBuilder>(
+                  getMsg3(),
+                  getParentForChildren(),
+                  isClean());
+          msg3_ = null;
+        }
+        return msg3Builder_;
+      }
+
+      private Messages.AttestationMessage attestMsg_ = Messages.AttestationMessage.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.AttestationMessage, Messages.AttestationMessage.Builder, Messages.AttestationMessageOrBuilder> attestMsgBuilder_;
+      /**
+       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       */
+      public boolean hasAttestMsg() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       */
+      public Messages.AttestationMessage getAttestMsg() {
+        if (attestMsgBuilder_ == null) {
+          return attestMsg_;
+        } else {
+          return attestMsgBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       */
+      public Builder setAttestMsg(Messages.AttestationMessage value) {
+        if (attestMsgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          attestMsg_ = value;
+          onChanged();
+        } else {
+          attestMsgBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       */
+      public Builder setAttestMsg(
+          Messages.AttestationMessage.Builder builderForValue) {
+        if (attestMsgBuilder_ == null) {
+          attestMsg_ = builderForValue.build();
+          onChanged();
+        } else {
+          attestMsgBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       */
+      public Builder mergeAttestMsg(Messages.AttestationMessage value) {
+        if (attestMsgBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) == 0x00000080) &&
+              attestMsg_ != Messages.AttestationMessage.getDefaultInstance()) {
+            attestMsg_ =
+              Messages.AttestationMessage.newBuilder(attestMsg_).mergeFrom(value).buildPartial();
+          } else {
+            attestMsg_ = value;
+          }
+          onChanged();
+        } else {
+          attestMsgBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       */
+      public Builder clearAttestMsg() {
+        if (attestMsgBuilder_ == null) {
+          attestMsg_ = Messages.AttestationMessage.getDefaultInstance();
+          onChanged();
+        } else {
+          attestMsgBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       */
+      public Messages.AttestationMessage.Builder getAttestMsgBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return getAttestMsgFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       */
+      public Messages.AttestationMessageOrBuilder getAttestMsgOrBuilder() {
+        if (attestMsgBuilder_ != null) {
+          return attestMsgBuilder_.getMessageOrBuilder();
+        } else {
+          return attestMsg_;
+        }
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.AttestationMessage, Messages.AttestationMessage.Builder, Messages.AttestationMessageOrBuilder> 
+          getAttestMsgFieldBuilder() {
+        if (attestMsgBuilder_ == null) {
+          attestMsgBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              Messages.AttestationMessage, Messages.AttestationMessage.Builder, Messages.AttestationMessageOrBuilder>(
+                  getAttestMsg(),
+                  getParentForChildren(),
+                  isClean());
+          attestMsg_ = null;
+        }
+        return attestMsgBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:Messages.AllInOneMessage)
+    }
+
+    static {
+      defaultInstance = new AllInOneMessage(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:Messages.AllInOneMessage)
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Messages_SecretMessage_descriptor;
   private static
@@ -8214,10 +10098,10 @@ public final class Messages {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_Messages_InitialMessage_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Messages_MessageMsg0_descriptor;
+    internal_static_Messages_MessageMSG0_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_Messages_MessageMsg0_fieldAccessorTable;
+      internal_static_Messages_MessageMSG0_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Messages_MessageMSG1_descriptor;
   private static
@@ -8238,6 +10122,11 @@ public final class Messages {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_Messages_AttestationMessage_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Messages_AllInOneMessage_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_Messages_AllInOneMessage_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -8247,37 +10136,48 @@ public final class Messages {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016Messages.proto\022\010Messages\"+\n\rSecretMess" +
-      "age\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002 \001(\r\",\n\016Initi" +
-      "alMessage\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002 \001(\r\"9\n" +
-      "\013MessageMsg0\022\014\n\004type\030\001 \002(\r\022\014\n\004epid\030\002 \002(\r" +
-      "\022\016\n\006status\030\003 \001(\r\"N\n\013MessageMSG1\022\014\n\004type\030" +
-      "\001 \002(\r\022\017\n\003GaX\030\002 \003(\rB\002\020\001\022\017\n\003GaY\030\003 \003(\rB\002\020\001\022" +
-      "\017\n\003GID\030\004 \003(\rB\002\020\001\"\205\002\n\013MessageMSG2\022\014\n\004type" +
-      "\030\001 \002(\r\022\014\n\004size\030\002 \001(\r\022\031\n\rpublic_key_gx\030\003 " +
+      "\n\016Messages.proto\022\010Messages\";\n\rSecretMess" +
+      "age\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022\014\n\004siz" +
+      "e\030\002 \001(\r\"<\n\016InitialMessage\022\034\n\004type\030\001 \002(\0162" +
+      "\016.Messages.Type\022\014\n\004size\030\002 \001(\r\"I\n\013Message" +
+      "MSG0\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022\014\n\004ep" +
+      "id\030\002 \002(\r\022\016\n\006status\030\003 \001(\r\"^\n\013MessageMSG1\022" +
+      "\034\n\004type\030\001 \002(\0162\016.Messages.Type\022\017\n\003GaX\030\002 \003" +
+      "(\rB\002\020\001\022\017\n\003GaY\030\003 \003(\rB\002\020\001\022\017\n\003GID\030\004 \003(\rB\002\020\001" +
+      "\"\225\002\n\013MessageMSG2\022\034\n\004type\030\001 \002(\0162\016.Message" +
+      "s.Type\022\014\n\004size\030\002 \001(\r\022\031\n\rpublic_key_gx\030\003 ",
       "\003(\rB\002\020\001\022\031\n\rpublic_key_gy\030\004 \003(\rB\002\020\001\022\022\n\nqu" +
-      "ote_type\030\005 \001(\r\022\020\n\004spid\030\006 \003(\rB\002\020\001\022\023\n\013cmac",
+      "ote_type\030\005 \001(\r\022\020\n\004spid\030\006 \003(\rB\002\020\001\022\023\n\013cmac" +
       "_kdf_id\030\007 \001(\r\022\027\n\013signature_x\030\010 \003(\rB\002\020\001\022\027" +
       "\n\013signature_y\030\t \003(\rB\002\020\001\022\020\n\004smac\030\n \003(\rB\002\020" +
       "\001\022\022\n\nsize_sigrl\030\013 \001(\r\022\021\n\005sigrl\030\014 \003(\rB\002\020\001" +
-      "\"\227\001\n\013MessageMSG3\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002" +
-      " \001(\r\022\023\n\007sgx_mac\030\003 \003(\rB\002\020\001\022\024\n\010gax_msg3\030\004 " +
-      "\003(\rB\002\020\001\022\024\n\010gay_msg3\030\005 \003(\rB\002\020\001\022\030\n\014sec_pro" +
-      "perty\030\006 \003(\rB\002\020\001\022\021\n\005quote\030\007 \003(\rB\002\020\001\"\262\003\n\022A" +
-      "ttestationMessage\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030" +
-      "\002 \002(\r\022\031\n\021epid_group_status\030\003 \001(\r\022\035\n\025tcb_" +
-      "evaluation_status\030\004 \001(\r\022\035\n\025pse_evaluatio",
-      "n_status\030\005 \001(\r\022&\n\032latest_equivalent_tcb_" +
-      "psvn\030\006 \003(\rB\002\020\001\022\035\n\021latest_pse_isvsvn\030\007 \003(" +
-      "\rB\002\020\001\022\033\n\017latest_psda_svn\030\010 \003(\rB\002\020\001\022!\n\025pe" +
-      "rformance_rekey_gid\030\t \003(\rB\002\020\001\022\030\n\014ec_sign" +
-      "256_x\030\n \003(\rB\002\020\001\022\030\n\014ec_sign256_y\030\013 \003(\rB\002\020" +
-      "\001\022\023\n\007mac_smk\030\014 \003(\rB\002\020\001\022\023\n\013result_size\030\r " +
-      "\001(\r\022\024\n\010reserved\030\016 \003(\rB\002\020\001\022\027\n\013payload_tag" +
-      "\030\017 \003(\rB\002\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001*u\n\004Type\022" +
-      "\013\n\007RA_MSG0\020\000\022\013\n\007RA_MSG1\020\001\022\013\n\007RA_MSG2\020\002\022\013" +
-      "\n\007RA_MSG3\020\003\022\021\n\rRA_ATT_RESULT\020\004\022\023\n\017RA_VER",
-      "IFICATION\020\005\022\021\n\rRA_APP_ATT_OK\020\006"
+      "\"\247\001\n\013MessageMSG3\022\034\n\004type\030\001 \002(\0162\016.Message" +
+      "s.Type\022\014\n\004size\030\002 \001(\r\022\023\n\007sgx_mac\030\003 \003(\rB\002\020" +
+      "\001\022\024\n\010gax_msg3\030\004 \003(\rB\002\020\001\022\024\n\010gay_msg3\030\005 \003(" +
+      "\rB\002\020\001\022\030\n\014sec_property\030\006 \003(\rB\002\020\001\022\021\n\005quote" +
+      "\030\007 \003(\rB\002\020\001\"\302\003\n\022AttestationMessage\022\034\n\004typ",
+      "e\030\001 \002(\0162\016.Messages.Type\022\014\n\004size\030\002 \002(\r\022\031\n" +
+      "\021epid_group_status\030\003 \001(\r\022\035\n\025tcb_evaluati" +
+      "on_status\030\004 \001(\r\022\035\n\025pse_evaluation_status" +
+      "\030\005 \001(\r\022&\n\032latest_equivalent_tcb_psvn\030\006 \003" +
+      "(\rB\002\020\001\022\035\n\021latest_pse_isvsvn\030\007 \003(\rB\002\020\001\022\033\n" +
+      "\017latest_psda_svn\030\010 \003(\rB\002\020\001\022!\n\025performanc" +
+      "e_rekey_gid\030\t \003(\rB\002\020\001\022\030\n\014ec_sign256_x\030\n " +
+      "\003(\rB\002\020\001\022\030\n\014ec_sign256_y\030\013 \003(\rB\002\020\001\022\023\n\007mac" +
+      "_smk\030\014 \003(\rB\002\020\001\022\023\n\013result_size\030\r \001(\r\022\024\n\010r" +
+      "eserved\030\016 \003(\rB\002\020\001\022\027\n\013payload_tag\030\017 \003(\rB\002",
+      "\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001\"\316\002\n\017AllInOneMess" +
+      "age\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022+\n\nser" +
+      "ect_msg\030\002 \001(\0132\027.Messages.SecretMessage\022*" +
+      "\n\010init_msg\030\003 \001(\0132\030.Messages.InitialMessa" +
+      "ge\022#\n\004msg0\030\004 \001(\0132\025.Messages.MessageMSG0\022" +
+      "#\n\004msg1\030\005 \001(\0132\025.Messages.MessageMSG1\022#\n\004" +
+      "msg2\030\006 \001(\0132\025.Messages.MessageMSG2\022#\n\004msg" +
+      "3\030\007 \001(\0132\025.Messages.MessageMSG3\0220\n\nattest" +
+      "_msg\030\010 \001(\0132\034.Messages.AttestationMessage" +
+      "*u\n\004Type\022\013\n\007RA_MSG0\020\000\022\013\n\007RA_MSG1\020\001\022\013\n\007RA",
+      "_MSG2\020\002\022\013\n\007RA_MSG3\020\003\022\021\n\rRA_ATT_RESULT\020\004\022" +
+      "\023\n\017RA_VERIFICATION\020\005\022\021\n\rRA_APP_ATT_OK\020\006"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8303,11 +10203,11 @@ public final class Messages {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_Messages_InitialMessage_descriptor,
         new java.lang.String[] { "Type", "Size", });
-    internal_static_Messages_MessageMsg0_descriptor =
+    internal_static_Messages_MessageMSG0_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_Messages_MessageMsg0_fieldAccessorTable = new
+    internal_static_Messages_MessageMSG0_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_Messages_MessageMsg0_descriptor,
+        internal_static_Messages_MessageMSG0_descriptor,
         new java.lang.String[] { "Type", "Epid", "Status", });
     internal_static_Messages_MessageMSG1_descriptor =
       getDescriptor().getMessageTypes().get(3);
@@ -8333,6 +10233,12 @@ public final class Messages {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_Messages_AttestationMessage_descriptor,
         new java.lang.String[] { "Type", "Size", "EpidGroupStatus", "TcbEvaluationStatus", "PseEvaluationStatus", "LatestEquivalentTcbPsvn", "LatestPseIsvsvn", "LatestPsdaSvn", "PerformanceRekeyGid", "EcSign256X", "EcSign256Y", "MacSmk", "ResultSize", "Reserved", "PayloadTag", "Payload", });
+    internal_static_Messages_AllInOneMessage_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_Messages_AllInOneMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_Messages_AllInOneMessage_descriptor,
+        new java.lang.String[] { "Type", "SerectMsg", "InitMsg", "Msg0", "Msg1", "Msg2", "Msg3", "AttestMsg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

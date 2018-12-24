@@ -480,6 +480,7 @@ string MessageHandler::handleVerification() {
 }
 
 
+/*
 string MessageHandler::createInitMsg(int type, string msg) {
     Messages::SecretMessage init_msg;
     init_msg.set_type(type);
@@ -490,7 +491,6 @@ string MessageHandler::createInitMsg(int type, string msg) {
     return s;
     //return nm->serialize(init_msg);
 }
-/*
 */
 
 
@@ -505,38 +505,32 @@ string MessageHandler::handleMessages(string v) {
         Log("Parse message failed!", log::error);
         return res;
     }
+    Log("type is:%d", aio_msg.type());
+    Log("expe is:%d", Messages::Type::RA_VERIFICATION);
 
     Log("========== handle messages ==========");
     switch (aio_msg.type()) {
     case Messages::Type::RA_VERIFICATION: {	//Verification request
         Messages::InitialMessage init_msg = aio_msg.init_msg();
-        if (init_msg.type() == Messages::Type::RA_VERIFICATION) {
-            s = this->handleVerification();
-        }
+        s = this->handleVerification();
     }
     break;
     case Messages::Type::RA_MSG0: {		//Reply to MSG0
         Messages::MessageMSG0 msg0 = aio_msg.msg0();
-        if ((msg0.type() == Messages::Type::RA_MSG0)) {
-            // generate MSG1 and send to SP
-            s = this->handleMSG0(msg0);
-        }
+        // generate MSG1 and send to SP
+        s = this->handleMSG0(msg0);
     }
     break;
     case Messages::Type::RA_MSG2: {		//MSG2
         Messages::MessageMSG2 msg2 = aio_msg.msg2();
-        if ((msg2.type() == Messages::Type::RA_MSG2)) {
-            // generate MSG3 and send to SP
-            s = this->handleMSG2(msg2);
-        }
+        // generate MSG3 and send to SP
+        s = this->handleMSG2(msg2);
     }
     break;
     case Messages::Type::RA_ATT_RESULT: {	//Reply to MSG3
         Messages::AttestationMessage att_msg = aio_msg.attest_msg();
-        if (att_msg.type() == Messages::Type::RA_ATT_RESULT) {
-            // receive MSG4 and verify encrypted secret
-            s = this->handleAttestationResult(att_msg);
-        }
+        // receive MSG4 and verify encrypted secret
+        s = this->handleAttestationResult(att_msg);
     }
     break;
     default:

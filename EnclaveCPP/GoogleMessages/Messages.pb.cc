@@ -280,46 +280,48 @@ void protobuf_AddDesc_Messages_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\016Messages.proto\022\010Messages\"+\n\rSecretMess"
-    "age\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002 \001(\r\",\n\016Initi"
-    "alMessage\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002 \001(\r\"9\n"
-    "\013MessageMSG0\022\014\n\004type\030\001 \002(\r\022\014\n\004epid\030\002 \002(\r"
-    "\022\016\n\006status\030\003 \001(\r\"N\n\013MessageMSG1\022\014\n\004type\030"
-    "\001 \002(\r\022\017\n\003GaX\030\002 \003(\rB\002\020\001\022\017\n\003GaY\030\003 \003(\rB\002\020\001\022"
-    "\017\n\003GID\030\004 \003(\rB\002\020\001\"\205\002\n\013MessageMSG2\022\014\n\004type"
-    "\030\001 \002(\r\022\014\n\004size\030\002 \001(\r\022\031\n\rpublic_key_gx\030\003 "
+    "\n\016Messages.proto\022\010Messages\";\n\rSecretMess"
+    "age\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022\014\n\004siz"
+    "e\030\002 \001(\r\"<\n\016InitialMessage\022\034\n\004type\030\001 \002(\0162"
+    "\016.Messages.Type\022\014\n\004size\030\002 \001(\r\"I\n\013Message"
+    "MSG0\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022\014\n\004ep"
+    "id\030\002 \002(\r\022\016\n\006status\030\003 \001(\r\"^\n\013MessageMSG1\022"
+    "\034\n\004type\030\001 \002(\0162\016.Messages.Type\022\017\n\003GaX\030\002 \003"
+    "(\rB\002\020\001\022\017\n\003GaY\030\003 \003(\rB\002\020\001\022\017\n\003GID\030\004 \003(\rB\002\020\001"
+    "\"\225\002\n\013MessageMSG2\022\034\n\004type\030\001 \002(\0162\016.Message"
+    "s.Type\022\014\n\004size\030\002 \001(\r\022\031\n\rpublic_key_gx\030\003 "
     "\003(\rB\002\020\001\022\031\n\rpublic_key_gy\030\004 \003(\rB\002\020\001\022\022\n\nqu"
     "ote_type\030\005 \001(\r\022\020\n\004spid\030\006 \003(\rB\002\020\001\022\023\n\013cmac"
     "_kdf_id\030\007 \001(\r\022\027\n\013signature_x\030\010 \003(\rB\002\020\001\022\027"
     "\n\013signature_y\030\t \003(\rB\002\020\001\022\020\n\004smac\030\n \003(\rB\002\020"
     "\001\022\022\n\nsize_sigrl\030\013 \001(\r\022\021\n\005sigrl\030\014 \003(\rB\002\020\001"
-    "\"\227\001\n\013MessageMSG3\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002"
-    " \001(\r\022\023\n\007sgx_mac\030\003 \003(\rB\002\020\001\022\024\n\010gax_msg3\030\004 "
-    "\003(\rB\002\020\001\022\024\n\010gay_msg3\030\005 \003(\rB\002\020\001\022\030\n\014sec_pro"
-    "perty\030\006 \003(\rB\002\020\001\022\021\n\005quote\030\007 \003(\rB\002\020\001\"\262\003\n\022A"
-    "ttestationMessage\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030"
-    "\002 \002(\r\022\031\n\021epid_group_status\030\003 \001(\r\022\035\n\025tcb_"
-    "evaluation_status\030\004 \001(\r\022\035\n\025pse_evaluatio"
-    "n_status\030\005 \001(\r\022&\n\032latest_equivalent_tcb_"
-    "psvn\030\006 \003(\rB\002\020\001\022\035\n\021latest_pse_isvsvn\030\007 \003("
-    "\rB\002\020\001\022\033\n\017latest_psda_svn\030\010 \003(\rB\002\020\001\022!\n\025pe"
-    "rformance_rekey_gid\030\t \003(\rB\002\020\001\022\030\n\014ec_sign"
-    "256_x\030\n \003(\rB\002\020\001\022\030\n\014ec_sign256_y\030\013 \003(\rB\002\020"
-    "\001\022\023\n\007mac_smk\030\014 \003(\rB\002\020\001\022\023\n\013result_size\030\r "
-    "\001(\r\022\024\n\010reserved\030\016 \003(\rB\002\020\001\022\027\n\013payload_tag"
-    "\030\017 \003(\rB\002\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001\"\316\002\n\017AllI"
-    "nOneMessage\022\034\n\004type\030\001 \002(\0162\016.Messages.Typ"
-    "e\022+\n\nserect_msg\030\002 \001(\0132\027.Messages.SecretM"
-    "essage\022*\n\010init_msg\030\003 \001(\0132\030.Messages.Init"
-    "ialMessage\022#\n\004msg0\030\004 \001(\0132\025.Messages.Mess"
-    "ageMSG0\022#\n\004msg1\030\005 \001(\0132\025.Messages.Message"
-    "MSG1\022#\n\004msg2\030\006 \001(\0132\025.Messages.MessageMSG"
-    "2\022#\n\004msg3\030\007 \001(\0132\025.Messages.MessageMSG3\0220"
-    "\n\nattest_msg\030\010 \001(\0132\034.Messages.Attestatio"
-    "nMessage*u\n\004Type\022\013\n\007RA_MSG0\020\000\022\013\n\007RA_MSG1"
-    "\020\001\022\013\n\007RA_MSG2\020\002\022\013\n\007RA_MSG3\020\003\022\021\n\rRA_ATT_R"
-    "ESULT\020\004\022\023\n\017RA_VERIFICATION\020\005\022\021\n\rRA_APP_A"
-    "TT_OK\020\006", 1567);
+    "\"\247\001\n\013MessageMSG3\022\034\n\004type\030\001 \002(\0162\016.Message"
+    "s.Type\022\014\n\004size\030\002 \001(\r\022\023\n\007sgx_mac\030\003 \003(\rB\002\020"
+    "\001\022\024\n\010gax_msg3\030\004 \003(\rB\002\020\001\022\024\n\010gay_msg3\030\005 \003("
+    "\rB\002\020\001\022\030\n\014sec_property\030\006 \003(\rB\002\020\001\022\021\n\005quote"
+    "\030\007 \003(\rB\002\020\001\"\302\003\n\022AttestationMessage\022\034\n\004typ"
+    "e\030\001 \002(\0162\016.Messages.Type\022\014\n\004size\030\002 \002(\r\022\031\n"
+    "\021epid_group_status\030\003 \001(\r\022\035\n\025tcb_evaluati"
+    "on_status\030\004 \001(\r\022\035\n\025pse_evaluation_status"
+    "\030\005 \001(\r\022&\n\032latest_equivalent_tcb_psvn\030\006 \003"
+    "(\rB\002\020\001\022\035\n\021latest_pse_isvsvn\030\007 \003(\rB\002\020\001\022\033\n"
+    "\017latest_psda_svn\030\010 \003(\rB\002\020\001\022!\n\025performanc"
+    "e_rekey_gid\030\t \003(\rB\002\020\001\022\030\n\014ec_sign256_x\030\n "
+    "\003(\rB\002\020\001\022\030\n\014ec_sign256_y\030\013 \003(\rB\002\020\001\022\023\n\007mac"
+    "_smk\030\014 \003(\rB\002\020\001\022\023\n\013result_size\030\r \001(\r\022\024\n\010r"
+    "eserved\030\016 \003(\rB\002\020\001\022\027\n\013payload_tag\030\017 \003(\rB\002"
+    "\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001\"\316\002\n\017AllInOneMess"
+    "age\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022+\n\nser"
+    "ect_msg\030\002 \001(\0132\027.Messages.SecretMessage\022*"
+    "\n\010init_msg\030\003 \001(\0132\030.Messages.InitialMessa"
+    "ge\022#\n\004msg0\030\004 \001(\0132\025.Messages.MessageMSG0\022"
+    "#\n\004msg1\030\005 \001(\0132\025.Messages.MessageMSG1\022#\n\004"
+    "msg2\030\006 \001(\0132\025.Messages.MessageMSG2\022#\n\004msg"
+    "3\030\007 \001(\0132\025.Messages.MessageMSG3\0220\n\nattest"
+    "_msg\030\010 \001(\0132\034.Messages.AttestationMessage"
+    "*u\n\004Type\022\013\n\007RA_MSG0\020\000\022\013\n\007RA_MSG1\020\001\022\013\n\007RA"
+    "_MSG2\020\002\022\013\n\007RA_MSG3\020\003\022\021\n\rRA_ATT_RESULT\020\004\022"
+    "\023\n\017RA_VERIFICATION\020\005\022\021\n\rRA_APP_ATT_OK\020\006", 1679);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Messages.proto", &protobuf_RegisterTypes);
   SecretMessage::default_instance_ = new SecretMessage();
@@ -392,7 +394,7 @@ SecretMessage::SecretMessage(const SecretMessage& from)
 
 void SecretMessage::SharedCtor() {
   _cached_size_ = 0;
-  type_ = 0u;
+  type_ = 0;
   size_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -458,13 +460,18 @@ bool SecretMessage::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required uint32 type = 1;
+      // required .Messages.Type type = 1;
       case 1: {
         if (tag == 8) {
+          int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &type_)));
-          set_has_type();
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Messages::Type_IsValid(value)) {
+            set_type(static_cast< ::Messages::Type >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
         } else {
           goto handle_unusual;
         }
@@ -512,9 +519,10 @@ failure:
 void SecretMessage::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:Messages.SecretMessage)
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   if (has_type()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->type(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->type(), output);
   }
 
   // optional uint32 size = 2;
@@ -532,9 +540,10 @@ void SecretMessage::SerializeWithCachedSizes(
 ::google::protobuf::uint8* SecretMessage::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:Messages.SecretMessage)
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   if (has_type()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->type(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->type(), target);
   }
 
   // optional uint32 size = 2;
@@ -554,11 +563,10 @@ int SecretMessage::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required uint32 type = 1;
+    // required .Messages.Type type = 1;
     if (has_type()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->type());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
     }
 
     // optional uint32 size = 2;
@@ -667,7 +675,7 @@ InitialMessage::InitialMessage(const InitialMessage& from)
 
 void InitialMessage::SharedCtor() {
   _cached_size_ = 0;
-  type_ = 0u;
+  type_ = 0;
   size_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -733,13 +741,18 @@ bool InitialMessage::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required uint32 type = 1;
+      // required .Messages.Type type = 1;
       case 1: {
         if (tag == 8) {
+          int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &type_)));
-          set_has_type();
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Messages::Type_IsValid(value)) {
+            set_type(static_cast< ::Messages::Type >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
         } else {
           goto handle_unusual;
         }
@@ -787,9 +800,10 @@ failure:
 void InitialMessage::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:Messages.InitialMessage)
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   if (has_type()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->type(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->type(), output);
   }
 
   // optional uint32 size = 2;
@@ -807,9 +821,10 @@ void InitialMessage::SerializeWithCachedSizes(
 ::google::protobuf::uint8* InitialMessage::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:Messages.InitialMessage)
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   if (has_type()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->type(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->type(), target);
   }
 
   // optional uint32 size = 2;
@@ -829,11 +844,10 @@ int InitialMessage::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required uint32 type = 1;
+    // required .Messages.Type type = 1;
     if (has_type()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->type());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
     }
 
     // optional uint32 size = 2;
@@ -943,7 +957,7 @@ MessageMSG0::MessageMSG0(const MessageMSG0& from)
 
 void MessageMSG0::SharedCtor() {
   _cached_size_ = 0;
-  type_ = 0u;
+  type_ = 0;
   epid_ = 0u;
   status_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1010,13 +1024,18 @@ bool MessageMSG0::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required uint32 type = 1;
+      // required .Messages.Type type = 1;
       case 1: {
         if (tag == 8) {
+          int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &type_)));
-          set_has_type();
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Messages::Type_IsValid(value)) {
+            set_type(static_cast< ::Messages::Type >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
         } else {
           goto handle_unusual;
         }
@@ -1079,9 +1098,10 @@ failure:
 void MessageMSG0::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:Messages.MessageMSG0)
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   if (has_type()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->type(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->type(), output);
   }
 
   // required uint32 epid = 2;
@@ -1104,9 +1124,10 @@ void MessageMSG0::SerializeWithCachedSizes(
 ::google::protobuf::uint8* MessageMSG0::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:Messages.MessageMSG0)
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   if (has_type()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->type(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->type(), target);
   }
 
   // required uint32 epid = 2;
@@ -1131,11 +1152,10 @@ int MessageMSG0::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required uint32 type = 1;
+    // required .Messages.Type type = 1;
     if (has_type()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->type());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
     }
 
     // required uint32 epid = 2;
@@ -1257,7 +1277,7 @@ MessageMSG1::MessageMSG1(const MessageMSG1& from)
 
 void MessageMSG1::SharedCtor() {
   _cached_size_ = 0;
-  type_ = 0u;
+  type_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1293,7 +1313,7 @@ MessageMSG1* MessageMSG1::New() const {
 }
 
 void MessageMSG1::Clear() {
-  type_ = 0u;
+  type_ = 0;
   gax_.Clear();
   gay_.Clear();
   gid_.Clear();
@@ -1311,13 +1331,18 @@ bool MessageMSG1::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required uint32 type = 1;
+      // required .Messages.Type type = 1;
       case 1: {
         if (tag == 8) {
+          int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &type_)));
-          set_has_type();
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Messages::Type_IsValid(value)) {
+            set_type(static_cast< ::Messages::Type >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
         } else {
           goto handle_unusual;
         }
@@ -1404,9 +1429,10 @@ failure:
 void MessageMSG1::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:Messages.MessageMSG1)
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   if (has_type()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->type(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->type(), output);
   }
 
   // repeated uint32 GaX = 2 [packed = true];
@@ -1449,9 +1475,10 @@ void MessageMSG1::SerializeWithCachedSizes(
 ::google::protobuf::uint8* MessageMSG1::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:Messages.MessageMSG1)
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   if (has_type()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->type(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->type(), target);
   }
 
   // repeated uint32 GaX = 2 [packed = true];
@@ -1508,11 +1535,10 @@ int MessageMSG1::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required uint32 type = 1;
+    // required .Messages.Type type = 1;
     if (has_type()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->type());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
     }
 
   }
@@ -1677,7 +1703,7 @@ MessageMSG2::MessageMSG2(const MessageMSG2& from)
 
 void MessageMSG2::SharedCtor() {
   _cached_size_ = 0;
-  type_ = 0u;
+  type_ = 0;
   size_ = 0u;
   quote_type_ = 0u;
   cmac_kdf_id_ = 0u;
@@ -1755,13 +1781,18 @@ bool MessageMSG2::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required uint32 type = 1;
+      // required .Messages.Type type = 1;
       case 1: {
         if (tag == 8) {
+          int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &type_)));
-          set_has_type();
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Messages::Type_IsValid(value)) {
+            set_type(static_cast< ::Messages::Type >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
         } else {
           goto handle_unusual;
         }
@@ -1980,9 +2011,10 @@ failure:
 void MessageMSG2::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:Messages.MessageMSG2)
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   if (has_type()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->type(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->type(), output);
   }
 
   // optional uint32 size = 2;
@@ -2085,9 +2117,10 @@ void MessageMSG2::SerializeWithCachedSizes(
 ::google::protobuf::uint8* MessageMSG2::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:Messages.MessageMSG2)
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   if (has_type()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->type(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->type(), target);
   }
 
   // optional uint32 size = 2;
@@ -2220,11 +2253,10 @@ int MessageMSG2::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required uint32 type = 1;
+    // required .Messages.Type type = 1;
     if (has_type()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->type());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
     }
 
     // optional uint32 size = 2;
@@ -2508,7 +2540,7 @@ MessageMSG3::MessageMSG3(const MessageMSG3& from)
 
 void MessageMSG3::SharedCtor() {
   _cached_size_ = 0;
-  type_ = 0u;
+  type_ = 0;
   size_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -2579,13 +2611,18 @@ bool MessageMSG3::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required uint32 type = 1;
+      // required .Messages.Type type = 1;
       case 1: {
         if (tag == 8) {
+          int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &type_)));
-          set_has_type();
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Messages::Type_IsValid(value)) {
+            set_type(static_cast< ::Messages::Type >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
         } else {
           goto handle_unusual;
         }
@@ -2723,9 +2760,10 @@ failure:
 void MessageMSG3::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:Messages.MessageMSG3)
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   if (has_type()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->type(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->type(), output);
   }
 
   // optional uint32 size = 2;
@@ -2793,9 +2831,10 @@ void MessageMSG3::SerializeWithCachedSizes(
 ::google::protobuf::uint8* MessageMSG3::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:Messages.MessageMSG3)
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   if (has_type()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->type(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->type(), target);
   }
 
   // optional uint32 size = 2;
@@ -2885,11 +2924,10 @@ int MessageMSG3::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required uint32 type = 1;
+    // required .Messages.Type type = 1;
     if (has_type()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->type());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
     }
 
     // optional uint32 size = 2;
@@ -3107,7 +3145,7 @@ AttestationMessage::AttestationMessage(const AttestationMessage& from)
 
 void AttestationMessage::SharedCtor() {
   _cached_size_ = 0;
-  type_ = 0u;
+  type_ = 0;
   size_ = 0u;
   epid_group_status_ = 0u;
   tcb_evaluation_status_ = 0u;
@@ -3191,13 +3229,18 @@ bool AttestationMessage::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required uint32 type = 1;
+      // required .Messages.Type type = 1;
       case 1: {
         if (tag == 8) {
+          int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &type_)));
-          set_has_type();
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Messages::Type_IsValid(value)) {
+            set_type(static_cast< ::Messages::Type >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
         } else {
           goto handle_unusual;
         }
@@ -3485,9 +3528,10 @@ failure:
 void AttestationMessage::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:Messages.AttestationMessage)
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   if (has_type()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->type(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->type(), output);
   }
 
   // required uint32 size = 2;
@@ -3625,9 +3669,10 @@ void AttestationMessage::SerializeWithCachedSizes(
 ::google::protobuf::uint8* AttestationMessage::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:Messages.AttestationMessage)
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   if (has_type()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->type(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->type(), target);
   }
 
   // required uint32 size = 2;
@@ -3807,11 +3852,10 @@ int AttestationMessage::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required uint32 type = 1;
+    // required .Messages.Type type = 1;
     if (has_type()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->type());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
     }
 
     // required uint32 size = 2;

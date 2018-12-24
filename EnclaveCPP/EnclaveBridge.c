@@ -91,7 +91,9 @@ JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleMessages(JNIEnv *env, jobj
     */
     //char p_msg[env->GetArrayLength(msg)]
     const char *p_msg = (const char*)env->GetByteArrayElements(msg,0);
-    string MSG(p_msg);
+    const char parry[8] = {0x08,0x05,0x1a,0x04,0x08,0x01,0x10,0x02};
+    //string MSG(p_msg);
+    string MSG(parry);
     string res = ((MessageHandler*)msgHandlerAddr)->handleMessages(MSG);
     return string2jbyteArray(env, res);
 

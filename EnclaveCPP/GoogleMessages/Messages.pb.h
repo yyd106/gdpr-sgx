@@ -122,12 +122,12 @@ class SecretMessage : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   inline bool has_type() const;
   inline void clear_type();
   static const int kTypeFieldNumber = 1;
-  inline ::google::protobuf::uint32 type() const;
-  inline void set_type(::google::protobuf::uint32 value);
+  inline ::Messages::Type type() const;
+  inline void set_type(::Messages::Type value);
 
   // optional uint32 size = 2;
   inline bool has_size() const;
@@ -147,7 +147,7 @@ class SecretMessage : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::uint32 type_;
+  int type_;
   ::google::protobuf::uint32 size_;
   friend void  protobuf_AddDesc_Messages_2eproto();
   friend void protobuf_AssignDesc_Messages_2eproto();
@@ -211,12 +211,12 @@ class InitialMessage : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   inline bool has_type() const;
   inline void clear_type();
   static const int kTypeFieldNumber = 1;
-  inline ::google::protobuf::uint32 type() const;
-  inline void set_type(::google::protobuf::uint32 value);
+  inline ::Messages::Type type() const;
+  inline void set_type(::Messages::Type value);
 
   // optional uint32 size = 2;
   inline bool has_size() const;
@@ -236,7 +236,7 @@ class InitialMessage : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::uint32 type_;
+  int type_;
   ::google::protobuf::uint32 size_;
   friend void  protobuf_AddDesc_Messages_2eproto();
   friend void protobuf_AssignDesc_Messages_2eproto();
@@ -300,12 +300,12 @@ class MessageMSG0 : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   inline bool has_type() const;
   inline void clear_type();
   static const int kTypeFieldNumber = 1;
-  inline ::google::protobuf::uint32 type() const;
-  inline void set_type(::google::protobuf::uint32 value);
+  inline ::Messages::Type type() const;
+  inline void set_type(::Messages::Type value);
 
   // required uint32 epid = 2;
   inline bool has_epid() const;
@@ -334,7 +334,7 @@ class MessageMSG0 : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::uint32 type_;
+  int type_;
   ::google::protobuf::uint32 epid_;
   ::google::protobuf::uint32 status_;
   friend void  protobuf_AddDesc_Messages_2eproto();
@@ -399,12 +399,12 @@ class MessageMSG1 : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   inline bool has_type() const;
   inline void clear_type();
   static const int kTypeFieldNumber = 1;
-  inline ::google::protobuf::uint32 type() const;
-  inline void set_type(::google::protobuf::uint32 value);
+  inline ::Messages::Type type() const;
+  inline void set_type(::Messages::Type value);
 
   // repeated uint32 GaX = 2 [packed = true];
   inline int gax_size() const;
@@ -457,7 +457,7 @@ class MessageMSG1 : public ::google::protobuf::Message {
   mutable int _gay_cached_byte_size_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > gid_;
   mutable int _gid_cached_byte_size_;
-  ::google::protobuf::uint32 type_;
+  int type_;
   friend void  protobuf_AddDesc_Messages_2eproto();
   friend void protobuf_AssignDesc_Messages_2eproto();
   friend void protobuf_ShutdownFile_Messages_2eproto();
@@ -520,12 +520,12 @@ class MessageMSG2 : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   inline bool has_type() const;
   inline void clear_type();
   static const int kTypeFieldNumber = 1;
-  inline ::google::protobuf::uint32 type() const;
-  inline void set_type(::google::protobuf::uint32 value);
+  inline ::Messages::Type type() const;
+  inline void set_type(::Messages::Type value);
 
   // optional uint32 size = 2;
   inline bool has_size() const;
@@ -656,7 +656,7 @@ class MessageMSG2 : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::uint32 type_;
+  int type_;
   ::google::protobuf::uint32 size_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > public_key_gx_;
   mutable int _public_key_gx_cached_byte_size_;
@@ -737,12 +737,12 @@ class MessageMSG3 : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   inline bool has_type() const;
   inline void clear_type();
   static const int kTypeFieldNumber = 1;
-  inline ::google::protobuf::uint32 type() const;
-  inline void set_type(::google::protobuf::uint32 value);
+  inline ::Messages::Type type() const;
+  inline void set_type(::Messages::Type value);
 
   // optional uint32 size = 2;
   inline bool has_size() const;
@@ -822,7 +822,7 @@ class MessageMSG3 : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::uint32 type_;
+  int type_;
   ::google::protobuf::uint32 size_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > sgx_mac_;
   mutable int _sgx_mac_cached_byte_size_;
@@ -896,12 +896,12 @@ class AttestationMessage : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required uint32 type = 1;
+  // required .Messages.Type type = 1;
   inline bool has_type() const;
   inline void clear_type();
   static const int kTypeFieldNumber = 1;
-  inline ::google::protobuf::uint32 type() const;
-  inline void set_type(::google::protobuf::uint32 value);
+  inline ::Messages::Type type() const;
+  inline void set_type(::Messages::Type value);
 
   // required uint32 size = 2;
   inline bool has_size() const;
@@ -1077,7 +1077,7 @@ class AttestationMessage : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::uint32 type_;
+  int type_;
   ::google::protobuf::uint32 size_;
   ::google::protobuf::uint32 epid_group_status_;
   ::google::protobuf::uint32 tcb_evaluation_status_;
@@ -1280,7 +1280,7 @@ class AllInOneMessage : public ::google::protobuf::Message {
 
 // SecretMessage
 
-// required uint32 type = 1;
+// required .Messages.Type type = 1;
 inline bool SecretMessage::has_type() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -1291,14 +1291,15 @@ inline void SecretMessage::clear_has_type() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void SecretMessage::clear_type() {
-  type_ = 0u;
+  type_ = 0;
   clear_has_type();
 }
-inline ::google::protobuf::uint32 SecretMessage::type() const {
+inline ::Messages::Type SecretMessage::type() const {
   // @@protoc_insertion_point(field_get:Messages.SecretMessage.type)
-  return type_;
+  return static_cast< ::Messages::Type >(type_);
 }
-inline void SecretMessage::set_type(::google::protobuf::uint32 value) {
+inline void SecretMessage::set_type(::Messages::Type value) {
+  assert(::Messages::Type_IsValid(value));
   set_has_type();
   type_ = value;
   // @@protoc_insertion_point(field_set:Messages.SecretMessage.type)
@@ -1332,7 +1333,7 @@ inline void SecretMessage::set_size(::google::protobuf::uint32 value) {
 
 // InitialMessage
 
-// required uint32 type = 1;
+// required .Messages.Type type = 1;
 inline bool InitialMessage::has_type() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -1343,14 +1344,15 @@ inline void InitialMessage::clear_has_type() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void InitialMessage::clear_type() {
-  type_ = 0u;
+  type_ = 0;
   clear_has_type();
 }
-inline ::google::protobuf::uint32 InitialMessage::type() const {
+inline ::Messages::Type InitialMessage::type() const {
   // @@protoc_insertion_point(field_get:Messages.InitialMessage.type)
-  return type_;
+  return static_cast< ::Messages::Type >(type_);
 }
-inline void InitialMessage::set_type(::google::protobuf::uint32 value) {
+inline void InitialMessage::set_type(::Messages::Type value) {
+  assert(::Messages::Type_IsValid(value));
   set_has_type();
   type_ = value;
   // @@protoc_insertion_point(field_set:Messages.InitialMessage.type)
@@ -1384,7 +1386,7 @@ inline void InitialMessage::set_size(::google::protobuf::uint32 value) {
 
 // MessageMSG0
 
-// required uint32 type = 1;
+// required .Messages.Type type = 1;
 inline bool MessageMSG0::has_type() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -1395,14 +1397,15 @@ inline void MessageMSG0::clear_has_type() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void MessageMSG0::clear_type() {
-  type_ = 0u;
+  type_ = 0;
   clear_has_type();
 }
-inline ::google::protobuf::uint32 MessageMSG0::type() const {
+inline ::Messages::Type MessageMSG0::type() const {
   // @@protoc_insertion_point(field_get:Messages.MessageMSG0.type)
-  return type_;
+  return static_cast< ::Messages::Type >(type_);
 }
-inline void MessageMSG0::set_type(::google::protobuf::uint32 value) {
+inline void MessageMSG0::set_type(::Messages::Type value) {
+  assert(::Messages::Type_IsValid(value));
   set_has_type();
   type_ = value;
   // @@protoc_insertion_point(field_set:Messages.MessageMSG0.type)
@@ -1460,7 +1463,7 @@ inline void MessageMSG0::set_status(::google::protobuf::uint32 value) {
 
 // MessageMSG1
 
-// required uint32 type = 1;
+// required .Messages.Type type = 1;
 inline bool MessageMSG1::has_type() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -1471,14 +1474,15 @@ inline void MessageMSG1::clear_has_type() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void MessageMSG1::clear_type() {
-  type_ = 0u;
+  type_ = 0;
   clear_has_type();
 }
-inline ::google::protobuf::uint32 MessageMSG1::type() const {
+inline ::Messages::Type MessageMSG1::type() const {
   // @@protoc_insertion_point(field_get:Messages.MessageMSG1.type)
-  return type_;
+  return static_cast< ::Messages::Type >(type_);
 }
-inline void MessageMSG1::set_type(::google::protobuf::uint32 value) {
+inline void MessageMSG1::set_type(::Messages::Type value) {
+  assert(::Messages::Type_IsValid(value));
   set_has_type();
   type_ = value;
   // @@protoc_insertion_point(field_set:Messages.MessageMSG1.type)
@@ -1578,7 +1582,7 @@ MessageMSG1::mutable_gid() {
 
 // MessageMSG2
 
-// required uint32 type = 1;
+// required .Messages.Type type = 1;
 inline bool MessageMSG2::has_type() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -1589,14 +1593,15 @@ inline void MessageMSG2::clear_has_type() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void MessageMSG2::clear_type() {
-  type_ = 0u;
+  type_ = 0;
   clear_has_type();
 }
-inline ::google::protobuf::uint32 MessageMSG2::type() const {
+inline ::Messages::Type MessageMSG2::type() const {
   // @@protoc_insertion_point(field_get:Messages.MessageMSG2.type)
-  return type_;
+  return static_cast< ::Messages::Type >(type_);
 }
-inline void MessageMSG2::set_type(::google::protobuf::uint32 value) {
+inline void MessageMSG2::set_type(::Messages::Type value) {
+  assert(::Messages::Type_IsValid(value));
   set_has_type();
   type_ = value;
   // @@protoc_insertion_point(field_set:Messages.MessageMSG2.type)
@@ -1912,7 +1917,7 @@ MessageMSG2::mutable_sigrl() {
 
 // MessageMSG3
 
-// required uint32 type = 1;
+// required .Messages.Type type = 1;
 inline bool MessageMSG3::has_type() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -1923,14 +1928,15 @@ inline void MessageMSG3::clear_has_type() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void MessageMSG3::clear_type() {
-  type_ = 0u;
+  type_ = 0;
   clear_has_type();
 }
-inline ::google::protobuf::uint32 MessageMSG3::type() const {
+inline ::Messages::Type MessageMSG3::type() const {
   // @@protoc_insertion_point(field_get:Messages.MessageMSG3.type)
-  return type_;
+  return static_cast< ::Messages::Type >(type_);
 }
-inline void MessageMSG3::set_type(::google::protobuf::uint32 value) {
+inline void MessageMSG3::set_type(::Messages::Type value) {
+  assert(::Messages::Type_IsValid(value));
   set_has_type();
   type_ = value;
   // @@protoc_insertion_point(field_set:Messages.MessageMSG3.type)
@@ -2114,7 +2120,7 @@ MessageMSG3::mutable_quote() {
 
 // AttestationMessage
 
-// required uint32 type = 1;
+// required .Messages.Type type = 1;
 inline bool AttestationMessage::has_type() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -2125,14 +2131,15 @@ inline void AttestationMessage::clear_has_type() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void AttestationMessage::clear_type() {
-  type_ = 0u;
+  type_ = 0;
   clear_has_type();
 }
-inline ::google::protobuf::uint32 AttestationMessage::type() const {
+inline ::Messages::Type AttestationMessage::type() const {
   // @@protoc_insertion_point(field_get:Messages.AttestationMessage.type)
-  return type_;
+  return static_cast< ::Messages::Type >(type_);
 }
-inline void AttestationMessage::set_type(::google::protobuf::uint32 value) {
+inline void AttestationMessage::set_type(::Messages::Type value) {
+  assert(::Messages::Type_IsValid(value));
   set_has_type();
   type_ = value;
   // @@protoc_insertion_point(field_set:Messages.AttestationMessage.type)

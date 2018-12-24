@@ -25,6 +25,13 @@ verbose()
     echo -e "${GREEN}$time [$type] $info${NC}"
 }
 
+function setTestPath()
+{
+    verbose INFO "Set sdk and attestation path to simple project path"
+    sdkdir=$homedir/simple-sdk
+    attestdir=$homedir/simple-remoteattestation
+}
+
 function checkPrerequisite()
 {
     if ! echo "$LD_LIBRARY_PATH" | grep "libsample_libcrypto.so"; then
@@ -40,8 +47,10 @@ function buildSDK()
     ./scripts/build_sdk.sh
     if [ $? -ne 0 ]; then
         verbose ERROR "Build SGX SDK failed!"
+        cd -
         exit 1
     fi
+    cd -
 }
 
 function buildEnclaveJNI()
@@ -49,6 +58,7 @@ function buildEnclaveJNI()
     cd $jnidir
     verbose INFO "Building jni library..."
     ./scripts/build.sh -r -d "$targetdir"
+    cd -
 }
 
 function buildRemoteAttestation()
@@ -63,11 +73,17 @@ function buildRemoteAttestation()
         ./scripts/genApp.sh -s
     else
         verbose ERROR "Please indicate correct type for building remote attestation code(HW/SIM)!" >&2
+        cd -
         return
     fi
-    echo "LD_LIBRARY_PATH=/opt/intel/sgxsdk/sdk_libs:$LD_LIBRARY_PATH" >> ~/.bashrc
-    verbose INFO "<<< Attention!!! >>>\tIf tip \"libsgx_xxx.so: No such file or directory\"\n\
-        \tPlease run 'source ~/.bashrc' to refresh LD_LIBRARY_PATH\n<<< Attention!!! >>>"
+
+    local sgx_lib_path="/opt/intel/sgxsdk/sdk_libs"
+    if ! grep "$sgx_lib_path" ~/.bashrc &>/dev/null; then
+        echo "export LD_LIBRARY_PATH=$sgx_lib_path:$LD_LIBRARY_PATH" >> ~/.bashrc
+        verbose INFO "<<< Attention!!! >>>\tIf tip \"libsgx_xxx.so: No such file or directory\"\n\
+            \tPlease run 'source ~/.bashrc' to refresh LD_LIBRARY_PATH\n<<< Attention!!! >>>"
+    fi
+    cd -
 }
 
 ############### MAIN BODY ###############
@@ -85,6 +101,7 @@ attestMode="HW"
 doBuildSDK=no
 doBuildAttest=no
 doBuildJNI=no
+test_simple=no
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -96,7 +113,7 @@ if [ -e "$targetdir" ]; then
 fi
 mkdir -p $targetdir || { verbose ERROR "Create $targetdir failed!"; exit 1; }
 
-while getopts "srjhm:" OPT; do
+while getopts "tsrjhm:" OPT; do
     case $OPT in
         s)
             doBuildSDK="yes"
@@ -109,6 +126,9 @@ while getopts "srjhm:" OPT; do
             ;;
         m)
             attestMode=$OPTARG
+            ;;
+        t)
+            if ! setTestPath; then exit 1; fi
             ;;
         h)
             usage;;

@@ -11,30 +11,30 @@ enum Type {
 }
 
 message SecretMessage {
-	required uint32 type = 1;
+	required Type type = 1;
 	optional uint32 size = 2;
 }
 
 message InitialMessage {
-	required uint32 type = 1;
+	required Type type = 1;
 	optional uint32 size = 2;
 } 
 
 message MessageMSG0 {
-	required uint32 type = 1;
+	required Type type = 1;
 	required uint32 epid = 2;
 	optional uint32 status = 3;
 }
 
 message MessageMSG1 {
-	required uint32 type = 1;
+	required Type type = 1;
 	repeated uint32 GaX = 2 [packed=true];
 	repeated uint32 GaY = 3 [packed=true];
 	repeated uint32 GID = 4 [packed=true];
 }
 
 message MessageMSG2 {
-	required uint32 type = 1;
+	required Type type = 1;
 	optional uint32 size = 2;
 	repeated uint32 public_key_gx = 3 [packed=true];
 	repeated uint32 public_key_gy = 4 [packed=true];
@@ -49,7 +49,7 @@ message MessageMSG2 {
 }
 
 message MessageMSG3 {
-	required uint32 type = 1;
+	required Type type = 1;
 	optional uint32 size = 2;
 	repeated uint32 sgx_mac = 3 [packed=true];
 	repeated uint32 gax_msg3 = 4 [packed=true];
@@ -59,7 +59,7 @@ message MessageMSG3 {
 }
 
 message AttestationMessage {
-	required uint32 type = 1;
+	required Type type = 1;
 	required uint32 size = 2;
 
 	optional uint32 epid_group_status = 3;
