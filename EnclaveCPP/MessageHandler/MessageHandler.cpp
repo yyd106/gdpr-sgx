@@ -67,7 +67,7 @@ string MessageHandler::generateMSG0() {
     uint32_t extended_epid_group_id;
     int ret = this->getExtendedEPID_GID(&extended_epid_group_id);
 
-    Messages::MessageMsg0 msg;
+    Messages::MessageMSG0 msg;
     msg.set_type(Messages::Type::RA_MSG0);
 
     if (ret == SGX_SUCCESS) {
@@ -441,10 +441,10 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
 
 
 //string MessageHandler::handleMSG0(string v) {
-string MessageHandler::handleMSG0(Messages::MessageMsg0 msg) {
+string MessageHandler::handleMSG0(Messages::MessageMSG0 msg) {
     Log("MSG0 response received");
     /*
-    Messages::MessageMsg0 msg;
+    Messages::MessageMSG0 msg;
     int ret = msg.ParseFromString(v);
     if(!ret) {
         Log("Error, Parse MSG0 failed!", log::error);
@@ -494,6 +494,62 @@ string MessageHandler::createInitMsg(int type, string msg) {
 */
 
 
+string MessageHandler::handleMessages(string v) {
+    string res;
+    string s;
+    bool ret;
+
+    Messages::AllInOneMessage aio_msg;
+    ret = aio_msg.ParseFromString(v);
+    if (! ret) {
+        Log("Parse message failed!", log::error);
+        return res;
+    }
+
+    Log("========== handle messages ==========");
+    switch (aio_msg.type()) {
+    case Messages::Type::RA_VERIFICATION: {	//Verification request
+        Messages::InitialMessage init_msg = aio_msg.init_msg();
+        if (init_msg.type() == Messages::Type::RA_VERIFICATION) {
+            s = this->handleVerification();
+        }
+    }
+    break;
+    case Messages::Type::RA_MSG0: {		//Reply to MSG0
+        Messages::MessageMSG0 msg0 = aio_msg.msg0();
+        if ((msg0.type() == Messages::Type::RA_MSG0)) {
+            // generate MSG1 and send to SP
+            s = this->handleMSG0(msg0);
+        }
+    }
+    break;
+    case Messages::Type::RA_MSG2: {		//MSG2
+        Messages::MessageMSG2 msg2 = aio_msg.msg2();
+        if ((msg2.type() == Messages::Type::RA_MSG2)) {
+            // generate MSG3 and send to SP
+            s = this->handleMSG2(msg2);
+        }
+    }
+    break;
+    case Messages::Type::RA_ATT_RESULT: {	//Reply to MSG3
+        Messages::AttestationMessage att_msg = aio_msg.attest_msg();
+        if (att_msg.type() == Messages::Type::RA_ATT_RESULT) {
+            // receive MSG4 and verify encrypted secret
+            s = this->handleAttestationResult(att_msg);
+        }
+    }
+    break;
+    default:
+        Log("Unknown type", log::error);
+        break;
+    }
+
+    res = s;
+
+    return res;
+}
+
+/*
 //vector<string> MessageHandler::incomingHandler(string v, int type) {
 //string* MessageHandler::handleMessages(string v, int type) {
 vector<string> MessageHandler::handleMessages(string v, int type) {
@@ -511,18 +567,18 @@ vector<string> MessageHandler::handleMessages(string v, int type) {
         if (ret && init_msg.type() == Messages::Type::RA_VERIFICATION) {
             s = this->handleVerification();
             //res[0] = to_string(Messages::Type::RA_MSG0);
-            res.push_back(to_string(Messages::Type::RA_MSG0));
+            res = to_string(Messages::Type::RA_MSG0));
         }
     }
     break;
     case Messages::Type::RA_MSG0: {		//Reply to MSG0
-        Messages::MessageMsg0 msg0;
+        Messages::MessageMSG0 msg0;
         ret = msg0.ParseFromString(v);
         if (ret && (msg0.type() == Messages::Type::RA_MSG0)) {
             // generate MSG1 and send to SP
             s = this->handleMSG0(msg0);
             //res[0] = to_string(Messages::Type::RA_MSG1);
-            res.push_back(to_string(Messages::Type::RA_MSG1));
+            res = to_string(Messages::Type::RA_MSG1));
         }
     }
     break;
@@ -533,7 +589,7 @@ vector<string> MessageHandler::handleMessages(string v, int type) {
             // generate MSG3 and send to SP
             s = this->handleMSG2(msg2);
             //res[0] = to_string(Messages::Type::RA_MSG3);
-            res.push_back(to_string(Messages::Type::RA_MSG3));
+            res = to_string(Messages::Type::RA_MSG3));
         }
     }
     break;
@@ -544,7 +600,7 @@ vector<string> MessageHandler::handleMessages(string v, int type) {
             // receive MSG4 and verify encrypted secret
             s = this->handleAttestationResult(att_msg);
             //res[0] = to_string(Messages::Type::RA_APP_ATT_OK);
-            res.push_back(to_string(Messages::Type::RA_APP_ATT_OK));
+            res = to_string(Messages::Type::RA_APP_ATT_OK));
         }
     }
     break;
@@ -554,7 +610,8 @@ vector<string> MessageHandler::handleMessages(string v, int type) {
     }
 
     //res[1] = s;
-    res.push_back(s);
+    res = s);
 
     return res;
 }
+*/

@@ -7,6 +7,7 @@ cat << EOF
                 -r: indicate rebuilding java file to create new c header file
                 -l: the destination path of the new created jni library
                 -j: the destination path of the new java file
+                -m: make mode, can only be HW or SIM
                 -t: for test, copy java and .so file to my test project
 EOF
 }
@@ -37,7 +38,7 @@ projectdir=`cd $basedir/../../tools/EnclaveBridge/src/main/;pwd`
 jnidir=$projectdir/jnilib
 javadir=$projectdir/java
 homedir=$basedir/..
-targetdir=`cd $homedir/../target; pwd`
+targetdir=$homedir/../target
 
 RED='\033[0;31m'
 HRED='\033[1;31m'
@@ -47,8 +48,13 @@ NC='\033[0m'
 
 rebuild="no"
 is_test="no"
+make_mode="HW"
 
-CMD=`getopt -o "trl:j:d:" -a -l "test,rebuild,jnilib:,javafile:,targetdir:" -n "usage" -- "$@"`
+if [ ! -e "$targetdir" ]; then
+    mkdir -p $targetdir
+fi
+
+CMD=`getopt -o "trl:j:d:m:" -a -l "test,rebuild,jnilib:,javafile:,targetdir:,mode:" -n "usage" -- "$@"`
 if [ $? != 0 ]; then
     verbose ERROR "Parameter error, terminate" >&2
     exit 1
@@ -77,6 +83,10 @@ while true; do
             ;;
         -d|--targetdir|-targetdir)
             targetdir=$2
+            shift 2
+            ;;
+        -m|--mode|-mode)
+            make_mode=$2
             shift 2
             ;;
         --)
@@ -117,9 +127,9 @@ fi
 
 ### building .so file {{{
 cd $homedir
-verbose INFO "Rebuilding jnilib file..."
+verbose INFO "Rebuilding jnilib file($make_mode mode)..."
 make clean
-make
+make SGX_MODE=$make_mode SGX_PRERELEASE=1
 if [ $? -ne 0 ]; then
     verbose ERROR "Building jni library failed!"
     exit 1

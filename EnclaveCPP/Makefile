@@ -67,7 +67,7 @@ endif
 
 App_Cpp_Flags := $(App_C_Flags) -std=c++11 -DEnableServer
 App_Link_Flags := -fPIC -shared $(SGX_COMMON_CFLAGS) -L$(SGX_LIBRARY_PATH) -l$(Urts_Library_Name) -L. -lsgx_ukey_exchange -lpthread -Wl,-rpath=$(CURDIR)/sample_libcrypto -Wl,-rpath=$(CURDIR) -llog4cpp -lboost_system -lssl -lcrypto -lboost_thread -lprotobuf -L /usr/local/lib -ljsoncpp
-Java_Link_Flags := -I/opt/java/jdk1.8.0_191/include -I/opt/java/jdk1.8.0_191/include/linux
+Java_Link_Flags := -I${JAVA_HOME}/include -I${JAVA_HOME}/include/linux 
 #Target_Link_Flags := -fPIC -shared $(SGX_COMMON_CFLAGS) -L$(SGX_LIBRARY_PATH) -l$(Urts_Library_Name) -L. -lsgx_ukey_exchange -lpthread -Wl,-rpath=$(CURDIR)/sample_libcrypto -Wl,-rpath=$(CURDIR) -llog4cpp -lboost_system -lssl -lcrypto -lboost_thread -lprotobuf -L /usr/local/lib -ljsoncpp
 
 Target_Cpp_Objects := GoogleMessages/Messages.pb.o Enclave/EnclaveBridge.o Enclave/isv_enclave_u.o MessageHandler/MessageHandler.o Util/LogBase.o Util/UtilityFunctions.o Util/Base64.o Enclave/Enclave.o

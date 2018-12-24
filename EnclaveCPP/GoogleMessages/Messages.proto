@@ -79,7 +79,7 @@ message AttestationMessage {
 	repeated uint32 payload = 16 [packed=true];
 }
 
-message allInOneMessage {
+message AllInOneMessage {
     required Type type = 1;
     optional SecretMessage serect_msg = 2;
     optional InitialMessage init_msg = 3;

@@ -41,9 +41,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* AttestationMessage_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   AttestationMessage_reflection_ = NULL;
-const ::google::protobuf::Descriptor* allInOneMessage_descriptor_ = NULL;
+const ::google::protobuf::Descriptor* AllInOneMessage_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
-  allInOneMessage_reflection_ = NULL;
+  AllInOneMessage_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* Type_descriptor_ = NULL;
 
 }  // namespace
@@ -199,28 +199,28 @@ void protobuf_AssignDesc_Messages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(AttestationMessage));
-  allInOneMessage_descriptor_ = file->message_type(7);
-  static const int allInOneMessage_offsets_[8] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(allInOneMessage, type_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(allInOneMessage, serect_msg_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(allInOneMessage, init_msg_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(allInOneMessage, msg0_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(allInOneMessage, msg1_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(allInOneMessage, msg2_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(allInOneMessage, msg3_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(allInOneMessage, attest_msg_),
+  AllInOneMessage_descriptor_ = file->message_type(7);
+  static const int AllInOneMessage_offsets_[8] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, type_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, serect_msg_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, init_msg_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, msg0_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, msg1_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, msg2_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, msg3_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, attest_msg_),
   };
-  allInOneMessage_reflection_ =
+  AllInOneMessage_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
-      allInOneMessage_descriptor_,
-      allInOneMessage::default_instance_,
-      allInOneMessage_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(allInOneMessage, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(allInOneMessage, _unknown_fields_),
+      AllInOneMessage_descriptor_,
+      AllInOneMessage::default_instance_,
+      AllInOneMessage_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, _unknown_fields_),
       -1,
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(allInOneMessage));
+      sizeof(AllInOneMessage));
   Type_descriptor_ = file->enum_type(0);
 }
 
@@ -249,7 +249,7 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     AttestationMessage_descriptor_, &AttestationMessage::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    allInOneMessage_descriptor_, &allInOneMessage::default_instance());
+    AllInOneMessage_descriptor_, &AllInOneMessage::default_instance());
 }
 
 }  // namespace
@@ -269,8 +269,8 @@ void protobuf_ShutdownFile_Messages_2eproto() {
   delete MessageMSG3_reflection_;
   delete AttestationMessage::default_instance_;
   delete AttestationMessage_reflection_;
-  delete allInOneMessage::default_instance_;
-  delete allInOneMessage_reflection_;
+  delete AllInOneMessage::default_instance_;
+  delete AllInOneMessage_reflection_;
 }
 
 void protobuf_AddDesc_Messages_2eproto() {
@@ -307,7 +307,7 @@ void protobuf_AddDesc_Messages_2eproto() {
     "256_x\030\n \003(\rB\002\020\001\022\030\n\014ec_sign256_y\030\013 \003(\rB\002\020"
     "\001\022\023\n\007mac_smk\030\014 \003(\rB\002\020\001\022\023\n\013result_size\030\r "
     "\001(\r\022\024\n\010reserved\030\016 \003(\rB\002\020\001\022\027\n\013payload_tag"
-    "\030\017 \003(\rB\002\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001\"\316\002\n\017allI"
+    "\030\017 \003(\rB\002\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001\"\316\002\n\017AllI"
     "nOneMessage\022\034\n\004type\030\001 \002(\0162\016.Messages.Typ"
     "e\022+\n\nserect_msg\030\002 \001(\0132\027.Messages.SecretM"
     "essage\022*\n\010init_msg\030\003 \001(\0132\030.Messages.Init"
@@ -329,7 +329,7 @@ void protobuf_AddDesc_Messages_2eproto() {
   MessageMSG2::default_instance_ = new MessageMSG2();
   MessageMSG3::default_instance_ = new MessageMSG3();
   AttestationMessage::default_instance_ = new AttestationMessage();
-  allInOneMessage::default_instance_ = new allInOneMessage();
+  AllInOneMessage::default_instance_ = new AllInOneMessage();
   SecretMessage::default_instance_->InitAsDefaultInstance();
   InitialMessage::default_instance_->InitAsDefaultInstance();
   MessageMSG0::default_instance_->InitAsDefaultInstance();
@@ -337,7 +337,7 @@ void protobuf_AddDesc_Messages_2eproto() {
   MessageMSG2::default_instance_->InitAsDefaultInstance();
   MessageMSG3::default_instance_->InitAsDefaultInstance();
   AttestationMessage::default_instance_->InitAsDefaultInstance();
-  allInOneMessage::default_instance_->InitAsDefaultInstance();
+  AllInOneMessage::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Messages_2eproto);
 }
 
@@ -4136,23 +4136,23 @@ void AttestationMessage::Swap(AttestationMessage* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int allInOneMessage::kTypeFieldNumber;
-const int allInOneMessage::kSerectMsgFieldNumber;
-const int allInOneMessage::kInitMsgFieldNumber;
-const int allInOneMessage::kMsg0FieldNumber;
-const int allInOneMessage::kMsg1FieldNumber;
-const int allInOneMessage::kMsg2FieldNumber;
-const int allInOneMessage::kMsg3FieldNumber;
-const int allInOneMessage::kAttestMsgFieldNumber;
+const int AllInOneMessage::kTypeFieldNumber;
+const int AllInOneMessage::kSerectMsgFieldNumber;
+const int AllInOneMessage::kInitMsgFieldNumber;
+const int AllInOneMessage::kMsg0FieldNumber;
+const int AllInOneMessage::kMsg1FieldNumber;
+const int AllInOneMessage::kMsg2FieldNumber;
+const int AllInOneMessage::kMsg3FieldNumber;
+const int AllInOneMessage::kAttestMsgFieldNumber;
 #endif  // !_MSC_VER
 
-allInOneMessage::allInOneMessage()
+AllInOneMessage::AllInOneMessage()
   : ::google::protobuf::Message() {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:Messages.allInOneMessage)
+  // @@protoc_insertion_point(constructor:Messages.AllInOneMessage)
 }
 
-void allInOneMessage::InitAsDefaultInstance() {
+void AllInOneMessage::InitAsDefaultInstance() {
   serect_msg_ = const_cast< ::Messages::SecretMessage*>(&::Messages::SecretMessage::default_instance());
   init_msg_ = const_cast< ::Messages::InitialMessage*>(&::Messages::InitialMessage::default_instance());
   msg0_ = const_cast< ::Messages::MessageMSG0*>(&::Messages::MessageMSG0::default_instance());
@@ -4162,14 +4162,14 @@ void allInOneMessage::InitAsDefaultInstance() {
   attest_msg_ = const_cast< ::Messages::AttestationMessage*>(&::Messages::AttestationMessage::default_instance());
 }
 
-allInOneMessage::allInOneMessage(const allInOneMessage& from)
+AllInOneMessage::AllInOneMessage(const AllInOneMessage& from)
   : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:Messages.allInOneMessage)
+  // @@protoc_insertion_point(copy_constructor:Messages.AllInOneMessage)
 }
 
-void allInOneMessage::SharedCtor() {
+void AllInOneMessage::SharedCtor() {
   _cached_size_ = 0;
   type_ = 0;
   serect_msg_ = NULL;
@@ -4182,12 +4182,12 @@ void allInOneMessage::SharedCtor() {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
-allInOneMessage::~allInOneMessage() {
-  // @@protoc_insertion_point(destructor:Messages.allInOneMessage)
+AllInOneMessage::~AllInOneMessage() {
+  // @@protoc_insertion_point(destructor:Messages.AllInOneMessage)
   SharedDtor();
 }
 
-void allInOneMessage::SharedDtor() {
+void AllInOneMessage::SharedDtor() {
   if (this != default_instance_) {
     delete serect_msg_;
     delete init_msg_;
@@ -4199,28 +4199,28 @@ void allInOneMessage::SharedDtor() {
   }
 }
 
-void allInOneMessage::SetCachedSize(int size) const {
+void AllInOneMessage::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* allInOneMessage::descriptor() {
+const ::google::protobuf::Descriptor* AllInOneMessage::descriptor() {
   protobuf_AssignDescriptorsOnce();
-  return allInOneMessage_descriptor_;
+  return AllInOneMessage_descriptor_;
 }
 
-const allInOneMessage& allInOneMessage::default_instance() {
+const AllInOneMessage& AllInOneMessage::default_instance() {
   if (default_instance_ == NULL) protobuf_AddDesc_Messages_2eproto();
   return *default_instance_;
 }
 
-allInOneMessage* allInOneMessage::default_instance_ = NULL;
+AllInOneMessage* AllInOneMessage::default_instance_ = NULL;
 
-allInOneMessage* allInOneMessage::New() const {
-  return new allInOneMessage;
+AllInOneMessage* AllInOneMessage::New() const {
+  return new AllInOneMessage;
 }
 
-void allInOneMessage::Clear() {
+void AllInOneMessage::Clear() {
   if (_has_bits_[0 / 32] & 255) {
     type_ = 0;
     if (has_serect_msg()) {
@@ -4249,11 +4249,11 @@ void allInOneMessage::Clear() {
   mutable_unknown_fields()->Clear();
 }
 
-bool allInOneMessage::MergePartialFromCodedStream(
+bool AllInOneMessage::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Messages.allInOneMessage)
+  // @@protoc_insertion_point(parse_start:Messages.AllInOneMessage)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
     tag = p.first;
@@ -4383,17 +4383,17 @@ bool allInOneMessage::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:Messages.allInOneMessage)
+  // @@protoc_insertion_point(parse_success:Messages.AllInOneMessage)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:Messages.allInOneMessage)
+  // @@protoc_insertion_point(parse_failure:Messages.AllInOneMessage)
   return false;
 #undef DO_
 }
 
-void allInOneMessage::SerializeWithCachedSizes(
+void AllInOneMessage::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Messages.allInOneMessage)
+  // @@protoc_insertion_point(serialize_start:Messages.AllInOneMessage)
   // required .Messages.Type type = 1;
   if (has_type()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
@@ -4446,12 +4446,12 @@ void allInOneMessage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:Messages.allInOneMessage)
+  // @@protoc_insertion_point(serialize_end:Messages.AllInOneMessage)
 }
 
-::google::protobuf::uint8* allInOneMessage::SerializeWithCachedSizesToArray(
+::google::protobuf::uint8* AllInOneMessage::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Messages.allInOneMessage)
+  // @@protoc_insertion_point(serialize_to_array_start:Messages.AllInOneMessage)
   // required .Messages.Type type = 1;
   if (has_type()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
@@ -4511,11 +4511,11 @@ void allInOneMessage::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Messages.allInOneMessage)
+  // @@protoc_insertion_point(serialize_to_array_end:Messages.AllInOneMessage)
   return target;
 }
 
-int allInOneMessage::ByteSize() const {
+int AllInOneMessage::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
@@ -4586,10 +4586,10 @@ int allInOneMessage::ByteSize() const {
   return total_size;
 }
 
-void allInOneMessage::MergeFrom(const ::google::protobuf::Message& from) {
+void AllInOneMessage::MergeFrom(const ::google::protobuf::Message& from) {
   GOOGLE_CHECK_NE(&from, this);
-  const allInOneMessage* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const allInOneMessage*>(
+  const AllInOneMessage* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const AllInOneMessage*>(
       &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
@@ -4598,7 +4598,7 @@ void allInOneMessage::MergeFrom(const ::google::protobuf::Message& from) {
   }
 }
 
-void allInOneMessage::MergeFrom(const allInOneMessage& from) {
+void AllInOneMessage::MergeFrom(const AllInOneMessage& from) {
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_type()) {
@@ -4629,19 +4629,19 @@ void allInOneMessage::MergeFrom(const allInOneMessage& from) {
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
-void allInOneMessage::CopyFrom(const ::google::protobuf::Message& from) {
+void AllInOneMessage::CopyFrom(const ::google::protobuf::Message& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void allInOneMessage::CopyFrom(const allInOneMessage& from) {
+void AllInOneMessage::CopyFrom(const AllInOneMessage& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool allInOneMessage::IsInitialized() const {
+bool AllInOneMessage::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
 
   if (has_serect_msg()) {
@@ -4668,7 +4668,7 @@ bool allInOneMessage::IsInitialized() const {
   return true;
 }
 
-void allInOneMessage::Swap(allInOneMessage* other) {
+void AllInOneMessage::Swap(AllInOneMessage* other) {
   if (other != this) {
     std::swap(type_, other->type_);
     std::swap(serect_msg_, other->serect_msg_);
@@ -4684,11 +4684,11 @@ void allInOneMessage::Swap(allInOneMessage* other) {
   }
 }
 
-::google::protobuf::Metadata allInOneMessage::GetMetadata() const {
+::google::protobuf::Metadata AllInOneMessage::GetMetadata() const {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
-  metadata.descriptor = allInOneMessage_descriptor_;
-  metadata.reflection = allInOneMessage_reflection_;
+  metadata.descriptor = AllInOneMessage_descriptor_;
+  metadata.reflection = AllInOneMessage_reflection_;
   return metadata;
 }
 

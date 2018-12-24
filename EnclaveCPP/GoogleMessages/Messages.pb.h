@@ -41,7 +41,7 @@ class MessageMSG1;
 class MessageMSG2;
 class MessageMSG3;
 class AttestationMessage;
-class allInOneMessage;
+class AllInOneMessage;
 
 enum Type {
   RA_MSG0 = 0,
@@ -1112,14 +1112,14 @@ class AttestationMessage : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class allInOneMessage : public ::google::protobuf::Message {
+class AllInOneMessage : public ::google::protobuf::Message {
  public:
-  allInOneMessage();
-  virtual ~allInOneMessage();
+  AllInOneMessage();
+  virtual ~AllInOneMessage();
 
-  allInOneMessage(const allInOneMessage& from);
+  AllInOneMessage(const AllInOneMessage& from);
 
-  inline allInOneMessage& operator=(const allInOneMessage& from) {
+  inline AllInOneMessage& operator=(const AllInOneMessage& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1133,17 +1133,17 @@ class allInOneMessage : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const allInOneMessage& default_instance();
+  static const AllInOneMessage& default_instance();
 
-  void Swap(allInOneMessage* other);
+  void Swap(AllInOneMessage* other);
 
   // implements Message ----------------------------------------------
 
-  allInOneMessage* New() const;
+  AllInOneMessage* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const allInOneMessage& from);
-  void MergeFrom(const allInOneMessage& from);
+  void CopyFrom(const AllInOneMessage& from);
+  void MergeFrom(const AllInOneMessage& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -1235,7 +1235,7 @@ class allInOneMessage : public ::google::protobuf::Message {
   inline ::Messages::AttestationMessage* release_attest_msg();
   inline void set_allocated_attest_msg(::Messages::AttestationMessage* attest_msg);
 
-  // @@protoc_insertion_point(class_scope:Messages.allInOneMessage)
+  // @@protoc_insertion_point(class_scope:Messages.AllInOneMessage)
  private:
   inline void set_has_type();
   inline void clear_has_type();
@@ -1271,7 +1271,7 @@ class allInOneMessage : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_Messages_2eproto();
 
   void InitAsDefaultInstance();
-  static allInOneMessage* default_instance_;
+  static AllInOneMessage* default_instance_;
 };
 // ===================================================================
 
@@ -2560,64 +2560,64 @@ AttestationMessage::mutable_payload() {
 
 // -------------------------------------------------------------------
 
-// allInOneMessage
+// AllInOneMessage
 
 // required .Messages.Type type = 1;
-inline bool allInOneMessage::has_type() const {
+inline bool AllInOneMessage::has_type() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void allInOneMessage::set_has_type() {
+inline void AllInOneMessage::set_has_type() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void allInOneMessage::clear_has_type() {
+inline void AllInOneMessage::clear_has_type() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void allInOneMessage::clear_type() {
+inline void AllInOneMessage::clear_type() {
   type_ = 0;
   clear_has_type();
 }
-inline ::Messages::Type allInOneMessage::type() const {
-  // @@protoc_insertion_point(field_get:Messages.allInOneMessage.type)
+inline ::Messages::Type AllInOneMessage::type() const {
+  // @@protoc_insertion_point(field_get:Messages.AllInOneMessage.type)
   return static_cast< ::Messages::Type >(type_);
 }
-inline void allInOneMessage::set_type(::Messages::Type value) {
+inline void AllInOneMessage::set_type(::Messages::Type value) {
   assert(::Messages::Type_IsValid(value));
   set_has_type();
   type_ = value;
-  // @@protoc_insertion_point(field_set:Messages.allInOneMessage.type)
+  // @@protoc_insertion_point(field_set:Messages.AllInOneMessage.type)
 }
 
 // optional .Messages.SecretMessage serect_msg = 2;
-inline bool allInOneMessage::has_serect_msg() const {
+inline bool AllInOneMessage::has_serect_msg() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void allInOneMessage::set_has_serect_msg() {
+inline void AllInOneMessage::set_has_serect_msg() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void allInOneMessage::clear_has_serect_msg() {
+inline void AllInOneMessage::clear_has_serect_msg() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void allInOneMessage::clear_serect_msg() {
+inline void AllInOneMessage::clear_serect_msg() {
   if (serect_msg_ != NULL) serect_msg_->::Messages::SecretMessage::Clear();
   clear_has_serect_msg();
 }
-inline const ::Messages::SecretMessage& allInOneMessage::serect_msg() const {
-  // @@protoc_insertion_point(field_get:Messages.allInOneMessage.serect_msg)
+inline const ::Messages::SecretMessage& AllInOneMessage::serect_msg() const {
+  // @@protoc_insertion_point(field_get:Messages.AllInOneMessage.serect_msg)
   return serect_msg_ != NULL ? *serect_msg_ : *default_instance_->serect_msg_;
 }
-inline ::Messages::SecretMessage* allInOneMessage::mutable_serect_msg() {
+inline ::Messages::SecretMessage* AllInOneMessage::mutable_serect_msg() {
   set_has_serect_msg();
   if (serect_msg_ == NULL) serect_msg_ = new ::Messages::SecretMessage;
-  // @@protoc_insertion_point(field_mutable:Messages.allInOneMessage.serect_msg)
+  // @@protoc_insertion_point(field_mutable:Messages.AllInOneMessage.serect_msg)
   return serect_msg_;
 }
-inline ::Messages::SecretMessage* allInOneMessage::release_serect_msg() {
+inline ::Messages::SecretMessage* AllInOneMessage::release_serect_msg() {
   clear_has_serect_msg();
   ::Messages::SecretMessage* temp = serect_msg_;
   serect_msg_ = NULL;
   return temp;
 }
-inline void allInOneMessage::set_allocated_serect_msg(::Messages::SecretMessage* serect_msg) {
+inline void AllInOneMessage::set_allocated_serect_msg(::Messages::SecretMessage* serect_msg) {
   delete serect_msg_;
   serect_msg_ = serect_msg;
   if (serect_msg) {
@@ -2625,40 +2625,40 @@ inline void allInOneMessage::set_allocated_serect_msg(::Messages::SecretMessage*
   } else {
     clear_has_serect_msg();
   }
-  // @@protoc_insertion_point(field_set_allocated:Messages.allInOneMessage.serect_msg)
+  // @@protoc_insertion_point(field_set_allocated:Messages.AllInOneMessage.serect_msg)
 }
 
 // optional .Messages.InitialMessage init_msg = 3;
-inline bool allInOneMessage::has_init_msg() const {
+inline bool AllInOneMessage::has_init_msg() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void allInOneMessage::set_has_init_msg() {
+inline void AllInOneMessage::set_has_init_msg() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void allInOneMessage::clear_has_init_msg() {
+inline void AllInOneMessage::clear_has_init_msg() {
   _has_bits_[0] &= ~0x00000004u;
 }
-inline void allInOneMessage::clear_init_msg() {
+inline void AllInOneMessage::clear_init_msg() {
   if (init_msg_ != NULL) init_msg_->::Messages::InitialMessage::Clear();
   clear_has_init_msg();
 }
-inline const ::Messages::InitialMessage& allInOneMessage::init_msg() const {
-  // @@protoc_insertion_point(field_get:Messages.allInOneMessage.init_msg)
+inline const ::Messages::InitialMessage& AllInOneMessage::init_msg() const {
+  // @@protoc_insertion_point(field_get:Messages.AllInOneMessage.init_msg)
   return init_msg_ != NULL ? *init_msg_ : *default_instance_->init_msg_;
 }
-inline ::Messages::InitialMessage* allInOneMessage::mutable_init_msg() {
+inline ::Messages::InitialMessage* AllInOneMessage::mutable_init_msg() {
   set_has_init_msg();
   if (init_msg_ == NULL) init_msg_ = new ::Messages::InitialMessage;
-  // @@protoc_insertion_point(field_mutable:Messages.allInOneMessage.init_msg)
+  // @@protoc_insertion_point(field_mutable:Messages.AllInOneMessage.init_msg)
   return init_msg_;
 }
-inline ::Messages::InitialMessage* allInOneMessage::release_init_msg() {
+inline ::Messages::InitialMessage* AllInOneMessage::release_init_msg() {
   clear_has_init_msg();
   ::Messages::InitialMessage* temp = init_msg_;
   init_msg_ = NULL;
   return temp;
 }
-inline void allInOneMessage::set_allocated_init_msg(::Messages::InitialMessage* init_msg) {
+inline void AllInOneMessage::set_allocated_init_msg(::Messages::InitialMessage* init_msg) {
   delete init_msg_;
   init_msg_ = init_msg;
   if (init_msg) {
@@ -2666,40 +2666,40 @@ inline void allInOneMessage::set_allocated_init_msg(::Messages::InitialMessage* 
   } else {
     clear_has_init_msg();
   }
-  // @@protoc_insertion_point(field_set_allocated:Messages.allInOneMessage.init_msg)
+  // @@protoc_insertion_point(field_set_allocated:Messages.AllInOneMessage.init_msg)
 }
 
 // optional .Messages.MessageMSG0 msg0 = 4;
-inline bool allInOneMessage::has_msg0() const {
+inline bool AllInOneMessage::has_msg0() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void allInOneMessage::set_has_msg0() {
+inline void AllInOneMessage::set_has_msg0() {
   _has_bits_[0] |= 0x00000008u;
 }
-inline void allInOneMessage::clear_has_msg0() {
+inline void AllInOneMessage::clear_has_msg0() {
   _has_bits_[0] &= ~0x00000008u;
 }
-inline void allInOneMessage::clear_msg0() {
+inline void AllInOneMessage::clear_msg0() {
   if (msg0_ != NULL) msg0_->::Messages::MessageMSG0::Clear();
   clear_has_msg0();
 }
-inline const ::Messages::MessageMSG0& allInOneMessage::msg0() const {
-  // @@protoc_insertion_point(field_get:Messages.allInOneMessage.msg0)
+inline const ::Messages::MessageMSG0& AllInOneMessage::msg0() const {
+  // @@protoc_insertion_point(field_get:Messages.AllInOneMessage.msg0)
   return msg0_ != NULL ? *msg0_ : *default_instance_->msg0_;
 }
-inline ::Messages::MessageMSG0* allInOneMessage::mutable_msg0() {
+inline ::Messages::MessageMSG0* AllInOneMessage::mutable_msg0() {
   set_has_msg0();
   if (msg0_ == NULL) msg0_ = new ::Messages::MessageMSG0;
-  // @@protoc_insertion_point(field_mutable:Messages.allInOneMessage.msg0)
+  // @@protoc_insertion_point(field_mutable:Messages.AllInOneMessage.msg0)
   return msg0_;
 }
-inline ::Messages::MessageMSG0* allInOneMessage::release_msg0() {
+inline ::Messages::MessageMSG0* AllInOneMessage::release_msg0() {
   clear_has_msg0();
   ::Messages::MessageMSG0* temp = msg0_;
   msg0_ = NULL;
   return temp;
 }
-inline void allInOneMessage::set_allocated_msg0(::Messages::MessageMSG0* msg0) {
+inline void AllInOneMessage::set_allocated_msg0(::Messages::MessageMSG0* msg0) {
   delete msg0_;
   msg0_ = msg0;
   if (msg0) {
@@ -2707,40 +2707,40 @@ inline void allInOneMessage::set_allocated_msg0(::Messages::MessageMSG0* msg0) {
   } else {
     clear_has_msg0();
   }
-  // @@protoc_insertion_point(field_set_allocated:Messages.allInOneMessage.msg0)
+  // @@protoc_insertion_point(field_set_allocated:Messages.AllInOneMessage.msg0)
 }
 
 // optional .Messages.MessageMSG1 msg1 = 5;
-inline bool allInOneMessage::has_msg1() const {
+inline bool AllInOneMessage::has_msg1() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
-inline void allInOneMessage::set_has_msg1() {
+inline void AllInOneMessage::set_has_msg1() {
   _has_bits_[0] |= 0x00000010u;
 }
-inline void allInOneMessage::clear_has_msg1() {
+inline void AllInOneMessage::clear_has_msg1() {
   _has_bits_[0] &= ~0x00000010u;
 }
-inline void allInOneMessage::clear_msg1() {
+inline void AllInOneMessage::clear_msg1() {
   if (msg1_ != NULL) msg1_->::Messages::MessageMSG1::Clear();
   clear_has_msg1();
 }
-inline const ::Messages::MessageMSG1& allInOneMessage::msg1() const {
-  // @@protoc_insertion_point(field_get:Messages.allInOneMessage.msg1)
+inline const ::Messages::MessageMSG1& AllInOneMessage::msg1() const {
+  // @@protoc_insertion_point(field_get:Messages.AllInOneMessage.msg1)
   return msg1_ != NULL ? *msg1_ : *default_instance_->msg1_;
 }
-inline ::Messages::MessageMSG1* allInOneMessage::mutable_msg1() {
+inline ::Messages::MessageMSG1* AllInOneMessage::mutable_msg1() {
   set_has_msg1();
   if (msg1_ == NULL) msg1_ = new ::Messages::MessageMSG1;
-  // @@protoc_insertion_point(field_mutable:Messages.allInOneMessage.msg1)
+  // @@protoc_insertion_point(field_mutable:Messages.AllInOneMessage.msg1)
   return msg1_;
 }
-inline ::Messages::MessageMSG1* allInOneMessage::release_msg1() {
+inline ::Messages::MessageMSG1* AllInOneMessage::release_msg1() {
   clear_has_msg1();
   ::Messages::MessageMSG1* temp = msg1_;
   msg1_ = NULL;
   return temp;
 }
-inline void allInOneMessage::set_allocated_msg1(::Messages::MessageMSG1* msg1) {
+inline void AllInOneMessage::set_allocated_msg1(::Messages::MessageMSG1* msg1) {
   delete msg1_;
   msg1_ = msg1;
   if (msg1) {
@@ -2748,40 +2748,40 @@ inline void allInOneMessage::set_allocated_msg1(::Messages::MessageMSG1* msg1) {
   } else {
     clear_has_msg1();
   }
-  // @@protoc_insertion_point(field_set_allocated:Messages.allInOneMessage.msg1)
+  // @@protoc_insertion_point(field_set_allocated:Messages.AllInOneMessage.msg1)
 }
 
 // optional .Messages.MessageMSG2 msg2 = 6;
-inline bool allInOneMessage::has_msg2() const {
+inline bool AllInOneMessage::has_msg2() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }
-inline void allInOneMessage::set_has_msg2() {
+inline void AllInOneMessage::set_has_msg2() {
   _has_bits_[0] |= 0x00000020u;
 }
-inline void allInOneMessage::clear_has_msg2() {
+inline void AllInOneMessage::clear_has_msg2() {
   _has_bits_[0] &= ~0x00000020u;
 }
-inline void allInOneMessage::clear_msg2() {
+inline void AllInOneMessage::clear_msg2() {
   if (msg2_ != NULL) msg2_->::Messages::MessageMSG2::Clear();
   clear_has_msg2();
 }
-inline const ::Messages::MessageMSG2& allInOneMessage::msg2() const {
-  // @@protoc_insertion_point(field_get:Messages.allInOneMessage.msg2)
+inline const ::Messages::MessageMSG2& AllInOneMessage::msg2() const {
+  // @@protoc_insertion_point(field_get:Messages.AllInOneMessage.msg2)
   return msg2_ != NULL ? *msg2_ : *default_instance_->msg2_;
 }
-inline ::Messages::MessageMSG2* allInOneMessage::mutable_msg2() {
+inline ::Messages::MessageMSG2* AllInOneMessage::mutable_msg2() {
   set_has_msg2();
   if (msg2_ == NULL) msg2_ = new ::Messages::MessageMSG2;
-  // @@protoc_insertion_point(field_mutable:Messages.allInOneMessage.msg2)
+  // @@protoc_insertion_point(field_mutable:Messages.AllInOneMessage.msg2)
   return msg2_;
 }
-inline ::Messages::MessageMSG2* allInOneMessage::release_msg2() {
+inline ::Messages::MessageMSG2* AllInOneMessage::release_msg2() {
   clear_has_msg2();
   ::Messages::MessageMSG2* temp = msg2_;
   msg2_ = NULL;
   return temp;
 }
-inline void allInOneMessage::set_allocated_msg2(::Messages::MessageMSG2* msg2) {
+inline void AllInOneMessage::set_allocated_msg2(::Messages::MessageMSG2* msg2) {
   delete msg2_;
   msg2_ = msg2;
   if (msg2) {
@@ -2789,40 +2789,40 @@ inline void allInOneMessage::set_allocated_msg2(::Messages::MessageMSG2* msg2) {
   } else {
     clear_has_msg2();
   }
-  // @@protoc_insertion_point(field_set_allocated:Messages.allInOneMessage.msg2)
+  // @@protoc_insertion_point(field_set_allocated:Messages.AllInOneMessage.msg2)
 }
 
 // optional .Messages.MessageMSG3 msg3 = 7;
-inline bool allInOneMessage::has_msg3() const {
+inline bool AllInOneMessage::has_msg3() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }
-inline void allInOneMessage::set_has_msg3() {
+inline void AllInOneMessage::set_has_msg3() {
   _has_bits_[0] |= 0x00000040u;
 }
-inline void allInOneMessage::clear_has_msg3() {
+inline void AllInOneMessage::clear_has_msg3() {
   _has_bits_[0] &= ~0x00000040u;
 }
-inline void allInOneMessage::clear_msg3() {
+inline void AllInOneMessage::clear_msg3() {
   if (msg3_ != NULL) msg3_->::Messages::MessageMSG3::Clear();
   clear_has_msg3();
 }
-inline const ::Messages::MessageMSG3& allInOneMessage::msg3() const {
-  // @@protoc_insertion_point(field_get:Messages.allInOneMessage.msg3)
+inline const ::Messages::MessageMSG3& AllInOneMessage::msg3() const {
+  // @@protoc_insertion_point(field_get:Messages.AllInOneMessage.msg3)
   return msg3_ != NULL ? *msg3_ : *default_instance_->msg3_;
 }
-inline ::Messages::MessageMSG3* allInOneMessage::mutable_msg3() {
+inline ::Messages::MessageMSG3* AllInOneMessage::mutable_msg3() {
   set_has_msg3();
   if (msg3_ == NULL) msg3_ = new ::Messages::MessageMSG3;
-  // @@protoc_insertion_point(field_mutable:Messages.allInOneMessage.msg3)
+  // @@protoc_insertion_point(field_mutable:Messages.AllInOneMessage.msg3)
   return msg3_;
 }
-inline ::Messages::MessageMSG3* allInOneMessage::release_msg3() {
+inline ::Messages::MessageMSG3* AllInOneMessage::release_msg3() {
   clear_has_msg3();
   ::Messages::MessageMSG3* temp = msg3_;
   msg3_ = NULL;
   return temp;
 }
-inline void allInOneMessage::set_allocated_msg3(::Messages::MessageMSG3* msg3) {
+inline void AllInOneMessage::set_allocated_msg3(::Messages::MessageMSG3* msg3) {
   delete msg3_;
   msg3_ = msg3;
   if (msg3) {
@@ -2830,40 +2830,40 @@ inline void allInOneMessage::set_allocated_msg3(::Messages::MessageMSG3* msg3) {
   } else {
     clear_has_msg3();
   }
-  // @@protoc_insertion_point(field_set_allocated:Messages.allInOneMessage.msg3)
+  // @@protoc_insertion_point(field_set_allocated:Messages.AllInOneMessage.msg3)
 }
 
 // optional .Messages.AttestationMessage attest_msg = 8;
-inline bool allInOneMessage::has_attest_msg() const {
+inline bool AllInOneMessage::has_attest_msg() const {
   return (_has_bits_[0] & 0x00000080u) != 0;
 }
-inline void allInOneMessage::set_has_attest_msg() {
+inline void AllInOneMessage::set_has_attest_msg() {
   _has_bits_[0] |= 0x00000080u;
 }
-inline void allInOneMessage::clear_has_attest_msg() {
+inline void AllInOneMessage::clear_has_attest_msg() {
   _has_bits_[0] &= ~0x00000080u;
 }
-inline void allInOneMessage::clear_attest_msg() {
+inline void AllInOneMessage::clear_attest_msg() {
   if (attest_msg_ != NULL) attest_msg_->::Messages::AttestationMessage::Clear();
   clear_has_attest_msg();
 }
-inline const ::Messages::AttestationMessage& allInOneMessage::attest_msg() const {
-  // @@protoc_insertion_point(field_get:Messages.allInOneMessage.attest_msg)
+inline const ::Messages::AttestationMessage& AllInOneMessage::attest_msg() const {
+  // @@protoc_insertion_point(field_get:Messages.AllInOneMessage.attest_msg)
   return attest_msg_ != NULL ? *attest_msg_ : *default_instance_->attest_msg_;
 }
-inline ::Messages::AttestationMessage* allInOneMessage::mutable_attest_msg() {
+inline ::Messages::AttestationMessage* AllInOneMessage::mutable_attest_msg() {
   set_has_attest_msg();
   if (attest_msg_ == NULL) attest_msg_ = new ::Messages::AttestationMessage;
-  // @@protoc_insertion_point(field_mutable:Messages.allInOneMessage.attest_msg)
+  // @@protoc_insertion_point(field_mutable:Messages.AllInOneMessage.attest_msg)
   return attest_msg_;
 }
-inline ::Messages::AttestationMessage* allInOneMessage::release_attest_msg() {
+inline ::Messages::AttestationMessage* AllInOneMessage::release_attest_msg() {
   clear_has_attest_msg();
   ::Messages::AttestationMessage* temp = attest_msg_;
   attest_msg_ = NULL;
   return temp;
 }
-inline void allInOneMessage::set_allocated_attest_msg(::Messages::AttestationMessage* attest_msg) {
+inline void AllInOneMessage::set_allocated_attest_msg(::Messages::AttestationMessage* attest_msg) {
   delete attest_msg_;
   attest_msg_ = attest_msg;
   if (attest_msg) {
@@ -2871,7 +2871,7 @@ inline void allInOneMessage::set_allocated_attest_msg(::Messages::AttestationMes
   } else {
     clear_has_attest_msg();
   }
-  // @@protoc_insertion_point(field_set_allocated:Messages.allInOneMessage.attest_msg)
+  // @@protoc_insertion_point(field_set_allocated:Messages.AllInOneMessage.attest_msg)
 }
 
 
