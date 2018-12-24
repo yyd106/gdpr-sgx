@@ -315,6 +315,7 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
 
     do
     {
+        /*
         if(NULL != ra_key_cb)
         {
             se_ret = ra_key_cb(&dh_key,
@@ -370,23 +371,26 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
             se_ret = SGX_ERROR_KDF_MISMATCH;
             break;
         }
-        /*
+        */
         if(NULL != ra_key_cb)
         {
             memcpy(&smkey, &dh_key, sizeof(smkey));
             memcpy(&skey, &dh_key, sizeof(smkey));
             memcpy(&mkey, &dh_key, sizeof(smkey));
             memcpy(&vkey, &dh_key, sizeof(smkey));
-        }
-        else if (p_msg2->kdf_id == 0x0001)
+        } else if (p_msg2->kdf_id == 0x0001)
         {
             memcpy(&smkey, &dh_key, sizeof(smkey));
             memcpy(&skey, &dh_key, sizeof(smkey));
             memcpy(&mkey, &dh_key, sizeof(smkey));
             memcpy(&vkey, &dh_key, sizeof(smkey));
 
+        } else
+        {
+            se_ret = SGX_ERROR_KDF_MISMATCH;
+            break;
         }
-        */
+        
 
         sgx_cmac_128bit_tag_t mac;
         uint32_t maced_size = offsetof(sgx_ra_msg2_t, mac);
