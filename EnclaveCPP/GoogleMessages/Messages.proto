@@ -18,7 +18,9 @@ message SecretMessage {
 message InitialMessage {
 	required uint32 type = 1;
 	optional uint32 size = 2;
-} message MessageMsg0 {
+} 
+
+message MessageMSG0 {
 	required uint32 type = 1;
 	required uint32 epid = 2;
 	optional uint32 status = 3;
@@ -77,6 +79,13 @@ message AttestationMessage {
 	repeated uint32 payload = 16 [packed=true];
 }
 
-
-
-
+message allInOneMessage {
+    required Type type = 1;
+    optional SecretMessage serect_msg = 2;
+    optional InitialMessage init_msg = 3;
+    optional MessageMSG0 msg0 = 4;
+    optional MessageMSG1 msg1 = 5;
+    optional MessageMSG2 msg2 = 6;
+    optional MessageMSG3 msg3 = 7;
+    optional AttestationMessage attest_msg = 8;
+}
