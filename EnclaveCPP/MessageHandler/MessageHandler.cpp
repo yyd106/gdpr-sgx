@@ -158,8 +158,6 @@ string MessageHandler::generateMSG1() {
 
 
     if (SGX_SUCCESS == retGIDStatus) {
-        Log("MSG1 generated Successfully");
-
         Messages::MessageMSG1 msg;
         msg.set_type(Messages::Type::RA_MSG1);
 
@@ -196,8 +194,8 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
     sgx_spid_t spid;
 
     for (int i; i<32; i++) {
-        pub_key_gx[i] = msg.public_key_gx(i);
-        pub_key_gy[i] = msg.public_key_gy(i);
+        pub_key_gx[i] = msg.publickeygx(i);
+        pub_key_gy[i] = msg.publickeygy(i);
     }
 
     for (int i=0; i<16; i++) {
@@ -205,8 +203,8 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
     }
 
     for (int i=0; i<8; i++) {
-        sign_gb_ga.x[i] = msg.signature_x(i);
-        sign_gb_ga.y[i] = msg.signature_y(i);
+        sign_gb_ga.x[i] = msg.signaturex(i);
+        sign_gb_ga.y[i] = msg.signaturey(i);
     }
 
     memcpy(&p_msg2->g_b.gx, &pub_key_gx, sizeof(pub_key_gx));
@@ -214,8 +212,8 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
     memcpy(&p_msg2->sign_gb_ga, &sign_gb_ga, sizeof(sign_gb_ga));
     memcpy(&p_msg2->spid, &spid, sizeof(spid));
 
-    p_msg2->quote_type = (uint16_t)msg.quote_type();
-    p_msg2->kdf_id = msg.cmac_kdf_id();
+    p_msg2->quote_type = (uint16_t)msg.quotetype();
+    p_msg2->kdf_id = msg.cmackdfid();
 
     uint8_t smac[16];
     for (int i=0; i<16; i++)
@@ -223,13 +221,13 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
 
     memcpy(&p_msg2->mac, &smac, sizeof(smac));
 
-    p_msg2->sig_rl_size = msg.size_sigrl();
-    uint8_t *sigrl = (uint8_t*) malloc(sizeof(uint8_t) * msg.size_sigrl());
+    p_msg2->sig_rl_size = msg.sizesigrl();
+    uint8_t *sigrl = (uint8_t*) malloc(sizeof(uint8_t) * msg.sizesigrl());
 
-    for (int i=0; i<msg.size_sigrl(); i++)
+    for (int i=0; i<msg.sizesigrl(); i++)
         sigrl[i] = msg.sigrl(i);
 
-    memcpy(&p_msg2->sig_rl, &sigrl, msg.size_sigrl());
+    memcpy(&p_msg2->sig_rl, &sigrl, msg.sizesigrl());
 
     *pp_msg2 = p_msg2;
 }
@@ -280,15 +278,15 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
         msg3.set_size(msg3_size);
 
         for (int i=0; i<SGX_MAC_SIZE; i++)
-            msg3.add_sgx_mac(p_msg3->mac[i]);
+            msg3.add_sgxmac(p_msg3->mac[i]);
 
         for (int i=0; i<SGX_ECP256_KEY_SIZE; i++) {
-            msg3.add_gax_msg3(p_msg3->g_a.gx[i]);
-            msg3.add_gay_msg3(p_msg3->g_a.gy[i]);
+            msg3.add_gaxmsg3(p_msg3->g_a.gx[i]);
+            msg3.add_gaymsg3(p_msg3->g_a.gy[i]);
         }
 
         for (int i=0; i<256; i++) {
-            msg3.add_sec_property(p_msg3->ps_sec_prop.sgx_ps_sec_prop_desc[i]);
+            msg3.add_secproperty(p_msg3->ps_sec_prop.sgx_ps_sec_prop_desc[i]);
         }
 
 
@@ -314,7 +312,7 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     sample_ra_att_result_msg_t *p_att_result_msg = NULL;
     ra_samp_response_header_t* p_att_result_msg_full = NULL;
 
-    int total_size = msg.size() + sizeof(ra_samp_response_header_t) + msg.result_size();
+    int total_size = msg.size() + sizeof(ra_samp_response_header_t) + msg.resultsize();
     p_att_result_msg_full = (ra_samp_response_header_t*) malloc(total_size);
 
     memset(p_att_result_msg_full, 0, total_size);
@@ -323,43 +321,43 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
 
     p_att_result_msg = (sample_ra_att_result_msg_t *) p_att_result_msg_full->body;
 
-    p_att_result_msg->platform_info_blob.sample_epid_group_status = msg.epid_group_status();
-    p_att_result_msg->platform_info_blob.sample_tcb_evaluation_status = msg.tcb_evaluation_status();
-    p_att_result_msg->platform_info_blob.pse_evaluation_status = msg.pse_evaluation_status();
+    p_att_result_msg->platform_info_blob.sample_epid_group_status = msg.epidgroupstatus();
+    p_att_result_msg->platform_info_blob.sample_tcb_evaluation_status = msg.tcbevaluationstatus();
+    p_att_result_msg->platform_info_blob.pse_evaluation_status = msg.pseevaluationstatus();
 
     for (int i=0; i<PSVN_SIZE; i++)
-        p_att_result_msg->platform_info_blob.latest_equivalent_tcb_psvn[i] = msg.latest_equivalent_tcb_psvn(i);
+        p_att_result_msg->platform_info_blob.latest_equivalent_tcb_psvn[i] = msg.latestequivalenttcbpsvn(i);
 
     for (int i=0; i<ISVSVN_SIZE; i++)
-        p_att_result_msg->platform_info_blob.latest_pse_isvsvn[i] = msg.latest_pse_isvsvn(i);
+        p_att_result_msg->platform_info_blob.latest_pse_isvsvn[i] = msg.latestpseisvsvn(i);
 
     for (int i=0; i<PSDA_SVN_SIZE; i++)
-        p_att_result_msg->platform_info_blob.latest_psda_svn[i] = msg.latest_psda_svn(i);
+        p_att_result_msg->platform_info_blob.latest_psda_svn[i] = msg.latestpsdasvn(i);
 
     for (int i=0; i<GID_SIZE; i++)
-        p_att_result_msg->platform_info_blob.performance_rekey_gid[i] = msg.performance_rekey_gid(i);
+        p_att_result_msg->platform_info_blob.performance_rekey_gid[i] = msg.performancerekeygid(i);
 
     for (int i=0; i<SAMPLE_NISTP256_KEY_SIZE; i++) {
-        p_att_result_msg->platform_info_blob.signature.x[i] = msg.ec_sign256_x(i);
-        p_att_result_msg->platform_info_blob.signature.y[i] = msg.ec_sign256_y(i);
+        p_att_result_msg->platform_info_blob.signature.x[i] = msg.ecsign256x(i);
+        p_att_result_msg->platform_info_blob.signature.y[i] = msg.ecsign256y(i);
     }
 
     for (int i=0; i<SAMPLE_MAC_SIZE; i++)
-        p_att_result_msg->mac[i] = msg.mac_smk(i);
+        p_att_result_msg->mac[i] = msg.macsmk(i);
 
 
-    p_att_result_msg->secret.payload_size = msg.result_size();
+    p_att_result_msg->secret.payload_size = msg.resultsize();
 
     for (int i=0; i<12; i++)
         p_att_result_msg->secret.reserved[i] = msg.reserved(i);
 
     for (int i=0; i<SAMPLE_SP_TAG_SIZE; i++)
-        p_att_result_msg->secret.payload_tag[i] = msg.payload_tag(i);
+        p_att_result_msg->secret.payload_tag[i] = msg.payloadtag(i);
 
     for (int i=0; i<SAMPLE_SP_TAG_SIZE; i++)
-        p_att_result_msg->secret.payload_tag[i] = msg.payload_tag(i);
+        p_att_result_msg->secret.payload_tag[i] = msg.payloadtag(i);
 
-    for (int i=0; i<msg.result_size(); i++) {
+    for (int i=0; i<msg.resultsize(); i++) {
         p_att_result_msg->secret.payload[i] = (uint8_t)msg.payload(i);
     }
 
@@ -511,7 +509,7 @@ string MessageHandler::handleMessages(string v) {
     Log("========== handle messages ==========");
     switch (aio_msg.type()) {
     case Messages::Type::RA_VERIFICATION: {	//Verification request
-        Messages::InitialMessage init_msg = aio_msg.init_msg();
+        Messages::InitialMessage init_msg = aio_msg.initmsg();
         s = this->handleVerification();
     }
     break;
@@ -528,7 +526,7 @@ string MessageHandler::handleMessages(string v) {
     }
     break;
     case Messages::Type::RA_ATT_RESULT: {	//Reply to MSG3
-        Messages::AttestationMessage att_msg = aio_msg.attest_msg();
+        Messages::AttestationMessage att_msg = aio_msg.attestmsg();
         // receive MSG4 and verify encrypted secret
         s = this->handleAttestationResult(att_msg);
     }

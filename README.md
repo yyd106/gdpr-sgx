@@ -1,4 +1,25 @@
 # gdpr-sgx
+
+## Abbreviation
+* ***root_dir***: gdpr-sgx root directory
+
+## Build environment
+### Install prerequisites
+1. cd ***root_dir***
+2. run command ```./scripts/install_deps.sh -r -s``` to install dependencies
+3. note: in Step 2, **-r** means install **remote attestation** dependencies while **-s** does for **SGX SDK**
+
+### Build remote attestation
+1. cd ***root_dir***
+2. use ```./scripts/build_targets.sh [options]``` to build targets
+3. in Step 2, there are some options for the command
+  * ***-r*** indicates building **remote attestation** targets
+  * ***-m*** if you provide **-r** option the default value for **-m** is **HW** which builds targets in Hardware mode otherwise you can use **SIM** to build in simulation mode
+  * ***-s*** indicates building **SGX SDK**
+  * ***-t*** indicates building **simple** remote attestation and SGX SDK(if -r and -s are provided) 
+  * ***-j*** indicates building ***enclave client .so library file***. The built targets will be moved to ***root_dir/target***
+  * ***-h*** indicates showing usage information
+
 ## Web Server
 ### compile and deploy
 1. $ cd comsgxtrial
@@ -24,20 +45,3 @@
 * EnclaveThreadManager is a file to init EnclaveBridge
 * WebSocketServer.java is a file to handle websocket connections from browser.
   * OnMessages is called every time when new byte[] incoming, it should pass byte[] directly to enclave, and gets byte[] from enclave and send back to javascript.
-
-## Build test environment
-### Install prerequisites
-1. cd ***root_dir***
-2. run command **./scripts/install_deps.sh -r -s** to install dependencies
-3. note: in Step 2, **-r** means install remote attestation dependencies while **-s** does for SGX SDK
-
-### Build remote attestation
-1. cd ***root_dir***
-2. use **./scripts/build_targets.sh [options]** to build targets
-3. in Step 2, there are some options for the command
-  * ***-r*** indicates building remote attestation targets
-  * ***-m*** if you provide **-r** option the default value for **-m** is **HW** which builds targets in Hardware mode otherwise you can use **SIM** to build in simulation mode
-  * ***-s*** indicates building SGX SDK
-  * ***-t*** indicates building simple remote attestation and SGX SDK(if -r and -s are provided) 
-  * ***-j*** indicates building enclave client .so library file. The built targets will be in ***root_dir***
-  * ***-h*** indicates showing usage information

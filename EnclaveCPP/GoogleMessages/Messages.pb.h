@@ -534,36 +534,36 @@ class MessageMSG2 : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 size() const;
   inline void set_size(::google::protobuf::uint32 value);
 
-  // repeated uint32 public_key_gx = 3 [packed = true];
-  inline int public_key_gx_size() const;
-  inline void clear_public_key_gx();
+  // repeated uint32 publicKeyGx = 3 [packed = true];
+  inline int publickeygx_size() const;
+  inline void clear_publickeygx();
   static const int kPublicKeyGxFieldNumber = 3;
-  inline ::google::protobuf::uint32 public_key_gx(int index) const;
-  inline void set_public_key_gx(int index, ::google::protobuf::uint32 value);
-  inline void add_public_key_gx(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 publickeygx(int index) const;
+  inline void set_publickeygx(int index, ::google::protobuf::uint32 value);
+  inline void add_publickeygx(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      public_key_gx() const;
+      publickeygx() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_public_key_gx();
+      mutable_publickeygx();
 
-  // repeated uint32 public_key_gy = 4 [packed = true];
-  inline int public_key_gy_size() const;
-  inline void clear_public_key_gy();
+  // repeated uint32 publicKeyGy = 4 [packed = true];
+  inline int publickeygy_size() const;
+  inline void clear_publickeygy();
   static const int kPublicKeyGyFieldNumber = 4;
-  inline ::google::protobuf::uint32 public_key_gy(int index) const;
-  inline void set_public_key_gy(int index, ::google::protobuf::uint32 value);
-  inline void add_public_key_gy(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 publickeygy(int index) const;
+  inline void set_publickeygy(int index, ::google::protobuf::uint32 value);
+  inline void add_publickeygy(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      public_key_gy() const;
+      publickeygy() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_public_key_gy();
+      mutable_publickeygy();
 
-  // optional uint32 quote_type = 5;
-  inline bool has_quote_type() const;
-  inline void clear_quote_type();
+  // optional uint32 quoteType = 5;
+  inline bool has_quotetype() const;
+  inline void clear_quotetype();
   static const int kQuoteTypeFieldNumber = 5;
-  inline ::google::protobuf::uint32 quote_type() const;
-  inline void set_quote_type(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 quotetype() const;
+  inline void set_quotetype(::google::protobuf::uint32 value);
 
   // repeated uint32 spid = 6 [packed = true];
   inline int spid_size() const;
@@ -577,36 +577,36 @@ class MessageMSG2 : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
       mutable_spid();
 
-  // optional uint32 cmac_kdf_id = 7;
-  inline bool has_cmac_kdf_id() const;
-  inline void clear_cmac_kdf_id();
+  // optional uint32 cmacKdfId = 7;
+  inline bool has_cmackdfid() const;
+  inline void clear_cmackdfid();
   static const int kCmacKdfIdFieldNumber = 7;
-  inline ::google::protobuf::uint32 cmac_kdf_id() const;
-  inline void set_cmac_kdf_id(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 cmackdfid() const;
+  inline void set_cmackdfid(::google::protobuf::uint32 value);
 
-  // repeated uint32 signature_x = 8 [packed = true];
-  inline int signature_x_size() const;
-  inline void clear_signature_x();
+  // repeated uint32 signatureX = 8 [packed = true];
+  inline int signaturex_size() const;
+  inline void clear_signaturex();
   static const int kSignatureXFieldNumber = 8;
-  inline ::google::protobuf::uint32 signature_x(int index) const;
-  inline void set_signature_x(int index, ::google::protobuf::uint32 value);
-  inline void add_signature_x(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 signaturex(int index) const;
+  inline void set_signaturex(int index, ::google::protobuf::uint32 value);
+  inline void add_signaturex(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      signature_x() const;
+      signaturex() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_signature_x();
+      mutable_signaturex();
 
-  // repeated uint32 signature_y = 9 [packed = true];
-  inline int signature_y_size() const;
-  inline void clear_signature_y();
+  // repeated uint32 signatureY = 9 [packed = true];
+  inline int signaturey_size() const;
+  inline void clear_signaturey();
   static const int kSignatureYFieldNumber = 9;
-  inline ::google::protobuf::uint32 signature_y(int index) const;
-  inline void set_signature_y(int index, ::google::protobuf::uint32 value);
-  inline void add_signature_y(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 signaturey(int index) const;
+  inline void set_signaturey(int index, ::google::protobuf::uint32 value);
+  inline void add_signaturey(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      signature_y() const;
+      signaturey() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_signature_y();
+      mutable_signaturey();
 
   // repeated uint32 smac = 10 [packed = true];
   inline int smac_size() const;
@@ -620,12 +620,12 @@ class MessageMSG2 : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
       mutable_smac();
 
-  // optional uint32 size_sigrl = 11;
-  inline bool has_size_sigrl() const;
-  inline void clear_size_sigrl();
+  // optional uint32 sizeSigrl = 11;
+  inline bool has_sizesigrl() const;
+  inline void clear_sizesigrl();
   static const int kSizeSigrlFieldNumber = 11;
-  inline ::google::protobuf::uint32 size_sigrl() const;
-  inline void set_size_sigrl(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 sizesigrl() const;
+  inline void set_sizesigrl(::google::protobuf::uint32 value);
 
   // repeated uint32 sigrl = 12 [packed = true];
   inline int sigrl_size() const;
@@ -645,12 +645,12 @@ class MessageMSG2 : public ::google::protobuf::Message {
   inline void clear_has_type();
   inline void set_has_size();
   inline void clear_has_size();
-  inline void set_has_quote_type();
-  inline void clear_has_quote_type();
-  inline void set_has_cmac_kdf_id();
-  inline void clear_has_cmac_kdf_id();
-  inline void set_has_size_sigrl();
-  inline void clear_has_size_sigrl();
+  inline void set_has_quotetype();
+  inline void clear_has_quotetype();
+  inline void set_has_cmackdfid();
+  inline void clear_has_cmackdfid();
+  inline void set_has_sizesigrl();
+  inline void clear_has_sizesigrl();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -658,23 +658,23 @@ class MessageMSG2 : public ::google::protobuf::Message {
   mutable int _cached_size_;
   int type_;
   ::google::protobuf::uint32 size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > public_key_gx_;
-  mutable int _public_key_gx_cached_byte_size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > public_key_gy_;
-  mutable int _public_key_gy_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > publickeygx_;
+  mutable int _publickeygx_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > publickeygy_;
+  mutable int _publickeygy_cached_byte_size_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > spid_;
   mutable int _spid_cached_byte_size_;
-  ::google::protobuf::uint32 quote_type_;
-  ::google::protobuf::uint32 cmac_kdf_id_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > signature_x_;
-  mutable int _signature_x_cached_byte_size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > signature_y_;
-  mutable int _signature_y_cached_byte_size_;
+  ::google::protobuf::uint32 quotetype_;
+  ::google::protobuf::uint32 cmackdfid_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > signaturex_;
+  mutable int _signaturex_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > signaturey_;
+  mutable int _signaturey_cached_byte_size_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > smac_;
   mutable int _smac_cached_byte_size_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > sigrl_;
   mutable int _sigrl_cached_byte_size_;
-  ::google::protobuf::uint32 size_sigrl_;
+  ::google::protobuf::uint32 sizesigrl_;
   friend void  protobuf_AddDesc_Messages_2eproto();
   friend void protobuf_AssignDesc_Messages_2eproto();
   friend void protobuf_ShutdownFile_Messages_2eproto();
@@ -751,53 +751,53 @@ class MessageMSG3 : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 size() const;
   inline void set_size(::google::protobuf::uint32 value);
 
-  // repeated uint32 sgx_mac = 3 [packed = true];
-  inline int sgx_mac_size() const;
-  inline void clear_sgx_mac();
+  // repeated uint32 sgxMac = 3 [packed = true];
+  inline int sgxmac_size() const;
+  inline void clear_sgxmac();
   static const int kSgxMacFieldNumber = 3;
-  inline ::google::protobuf::uint32 sgx_mac(int index) const;
-  inline void set_sgx_mac(int index, ::google::protobuf::uint32 value);
-  inline void add_sgx_mac(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 sgxmac(int index) const;
+  inline void set_sgxmac(int index, ::google::protobuf::uint32 value);
+  inline void add_sgxmac(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      sgx_mac() const;
+      sgxmac() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_sgx_mac();
+      mutable_sgxmac();
 
-  // repeated uint32 gax_msg3 = 4 [packed = true];
-  inline int gax_msg3_size() const;
-  inline void clear_gax_msg3();
+  // repeated uint32 gaxMsg3 = 4 [packed = true];
+  inline int gaxmsg3_size() const;
+  inline void clear_gaxmsg3();
   static const int kGaxMsg3FieldNumber = 4;
-  inline ::google::protobuf::uint32 gax_msg3(int index) const;
-  inline void set_gax_msg3(int index, ::google::protobuf::uint32 value);
-  inline void add_gax_msg3(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 gaxmsg3(int index) const;
+  inline void set_gaxmsg3(int index, ::google::protobuf::uint32 value);
+  inline void add_gaxmsg3(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      gax_msg3() const;
+      gaxmsg3() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_gax_msg3();
+      mutable_gaxmsg3();
 
-  // repeated uint32 gay_msg3 = 5 [packed = true];
-  inline int gay_msg3_size() const;
-  inline void clear_gay_msg3();
+  // repeated uint32 gayMsg3 = 5 [packed = true];
+  inline int gaymsg3_size() const;
+  inline void clear_gaymsg3();
   static const int kGayMsg3FieldNumber = 5;
-  inline ::google::protobuf::uint32 gay_msg3(int index) const;
-  inline void set_gay_msg3(int index, ::google::protobuf::uint32 value);
-  inline void add_gay_msg3(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 gaymsg3(int index) const;
+  inline void set_gaymsg3(int index, ::google::protobuf::uint32 value);
+  inline void add_gaymsg3(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      gay_msg3() const;
+      gaymsg3() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_gay_msg3();
+      mutable_gaymsg3();
 
-  // repeated uint32 sec_property = 6 [packed = true];
-  inline int sec_property_size() const;
-  inline void clear_sec_property();
+  // repeated uint32 secProperty = 6 [packed = true];
+  inline int secproperty_size() const;
+  inline void clear_secproperty();
   static const int kSecPropertyFieldNumber = 6;
-  inline ::google::protobuf::uint32 sec_property(int index) const;
-  inline void set_sec_property(int index, ::google::protobuf::uint32 value);
-  inline void add_sec_property(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 secproperty(int index) const;
+  inline void set_secproperty(int index, ::google::protobuf::uint32 value);
+  inline void add_secproperty(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      sec_property() const;
+      secproperty() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_sec_property();
+      mutable_secproperty();
 
   // repeated uint32 quote = 7 [packed = true];
   inline int quote_size() const;
@@ -824,14 +824,14 @@ class MessageMSG3 : public ::google::protobuf::Message {
   mutable int _cached_size_;
   int type_;
   ::google::protobuf::uint32 size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > sgx_mac_;
-  mutable int _sgx_mac_cached_byte_size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > gax_msg3_;
-  mutable int _gax_msg3_cached_byte_size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > gay_msg3_;
-  mutable int _gay_msg3_cached_byte_size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > sec_property_;
-  mutable int _sec_property_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > sgxmac_;
+  mutable int _sgxmac_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > gaxmsg3_;
+  mutable int _gaxmsg3_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > gaymsg3_;
+  mutable int _gaymsg3_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > secproperty_;
+  mutable int _secproperty_cached_byte_size_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > quote_;
   mutable int _quote_cached_byte_size_;
   friend void  protobuf_AddDesc_Messages_2eproto();
@@ -910,117 +910,117 @@ class AttestationMessage : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 size() const;
   inline void set_size(::google::protobuf::uint32 value);
 
-  // optional uint32 epid_group_status = 3;
-  inline bool has_epid_group_status() const;
-  inline void clear_epid_group_status();
+  // optional uint32 epidGroupStatus = 3;
+  inline bool has_epidgroupstatus() const;
+  inline void clear_epidgroupstatus();
   static const int kEpidGroupStatusFieldNumber = 3;
-  inline ::google::protobuf::uint32 epid_group_status() const;
-  inline void set_epid_group_status(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 epidgroupstatus() const;
+  inline void set_epidgroupstatus(::google::protobuf::uint32 value);
 
-  // optional uint32 tcb_evaluation_status = 4;
-  inline bool has_tcb_evaluation_status() const;
-  inline void clear_tcb_evaluation_status();
+  // optional uint32 tcbEvaluationStatus = 4;
+  inline bool has_tcbevaluationstatus() const;
+  inline void clear_tcbevaluationstatus();
   static const int kTcbEvaluationStatusFieldNumber = 4;
-  inline ::google::protobuf::uint32 tcb_evaluation_status() const;
-  inline void set_tcb_evaluation_status(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 tcbevaluationstatus() const;
+  inline void set_tcbevaluationstatus(::google::protobuf::uint32 value);
 
-  // optional uint32 pse_evaluation_status = 5;
-  inline bool has_pse_evaluation_status() const;
-  inline void clear_pse_evaluation_status();
+  // optional uint32 pseEvaluationStatus = 5;
+  inline bool has_pseevaluationstatus() const;
+  inline void clear_pseevaluationstatus();
   static const int kPseEvaluationStatusFieldNumber = 5;
-  inline ::google::protobuf::uint32 pse_evaluation_status() const;
-  inline void set_pse_evaluation_status(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 pseevaluationstatus() const;
+  inline void set_pseevaluationstatus(::google::protobuf::uint32 value);
 
-  // repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];
-  inline int latest_equivalent_tcb_psvn_size() const;
-  inline void clear_latest_equivalent_tcb_psvn();
+  // repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];
+  inline int latestequivalenttcbpsvn_size() const;
+  inline void clear_latestequivalenttcbpsvn();
   static const int kLatestEquivalentTcbPsvnFieldNumber = 6;
-  inline ::google::protobuf::uint32 latest_equivalent_tcb_psvn(int index) const;
-  inline void set_latest_equivalent_tcb_psvn(int index, ::google::protobuf::uint32 value);
-  inline void add_latest_equivalent_tcb_psvn(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 latestequivalenttcbpsvn(int index) const;
+  inline void set_latestequivalenttcbpsvn(int index, ::google::protobuf::uint32 value);
+  inline void add_latestequivalenttcbpsvn(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      latest_equivalent_tcb_psvn() const;
+      latestequivalenttcbpsvn() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_latest_equivalent_tcb_psvn();
+      mutable_latestequivalenttcbpsvn();
 
-  // repeated uint32 latest_pse_isvsvn = 7 [packed = true];
-  inline int latest_pse_isvsvn_size() const;
-  inline void clear_latest_pse_isvsvn();
+  // repeated uint32 latestPseIsvsvn = 7 [packed = true];
+  inline int latestpseisvsvn_size() const;
+  inline void clear_latestpseisvsvn();
   static const int kLatestPseIsvsvnFieldNumber = 7;
-  inline ::google::protobuf::uint32 latest_pse_isvsvn(int index) const;
-  inline void set_latest_pse_isvsvn(int index, ::google::protobuf::uint32 value);
-  inline void add_latest_pse_isvsvn(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 latestpseisvsvn(int index) const;
+  inline void set_latestpseisvsvn(int index, ::google::protobuf::uint32 value);
+  inline void add_latestpseisvsvn(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      latest_pse_isvsvn() const;
+      latestpseisvsvn() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_latest_pse_isvsvn();
+      mutable_latestpseisvsvn();
 
-  // repeated uint32 latest_psda_svn = 8 [packed = true];
-  inline int latest_psda_svn_size() const;
-  inline void clear_latest_psda_svn();
+  // repeated uint32 latestPsdaSvn = 8 [packed = true];
+  inline int latestpsdasvn_size() const;
+  inline void clear_latestpsdasvn();
   static const int kLatestPsdaSvnFieldNumber = 8;
-  inline ::google::protobuf::uint32 latest_psda_svn(int index) const;
-  inline void set_latest_psda_svn(int index, ::google::protobuf::uint32 value);
-  inline void add_latest_psda_svn(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 latestpsdasvn(int index) const;
+  inline void set_latestpsdasvn(int index, ::google::protobuf::uint32 value);
+  inline void add_latestpsdasvn(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      latest_psda_svn() const;
+      latestpsdasvn() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_latest_psda_svn();
+      mutable_latestpsdasvn();
 
-  // repeated uint32 performance_rekey_gid = 9 [packed = true];
-  inline int performance_rekey_gid_size() const;
-  inline void clear_performance_rekey_gid();
+  // repeated uint32 performanceRekeyGid = 9 [packed = true];
+  inline int performancerekeygid_size() const;
+  inline void clear_performancerekeygid();
   static const int kPerformanceRekeyGidFieldNumber = 9;
-  inline ::google::protobuf::uint32 performance_rekey_gid(int index) const;
-  inline void set_performance_rekey_gid(int index, ::google::protobuf::uint32 value);
-  inline void add_performance_rekey_gid(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 performancerekeygid(int index) const;
+  inline void set_performancerekeygid(int index, ::google::protobuf::uint32 value);
+  inline void add_performancerekeygid(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      performance_rekey_gid() const;
+      performancerekeygid() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_performance_rekey_gid();
+      mutable_performancerekeygid();
 
-  // repeated uint32 ec_sign256_x = 10 [packed = true];
-  inline int ec_sign256_x_size() const;
-  inline void clear_ec_sign256_x();
+  // repeated uint32 ecSign256X = 10 [packed = true];
+  inline int ecsign256x_size() const;
+  inline void clear_ecsign256x();
   static const int kEcSign256XFieldNumber = 10;
-  inline ::google::protobuf::uint32 ec_sign256_x(int index) const;
-  inline void set_ec_sign256_x(int index, ::google::protobuf::uint32 value);
-  inline void add_ec_sign256_x(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 ecsign256x(int index) const;
+  inline void set_ecsign256x(int index, ::google::protobuf::uint32 value);
+  inline void add_ecsign256x(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      ec_sign256_x() const;
+      ecsign256x() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_ec_sign256_x();
+      mutable_ecsign256x();
 
-  // repeated uint32 ec_sign256_y = 11 [packed = true];
-  inline int ec_sign256_y_size() const;
-  inline void clear_ec_sign256_y();
+  // repeated uint32 ecSign256Y = 11 [packed = true];
+  inline int ecsign256y_size() const;
+  inline void clear_ecsign256y();
   static const int kEcSign256YFieldNumber = 11;
-  inline ::google::protobuf::uint32 ec_sign256_y(int index) const;
-  inline void set_ec_sign256_y(int index, ::google::protobuf::uint32 value);
-  inline void add_ec_sign256_y(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 ecsign256y(int index) const;
+  inline void set_ecsign256y(int index, ::google::protobuf::uint32 value);
+  inline void add_ecsign256y(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      ec_sign256_y() const;
+      ecsign256y() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_ec_sign256_y();
+      mutable_ecsign256y();
 
-  // repeated uint32 mac_smk = 12 [packed = true];
-  inline int mac_smk_size() const;
-  inline void clear_mac_smk();
+  // repeated uint32 macSmk = 12 [packed = true];
+  inline int macsmk_size() const;
+  inline void clear_macsmk();
   static const int kMacSmkFieldNumber = 12;
-  inline ::google::protobuf::uint32 mac_smk(int index) const;
-  inline void set_mac_smk(int index, ::google::protobuf::uint32 value);
-  inline void add_mac_smk(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 macsmk(int index) const;
+  inline void set_macsmk(int index, ::google::protobuf::uint32 value);
+  inline void add_macsmk(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      mac_smk() const;
+      macsmk() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_mac_smk();
+      mutable_macsmk();
 
-  // optional uint32 result_size = 13;
-  inline bool has_result_size() const;
-  inline void clear_result_size();
+  // optional uint32 resultSize = 13;
+  inline bool has_resultsize() const;
+  inline void clear_resultsize();
   static const int kResultSizeFieldNumber = 13;
-  inline ::google::protobuf::uint32 result_size() const;
-  inline void set_result_size(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 resultsize() const;
+  inline void set_resultsize(::google::protobuf::uint32 value);
 
   // repeated uint32 reserved = 14 [packed = true];
   inline int reserved_size() const;
@@ -1034,17 +1034,17 @@ class AttestationMessage : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
       mutable_reserved();
 
-  // repeated uint32 payload_tag = 15 [packed = true];
-  inline int payload_tag_size() const;
-  inline void clear_payload_tag();
+  // repeated uint32 payloadTag = 15 [packed = true];
+  inline int payloadtag_size() const;
+  inline void clear_payloadtag();
   static const int kPayloadTagFieldNumber = 15;
-  inline ::google::protobuf::uint32 payload_tag(int index) const;
-  inline void set_payload_tag(int index, ::google::protobuf::uint32 value);
-  inline void add_payload_tag(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint32 payloadtag(int index) const;
+  inline void set_payloadtag(int index, ::google::protobuf::uint32 value);
+  inline void add_payloadtag(::google::protobuf::uint32 value);
   inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      payload_tag() const;
+      payloadtag() const;
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_payload_tag();
+      mutable_payloadtag();
 
   // repeated uint32 payload = 16 [packed = true];
   inline int payload_size() const;
@@ -1064,14 +1064,14 @@ class AttestationMessage : public ::google::protobuf::Message {
   inline void clear_has_type();
   inline void set_has_size();
   inline void clear_has_size();
-  inline void set_has_epid_group_status();
-  inline void clear_has_epid_group_status();
-  inline void set_has_tcb_evaluation_status();
-  inline void clear_has_tcb_evaluation_status();
-  inline void set_has_pse_evaluation_status();
-  inline void clear_has_pse_evaluation_status();
-  inline void set_has_result_size();
-  inline void clear_has_result_size();
+  inline void set_has_epidgroupstatus();
+  inline void clear_has_epidgroupstatus();
+  inline void set_has_tcbevaluationstatus();
+  inline void clear_has_tcbevaluationstatus();
+  inline void set_has_pseevaluationstatus();
+  inline void clear_has_pseevaluationstatus();
+  inline void set_has_resultsize();
+  inline void clear_has_resultsize();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1079,28 +1079,28 @@ class AttestationMessage : public ::google::protobuf::Message {
   mutable int _cached_size_;
   int type_;
   ::google::protobuf::uint32 size_;
-  ::google::protobuf::uint32 epid_group_status_;
-  ::google::protobuf::uint32 tcb_evaluation_status_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > latest_equivalent_tcb_psvn_;
-  mutable int _latest_equivalent_tcb_psvn_cached_byte_size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > latest_pse_isvsvn_;
-  mutable int _latest_pse_isvsvn_cached_byte_size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > latest_psda_svn_;
-  mutable int _latest_psda_svn_cached_byte_size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > performance_rekey_gid_;
-  mutable int _performance_rekey_gid_cached_byte_size_;
-  ::google::protobuf::uint32 pse_evaluation_status_;
-  ::google::protobuf::uint32 result_size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > ec_sign256_x_;
-  mutable int _ec_sign256_x_cached_byte_size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > ec_sign256_y_;
-  mutable int _ec_sign256_y_cached_byte_size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > mac_smk_;
-  mutable int _mac_smk_cached_byte_size_;
+  ::google::protobuf::uint32 epidgroupstatus_;
+  ::google::protobuf::uint32 tcbevaluationstatus_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > latestequivalenttcbpsvn_;
+  mutable int _latestequivalenttcbpsvn_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > latestpseisvsvn_;
+  mutable int _latestpseisvsvn_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > latestpsdasvn_;
+  mutable int _latestpsdasvn_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > performancerekeygid_;
+  mutable int _performancerekeygid_cached_byte_size_;
+  ::google::protobuf::uint32 pseevaluationstatus_;
+  ::google::protobuf::uint32 resultsize_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > ecsign256x_;
+  mutable int _ecsign256x_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > ecsign256y_;
+  mutable int _ecsign256y_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > macsmk_;
+  mutable int _macsmk_cached_byte_size_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > reserved_;
   mutable int _reserved_cached_byte_size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > payload_tag_;
-  mutable int _payload_tag_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > payloadtag_;
+  mutable int _payloadtag_cached_byte_size_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > payload_;
   mutable int _payload_cached_byte_size_;
   friend void  protobuf_AddDesc_Messages_2eproto();
@@ -1172,23 +1172,23 @@ class AllInOneMessage : public ::google::protobuf::Message {
   inline ::Messages::Type type() const;
   inline void set_type(::Messages::Type value);
 
-  // optional .Messages.SecretMessage serect_msg = 2;
-  inline bool has_serect_msg() const;
-  inline void clear_serect_msg();
-  static const int kSerectMsgFieldNumber = 2;
-  inline const ::Messages::SecretMessage& serect_msg() const;
-  inline ::Messages::SecretMessage* mutable_serect_msg();
-  inline ::Messages::SecretMessage* release_serect_msg();
-  inline void set_allocated_serect_msg(::Messages::SecretMessage* serect_msg);
+  // optional .Messages.SecretMessage secretMsg = 2;
+  inline bool has_secretmsg() const;
+  inline void clear_secretmsg();
+  static const int kSecretMsgFieldNumber = 2;
+  inline const ::Messages::SecretMessage& secretmsg() const;
+  inline ::Messages::SecretMessage* mutable_secretmsg();
+  inline ::Messages::SecretMessage* release_secretmsg();
+  inline void set_allocated_secretmsg(::Messages::SecretMessage* secretmsg);
 
-  // optional .Messages.InitialMessage init_msg = 3;
-  inline bool has_init_msg() const;
-  inline void clear_init_msg();
+  // optional .Messages.InitialMessage initMsg = 3;
+  inline bool has_initmsg() const;
+  inline void clear_initmsg();
   static const int kInitMsgFieldNumber = 3;
-  inline const ::Messages::InitialMessage& init_msg() const;
-  inline ::Messages::InitialMessage* mutable_init_msg();
-  inline ::Messages::InitialMessage* release_init_msg();
-  inline void set_allocated_init_msg(::Messages::InitialMessage* init_msg);
+  inline const ::Messages::InitialMessage& initmsg() const;
+  inline ::Messages::InitialMessage* mutable_initmsg();
+  inline ::Messages::InitialMessage* release_initmsg();
+  inline void set_allocated_initmsg(::Messages::InitialMessage* initmsg);
 
   // optional .Messages.MessageMSG0 msg0 = 4;
   inline bool has_msg0() const;
@@ -1226,23 +1226,23 @@ class AllInOneMessage : public ::google::protobuf::Message {
   inline ::Messages::MessageMSG3* release_msg3();
   inline void set_allocated_msg3(::Messages::MessageMSG3* msg3);
 
-  // optional .Messages.AttestationMessage attest_msg = 8;
-  inline bool has_attest_msg() const;
-  inline void clear_attest_msg();
+  // optional .Messages.AttestationMessage attestMsg = 8;
+  inline bool has_attestmsg() const;
+  inline void clear_attestmsg();
   static const int kAttestMsgFieldNumber = 8;
-  inline const ::Messages::AttestationMessage& attest_msg() const;
-  inline ::Messages::AttestationMessage* mutable_attest_msg();
-  inline ::Messages::AttestationMessage* release_attest_msg();
-  inline void set_allocated_attest_msg(::Messages::AttestationMessage* attest_msg);
+  inline const ::Messages::AttestationMessage& attestmsg() const;
+  inline ::Messages::AttestationMessage* mutable_attestmsg();
+  inline ::Messages::AttestationMessage* release_attestmsg();
+  inline void set_allocated_attestmsg(::Messages::AttestationMessage* attestmsg);
 
   // @@protoc_insertion_point(class_scope:Messages.AllInOneMessage)
  private:
   inline void set_has_type();
   inline void clear_has_type();
-  inline void set_has_serect_msg();
-  inline void clear_has_serect_msg();
-  inline void set_has_init_msg();
-  inline void clear_has_init_msg();
+  inline void set_has_secretmsg();
+  inline void clear_has_secretmsg();
+  inline void set_has_initmsg();
+  inline void clear_has_initmsg();
   inline void set_has_msg0();
   inline void clear_has_msg0();
   inline void set_has_msg1();
@@ -1251,20 +1251,20 @@ class AllInOneMessage : public ::google::protobuf::Message {
   inline void clear_has_msg2();
   inline void set_has_msg3();
   inline void clear_has_msg3();
-  inline void set_has_attest_msg();
-  inline void clear_has_attest_msg();
+  inline void set_has_attestmsg();
+  inline void clear_has_attestmsg();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::Messages::SecretMessage* serect_msg_;
-  ::Messages::InitialMessage* init_msg_;
+  ::Messages::SecretMessage* secretmsg_;
+  ::Messages::InitialMessage* initmsg_;
   ::Messages::MessageMSG0* msg0_;
   ::Messages::MessageMSG1* msg1_;
   ::Messages::MessageMSG2* msg2_;
   ::Messages::MessageMSG3* msg3_;
-  ::Messages::AttestationMessage* attest_msg_;
+  ::Messages::AttestationMessage* attestmsg_;
   int type_;
   friend void  protobuf_AddDesc_Messages_2eproto();
   friend void protobuf_AssignDesc_Messages_2eproto();
@@ -1631,88 +1631,88 @@ inline void MessageMSG2::set_size(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:Messages.MessageMSG2.size)
 }
 
-// repeated uint32 public_key_gx = 3 [packed = true];
-inline int MessageMSG2::public_key_gx_size() const {
-  return public_key_gx_.size();
+// repeated uint32 publicKeyGx = 3 [packed = true];
+inline int MessageMSG2::publickeygx_size() const {
+  return publickeygx_.size();
 }
-inline void MessageMSG2::clear_public_key_gx() {
-  public_key_gx_.Clear();
+inline void MessageMSG2::clear_publickeygx() {
+  publickeygx_.Clear();
 }
-inline ::google::protobuf::uint32 MessageMSG2::public_key_gx(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.MessageMSG2.public_key_gx)
-  return public_key_gx_.Get(index);
+inline ::google::protobuf::uint32 MessageMSG2::publickeygx(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.MessageMSG2.publicKeyGx)
+  return publickeygx_.Get(index);
 }
-inline void MessageMSG2::set_public_key_gx(int index, ::google::protobuf::uint32 value) {
-  public_key_gx_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.MessageMSG2.public_key_gx)
+inline void MessageMSG2::set_publickeygx(int index, ::google::protobuf::uint32 value) {
+  publickeygx_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.MessageMSG2.publicKeyGx)
 }
-inline void MessageMSG2::add_public_key_gx(::google::protobuf::uint32 value) {
-  public_key_gx_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.MessageMSG2.public_key_gx)
-}
-inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-MessageMSG2::public_key_gx() const {
-  // @@protoc_insertion_point(field_list:Messages.MessageMSG2.public_key_gx)
-  return public_key_gx_;
-}
-inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-MessageMSG2::mutable_public_key_gx() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG2.public_key_gx)
-  return &public_key_gx_;
-}
-
-// repeated uint32 public_key_gy = 4 [packed = true];
-inline int MessageMSG2::public_key_gy_size() const {
-  return public_key_gy_.size();
-}
-inline void MessageMSG2::clear_public_key_gy() {
-  public_key_gy_.Clear();
-}
-inline ::google::protobuf::uint32 MessageMSG2::public_key_gy(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.MessageMSG2.public_key_gy)
-  return public_key_gy_.Get(index);
-}
-inline void MessageMSG2::set_public_key_gy(int index, ::google::protobuf::uint32 value) {
-  public_key_gy_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.MessageMSG2.public_key_gy)
-}
-inline void MessageMSG2::add_public_key_gy(::google::protobuf::uint32 value) {
-  public_key_gy_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.MessageMSG2.public_key_gy)
+inline void MessageMSG2::add_publickeygx(::google::protobuf::uint32 value) {
+  publickeygx_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.MessageMSG2.publicKeyGx)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-MessageMSG2::public_key_gy() const {
-  // @@protoc_insertion_point(field_list:Messages.MessageMSG2.public_key_gy)
-  return public_key_gy_;
+MessageMSG2::publickeygx() const {
+  // @@protoc_insertion_point(field_list:Messages.MessageMSG2.publicKeyGx)
+  return publickeygx_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-MessageMSG2::mutable_public_key_gy() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG2.public_key_gy)
-  return &public_key_gy_;
+MessageMSG2::mutable_publickeygx() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG2.publicKeyGx)
+  return &publickeygx_;
 }
 
-// optional uint32 quote_type = 5;
-inline bool MessageMSG2::has_quote_type() const {
+// repeated uint32 publicKeyGy = 4 [packed = true];
+inline int MessageMSG2::publickeygy_size() const {
+  return publickeygy_.size();
+}
+inline void MessageMSG2::clear_publickeygy() {
+  publickeygy_.Clear();
+}
+inline ::google::protobuf::uint32 MessageMSG2::publickeygy(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.MessageMSG2.publicKeyGy)
+  return publickeygy_.Get(index);
+}
+inline void MessageMSG2::set_publickeygy(int index, ::google::protobuf::uint32 value) {
+  publickeygy_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.MessageMSG2.publicKeyGy)
+}
+inline void MessageMSG2::add_publickeygy(::google::protobuf::uint32 value) {
+  publickeygy_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.MessageMSG2.publicKeyGy)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+MessageMSG2::publickeygy() const {
+  // @@protoc_insertion_point(field_list:Messages.MessageMSG2.publicKeyGy)
+  return publickeygy_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+MessageMSG2::mutable_publickeygy() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG2.publicKeyGy)
+  return &publickeygy_;
+}
+
+// optional uint32 quoteType = 5;
+inline bool MessageMSG2::has_quotetype() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
-inline void MessageMSG2::set_has_quote_type() {
+inline void MessageMSG2::set_has_quotetype() {
   _has_bits_[0] |= 0x00000010u;
 }
-inline void MessageMSG2::clear_has_quote_type() {
+inline void MessageMSG2::clear_has_quotetype() {
   _has_bits_[0] &= ~0x00000010u;
 }
-inline void MessageMSG2::clear_quote_type() {
-  quote_type_ = 0u;
-  clear_has_quote_type();
+inline void MessageMSG2::clear_quotetype() {
+  quotetype_ = 0u;
+  clear_has_quotetype();
 }
-inline ::google::protobuf::uint32 MessageMSG2::quote_type() const {
-  // @@protoc_insertion_point(field_get:Messages.MessageMSG2.quote_type)
-  return quote_type_;
+inline ::google::protobuf::uint32 MessageMSG2::quotetype() const {
+  // @@protoc_insertion_point(field_get:Messages.MessageMSG2.quoteType)
+  return quotetype_;
 }
-inline void MessageMSG2::set_quote_type(::google::protobuf::uint32 value) {
-  set_has_quote_type();
-  quote_type_ = value;
-  // @@protoc_insertion_point(field_set:Messages.MessageMSG2.quote_type)
+inline void MessageMSG2::set_quotetype(::google::protobuf::uint32 value) {
+  set_has_quotetype();
+  quotetype_ = value;
+  // @@protoc_insertion_point(field_set:Messages.MessageMSG2.quoteType)
 }
 
 // repeated uint32 spid = 6 [packed = true];
@@ -1745,88 +1745,88 @@ MessageMSG2::mutable_spid() {
   return &spid_;
 }
 
-// optional uint32 cmac_kdf_id = 7;
-inline bool MessageMSG2::has_cmac_kdf_id() const {
+// optional uint32 cmacKdfId = 7;
+inline bool MessageMSG2::has_cmackdfid() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }
-inline void MessageMSG2::set_has_cmac_kdf_id() {
+inline void MessageMSG2::set_has_cmackdfid() {
   _has_bits_[0] |= 0x00000040u;
 }
-inline void MessageMSG2::clear_has_cmac_kdf_id() {
+inline void MessageMSG2::clear_has_cmackdfid() {
   _has_bits_[0] &= ~0x00000040u;
 }
-inline void MessageMSG2::clear_cmac_kdf_id() {
-  cmac_kdf_id_ = 0u;
-  clear_has_cmac_kdf_id();
+inline void MessageMSG2::clear_cmackdfid() {
+  cmackdfid_ = 0u;
+  clear_has_cmackdfid();
 }
-inline ::google::protobuf::uint32 MessageMSG2::cmac_kdf_id() const {
-  // @@protoc_insertion_point(field_get:Messages.MessageMSG2.cmac_kdf_id)
-  return cmac_kdf_id_;
+inline ::google::protobuf::uint32 MessageMSG2::cmackdfid() const {
+  // @@protoc_insertion_point(field_get:Messages.MessageMSG2.cmacKdfId)
+  return cmackdfid_;
 }
-inline void MessageMSG2::set_cmac_kdf_id(::google::protobuf::uint32 value) {
-  set_has_cmac_kdf_id();
-  cmac_kdf_id_ = value;
-  // @@protoc_insertion_point(field_set:Messages.MessageMSG2.cmac_kdf_id)
-}
-
-// repeated uint32 signature_x = 8 [packed = true];
-inline int MessageMSG2::signature_x_size() const {
-  return signature_x_.size();
-}
-inline void MessageMSG2::clear_signature_x() {
-  signature_x_.Clear();
-}
-inline ::google::protobuf::uint32 MessageMSG2::signature_x(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.MessageMSG2.signature_x)
-  return signature_x_.Get(index);
-}
-inline void MessageMSG2::set_signature_x(int index, ::google::protobuf::uint32 value) {
-  signature_x_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.MessageMSG2.signature_x)
-}
-inline void MessageMSG2::add_signature_x(::google::protobuf::uint32 value) {
-  signature_x_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.MessageMSG2.signature_x)
-}
-inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-MessageMSG2::signature_x() const {
-  // @@protoc_insertion_point(field_list:Messages.MessageMSG2.signature_x)
-  return signature_x_;
-}
-inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-MessageMSG2::mutable_signature_x() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG2.signature_x)
-  return &signature_x_;
+inline void MessageMSG2::set_cmackdfid(::google::protobuf::uint32 value) {
+  set_has_cmackdfid();
+  cmackdfid_ = value;
+  // @@protoc_insertion_point(field_set:Messages.MessageMSG2.cmacKdfId)
 }
 
-// repeated uint32 signature_y = 9 [packed = true];
-inline int MessageMSG2::signature_y_size() const {
-  return signature_y_.size();
+// repeated uint32 signatureX = 8 [packed = true];
+inline int MessageMSG2::signaturex_size() const {
+  return signaturex_.size();
 }
-inline void MessageMSG2::clear_signature_y() {
-  signature_y_.Clear();
+inline void MessageMSG2::clear_signaturex() {
+  signaturex_.Clear();
 }
-inline ::google::protobuf::uint32 MessageMSG2::signature_y(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.MessageMSG2.signature_y)
-  return signature_y_.Get(index);
+inline ::google::protobuf::uint32 MessageMSG2::signaturex(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.MessageMSG2.signatureX)
+  return signaturex_.Get(index);
 }
-inline void MessageMSG2::set_signature_y(int index, ::google::protobuf::uint32 value) {
-  signature_y_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.MessageMSG2.signature_y)
+inline void MessageMSG2::set_signaturex(int index, ::google::protobuf::uint32 value) {
+  signaturex_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.MessageMSG2.signatureX)
 }
-inline void MessageMSG2::add_signature_y(::google::protobuf::uint32 value) {
-  signature_y_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.MessageMSG2.signature_y)
+inline void MessageMSG2::add_signaturex(::google::protobuf::uint32 value) {
+  signaturex_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.MessageMSG2.signatureX)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-MessageMSG2::signature_y() const {
-  // @@protoc_insertion_point(field_list:Messages.MessageMSG2.signature_y)
-  return signature_y_;
+MessageMSG2::signaturex() const {
+  // @@protoc_insertion_point(field_list:Messages.MessageMSG2.signatureX)
+  return signaturex_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-MessageMSG2::mutable_signature_y() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG2.signature_y)
-  return &signature_y_;
+MessageMSG2::mutable_signaturex() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG2.signatureX)
+  return &signaturex_;
+}
+
+// repeated uint32 signatureY = 9 [packed = true];
+inline int MessageMSG2::signaturey_size() const {
+  return signaturey_.size();
+}
+inline void MessageMSG2::clear_signaturey() {
+  signaturey_.Clear();
+}
+inline ::google::protobuf::uint32 MessageMSG2::signaturey(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.MessageMSG2.signatureY)
+  return signaturey_.Get(index);
+}
+inline void MessageMSG2::set_signaturey(int index, ::google::protobuf::uint32 value) {
+  signaturey_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.MessageMSG2.signatureY)
+}
+inline void MessageMSG2::add_signaturey(::google::protobuf::uint32 value) {
+  signaturey_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.MessageMSG2.signatureY)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+MessageMSG2::signaturey() const {
+  // @@protoc_insertion_point(field_list:Messages.MessageMSG2.signatureY)
+  return signaturey_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+MessageMSG2::mutable_signaturey() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG2.signatureY)
+  return &signaturey_;
 }
 
 // repeated uint32 smac = 10 [packed = true];
@@ -1859,28 +1859,28 @@ MessageMSG2::mutable_smac() {
   return &smac_;
 }
 
-// optional uint32 size_sigrl = 11;
-inline bool MessageMSG2::has_size_sigrl() const {
+// optional uint32 sizeSigrl = 11;
+inline bool MessageMSG2::has_sizesigrl() const {
   return (_has_bits_[0] & 0x00000400u) != 0;
 }
-inline void MessageMSG2::set_has_size_sigrl() {
+inline void MessageMSG2::set_has_sizesigrl() {
   _has_bits_[0] |= 0x00000400u;
 }
-inline void MessageMSG2::clear_has_size_sigrl() {
+inline void MessageMSG2::clear_has_sizesigrl() {
   _has_bits_[0] &= ~0x00000400u;
 }
-inline void MessageMSG2::clear_size_sigrl() {
-  size_sigrl_ = 0u;
-  clear_has_size_sigrl();
+inline void MessageMSG2::clear_sizesigrl() {
+  sizesigrl_ = 0u;
+  clear_has_sizesigrl();
 }
-inline ::google::protobuf::uint32 MessageMSG2::size_sigrl() const {
-  // @@protoc_insertion_point(field_get:Messages.MessageMSG2.size_sigrl)
-  return size_sigrl_;
+inline ::google::protobuf::uint32 MessageMSG2::sizesigrl() const {
+  // @@protoc_insertion_point(field_get:Messages.MessageMSG2.sizeSigrl)
+  return sizesigrl_;
 }
-inline void MessageMSG2::set_size_sigrl(::google::protobuf::uint32 value) {
-  set_has_size_sigrl();
-  size_sigrl_ = value;
-  // @@protoc_insertion_point(field_set:Messages.MessageMSG2.size_sigrl)
+inline void MessageMSG2::set_sizesigrl(::google::protobuf::uint32 value) {
+  set_has_sizesigrl();
+  sizesigrl_ = value;
+  // @@protoc_insertion_point(field_set:Messages.MessageMSG2.sizeSigrl)
 }
 
 // repeated uint32 sigrl = 12 [packed = true];
@@ -1966,124 +1966,124 @@ inline void MessageMSG3::set_size(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:Messages.MessageMSG3.size)
 }
 
-// repeated uint32 sgx_mac = 3 [packed = true];
-inline int MessageMSG3::sgx_mac_size() const {
-  return sgx_mac_.size();
+// repeated uint32 sgxMac = 3 [packed = true];
+inline int MessageMSG3::sgxmac_size() const {
+  return sgxmac_.size();
 }
-inline void MessageMSG3::clear_sgx_mac() {
-  sgx_mac_.Clear();
+inline void MessageMSG3::clear_sgxmac() {
+  sgxmac_.Clear();
 }
-inline ::google::protobuf::uint32 MessageMSG3::sgx_mac(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.MessageMSG3.sgx_mac)
-  return sgx_mac_.Get(index);
+inline ::google::protobuf::uint32 MessageMSG3::sgxmac(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.MessageMSG3.sgxMac)
+  return sgxmac_.Get(index);
 }
-inline void MessageMSG3::set_sgx_mac(int index, ::google::protobuf::uint32 value) {
-  sgx_mac_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.MessageMSG3.sgx_mac)
+inline void MessageMSG3::set_sgxmac(int index, ::google::protobuf::uint32 value) {
+  sgxmac_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.MessageMSG3.sgxMac)
 }
-inline void MessageMSG3::add_sgx_mac(::google::protobuf::uint32 value) {
-  sgx_mac_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.MessageMSG3.sgx_mac)
+inline void MessageMSG3::add_sgxmac(::google::protobuf::uint32 value) {
+  sgxmac_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.MessageMSG3.sgxMac)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-MessageMSG3::sgx_mac() const {
-  // @@protoc_insertion_point(field_list:Messages.MessageMSG3.sgx_mac)
-  return sgx_mac_;
+MessageMSG3::sgxmac() const {
+  // @@protoc_insertion_point(field_list:Messages.MessageMSG3.sgxMac)
+  return sgxmac_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-MessageMSG3::mutable_sgx_mac() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG3.sgx_mac)
-  return &sgx_mac_;
+MessageMSG3::mutable_sgxmac() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG3.sgxMac)
+  return &sgxmac_;
 }
 
-// repeated uint32 gax_msg3 = 4 [packed = true];
-inline int MessageMSG3::gax_msg3_size() const {
-  return gax_msg3_.size();
+// repeated uint32 gaxMsg3 = 4 [packed = true];
+inline int MessageMSG3::gaxmsg3_size() const {
+  return gaxmsg3_.size();
 }
-inline void MessageMSG3::clear_gax_msg3() {
-  gax_msg3_.Clear();
+inline void MessageMSG3::clear_gaxmsg3() {
+  gaxmsg3_.Clear();
 }
-inline ::google::protobuf::uint32 MessageMSG3::gax_msg3(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.MessageMSG3.gax_msg3)
-  return gax_msg3_.Get(index);
+inline ::google::protobuf::uint32 MessageMSG3::gaxmsg3(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.MessageMSG3.gaxMsg3)
+  return gaxmsg3_.Get(index);
 }
-inline void MessageMSG3::set_gax_msg3(int index, ::google::protobuf::uint32 value) {
-  gax_msg3_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.MessageMSG3.gax_msg3)
+inline void MessageMSG3::set_gaxmsg3(int index, ::google::protobuf::uint32 value) {
+  gaxmsg3_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.MessageMSG3.gaxMsg3)
 }
-inline void MessageMSG3::add_gax_msg3(::google::protobuf::uint32 value) {
-  gax_msg3_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.MessageMSG3.gax_msg3)
+inline void MessageMSG3::add_gaxmsg3(::google::protobuf::uint32 value) {
+  gaxmsg3_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.MessageMSG3.gaxMsg3)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-MessageMSG3::gax_msg3() const {
-  // @@protoc_insertion_point(field_list:Messages.MessageMSG3.gax_msg3)
-  return gax_msg3_;
+MessageMSG3::gaxmsg3() const {
+  // @@protoc_insertion_point(field_list:Messages.MessageMSG3.gaxMsg3)
+  return gaxmsg3_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-MessageMSG3::mutable_gax_msg3() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG3.gax_msg3)
-  return &gax_msg3_;
+MessageMSG3::mutable_gaxmsg3() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG3.gaxMsg3)
+  return &gaxmsg3_;
 }
 
-// repeated uint32 gay_msg3 = 5 [packed = true];
-inline int MessageMSG3::gay_msg3_size() const {
-  return gay_msg3_.size();
+// repeated uint32 gayMsg3 = 5 [packed = true];
+inline int MessageMSG3::gaymsg3_size() const {
+  return gaymsg3_.size();
 }
-inline void MessageMSG3::clear_gay_msg3() {
-  gay_msg3_.Clear();
+inline void MessageMSG3::clear_gaymsg3() {
+  gaymsg3_.Clear();
 }
-inline ::google::protobuf::uint32 MessageMSG3::gay_msg3(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.MessageMSG3.gay_msg3)
-  return gay_msg3_.Get(index);
+inline ::google::protobuf::uint32 MessageMSG3::gaymsg3(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.MessageMSG3.gayMsg3)
+  return gaymsg3_.Get(index);
 }
-inline void MessageMSG3::set_gay_msg3(int index, ::google::protobuf::uint32 value) {
-  gay_msg3_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.MessageMSG3.gay_msg3)
+inline void MessageMSG3::set_gaymsg3(int index, ::google::protobuf::uint32 value) {
+  gaymsg3_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.MessageMSG3.gayMsg3)
 }
-inline void MessageMSG3::add_gay_msg3(::google::protobuf::uint32 value) {
-  gay_msg3_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.MessageMSG3.gay_msg3)
+inline void MessageMSG3::add_gaymsg3(::google::protobuf::uint32 value) {
+  gaymsg3_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.MessageMSG3.gayMsg3)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-MessageMSG3::gay_msg3() const {
-  // @@protoc_insertion_point(field_list:Messages.MessageMSG3.gay_msg3)
-  return gay_msg3_;
+MessageMSG3::gaymsg3() const {
+  // @@protoc_insertion_point(field_list:Messages.MessageMSG3.gayMsg3)
+  return gaymsg3_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-MessageMSG3::mutable_gay_msg3() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG3.gay_msg3)
-  return &gay_msg3_;
+MessageMSG3::mutable_gaymsg3() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG3.gayMsg3)
+  return &gaymsg3_;
 }
 
-// repeated uint32 sec_property = 6 [packed = true];
-inline int MessageMSG3::sec_property_size() const {
-  return sec_property_.size();
+// repeated uint32 secProperty = 6 [packed = true];
+inline int MessageMSG3::secproperty_size() const {
+  return secproperty_.size();
 }
-inline void MessageMSG3::clear_sec_property() {
-  sec_property_.Clear();
+inline void MessageMSG3::clear_secproperty() {
+  secproperty_.Clear();
 }
-inline ::google::protobuf::uint32 MessageMSG3::sec_property(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.MessageMSG3.sec_property)
-  return sec_property_.Get(index);
+inline ::google::protobuf::uint32 MessageMSG3::secproperty(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.MessageMSG3.secProperty)
+  return secproperty_.Get(index);
 }
-inline void MessageMSG3::set_sec_property(int index, ::google::protobuf::uint32 value) {
-  sec_property_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.MessageMSG3.sec_property)
+inline void MessageMSG3::set_secproperty(int index, ::google::protobuf::uint32 value) {
+  secproperty_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.MessageMSG3.secProperty)
 }
-inline void MessageMSG3::add_sec_property(::google::protobuf::uint32 value) {
-  sec_property_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.MessageMSG3.sec_property)
+inline void MessageMSG3::add_secproperty(::google::protobuf::uint32 value) {
+  secproperty_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.MessageMSG3.secProperty)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-MessageMSG3::sec_property() const {
-  // @@protoc_insertion_point(field_list:Messages.MessageMSG3.sec_property)
-  return sec_property_;
+MessageMSG3::secproperty() const {
+  // @@protoc_insertion_point(field_list:Messages.MessageMSG3.secProperty)
+  return secproperty_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-MessageMSG3::mutable_sec_property() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG3.sec_property)
-  return &sec_property_;
+MessageMSG3::mutable_secproperty() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.MessageMSG3.secProperty)
+  return &secproperty_;
 }
 
 // repeated uint32 quote = 7 [packed = true];
@@ -2169,310 +2169,310 @@ inline void AttestationMessage::set_size(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:Messages.AttestationMessage.size)
 }
 
-// optional uint32 epid_group_status = 3;
-inline bool AttestationMessage::has_epid_group_status() const {
+// optional uint32 epidGroupStatus = 3;
+inline bool AttestationMessage::has_epidgroupstatus() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void AttestationMessage::set_has_epid_group_status() {
+inline void AttestationMessage::set_has_epidgroupstatus() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void AttestationMessage::clear_has_epid_group_status() {
+inline void AttestationMessage::clear_has_epidgroupstatus() {
   _has_bits_[0] &= ~0x00000004u;
 }
-inline void AttestationMessage::clear_epid_group_status() {
-  epid_group_status_ = 0u;
-  clear_has_epid_group_status();
+inline void AttestationMessage::clear_epidgroupstatus() {
+  epidgroupstatus_ = 0u;
+  clear_has_epidgroupstatus();
 }
-inline ::google::protobuf::uint32 AttestationMessage::epid_group_status() const {
-  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.epid_group_status)
-  return epid_group_status_;
+inline ::google::protobuf::uint32 AttestationMessage::epidgroupstatus() const {
+  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.epidGroupStatus)
+  return epidgroupstatus_;
 }
-inline void AttestationMessage::set_epid_group_status(::google::protobuf::uint32 value) {
-  set_has_epid_group_status();
-  epid_group_status_ = value;
-  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.epid_group_status)
+inline void AttestationMessage::set_epidgroupstatus(::google::protobuf::uint32 value) {
+  set_has_epidgroupstatus();
+  epidgroupstatus_ = value;
+  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.epidGroupStatus)
 }
 
-// optional uint32 tcb_evaluation_status = 4;
-inline bool AttestationMessage::has_tcb_evaluation_status() const {
+// optional uint32 tcbEvaluationStatus = 4;
+inline bool AttestationMessage::has_tcbevaluationstatus() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void AttestationMessage::set_has_tcb_evaluation_status() {
+inline void AttestationMessage::set_has_tcbevaluationstatus() {
   _has_bits_[0] |= 0x00000008u;
 }
-inline void AttestationMessage::clear_has_tcb_evaluation_status() {
+inline void AttestationMessage::clear_has_tcbevaluationstatus() {
   _has_bits_[0] &= ~0x00000008u;
 }
-inline void AttestationMessage::clear_tcb_evaluation_status() {
-  tcb_evaluation_status_ = 0u;
-  clear_has_tcb_evaluation_status();
+inline void AttestationMessage::clear_tcbevaluationstatus() {
+  tcbevaluationstatus_ = 0u;
+  clear_has_tcbevaluationstatus();
 }
-inline ::google::protobuf::uint32 AttestationMessage::tcb_evaluation_status() const {
-  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.tcb_evaluation_status)
-  return tcb_evaluation_status_;
+inline ::google::protobuf::uint32 AttestationMessage::tcbevaluationstatus() const {
+  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.tcbEvaluationStatus)
+  return tcbevaluationstatus_;
 }
-inline void AttestationMessage::set_tcb_evaluation_status(::google::protobuf::uint32 value) {
-  set_has_tcb_evaluation_status();
-  tcb_evaluation_status_ = value;
-  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.tcb_evaluation_status)
+inline void AttestationMessage::set_tcbevaluationstatus(::google::protobuf::uint32 value) {
+  set_has_tcbevaluationstatus();
+  tcbevaluationstatus_ = value;
+  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.tcbEvaluationStatus)
 }
 
-// optional uint32 pse_evaluation_status = 5;
-inline bool AttestationMessage::has_pse_evaluation_status() const {
+// optional uint32 pseEvaluationStatus = 5;
+inline bool AttestationMessage::has_pseevaluationstatus() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
-inline void AttestationMessage::set_has_pse_evaluation_status() {
+inline void AttestationMessage::set_has_pseevaluationstatus() {
   _has_bits_[0] |= 0x00000010u;
 }
-inline void AttestationMessage::clear_has_pse_evaluation_status() {
+inline void AttestationMessage::clear_has_pseevaluationstatus() {
   _has_bits_[0] &= ~0x00000010u;
 }
-inline void AttestationMessage::clear_pse_evaluation_status() {
-  pse_evaluation_status_ = 0u;
-  clear_has_pse_evaluation_status();
+inline void AttestationMessage::clear_pseevaluationstatus() {
+  pseevaluationstatus_ = 0u;
+  clear_has_pseevaluationstatus();
 }
-inline ::google::protobuf::uint32 AttestationMessage::pse_evaluation_status() const {
-  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.pse_evaluation_status)
-  return pse_evaluation_status_;
+inline ::google::protobuf::uint32 AttestationMessage::pseevaluationstatus() const {
+  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.pseEvaluationStatus)
+  return pseevaluationstatus_;
 }
-inline void AttestationMessage::set_pse_evaluation_status(::google::protobuf::uint32 value) {
-  set_has_pse_evaluation_status();
-  pse_evaluation_status_ = value;
-  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.pse_evaluation_status)
+inline void AttestationMessage::set_pseevaluationstatus(::google::protobuf::uint32 value) {
+  set_has_pseevaluationstatus();
+  pseevaluationstatus_ = value;
+  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.pseEvaluationStatus)
 }
 
-// repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];
-inline int AttestationMessage::latest_equivalent_tcb_psvn_size() const {
-  return latest_equivalent_tcb_psvn_.size();
+// repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];
+inline int AttestationMessage::latestequivalenttcbpsvn_size() const {
+  return latestequivalenttcbpsvn_.size();
 }
-inline void AttestationMessage::clear_latest_equivalent_tcb_psvn() {
-  latest_equivalent_tcb_psvn_.Clear();
+inline void AttestationMessage::clear_latestequivalenttcbpsvn() {
+  latestequivalenttcbpsvn_.Clear();
 }
-inline ::google::protobuf::uint32 AttestationMessage::latest_equivalent_tcb_psvn(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.latest_equivalent_tcb_psvn)
-  return latest_equivalent_tcb_psvn_.Get(index);
+inline ::google::protobuf::uint32 AttestationMessage::latestequivalenttcbpsvn(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.latestEquivalentTcbPsvn)
+  return latestequivalenttcbpsvn_.Get(index);
 }
-inline void AttestationMessage::set_latest_equivalent_tcb_psvn(int index, ::google::protobuf::uint32 value) {
-  latest_equivalent_tcb_psvn_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.latest_equivalent_tcb_psvn)
+inline void AttestationMessage::set_latestequivalenttcbpsvn(int index, ::google::protobuf::uint32 value) {
+  latestequivalenttcbpsvn_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.latestEquivalentTcbPsvn)
 }
-inline void AttestationMessage::add_latest_equivalent_tcb_psvn(::google::protobuf::uint32 value) {
-  latest_equivalent_tcb_psvn_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.latest_equivalent_tcb_psvn)
+inline void AttestationMessage::add_latestequivalenttcbpsvn(::google::protobuf::uint32 value) {
+  latestequivalenttcbpsvn_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.latestEquivalentTcbPsvn)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-AttestationMessage::latest_equivalent_tcb_psvn() const {
-  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.latest_equivalent_tcb_psvn)
-  return latest_equivalent_tcb_psvn_;
+AttestationMessage::latestequivalenttcbpsvn() const {
+  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.latestEquivalentTcbPsvn)
+  return latestequivalenttcbpsvn_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-AttestationMessage::mutable_latest_equivalent_tcb_psvn() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.latest_equivalent_tcb_psvn)
-  return &latest_equivalent_tcb_psvn_;
+AttestationMessage::mutable_latestequivalenttcbpsvn() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.latestEquivalentTcbPsvn)
+  return &latestequivalenttcbpsvn_;
 }
 
-// repeated uint32 latest_pse_isvsvn = 7 [packed = true];
-inline int AttestationMessage::latest_pse_isvsvn_size() const {
-  return latest_pse_isvsvn_.size();
+// repeated uint32 latestPseIsvsvn = 7 [packed = true];
+inline int AttestationMessage::latestpseisvsvn_size() const {
+  return latestpseisvsvn_.size();
 }
-inline void AttestationMessage::clear_latest_pse_isvsvn() {
-  latest_pse_isvsvn_.Clear();
+inline void AttestationMessage::clear_latestpseisvsvn() {
+  latestpseisvsvn_.Clear();
 }
-inline ::google::protobuf::uint32 AttestationMessage::latest_pse_isvsvn(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.latest_pse_isvsvn)
-  return latest_pse_isvsvn_.Get(index);
+inline ::google::protobuf::uint32 AttestationMessage::latestpseisvsvn(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.latestPseIsvsvn)
+  return latestpseisvsvn_.Get(index);
 }
-inline void AttestationMessage::set_latest_pse_isvsvn(int index, ::google::protobuf::uint32 value) {
-  latest_pse_isvsvn_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.latest_pse_isvsvn)
+inline void AttestationMessage::set_latestpseisvsvn(int index, ::google::protobuf::uint32 value) {
+  latestpseisvsvn_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.latestPseIsvsvn)
 }
-inline void AttestationMessage::add_latest_pse_isvsvn(::google::protobuf::uint32 value) {
-  latest_pse_isvsvn_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.latest_pse_isvsvn)
+inline void AttestationMessage::add_latestpseisvsvn(::google::protobuf::uint32 value) {
+  latestpseisvsvn_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.latestPseIsvsvn)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-AttestationMessage::latest_pse_isvsvn() const {
-  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.latest_pse_isvsvn)
-  return latest_pse_isvsvn_;
+AttestationMessage::latestpseisvsvn() const {
+  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.latestPseIsvsvn)
+  return latestpseisvsvn_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-AttestationMessage::mutable_latest_pse_isvsvn() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.latest_pse_isvsvn)
-  return &latest_pse_isvsvn_;
+AttestationMessage::mutable_latestpseisvsvn() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.latestPseIsvsvn)
+  return &latestpseisvsvn_;
 }
 
-// repeated uint32 latest_psda_svn = 8 [packed = true];
-inline int AttestationMessage::latest_psda_svn_size() const {
-  return latest_psda_svn_.size();
+// repeated uint32 latestPsdaSvn = 8 [packed = true];
+inline int AttestationMessage::latestpsdasvn_size() const {
+  return latestpsdasvn_.size();
 }
-inline void AttestationMessage::clear_latest_psda_svn() {
-  latest_psda_svn_.Clear();
+inline void AttestationMessage::clear_latestpsdasvn() {
+  latestpsdasvn_.Clear();
 }
-inline ::google::protobuf::uint32 AttestationMessage::latest_psda_svn(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.latest_psda_svn)
-  return latest_psda_svn_.Get(index);
+inline ::google::protobuf::uint32 AttestationMessage::latestpsdasvn(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.latestPsdaSvn)
+  return latestpsdasvn_.Get(index);
 }
-inline void AttestationMessage::set_latest_psda_svn(int index, ::google::protobuf::uint32 value) {
-  latest_psda_svn_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.latest_psda_svn)
+inline void AttestationMessage::set_latestpsdasvn(int index, ::google::protobuf::uint32 value) {
+  latestpsdasvn_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.latestPsdaSvn)
 }
-inline void AttestationMessage::add_latest_psda_svn(::google::protobuf::uint32 value) {
-  latest_psda_svn_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.latest_psda_svn)
+inline void AttestationMessage::add_latestpsdasvn(::google::protobuf::uint32 value) {
+  latestpsdasvn_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.latestPsdaSvn)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-AttestationMessage::latest_psda_svn() const {
-  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.latest_psda_svn)
-  return latest_psda_svn_;
+AttestationMessage::latestpsdasvn() const {
+  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.latestPsdaSvn)
+  return latestpsdasvn_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-AttestationMessage::mutable_latest_psda_svn() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.latest_psda_svn)
-  return &latest_psda_svn_;
+AttestationMessage::mutable_latestpsdasvn() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.latestPsdaSvn)
+  return &latestpsdasvn_;
 }
 
-// repeated uint32 performance_rekey_gid = 9 [packed = true];
-inline int AttestationMessage::performance_rekey_gid_size() const {
-  return performance_rekey_gid_.size();
+// repeated uint32 performanceRekeyGid = 9 [packed = true];
+inline int AttestationMessage::performancerekeygid_size() const {
+  return performancerekeygid_.size();
 }
-inline void AttestationMessage::clear_performance_rekey_gid() {
-  performance_rekey_gid_.Clear();
+inline void AttestationMessage::clear_performancerekeygid() {
+  performancerekeygid_.Clear();
 }
-inline ::google::protobuf::uint32 AttestationMessage::performance_rekey_gid(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.performance_rekey_gid)
-  return performance_rekey_gid_.Get(index);
+inline ::google::protobuf::uint32 AttestationMessage::performancerekeygid(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.performanceRekeyGid)
+  return performancerekeygid_.Get(index);
 }
-inline void AttestationMessage::set_performance_rekey_gid(int index, ::google::protobuf::uint32 value) {
-  performance_rekey_gid_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.performance_rekey_gid)
+inline void AttestationMessage::set_performancerekeygid(int index, ::google::protobuf::uint32 value) {
+  performancerekeygid_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.performanceRekeyGid)
 }
-inline void AttestationMessage::add_performance_rekey_gid(::google::protobuf::uint32 value) {
-  performance_rekey_gid_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.performance_rekey_gid)
+inline void AttestationMessage::add_performancerekeygid(::google::protobuf::uint32 value) {
+  performancerekeygid_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.performanceRekeyGid)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-AttestationMessage::performance_rekey_gid() const {
-  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.performance_rekey_gid)
-  return performance_rekey_gid_;
+AttestationMessage::performancerekeygid() const {
+  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.performanceRekeyGid)
+  return performancerekeygid_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-AttestationMessage::mutable_performance_rekey_gid() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.performance_rekey_gid)
-  return &performance_rekey_gid_;
+AttestationMessage::mutable_performancerekeygid() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.performanceRekeyGid)
+  return &performancerekeygid_;
 }
 
-// repeated uint32 ec_sign256_x = 10 [packed = true];
-inline int AttestationMessage::ec_sign256_x_size() const {
-  return ec_sign256_x_.size();
+// repeated uint32 ecSign256X = 10 [packed = true];
+inline int AttestationMessage::ecsign256x_size() const {
+  return ecsign256x_.size();
 }
-inline void AttestationMessage::clear_ec_sign256_x() {
-  ec_sign256_x_.Clear();
+inline void AttestationMessage::clear_ecsign256x() {
+  ecsign256x_.Clear();
 }
-inline ::google::protobuf::uint32 AttestationMessage::ec_sign256_x(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.ec_sign256_x)
-  return ec_sign256_x_.Get(index);
+inline ::google::protobuf::uint32 AttestationMessage::ecsign256x(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.ecSign256X)
+  return ecsign256x_.Get(index);
 }
-inline void AttestationMessage::set_ec_sign256_x(int index, ::google::protobuf::uint32 value) {
-  ec_sign256_x_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.ec_sign256_x)
+inline void AttestationMessage::set_ecsign256x(int index, ::google::protobuf::uint32 value) {
+  ecsign256x_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.ecSign256X)
 }
-inline void AttestationMessage::add_ec_sign256_x(::google::protobuf::uint32 value) {
-  ec_sign256_x_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.ec_sign256_x)
+inline void AttestationMessage::add_ecsign256x(::google::protobuf::uint32 value) {
+  ecsign256x_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.ecSign256X)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-AttestationMessage::ec_sign256_x() const {
-  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.ec_sign256_x)
-  return ec_sign256_x_;
+AttestationMessage::ecsign256x() const {
+  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.ecSign256X)
+  return ecsign256x_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-AttestationMessage::mutable_ec_sign256_x() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.ec_sign256_x)
-  return &ec_sign256_x_;
+AttestationMessage::mutable_ecsign256x() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.ecSign256X)
+  return &ecsign256x_;
 }
 
-// repeated uint32 ec_sign256_y = 11 [packed = true];
-inline int AttestationMessage::ec_sign256_y_size() const {
-  return ec_sign256_y_.size();
+// repeated uint32 ecSign256Y = 11 [packed = true];
+inline int AttestationMessage::ecsign256y_size() const {
+  return ecsign256y_.size();
 }
-inline void AttestationMessage::clear_ec_sign256_y() {
-  ec_sign256_y_.Clear();
+inline void AttestationMessage::clear_ecsign256y() {
+  ecsign256y_.Clear();
 }
-inline ::google::protobuf::uint32 AttestationMessage::ec_sign256_y(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.ec_sign256_y)
-  return ec_sign256_y_.Get(index);
+inline ::google::protobuf::uint32 AttestationMessage::ecsign256y(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.ecSign256Y)
+  return ecsign256y_.Get(index);
 }
-inline void AttestationMessage::set_ec_sign256_y(int index, ::google::protobuf::uint32 value) {
-  ec_sign256_y_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.ec_sign256_y)
+inline void AttestationMessage::set_ecsign256y(int index, ::google::protobuf::uint32 value) {
+  ecsign256y_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.ecSign256Y)
 }
-inline void AttestationMessage::add_ec_sign256_y(::google::protobuf::uint32 value) {
-  ec_sign256_y_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.ec_sign256_y)
+inline void AttestationMessage::add_ecsign256y(::google::protobuf::uint32 value) {
+  ecsign256y_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.ecSign256Y)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-AttestationMessage::ec_sign256_y() const {
-  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.ec_sign256_y)
-  return ec_sign256_y_;
+AttestationMessage::ecsign256y() const {
+  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.ecSign256Y)
+  return ecsign256y_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-AttestationMessage::mutable_ec_sign256_y() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.ec_sign256_y)
-  return &ec_sign256_y_;
+AttestationMessage::mutable_ecsign256y() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.ecSign256Y)
+  return &ecsign256y_;
 }
 
-// repeated uint32 mac_smk = 12 [packed = true];
-inline int AttestationMessage::mac_smk_size() const {
-  return mac_smk_.size();
+// repeated uint32 macSmk = 12 [packed = true];
+inline int AttestationMessage::macsmk_size() const {
+  return macsmk_.size();
 }
-inline void AttestationMessage::clear_mac_smk() {
-  mac_smk_.Clear();
+inline void AttestationMessage::clear_macsmk() {
+  macsmk_.Clear();
 }
-inline ::google::protobuf::uint32 AttestationMessage::mac_smk(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.mac_smk)
-  return mac_smk_.Get(index);
+inline ::google::protobuf::uint32 AttestationMessage::macsmk(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.macSmk)
+  return macsmk_.Get(index);
 }
-inline void AttestationMessage::set_mac_smk(int index, ::google::protobuf::uint32 value) {
-  mac_smk_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.mac_smk)
+inline void AttestationMessage::set_macsmk(int index, ::google::protobuf::uint32 value) {
+  macsmk_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.macSmk)
 }
-inline void AttestationMessage::add_mac_smk(::google::protobuf::uint32 value) {
-  mac_smk_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.mac_smk)
+inline void AttestationMessage::add_macsmk(::google::protobuf::uint32 value) {
+  macsmk_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.macSmk)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-AttestationMessage::mac_smk() const {
-  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.mac_smk)
-  return mac_smk_;
+AttestationMessage::macsmk() const {
+  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.macSmk)
+  return macsmk_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-AttestationMessage::mutable_mac_smk() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.mac_smk)
-  return &mac_smk_;
+AttestationMessage::mutable_macsmk() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.macSmk)
+  return &macsmk_;
 }
 
-// optional uint32 result_size = 13;
-inline bool AttestationMessage::has_result_size() const {
+// optional uint32 resultSize = 13;
+inline bool AttestationMessage::has_resultsize() const {
   return (_has_bits_[0] & 0x00001000u) != 0;
 }
-inline void AttestationMessage::set_has_result_size() {
+inline void AttestationMessage::set_has_resultsize() {
   _has_bits_[0] |= 0x00001000u;
 }
-inline void AttestationMessage::clear_has_result_size() {
+inline void AttestationMessage::clear_has_resultsize() {
   _has_bits_[0] &= ~0x00001000u;
 }
-inline void AttestationMessage::clear_result_size() {
-  result_size_ = 0u;
-  clear_has_result_size();
+inline void AttestationMessage::clear_resultsize() {
+  resultsize_ = 0u;
+  clear_has_resultsize();
 }
-inline ::google::protobuf::uint32 AttestationMessage::result_size() const {
-  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.result_size)
-  return result_size_;
+inline ::google::protobuf::uint32 AttestationMessage::resultsize() const {
+  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.resultSize)
+  return resultsize_;
 }
-inline void AttestationMessage::set_result_size(::google::protobuf::uint32 value) {
-  set_has_result_size();
-  result_size_ = value;
-  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.result_size)
+inline void AttestationMessage::set_resultsize(::google::protobuf::uint32 value) {
+  set_has_resultsize();
+  resultsize_ = value;
+  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.resultSize)
 }
 
 // repeated uint32 reserved = 14 [packed = true];
@@ -2505,34 +2505,34 @@ AttestationMessage::mutable_reserved() {
   return &reserved_;
 }
 
-// repeated uint32 payload_tag = 15 [packed = true];
-inline int AttestationMessage::payload_tag_size() const {
-  return payload_tag_.size();
+// repeated uint32 payloadTag = 15 [packed = true];
+inline int AttestationMessage::payloadtag_size() const {
+  return payloadtag_.size();
 }
-inline void AttestationMessage::clear_payload_tag() {
-  payload_tag_.Clear();
+inline void AttestationMessage::clear_payloadtag() {
+  payloadtag_.Clear();
 }
-inline ::google::protobuf::uint32 AttestationMessage::payload_tag(int index) const {
-  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.payload_tag)
-  return payload_tag_.Get(index);
+inline ::google::protobuf::uint32 AttestationMessage::payloadtag(int index) const {
+  // @@protoc_insertion_point(field_get:Messages.AttestationMessage.payloadTag)
+  return payloadtag_.Get(index);
 }
-inline void AttestationMessage::set_payload_tag(int index, ::google::protobuf::uint32 value) {
-  payload_tag_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.payload_tag)
+inline void AttestationMessage::set_payloadtag(int index, ::google::protobuf::uint32 value) {
+  payloadtag_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Messages.AttestationMessage.payloadTag)
 }
-inline void AttestationMessage::add_payload_tag(::google::protobuf::uint32 value) {
-  payload_tag_.Add(value);
-  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.payload_tag)
+inline void AttestationMessage::add_payloadtag(::google::protobuf::uint32 value) {
+  payloadtag_.Add(value);
+  // @@protoc_insertion_point(field_add:Messages.AttestationMessage.payloadTag)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-AttestationMessage::payload_tag() const {
-  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.payload_tag)
-  return payload_tag_;
+AttestationMessage::payloadtag() const {
+  // @@protoc_insertion_point(field_list:Messages.AttestationMessage.payloadTag)
+  return payloadtag_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-AttestationMessage::mutable_payload_tag() {
-  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.payload_tag)
-  return &payload_tag_;
+AttestationMessage::mutable_payloadtag() {
+  // @@protoc_insertion_point(field_mutable_list:Messages.AttestationMessage.payloadTag)
+  return &payloadtag_;
 }
 
 // repeated uint32 payload = 16 [packed = true];
@@ -2594,86 +2594,86 @@ inline void AllInOneMessage::set_type(::Messages::Type value) {
   // @@protoc_insertion_point(field_set:Messages.AllInOneMessage.type)
 }
 
-// optional .Messages.SecretMessage serect_msg = 2;
-inline bool AllInOneMessage::has_serect_msg() const {
+// optional .Messages.SecretMessage secretMsg = 2;
+inline bool AllInOneMessage::has_secretmsg() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void AllInOneMessage::set_has_serect_msg() {
+inline void AllInOneMessage::set_has_secretmsg() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void AllInOneMessage::clear_has_serect_msg() {
+inline void AllInOneMessage::clear_has_secretmsg() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void AllInOneMessage::clear_serect_msg() {
-  if (serect_msg_ != NULL) serect_msg_->::Messages::SecretMessage::Clear();
-  clear_has_serect_msg();
+inline void AllInOneMessage::clear_secretmsg() {
+  if (secretmsg_ != NULL) secretmsg_->::Messages::SecretMessage::Clear();
+  clear_has_secretmsg();
 }
-inline const ::Messages::SecretMessage& AllInOneMessage::serect_msg() const {
-  // @@protoc_insertion_point(field_get:Messages.AllInOneMessage.serect_msg)
-  return serect_msg_ != NULL ? *serect_msg_ : *default_instance_->serect_msg_;
+inline const ::Messages::SecretMessage& AllInOneMessage::secretmsg() const {
+  // @@protoc_insertion_point(field_get:Messages.AllInOneMessage.secretMsg)
+  return secretmsg_ != NULL ? *secretmsg_ : *default_instance_->secretmsg_;
 }
-inline ::Messages::SecretMessage* AllInOneMessage::mutable_serect_msg() {
-  set_has_serect_msg();
-  if (serect_msg_ == NULL) serect_msg_ = new ::Messages::SecretMessage;
-  // @@protoc_insertion_point(field_mutable:Messages.AllInOneMessage.serect_msg)
-  return serect_msg_;
+inline ::Messages::SecretMessage* AllInOneMessage::mutable_secretmsg() {
+  set_has_secretmsg();
+  if (secretmsg_ == NULL) secretmsg_ = new ::Messages::SecretMessage;
+  // @@protoc_insertion_point(field_mutable:Messages.AllInOneMessage.secretMsg)
+  return secretmsg_;
 }
-inline ::Messages::SecretMessage* AllInOneMessage::release_serect_msg() {
-  clear_has_serect_msg();
-  ::Messages::SecretMessage* temp = serect_msg_;
-  serect_msg_ = NULL;
+inline ::Messages::SecretMessage* AllInOneMessage::release_secretmsg() {
+  clear_has_secretmsg();
+  ::Messages::SecretMessage* temp = secretmsg_;
+  secretmsg_ = NULL;
   return temp;
 }
-inline void AllInOneMessage::set_allocated_serect_msg(::Messages::SecretMessage* serect_msg) {
-  delete serect_msg_;
-  serect_msg_ = serect_msg;
-  if (serect_msg) {
-    set_has_serect_msg();
+inline void AllInOneMessage::set_allocated_secretmsg(::Messages::SecretMessage* secretmsg) {
+  delete secretmsg_;
+  secretmsg_ = secretmsg;
+  if (secretmsg) {
+    set_has_secretmsg();
   } else {
-    clear_has_serect_msg();
+    clear_has_secretmsg();
   }
-  // @@protoc_insertion_point(field_set_allocated:Messages.AllInOneMessage.serect_msg)
+  // @@protoc_insertion_point(field_set_allocated:Messages.AllInOneMessage.secretMsg)
 }
 
-// optional .Messages.InitialMessage init_msg = 3;
-inline bool AllInOneMessage::has_init_msg() const {
+// optional .Messages.InitialMessage initMsg = 3;
+inline bool AllInOneMessage::has_initmsg() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void AllInOneMessage::set_has_init_msg() {
+inline void AllInOneMessage::set_has_initmsg() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void AllInOneMessage::clear_has_init_msg() {
+inline void AllInOneMessage::clear_has_initmsg() {
   _has_bits_[0] &= ~0x00000004u;
 }
-inline void AllInOneMessage::clear_init_msg() {
-  if (init_msg_ != NULL) init_msg_->::Messages::InitialMessage::Clear();
-  clear_has_init_msg();
+inline void AllInOneMessage::clear_initmsg() {
+  if (initmsg_ != NULL) initmsg_->::Messages::InitialMessage::Clear();
+  clear_has_initmsg();
 }
-inline const ::Messages::InitialMessage& AllInOneMessage::init_msg() const {
-  // @@protoc_insertion_point(field_get:Messages.AllInOneMessage.init_msg)
-  return init_msg_ != NULL ? *init_msg_ : *default_instance_->init_msg_;
+inline const ::Messages::InitialMessage& AllInOneMessage::initmsg() const {
+  // @@protoc_insertion_point(field_get:Messages.AllInOneMessage.initMsg)
+  return initmsg_ != NULL ? *initmsg_ : *default_instance_->initmsg_;
 }
-inline ::Messages::InitialMessage* AllInOneMessage::mutable_init_msg() {
-  set_has_init_msg();
-  if (init_msg_ == NULL) init_msg_ = new ::Messages::InitialMessage;
-  // @@protoc_insertion_point(field_mutable:Messages.AllInOneMessage.init_msg)
-  return init_msg_;
+inline ::Messages::InitialMessage* AllInOneMessage::mutable_initmsg() {
+  set_has_initmsg();
+  if (initmsg_ == NULL) initmsg_ = new ::Messages::InitialMessage;
+  // @@protoc_insertion_point(field_mutable:Messages.AllInOneMessage.initMsg)
+  return initmsg_;
 }
-inline ::Messages::InitialMessage* AllInOneMessage::release_init_msg() {
-  clear_has_init_msg();
-  ::Messages::InitialMessage* temp = init_msg_;
-  init_msg_ = NULL;
+inline ::Messages::InitialMessage* AllInOneMessage::release_initmsg() {
+  clear_has_initmsg();
+  ::Messages::InitialMessage* temp = initmsg_;
+  initmsg_ = NULL;
   return temp;
 }
-inline void AllInOneMessage::set_allocated_init_msg(::Messages::InitialMessage* init_msg) {
-  delete init_msg_;
-  init_msg_ = init_msg;
-  if (init_msg) {
-    set_has_init_msg();
+inline void AllInOneMessage::set_allocated_initmsg(::Messages::InitialMessage* initmsg) {
+  delete initmsg_;
+  initmsg_ = initmsg;
+  if (initmsg) {
+    set_has_initmsg();
   } else {
-    clear_has_init_msg();
+    clear_has_initmsg();
   }
-  // @@protoc_insertion_point(field_set_allocated:Messages.AllInOneMessage.init_msg)
+  // @@protoc_insertion_point(field_set_allocated:Messages.AllInOneMessage.initMsg)
 }
 
 // optional .Messages.MessageMSG0 msg0 = 4;
@@ -2840,45 +2840,45 @@ inline void AllInOneMessage::set_allocated_msg3(::Messages::MessageMSG3* msg3) {
   // @@protoc_insertion_point(field_set_allocated:Messages.AllInOneMessage.msg3)
 }
 
-// optional .Messages.AttestationMessage attest_msg = 8;
-inline bool AllInOneMessage::has_attest_msg() const {
+// optional .Messages.AttestationMessage attestMsg = 8;
+inline bool AllInOneMessage::has_attestmsg() const {
   return (_has_bits_[0] & 0x00000080u) != 0;
 }
-inline void AllInOneMessage::set_has_attest_msg() {
+inline void AllInOneMessage::set_has_attestmsg() {
   _has_bits_[0] |= 0x00000080u;
 }
-inline void AllInOneMessage::clear_has_attest_msg() {
+inline void AllInOneMessage::clear_has_attestmsg() {
   _has_bits_[0] &= ~0x00000080u;
 }
-inline void AllInOneMessage::clear_attest_msg() {
-  if (attest_msg_ != NULL) attest_msg_->::Messages::AttestationMessage::Clear();
-  clear_has_attest_msg();
+inline void AllInOneMessage::clear_attestmsg() {
+  if (attestmsg_ != NULL) attestmsg_->::Messages::AttestationMessage::Clear();
+  clear_has_attestmsg();
 }
-inline const ::Messages::AttestationMessage& AllInOneMessage::attest_msg() const {
-  // @@protoc_insertion_point(field_get:Messages.AllInOneMessage.attest_msg)
-  return attest_msg_ != NULL ? *attest_msg_ : *default_instance_->attest_msg_;
+inline const ::Messages::AttestationMessage& AllInOneMessage::attestmsg() const {
+  // @@protoc_insertion_point(field_get:Messages.AllInOneMessage.attestMsg)
+  return attestmsg_ != NULL ? *attestmsg_ : *default_instance_->attestmsg_;
 }
-inline ::Messages::AttestationMessage* AllInOneMessage::mutable_attest_msg() {
-  set_has_attest_msg();
-  if (attest_msg_ == NULL) attest_msg_ = new ::Messages::AttestationMessage;
-  // @@protoc_insertion_point(field_mutable:Messages.AllInOneMessage.attest_msg)
-  return attest_msg_;
+inline ::Messages::AttestationMessage* AllInOneMessage::mutable_attestmsg() {
+  set_has_attestmsg();
+  if (attestmsg_ == NULL) attestmsg_ = new ::Messages::AttestationMessage;
+  // @@protoc_insertion_point(field_mutable:Messages.AllInOneMessage.attestMsg)
+  return attestmsg_;
 }
-inline ::Messages::AttestationMessage* AllInOneMessage::release_attest_msg() {
-  clear_has_attest_msg();
-  ::Messages::AttestationMessage* temp = attest_msg_;
-  attest_msg_ = NULL;
+inline ::Messages::AttestationMessage* AllInOneMessage::release_attestmsg() {
+  clear_has_attestmsg();
+  ::Messages::AttestationMessage* temp = attestmsg_;
+  attestmsg_ = NULL;
   return temp;
 }
-inline void AllInOneMessage::set_allocated_attest_msg(::Messages::AttestationMessage* attest_msg) {
-  delete attest_msg_;
-  attest_msg_ = attest_msg;
-  if (attest_msg) {
-    set_has_attest_msg();
+inline void AllInOneMessage::set_allocated_attestmsg(::Messages::AttestationMessage* attestmsg) {
+  delete attestmsg_;
+  attestmsg_ = attestmsg;
+  if (attestmsg) {
+    set_has_attestmsg();
   } else {
-    clear_has_attest_msg();
+    clear_has_attestmsg();
   }
-  // @@protoc_insertion_point(field_set_allocated:Messages.AllInOneMessage.attest_msg)
+  // @@protoc_insertion_point(field_set_allocated:Messages.AllInOneMessage.attestMsg)
 }
 
 

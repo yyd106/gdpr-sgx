@@ -2629,37 +2629,37 @@ public final class Messages {
     int getSize();
 
     /**
-     * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getPublicKeyGxList();
     /**
-     * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
      */
     int getPublicKeyGxCount();
     /**
-     * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
      */
     int getPublicKeyGx(int index);
 
     /**
-     * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getPublicKeyGyList();
     /**
-     * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
      */
     int getPublicKeyGyCount();
     /**
-     * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
      */
     int getPublicKeyGy(int index);
 
     /**
-     * <code>optional uint32 quote_type = 5;</code>
+     * <code>optional uint32 quoteType = 5;</code>
      */
     boolean hasQuoteType();
     /**
-     * <code>optional uint32 quote_type = 5;</code>
+     * <code>optional uint32 quoteType = 5;</code>
      */
     int getQuoteType();
 
@@ -2677,37 +2677,37 @@ public final class Messages {
     int getSpid(int index);
 
     /**
-     * <code>optional uint32 cmac_kdf_id = 7;</code>
+     * <code>optional uint32 cmacKdfId = 7;</code>
      */
     boolean hasCmacKdfId();
     /**
-     * <code>optional uint32 cmac_kdf_id = 7;</code>
+     * <code>optional uint32 cmacKdfId = 7;</code>
      */
     int getCmacKdfId();
 
     /**
-     * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+     * <code>repeated uint32 signatureX = 8 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getSignatureXList();
     /**
-     * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+     * <code>repeated uint32 signatureX = 8 [packed = true];</code>
      */
     int getSignatureXCount();
     /**
-     * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+     * <code>repeated uint32 signatureX = 8 [packed = true];</code>
      */
     int getSignatureX(int index);
 
     /**
-     * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+     * <code>repeated uint32 signatureY = 9 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getSignatureYList();
     /**
-     * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+     * <code>repeated uint32 signatureY = 9 [packed = true];</code>
      */
     int getSignatureYCount();
     /**
-     * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+     * <code>repeated uint32 signatureY = 9 [packed = true];</code>
      */
     int getSignatureY(int index);
 
@@ -2725,11 +2725,11 @@ public final class Messages {
     int getSmac(int index);
 
     /**
-     * <code>optional uint32 size_sigrl = 11;</code>
+     * <code>optional uint32 sizeSigrl = 11;</code>
      */
     boolean hasSizeSigrl();
     /**
-     * <code>optional uint32 size_sigrl = 11;</code>
+     * <code>optional uint32 sizeSigrl = 11;</code>
      */
     int getSizeSigrl();
 
@@ -3067,62 +3067,62 @@ public final class Messages {
       return size_;
     }
 
-    public static final int PUBLIC_KEY_GX_FIELD_NUMBER = 3;
+    public static final int PUBLICKEYGX_FIELD_NUMBER = 3;
     private java.util.List<java.lang.Integer> publicKeyGx_;
     /**
-     * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getPublicKeyGxList() {
       return publicKeyGx_;
     }
     /**
-     * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
      */
     public int getPublicKeyGxCount() {
       return publicKeyGx_.size();
     }
     /**
-     * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
      */
     public int getPublicKeyGx(int index) {
       return publicKeyGx_.get(index);
     }
     private int publicKeyGxMemoizedSerializedSize = -1;
 
-    public static final int PUBLIC_KEY_GY_FIELD_NUMBER = 4;
+    public static final int PUBLICKEYGY_FIELD_NUMBER = 4;
     private java.util.List<java.lang.Integer> publicKeyGy_;
     /**
-     * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getPublicKeyGyList() {
       return publicKeyGy_;
     }
     /**
-     * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
      */
     public int getPublicKeyGyCount() {
       return publicKeyGy_.size();
     }
     /**
-     * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
      */
     public int getPublicKeyGy(int index) {
       return publicKeyGy_.get(index);
     }
     private int publicKeyGyMemoizedSerializedSize = -1;
 
-    public static final int QUOTE_TYPE_FIELD_NUMBER = 5;
+    public static final int QUOTETYPE_FIELD_NUMBER = 5;
     private int quoteType_;
     /**
-     * <code>optional uint32 quote_type = 5;</code>
+     * <code>optional uint32 quoteType = 5;</code>
      */
     public boolean hasQuoteType() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional uint32 quote_type = 5;</code>
+     * <code>optional uint32 quoteType = 5;</code>
      */
     public int getQuoteType() {
       return quoteType_;
@@ -3151,61 +3151,61 @@ public final class Messages {
     }
     private int spidMemoizedSerializedSize = -1;
 
-    public static final int CMAC_KDF_ID_FIELD_NUMBER = 7;
+    public static final int CMACKDFID_FIELD_NUMBER = 7;
     private int cmacKdfId_;
     /**
-     * <code>optional uint32 cmac_kdf_id = 7;</code>
+     * <code>optional uint32 cmacKdfId = 7;</code>
      */
     public boolean hasCmacKdfId() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional uint32 cmac_kdf_id = 7;</code>
+     * <code>optional uint32 cmacKdfId = 7;</code>
      */
     public int getCmacKdfId() {
       return cmacKdfId_;
     }
 
-    public static final int SIGNATURE_X_FIELD_NUMBER = 8;
+    public static final int SIGNATUREX_FIELD_NUMBER = 8;
     private java.util.List<java.lang.Integer> signatureX_;
     /**
-     * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+     * <code>repeated uint32 signatureX = 8 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getSignatureXList() {
       return signatureX_;
     }
     /**
-     * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+     * <code>repeated uint32 signatureX = 8 [packed = true];</code>
      */
     public int getSignatureXCount() {
       return signatureX_.size();
     }
     /**
-     * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+     * <code>repeated uint32 signatureX = 8 [packed = true];</code>
      */
     public int getSignatureX(int index) {
       return signatureX_.get(index);
     }
     private int signatureXMemoizedSerializedSize = -1;
 
-    public static final int SIGNATURE_Y_FIELD_NUMBER = 9;
+    public static final int SIGNATUREY_FIELD_NUMBER = 9;
     private java.util.List<java.lang.Integer> signatureY_;
     /**
-     * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+     * <code>repeated uint32 signatureY = 9 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getSignatureYList() {
       return signatureY_;
     }
     /**
-     * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+     * <code>repeated uint32 signatureY = 9 [packed = true];</code>
      */
     public int getSignatureYCount() {
       return signatureY_.size();
     }
     /**
-     * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+     * <code>repeated uint32 signatureY = 9 [packed = true];</code>
      */
     public int getSignatureY(int index) {
       return signatureY_.get(index);
@@ -3235,16 +3235,16 @@ public final class Messages {
     }
     private int smacMemoizedSerializedSize = -1;
 
-    public static final int SIZE_SIGRL_FIELD_NUMBER = 11;
+    public static final int SIZESIGRL_FIELD_NUMBER = 11;
     private int sizeSigrl_;
     /**
-     * <code>optional uint32 size_sigrl = 11;</code>
+     * <code>optional uint32 sizeSigrl = 11;</code>
      */
     public boolean hasSizeSigrl() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional uint32 size_sigrl = 11;</code>
+     * <code>optional uint32 sizeSigrl = 11;</code>
      */
     public int getSizeSigrl() {
       return sizeSigrl_;
@@ -3926,26 +3926,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getPublicKeyGxList() {
         return java.util.Collections.unmodifiableList(publicKeyGx_);
       }
       /**
-       * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
        */
       public int getPublicKeyGxCount() {
         return publicKeyGx_.size();
       }
       /**
-       * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
        */
       public int getPublicKeyGx(int index) {
         return publicKeyGx_.get(index);
       }
       /**
-       * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
        */
       public Builder setPublicKeyGx(
           int index, int value) {
@@ -3955,7 +3955,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
        */
       public Builder addPublicKeyGx(int value) {
         ensurePublicKeyGxIsMutable();
@@ -3964,7 +3964,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
        */
       public Builder addAllPublicKeyGx(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -3975,7 +3975,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
        */
       public Builder clearPublicKeyGx() {
         publicKeyGx_ = java.util.Collections.emptyList();
@@ -3992,26 +3992,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getPublicKeyGyList() {
         return java.util.Collections.unmodifiableList(publicKeyGy_);
       }
       /**
-       * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
        */
       public int getPublicKeyGyCount() {
         return publicKeyGy_.size();
       }
       /**
-       * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
        */
       public int getPublicKeyGy(int index) {
         return publicKeyGy_.get(index);
       }
       /**
-       * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
        */
       public Builder setPublicKeyGy(
           int index, int value) {
@@ -4021,7 +4021,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
        */
       public Builder addPublicKeyGy(int value) {
         ensurePublicKeyGyIsMutable();
@@ -4030,7 +4030,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
        */
       public Builder addAllPublicKeyGy(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -4041,7 +4041,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
        */
       public Builder clearPublicKeyGy() {
         publicKeyGy_ = java.util.Collections.emptyList();
@@ -4052,19 +4052,19 @@ public final class Messages {
 
       private int quoteType_ ;
       /**
-       * <code>optional uint32 quote_type = 5;</code>
+       * <code>optional uint32 quoteType = 5;</code>
        */
       public boolean hasQuoteType() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional uint32 quote_type = 5;</code>
+       * <code>optional uint32 quoteType = 5;</code>
        */
       public int getQuoteType() {
         return quoteType_;
       }
       /**
-       * <code>optional uint32 quote_type = 5;</code>
+       * <code>optional uint32 quoteType = 5;</code>
        */
       public Builder setQuoteType(int value) {
         bitField0_ |= 0x00000010;
@@ -4073,7 +4073,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional uint32 quote_type = 5;</code>
+       * <code>optional uint32 quoteType = 5;</code>
        */
       public Builder clearQuoteType() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -4150,19 +4150,19 @@ public final class Messages {
 
       private int cmacKdfId_ ;
       /**
-       * <code>optional uint32 cmac_kdf_id = 7;</code>
+       * <code>optional uint32 cmacKdfId = 7;</code>
        */
       public boolean hasCmacKdfId() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>optional uint32 cmac_kdf_id = 7;</code>
+       * <code>optional uint32 cmacKdfId = 7;</code>
        */
       public int getCmacKdfId() {
         return cmacKdfId_;
       }
       /**
-       * <code>optional uint32 cmac_kdf_id = 7;</code>
+       * <code>optional uint32 cmacKdfId = 7;</code>
        */
       public Builder setCmacKdfId(int value) {
         bitField0_ |= 0x00000040;
@@ -4171,7 +4171,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional uint32 cmac_kdf_id = 7;</code>
+       * <code>optional uint32 cmacKdfId = 7;</code>
        */
       public Builder clearCmacKdfId() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -4188,26 +4188,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+       * <code>repeated uint32 signatureX = 8 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getSignatureXList() {
         return java.util.Collections.unmodifiableList(signatureX_);
       }
       /**
-       * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+       * <code>repeated uint32 signatureX = 8 [packed = true];</code>
        */
       public int getSignatureXCount() {
         return signatureX_.size();
       }
       /**
-       * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+       * <code>repeated uint32 signatureX = 8 [packed = true];</code>
        */
       public int getSignatureX(int index) {
         return signatureX_.get(index);
       }
       /**
-       * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+       * <code>repeated uint32 signatureX = 8 [packed = true];</code>
        */
       public Builder setSignatureX(
           int index, int value) {
@@ -4217,7 +4217,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+       * <code>repeated uint32 signatureX = 8 [packed = true];</code>
        */
       public Builder addSignatureX(int value) {
         ensureSignatureXIsMutable();
@@ -4226,7 +4226,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+       * <code>repeated uint32 signatureX = 8 [packed = true];</code>
        */
       public Builder addAllSignatureX(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -4237,7 +4237,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+       * <code>repeated uint32 signatureX = 8 [packed = true];</code>
        */
       public Builder clearSignatureX() {
         signatureX_ = java.util.Collections.emptyList();
@@ -4254,26 +4254,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+       * <code>repeated uint32 signatureY = 9 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getSignatureYList() {
         return java.util.Collections.unmodifiableList(signatureY_);
       }
       /**
-       * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+       * <code>repeated uint32 signatureY = 9 [packed = true];</code>
        */
       public int getSignatureYCount() {
         return signatureY_.size();
       }
       /**
-       * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+       * <code>repeated uint32 signatureY = 9 [packed = true];</code>
        */
       public int getSignatureY(int index) {
         return signatureY_.get(index);
       }
       /**
-       * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+       * <code>repeated uint32 signatureY = 9 [packed = true];</code>
        */
       public Builder setSignatureY(
           int index, int value) {
@@ -4283,7 +4283,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+       * <code>repeated uint32 signatureY = 9 [packed = true];</code>
        */
       public Builder addSignatureY(int value) {
         ensureSignatureYIsMutable();
@@ -4292,7 +4292,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+       * <code>repeated uint32 signatureY = 9 [packed = true];</code>
        */
       public Builder addAllSignatureY(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -4303,7 +4303,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+       * <code>repeated uint32 signatureY = 9 [packed = true];</code>
        */
       public Builder clearSignatureY() {
         signatureY_ = java.util.Collections.emptyList();
@@ -4380,19 +4380,19 @@ public final class Messages {
 
       private int sizeSigrl_ ;
       /**
-       * <code>optional uint32 size_sigrl = 11;</code>
+       * <code>optional uint32 sizeSigrl = 11;</code>
        */
       public boolean hasSizeSigrl() {
         return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
-       * <code>optional uint32 size_sigrl = 11;</code>
+       * <code>optional uint32 sizeSigrl = 11;</code>
        */
       public int getSizeSigrl() {
         return sizeSigrl_;
       }
       /**
-       * <code>optional uint32 size_sigrl = 11;</code>
+       * <code>optional uint32 sizeSigrl = 11;</code>
        */
       public Builder setSizeSigrl(int value) {
         bitField0_ |= 0x00000400;
@@ -4401,7 +4401,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional uint32 size_sigrl = 11;</code>
+       * <code>optional uint32 sizeSigrl = 11;</code>
        */
       public Builder clearSizeSigrl() {
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -4510,54 +4510,54 @@ public final class Messages {
     int getSize();
 
     /**
-     * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+     * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getSgxMacList();
     /**
-     * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+     * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
      */
     int getSgxMacCount();
     /**
-     * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+     * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
      */
     int getSgxMac(int index);
 
     /**
-     * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+     * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getGaxMsg3List();
     /**
-     * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+     * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
      */
     int getGaxMsg3Count();
     /**
-     * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+     * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
      */
     int getGaxMsg3(int index);
 
     /**
-     * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+     * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getGayMsg3List();
     /**
-     * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+     * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
      */
     int getGayMsg3Count();
     /**
-     * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+     * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
      */
     int getGayMsg3(int index);
 
     /**
-     * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+     * <code>repeated uint32 secProperty = 6 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getSecPropertyList();
     /**
-     * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+     * <code>repeated uint32 secProperty = 6 [packed = true];</code>
      */
     int getSecPropertyCount();
     /**
-     * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+     * <code>repeated uint32 secProperty = 6 [packed = true];</code>
      */
     int getSecProperty(int index);
 
@@ -4832,92 +4832,92 @@ public final class Messages {
       return size_;
     }
 
-    public static final int SGX_MAC_FIELD_NUMBER = 3;
+    public static final int SGXMAC_FIELD_NUMBER = 3;
     private java.util.List<java.lang.Integer> sgxMac_;
     /**
-     * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+     * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getSgxMacList() {
       return sgxMac_;
     }
     /**
-     * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+     * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
      */
     public int getSgxMacCount() {
       return sgxMac_.size();
     }
     /**
-     * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+     * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
      */
     public int getSgxMac(int index) {
       return sgxMac_.get(index);
     }
     private int sgxMacMemoizedSerializedSize = -1;
 
-    public static final int GAX_MSG3_FIELD_NUMBER = 4;
+    public static final int GAXMSG3_FIELD_NUMBER = 4;
     private java.util.List<java.lang.Integer> gaxMsg3_;
     /**
-     * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+     * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getGaxMsg3List() {
       return gaxMsg3_;
     }
     /**
-     * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+     * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
      */
     public int getGaxMsg3Count() {
       return gaxMsg3_.size();
     }
     /**
-     * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+     * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
      */
     public int getGaxMsg3(int index) {
       return gaxMsg3_.get(index);
     }
     private int gaxMsg3MemoizedSerializedSize = -1;
 
-    public static final int GAY_MSG3_FIELD_NUMBER = 5;
+    public static final int GAYMSG3_FIELD_NUMBER = 5;
     private java.util.List<java.lang.Integer> gayMsg3_;
     /**
-     * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+     * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getGayMsg3List() {
       return gayMsg3_;
     }
     /**
-     * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+     * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
      */
     public int getGayMsg3Count() {
       return gayMsg3_.size();
     }
     /**
-     * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+     * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
      */
     public int getGayMsg3(int index) {
       return gayMsg3_.get(index);
     }
     private int gayMsg3MemoizedSerializedSize = -1;
 
-    public static final int SEC_PROPERTY_FIELD_NUMBER = 6;
+    public static final int SECPROPERTY_FIELD_NUMBER = 6;
     private java.util.List<java.lang.Integer> secProperty_;
     /**
-     * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+     * <code>repeated uint32 secProperty = 6 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getSecPropertyList() {
       return secProperty_;
     }
     /**
-     * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+     * <code>repeated uint32 secProperty = 6 [packed = true];</code>
      */
     public int getSecPropertyCount() {
       return secProperty_.size();
     }
     /**
-     * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+     * <code>repeated uint32 secProperty = 6 [packed = true];</code>
      */
     public int getSecProperty(int index) {
       return secProperty_.get(index);
@@ -5471,26 +5471,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+       * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getSgxMacList() {
         return java.util.Collections.unmodifiableList(sgxMac_);
       }
       /**
-       * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+       * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
        */
       public int getSgxMacCount() {
         return sgxMac_.size();
       }
       /**
-       * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+       * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
        */
       public int getSgxMac(int index) {
         return sgxMac_.get(index);
       }
       /**
-       * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+       * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
        */
       public Builder setSgxMac(
           int index, int value) {
@@ -5500,7 +5500,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+       * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
        */
       public Builder addSgxMac(int value) {
         ensureSgxMacIsMutable();
@@ -5509,7 +5509,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+       * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
        */
       public Builder addAllSgxMac(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -5520,7 +5520,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+       * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
        */
       public Builder clearSgxMac() {
         sgxMac_ = java.util.Collections.emptyList();
@@ -5537,26 +5537,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+       * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getGaxMsg3List() {
         return java.util.Collections.unmodifiableList(gaxMsg3_);
       }
       /**
-       * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+       * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
        */
       public int getGaxMsg3Count() {
         return gaxMsg3_.size();
       }
       /**
-       * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+       * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
        */
       public int getGaxMsg3(int index) {
         return gaxMsg3_.get(index);
       }
       /**
-       * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+       * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
        */
       public Builder setGaxMsg3(
           int index, int value) {
@@ -5566,7 +5566,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+       * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
        */
       public Builder addGaxMsg3(int value) {
         ensureGaxMsg3IsMutable();
@@ -5575,7 +5575,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+       * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
        */
       public Builder addAllGaxMsg3(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -5586,7 +5586,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+       * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
        */
       public Builder clearGaxMsg3() {
         gaxMsg3_ = java.util.Collections.emptyList();
@@ -5603,26 +5603,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+       * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getGayMsg3List() {
         return java.util.Collections.unmodifiableList(gayMsg3_);
       }
       /**
-       * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+       * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
        */
       public int getGayMsg3Count() {
         return gayMsg3_.size();
       }
       /**
-       * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+       * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
        */
       public int getGayMsg3(int index) {
         return gayMsg3_.get(index);
       }
       /**
-       * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+       * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
        */
       public Builder setGayMsg3(
           int index, int value) {
@@ -5632,7 +5632,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+       * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
        */
       public Builder addGayMsg3(int value) {
         ensureGayMsg3IsMutable();
@@ -5641,7 +5641,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+       * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
        */
       public Builder addAllGayMsg3(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -5652,7 +5652,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+       * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
        */
       public Builder clearGayMsg3() {
         gayMsg3_ = java.util.Collections.emptyList();
@@ -5669,26 +5669,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+       * <code>repeated uint32 secProperty = 6 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getSecPropertyList() {
         return java.util.Collections.unmodifiableList(secProperty_);
       }
       /**
-       * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+       * <code>repeated uint32 secProperty = 6 [packed = true];</code>
        */
       public int getSecPropertyCount() {
         return secProperty_.size();
       }
       /**
-       * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+       * <code>repeated uint32 secProperty = 6 [packed = true];</code>
        */
       public int getSecProperty(int index) {
         return secProperty_.get(index);
       }
       /**
-       * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+       * <code>repeated uint32 secProperty = 6 [packed = true];</code>
        */
       public Builder setSecProperty(
           int index, int value) {
@@ -5698,7 +5698,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+       * <code>repeated uint32 secProperty = 6 [packed = true];</code>
        */
       public Builder addSecProperty(int value) {
         ensureSecPropertyIsMutable();
@@ -5707,7 +5707,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+       * <code>repeated uint32 secProperty = 6 [packed = true];</code>
        */
       public Builder addAllSecProperty(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -5718,7 +5718,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+       * <code>repeated uint32 secProperty = 6 [packed = true];</code>
        */
       public Builder clearSecProperty() {
         secProperty_ = java.util.Collections.emptyList();
@@ -5827,129 +5827,129 @@ public final class Messages {
     int getSize();
 
     /**
-     * <code>optional uint32 epid_group_status = 3;</code>
+     * <code>optional uint32 epidGroupStatus = 3;</code>
      */
     boolean hasEpidGroupStatus();
     /**
-     * <code>optional uint32 epid_group_status = 3;</code>
+     * <code>optional uint32 epidGroupStatus = 3;</code>
      */
     int getEpidGroupStatus();
 
     /**
-     * <code>optional uint32 tcb_evaluation_status = 4;</code>
+     * <code>optional uint32 tcbEvaluationStatus = 4;</code>
      */
     boolean hasTcbEvaluationStatus();
     /**
-     * <code>optional uint32 tcb_evaluation_status = 4;</code>
+     * <code>optional uint32 tcbEvaluationStatus = 4;</code>
      */
     int getTcbEvaluationStatus();
 
     /**
-     * <code>optional uint32 pse_evaluation_status = 5;</code>
+     * <code>optional uint32 pseEvaluationStatus = 5;</code>
      */
     boolean hasPseEvaluationStatus();
     /**
-     * <code>optional uint32 pse_evaluation_status = 5;</code>
+     * <code>optional uint32 pseEvaluationStatus = 5;</code>
      */
     int getPseEvaluationStatus();
 
     /**
-     * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+     * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getLatestEquivalentTcbPsvnList();
     /**
-     * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+     * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
      */
     int getLatestEquivalentTcbPsvnCount();
     /**
-     * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+     * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
      */
     int getLatestEquivalentTcbPsvn(int index);
 
     /**
-     * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+     * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getLatestPseIsvsvnList();
     /**
-     * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+     * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
      */
     int getLatestPseIsvsvnCount();
     /**
-     * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+     * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
      */
     int getLatestPseIsvsvn(int index);
 
     /**
-     * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+     * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getLatestPsdaSvnList();
     /**
-     * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+     * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
      */
     int getLatestPsdaSvnCount();
     /**
-     * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+     * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
      */
     int getLatestPsdaSvn(int index);
 
     /**
-     * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+     * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getPerformanceRekeyGidList();
     /**
-     * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+     * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
      */
     int getPerformanceRekeyGidCount();
     /**
-     * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+     * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
      */
     int getPerformanceRekeyGid(int index);
 
     /**
-     * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+     * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getEcSign256XList();
     /**
-     * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+     * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
      */
     int getEcSign256XCount();
     /**
-     * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+     * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
      */
     int getEcSign256X(int index);
 
     /**
-     * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+     * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getEcSign256YList();
     /**
-     * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+     * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
      */
     int getEcSign256YCount();
     /**
-     * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+     * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
      */
     int getEcSign256Y(int index);
 
     /**
-     * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+     * <code>repeated uint32 macSmk = 12 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getMacSmkList();
     /**
-     * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+     * <code>repeated uint32 macSmk = 12 [packed = true];</code>
      */
     int getMacSmkCount();
     /**
-     * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+     * <code>repeated uint32 macSmk = 12 [packed = true];</code>
      */
     int getMacSmk(int index);
 
     /**
-     * <code>optional uint32 result_size = 13;</code>
+     * <code>optional uint32 resultSize = 13;</code>
      */
     boolean hasResultSize();
     /**
-     * <code>optional uint32 result_size = 13;</code>
+     * <code>optional uint32 resultSize = 13;</code>
      */
     int getResultSize();
 
@@ -5967,15 +5967,15 @@ public final class Messages {
     int getReserved(int index);
 
     /**
-     * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+     * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getPayloadTagList();
     /**
-     * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+     * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
      */
     int getPayloadTagCount();
     /**
-     * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+     * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
      */
     int getPayloadTag(int index);
 
@@ -6390,222 +6390,222 @@ public final class Messages {
       return size_;
     }
 
-    public static final int EPID_GROUP_STATUS_FIELD_NUMBER = 3;
+    public static final int EPIDGROUPSTATUS_FIELD_NUMBER = 3;
     private int epidGroupStatus_;
     /**
-     * <code>optional uint32 epid_group_status = 3;</code>
+     * <code>optional uint32 epidGroupStatus = 3;</code>
      */
     public boolean hasEpidGroupStatus() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional uint32 epid_group_status = 3;</code>
+     * <code>optional uint32 epidGroupStatus = 3;</code>
      */
     public int getEpidGroupStatus() {
       return epidGroupStatus_;
     }
 
-    public static final int TCB_EVALUATION_STATUS_FIELD_NUMBER = 4;
+    public static final int TCBEVALUATIONSTATUS_FIELD_NUMBER = 4;
     private int tcbEvaluationStatus_;
     /**
-     * <code>optional uint32 tcb_evaluation_status = 4;</code>
+     * <code>optional uint32 tcbEvaluationStatus = 4;</code>
      */
     public boolean hasTcbEvaluationStatus() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional uint32 tcb_evaluation_status = 4;</code>
+     * <code>optional uint32 tcbEvaluationStatus = 4;</code>
      */
     public int getTcbEvaluationStatus() {
       return tcbEvaluationStatus_;
     }
 
-    public static final int PSE_EVALUATION_STATUS_FIELD_NUMBER = 5;
+    public static final int PSEEVALUATIONSTATUS_FIELD_NUMBER = 5;
     private int pseEvaluationStatus_;
     /**
-     * <code>optional uint32 pse_evaluation_status = 5;</code>
+     * <code>optional uint32 pseEvaluationStatus = 5;</code>
      */
     public boolean hasPseEvaluationStatus() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional uint32 pse_evaluation_status = 5;</code>
+     * <code>optional uint32 pseEvaluationStatus = 5;</code>
      */
     public int getPseEvaluationStatus() {
       return pseEvaluationStatus_;
     }
 
-    public static final int LATEST_EQUIVALENT_TCB_PSVN_FIELD_NUMBER = 6;
+    public static final int LATESTEQUIVALENTTCBPSVN_FIELD_NUMBER = 6;
     private java.util.List<java.lang.Integer> latestEquivalentTcbPsvn_;
     /**
-     * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+     * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getLatestEquivalentTcbPsvnList() {
       return latestEquivalentTcbPsvn_;
     }
     /**
-     * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+     * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
      */
     public int getLatestEquivalentTcbPsvnCount() {
       return latestEquivalentTcbPsvn_.size();
     }
     /**
-     * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+     * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
      */
     public int getLatestEquivalentTcbPsvn(int index) {
       return latestEquivalentTcbPsvn_.get(index);
     }
     private int latestEquivalentTcbPsvnMemoizedSerializedSize = -1;
 
-    public static final int LATEST_PSE_ISVSVN_FIELD_NUMBER = 7;
+    public static final int LATESTPSEISVSVN_FIELD_NUMBER = 7;
     private java.util.List<java.lang.Integer> latestPseIsvsvn_;
     /**
-     * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+     * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getLatestPseIsvsvnList() {
       return latestPseIsvsvn_;
     }
     /**
-     * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+     * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
      */
     public int getLatestPseIsvsvnCount() {
       return latestPseIsvsvn_.size();
     }
     /**
-     * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+     * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
      */
     public int getLatestPseIsvsvn(int index) {
       return latestPseIsvsvn_.get(index);
     }
     private int latestPseIsvsvnMemoizedSerializedSize = -1;
 
-    public static final int LATEST_PSDA_SVN_FIELD_NUMBER = 8;
+    public static final int LATESTPSDASVN_FIELD_NUMBER = 8;
     private java.util.List<java.lang.Integer> latestPsdaSvn_;
     /**
-     * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+     * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getLatestPsdaSvnList() {
       return latestPsdaSvn_;
     }
     /**
-     * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+     * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
      */
     public int getLatestPsdaSvnCount() {
       return latestPsdaSvn_.size();
     }
     /**
-     * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+     * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
      */
     public int getLatestPsdaSvn(int index) {
       return latestPsdaSvn_.get(index);
     }
     private int latestPsdaSvnMemoizedSerializedSize = -1;
 
-    public static final int PERFORMANCE_REKEY_GID_FIELD_NUMBER = 9;
+    public static final int PERFORMANCEREKEYGID_FIELD_NUMBER = 9;
     private java.util.List<java.lang.Integer> performanceRekeyGid_;
     /**
-     * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+     * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getPerformanceRekeyGidList() {
       return performanceRekeyGid_;
     }
     /**
-     * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+     * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
      */
     public int getPerformanceRekeyGidCount() {
       return performanceRekeyGid_.size();
     }
     /**
-     * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+     * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
      */
     public int getPerformanceRekeyGid(int index) {
       return performanceRekeyGid_.get(index);
     }
     private int performanceRekeyGidMemoizedSerializedSize = -1;
 
-    public static final int EC_SIGN256_X_FIELD_NUMBER = 10;
+    public static final int ECSIGN256X_FIELD_NUMBER = 10;
     private java.util.List<java.lang.Integer> ecSign256X_;
     /**
-     * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+     * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getEcSign256XList() {
       return ecSign256X_;
     }
     /**
-     * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+     * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
      */
     public int getEcSign256XCount() {
       return ecSign256X_.size();
     }
     /**
-     * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+     * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
      */
     public int getEcSign256X(int index) {
       return ecSign256X_.get(index);
     }
     private int ecSign256XMemoizedSerializedSize = -1;
 
-    public static final int EC_SIGN256_Y_FIELD_NUMBER = 11;
+    public static final int ECSIGN256Y_FIELD_NUMBER = 11;
     private java.util.List<java.lang.Integer> ecSign256Y_;
     /**
-     * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+     * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getEcSign256YList() {
       return ecSign256Y_;
     }
     /**
-     * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+     * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
      */
     public int getEcSign256YCount() {
       return ecSign256Y_.size();
     }
     /**
-     * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+     * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
      */
     public int getEcSign256Y(int index) {
       return ecSign256Y_.get(index);
     }
     private int ecSign256YMemoizedSerializedSize = -1;
 
-    public static final int MAC_SMK_FIELD_NUMBER = 12;
+    public static final int MACSMK_FIELD_NUMBER = 12;
     private java.util.List<java.lang.Integer> macSmk_;
     /**
-     * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+     * <code>repeated uint32 macSmk = 12 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getMacSmkList() {
       return macSmk_;
     }
     /**
-     * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+     * <code>repeated uint32 macSmk = 12 [packed = true];</code>
      */
     public int getMacSmkCount() {
       return macSmk_.size();
     }
     /**
-     * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+     * <code>repeated uint32 macSmk = 12 [packed = true];</code>
      */
     public int getMacSmk(int index) {
       return macSmk_.get(index);
     }
     private int macSmkMemoizedSerializedSize = -1;
 
-    public static final int RESULT_SIZE_FIELD_NUMBER = 13;
+    public static final int RESULTSIZE_FIELD_NUMBER = 13;
     private int resultSize_;
     /**
-     * <code>optional uint32 result_size = 13;</code>
+     * <code>optional uint32 resultSize = 13;</code>
      */
     public boolean hasResultSize() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>optional uint32 result_size = 13;</code>
+     * <code>optional uint32 resultSize = 13;</code>
      */
     public int getResultSize() {
       return resultSize_;
@@ -6634,23 +6634,23 @@ public final class Messages {
     }
     private int reservedMemoizedSerializedSize = -1;
 
-    public static final int PAYLOAD_TAG_FIELD_NUMBER = 15;
+    public static final int PAYLOADTAG_FIELD_NUMBER = 15;
     private java.util.List<java.lang.Integer> payloadTag_;
     /**
-     * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+     * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getPayloadTagList() {
       return payloadTag_;
     }
     /**
-     * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+     * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
      */
     public int getPayloadTagCount() {
       return payloadTag_.size();
     }
     /**
-     * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+     * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
      */
     public int getPayloadTag(int index) {
       return payloadTag_.get(index);
@@ -7469,19 +7469,19 @@ public final class Messages {
 
       private int epidGroupStatus_ ;
       /**
-       * <code>optional uint32 epid_group_status = 3;</code>
+       * <code>optional uint32 epidGroupStatus = 3;</code>
        */
       public boolean hasEpidGroupStatus() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional uint32 epid_group_status = 3;</code>
+       * <code>optional uint32 epidGroupStatus = 3;</code>
        */
       public int getEpidGroupStatus() {
         return epidGroupStatus_;
       }
       /**
-       * <code>optional uint32 epid_group_status = 3;</code>
+       * <code>optional uint32 epidGroupStatus = 3;</code>
        */
       public Builder setEpidGroupStatus(int value) {
         bitField0_ |= 0x00000004;
@@ -7490,7 +7490,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional uint32 epid_group_status = 3;</code>
+       * <code>optional uint32 epidGroupStatus = 3;</code>
        */
       public Builder clearEpidGroupStatus() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -7501,19 +7501,19 @@ public final class Messages {
 
       private int tcbEvaluationStatus_ ;
       /**
-       * <code>optional uint32 tcb_evaluation_status = 4;</code>
+       * <code>optional uint32 tcbEvaluationStatus = 4;</code>
        */
       public boolean hasTcbEvaluationStatus() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional uint32 tcb_evaluation_status = 4;</code>
+       * <code>optional uint32 tcbEvaluationStatus = 4;</code>
        */
       public int getTcbEvaluationStatus() {
         return tcbEvaluationStatus_;
       }
       /**
-       * <code>optional uint32 tcb_evaluation_status = 4;</code>
+       * <code>optional uint32 tcbEvaluationStatus = 4;</code>
        */
       public Builder setTcbEvaluationStatus(int value) {
         bitField0_ |= 0x00000008;
@@ -7522,7 +7522,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional uint32 tcb_evaluation_status = 4;</code>
+       * <code>optional uint32 tcbEvaluationStatus = 4;</code>
        */
       public Builder clearTcbEvaluationStatus() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -7533,19 +7533,19 @@ public final class Messages {
 
       private int pseEvaluationStatus_ ;
       /**
-       * <code>optional uint32 pse_evaluation_status = 5;</code>
+       * <code>optional uint32 pseEvaluationStatus = 5;</code>
        */
       public boolean hasPseEvaluationStatus() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional uint32 pse_evaluation_status = 5;</code>
+       * <code>optional uint32 pseEvaluationStatus = 5;</code>
        */
       public int getPseEvaluationStatus() {
         return pseEvaluationStatus_;
       }
       /**
-       * <code>optional uint32 pse_evaluation_status = 5;</code>
+       * <code>optional uint32 pseEvaluationStatus = 5;</code>
        */
       public Builder setPseEvaluationStatus(int value) {
         bitField0_ |= 0x00000010;
@@ -7554,7 +7554,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional uint32 pse_evaluation_status = 5;</code>
+       * <code>optional uint32 pseEvaluationStatus = 5;</code>
        */
       public Builder clearPseEvaluationStatus() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -7571,26 +7571,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+       * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getLatestEquivalentTcbPsvnList() {
         return java.util.Collections.unmodifiableList(latestEquivalentTcbPsvn_);
       }
       /**
-       * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+       * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
        */
       public int getLatestEquivalentTcbPsvnCount() {
         return latestEquivalentTcbPsvn_.size();
       }
       /**
-       * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+       * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
        */
       public int getLatestEquivalentTcbPsvn(int index) {
         return latestEquivalentTcbPsvn_.get(index);
       }
       /**
-       * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+       * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
        */
       public Builder setLatestEquivalentTcbPsvn(
           int index, int value) {
@@ -7600,7 +7600,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+       * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
        */
       public Builder addLatestEquivalentTcbPsvn(int value) {
         ensureLatestEquivalentTcbPsvnIsMutable();
@@ -7609,7 +7609,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+       * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
        */
       public Builder addAllLatestEquivalentTcbPsvn(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -7620,7 +7620,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+       * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
        */
       public Builder clearLatestEquivalentTcbPsvn() {
         latestEquivalentTcbPsvn_ = java.util.Collections.emptyList();
@@ -7637,26 +7637,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+       * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getLatestPseIsvsvnList() {
         return java.util.Collections.unmodifiableList(latestPseIsvsvn_);
       }
       /**
-       * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+       * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
        */
       public int getLatestPseIsvsvnCount() {
         return latestPseIsvsvn_.size();
       }
       /**
-       * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+       * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
        */
       public int getLatestPseIsvsvn(int index) {
         return latestPseIsvsvn_.get(index);
       }
       /**
-       * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+       * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
        */
       public Builder setLatestPseIsvsvn(
           int index, int value) {
@@ -7666,7 +7666,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+       * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
        */
       public Builder addLatestPseIsvsvn(int value) {
         ensureLatestPseIsvsvnIsMutable();
@@ -7675,7 +7675,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+       * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
        */
       public Builder addAllLatestPseIsvsvn(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -7686,7 +7686,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+       * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
        */
       public Builder clearLatestPseIsvsvn() {
         latestPseIsvsvn_ = java.util.Collections.emptyList();
@@ -7703,26 +7703,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+       * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getLatestPsdaSvnList() {
         return java.util.Collections.unmodifiableList(latestPsdaSvn_);
       }
       /**
-       * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+       * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
        */
       public int getLatestPsdaSvnCount() {
         return latestPsdaSvn_.size();
       }
       /**
-       * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+       * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
        */
       public int getLatestPsdaSvn(int index) {
         return latestPsdaSvn_.get(index);
       }
       /**
-       * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+       * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
        */
       public Builder setLatestPsdaSvn(
           int index, int value) {
@@ -7732,7 +7732,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+       * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
        */
       public Builder addLatestPsdaSvn(int value) {
         ensureLatestPsdaSvnIsMutable();
@@ -7741,7 +7741,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+       * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
        */
       public Builder addAllLatestPsdaSvn(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -7752,7 +7752,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+       * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
        */
       public Builder clearLatestPsdaSvn() {
         latestPsdaSvn_ = java.util.Collections.emptyList();
@@ -7769,26 +7769,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+       * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getPerformanceRekeyGidList() {
         return java.util.Collections.unmodifiableList(performanceRekeyGid_);
       }
       /**
-       * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+       * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
        */
       public int getPerformanceRekeyGidCount() {
         return performanceRekeyGid_.size();
       }
       /**
-       * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+       * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
        */
       public int getPerformanceRekeyGid(int index) {
         return performanceRekeyGid_.get(index);
       }
       /**
-       * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+       * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
        */
       public Builder setPerformanceRekeyGid(
           int index, int value) {
@@ -7798,7 +7798,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+       * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
        */
       public Builder addPerformanceRekeyGid(int value) {
         ensurePerformanceRekeyGidIsMutable();
@@ -7807,7 +7807,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+       * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
        */
       public Builder addAllPerformanceRekeyGid(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -7818,7 +7818,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+       * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
        */
       public Builder clearPerformanceRekeyGid() {
         performanceRekeyGid_ = java.util.Collections.emptyList();
@@ -7835,26 +7835,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+       * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getEcSign256XList() {
         return java.util.Collections.unmodifiableList(ecSign256X_);
       }
       /**
-       * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+       * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
        */
       public int getEcSign256XCount() {
         return ecSign256X_.size();
       }
       /**
-       * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+       * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
        */
       public int getEcSign256X(int index) {
         return ecSign256X_.get(index);
       }
       /**
-       * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+       * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
        */
       public Builder setEcSign256X(
           int index, int value) {
@@ -7864,7 +7864,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+       * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
        */
       public Builder addEcSign256X(int value) {
         ensureEcSign256XIsMutable();
@@ -7873,7 +7873,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+       * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
        */
       public Builder addAllEcSign256X(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -7884,7 +7884,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+       * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
        */
       public Builder clearEcSign256X() {
         ecSign256X_ = java.util.Collections.emptyList();
@@ -7901,26 +7901,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+       * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getEcSign256YList() {
         return java.util.Collections.unmodifiableList(ecSign256Y_);
       }
       /**
-       * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+       * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
        */
       public int getEcSign256YCount() {
         return ecSign256Y_.size();
       }
       /**
-       * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+       * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
        */
       public int getEcSign256Y(int index) {
         return ecSign256Y_.get(index);
       }
       /**
-       * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+       * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
        */
       public Builder setEcSign256Y(
           int index, int value) {
@@ -7930,7 +7930,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+       * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
        */
       public Builder addEcSign256Y(int value) {
         ensureEcSign256YIsMutable();
@@ -7939,7 +7939,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+       * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
        */
       public Builder addAllEcSign256Y(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -7950,7 +7950,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+       * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
        */
       public Builder clearEcSign256Y() {
         ecSign256Y_ = java.util.Collections.emptyList();
@@ -7967,26 +7967,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+       * <code>repeated uint32 macSmk = 12 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getMacSmkList() {
         return java.util.Collections.unmodifiableList(macSmk_);
       }
       /**
-       * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+       * <code>repeated uint32 macSmk = 12 [packed = true];</code>
        */
       public int getMacSmkCount() {
         return macSmk_.size();
       }
       /**
-       * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+       * <code>repeated uint32 macSmk = 12 [packed = true];</code>
        */
       public int getMacSmk(int index) {
         return macSmk_.get(index);
       }
       /**
-       * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+       * <code>repeated uint32 macSmk = 12 [packed = true];</code>
        */
       public Builder setMacSmk(
           int index, int value) {
@@ -7996,7 +7996,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+       * <code>repeated uint32 macSmk = 12 [packed = true];</code>
        */
       public Builder addMacSmk(int value) {
         ensureMacSmkIsMutable();
@@ -8005,7 +8005,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+       * <code>repeated uint32 macSmk = 12 [packed = true];</code>
        */
       public Builder addAllMacSmk(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -8016,7 +8016,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+       * <code>repeated uint32 macSmk = 12 [packed = true];</code>
        */
       public Builder clearMacSmk() {
         macSmk_ = java.util.Collections.emptyList();
@@ -8027,19 +8027,19 @@ public final class Messages {
 
       private int resultSize_ ;
       /**
-       * <code>optional uint32 result_size = 13;</code>
+       * <code>optional uint32 resultSize = 13;</code>
        */
       public boolean hasResultSize() {
         return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
-       * <code>optional uint32 result_size = 13;</code>
+       * <code>optional uint32 resultSize = 13;</code>
        */
       public int getResultSize() {
         return resultSize_;
       }
       /**
-       * <code>optional uint32 result_size = 13;</code>
+       * <code>optional uint32 resultSize = 13;</code>
        */
       public Builder setResultSize(int value) {
         bitField0_ |= 0x00001000;
@@ -8048,7 +8048,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional uint32 result_size = 13;</code>
+       * <code>optional uint32 resultSize = 13;</code>
        */
       public Builder clearResultSize() {
         bitField0_ = (bitField0_ & ~0x00001000);
@@ -8131,26 +8131,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+       * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getPayloadTagList() {
         return java.util.Collections.unmodifiableList(payloadTag_);
       }
       /**
-       * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+       * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
        */
       public int getPayloadTagCount() {
         return payloadTag_.size();
       }
       /**
-       * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+       * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
        */
       public int getPayloadTag(int index) {
         return payloadTag_.get(index);
       }
       /**
-       * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+       * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
        */
       public Builder setPayloadTag(
           int index, int value) {
@@ -8160,7 +8160,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+       * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
        */
       public Builder addPayloadTag(int value) {
         ensurePayloadTagIsMutable();
@@ -8169,7 +8169,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+       * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
        */
       public Builder addAllPayloadTag(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -8180,7 +8180,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+       * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
        */
       public Builder clearPayloadTag() {
         payloadTag_ = java.util.Collections.emptyList();
@@ -8280,28 +8280,28 @@ public final class Messages {
     Messages.Messages.Type getType();
 
     /**
-     * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+     * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
      */
-    boolean hasSerectMsg();
+    boolean hasSecretMsg();
     /**
-     * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+     * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
      */
-    Messages.Messages.SecretMessage getSerectMsg();
+    Messages.Messages.SecretMessage getSecretMsg();
     /**
-     * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+     * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
      */
-    Messages.Messages.SecretMessageOrBuilder getSerectMsgOrBuilder();
+    Messages.Messages.SecretMessageOrBuilder getSecretMsgOrBuilder();
 
     /**
-     * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+     * <code>optional .Messages.InitialMessage initMsg = 3;</code>
      */
     boolean hasInitMsg();
     /**
-     * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+     * <code>optional .Messages.InitialMessage initMsg = 3;</code>
      */
     Messages.Messages.InitialMessage getInitMsg();
     /**
-     * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+     * <code>optional .Messages.InitialMessage initMsg = 3;</code>
      */
     Messages.Messages.InitialMessageOrBuilder getInitMsgOrBuilder();
 
@@ -8358,15 +8358,15 @@ public final class Messages {
     Messages.Messages.MessageMSG3OrBuilder getMsg3OrBuilder();
 
     /**
-     * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+     * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
      */
     boolean hasAttestMsg();
     /**
-     * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+     * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
      */
     Messages.Messages.AttestationMessage getAttestMsg();
     /**
-     * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+     * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
      */
     Messages.Messages.AttestationMessageOrBuilder getAttestMsgOrBuilder();
   }
@@ -8436,12 +8436,12 @@ public final class Messages {
             case 18: {
               Messages.Messages.SecretMessage.Builder subBuilder = null;
               if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                subBuilder = serectMsg_.toBuilder();
+                subBuilder = secretMsg_.toBuilder();
               }
-              serectMsg_ = input.readMessage(Messages.Messages.SecretMessage.PARSER, extensionRegistry);
+              secretMsg_ = input.readMessage(Messages.Messages.SecretMessage.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(serectMsg_);
-                serectMsg_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(secretMsg_);
+                secretMsg_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000002;
               break;
@@ -8579,43 +8579,43 @@ public final class Messages {
       return type_;
     }
 
-    public static final int SERECT_MSG_FIELD_NUMBER = 2;
-    private Messages.Messages.SecretMessage serectMsg_;
+    public static final int SECRETMSG_FIELD_NUMBER = 2;
+    private Messages.Messages.SecretMessage secretMsg_;
     /**
-     * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+     * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
      */
-    public boolean hasSerectMsg() {
+    public boolean hasSecretMsg() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+     * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
      */
-    public Messages.Messages.SecretMessage getSerectMsg() {
-      return serectMsg_;
+    public Messages.Messages.SecretMessage getSecretMsg() {
+      return secretMsg_;
     }
     /**
-     * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+     * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
      */
-    public Messages.Messages.SecretMessageOrBuilder getSerectMsgOrBuilder() {
-      return serectMsg_;
+    public Messages.Messages.SecretMessageOrBuilder getSecretMsgOrBuilder() {
+      return secretMsg_;
     }
 
-    public static final int INIT_MSG_FIELD_NUMBER = 3;
+    public static final int INITMSG_FIELD_NUMBER = 3;
     private Messages.Messages.InitialMessage initMsg_;
     /**
-     * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+     * <code>optional .Messages.InitialMessage initMsg = 3;</code>
      */
     public boolean hasInitMsg() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+     * <code>optional .Messages.InitialMessage initMsg = 3;</code>
      */
     public Messages.Messages.InitialMessage getInitMsg() {
       return initMsg_;
     }
     /**
-     * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+     * <code>optional .Messages.InitialMessage initMsg = 3;</code>
      */
     public Messages.Messages.InitialMessageOrBuilder getInitMsgOrBuilder() {
       return initMsg_;
@@ -8705,22 +8705,22 @@ public final class Messages {
       return msg3_;
     }
 
-    public static final int ATTEST_MSG_FIELD_NUMBER = 8;
+    public static final int ATTESTMSG_FIELD_NUMBER = 8;
     private Messages.Messages.AttestationMessage attestMsg_;
     /**
-     * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+     * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
      */
     public boolean hasAttestMsg() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+     * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
      */
     public Messages.Messages.AttestationMessage getAttestMsg() {
       return attestMsg_;
     }
     /**
-     * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+     * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
      */
     public Messages.Messages.AttestationMessageOrBuilder getAttestMsgOrBuilder() {
       return attestMsg_;
@@ -8728,7 +8728,7 @@ public final class Messages {
 
     private void initFields() {
       type_ = Messages.Messages.Type.RA_MSG0;
-      serectMsg_ = Messages.Messages.SecretMessage.getDefaultInstance();
+      secretMsg_ = Messages.Messages.SecretMessage.getDefaultInstance();
       initMsg_ = Messages.Messages.InitialMessage.getDefaultInstance();
       msg0_ = Messages.Messages.MessageMSG0.getDefaultInstance();
       msg1_ = Messages.Messages.MessageMSG1.getDefaultInstance();
@@ -8746,8 +8746,8 @@ public final class Messages {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (hasSerectMsg()) {
-        if (!getSerectMsg().isInitialized()) {
+      if (hasSecretMsg()) {
+        if (!getSecretMsg().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -8799,7 +8799,7 @@ public final class Messages {
         output.writeEnum(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeMessage(2, serectMsg_);
+        output.writeMessage(2, secretMsg_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeMessage(3, initMsg_);
@@ -8834,7 +8834,7 @@ public final class Messages {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, serectMsg_);
+          .computeMessageSize(2, secretMsg_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -8969,7 +8969,7 @@ public final class Messages {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getSerectMsgFieldBuilder();
+          getSecretMsgFieldBuilder();
           getInitMsgFieldBuilder();
           getMsg0FieldBuilder();
           getMsg1FieldBuilder();
@@ -8986,10 +8986,10 @@ public final class Messages {
         super.clear();
         type_ = Messages.Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (serectMsgBuilder_ == null) {
-          serectMsg_ = Messages.Messages.SecretMessage.getDefaultInstance();
+        if (secretMsgBuilder_ == null) {
+          secretMsg_ = Messages.Messages.SecretMessage.getDefaultInstance();
         } else {
-          serectMsgBuilder_.clear();
+          secretMsgBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
         if (initMsgBuilder_ == null) {
@@ -9063,10 +9063,10 @@ public final class Messages {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        if (serectMsgBuilder_ == null) {
-          result.serectMsg_ = serectMsg_;
+        if (secretMsgBuilder_ == null) {
+          result.secretMsg_ = secretMsg_;
         } else {
-          result.serectMsg_ = serectMsgBuilder_.build();
+          result.secretMsg_ = secretMsgBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
@@ -9135,8 +9135,8 @@ public final class Messages {
         if (other.hasType()) {
           setType(other.getType());
         }
-        if (other.hasSerectMsg()) {
-          mergeSerectMsg(other.getSerectMsg());
+        if (other.hasSecretMsg()) {
+          mergeSecretMsg(other.getSecretMsg());
         }
         if (other.hasInitMsg()) {
           mergeInitMsg(other.getInitMsg());
@@ -9165,8 +9165,8 @@ public final class Messages {
           
           return false;
         }
-        if (hasSerectMsg()) {
-          if (!getSerectMsg().isInitialized()) {
+        if (hasSecretMsg()) {
+          if (!getSecretMsg().isInitialized()) {
             
             return false;
           }
@@ -9264,133 +9264,133 @@ public final class Messages {
         return this;
       }
 
-      private Messages.Messages.SecretMessage serectMsg_ = Messages.Messages.SecretMessage.getDefaultInstance();
+      private Messages.Messages.SecretMessage secretMsg_ = Messages.Messages.SecretMessage.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          Messages.Messages.SecretMessage, Messages.Messages.SecretMessage.Builder, Messages.Messages.SecretMessageOrBuilder> serectMsgBuilder_;
+          Messages.Messages.SecretMessage, Messages.Messages.SecretMessage.Builder, Messages.Messages.SecretMessageOrBuilder> secretMsgBuilder_;
       /**
-       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
        */
-      public boolean hasSerectMsg() {
+      public boolean hasSecretMsg() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
        */
-      public Messages.Messages.SecretMessage getSerectMsg() {
-        if (serectMsgBuilder_ == null) {
-          return serectMsg_;
+      public Messages.Messages.SecretMessage getSecretMsg() {
+        if (secretMsgBuilder_ == null) {
+          return secretMsg_;
         } else {
-          return serectMsgBuilder_.getMessage();
+          return secretMsgBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
        */
-      public Builder setSerectMsg(Messages.Messages.SecretMessage value) {
-        if (serectMsgBuilder_ == null) {
+      public Builder setSecretMsg(Messages.Messages.SecretMessage value) {
+        if (secretMsgBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          serectMsg_ = value;
+          secretMsg_ = value;
           onChanged();
         } else {
-          serectMsgBuilder_.setMessage(value);
+          secretMsgBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
        */
-      public Builder setSerectMsg(
+      public Builder setSecretMsg(
           Messages.Messages.SecretMessage.Builder builderForValue) {
-        if (serectMsgBuilder_ == null) {
-          serectMsg_ = builderForValue.build();
+        if (secretMsgBuilder_ == null) {
+          secretMsg_ = builderForValue.build();
           onChanged();
         } else {
-          serectMsgBuilder_.setMessage(builderForValue.build());
+          secretMsgBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
        */
-      public Builder mergeSerectMsg(Messages.Messages.SecretMessage value) {
-        if (serectMsgBuilder_ == null) {
+      public Builder mergeSecretMsg(Messages.Messages.SecretMessage value) {
+        if (secretMsgBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
-              serectMsg_ != Messages.Messages.SecretMessage.getDefaultInstance()) {
-            serectMsg_ =
-              Messages.Messages.SecretMessage.newBuilder(serectMsg_).mergeFrom(value).buildPartial();
+              secretMsg_ != Messages.Messages.SecretMessage.getDefaultInstance()) {
+            secretMsg_ =
+              Messages.Messages.SecretMessage.newBuilder(secretMsg_).mergeFrom(value).buildPartial();
           } else {
-            serectMsg_ = value;
+            secretMsg_ = value;
           }
           onChanged();
         } else {
-          serectMsgBuilder_.mergeFrom(value);
+          secretMsgBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
        */
-      public Builder clearSerectMsg() {
-        if (serectMsgBuilder_ == null) {
-          serectMsg_ = Messages.Messages.SecretMessage.getDefaultInstance();
+      public Builder clearSecretMsg() {
+        if (secretMsgBuilder_ == null) {
+          secretMsg_ = Messages.Messages.SecretMessage.getDefaultInstance();
           onChanged();
         } else {
-          serectMsgBuilder_.clear();
+          secretMsgBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
-       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
        */
-      public Messages.Messages.SecretMessage.Builder getSerectMsgBuilder() {
+      public Messages.Messages.SecretMessage.Builder getSecretMsgBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
-        return getSerectMsgFieldBuilder().getBuilder();
+        return getSecretMsgFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
        */
-      public Messages.Messages.SecretMessageOrBuilder getSerectMsgOrBuilder() {
-        if (serectMsgBuilder_ != null) {
-          return serectMsgBuilder_.getMessageOrBuilder();
+      public Messages.Messages.SecretMessageOrBuilder getSecretMsgOrBuilder() {
+        if (secretMsgBuilder_ != null) {
+          return secretMsgBuilder_.getMessageOrBuilder();
         } else {
-          return serectMsg_;
+          return secretMsg_;
         }
       }
       /**
-       * <code>optional .Messages.SecretMessage serect_msg = 2;</code>
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           Messages.Messages.SecretMessage, Messages.Messages.SecretMessage.Builder, Messages.Messages.SecretMessageOrBuilder> 
-          getSerectMsgFieldBuilder() {
-        if (serectMsgBuilder_ == null) {
-          serectMsgBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          getSecretMsgFieldBuilder() {
+        if (secretMsgBuilder_ == null) {
+          secretMsgBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               Messages.Messages.SecretMessage, Messages.Messages.SecretMessage.Builder, Messages.Messages.SecretMessageOrBuilder>(
-                  getSerectMsg(),
+                  getSecretMsg(),
                   getParentForChildren(),
                   isClean());
-          serectMsg_ = null;
+          secretMsg_ = null;
         }
-        return serectMsgBuilder_;
+        return secretMsgBuilder_;
       }
 
       private Messages.Messages.InitialMessage initMsg_ = Messages.Messages.InitialMessage.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           Messages.Messages.InitialMessage, Messages.Messages.InitialMessage.Builder, Messages.Messages.InitialMessageOrBuilder> initMsgBuilder_;
       /**
-       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
        */
       public boolean hasInitMsg() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
        */
       public Messages.Messages.InitialMessage getInitMsg() {
         if (initMsgBuilder_ == null) {
@@ -9400,7 +9400,7 @@ public final class Messages {
         }
       }
       /**
-       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
        */
       public Builder setInitMsg(Messages.Messages.InitialMessage value) {
         if (initMsgBuilder_ == null) {
@@ -9416,7 +9416,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
        */
       public Builder setInitMsg(
           Messages.Messages.InitialMessage.Builder builderForValue) {
@@ -9430,7 +9430,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
        */
       public Builder mergeInitMsg(Messages.Messages.InitialMessage value) {
         if (initMsgBuilder_ == null) {
@@ -9449,7 +9449,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
        */
       public Builder clearInitMsg() {
         if (initMsgBuilder_ == null) {
@@ -9462,7 +9462,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
        */
       public Messages.Messages.InitialMessage.Builder getInitMsgBuilder() {
         bitField0_ |= 0x00000004;
@@ -9470,7 +9470,7 @@ public final class Messages {
         return getInitMsgFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
        */
       public Messages.Messages.InitialMessageOrBuilder getInitMsgOrBuilder() {
         if (initMsgBuilder_ != null) {
@@ -9480,7 +9480,7 @@ public final class Messages {
         }
       }
       /**
-       * <code>optional .Messages.InitialMessage init_msg = 3;</code>
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           Messages.Messages.InitialMessage, Messages.Messages.InitialMessage.Builder, Messages.Messages.InitialMessageOrBuilder> 
@@ -9964,13 +9964,13 @@ public final class Messages {
       private com.google.protobuf.SingleFieldBuilder<
           Messages.Messages.AttestationMessage, Messages.Messages.AttestationMessage.Builder, Messages.Messages.AttestationMessageOrBuilder> attestMsgBuilder_;
       /**
-       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
        */
       public boolean hasAttestMsg() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
-       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
        */
       public Messages.Messages.AttestationMessage getAttestMsg() {
         if (attestMsgBuilder_ == null) {
@@ -9980,7 +9980,7 @@ public final class Messages {
         }
       }
       /**
-       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
        */
       public Builder setAttestMsg(Messages.Messages.AttestationMessage value) {
         if (attestMsgBuilder_ == null) {
@@ -9996,7 +9996,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
        */
       public Builder setAttestMsg(
           Messages.Messages.AttestationMessage.Builder builderForValue) {
@@ -10010,7 +10010,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
        */
       public Builder mergeAttestMsg(Messages.Messages.AttestationMessage value) {
         if (attestMsgBuilder_ == null) {
@@ -10029,7 +10029,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
        */
       public Builder clearAttestMsg() {
         if (attestMsgBuilder_ == null) {
@@ -10042,7 +10042,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
        */
       public Messages.Messages.AttestationMessage.Builder getAttestMsgBuilder() {
         bitField0_ |= 0x00000080;
@@ -10050,7 +10050,7 @@ public final class Messages {
         return getAttestMsgFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
        */
       public Messages.Messages.AttestationMessageOrBuilder getAttestMsgOrBuilder() {
         if (attestMsgBuilder_ != null) {
@@ -10060,7 +10060,7 @@ public final class Messages {
         }
       }
       /**
-       * <code>optional .Messages.AttestationMessage attest_msg = 8;</code>
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           Messages.Messages.AttestationMessage, Messages.Messages.AttestationMessage.Builder, Messages.Messages.AttestationMessageOrBuilder> 
@@ -10144,40 +10144,39 @@ public final class Messages {
       "id\030\002 \002(\r\022\016\n\006status\030\003 \001(\r\"^\n\013MessageMSG1\022" +
       "\034\n\004type\030\001 \002(\0162\016.Messages.Type\022\017\n\003GaX\030\002 \003" +
       "(\rB\002\020\001\022\017\n\003GaY\030\003 \003(\rB\002\020\001\022\017\n\003GID\030\004 \003(\rB\002\020\001" +
-      "\"\225\002\n\013MessageMSG2\022\034\n\004type\030\001 \002(\0162\016.Message" +
-      "s.Type\022\014\n\004size\030\002 \001(\r\022\031\n\rpublic_key_gx\030\003 ",
-      "\003(\rB\002\020\001\022\031\n\rpublic_key_gy\030\004 \003(\rB\002\020\001\022\022\n\nqu" +
-      "ote_type\030\005 \001(\r\022\020\n\004spid\030\006 \003(\rB\002\020\001\022\023\n\013cmac" +
-      "_kdf_id\030\007 \001(\r\022\027\n\013signature_x\030\010 \003(\rB\002\020\001\022\027" +
-      "\n\013signature_y\030\t \003(\rB\002\020\001\022\020\n\004smac\030\n \003(\rB\002\020" +
-      "\001\022\022\n\nsize_sigrl\030\013 \001(\r\022\021\n\005sigrl\030\014 \003(\rB\002\020\001" +
-      "\"\247\001\n\013MessageMSG3\022\034\n\004type\030\001 \002(\0162\016.Message" +
-      "s.Type\022\014\n\004size\030\002 \001(\r\022\023\n\007sgx_mac\030\003 \003(\rB\002\020" +
-      "\001\022\024\n\010gax_msg3\030\004 \003(\rB\002\020\001\022\024\n\010gay_msg3\030\005 \003(" +
-      "\rB\002\020\001\022\030\n\014sec_property\030\006 \003(\rB\002\020\001\022\021\n\005quote" +
-      "\030\007 \003(\rB\002\020\001\"\302\003\n\022AttestationMessage\022\034\n\004typ",
-      "e\030\001 \002(\0162\016.Messages.Type\022\014\n\004size\030\002 \002(\r\022\031\n" +
-      "\021epid_group_status\030\003 \001(\r\022\035\n\025tcb_evaluati" +
-      "on_status\030\004 \001(\r\022\035\n\025pse_evaluation_status" +
-      "\030\005 \001(\r\022&\n\032latest_equivalent_tcb_psvn\030\006 \003" +
-      "(\rB\002\020\001\022\035\n\021latest_pse_isvsvn\030\007 \003(\rB\002\020\001\022\033\n" +
-      "\017latest_psda_svn\030\010 \003(\rB\002\020\001\022!\n\025performanc" +
-      "e_rekey_gid\030\t \003(\rB\002\020\001\022\030\n\014ec_sign256_x\030\n " +
-      "\003(\rB\002\020\001\022\030\n\014ec_sign256_y\030\013 \003(\rB\002\020\001\022\023\n\007mac" +
-      "_smk\030\014 \003(\rB\002\020\001\022\023\n\013result_size\030\r \001(\r\022\024\n\010r" +
-      "eserved\030\016 \003(\rB\002\020\001\022\027\n\013payload_tag\030\017 \003(\rB\002",
-      "\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001\"\316\002\n\017AllInOneMess" +
-      "age\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022+\n\nser" +
-      "ect_msg\030\002 \001(\0132\027.Messages.SecretMessage\022*" +
-      "\n\010init_msg\030\003 \001(\0132\030.Messages.InitialMessa" +
-      "ge\022#\n\004msg0\030\004 \001(\0132\025.Messages.MessageMSG0\022" +
-      "#\n\004msg1\030\005 \001(\0132\025.Messages.MessageMSG1\022#\n\004" +
-      "msg2\030\006 \001(\0132\025.Messages.MessageMSG2\022#\n\004msg" +
-      "3\030\007 \001(\0132\025.Messages.MessageMSG3\0220\n\nattest" +
-      "_msg\030\010 \001(\0132\034.Messages.AttestationMessage" +
-      "*u\n\004Type\022\013\n\007RA_MSG0\020\000\022\013\n\007RA_MSG1\020\001\022\013\n\007RA",
-      "_MSG2\020\002\022\013\n\007RA_MSG3\020\003\022\021\n\rRA_ATT_RESULT\020\004\022" +
-      "\023\n\017RA_VERIFICATION\020\005\022\021\n\rRA_APP_ATT_OK\020\006"
+      "\"\213\002\n\013MessageMSG2\022\034\n\004type\030\001 \002(\0162\016.Message" +
+      "s.Type\022\014\n\004size\030\002 \001(\r\022\027\n\013publicKeyGx\030\003 \003(",
+      "\rB\002\020\001\022\027\n\013publicKeyGy\030\004 \003(\rB\002\020\001\022\021\n\tquoteT" +
+      "ype\030\005 \001(\r\022\020\n\004spid\030\006 \003(\rB\002\020\001\022\021\n\tcmacKdfId" +
+      "\030\007 \001(\r\022\026\n\nsignatureX\030\010 \003(\rB\002\020\001\022\026\n\nsignat" +
+      "ureY\030\t \003(\rB\002\020\001\022\020\n\004smac\030\n \003(\rB\002\020\001\022\021\n\tsize" +
+      "Sigrl\030\013 \001(\r\022\021\n\005sigrl\030\014 \003(\rB\002\020\001\"\243\001\n\013Messa" +
+      "geMSG3\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022\014\n\004" +
+      "size\030\002 \001(\r\022\022\n\006sgxMac\030\003 \003(\rB\002\020\001\022\023\n\007gaxMsg" +
+      "3\030\004 \003(\rB\002\020\001\022\023\n\007gayMsg3\030\005 \003(\rB\002\020\001\022\027\n\013secP" +
+      "roperty\030\006 \003(\rB\002\020\001\022\021\n\005quote\030\007 \003(\rB\002\020\001\"\254\003\n" +
+      "\022AttestationMessage\022\034\n\004type\030\001 \002(\0162\016.Mess",
+      "ages.Type\022\014\n\004size\030\002 \002(\r\022\027\n\017epidGroupStat" +
+      "us\030\003 \001(\r\022\033\n\023tcbEvaluationStatus\030\004 \001(\r\022\033\n" +
+      "\023pseEvaluationStatus\030\005 \001(\r\022#\n\027latestEqui" +
+      "valentTcbPsvn\030\006 \003(\rB\002\020\001\022\033\n\017latestPseIsvs" +
+      "vn\030\007 \003(\rB\002\020\001\022\031\n\rlatestPsdaSvn\030\010 \003(\rB\002\020\001\022" +
+      "\037\n\023performanceRekeyGid\030\t \003(\rB\002\020\001\022\026\n\necSi" +
+      "gn256X\030\n \003(\rB\002\020\001\022\026\n\necSign256Y\030\013 \003(\rB\002\020\001" +
+      "\022\022\n\006macSmk\030\014 \003(\rB\002\020\001\022\022\n\nresultSize\030\r \001(\r" +
+      "\022\024\n\010reserved\030\016 \003(\rB\002\020\001\022\026\n\npayloadTag\030\017 \003" +
+      "(\rB\002\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001\"\313\002\n\017AllInOne",
+      "Message\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022*\n" +
+      "\tsecretMsg\030\002 \001(\0132\027.Messages.SecretMessag" +
+      "e\022)\n\007initMsg\030\003 \001(\0132\030.Messages.InitialMes" +
+      "sage\022#\n\004msg0\030\004 \001(\0132\025.Messages.MessageMSG" +
+      "0\022#\n\004msg1\030\005 \001(\0132\025.Messages.MessageMSG1\022#" +
+      "\n\004msg2\030\006 \001(\0132\025.Messages.MessageMSG2\022#\n\004m" +
+      "sg3\030\007 \001(\0132\025.Messages.MessageMSG3\022/\n\tatte" +
+      "stMsg\030\010 \001(\0132\034.Messages.AttestationMessag" +
+      "e*u\n\004Type\022\013\n\007RA_MSG0\020\000\022\013\n\007RA_MSG1\020\001\022\013\n\007R" +
+      "A_MSG2\020\002\022\013\n\007RA_MSG3\020\003\022\021\n\rRA_ATT_RESULT\020\004",
+      "\022\023\n\017RA_VERIFICATION\020\005\022\021\n\rRA_APP_ATT_OK\020\006"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10238,7 +10237,7 @@ public final class Messages {
     internal_static_Messages_AllInOneMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_Messages_AllInOneMessage_descriptor,
-        new java.lang.String[] { "Type", "SerectMsg", "InitMsg", "Msg0", "Msg1", "Msg2", "Msg3", "AttestMsg", });
+        new java.lang.String[] { "Type", "SecretMsg", "InitMsg", "Msg0", "Msg1", "Msg2", "Msg3", "AttestMsg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

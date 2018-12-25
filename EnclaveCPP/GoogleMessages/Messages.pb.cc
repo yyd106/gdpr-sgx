@@ -126,15 +126,15 @@ void protobuf_AssignDesc_Messages_2eproto() {
   static const int MessageMSG2_offsets_[12] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, size_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, public_key_gx_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, public_key_gy_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, quote_type_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, publickeygx_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, publickeygy_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, quotetype_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, spid_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, cmac_kdf_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, signature_x_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, signature_y_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, cmackdfid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, signaturex_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, signaturey_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, smac_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, size_sigrl_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, sizesigrl_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, sigrl_),
   };
   MessageMSG2_reflection_ =
@@ -152,10 +152,10 @@ void protobuf_AssignDesc_Messages_2eproto() {
   static const int MessageMSG3_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG3, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG3, size_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG3, sgx_mac_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG3, gax_msg3_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG3, gay_msg3_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG3, sec_property_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG3, sgxmac_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG3, gaxmsg3_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG3, gaymsg3_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG3, secproperty_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG3, quote_),
   };
   MessageMSG3_reflection_ =
@@ -173,19 +173,19 @@ void protobuf_AssignDesc_Messages_2eproto() {
   static const int AttestationMessage_offsets_[16] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, size_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, epid_group_status_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, tcb_evaluation_status_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, pse_evaluation_status_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, latest_equivalent_tcb_psvn_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, latest_pse_isvsvn_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, latest_psda_svn_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, performance_rekey_gid_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, ec_sign256_x_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, ec_sign256_y_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, mac_smk_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, result_size_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, epidgroupstatus_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, tcbevaluationstatus_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, pseevaluationstatus_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, latestequivalenttcbpsvn_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, latestpseisvsvn_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, latestpsdasvn_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, performancerekeygid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, ecsign256x_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, ecsign256y_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, macsmk_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, resultsize_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, reserved_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, payload_tag_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, payloadtag_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, payload_),
   };
   AttestationMessage_reflection_ =
@@ -202,13 +202,13 @@ void protobuf_AssignDesc_Messages_2eproto() {
   AllInOneMessage_descriptor_ = file->message_type(7);
   static const int AllInOneMessage_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, type_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, serect_msg_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, init_msg_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, secretmsg_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, initmsg_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, msg0_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, msg1_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, msg2_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, msg3_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, attest_msg_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AllInOneMessage, attestmsg_),
   };
   AllInOneMessage_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -288,40 +288,39 @@ void protobuf_AddDesc_Messages_2eproto() {
     "id\030\002 \002(\r\022\016\n\006status\030\003 \001(\r\"^\n\013MessageMSG1\022"
     "\034\n\004type\030\001 \002(\0162\016.Messages.Type\022\017\n\003GaX\030\002 \003"
     "(\rB\002\020\001\022\017\n\003GaY\030\003 \003(\rB\002\020\001\022\017\n\003GID\030\004 \003(\rB\002\020\001"
-    "\"\225\002\n\013MessageMSG2\022\034\n\004type\030\001 \002(\0162\016.Message"
-    "s.Type\022\014\n\004size\030\002 \001(\r\022\031\n\rpublic_key_gx\030\003 "
-    "\003(\rB\002\020\001\022\031\n\rpublic_key_gy\030\004 \003(\rB\002\020\001\022\022\n\nqu"
-    "ote_type\030\005 \001(\r\022\020\n\004spid\030\006 \003(\rB\002\020\001\022\023\n\013cmac"
-    "_kdf_id\030\007 \001(\r\022\027\n\013signature_x\030\010 \003(\rB\002\020\001\022\027"
-    "\n\013signature_y\030\t \003(\rB\002\020\001\022\020\n\004smac\030\n \003(\rB\002\020"
-    "\001\022\022\n\nsize_sigrl\030\013 \001(\r\022\021\n\005sigrl\030\014 \003(\rB\002\020\001"
-    "\"\247\001\n\013MessageMSG3\022\034\n\004type\030\001 \002(\0162\016.Message"
-    "s.Type\022\014\n\004size\030\002 \001(\r\022\023\n\007sgx_mac\030\003 \003(\rB\002\020"
-    "\001\022\024\n\010gax_msg3\030\004 \003(\rB\002\020\001\022\024\n\010gay_msg3\030\005 \003("
-    "\rB\002\020\001\022\030\n\014sec_property\030\006 \003(\rB\002\020\001\022\021\n\005quote"
-    "\030\007 \003(\rB\002\020\001\"\302\003\n\022AttestationMessage\022\034\n\004typ"
-    "e\030\001 \002(\0162\016.Messages.Type\022\014\n\004size\030\002 \002(\r\022\031\n"
-    "\021epid_group_status\030\003 \001(\r\022\035\n\025tcb_evaluati"
-    "on_status\030\004 \001(\r\022\035\n\025pse_evaluation_status"
-    "\030\005 \001(\r\022&\n\032latest_equivalent_tcb_psvn\030\006 \003"
-    "(\rB\002\020\001\022\035\n\021latest_pse_isvsvn\030\007 \003(\rB\002\020\001\022\033\n"
-    "\017latest_psda_svn\030\010 \003(\rB\002\020\001\022!\n\025performanc"
-    "e_rekey_gid\030\t \003(\rB\002\020\001\022\030\n\014ec_sign256_x\030\n "
-    "\003(\rB\002\020\001\022\030\n\014ec_sign256_y\030\013 \003(\rB\002\020\001\022\023\n\007mac"
-    "_smk\030\014 \003(\rB\002\020\001\022\023\n\013result_size\030\r \001(\r\022\024\n\010r"
-    "eserved\030\016 \003(\rB\002\020\001\022\027\n\013payload_tag\030\017 \003(\rB\002"
-    "\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001\"\316\002\n\017AllInOneMess"
-    "age\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022+\n\nser"
-    "ect_msg\030\002 \001(\0132\027.Messages.SecretMessage\022*"
-    "\n\010init_msg\030\003 \001(\0132\030.Messages.InitialMessa"
-    "ge\022#\n\004msg0\030\004 \001(\0132\025.Messages.MessageMSG0\022"
-    "#\n\004msg1\030\005 \001(\0132\025.Messages.MessageMSG1\022#\n\004"
-    "msg2\030\006 \001(\0132\025.Messages.MessageMSG2\022#\n\004msg"
-    "3\030\007 \001(\0132\025.Messages.MessageMSG3\0220\n\nattest"
-    "_msg\030\010 \001(\0132\034.Messages.AttestationMessage"
-    "*u\n\004Type\022\013\n\007RA_MSG0\020\000\022\013\n\007RA_MSG1\020\001\022\013\n\007RA"
-    "_MSG2\020\002\022\013\n\007RA_MSG3\020\003\022\021\n\rRA_ATT_RESULT\020\004\022"
-    "\023\n\017RA_VERIFICATION\020\005\022\021\n\rRA_APP_ATT_OK\020\006", 1679);
+    "\"\213\002\n\013MessageMSG2\022\034\n\004type\030\001 \002(\0162\016.Message"
+    "s.Type\022\014\n\004size\030\002 \001(\r\022\027\n\013publicKeyGx\030\003 \003("
+    "\rB\002\020\001\022\027\n\013publicKeyGy\030\004 \003(\rB\002\020\001\022\021\n\tquoteT"
+    "ype\030\005 \001(\r\022\020\n\004spid\030\006 \003(\rB\002\020\001\022\021\n\tcmacKdfId"
+    "\030\007 \001(\r\022\026\n\nsignatureX\030\010 \003(\rB\002\020\001\022\026\n\nsignat"
+    "ureY\030\t \003(\rB\002\020\001\022\020\n\004smac\030\n \003(\rB\002\020\001\022\021\n\tsize"
+    "Sigrl\030\013 \001(\r\022\021\n\005sigrl\030\014 \003(\rB\002\020\001\"\243\001\n\013Messa"
+    "geMSG3\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022\014\n\004"
+    "size\030\002 \001(\r\022\022\n\006sgxMac\030\003 \003(\rB\002\020\001\022\023\n\007gaxMsg"
+    "3\030\004 \003(\rB\002\020\001\022\023\n\007gayMsg3\030\005 \003(\rB\002\020\001\022\027\n\013secP"
+    "roperty\030\006 \003(\rB\002\020\001\022\021\n\005quote\030\007 \003(\rB\002\020\001\"\254\003\n"
+    "\022AttestationMessage\022\034\n\004type\030\001 \002(\0162\016.Mess"
+    "ages.Type\022\014\n\004size\030\002 \002(\r\022\027\n\017epidGroupStat"
+    "us\030\003 \001(\r\022\033\n\023tcbEvaluationStatus\030\004 \001(\r\022\033\n"
+    "\023pseEvaluationStatus\030\005 \001(\r\022#\n\027latestEqui"
+    "valentTcbPsvn\030\006 \003(\rB\002\020\001\022\033\n\017latestPseIsvs"
+    "vn\030\007 \003(\rB\002\020\001\022\031\n\rlatestPsdaSvn\030\010 \003(\rB\002\020\001\022"
+    "\037\n\023performanceRekeyGid\030\t \003(\rB\002\020\001\022\026\n\necSi"
+    "gn256X\030\n \003(\rB\002\020\001\022\026\n\necSign256Y\030\013 \003(\rB\002\020\001"
+    "\022\022\n\006macSmk\030\014 \003(\rB\002\020\001\022\022\n\nresultSize\030\r \001(\r"
+    "\022\024\n\010reserved\030\016 \003(\rB\002\020\001\022\026\n\npayloadTag\030\017 \003"
+    "(\rB\002\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001\"\313\002\n\017AllInOne"
+    "Message\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022*\n"
+    "\tsecretMsg\030\002 \001(\0132\027.Messages.SecretMessag"
+    "e\022)\n\007initMsg\030\003 \001(\0132\030.Messages.InitialMes"
+    "sage\022#\n\004msg0\030\004 \001(\0132\025.Messages.MessageMSG"
+    "0\022#\n\004msg1\030\005 \001(\0132\025.Messages.MessageMSG1\022#"
+    "\n\004msg2\030\006 \001(\0132\025.Messages.MessageMSG2\022#\n\004m"
+    "sg3\030\007 \001(\0132\025.Messages.MessageMSG3\022/\n\tatte"
+    "stMsg\030\010 \001(\0132\034.Messages.AttestationMessag"
+    "e*u\n\004Type\022\013\n\007RA_MSG0\020\000\022\013\n\007RA_MSG1\020\001\022\013\n\007R"
+    "A_MSG2\020\002\022\013\n\007RA_MSG3\020\003\022\021\n\rRA_ATT_RESULT\020\004"
+    "\022\023\n\017RA_VERIFICATION\020\005\022\021\n\rRA_APP_ATT_OK\020\006", 1640);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Messages.proto", &protobuf_RegisterTypes);
   SecretMessage::default_instance_ = new SecretMessage();
@@ -1705,9 +1704,9 @@ void MessageMSG2::SharedCtor() {
   _cached_size_ = 0;
   type_ = 0;
   size_ = 0u;
-  quote_type_ = 0u;
-  cmac_kdf_id_ = 0u;
-  size_sigrl_ = 0u;
+  quotetype_ = 0u;
+  cmackdfid_ = 0u;
+  sizesigrl_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1754,17 +1753,17 @@ void MessageMSG2::Clear() {
   } while (0)
 
   ZR_(type_, size_);
-  ZR_(quote_type_, cmac_kdf_id_);
-  size_sigrl_ = 0u;
+  ZR_(quotetype_, cmackdfid_);
+  sizesigrl_ = 0u;
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
 
-  public_key_gx_.Clear();
-  public_key_gy_.Clear();
+  publickeygx_.Clear();
+  publickeygy_.Clear();
   spid_.Clear();
-  signature_x_.Clear();
-  signature_y_.Clear();
+  signaturex_.Clear();
+  signaturey_.Clear();
   smac_.Clear();
   sigrl_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1811,54 +1810,54 @@ bool MessageMSG2::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_public_key_gx;
+        if (input->ExpectTag(26)) goto parse_publicKeyGx;
         break;
       }
 
-      // repeated uint32 public_key_gx = 3 [packed = true];
+      // repeated uint32 publicKeyGx = 3 [packed = true];
       case 3: {
         if (tag == 26) {
-         parse_public_key_gx:
+         parse_publicKeyGx:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_public_key_gx())));
+                 input, this->mutable_publickeygx())));
         } else if (tag == 24) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 26, input, this->mutable_public_key_gx())));
+                 1, 26, input, this->mutable_publickeygx())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_public_key_gy;
+        if (input->ExpectTag(34)) goto parse_publicKeyGy;
         break;
       }
 
-      // repeated uint32 public_key_gy = 4 [packed = true];
+      // repeated uint32 publicKeyGy = 4 [packed = true];
       case 4: {
         if (tag == 34) {
-         parse_public_key_gy:
+         parse_publicKeyGy:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_public_key_gy())));
+                 input, this->mutable_publickeygy())));
         } else if (tag == 32) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 34, input, this->mutable_public_key_gy())));
+                 1, 34, input, this->mutable_publickeygy())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(40)) goto parse_quote_type;
+        if (input->ExpectTag(40)) goto parse_quoteType;
         break;
       }
 
-      // optional uint32 quote_type = 5;
+      // optional uint32 quoteType = 5;
       case 5: {
         if (tag == 40) {
-         parse_quote_type:
+         parse_quoteType:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &quote_type_)));
-          set_has_quote_type();
+                 input, &quotetype_)));
+          set_has_quotetype();
         } else {
           goto handle_unusual;
         }
@@ -1880,54 +1879,54 @@ bool MessageMSG2::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(56)) goto parse_cmac_kdf_id;
+        if (input->ExpectTag(56)) goto parse_cmacKdfId;
         break;
       }
 
-      // optional uint32 cmac_kdf_id = 7;
+      // optional uint32 cmacKdfId = 7;
       case 7: {
         if (tag == 56) {
-         parse_cmac_kdf_id:
+         parse_cmacKdfId:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &cmac_kdf_id_)));
-          set_has_cmac_kdf_id();
+                 input, &cmackdfid_)));
+          set_has_cmackdfid();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(66)) goto parse_signature_x;
+        if (input->ExpectTag(66)) goto parse_signatureX;
         break;
       }
 
-      // repeated uint32 signature_x = 8 [packed = true];
+      // repeated uint32 signatureX = 8 [packed = true];
       case 8: {
         if (tag == 66) {
-         parse_signature_x:
+         parse_signatureX:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_signature_x())));
+                 input, this->mutable_signaturex())));
         } else if (tag == 64) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 66, input, this->mutable_signature_x())));
+                 1, 66, input, this->mutable_signaturex())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(74)) goto parse_signature_y;
+        if (input->ExpectTag(74)) goto parse_signatureY;
         break;
       }
 
-      // repeated uint32 signature_y = 9 [packed = true];
+      // repeated uint32 signatureY = 9 [packed = true];
       case 9: {
         if (tag == 74) {
-         parse_signature_y:
+         parse_signatureY:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_signature_y())));
+                 input, this->mutable_signaturey())));
         } else if (tag == 72) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 74, input, this->mutable_signature_y())));
+                 1, 74, input, this->mutable_signaturey())));
         } else {
           goto handle_unusual;
         }
@@ -1949,18 +1948,18 @@ bool MessageMSG2::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(88)) goto parse_size_sigrl;
+        if (input->ExpectTag(88)) goto parse_sizeSigrl;
         break;
       }
 
-      // optional uint32 size_sigrl = 11;
+      // optional uint32 sizeSigrl = 11;
       case 11: {
         if (tag == 88) {
-         parse_size_sigrl:
+         parse_sizeSigrl:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &size_sigrl_)));
-          set_has_size_sigrl();
+                 input, &sizesigrl_)));
+          set_has_sizesigrl();
         } else {
           goto handle_unusual;
         }
@@ -2022,29 +2021,29 @@ void MessageMSG2::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->size(), output);
   }
 
-  // repeated uint32 public_key_gx = 3 [packed = true];
-  if (this->public_key_gx_size() > 0) {
+  // repeated uint32 publicKeyGx = 3 [packed = true];
+  if (this->publickeygx_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(3, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_public_key_gx_cached_byte_size_);
+    output->WriteVarint32(_publickeygx_cached_byte_size_);
   }
-  for (int i = 0; i < this->public_key_gx_size(); i++) {
+  for (int i = 0; i < this->publickeygx_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->public_key_gx(i), output);
+      this->publickeygx(i), output);
   }
 
-  // repeated uint32 public_key_gy = 4 [packed = true];
-  if (this->public_key_gy_size() > 0) {
+  // repeated uint32 publicKeyGy = 4 [packed = true];
+  if (this->publickeygy_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(4, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_public_key_gy_cached_byte_size_);
+    output->WriteVarint32(_publickeygy_cached_byte_size_);
   }
-  for (int i = 0; i < this->public_key_gy_size(); i++) {
+  for (int i = 0; i < this->publickeygy_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->public_key_gy(i), output);
+      this->publickeygy(i), output);
   }
 
-  // optional uint32 quote_type = 5;
-  if (has_quote_type()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->quote_type(), output);
+  // optional uint32 quoteType = 5;
+  if (has_quotetype()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->quotetype(), output);
   }
 
   // repeated uint32 spid = 6 [packed = true];
@@ -2057,29 +2056,29 @@ void MessageMSG2::SerializeWithCachedSizes(
       this->spid(i), output);
   }
 
-  // optional uint32 cmac_kdf_id = 7;
-  if (has_cmac_kdf_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(7, this->cmac_kdf_id(), output);
+  // optional uint32 cmacKdfId = 7;
+  if (has_cmackdfid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(7, this->cmackdfid(), output);
   }
 
-  // repeated uint32 signature_x = 8 [packed = true];
-  if (this->signature_x_size() > 0) {
+  // repeated uint32 signatureX = 8 [packed = true];
+  if (this->signaturex_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(8, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_signature_x_cached_byte_size_);
+    output->WriteVarint32(_signaturex_cached_byte_size_);
   }
-  for (int i = 0; i < this->signature_x_size(); i++) {
+  for (int i = 0; i < this->signaturex_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->signature_x(i), output);
+      this->signaturex(i), output);
   }
 
-  // repeated uint32 signature_y = 9 [packed = true];
-  if (this->signature_y_size() > 0) {
+  // repeated uint32 signatureY = 9 [packed = true];
+  if (this->signaturey_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(9, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_signature_y_cached_byte_size_);
+    output->WriteVarint32(_signaturey_cached_byte_size_);
   }
-  for (int i = 0; i < this->signature_y_size(); i++) {
+  for (int i = 0; i < this->signaturey_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->signature_y(i), output);
+      this->signaturey(i), output);
   }
 
   // repeated uint32 smac = 10 [packed = true];
@@ -2092,9 +2091,9 @@ void MessageMSG2::SerializeWithCachedSizes(
       this->smac(i), output);
   }
 
-  // optional uint32 size_sigrl = 11;
-  if (has_size_sigrl()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(11, this->size_sigrl(), output);
+  // optional uint32 sizeSigrl = 11;
+  if (has_sizesigrl()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(11, this->sizesigrl(), output);
   }
 
   // repeated uint32 sigrl = 12 [packed = true];
@@ -2128,37 +2127,37 @@ void MessageMSG2::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->size(), target);
   }
 
-  // repeated uint32 public_key_gx = 3 [packed = true];
-  if (this->public_key_gx_size() > 0) {
+  // repeated uint32 publicKeyGx = 3 [packed = true];
+  if (this->publickeygx_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       3,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _public_key_gx_cached_byte_size_, target);
+      _publickeygx_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->public_key_gx_size(); i++) {
+  for (int i = 0; i < this->publickeygx_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->public_key_gx(i), target);
+      WriteUInt32NoTagToArray(this->publickeygx(i), target);
   }
 
-  // repeated uint32 public_key_gy = 4 [packed = true];
-  if (this->public_key_gy_size() > 0) {
+  // repeated uint32 publicKeyGy = 4 [packed = true];
+  if (this->publickeygy_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       4,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _public_key_gy_cached_byte_size_, target);
+      _publickeygy_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->public_key_gy_size(); i++) {
+  for (int i = 0; i < this->publickeygy_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->public_key_gy(i), target);
+      WriteUInt32NoTagToArray(this->publickeygy(i), target);
   }
 
-  // optional uint32 quote_type = 5;
-  if (has_quote_type()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->quote_type(), target);
+  // optional uint32 quoteType = 5;
+  if (has_quotetype()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->quotetype(), target);
   }
 
   // repeated uint32 spid = 6 [packed = true];
@@ -2175,37 +2174,37 @@ void MessageMSG2::SerializeWithCachedSizes(
       WriteUInt32NoTagToArray(this->spid(i), target);
   }
 
-  // optional uint32 cmac_kdf_id = 7;
-  if (has_cmac_kdf_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(7, this->cmac_kdf_id(), target);
+  // optional uint32 cmacKdfId = 7;
+  if (has_cmackdfid()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(7, this->cmackdfid(), target);
   }
 
-  // repeated uint32 signature_x = 8 [packed = true];
-  if (this->signature_x_size() > 0) {
+  // repeated uint32 signatureX = 8 [packed = true];
+  if (this->signaturex_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       8,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _signature_x_cached_byte_size_, target);
+      _signaturex_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->signature_x_size(); i++) {
+  for (int i = 0; i < this->signaturex_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->signature_x(i), target);
+      WriteUInt32NoTagToArray(this->signaturex(i), target);
   }
 
-  // repeated uint32 signature_y = 9 [packed = true];
-  if (this->signature_y_size() > 0) {
+  // repeated uint32 signatureY = 9 [packed = true];
+  if (this->signaturey_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       9,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _signature_y_cached_byte_size_, target);
+      _signaturey_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->signature_y_size(); i++) {
+  for (int i = 0; i < this->signaturey_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->signature_y(i), target);
+      WriteUInt32NoTagToArray(this->signaturey(i), target);
   }
 
   // repeated uint32 smac = 10 [packed = true];
@@ -2222,9 +2221,9 @@ void MessageMSG2::SerializeWithCachedSizes(
       WriteUInt32NoTagToArray(this->smac(i), target);
   }
 
-  // optional uint32 size_sigrl = 11;
-  if (has_size_sigrl()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(11, this->size_sigrl(), target);
+  // optional uint32 sizeSigrl = 11;
+  if (has_sizesigrl()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(11, this->sizesigrl(), target);
   }
 
   // repeated uint32 sigrl = 12 [packed = true];
@@ -2266,60 +2265,60 @@ int MessageMSG2::ByteSize() const {
           this->size());
     }
 
-    // optional uint32 quote_type = 5;
-    if (has_quote_type()) {
+    // optional uint32 quoteType = 5;
+    if (has_quotetype()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->quote_type());
+          this->quotetype());
     }
 
-    // optional uint32 cmac_kdf_id = 7;
-    if (has_cmac_kdf_id()) {
+    // optional uint32 cmacKdfId = 7;
+    if (has_cmackdfid()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->cmac_kdf_id());
+          this->cmackdfid());
     }
 
   }
   if (_has_bits_[10 / 32] & (0xffu << (10 % 32))) {
-    // optional uint32 size_sigrl = 11;
-    if (has_size_sigrl()) {
+    // optional uint32 sizeSigrl = 11;
+    if (has_sizesigrl()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->size_sigrl());
+          this->sizesigrl());
     }
 
   }
-  // repeated uint32 public_key_gx = 3 [packed = true];
+  // repeated uint32 publicKeyGx = 3 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->public_key_gx_size(); i++) {
+    for (int i = 0; i < this->publickeygx_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->public_key_gx(i));
+        UInt32Size(this->publickeygx(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _public_key_gx_cached_byte_size_ = data_size;
+    _publickeygx_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
-  // repeated uint32 public_key_gy = 4 [packed = true];
+  // repeated uint32 publicKeyGy = 4 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->public_key_gy_size(); i++) {
+    for (int i = 0; i < this->publickeygy_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->public_key_gy(i));
+        UInt32Size(this->publickeygy(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _public_key_gy_cached_byte_size_ = data_size;
+    _publickeygy_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
@@ -2341,36 +2340,36 @@ int MessageMSG2::ByteSize() const {
     total_size += data_size;
   }
 
-  // repeated uint32 signature_x = 8 [packed = true];
+  // repeated uint32 signatureX = 8 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->signature_x_size(); i++) {
+    for (int i = 0; i < this->signaturex_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->signature_x(i));
+        UInt32Size(this->signaturex(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _signature_x_cached_byte_size_ = data_size;
+    _signaturex_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
-  // repeated uint32 signature_y = 9 [packed = true];
+  // repeated uint32 signatureY = 9 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->signature_y_size(); i++) {
+    for (int i = 0; i < this->signaturey_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->signature_y(i));
+        UInt32Size(this->signaturey(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _signature_y_cached_byte_size_ = data_size;
+    _signaturey_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
@@ -2434,11 +2433,11 @@ void MessageMSG2::MergeFrom(const ::google::protobuf::Message& from) {
 
 void MessageMSG2::MergeFrom(const MessageMSG2& from) {
   GOOGLE_CHECK_NE(&from, this);
-  public_key_gx_.MergeFrom(from.public_key_gx_);
-  public_key_gy_.MergeFrom(from.public_key_gy_);
+  publickeygx_.MergeFrom(from.publickeygx_);
+  publickeygy_.MergeFrom(from.publickeygy_);
   spid_.MergeFrom(from.spid_);
-  signature_x_.MergeFrom(from.signature_x_);
-  signature_y_.MergeFrom(from.signature_y_);
+  signaturex_.MergeFrom(from.signaturex_);
+  signaturey_.MergeFrom(from.signaturey_);
   smac_.MergeFrom(from.smac_);
   sigrl_.MergeFrom(from.sigrl_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
@@ -2448,16 +2447,16 @@ void MessageMSG2::MergeFrom(const MessageMSG2& from) {
     if (from.has_size()) {
       set_size(from.size());
     }
-    if (from.has_quote_type()) {
-      set_quote_type(from.quote_type());
+    if (from.has_quotetype()) {
+      set_quotetype(from.quotetype());
     }
-    if (from.has_cmac_kdf_id()) {
-      set_cmac_kdf_id(from.cmac_kdf_id());
+    if (from.has_cmackdfid()) {
+      set_cmackdfid(from.cmackdfid());
     }
   }
   if (from._has_bits_[10 / 32] & (0xffu << (10 % 32))) {
-    if (from.has_size_sigrl()) {
-      set_size_sigrl(from.size_sigrl());
+    if (from.has_sizesigrl()) {
+      set_sizesigrl(from.sizesigrl());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -2485,15 +2484,15 @@ void MessageMSG2::Swap(MessageMSG2* other) {
   if (other != this) {
     std::swap(type_, other->type_);
     std::swap(size_, other->size_);
-    public_key_gx_.Swap(&other->public_key_gx_);
-    public_key_gy_.Swap(&other->public_key_gy_);
-    std::swap(quote_type_, other->quote_type_);
+    publickeygx_.Swap(&other->publickeygx_);
+    publickeygy_.Swap(&other->publickeygy_);
+    std::swap(quotetype_, other->quotetype_);
     spid_.Swap(&other->spid_);
-    std::swap(cmac_kdf_id_, other->cmac_kdf_id_);
-    signature_x_.Swap(&other->signature_x_);
-    signature_y_.Swap(&other->signature_y_);
+    std::swap(cmackdfid_, other->cmackdfid_);
+    signaturex_.Swap(&other->signaturex_);
+    signaturey_.Swap(&other->signaturey_);
     smac_.Swap(&other->smac_);
-    std::swap(size_sigrl_, other->size_sigrl_);
+    std::swap(sizesigrl_, other->sizesigrl_);
     sigrl_.Swap(&other->sigrl_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -2592,10 +2591,10 @@ void MessageMSG3::Clear() {
 #undef OFFSET_OF_FIELD_
 #undef ZR_
 
-  sgx_mac_.Clear();
-  gax_msg3_.Clear();
-  gay_msg3_.Clear();
-  sec_property_.Clear();
+  sgxmac_.Clear();
+  gaxmsg3_.Clear();
+  gaymsg3_.Clear();
+  secproperty_.Clear();
   quote_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -2641,75 +2640,75 @@ bool MessageMSG3::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_sgx_mac;
+        if (input->ExpectTag(26)) goto parse_sgxMac;
         break;
       }
 
-      // repeated uint32 sgx_mac = 3 [packed = true];
+      // repeated uint32 sgxMac = 3 [packed = true];
       case 3: {
         if (tag == 26) {
-         parse_sgx_mac:
+         parse_sgxMac:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_sgx_mac())));
+                 input, this->mutable_sgxmac())));
         } else if (tag == 24) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 26, input, this->mutable_sgx_mac())));
+                 1, 26, input, this->mutable_sgxmac())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_gax_msg3;
+        if (input->ExpectTag(34)) goto parse_gaxMsg3;
         break;
       }
 
-      // repeated uint32 gax_msg3 = 4 [packed = true];
+      // repeated uint32 gaxMsg3 = 4 [packed = true];
       case 4: {
         if (tag == 34) {
-         parse_gax_msg3:
+         parse_gaxMsg3:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_gax_msg3())));
+                 input, this->mutable_gaxmsg3())));
         } else if (tag == 32) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 34, input, this->mutable_gax_msg3())));
+                 1, 34, input, this->mutable_gaxmsg3())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(42)) goto parse_gay_msg3;
+        if (input->ExpectTag(42)) goto parse_gayMsg3;
         break;
       }
 
-      // repeated uint32 gay_msg3 = 5 [packed = true];
+      // repeated uint32 gayMsg3 = 5 [packed = true];
       case 5: {
         if (tag == 42) {
-         parse_gay_msg3:
+         parse_gayMsg3:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_gay_msg3())));
+                 input, this->mutable_gaymsg3())));
         } else if (tag == 40) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 42, input, this->mutable_gay_msg3())));
+                 1, 42, input, this->mutable_gaymsg3())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(50)) goto parse_sec_property;
+        if (input->ExpectTag(50)) goto parse_secProperty;
         break;
       }
 
-      // repeated uint32 sec_property = 6 [packed = true];
+      // repeated uint32 secProperty = 6 [packed = true];
       case 6: {
         if (tag == 50) {
-         parse_sec_property:
+         parse_secProperty:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_sec_property())));
+                 input, this->mutable_secproperty())));
         } else if (tag == 48) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 50, input, this->mutable_sec_property())));
+                 1, 50, input, this->mutable_secproperty())));
         } else {
           goto handle_unusual;
         }
@@ -2771,44 +2770,44 @@ void MessageMSG3::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->size(), output);
   }
 
-  // repeated uint32 sgx_mac = 3 [packed = true];
-  if (this->sgx_mac_size() > 0) {
+  // repeated uint32 sgxMac = 3 [packed = true];
+  if (this->sgxmac_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(3, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_sgx_mac_cached_byte_size_);
+    output->WriteVarint32(_sgxmac_cached_byte_size_);
   }
-  for (int i = 0; i < this->sgx_mac_size(); i++) {
+  for (int i = 0; i < this->sgxmac_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->sgx_mac(i), output);
+      this->sgxmac(i), output);
   }
 
-  // repeated uint32 gax_msg3 = 4 [packed = true];
-  if (this->gax_msg3_size() > 0) {
+  // repeated uint32 gaxMsg3 = 4 [packed = true];
+  if (this->gaxmsg3_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(4, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_gax_msg3_cached_byte_size_);
+    output->WriteVarint32(_gaxmsg3_cached_byte_size_);
   }
-  for (int i = 0; i < this->gax_msg3_size(); i++) {
+  for (int i = 0; i < this->gaxmsg3_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->gax_msg3(i), output);
+      this->gaxmsg3(i), output);
   }
 
-  // repeated uint32 gay_msg3 = 5 [packed = true];
-  if (this->gay_msg3_size() > 0) {
+  // repeated uint32 gayMsg3 = 5 [packed = true];
+  if (this->gaymsg3_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(5, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_gay_msg3_cached_byte_size_);
+    output->WriteVarint32(_gaymsg3_cached_byte_size_);
   }
-  for (int i = 0; i < this->gay_msg3_size(); i++) {
+  for (int i = 0; i < this->gaymsg3_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->gay_msg3(i), output);
+      this->gaymsg3(i), output);
   }
 
-  // repeated uint32 sec_property = 6 [packed = true];
-  if (this->sec_property_size() > 0) {
+  // repeated uint32 secProperty = 6 [packed = true];
+  if (this->secproperty_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(6, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_sec_property_cached_byte_size_);
+    output->WriteVarint32(_secproperty_cached_byte_size_);
   }
-  for (int i = 0; i < this->sec_property_size(); i++) {
+  for (int i = 0; i < this->secproperty_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->sec_property(i), output);
+      this->secproperty(i), output);
   }
 
   // repeated uint32 quote = 7 [packed = true];
@@ -2842,60 +2841,60 @@ void MessageMSG3::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->size(), target);
   }
 
-  // repeated uint32 sgx_mac = 3 [packed = true];
-  if (this->sgx_mac_size() > 0) {
+  // repeated uint32 sgxMac = 3 [packed = true];
+  if (this->sgxmac_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       3,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _sgx_mac_cached_byte_size_, target);
+      _sgxmac_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->sgx_mac_size(); i++) {
+  for (int i = 0; i < this->sgxmac_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->sgx_mac(i), target);
+      WriteUInt32NoTagToArray(this->sgxmac(i), target);
   }
 
-  // repeated uint32 gax_msg3 = 4 [packed = true];
-  if (this->gax_msg3_size() > 0) {
+  // repeated uint32 gaxMsg3 = 4 [packed = true];
+  if (this->gaxmsg3_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       4,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _gax_msg3_cached_byte_size_, target);
+      _gaxmsg3_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->gax_msg3_size(); i++) {
+  for (int i = 0; i < this->gaxmsg3_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->gax_msg3(i), target);
+      WriteUInt32NoTagToArray(this->gaxmsg3(i), target);
   }
 
-  // repeated uint32 gay_msg3 = 5 [packed = true];
-  if (this->gay_msg3_size() > 0) {
+  // repeated uint32 gayMsg3 = 5 [packed = true];
+  if (this->gaymsg3_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       5,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _gay_msg3_cached_byte_size_, target);
+      _gaymsg3_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->gay_msg3_size(); i++) {
+  for (int i = 0; i < this->gaymsg3_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->gay_msg3(i), target);
+      WriteUInt32NoTagToArray(this->gaymsg3(i), target);
   }
 
-  // repeated uint32 sec_property = 6 [packed = true];
-  if (this->sec_property_size() > 0) {
+  // repeated uint32 secProperty = 6 [packed = true];
+  if (this->secproperty_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       6,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _sec_property_cached_byte_size_, target);
+      _secproperty_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->sec_property_size(); i++) {
+  for (int i = 0; i < this->secproperty_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->sec_property(i), target);
+      WriteUInt32NoTagToArray(this->secproperty(i), target);
   }
 
   // repeated uint32 quote = 7 [packed = true];
@@ -2938,70 +2937,70 @@ int MessageMSG3::ByteSize() const {
     }
 
   }
-  // repeated uint32 sgx_mac = 3 [packed = true];
+  // repeated uint32 sgxMac = 3 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->sgx_mac_size(); i++) {
+    for (int i = 0; i < this->sgxmac_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->sgx_mac(i));
+        UInt32Size(this->sgxmac(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _sgx_mac_cached_byte_size_ = data_size;
+    _sgxmac_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
-  // repeated uint32 gax_msg3 = 4 [packed = true];
+  // repeated uint32 gaxMsg3 = 4 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->gax_msg3_size(); i++) {
+    for (int i = 0; i < this->gaxmsg3_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->gax_msg3(i));
+        UInt32Size(this->gaxmsg3(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _gax_msg3_cached_byte_size_ = data_size;
+    _gaxmsg3_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
-  // repeated uint32 gay_msg3 = 5 [packed = true];
+  // repeated uint32 gayMsg3 = 5 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->gay_msg3_size(); i++) {
+    for (int i = 0; i < this->gaymsg3_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->gay_msg3(i));
+        UInt32Size(this->gaymsg3(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _gay_msg3_cached_byte_size_ = data_size;
+    _gaymsg3_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
-  // repeated uint32 sec_property = 6 [packed = true];
+  // repeated uint32 secProperty = 6 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->sec_property_size(); i++) {
+    for (int i = 0; i < this->secproperty_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->sec_property(i));
+        UInt32Size(this->secproperty(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _sec_property_cached_byte_size_ = data_size;
+    _secproperty_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
@@ -3048,10 +3047,10 @@ void MessageMSG3::MergeFrom(const ::google::protobuf::Message& from) {
 
 void MessageMSG3::MergeFrom(const MessageMSG3& from) {
   GOOGLE_CHECK_NE(&from, this);
-  sgx_mac_.MergeFrom(from.sgx_mac_);
-  gax_msg3_.MergeFrom(from.gax_msg3_);
-  gay_msg3_.MergeFrom(from.gay_msg3_);
-  sec_property_.MergeFrom(from.sec_property_);
+  sgxmac_.MergeFrom(from.sgxmac_);
+  gaxmsg3_.MergeFrom(from.gaxmsg3_);
+  gaymsg3_.MergeFrom(from.gaymsg3_);
+  secproperty_.MergeFrom(from.secproperty_);
   quote_.MergeFrom(from.quote_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_type()) {
@@ -3086,10 +3085,10 @@ void MessageMSG3::Swap(MessageMSG3* other) {
   if (other != this) {
     std::swap(type_, other->type_);
     std::swap(size_, other->size_);
-    sgx_mac_.Swap(&other->sgx_mac_);
-    gax_msg3_.Swap(&other->gax_msg3_);
-    gay_msg3_.Swap(&other->gay_msg3_);
-    sec_property_.Swap(&other->sec_property_);
+    sgxmac_.Swap(&other->sgxmac_);
+    gaxmsg3_.Swap(&other->gaxmsg3_);
+    gaymsg3_.Swap(&other->gaymsg3_);
+    secproperty_.Swap(&other->secproperty_);
     quote_.Swap(&other->quote_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -3147,10 +3146,10 @@ void AttestationMessage::SharedCtor() {
   _cached_size_ = 0;
   type_ = 0;
   size_ = 0u;
-  epid_group_status_ = 0u;
-  tcb_evaluation_status_ = 0u;
-  pse_evaluation_status_ = 0u;
-  result_size_ = 0u;
+  epidgroupstatus_ = 0u;
+  tcbevaluationstatus_ = 0u;
+  pseevaluationstatus_ = 0u;
+  resultsize_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -3197,23 +3196,23 @@ void AttestationMessage::Clear() {
   } while (0)
 
   if (_has_bits_[0 / 32] & 31) {
-    ZR_(type_, tcb_evaluation_status_);
-    pse_evaluation_status_ = 0u;
+    ZR_(type_, tcbevaluationstatus_);
+    pseevaluationstatus_ = 0u;
   }
-  result_size_ = 0u;
+  resultsize_ = 0u;
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
 
-  latest_equivalent_tcb_psvn_.Clear();
-  latest_pse_isvsvn_.Clear();
-  latest_psda_svn_.Clear();
-  performance_rekey_gid_.Clear();
-  ec_sign256_x_.Clear();
-  ec_sign256_y_.Clear();
-  mac_smk_.Clear();
+  latestequivalenttcbpsvn_.Clear();
+  latestpseisvsvn_.Clear();
+  latestpsdasvn_.Clear();
+  performancerekeygid_.Clear();
+  ecsign256x_.Clear();
+  ecsign256y_.Clear();
+  macsmk_.Clear();
   reserved_.Clear();
-  payload_tag_.Clear();
+  payloadtag_.Clear();
   payload_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -3259,189 +3258,189 @@ bool AttestationMessage::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(24)) goto parse_epid_group_status;
+        if (input->ExpectTag(24)) goto parse_epidGroupStatus;
         break;
       }
 
-      // optional uint32 epid_group_status = 3;
+      // optional uint32 epidGroupStatus = 3;
       case 3: {
         if (tag == 24) {
-         parse_epid_group_status:
+         parse_epidGroupStatus:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &epid_group_status_)));
-          set_has_epid_group_status();
+                 input, &epidgroupstatus_)));
+          set_has_epidgroupstatus();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(32)) goto parse_tcb_evaluation_status;
+        if (input->ExpectTag(32)) goto parse_tcbEvaluationStatus;
         break;
       }
 
-      // optional uint32 tcb_evaluation_status = 4;
+      // optional uint32 tcbEvaluationStatus = 4;
       case 4: {
         if (tag == 32) {
-         parse_tcb_evaluation_status:
+         parse_tcbEvaluationStatus:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &tcb_evaluation_status_)));
-          set_has_tcb_evaluation_status();
+                 input, &tcbevaluationstatus_)));
+          set_has_tcbevaluationstatus();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(40)) goto parse_pse_evaluation_status;
+        if (input->ExpectTag(40)) goto parse_pseEvaluationStatus;
         break;
       }
 
-      // optional uint32 pse_evaluation_status = 5;
+      // optional uint32 pseEvaluationStatus = 5;
       case 5: {
         if (tag == 40) {
-         parse_pse_evaluation_status:
+         parse_pseEvaluationStatus:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &pse_evaluation_status_)));
-          set_has_pse_evaluation_status();
+                 input, &pseevaluationstatus_)));
+          set_has_pseevaluationstatus();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(50)) goto parse_latest_equivalent_tcb_psvn;
+        if (input->ExpectTag(50)) goto parse_latestEquivalentTcbPsvn;
         break;
       }
 
-      // repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];
+      // repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];
       case 6: {
         if (tag == 50) {
-         parse_latest_equivalent_tcb_psvn:
+         parse_latestEquivalentTcbPsvn:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_latest_equivalent_tcb_psvn())));
+                 input, this->mutable_latestequivalenttcbpsvn())));
         } else if (tag == 48) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 50, input, this->mutable_latest_equivalent_tcb_psvn())));
+                 1, 50, input, this->mutable_latestequivalenttcbpsvn())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(58)) goto parse_latest_pse_isvsvn;
+        if (input->ExpectTag(58)) goto parse_latestPseIsvsvn;
         break;
       }
 
-      // repeated uint32 latest_pse_isvsvn = 7 [packed = true];
+      // repeated uint32 latestPseIsvsvn = 7 [packed = true];
       case 7: {
         if (tag == 58) {
-         parse_latest_pse_isvsvn:
+         parse_latestPseIsvsvn:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_latest_pse_isvsvn())));
+                 input, this->mutable_latestpseisvsvn())));
         } else if (tag == 56) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 58, input, this->mutable_latest_pse_isvsvn())));
+                 1, 58, input, this->mutable_latestpseisvsvn())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(66)) goto parse_latest_psda_svn;
+        if (input->ExpectTag(66)) goto parse_latestPsdaSvn;
         break;
       }
 
-      // repeated uint32 latest_psda_svn = 8 [packed = true];
+      // repeated uint32 latestPsdaSvn = 8 [packed = true];
       case 8: {
         if (tag == 66) {
-         parse_latest_psda_svn:
+         parse_latestPsdaSvn:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_latest_psda_svn())));
+                 input, this->mutable_latestpsdasvn())));
         } else if (tag == 64) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 66, input, this->mutable_latest_psda_svn())));
+                 1, 66, input, this->mutable_latestpsdasvn())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(74)) goto parse_performance_rekey_gid;
+        if (input->ExpectTag(74)) goto parse_performanceRekeyGid;
         break;
       }
 
-      // repeated uint32 performance_rekey_gid = 9 [packed = true];
+      // repeated uint32 performanceRekeyGid = 9 [packed = true];
       case 9: {
         if (tag == 74) {
-         parse_performance_rekey_gid:
+         parse_performanceRekeyGid:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_performance_rekey_gid())));
+                 input, this->mutable_performancerekeygid())));
         } else if (tag == 72) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 74, input, this->mutable_performance_rekey_gid())));
+                 1, 74, input, this->mutable_performancerekeygid())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(82)) goto parse_ec_sign256_x;
+        if (input->ExpectTag(82)) goto parse_ecSign256X;
         break;
       }
 
-      // repeated uint32 ec_sign256_x = 10 [packed = true];
+      // repeated uint32 ecSign256X = 10 [packed = true];
       case 10: {
         if (tag == 82) {
-         parse_ec_sign256_x:
+         parse_ecSign256X:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_ec_sign256_x())));
+                 input, this->mutable_ecsign256x())));
         } else if (tag == 80) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 82, input, this->mutable_ec_sign256_x())));
+                 1, 82, input, this->mutable_ecsign256x())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(90)) goto parse_ec_sign256_y;
+        if (input->ExpectTag(90)) goto parse_ecSign256Y;
         break;
       }
 
-      // repeated uint32 ec_sign256_y = 11 [packed = true];
+      // repeated uint32 ecSign256Y = 11 [packed = true];
       case 11: {
         if (tag == 90) {
-         parse_ec_sign256_y:
+         parse_ecSign256Y:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_ec_sign256_y())));
+                 input, this->mutable_ecsign256y())));
         } else if (tag == 88) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 90, input, this->mutable_ec_sign256_y())));
+                 1, 90, input, this->mutable_ecsign256y())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(98)) goto parse_mac_smk;
+        if (input->ExpectTag(98)) goto parse_macSmk;
         break;
       }
 
-      // repeated uint32 mac_smk = 12 [packed = true];
+      // repeated uint32 macSmk = 12 [packed = true];
       case 12: {
         if (tag == 98) {
-         parse_mac_smk:
+         parse_macSmk:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_mac_smk())));
+                 input, this->mutable_macsmk())));
         } else if (tag == 96) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 98, input, this->mutable_mac_smk())));
+                 1, 98, input, this->mutable_macsmk())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(104)) goto parse_result_size;
+        if (input->ExpectTag(104)) goto parse_resultSize;
         break;
       }
 
-      // optional uint32 result_size = 13;
+      // optional uint32 resultSize = 13;
       case 13: {
         if (tag == 104) {
-         parse_result_size:
+         parse_resultSize:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &result_size_)));
-          set_has_result_size();
+                 input, &resultsize_)));
+          set_has_resultsize();
         } else {
           goto handle_unusual;
         }
@@ -3463,21 +3462,21 @@ bool AttestationMessage::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(122)) goto parse_payload_tag;
+        if (input->ExpectTag(122)) goto parse_payloadTag;
         break;
       }
 
-      // repeated uint32 payload_tag = 15 [packed = true];
+      // repeated uint32 payloadTag = 15 [packed = true];
       case 15: {
         if (tag == 122) {
-         parse_payload_tag:
+         parse_payloadTag:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_payload_tag())));
+                 input, this->mutable_payloadtag())));
         } else if (tag == 120) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 122, input, this->mutable_payload_tag())));
+                 1, 122, input, this->mutable_payloadtag())));
         } else {
           goto handle_unusual;
         }
@@ -3539,94 +3538,94 @@ void AttestationMessage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->size(), output);
   }
 
-  // optional uint32 epid_group_status = 3;
-  if (has_epid_group_status()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->epid_group_status(), output);
+  // optional uint32 epidGroupStatus = 3;
+  if (has_epidgroupstatus()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->epidgroupstatus(), output);
   }
 
-  // optional uint32 tcb_evaluation_status = 4;
-  if (has_tcb_evaluation_status()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->tcb_evaluation_status(), output);
+  // optional uint32 tcbEvaluationStatus = 4;
+  if (has_tcbevaluationstatus()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->tcbevaluationstatus(), output);
   }
 
-  // optional uint32 pse_evaluation_status = 5;
-  if (has_pse_evaluation_status()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->pse_evaluation_status(), output);
+  // optional uint32 pseEvaluationStatus = 5;
+  if (has_pseevaluationstatus()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->pseevaluationstatus(), output);
   }
 
-  // repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];
-  if (this->latest_equivalent_tcb_psvn_size() > 0) {
+  // repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];
+  if (this->latestequivalenttcbpsvn_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(6, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_latest_equivalent_tcb_psvn_cached_byte_size_);
+    output->WriteVarint32(_latestequivalenttcbpsvn_cached_byte_size_);
   }
-  for (int i = 0; i < this->latest_equivalent_tcb_psvn_size(); i++) {
+  for (int i = 0; i < this->latestequivalenttcbpsvn_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->latest_equivalent_tcb_psvn(i), output);
+      this->latestequivalenttcbpsvn(i), output);
   }
 
-  // repeated uint32 latest_pse_isvsvn = 7 [packed = true];
-  if (this->latest_pse_isvsvn_size() > 0) {
+  // repeated uint32 latestPseIsvsvn = 7 [packed = true];
+  if (this->latestpseisvsvn_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(7, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_latest_pse_isvsvn_cached_byte_size_);
+    output->WriteVarint32(_latestpseisvsvn_cached_byte_size_);
   }
-  for (int i = 0; i < this->latest_pse_isvsvn_size(); i++) {
+  for (int i = 0; i < this->latestpseisvsvn_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->latest_pse_isvsvn(i), output);
+      this->latestpseisvsvn(i), output);
   }
 
-  // repeated uint32 latest_psda_svn = 8 [packed = true];
-  if (this->latest_psda_svn_size() > 0) {
+  // repeated uint32 latestPsdaSvn = 8 [packed = true];
+  if (this->latestpsdasvn_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(8, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_latest_psda_svn_cached_byte_size_);
+    output->WriteVarint32(_latestpsdasvn_cached_byte_size_);
   }
-  for (int i = 0; i < this->latest_psda_svn_size(); i++) {
+  for (int i = 0; i < this->latestpsdasvn_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->latest_psda_svn(i), output);
+      this->latestpsdasvn(i), output);
   }
 
-  // repeated uint32 performance_rekey_gid = 9 [packed = true];
-  if (this->performance_rekey_gid_size() > 0) {
+  // repeated uint32 performanceRekeyGid = 9 [packed = true];
+  if (this->performancerekeygid_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(9, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_performance_rekey_gid_cached_byte_size_);
+    output->WriteVarint32(_performancerekeygid_cached_byte_size_);
   }
-  for (int i = 0; i < this->performance_rekey_gid_size(); i++) {
+  for (int i = 0; i < this->performancerekeygid_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->performance_rekey_gid(i), output);
+      this->performancerekeygid(i), output);
   }
 
-  // repeated uint32 ec_sign256_x = 10 [packed = true];
-  if (this->ec_sign256_x_size() > 0) {
+  // repeated uint32 ecSign256X = 10 [packed = true];
+  if (this->ecsign256x_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(10, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_ec_sign256_x_cached_byte_size_);
+    output->WriteVarint32(_ecsign256x_cached_byte_size_);
   }
-  for (int i = 0; i < this->ec_sign256_x_size(); i++) {
+  for (int i = 0; i < this->ecsign256x_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->ec_sign256_x(i), output);
+      this->ecsign256x(i), output);
   }
 
-  // repeated uint32 ec_sign256_y = 11 [packed = true];
-  if (this->ec_sign256_y_size() > 0) {
+  // repeated uint32 ecSign256Y = 11 [packed = true];
+  if (this->ecsign256y_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(11, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_ec_sign256_y_cached_byte_size_);
+    output->WriteVarint32(_ecsign256y_cached_byte_size_);
   }
-  for (int i = 0; i < this->ec_sign256_y_size(); i++) {
+  for (int i = 0; i < this->ecsign256y_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->ec_sign256_y(i), output);
+      this->ecsign256y(i), output);
   }
 
-  // repeated uint32 mac_smk = 12 [packed = true];
-  if (this->mac_smk_size() > 0) {
+  // repeated uint32 macSmk = 12 [packed = true];
+  if (this->macsmk_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(12, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_mac_smk_cached_byte_size_);
+    output->WriteVarint32(_macsmk_cached_byte_size_);
   }
-  for (int i = 0; i < this->mac_smk_size(); i++) {
+  for (int i = 0; i < this->macsmk_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->mac_smk(i), output);
+      this->macsmk(i), output);
   }
 
-  // optional uint32 result_size = 13;
-  if (has_result_size()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(13, this->result_size(), output);
+  // optional uint32 resultSize = 13;
+  if (has_resultsize()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(13, this->resultsize(), output);
   }
 
   // repeated uint32 reserved = 14 [packed = true];
@@ -3639,14 +3638,14 @@ void AttestationMessage::SerializeWithCachedSizes(
       this->reserved(i), output);
   }
 
-  // repeated uint32 payload_tag = 15 [packed = true];
-  if (this->payload_tag_size() > 0) {
+  // repeated uint32 payloadTag = 15 [packed = true];
+  if (this->payloadtag_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(15, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_payload_tag_cached_byte_size_);
+    output->WriteVarint32(_payloadtag_cached_byte_size_);
   }
-  for (int i = 0; i < this->payload_tag_size(); i++) {
+  for (int i = 0; i < this->payloadtag_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->payload_tag(i), output);
+      this->payloadtag(i), output);
   }
 
   // repeated uint32 payload = 16 [packed = true];
@@ -3680,122 +3679,122 @@ void AttestationMessage::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->size(), target);
   }
 
-  // optional uint32 epid_group_status = 3;
-  if (has_epid_group_status()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->epid_group_status(), target);
+  // optional uint32 epidGroupStatus = 3;
+  if (has_epidgroupstatus()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->epidgroupstatus(), target);
   }
 
-  // optional uint32 tcb_evaluation_status = 4;
-  if (has_tcb_evaluation_status()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->tcb_evaluation_status(), target);
+  // optional uint32 tcbEvaluationStatus = 4;
+  if (has_tcbevaluationstatus()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->tcbevaluationstatus(), target);
   }
 
-  // optional uint32 pse_evaluation_status = 5;
-  if (has_pse_evaluation_status()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->pse_evaluation_status(), target);
+  // optional uint32 pseEvaluationStatus = 5;
+  if (has_pseevaluationstatus()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->pseevaluationstatus(), target);
   }
 
-  // repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];
-  if (this->latest_equivalent_tcb_psvn_size() > 0) {
+  // repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];
+  if (this->latestequivalenttcbpsvn_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       6,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _latest_equivalent_tcb_psvn_cached_byte_size_, target);
+      _latestequivalenttcbpsvn_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->latest_equivalent_tcb_psvn_size(); i++) {
+  for (int i = 0; i < this->latestequivalenttcbpsvn_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->latest_equivalent_tcb_psvn(i), target);
+      WriteUInt32NoTagToArray(this->latestequivalenttcbpsvn(i), target);
   }
 
-  // repeated uint32 latest_pse_isvsvn = 7 [packed = true];
-  if (this->latest_pse_isvsvn_size() > 0) {
+  // repeated uint32 latestPseIsvsvn = 7 [packed = true];
+  if (this->latestpseisvsvn_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       7,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _latest_pse_isvsvn_cached_byte_size_, target);
+      _latestpseisvsvn_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->latest_pse_isvsvn_size(); i++) {
+  for (int i = 0; i < this->latestpseisvsvn_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->latest_pse_isvsvn(i), target);
+      WriteUInt32NoTagToArray(this->latestpseisvsvn(i), target);
   }
 
-  // repeated uint32 latest_psda_svn = 8 [packed = true];
-  if (this->latest_psda_svn_size() > 0) {
+  // repeated uint32 latestPsdaSvn = 8 [packed = true];
+  if (this->latestpsdasvn_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       8,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _latest_psda_svn_cached_byte_size_, target);
+      _latestpsdasvn_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->latest_psda_svn_size(); i++) {
+  for (int i = 0; i < this->latestpsdasvn_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->latest_psda_svn(i), target);
+      WriteUInt32NoTagToArray(this->latestpsdasvn(i), target);
   }
 
-  // repeated uint32 performance_rekey_gid = 9 [packed = true];
-  if (this->performance_rekey_gid_size() > 0) {
+  // repeated uint32 performanceRekeyGid = 9 [packed = true];
+  if (this->performancerekeygid_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       9,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _performance_rekey_gid_cached_byte_size_, target);
+      _performancerekeygid_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->performance_rekey_gid_size(); i++) {
+  for (int i = 0; i < this->performancerekeygid_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->performance_rekey_gid(i), target);
+      WriteUInt32NoTagToArray(this->performancerekeygid(i), target);
   }
 
-  // repeated uint32 ec_sign256_x = 10 [packed = true];
-  if (this->ec_sign256_x_size() > 0) {
+  // repeated uint32 ecSign256X = 10 [packed = true];
+  if (this->ecsign256x_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       10,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _ec_sign256_x_cached_byte_size_, target);
+      _ecsign256x_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->ec_sign256_x_size(); i++) {
+  for (int i = 0; i < this->ecsign256x_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->ec_sign256_x(i), target);
+      WriteUInt32NoTagToArray(this->ecsign256x(i), target);
   }
 
-  // repeated uint32 ec_sign256_y = 11 [packed = true];
-  if (this->ec_sign256_y_size() > 0) {
+  // repeated uint32 ecSign256Y = 11 [packed = true];
+  if (this->ecsign256y_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       11,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _ec_sign256_y_cached_byte_size_, target);
+      _ecsign256y_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->ec_sign256_y_size(); i++) {
+  for (int i = 0; i < this->ecsign256y_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->ec_sign256_y(i), target);
+      WriteUInt32NoTagToArray(this->ecsign256y(i), target);
   }
 
-  // repeated uint32 mac_smk = 12 [packed = true];
-  if (this->mac_smk_size() > 0) {
+  // repeated uint32 macSmk = 12 [packed = true];
+  if (this->macsmk_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       12,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _mac_smk_cached_byte_size_, target);
+      _macsmk_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->mac_smk_size(); i++) {
+  for (int i = 0; i < this->macsmk_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->mac_smk(i), target);
+      WriteUInt32NoTagToArray(this->macsmk(i), target);
   }
 
-  // optional uint32 result_size = 13;
-  if (has_result_size()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(13, this->result_size(), target);
+  // optional uint32 resultSize = 13;
+  if (has_resultsize()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(13, this->resultsize(), target);
   }
 
   // repeated uint32 reserved = 14 [packed = true];
@@ -3812,18 +3811,18 @@ void AttestationMessage::SerializeWithCachedSizes(
       WriteUInt32NoTagToArray(this->reserved(i), target);
   }
 
-  // repeated uint32 payload_tag = 15 [packed = true];
-  if (this->payload_tag_size() > 0) {
+  // repeated uint32 payloadTag = 15 [packed = true];
+  if (this->payloadtag_size() > 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
       15,
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _payload_tag_cached_byte_size_, target);
+      _payloadtag_cached_byte_size_, target);
   }
-  for (int i = 0; i < this->payload_tag_size(); i++) {
+  for (int i = 0; i < this->payloadtag_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->payload_tag(i), target);
+      WriteUInt32NoTagToArray(this->payloadtag(i), target);
   }
 
   // repeated uint32 payload = 16 [packed = true];
@@ -3865,152 +3864,152 @@ int AttestationMessage::ByteSize() const {
           this->size());
     }
 
-    // optional uint32 epid_group_status = 3;
-    if (has_epid_group_status()) {
+    // optional uint32 epidGroupStatus = 3;
+    if (has_epidgroupstatus()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->epid_group_status());
+          this->epidgroupstatus());
     }
 
-    // optional uint32 tcb_evaluation_status = 4;
-    if (has_tcb_evaluation_status()) {
+    // optional uint32 tcbEvaluationStatus = 4;
+    if (has_tcbevaluationstatus()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->tcb_evaluation_status());
+          this->tcbevaluationstatus());
     }
 
-    // optional uint32 pse_evaluation_status = 5;
-    if (has_pse_evaluation_status()) {
+    // optional uint32 pseEvaluationStatus = 5;
+    if (has_pseevaluationstatus()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->pse_evaluation_status());
+          this->pseevaluationstatus());
     }
 
   }
   if (_has_bits_[12 / 32] & (0xffu << (12 % 32))) {
-    // optional uint32 result_size = 13;
-    if (has_result_size()) {
+    // optional uint32 resultSize = 13;
+    if (has_resultsize()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->result_size());
+          this->resultsize());
     }
 
   }
-  // repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];
+  // repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->latest_equivalent_tcb_psvn_size(); i++) {
+    for (int i = 0; i < this->latestequivalenttcbpsvn_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->latest_equivalent_tcb_psvn(i));
+        UInt32Size(this->latestequivalenttcbpsvn(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _latest_equivalent_tcb_psvn_cached_byte_size_ = data_size;
+    _latestequivalenttcbpsvn_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
-  // repeated uint32 latest_pse_isvsvn = 7 [packed = true];
+  // repeated uint32 latestPseIsvsvn = 7 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->latest_pse_isvsvn_size(); i++) {
+    for (int i = 0; i < this->latestpseisvsvn_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->latest_pse_isvsvn(i));
+        UInt32Size(this->latestpseisvsvn(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _latest_pse_isvsvn_cached_byte_size_ = data_size;
+    _latestpseisvsvn_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
-  // repeated uint32 latest_psda_svn = 8 [packed = true];
+  // repeated uint32 latestPsdaSvn = 8 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->latest_psda_svn_size(); i++) {
+    for (int i = 0; i < this->latestpsdasvn_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->latest_psda_svn(i));
+        UInt32Size(this->latestpsdasvn(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _latest_psda_svn_cached_byte_size_ = data_size;
+    _latestpsdasvn_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
-  // repeated uint32 performance_rekey_gid = 9 [packed = true];
+  // repeated uint32 performanceRekeyGid = 9 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->performance_rekey_gid_size(); i++) {
+    for (int i = 0; i < this->performancerekeygid_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->performance_rekey_gid(i));
+        UInt32Size(this->performancerekeygid(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _performance_rekey_gid_cached_byte_size_ = data_size;
+    _performancerekeygid_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
-  // repeated uint32 ec_sign256_x = 10 [packed = true];
+  // repeated uint32 ecSign256X = 10 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->ec_sign256_x_size(); i++) {
+    for (int i = 0; i < this->ecsign256x_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->ec_sign256_x(i));
+        UInt32Size(this->ecsign256x(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _ec_sign256_x_cached_byte_size_ = data_size;
+    _ecsign256x_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
-  // repeated uint32 ec_sign256_y = 11 [packed = true];
+  // repeated uint32 ecSign256Y = 11 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->ec_sign256_y_size(); i++) {
+    for (int i = 0; i < this->ecsign256y_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->ec_sign256_y(i));
+        UInt32Size(this->ecsign256y(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _ec_sign256_y_cached_byte_size_ = data_size;
+    _ecsign256y_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
-  // repeated uint32 mac_smk = 12 [packed = true];
+  // repeated uint32 macSmk = 12 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->mac_smk_size(); i++) {
+    for (int i = 0; i < this->macsmk_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->mac_smk(i));
+        UInt32Size(this->macsmk(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _mac_smk_cached_byte_size_ = data_size;
+    _macsmk_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
@@ -4032,19 +4031,19 @@ int AttestationMessage::ByteSize() const {
     total_size += data_size;
   }
 
-  // repeated uint32 payload_tag = 15 [packed = true];
+  // repeated uint32 payloadTag = 15 [packed = true];
   {
     int data_size = 0;
-    for (int i = 0; i < this->payload_tag_size(); i++) {
+    for (int i = 0; i < this->payloadtag_size(); i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->payload_tag(i));
+        UInt32Size(this->payloadtag(i));
     }
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _payload_tag_cached_byte_size_ = data_size;
+    _payloadtag_cached_byte_size_ = data_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
@@ -4091,15 +4090,15 @@ void AttestationMessage::MergeFrom(const ::google::protobuf::Message& from) {
 
 void AttestationMessage::MergeFrom(const AttestationMessage& from) {
   GOOGLE_CHECK_NE(&from, this);
-  latest_equivalent_tcb_psvn_.MergeFrom(from.latest_equivalent_tcb_psvn_);
-  latest_pse_isvsvn_.MergeFrom(from.latest_pse_isvsvn_);
-  latest_psda_svn_.MergeFrom(from.latest_psda_svn_);
-  performance_rekey_gid_.MergeFrom(from.performance_rekey_gid_);
-  ec_sign256_x_.MergeFrom(from.ec_sign256_x_);
-  ec_sign256_y_.MergeFrom(from.ec_sign256_y_);
-  mac_smk_.MergeFrom(from.mac_smk_);
+  latestequivalenttcbpsvn_.MergeFrom(from.latestequivalenttcbpsvn_);
+  latestpseisvsvn_.MergeFrom(from.latestpseisvsvn_);
+  latestpsdasvn_.MergeFrom(from.latestpsdasvn_);
+  performancerekeygid_.MergeFrom(from.performancerekeygid_);
+  ecsign256x_.MergeFrom(from.ecsign256x_);
+  ecsign256y_.MergeFrom(from.ecsign256y_);
+  macsmk_.MergeFrom(from.macsmk_);
   reserved_.MergeFrom(from.reserved_);
-  payload_tag_.MergeFrom(from.payload_tag_);
+  payloadtag_.MergeFrom(from.payloadtag_);
   payload_.MergeFrom(from.payload_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_type()) {
@@ -4108,19 +4107,19 @@ void AttestationMessage::MergeFrom(const AttestationMessage& from) {
     if (from.has_size()) {
       set_size(from.size());
     }
-    if (from.has_epid_group_status()) {
-      set_epid_group_status(from.epid_group_status());
+    if (from.has_epidgroupstatus()) {
+      set_epidgroupstatus(from.epidgroupstatus());
     }
-    if (from.has_tcb_evaluation_status()) {
-      set_tcb_evaluation_status(from.tcb_evaluation_status());
+    if (from.has_tcbevaluationstatus()) {
+      set_tcbevaluationstatus(from.tcbevaluationstatus());
     }
-    if (from.has_pse_evaluation_status()) {
-      set_pse_evaluation_status(from.pse_evaluation_status());
+    if (from.has_pseevaluationstatus()) {
+      set_pseevaluationstatus(from.pseevaluationstatus());
     }
   }
   if (from._has_bits_[12 / 32] & (0xffu << (12 % 32))) {
-    if (from.has_result_size()) {
-      set_result_size(from.result_size());
+    if (from.has_resultsize()) {
+      set_resultsize(from.resultsize());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -4148,19 +4147,19 @@ void AttestationMessage::Swap(AttestationMessage* other) {
   if (other != this) {
     std::swap(type_, other->type_);
     std::swap(size_, other->size_);
-    std::swap(epid_group_status_, other->epid_group_status_);
-    std::swap(tcb_evaluation_status_, other->tcb_evaluation_status_);
-    std::swap(pse_evaluation_status_, other->pse_evaluation_status_);
-    latest_equivalent_tcb_psvn_.Swap(&other->latest_equivalent_tcb_psvn_);
-    latest_pse_isvsvn_.Swap(&other->latest_pse_isvsvn_);
-    latest_psda_svn_.Swap(&other->latest_psda_svn_);
-    performance_rekey_gid_.Swap(&other->performance_rekey_gid_);
-    ec_sign256_x_.Swap(&other->ec_sign256_x_);
-    ec_sign256_y_.Swap(&other->ec_sign256_y_);
-    mac_smk_.Swap(&other->mac_smk_);
-    std::swap(result_size_, other->result_size_);
+    std::swap(epidgroupstatus_, other->epidgroupstatus_);
+    std::swap(tcbevaluationstatus_, other->tcbevaluationstatus_);
+    std::swap(pseevaluationstatus_, other->pseevaluationstatus_);
+    latestequivalenttcbpsvn_.Swap(&other->latestequivalenttcbpsvn_);
+    latestpseisvsvn_.Swap(&other->latestpseisvsvn_);
+    latestpsdasvn_.Swap(&other->latestpsdasvn_);
+    performancerekeygid_.Swap(&other->performancerekeygid_);
+    ecsign256x_.Swap(&other->ecsign256x_);
+    ecsign256y_.Swap(&other->ecsign256y_);
+    macsmk_.Swap(&other->macsmk_);
+    std::swap(resultsize_, other->resultsize_);
     reserved_.Swap(&other->reserved_);
-    payload_tag_.Swap(&other->payload_tag_);
+    payloadtag_.Swap(&other->payloadtag_);
     payload_.Swap(&other->payload_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -4181,7 +4180,7 @@ void AttestationMessage::Swap(AttestationMessage* other) {
 
 #ifndef _MSC_VER
 const int AllInOneMessage::kTypeFieldNumber;
-const int AllInOneMessage::kSerectMsgFieldNumber;
+const int AllInOneMessage::kSecretMsgFieldNumber;
 const int AllInOneMessage::kInitMsgFieldNumber;
 const int AllInOneMessage::kMsg0FieldNumber;
 const int AllInOneMessage::kMsg1FieldNumber;
@@ -4197,13 +4196,13 @@ AllInOneMessage::AllInOneMessage()
 }
 
 void AllInOneMessage::InitAsDefaultInstance() {
-  serect_msg_ = const_cast< ::Messages::SecretMessage*>(&::Messages::SecretMessage::default_instance());
-  init_msg_ = const_cast< ::Messages::InitialMessage*>(&::Messages::InitialMessage::default_instance());
+  secretmsg_ = const_cast< ::Messages::SecretMessage*>(&::Messages::SecretMessage::default_instance());
+  initmsg_ = const_cast< ::Messages::InitialMessage*>(&::Messages::InitialMessage::default_instance());
   msg0_ = const_cast< ::Messages::MessageMSG0*>(&::Messages::MessageMSG0::default_instance());
   msg1_ = const_cast< ::Messages::MessageMSG1*>(&::Messages::MessageMSG1::default_instance());
   msg2_ = const_cast< ::Messages::MessageMSG2*>(&::Messages::MessageMSG2::default_instance());
   msg3_ = const_cast< ::Messages::MessageMSG3*>(&::Messages::MessageMSG3::default_instance());
-  attest_msg_ = const_cast< ::Messages::AttestationMessage*>(&::Messages::AttestationMessage::default_instance());
+  attestmsg_ = const_cast< ::Messages::AttestationMessage*>(&::Messages::AttestationMessage::default_instance());
 }
 
 AllInOneMessage::AllInOneMessage(const AllInOneMessage& from)
@@ -4216,13 +4215,13 @@ AllInOneMessage::AllInOneMessage(const AllInOneMessage& from)
 void AllInOneMessage::SharedCtor() {
   _cached_size_ = 0;
   type_ = 0;
-  serect_msg_ = NULL;
-  init_msg_ = NULL;
+  secretmsg_ = NULL;
+  initmsg_ = NULL;
   msg0_ = NULL;
   msg1_ = NULL;
   msg2_ = NULL;
   msg3_ = NULL;
-  attest_msg_ = NULL;
+  attestmsg_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -4233,13 +4232,13 @@ AllInOneMessage::~AllInOneMessage() {
 
 void AllInOneMessage::SharedDtor() {
   if (this != default_instance_) {
-    delete serect_msg_;
-    delete init_msg_;
+    delete secretmsg_;
+    delete initmsg_;
     delete msg0_;
     delete msg1_;
     delete msg2_;
     delete msg3_;
-    delete attest_msg_;
+    delete attestmsg_;
   }
 }
 
@@ -4267,11 +4266,11 @@ AllInOneMessage* AllInOneMessage::New() const {
 void AllInOneMessage::Clear() {
   if (_has_bits_[0 / 32] & 255) {
     type_ = 0;
-    if (has_serect_msg()) {
-      if (serect_msg_ != NULL) serect_msg_->::Messages::SecretMessage::Clear();
+    if (has_secretmsg()) {
+      if (secretmsg_ != NULL) secretmsg_->::Messages::SecretMessage::Clear();
     }
-    if (has_init_msg()) {
-      if (init_msg_ != NULL) init_msg_->::Messages::InitialMessage::Clear();
+    if (has_initmsg()) {
+      if (initmsg_ != NULL) initmsg_->::Messages::InitialMessage::Clear();
     }
     if (has_msg0()) {
       if (msg0_ != NULL) msg0_->::Messages::MessageMSG0::Clear();
@@ -4285,8 +4284,8 @@ void AllInOneMessage::Clear() {
     if (has_msg3()) {
       if (msg3_ != NULL) msg3_->::Messages::MessageMSG3::Clear();
     }
-    if (has_attest_msg()) {
-      if (attest_msg_ != NULL) attest_msg_->::Messages::AttestationMessage::Clear();
+    if (has_attestmsg()) {
+      if (attestmsg_ != NULL) attestmsg_->::Messages::AttestationMessage::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -4318,29 +4317,29 @@ bool AllInOneMessage::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_serect_msg;
+        if (input->ExpectTag(18)) goto parse_secretMsg;
         break;
       }
 
-      // optional .Messages.SecretMessage serect_msg = 2;
+      // optional .Messages.SecretMessage secretMsg = 2;
       case 2: {
         if (tag == 18) {
-         parse_serect_msg:
+         parse_secretMsg:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_serect_msg()));
+               input, mutable_secretmsg()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_init_msg;
+        if (input->ExpectTag(26)) goto parse_initMsg;
         break;
       }
 
-      // optional .Messages.InitialMessage init_msg = 3;
+      // optional .Messages.InitialMessage initMsg = 3;
       case 3: {
         if (tag == 26) {
-         parse_init_msg:
+         parse_initMsg:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_init_msg()));
+               input, mutable_initmsg()));
         } else {
           goto handle_unusual;
         }
@@ -4396,16 +4395,16 @@ bool AllInOneMessage::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(66)) goto parse_attest_msg;
+        if (input->ExpectTag(66)) goto parse_attestMsg;
         break;
       }
 
-      // optional .Messages.AttestationMessage attest_msg = 8;
+      // optional .Messages.AttestationMessage attestMsg = 8;
       case 8: {
         if (tag == 66) {
-         parse_attest_msg:
+         parse_attestMsg:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_attest_msg()));
+               input, mutable_attestmsg()));
         } else {
           goto handle_unusual;
         }
@@ -4444,16 +4443,16 @@ void AllInOneMessage::SerializeWithCachedSizes(
       1, this->type(), output);
   }
 
-  // optional .Messages.SecretMessage serect_msg = 2;
-  if (has_serect_msg()) {
+  // optional .Messages.SecretMessage secretMsg = 2;
+  if (has_secretmsg()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->serect_msg(), output);
+      2, this->secretmsg(), output);
   }
 
-  // optional .Messages.InitialMessage init_msg = 3;
-  if (has_init_msg()) {
+  // optional .Messages.InitialMessage initMsg = 3;
+  if (has_initmsg()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->init_msg(), output);
+      3, this->initmsg(), output);
   }
 
   // optional .Messages.MessageMSG0 msg0 = 4;
@@ -4480,10 +4479,10 @@ void AllInOneMessage::SerializeWithCachedSizes(
       7, this->msg3(), output);
   }
 
-  // optional .Messages.AttestationMessage attest_msg = 8;
-  if (has_attest_msg()) {
+  // optional .Messages.AttestationMessage attestMsg = 8;
+  if (has_attestmsg()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      8, this->attest_msg(), output);
+      8, this->attestmsg(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -4502,18 +4501,18 @@ void AllInOneMessage::SerializeWithCachedSizes(
       1, this->type(), target);
   }
 
-  // optional .Messages.SecretMessage serect_msg = 2;
-  if (has_serect_msg()) {
+  // optional .Messages.SecretMessage secretMsg = 2;
+  if (has_secretmsg()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, this->serect_msg(), target);
+        2, this->secretmsg(), target);
   }
 
-  // optional .Messages.InitialMessage init_msg = 3;
-  if (has_init_msg()) {
+  // optional .Messages.InitialMessage initMsg = 3;
+  if (has_initmsg()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        3, this->init_msg(), target);
+        3, this->initmsg(), target);
   }
 
   // optional .Messages.MessageMSG0 msg0 = 4;
@@ -4544,11 +4543,11 @@ void AllInOneMessage::SerializeWithCachedSizes(
         7, this->msg3(), target);
   }
 
-  // optional .Messages.AttestationMessage attest_msg = 8;
-  if (has_attest_msg()) {
+  // optional .Messages.AttestationMessage attestMsg = 8;
+  if (has_attestmsg()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        8, this->attest_msg(), target);
+        8, this->attestmsg(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -4569,18 +4568,18 @@ int AllInOneMessage::ByteSize() const {
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
     }
 
-    // optional .Messages.SecretMessage serect_msg = 2;
-    if (has_serect_msg()) {
+    // optional .Messages.SecretMessage secretMsg = 2;
+    if (has_secretmsg()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->serect_msg());
+          this->secretmsg());
     }
 
-    // optional .Messages.InitialMessage init_msg = 3;
-    if (has_init_msg()) {
+    // optional .Messages.InitialMessage initMsg = 3;
+    if (has_initmsg()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->init_msg());
+          this->initmsg());
     }
 
     // optional .Messages.MessageMSG0 msg0 = 4;
@@ -4611,11 +4610,11 @@ int AllInOneMessage::ByteSize() const {
           this->msg3());
     }
 
-    // optional .Messages.AttestationMessage attest_msg = 8;
-    if (has_attest_msg()) {
+    // optional .Messages.AttestationMessage attestMsg = 8;
+    if (has_attestmsg()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->attest_msg());
+          this->attestmsg());
     }
 
   }
@@ -4648,11 +4647,11 @@ void AllInOneMessage::MergeFrom(const AllInOneMessage& from) {
     if (from.has_type()) {
       set_type(from.type());
     }
-    if (from.has_serect_msg()) {
-      mutable_serect_msg()->::Messages::SecretMessage::MergeFrom(from.serect_msg());
+    if (from.has_secretmsg()) {
+      mutable_secretmsg()->::Messages::SecretMessage::MergeFrom(from.secretmsg());
     }
-    if (from.has_init_msg()) {
-      mutable_init_msg()->::Messages::InitialMessage::MergeFrom(from.init_msg());
+    if (from.has_initmsg()) {
+      mutable_initmsg()->::Messages::InitialMessage::MergeFrom(from.initmsg());
     }
     if (from.has_msg0()) {
       mutable_msg0()->::Messages::MessageMSG0::MergeFrom(from.msg0());
@@ -4666,8 +4665,8 @@ void AllInOneMessage::MergeFrom(const AllInOneMessage& from) {
     if (from.has_msg3()) {
       mutable_msg3()->::Messages::MessageMSG3::MergeFrom(from.msg3());
     }
-    if (from.has_attest_msg()) {
-      mutable_attest_msg()->::Messages::AttestationMessage::MergeFrom(from.attest_msg());
+    if (from.has_attestmsg()) {
+      mutable_attestmsg()->::Messages::AttestationMessage::MergeFrom(from.attestmsg());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -4688,11 +4687,11 @@ void AllInOneMessage::CopyFrom(const AllInOneMessage& from) {
 bool AllInOneMessage::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
 
-  if (has_serect_msg()) {
-    if (!this->serect_msg().IsInitialized()) return false;
+  if (has_secretmsg()) {
+    if (!this->secretmsg().IsInitialized()) return false;
   }
-  if (has_init_msg()) {
-    if (!this->init_msg().IsInitialized()) return false;
+  if (has_initmsg()) {
+    if (!this->initmsg().IsInitialized()) return false;
   }
   if (has_msg0()) {
     if (!this->msg0().IsInitialized()) return false;
@@ -4706,8 +4705,8 @@ bool AllInOneMessage::IsInitialized() const {
   if (has_msg3()) {
     if (!this->msg3().IsInitialized()) return false;
   }
-  if (has_attest_msg()) {
-    if (!this->attest_msg().IsInitialized()) return false;
+  if (has_attestmsg()) {
+    if (!this->attestmsg().IsInitialized()) return false;
   }
   return true;
 }
@@ -4715,13 +4714,13 @@ bool AllInOneMessage::IsInitialized() const {
 void AllInOneMessage::Swap(AllInOneMessage* other) {
   if (other != this) {
     std::swap(type_, other->type_);
-    std::swap(serect_msg_, other->serect_msg_);
-    std::swap(init_msg_, other->init_msg_);
+    std::swap(secretmsg_, other->secretmsg_);
+    std::swap(initmsg_, other->initmsg_);
     std::swap(msg0_, other->msg0_);
     std::swap(msg1_, other->msg1_);
     std::swap(msg2_, other->msg2_);
     std::swap(msg3_, other->msg3_);
-    std::swap(attest_msg_, other->attest_msg_);
+    std::swap(attestmsg_, other->attestmsg_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
