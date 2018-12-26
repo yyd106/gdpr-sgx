@@ -239,6 +239,7 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
 
 
         uint32_t msg2_size = sizeof(sgx_ra_msg2_t) + sig_rl_size;
+        Log("\tmsg2size:%d",msg2_size);
         p_msg2_full = (ra_samp_response_header_t*)malloc(msg2_size + sizeof(ra_samp_response_header_t));
 
         if (!p_msg2_full) {
@@ -554,6 +555,8 @@ int ServiceProvider::sp_ra_proc_msg3_req(Messages::MessageMSG3 msg, Messages::At
 
         // Respond the client with the results of the attestation.
         att_result_msg_size = sizeof(sample_ra_att_result_msg_t);
+        Log("=============== sizeof att_result_msg ==============");
+        Log("\t%d",att_result_msg_size);
 
         p_att_result_msg_full = (ra_samp_response_header_t*) malloc(att_result_msg_size + sizeof(ra_samp_response_header_t) + sizeof(validation_result));
         if (!p_att_result_msg_full) {

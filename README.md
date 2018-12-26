@@ -13,12 +13,12 @@
 1. cd ***root_dir***
 2. use ```./scripts/build_targets.sh [options]``` to build targets
 3. in Step 2, there are some options for the command
-  * ***-r*** indicates building **remote attestation** targets
+  * ***-r*** build **remote attestation** targets
   * ***-m*** if you provide **-r** option the default value for **-m** is **HW** which builds targets in Hardware mode otherwise you can use **SIM** to build in simulation mode
-  * ***-s*** indicates building **SGX SDK**
-  * ***-t*** indicates building **simple** remote attestation and SGX SDK(if -r and -s are provided) 
-  * ***-j*** indicates building ***enclave client .so library file***. The built targets will be moved to ***root_dir/target***
-  * ***-h*** indicates showing usage information
+  * ***-s*** build **SGX SDK**
+  * ***-t*** build **simple** remote attestation and SGX SDK(if -r and -s are provided) 
+  * ***-j*** build ***enclave client .so library file***. The built targets will be moved to ***root_dir/target***
+  * ***-h*** show usage information
 
 ## Web Server
 ### compile and deploy
