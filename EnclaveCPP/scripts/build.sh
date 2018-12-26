@@ -114,8 +114,10 @@ cd $homedir
 javac $javafile
 javah ${javafile%.*}
 #line=`sed -n '/^#include/h;${x;=}' $headerfile`
-line=`grep -rin "^#include" $headerfile | tail -n 1 | awk -F: '{print $1}'`
+#line=`grep -rin "^#include" $headerfile | tail -n 1 | awk -F: '{print $1}'`
+line=`cat $headerfile | sed -n '/^#include/=' | sed -n '$p'`
 sed -i "$line a#include \"MessageHandler.h\"" $headerfile
+
 cd -
 ### }}}
 

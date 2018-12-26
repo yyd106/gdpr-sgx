@@ -2,10 +2,8 @@
 #include "sgx_tseal.h"
 
 using namespace util;
-//using namespace Messages;
 
 MessageHandler::MessageHandler(int port) {
-    //this->nm = NetworkManagerServer::getInstance(port);
     this->local_ec256_fix_data.g_key_flag = 1;
 }
 
@@ -85,8 +83,6 @@ string MessageHandler::generateMSG0() {
         Log("Serialization failed", log::error);
         return "";
     }
-    //return "just a test";
-    //return nm->serialize(msg);
 }
 
 
@@ -174,7 +170,6 @@ string MessageHandler::generateMSG1() {
         string s;
         msg.SerializeToString(&s);
         return s;
-        //return nm->serialize(msg);
     }
 
     return "";
@@ -233,17 +228,8 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
 }
 
 
-//string MessageHandler::handleMSG2(string v) {
 string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
     Log("Received MSG2");
-    /*
-    Messages::MessageMSG2 msg;
-    int retp = msg.ParseFromString(v);
-    if(!retp) {
-        Log("Error, Parse MSG2 failed!", log::error);
-        return "";
-    }
-    */
 
     uint32_t size = msg.size();
 
@@ -299,7 +285,6 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
         string s;
         msg3.SerializeToString(&s);
         return s;
-        //return nm->serialize(msg3);
     }
 
     SafeFree(p_msg3);
@@ -365,17 +350,8 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
 }
 
 
-//string MessageHandler::handleAttestationResult(string v) {
 string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg) {
     Log("Received Attestation result");
-    /*
-    Messages::AttestationMessage msg;
-    int retp = msg.ParseFromString(v);
-    if(!retp) {
-        Log("Error, Parse MSG2 failed!", log::error);
-        return "";
-    }
-    */
 
     ra_samp_response_header_t *p_att_result_msg_full = NULL;
     this->assembleAttestationMSG(msg, &p_att_result_msg_full);
@@ -428,7 +404,6 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
             string s;
             msg.SerializeToString(&s);
             return s;
-            //return nm->serialize(msg);
         }
     }
 
@@ -438,17 +413,8 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
 }
 
 
-//string MessageHandler::handleMSG0(string v) {
 string MessageHandler::handleMSG0(Messages::MessageMSG0 msg) {
     Log("MSG0 response received");
-    /*
-    Messages::MessageMSG0 msg;
-    int ret = msg.ParseFromString(v);
-    if(!ret) {
-        Log("Error, Parse MSG0 failed!", log::error);
-        return "";
-    }
-    */
 
     if (msg.status() == TYPE_OK) {
         sgx_status_t ret = this->initEnclave();
@@ -527,7 +493,7 @@ string MessageHandler::handleMessages(string v) {
     break;
     case Messages::Type::RA_ATT_RESULT: {	//Reply to MSG3
         Messages::AttestationMessage att_msg = aio_msg.attestmsg();
-        // receive MSG4 and verify encrypted secret
+        // receive attestation msg and verify encrypted secret
         s = this->handleAttestationResult(att_msg);
     }
     break;
@@ -540,70 +506,3 @@ string MessageHandler::handleMessages(string v) {
 
     return res;
 }
-
-/*
-//vector<string> MessageHandler::incomingHandler(string v, int type) {
-//string* MessageHandler::handleMessages(string v, int type) {
-vector<string> MessageHandler::handleMessages(string v, int type) {
-    vector<string> res;
-    //string res[2];
-    string s;
-    bool ret;
-
-    Log("========== handle messages ==========");
-    switch (type) {
-    case Messages::Type::RA_VERIFICATION: {	//Verification request
-        Messages::InitialMessage init_msg;
-        //Log("\tinit_msg:%s",v);
-        ret = init_msg.ParseFromString(v);
-        if (ret && init_msg.type() == Messages::Type::RA_VERIFICATION) {
-            s = this->handleVerification();
-            //res[0] = to_string(Messages::Type::RA_MSG0);
-            res = to_string(Messages::Type::RA_MSG0));
-        }
-    }
-    break;
-    case Messages::Type::RA_MSG0: {		//Reply to MSG0
-        Messages::MessageMSG0 msg0;
-        ret = msg0.ParseFromString(v);
-        if (ret && (msg0.type() == Messages::Type::RA_MSG0)) {
-            // generate MSG1 and send to SP
-            s = this->handleMSG0(msg0);
-            //res[0] = to_string(Messages::Type::RA_MSG1);
-            res = to_string(Messages::Type::RA_MSG1));
-        }
-    }
-    break;
-    case Messages::Type::RA_MSG2: {		//MSG2
-        Messages::MessageMSG2 msg2;
-        ret = msg2.ParseFromString(v);
-        if (ret && (msg2.type() == Messages::Type::RA_MSG2)) {
-            // generate MSG3 and send to SP
-            s = this->handleMSG2(msg2);
-            //res[0] = to_string(Messages::Type::RA_MSG3);
-            res = to_string(Messages::Type::RA_MSG3));
-        }
-    }
-    break;
-    case Messages::Type::RA_ATT_RESULT: {	//Reply to MSG3
-        Messages::AttestationMessage att_msg;
-        ret = att_msg.ParseFromString(v);
-        if (ret && att_msg.type() == Messages::Type::RA_ATT_RESULT) {
-            // receive MSG4 and verify encrypted secret
-            s = this->handleAttestationResult(att_msg);
-            //res[0] = to_string(Messages::Type::RA_APP_ATT_OK);
-            res = to_string(Messages::Type::RA_APP_ATT_OK));
-        }
-    }
-    break;
-    default:
-        Log("Unknown type: %d", type, log::error);
-        break;
-    }
-
-    //res[1] = s;
-    res = s);
-
-    return res;
-}
-*/
