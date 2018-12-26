@@ -65,7 +65,7 @@ JNIEXPORT jlong JNICALL Java_EnclaveBridge_createMessageHandlerOBJ(JNIEnv *env, 
     return (jlong) new MessageHandler();
 }
 
-JNIEXPORT jobjectArray JNICALL Java_EnclaveBridge_handleMessages(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jstring type, jbyteArray msg)
+JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleMessages(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jbyteArray msg)
 {
     /*
     printf("call sgx\n");
@@ -89,18 +89,19 @@ JNIEXPORT jobjectArray JNICALL Java_EnclaveBridge_handleMessages(JNIEnv *env, jo
     env->SetObjectArrayElement(result, 1, charTojstring(env, res[1].c_str()));
     return result;
     */
-    string TYPE = jstring2string(env, type);
-    int rType = atoi(TYPE.c_str());
     //char p_msg[env->GetArrayLength(msg)]
     const char *p_msg = (const char*)env->GetByteArrayElements(msg,0);
-    string MSG(p_msg);
-    vector<string> res = ((MessageHandler*)msgHandlerAddr)->handleMessages(MSG,rType);
-    //printf("res[0]:%s\n",res[0].c_str());
+    const char parry[8] = {0x08,0x05,0x1a,0x04,0x08,0x01,0x10,0x02};
+    //string MSG(p_msg);
+    string MSG(parry);
+    string res = ((MessageHandler*)msgHandlerAddr)->handleMessages(MSG);
+    return string2jbyteArray(env, res);
 
+    /*
     jclass cls = env->FindClass("java/lang/String");
     jobjectArray result = (jobjectArray)env->NewObjectArray(2, cls, NULL);
     env->SetObjectArrayElement(result, 0, charTojstring(env, res[0].c_str()));
     env->SetObjectArrayElement(result, 1, charTojstring(env, res[1].c_str()));
     return result;
-    //return string2jbyteArray(env, res);
+    */
 }

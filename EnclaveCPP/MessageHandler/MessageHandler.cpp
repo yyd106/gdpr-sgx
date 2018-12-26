@@ -67,7 +67,7 @@ string MessageHandler::generateMSG0() {
     uint32_t extended_epid_group_id;
     int ret = this->getExtendedEPID_GID(&extended_epid_group_id);
 
-    Messages::MessageMsg0 msg;
+    Messages::MessageMSG0 msg;
     msg.set_type(Messages::Type::RA_MSG0);
 
     if (ret == SGX_SUCCESS) {
@@ -158,8 +158,6 @@ string MessageHandler::generateMSG1() {
 
 
     if (SGX_SUCCESS == retGIDStatus) {
-        Log("MSG1 generated Successfully");
-
         Messages::MessageMSG1 msg;
         msg.set_type(Messages::Type::RA_MSG1);
 
@@ -196,8 +194,8 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
     sgx_spid_t spid;
 
     for (int i; i<32; i++) {
-        pub_key_gx[i] = msg.public_key_gx(i);
-        pub_key_gy[i] = msg.public_key_gy(i);
+        pub_key_gx[i] = msg.publickeygx(i);
+        pub_key_gy[i] = msg.publickeygy(i);
     }
 
     for (int i=0; i<16; i++) {
@@ -205,8 +203,8 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
     }
 
     for (int i=0; i<8; i++) {
-        sign_gb_ga.x[i] = msg.signature_x(i);
-        sign_gb_ga.y[i] = msg.signature_y(i);
+        sign_gb_ga.x[i] = msg.signaturex(i);
+        sign_gb_ga.y[i] = msg.signaturey(i);
     }
 
     memcpy(&p_msg2->g_b.gx, &pub_key_gx, sizeof(pub_key_gx));
@@ -214,8 +212,8 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
     memcpy(&p_msg2->sign_gb_ga, &sign_gb_ga, sizeof(sign_gb_ga));
     memcpy(&p_msg2->spid, &spid, sizeof(spid));
 
-    p_msg2->quote_type = (uint16_t)msg.quote_type();
-    p_msg2->kdf_id = msg.cmac_kdf_id();
+    p_msg2->quote_type = (uint16_t)msg.quotetype();
+    p_msg2->kdf_id = msg.cmackdfid();
 
     uint8_t smac[16];
     for (int i=0; i<16; i++)
@@ -223,13 +221,13 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
 
     memcpy(&p_msg2->mac, &smac, sizeof(smac));
 
-    p_msg2->sig_rl_size = msg.size_sigrl();
-    uint8_t *sigrl = (uint8_t*) malloc(sizeof(uint8_t) * msg.size_sigrl());
+    p_msg2->sig_rl_size = msg.sizesigrl();
+    uint8_t *sigrl = (uint8_t*) malloc(sizeof(uint8_t) * msg.sizesigrl());
 
-    for (int i=0; i<msg.size_sigrl(); i++)
+    for (int i=0; i<msg.sizesigrl(); i++)
         sigrl[i] = msg.sigrl(i);
 
-    memcpy(&p_msg2->sig_rl, &sigrl, msg.size_sigrl());
+    memcpy(&p_msg2->sig_rl, &sigrl, msg.sizesigrl());
 
     *pp_msg2 = p_msg2;
 }
@@ -280,15 +278,15 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
         msg3.set_size(msg3_size);
 
         for (int i=0; i<SGX_MAC_SIZE; i++)
-            msg3.add_sgx_mac(p_msg3->mac[i]);
+            msg3.add_sgxmac(p_msg3->mac[i]);
 
         for (int i=0; i<SGX_ECP256_KEY_SIZE; i++) {
-            msg3.add_gax_msg3(p_msg3->g_a.gx[i]);
-            msg3.add_gay_msg3(p_msg3->g_a.gy[i]);
+            msg3.add_gaxmsg3(p_msg3->g_a.gx[i]);
+            msg3.add_gaymsg3(p_msg3->g_a.gy[i]);
         }
 
         for (int i=0; i<256; i++) {
-            msg3.add_sec_property(p_msg3->ps_sec_prop.sgx_ps_sec_prop_desc[i]);
+            msg3.add_secproperty(p_msg3->ps_sec_prop.sgx_ps_sec_prop_desc[i]);
         }
 
 
@@ -314,7 +312,7 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     sample_ra_att_result_msg_t *p_att_result_msg = NULL;
     ra_samp_response_header_t* p_att_result_msg_full = NULL;
 
-    int total_size = msg.size() + sizeof(ra_samp_response_header_t) + msg.result_size();
+    int total_size = msg.size() + sizeof(ra_samp_response_header_t) + msg.resultsize();
     p_att_result_msg_full = (ra_samp_response_header_t*) malloc(total_size);
 
     memset(p_att_result_msg_full, 0, total_size);
@@ -323,43 +321,43 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
 
     p_att_result_msg = (sample_ra_att_result_msg_t *) p_att_result_msg_full->body;
 
-    p_att_result_msg->platform_info_blob.sample_epid_group_status = msg.epid_group_status();
-    p_att_result_msg->platform_info_blob.sample_tcb_evaluation_status = msg.tcb_evaluation_status();
-    p_att_result_msg->platform_info_blob.pse_evaluation_status = msg.pse_evaluation_status();
+    p_att_result_msg->platform_info_blob.sample_epid_group_status = msg.epidgroupstatus();
+    p_att_result_msg->platform_info_blob.sample_tcb_evaluation_status = msg.tcbevaluationstatus();
+    p_att_result_msg->platform_info_blob.pse_evaluation_status = msg.pseevaluationstatus();
 
     for (int i=0; i<PSVN_SIZE; i++)
-        p_att_result_msg->platform_info_blob.latest_equivalent_tcb_psvn[i] = msg.latest_equivalent_tcb_psvn(i);
+        p_att_result_msg->platform_info_blob.latest_equivalent_tcb_psvn[i] = msg.latestequivalenttcbpsvn(i);
 
     for (int i=0; i<ISVSVN_SIZE; i++)
-        p_att_result_msg->platform_info_blob.latest_pse_isvsvn[i] = msg.latest_pse_isvsvn(i);
+        p_att_result_msg->platform_info_blob.latest_pse_isvsvn[i] = msg.latestpseisvsvn(i);
 
     for (int i=0; i<PSDA_SVN_SIZE; i++)
-        p_att_result_msg->platform_info_blob.latest_psda_svn[i] = msg.latest_psda_svn(i);
+        p_att_result_msg->platform_info_blob.latest_psda_svn[i] = msg.latestpsdasvn(i);
 
     for (int i=0; i<GID_SIZE; i++)
-        p_att_result_msg->platform_info_blob.performance_rekey_gid[i] = msg.performance_rekey_gid(i);
+        p_att_result_msg->platform_info_blob.performance_rekey_gid[i] = msg.performancerekeygid(i);
 
     for (int i=0; i<SAMPLE_NISTP256_KEY_SIZE; i++) {
-        p_att_result_msg->platform_info_blob.signature.x[i] = msg.ec_sign256_x(i);
-        p_att_result_msg->platform_info_blob.signature.y[i] = msg.ec_sign256_y(i);
+        p_att_result_msg->platform_info_blob.signature.x[i] = msg.ecsign256x(i);
+        p_att_result_msg->platform_info_blob.signature.y[i] = msg.ecsign256y(i);
     }
 
     for (int i=0; i<SAMPLE_MAC_SIZE; i++)
-        p_att_result_msg->mac[i] = msg.mac_smk(i);
+        p_att_result_msg->mac[i] = msg.macsmk(i);
 
 
-    p_att_result_msg->secret.payload_size = msg.result_size();
+    p_att_result_msg->secret.payload_size = msg.resultsize();
 
     for (int i=0; i<12; i++)
         p_att_result_msg->secret.reserved[i] = msg.reserved(i);
 
     for (int i=0; i<SAMPLE_SP_TAG_SIZE; i++)
-        p_att_result_msg->secret.payload_tag[i] = msg.payload_tag(i);
+        p_att_result_msg->secret.payload_tag[i] = msg.payloadtag(i);
 
     for (int i=0; i<SAMPLE_SP_TAG_SIZE; i++)
-        p_att_result_msg->secret.payload_tag[i] = msg.payload_tag(i);
+        p_att_result_msg->secret.payload_tag[i] = msg.payloadtag(i);
 
-    for (int i=0; i<msg.result_size(); i++) {
+    for (int i=0; i<msg.resultsize(); i++) {
         p_att_result_msg->secret.payload[i] = (uint8_t)msg.payload(i);
     }
 
@@ -441,10 +439,10 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
 
 
 //string MessageHandler::handleMSG0(string v) {
-string MessageHandler::handleMSG0(Messages::MessageMsg0 msg) {
+string MessageHandler::handleMSG0(Messages::MessageMSG0 msg) {
     Log("MSG0 response received");
     /*
-    Messages::MessageMsg0 msg;
+    Messages::MessageMSG0 msg;
     int ret = msg.ParseFromString(v);
     if(!ret) {
         Log("Error, Parse MSG0 failed!", log::error);
@@ -480,6 +478,7 @@ string MessageHandler::handleVerification() {
 }
 
 
+/*
 string MessageHandler::createInitMsg(int type, string msg) {
     Messages::SecretMessage init_msg;
     init_msg.set_type(type);
@@ -490,10 +489,59 @@ string MessageHandler::createInitMsg(int type, string msg) {
     return s;
     //return nm->serialize(init_msg);
 }
-/*
 */
 
 
+string MessageHandler::handleMessages(string v) {
+    string res;
+    string s;
+    bool ret;
+
+    Messages::AllInOneMessage aio_msg;
+    ret = aio_msg.ParseFromString(v);
+    if (! ret) {
+        Log("Parse message failed!", log::error);
+        return res;
+    }
+    Log("type is:%d", aio_msg.type());
+    Log("expe is:%d", Messages::Type::RA_VERIFICATION);
+
+    Log("========== handle messages ==========");
+    switch (aio_msg.type()) {
+    case Messages::Type::RA_VERIFICATION: {	//Verification request
+        Messages::InitialMessage init_msg = aio_msg.initmsg();
+        s = this->handleVerification();
+    }
+    break;
+    case Messages::Type::RA_MSG0: {		//Reply to MSG0
+        Messages::MessageMSG0 msg0 = aio_msg.msg0();
+        // generate MSG1 and send to SP
+        s = this->handleMSG0(msg0);
+    }
+    break;
+    case Messages::Type::RA_MSG2: {		//MSG2
+        Messages::MessageMSG2 msg2 = aio_msg.msg2();
+        // generate MSG3 and send to SP
+        s = this->handleMSG2(msg2);
+    }
+    break;
+    case Messages::Type::RA_ATT_RESULT: {	//Reply to MSG3
+        Messages::AttestationMessage att_msg = aio_msg.attestmsg();
+        // receive MSG4 and verify encrypted secret
+        s = this->handleAttestationResult(att_msg);
+    }
+    break;
+    default:
+        Log("Unknown type", log::error);
+        break;
+    }
+
+    res = s;
+
+    return res;
+}
+
+/*
 //vector<string> MessageHandler::incomingHandler(string v, int type) {
 //string* MessageHandler::handleMessages(string v, int type) {
 vector<string> MessageHandler::handleMessages(string v, int type) {
@@ -511,18 +559,18 @@ vector<string> MessageHandler::handleMessages(string v, int type) {
         if (ret && init_msg.type() == Messages::Type::RA_VERIFICATION) {
             s = this->handleVerification();
             //res[0] = to_string(Messages::Type::RA_MSG0);
-            res.push_back(to_string(Messages::Type::RA_MSG0));
+            res = to_string(Messages::Type::RA_MSG0));
         }
     }
     break;
     case Messages::Type::RA_MSG0: {		//Reply to MSG0
-        Messages::MessageMsg0 msg0;
+        Messages::MessageMSG0 msg0;
         ret = msg0.ParseFromString(v);
         if (ret && (msg0.type() == Messages::Type::RA_MSG0)) {
             // generate MSG1 and send to SP
             s = this->handleMSG0(msg0);
             //res[0] = to_string(Messages::Type::RA_MSG1);
-            res.push_back(to_string(Messages::Type::RA_MSG1));
+            res = to_string(Messages::Type::RA_MSG1));
         }
     }
     break;
@@ -533,7 +581,7 @@ vector<string> MessageHandler::handleMessages(string v, int type) {
             // generate MSG3 and send to SP
             s = this->handleMSG2(msg2);
             //res[0] = to_string(Messages::Type::RA_MSG3);
-            res.push_back(to_string(Messages::Type::RA_MSG3));
+            res = to_string(Messages::Type::RA_MSG3));
         }
     }
     break;
@@ -544,7 +592,7 @@ vector<string> MessageHandler::handleMessages(string v, int type) {
             // receive MSG4 and verify encrypted secret
             s = this->handleAttestationResult(att_msg);
             //res[0] = to_string(Messages::Type::RA_APP_ATT_OK);
-            res.push_back(to_string(Messages::Type::RA_APP_ATT_OK));
+            res = to_string(Messages::Type::RA_APP_ATT_OK));
         }
     }
     break;
@@ -554,7 +602,8 @@ vector<string> MessageHandler::handleMessages(string v, int type) {
     }
 
     //res[1] = s;
-    res.push_back(s);
+    res = s);
 
     return res;
 }
+*/

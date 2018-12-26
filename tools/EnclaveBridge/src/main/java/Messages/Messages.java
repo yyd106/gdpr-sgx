@@ -140,13 +140,13 @@ public final class Messages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     boolean hasType();
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    int getType();
+    Messages.Type getType();
 
     /**
      * <code>optional uint32 size = 2;</code>
@@ -210,8 +210,14 @@ public final class Messages {
               break;
             }
             case 8: {
-              bitField0_ |= 0x00000001;
-              type_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
               break;
             }
             case 16: {
@@ -260,17 +266,17 @@ public final class Messages {
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private Messages.Type type_;
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    public int getType() {
+    public Messages.Type getType() {
       return type_;
     }
 
@@ -290,7 +296,7 @@ public final class Messages {
     }
 
     private void initFields() {
-      type_ = 0;
+      type_ = Messages.Type.RA_MSG0;
       size_ = 0;
     }
     private byte memoizedIsInitialized = -1;
@@ -311,7 +317,7 @@ public final class Messages {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, type_);
+        output.writeEnum(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, size_);
@@ -327,7 +333,7 @@ public final class Messages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, type_);
+          .computeEnumSize(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -450,7 +456,7 @@ public final class Messages {
 
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
         size_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -543,34 +549,37 @@ public final class Messages {
       }
       private int bitField0_;
 
-      private int type_ ;
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public int getType() {
+      public Messages.Type getType() {
         return type_;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public Builder setType(int value) {
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         onChanged();
         return this;
       }
@@ -623,13 +632,13 @@ public final class Messages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     boolean hasType();
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    int getType();
+    Messages.Type getType();
 
     /**
      * <code>optional uint32 size = 2;</code>
@@ -693,8 +702,14 @@ public final class Messages {
               break;
             }
             case 8: {
-              bitField0_ |= 0x00000001;
-              type_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
               break;
             }
             case 16: {
@@ -743,17 +758,17 @@ public final class Messages {
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private Messages.Type type_;
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    public int getType() {
+    public Messages.Type getType() {
       return type_;
     }
 
@@ -773,7 +788,7 @@ public final class Messages {
     }
 
     private void initFields() {
-      type_ = 0;
+      type_ = Messages.Type.RA_MSG0;
       size_ = 0;
     }
     private byte memoizedIsInitialized = -1;
@@ -794,7 +809,7 @@ public final class Messages {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, type_);
+        output.writeEnum(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, size_);
@@ -810,7 +825,7 @@ public final class Messages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, type_);
+          .computeEnumSize(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -933,7 +948,7 @@ public final class Messages {
 
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
         size_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -1026,34 +1041,37 @@ public final class Messages {
       }
       private int bitField0_;
 
-      private int type_ ;
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public int getType() {
+      public Messages.Type getType() {
         return type_;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public Builder setType(int value) {
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         onChanged();
         return this;
       }
@@ -1101,18 +1119,18 @@ public final class Messages {
     // @@protoc_insertion_point(class_scope:Messages.InitialMessage)
   }
 
-  public interface MessageMsg0OrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Messages.MessageMsg0)
+  public interface MessageMSG0OrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Messages.MessageMSG0)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     boolean hasType();
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    int getType();
+    Messages.Type getType();
 
     /**
      * <code>required uint32 epid = 2;</code>
@@ -1133,25 +1151,25 @@ public final class Messages {
     int getStatus();
   }
   /**
-   * Protobuf type {@code Messages.MessageMsg0}
+   * Protobuf type {@code Messages.MessageMSG0}
    */
-  public static final class MessageMsg0 extends
+  public static final class MessageMSG0 extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:Messages.MessageMsg0)
-      MessageMsg0OrBuilder {
-    // Use MessageMsg0.newBuilder() to construct.
-    private MessageMsg0(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:Messages.MessageMSG0)
+      MessageMSG0OrBuilder {
+    // Use MessageMSG0.newBuilder() to construct.
+    private MessageMSG0(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private MessageMsg0(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private MessageMSG0(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final MessageMsg0 defaultInstance;
-    public static MessageMsg0 getDefaultInstance() {
+    private static final MessageMSG0 defaultInstance;
+    public static MessageMSG0 getDefaultInstance() {
       return defaultInstance;
     }
 
-    public MessageMsg0 getDefaultInstanceForType() {
+    public MessageMSG0 getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -1161,7 +1179,7 @@ public final class Messages {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private MessageMsg0(
+    private MessageMSG0(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1185,8 +1203,14 @@ public final class Messages {
               break;
             }
             case 8: {
-              bitField0_ |= 0x00000001;
-              type_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
               break;
             }
             case 16: {
@@ -1213,44 +1237,44 @@ public final class Messages {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Messages.internal_static_Messages_MessageMsg0_descriptor;
+      return Messages.internal_static_Messages_MessageMSG0_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Messages.internal_static_Messages_MessageMsg0_fieldAccessorTable
+      return Messages.internal_static_Messages_MessageMSG0_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Messages.MessageMsg0.class, Messages.MessageMsg0.Builder.class);
+              Messages.MessageMSG0.class, Messages.MessageMSG0.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<MessageMsg0> PARSER =
-        new com.google.protobuf.AbstractParser<MessageMsg0>() {
-      public MessageMsg0 parsePartialFrom(
+    public static com.google.protobuf.Parser<MessageMSG0> PARSER =
+        new com.google.protobuf.AbstractParser<MessageMSG0>() {
+      public MessageMSG0 parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MessageMsg0(input, extensionRegistry);
+        return new MessageMSG0(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MessageMsg0> getParserForType() {
+    public com.google.protobuf.Parser<MessageMSG0> getParserForType() {
       return PARSER;
     }
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private Messages.Type type_;
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    public int getType() {
+    public Messages.Type getType() {
       return type_;
     }
 
@@ -1285,7 +1309,7 @@ public final class Messages {
     }
 
     private void initFields() {
-      type_ = 0;
+      type_ = Messages.Type.RA_MSG0;
       epid_ = 0;
       status_ = 0;
     }
@@ -1311,7 +1335,7 @@ public final class Messages {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, type_);
+        output.writeEnum(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, epid_);
@@ -1330,7 +1354,7 @@ public final class Messages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, type_);
+          .computeEnumSize(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -1352,53 +1376,53 @@ public final class Messages {
       return super.writeReplace();
     }
 
-    public static Messages.MessageMsg0 parseFrom(
+    public static Messages.MessageMSG0 parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Messages.MessageMsg0 parseFrom(
+    public static Messages.MessageMSG0 parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Messages.MessageMsg0 parseFrom(byte[] data)
+    public static Messages.MessageMSG0 parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Messages.MessageMsg0 parseFrom(
+    public static Messages.MessageMSG0 parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Messages.MessageMsg0 parseFrom(java.io.InputStream input)
+    public static Messages.MessageMSG0 parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static Messages.MessageMsg0 parseFrom(
+    public static Messages.MessageMSG0 parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static Messages.MessageMsg0 parseDelimitedFrom(java.io.InputStream input)
+    public static Messages.MessageMSG0 parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static Messages.MessageMsg0 parseDelimitedFrom(
+    public static Messages.MessageMSG0 parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static Messages.MessageMsg0 parseFrom(
+    public static Messages.MessageMSG0 parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static Messages.MessageMsg0 parseFrom(
+    public static Messages.MessageMSG0 parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1407,7 +1431,7 @@ public final class Messages {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(Messages.MessageMsg0 prototype) {
+    public static Builder newBuilder(Messages.MessageMSG0 prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -1419,25 +1443,25 @@ public final class Messages {
       return builder;
     }
     /**
-     * Protobuf type {@code Messages.MessageMsg0}
+     * Protobuf type {@code Messages.MessageMSG0}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Messages.MessageMsg0)
-        Messages.MessageMsg0OrBuilder {
+        // @@protoc_insertion_point(builder_implements:Messages.MessageMSG0)
+        Messages.MessageMSG0OrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Messages.internal_static_Messages_MessageMsg0_descriptor;
+        return Messages.internal_static_Messages_MessageMSG0_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Messages.internal_static_Messages_MessageMsg0_fieldAccessorTable
+        return Messages.internal_static_Messages_MessageMSG0_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Messages.MessageMsg0.class, Messages.MessageMsg0.Builder.class);
+                Messages.MessageMSG0.class, Messages.MessageMSG0.Builder.class);
       }
 
-      // Construct using Messages.MessageMsg0.newBuilder()
+      // Construct using Messages.MessageMSG0.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1457,7 +1481,7 @@ public final class Messages {
 
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
         epid_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -1472,23 +1496,23 @@ public final class Messages {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Messages.internal_static_Messages_MessageMsg0_descriptor;
+        return Messages.internal_static_Messages_MessageMSG0_descriptor;
       }
 
-      public Messages.MessageMsg0 getDefaultInstanceForType() {
-        return Messages.MessageMsg0.getDefaultInstance();
+      public Messages.MessageMSG0 getDefaultInstanceForType() {
+        return Messages.MessageMSG0.getDefaultInstance();
       }
 
-      public Messages.MessageMsg0 build() {
-        Messages.MessageMsg0 result = buildPartial();
+      public Messages.MessageMSG0 build() {
+        Messages.MessageMSG0 result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public Messages.MessageMsg0 buildPartial() {
-        Messages.MessageMsg0 result = new Messages.MessageMsg0(this);
+      public Messages.MessageMSG0 buildPartial() {
+        Messages.MessageMSG0 result = new Messages.MessageMSG0(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1509,16 +1533,16 @@ public final class Messages {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Messages.MessageMsg0) {
-          return mergeFrom((Messages.MessageMsg0)other);
+        if (other instanceof Messages.MessageMSG0) {
+          return mergeFrom((Messages.MessageMSG0)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Messages.MessageMsg0 other) {
-        if (other == Messages.MessageMsg0.getDefaultInstance()) return this;
+      public Builder mergeFrom(Messages.MessageMSG0 other) {
+        if (other == Messages.MessageMSG0.getDefaultInstance()) return this;
         if (other.hasType()) {
           setType(other.getType());
         }
@@ -1548,11 +1572,11 @@ public final class Messages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Messages.MessageMsg0 parsedMessage = null;
+        Messages.MessageMSG0 parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Messages.MessageMsg0) e.getUnfinishedMessage();
+          parsedMessage = (Messages.MessageMSG0) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -1563,34 +1587,37 @@ public final class Messages {
       }
       private int bitField0_;
 
-      private int type_ ;
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public int getType() {
+      public Messages.Type getType() {
         return type_;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public Builder setType(int value) {
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         onChanged();
         return this;
       }
@@ -1659,15 +1686,15 @@ public final class Messages {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:Messages.MessageMsg0)
+      // @@protoc_insertion_point(builder_scope:Messages.MessageMSG0)
     }
 
     static {
-      defaultInstance = new MessageMsg0(true);
+      defaultInstance = new MessageMSG0(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:Messages.MessageMsg0)
+    // @@protoc_insertion_point(class_scope:Messages.MessageMSG0)
   }
 
   public interface MessageMSG1OrBuilder extends
@@ -1675,13 +1702,13 @@ public final class Messages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     boolean hasType();
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    int getType();
+    Messages.Type getType();
 
     /**
      * <code>repeated uint32 GaX = 2 [packed = true];</code>
@@ -1775,8 +1802,14 @@ public final class Messages {
               break;
             }
             case 8: {
-              bitField0_ |= 0x00000001;
-              type_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
               break;
             }
             case 16: {
@@ -1892,17 +1925,17 @@ public final class Messages {
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private Messages.Type type_;
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    public int getType() {
+    public Messages.Type getType() {
       return type_;
     }
 
@@ -1976,7 +2009,7 @@ public final class Messages {
     private int gIDMemoizedSerializedSize = -1;
 
     private void initFields() {
-      type_ = 0;
+      type_ = Messages.Type.RA_MSG0;
       gaX_ = java.util.Collections.emptyList();
       gaY_ = java.util.Collections.emptyList();
       gID_ = java.util.Collections.emptyList();
@@ -1999,7 +2032,7 @@ public final class Messages {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, type_);
+        output.writeEnum(1, type_.getNumber());
       }
       if (getGaXList().size() > 0) {
         output.writeRawVarint32(18);
@@ -2033,7 +2066,7 @@ public final class Messages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, type_);
+          .computeEnumSize(1, type_.getNumber());
       }
       {
         int dataSize = 0;
@@ -2194,7 +2227,7 @@ public final class Messages {
 
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
         gaX_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2329,34 +2362,37 @@ public final class Messages {
       }
       private int bitField0_;
 
-      private int type_ ;
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public int getType() {
+      public Messages.Type getType() {
         return type_;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public Builder setType(int value) {
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         onChanged();
         return this;
       }
@@ -2575,13 +2611,13 @@ public final class Messages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     boolean hasType();
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    int getType();
+    Messages.Type getType();
 
     /**
      * <code>optional uint32 size = 2;</code>
@@ -2593,37 +2629,37 @@ public final class Messages {
     int getSize();
 
     /**
-     * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getPublicKeyGxList();
     /**
-     * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
      */
     int getPublicKeyGxCount();
     /**
-     * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
      */
     int getPublicKeyGx(int index);
 
     /**
-     * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getPublicKeyGyList();
     /**
-     * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
      */
     int getPublicKeyGyCount();
     /**
-     * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
      */
     int getPublicKeyGy(int index);
 
     /**
-     * <code>optional uint32 quote_type = 5;</code>
+     * <code>optional uint32 quoteType = 5;</code>
      */
     boolean hasQuoteType();
     /**
-     * <code>optional uint32 quote_type = 5;</code>
+     * <code>optional uint32 quoteType = 5;</code>
      */
     int getQuoteType();
 
@@ -2641,37 +2677,37 @@ public final class Messages {
     int getSpid(int index);
 
     /**
-     * <code>optional uint32 cmac_kdf_id = 7;</code>
+     * <code>optional uint32 cmacKdfId = 7;</code>
      */
     boolean hasCmacKdfId();
     /**
-     * <code>optional uint32 cmac_kdf_id = 7;</code>
+     * <code>optional uint32 cmacKdfId = 7;</code>
      */
     int getCmacKdfId();
 
     /**
-     * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+     * <code>repeated uint32 signatureX = 8 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getSignatureXList();
     /**
-     * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+     * <code>repeated uint32 signatureX = 8 [packed = true];</code>
      */
     int getSignatureXCount();
     /**
-     * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+     * <code>repeated uint32 signatureX = 8 [packed = true];</code>
      */
     int getSignatureX(int index);
 
     /**
-     * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+     * <code>repeated uint32 signatureY = 9 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getSignatureYList();
     /**
-     * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+     * <code>repeated uint32 signatureY = 9 [packed = true];</code>
      */
     int getSignatureYCount();
     /**
-     * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+     * <code>repeated uint32 signatureY = 9 [packed = true];</code>
      */
     int getSignatureY(int index);
 
@@ -2689,11 +2725,11 @@ public final class Messages {
     int getSmac(int index);
 
     /**
-     * <code>optional uint32 size_sigrl = 11;</code>
+     * <code>optional uint32 sizeSigrl = 11;</code>
      */
     boolean hasSizeSigrl();
     /**
-     * <code>optional uint32 size_sigrl = 11;</code>
+     * <code>optional uint32 sizeSigrl = 11;</code>
      */
     int getSizeSigrl();
 
@@ -2763,8 +2799,14 @@ public final class Messages {
               break;
             }
             case 8: {
-              bitField0_ |= 0x00000001;
-              type_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
               break;
             }
             case 16: {
@@ -2996,17 +3038,17 @@ public final class Messages {
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private Messages.Type type_;
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    public int getType() {
+    public Messages.Type getType() {
       return type_;
     }
 
@@ -3025,62 +3067,62 @@ public final class Messages {
       return size_;
     }
 
-    public static final int PUBLIC_KEY_GX_FIELD_NUMBER = 3;
+    public static final int PUBLICKEYGX_FIELD_NUMBER = 3;
     private java.util.List<java.lang.Integer> publicKeyGx_;
     /**
-     * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getPublicKeyGxList() {
       return publicKeyGx_;
     }
     /**
-     * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
      */
     public int getPublicKeyGxCount() {
       return publicKeyGx_.size();
     }
     /**
-     * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
      */
     public int getPublicKeyGx(int index) {
       return publicKeyGx_.get(index);
     }
     private int publicKeyGxMemoizedSerializedSize = -1;
 
-    public static final int PUBLIC_KEY_GY_FIELD_NUMBER = 4;
+    public static final int PUBLICKEYGY_FIELD_NUMBER = 4;
     private java.util.List<java.lang.Integer> publicKeyGy_;
     /**
-     * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getPublicKeyGyList() {
       return publicKeyGy_;
     }
     /**
-     * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
      */
     public int getPublicKeyGyCount() {
       return publicKeyGy_.size();
     }
     /**
-     * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+     * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
      */
     public int getPublicKeyGy(int index) {
       return publicKeyGy_.get(index);
     }
     private int publicKeyGyMemoizedSerializedSize = -1;
 
-    public static final int QUOTE_TYPE_FIELD_NUMBER = 5;
+    public static final int QUOTETYPE_FIELD_NUMBER = 5;
     private int quoteType_;
     /**
-     * <code>optional uint32 quote_type = 5;</code>
+     * <code>optional uint32 quoteType = 5;</code>
      */
     public boolean hasQuoteType() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional uint32 quote_type = 5;</code>
+     * <code>optional uint32 quoteType = 5;</code>
      */
     public int getQuoteType() {
       return quoteType_;
@@ -3109,61 +3151,61 @@ public final class Messages {
     }
     private int spidMemoizedSerializedSize = -1;
 
-    public static final int CMAC_KDF_ID_FIELD_NUMBER = 7;
+    public static final int CMACKDFID_FIELD_NUMBER = 7;
     private int cmacKdfId_;
     /**
-     * <code>optional uint32 cmac_kdf_id = 7;</code>
+     * <code>optional uint32 cmacKdfId = 7;</code>
      */
     public boolean hasCmacKdfId() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional uint32 cmac_kdf_id = 7;</code>
+     * <code>optional uint32 cmacKdfId = 7;</code>
      */
     public int getCmacKdfId() {
       return cmacKdfId_;
     }
 
-    public static final int SIGNATURE_X_FIELD_NUMBER = 8;
+    public static final int SIGNATUREX_FIELD_NUMBER = 8;
     private java.util.List<java.lang.Integer> signatureX_;
     /**
-     * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+     * <code>repeated uint32 signatureX = 8 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getSignatureXList() {
       return signatureX_;
     }
     /**
-     * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+     * <code>repeated uint32 signatureX = 8 [packed = true];</code>
      */
     public int getSignatureXCount() {
       return signatureX_.size();
     }
     /**
-     * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+     * <code>repeated uint32 signatureX = 8 [packed = true];</code>
      */
     public int getSignatureX(int index) {
       return signatureX_.get(index);
     }
     private int signatureXMemoizedSerializedSize = -1;
 
-    public static final int SIGNATURE_Y_FIELD_NUMBER = 9;
+    public static final int SIGNATUREY_FIELD_NUMBER = 9;
     private java.util.List<java.lang.Integer> signatureY_;
     /**
-     * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+     * <code>repeated uint32 signatureY = 9 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getSignatureYList() {
       return signatureY_;
     }
     /**
-     * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+     * <code>repeated uint32 signatureY = 9 [packed = true];</code>
      */
     public int getSignatureYCount() {
       return signatureY_.size();
     }
     /**
-     * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+     * <code>repeated uint32 signatureY = 9 [packed = true];</code>
      */
     public int getSignatureY(int index) {
       return signatureY_.get(index);
@@ -3193,16 +3235,16 @@ public final class Messages {
     }
     private int smacMemoizedSerializedSize = -1;
 
-    public static final int SIZE_SIGRL_FIELD_NUMBER = 11;
+    public static final int SIZESIGRL_FIELD_NUMBER = 11;
     private int sizeSigrl_;
     /**
-     * <code>optional uint32 size_sigrl = 11;</code>
+     * <code>optional uint32 sizeSigrl = 11;</code>
      */
     public boolean hasSizeSigrl() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional uint32 size_sigrl = 11;</code>
+     * <code>optional uint32 sizeSigrl = 11;</code>
      */
     public int getSizeSigrl() {
       return sizeSigrl_;
@@ -3232,7 +3274,7 @@ public final class Messages {
     private int sigrlMemoizedSerializedSize = -1;
 
     private void initFields() {
-      type_ = 0;
+      type_ = Messages.Type.RA_MSG0;
       size_ = 0;
       publicKeyGx_ = java.util.Collections.emptyList();
       publicKeyGy_ = java.util.Collections.emptyList();
@@ -3263,7 +3305,7 @@ public final class Messages {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, type_);
+        output.writeEnum(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, size_);
@@ -3337,7 +3379,7 @@ public final class Messages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, type_);
+          .computeEnumSize(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -3570,7 +3612,7 @@ public final class Messages {
 
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
         size_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3809,34 +3851,37 @@ public final class Messages {
       }
       private int bitField0_;
 
-      private int type_ ;
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public int getType() {
+      public Messages.Type getType() {
         return type_;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public Builder setType(int value) {
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         onChanged();
         return this;
       }
@@ -3881,26 +3926,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getPublicKeyGxList() {
         return java.util.Collections.unmodifiableList(publicKeyGx_);
       }
       /**
-       * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
        */
       public int getPublicKeyGxCount() {
         return publicKeyGx_.size();
       }
       /**
-       * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
        */
       public int getPublicKeyGx(int index) {
         return publicKeyGx_.get(index);
       }
       /**
-       * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
        */
       public Builder setPublicKeyGx(
           int index, int value) {
@@ -3910,7 +3955,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
        */
       public Builder addPublicKeyGx(int value) {
         ensurePublicKeyGxIsMutable();
@@ -3919,7 +3964,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
        */
       public Builder addAllPublicKeyGx(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -3930,7 +3975,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 public_key_gx = 3 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGx = 3 [packed = true];</code>
        */
       public Builder clearPublicKeyGx() {
         publicKeyGx_ = java.util.Collections.emptyList();
@@ -3947,26 +3992,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getPublicKeyGyList() {
         return java.util.Collections.unmodifiableList(publicKeyGy_);
       }
       /**
-       * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
        */
       public int getPublicKeyGyCount() {
         return publicKeyGy_.size();
       }
       /**
-       * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
        */
       public int getPublicKeyGy(int index) {
         return publicKeyGy_.get(index);
       }
       /**
-       * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
        */
       public Builder setPublicKeyGy(
           int index, int value) {
@@ -3976,7 +4021,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
        */
       public Builder addPublicKeyGy(int value) {
         ensurePublicKeyGyIsMutable();
@@ -3985,7 +4030,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
        */
       public Builder addAllPublicKeyGy(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -3996,7 +4041,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 public_key_gy = 4 [packed = true];</code>
+       * <code>repeated uint32 publicKeyGy = 4 [packed = true];</code>
        */
       public Builder clearPublicKeyGy() {
         publicKeyGy_ = java.util.Collections.emptyList();
@@ -4007,19 +4052,19 @@ public final class Messages {
 
       private int quoteType_ ;
       /**
-       * <code>optional uint32 quote_type = 5;</code>
+       * <code>optional uint32 quoteType = 5;</code>
        */
       public boolean hasQuoteType() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional uint32 quote_type = 5;</code>
+       * <code>optional uint32 quoteType = 5;</code>
        */
       public int getQuoteType() {
         return quoteType_;
       }
       /**
-       * <code>optional uint32 quote_type = 5;</code>
+       * <code>optional uint32 quoteType = 5;</code>
        */
       public Builder setQuoteType(int value) {
         bitField0_ |= 0x00000010;
@@ -4028,7 +4073,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional uint32 quote_type = 5;</code>
+       * <code>optional uint32 quoteType = 5;</code>
        */
       public Builder clearQuoteType() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -4105,19 +4150,19 @@ public final class Messages {
 
       private int cmacKdfId_ ;
       /**
-       * <code>optional uint32 cmac_kdf_id = 7;</code>
+       * <code>optional uint32 cmacKdfId = 7;</code>
        */
       public boolean hasCmacKdfId() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>optional uint32 cmac_kdf_id = 7;</code>
+       * <code>optional uint32 cmacKdfId = 7;</code>
        */
       public int getCmacKdfId() {
         return cmacKdfId_;
       }
       /**
-       * <code>optional uint32 cmac_kdf_id = 7;</code>
+       * <code>optional uint32 cmacKdfId = 7;</code>
        */
       public Builder setCmacKdfId(int value) {
         bitField0_ |= 0x00000040;
@@ -4126,7 +4171,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional uint32 cmac_kdf_id = 7;</code>
+       * <code>optional uint32 cmacKdfId = 7;</code>
        */
       public Builder clearCmacKdfId() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -4143,26 +4188,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+       * <code>repeated uint32 signatureX = 8 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getSignatureXList() {
         return java.util.Collections.unmodifiableList(signatureX_);
       }
       /**
-       * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+       * <code>repeated uint32 signatureX = 8 [packed = true];</code>
        */
       public int getSignatureXCount() {
         return signatureX_.size();
       }
       /**
-       * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+       * <code>repeated uint32 signatureX = 8 [packed = true];</code>
        */
       public int getSignatureX(int index) {
         return signatureX_.get(index);
       }
       /**
-       * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+       * <code>repeated uint32 signatureX = 8 [packed = true];</code>
        */
       public Builder setSignatureX(
           int index, int value) {
@@ -4172,7 +4217,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+       * <code>repeated uint32 signatureX = 8 [packed = true];</code>
        */
       public Builder addSignatureX(int value) {
         ensureSignatureXIsMutable();
@@ -4181,7 +4226,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+       * <code>repeated uint32 signatureX = 8 [packed = true];</code>
        */
       public Builder addAllSignatureX(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -4192,7 +4237,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 signature_x = 8 [packed = true];</code>
+       * <code>repeated uint32 signatureX = 8 [packed = true];</code>
        */
       public Builder clearSignatureX() {
         signatureX_ = java.util.Collections.emptyList();
@@ -4209,26 +4254,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+       * <code>repeated uint32 signatureY = 9 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getSignatureYList() {
         return java.util.Collections.unmodifiableList(signatureY_);
       }
       /**
-       * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+       * <code>repeated uint32 signatureY = 9 [packed = true];</code>
        */
       public int getSignatureYCount() {
         return signatureY_.size();
       }
       /**
-       * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+       * <code>repeated uint32 signatureY = 9 [packed = true];</code>
        */
       public int getSignatureY(int index) {
         return signatureY_.get(index);
       }
       /**
-       * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+       * <code>repeated uint32 signatureY = 9 [packed = true];</code>
        */
       public Builder setSignatureY(
           int index, int value) {
@@ -4238,7 +4283,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+       * <code>repeated uint32 signatureY = 9 [packed = true];</code>
        */
       public Builder addSignatureY(int value) {
         ensureSignatureYIsMutable();
@@ -4247,7 +4292,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+       * <code>repeated uint32 signatureY = 9 [packed = true];</code>
        */
       public Builder addAllSignatureY(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -4258,7 +4303,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 signature_y = 9 [packed = true];</code>
+       * <code>repeated uint32 signatureY = 9 [packed = true];</code>
        */
       public Builder clearSignatureY() {
         signatureY_ = java.util.Collections.emptyList();
@@ -4335,19 +4380,19 @@ public final class Messages {
 
       private int sizeSigrl_ ;
       /**
-       * <code>optional uint32 size_sigrl = 11;</code>
+       * <code>optional uint32 sizeSigrl = 11;</code>
        */
       public boolean hasSizeSigrl() {
         return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
-       * <code>optional uint32 size_sigrl = 11;</code>
+       * <code>optional uint32 sizeSigrl = 11;</code>
        */
       public int getSizeSigrl() {
         return sizeSigrl_;
       }
       /**
-       * <code>optional uint32 size_sigrl = 11;</code>
+       * <code>optional uint32 sizeSigrl = 11;</code>
        */
       public Builder setSizeSigrl(int value) {
         bitField0_ |= 0x00000400;
@@ -4356,7 +4401,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional uint32 size_sigrl = 11;</code>
+       * <code>optional uint32 sizeSigrl = 11;</code>
        */
       public Builder clearSizeSigrl() {
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -4447,13 +4492,13 @@ public final class Messages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     boolean hasType();
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    int getType();
+    Messages.Type getType();
 
     /**
      * <code>optional uint32 size = 2;</code>
@@ -4465,54 +4510,54 @@ public final class Messages {
     int getSize();
 
     /**
-     * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+     * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getSgxMacList();
     /**
-     * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+     * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
      */
     int getSgxMacCount();
     /**
-     * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+     * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
      */
     int getSgxMac(int index);
 
     /**
-     * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+     * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getGaxMsg3List();
     /**
-     * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+     * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
      */
     int getGaxMsg3Count();
     /**
-     * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+     * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
      */
     int getGaxMsg3(int index);
 
     /**
-     * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+     * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getGayMsg3List();
     /**
-     * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+     * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
      */
     int getGayMsg3Count();
     /**
-     * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+     * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
      */
     int getGayMsg3(int index);
 
     /**
-     * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+     * <code>repeated uint32 secProperty = 6 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getSecPropertyList();
     /**
-     * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+     * <code>repeated uint32 secProperty = 6 [packed = true];</code>
      */
     int getSecPropertyCount();
     /**
-     * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+     * <code>repeated uint32 secProperty = 6 [packed = true];</code>
      */
     int getSecProperty(int index);
 
@@ -4582,8 +4627,14 @@ public final class Messages {
               break;
             }
             case 8: {
-              bitField0_ |= 0x00000001;
-              type_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
               break;
             }
             case 16: {
@@ -4752,17 +4803,17 @@ public final class Messages {
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private Messages.Type type_;
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    public int getType() {
+    public Messages.Type getType() {
       return type_;
     }
 
@@ -4781,92 +4832,92 @@ public final class Messages {
       return size_;
     }
 
-    public static final int SGX_MAC_FIELD_NUMBER = 3;
+    public static final int SGXMAC_FIELD_NUMBER = 3;
     private java.util.List<java.lang.Integer> sgxMac_;
     /**
-     * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+     * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getSgxMacList() {
       return sgxMac_;
     }
     /**
-     * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+     * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
      */
     public int getSgxMacCount() {
       return sgxMac_.size();
     }
     /**
-     * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+     * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
      */
     public int getSgxMac(int index) {
       return sgxMac_.get(index);
     }
     private int sgxMacMemoizedSerializedSize = -1;
 
-    public static final int GAX_MSG3_FIELD_NUMBER = 4;
+    public static final int GAXMSG3_FIELD_NUMBER = 4;
     private java.util.List<java.lang.Integer> gaxMsg3_;
     /**
-     * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+     * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getGaxMsg3List() {
       return gaxMsg3_;
     }
     /**
-     * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+     * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
      */
     public int getGaxMsg3Count() {
       return gaxMsg3_.size();
     }
     /**
-     * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+     * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
      */
     public int getGaxMsg3(int index) {
       return gaxMsg3_.get(index);
     }
     private int gaxMsg3MemoizedSerializedSize = -1;
 
-    public static final int GAY_MSG3_FIELD_NUMBER = 5;
+    public static final int GAYMSG3_FIELD_NUMBER = 5;
     private java.util.List<java.lang.Integer> gayMsg3_;
     /**
-     * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+     * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getGayMsg3List() {
       return gayMsg3_;
     }
     /**
-     * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+     * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
      */
     public int getGayMsg3Count() {
       return gayMsg3_.size();
     }
     /**
-     * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+     * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
      */
     public int getGayMsg3(int index) {
       return gayMsg3_.get(index);
     }
     private int gayMsg3MemoizedSerializedSize = -1;
 
-    public static final int SEC_PROPERTY_FIELD_NUMBER = 6;
+    public static final int SECPROPERTY_FIELD_NUMBER = 6;
     private java.util.List<java.lang.Integer> secProperty_;
     /**
-     * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+     * <code>repeated uint32 secProperty = 6 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getSecPropertyList() {
       return secProperty_;
     }
     /**
-     * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+     * <code>repeated uint32 secProperty = 6 [packed = true];</code>
      */
     public int getSecPropertyCount() {
       return secProperty_.size();
     }
     /**
-     * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+     * <code>repeated uint32 secProperty = 6 [packed = true];</code>
      */
     public int getSecProperty(int index) {
       return secProperty_.get(index);
@@ -4897,7 +4948,7 @@ public final class Messages {
     private int quoteMemoizedSerializedSize = -1;
 
     private void initFields() {
-      type_ = 0;
+      type_ = Messages.Type.RA_MSG0;
       size_ = 0;
       sgxMac_ = java.util.Collections.emptyList();
       gaxMsg3_ = java.util.Collections.emptyList();
@@ -4923,7 +4974,7 @@ public final class Messages {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, type_);
+        output.writeEnum(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, size_);
@@ -4974,7 +5025,7 @@ public final class Messages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, type_);
+          .computeEnumSize(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -5167,7 +5218,7 @@ public final class Messages {
 
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
         size_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -5345,34 +5396,37 @@ public final class Messages {
       }
       private int bitField0_;
 
-      private int type_ ;
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public int getType() {
+      public Messages.Type getType() {
         return type_;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public Builder setType(int value) {
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         onChanged();
         return this;
       }
@@ -5417,26 +5471,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+       * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getSgxMacList() {
         return java.util.Collections.unmodifiableList(sgxMac_);
       }
       /**
-       * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+       * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
        */
       public int getSgxMacCount() {
         return sgxMac_.size();
       }
       /**
-       * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+       * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
        */
       public int getSgxMac(int index) {
         return sgxMac_.get(index);
       }
       /**
-       * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+       * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
        */
       public Builder setSgxMac(
           int index, int value) {
@@ -5446,7 +5500,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+       * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
        */
       public Builder addSgxMac(int value) {
         ensureSgxMacIsMutable();
@@ -5455,7 +5509,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+       * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
        */
       public Builder addAllSgxMac(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -5466,7 +5520,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 sgx_mac = 3 [packed = true];</code>
+       * <code>repeated uint32 sgxMac = 3 [packed = true];</code>
        */
       public Builder clearSgxMac() {
         sgxMac_ = java.util.Collections.emptyList();
@@ -5483,26 +5537,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+       * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getGaxMsg3List() {
         return java.util.Collections.unmodifiableList(gaxMsg3_);
       }
       /**
-       * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+       * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
        */
       public int getGaxMsg3Count() {
         return gaxMsg3_.size();
       }
       /**
-       * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+       * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
        */
       public int getGaxMsg3(int index) {
         return gaxMsg3_.get(index);
       }
       /**
-       * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+       * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
        */
       public Builder setGaxMsg3(
           int index, int value) {
@@ -5512,7 +5566,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+       * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
        */
       public Builder addGaxMsg3(int value) {
         ensureGaxMsg3IsMutable();
@@ -5521,7 +5575,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+       * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
        */
       public Builder addAllGaxMsg3(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -5532,7 +5586,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 gax_msg3 = 4 [packed = true];</code>
+       * <code>repeated uint32 gaxMsg3 = 4 [packed = true];</code>
        */
       public Builder clearGaxMsg3() {
         gaxMsg3_ = java.util.Collections.emptyList();
@@ -5549,26 +5603,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+       * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getGayMsg3List() {
         return java.util.Collections.unmodifiableList(gayMsg3_);
       }
       /**
-       * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+       * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
        */
       public int getGayMsg3Count() {
         return gayMsg3_.size();
       }
       /**
-       * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+       * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
        */
       public int getGayMsg3(int index) {
         return gayMsg3_.get(index);
       }
       /**
-       * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+       * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
        */
       public Builder setGayMsg3(
           int index, int value) {
@@ -5578,7 +5632,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+       * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
        */
       public Builder addGayMsg3(int value) {
         ensureGayMsg3IsMutable();
@@ -5587,7 +5641,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+       * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
        */
       public Builder addAllGayMsg3(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -5598,7 +5652,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 gay_msg3 = 5 [packed = true];</code>
+       * <code>repeated uint32 gayMsg3 = 5 [packed = true];</code>
        */
       public Builder clearGayMsg3() {
         gayMsg3_ = java.util.Collections.emptyList();
@@ -5615,26 +5669,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+       * <code>repeated uint32 secProperty = 6 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getSecPropertyList() {
         return java.util.Collections.unmodifiableList(secProperty_);
       }
       /**
-       * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+       * <code>repeated uint32 secProperty = 6 [packed = true];</code>
        */
       public int getSecPropertyCount() {
         return secProperty_.size();
       }
       /**
-       * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+       * <code>repeated uint32 secProperty = 6 [packed = true];</code>
        */
       public int getSecProperty(int index) {
         return secProperty_.get(index);
       }
       /**
-       * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+       * <code>repeated uint32 secProperty = 6 [packed = true];</code>
        */
       public Builder setSecProperty(
           int index, int value) {
@@ -5644,7 +5698,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+       * <code>repeated uint32 secProperty = 6 [packed = true];</code>
        */
       public Builder addSecProperty(int value) {
         ensureSecPropertyIsMutable();
@@ -5653,7 +5707,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+       * <code>repeated uint32 secProperty = 6 [packed = true];</code>
        */
       public Builder addAllSecProperty(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -5664,7 +5718,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 sec_property = 6 [packed = true];</code>
+       * <code>repeated uint32 secProperty = 6 [packed = true];</code>
        */
       public Builder clearSecProperty() {
         secProperty_ = java.util.Collections.emptyList();
@@ -5755,13 +5809,13 @@ public final class Messages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     boolean hasType();
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    int getType();
+    Messages.Type getType();
 
     /**
      * <code>required uint32 size = 2;</code>
@@ -5773,129 +5827,129 @@ public final class Messages {
     int getSize();
 
     /**
-     * <code>optional uint32 epid_group_status = 3;</code>
+     * <code>optional uint32 epidGroupStatus = 3;</code>
      */
     boolean hasEpidGroupStatus();
     /**
-     * <code>optional uint32 epid_group_status = 3;</code>
+     * <code>optional uint32 epidGroupStatus = 3;</code>
      */
     int getEpidGroupStatus();
 
     /**
-     * <code>optional uint32 tcb_evaluation_status = 4;</code>
+     * <code>optional uint32 tcbEvaluationStatus = 4;</code>
      */
     boolean hasTcbEvaluationStatus();
     /**
-     * <code>optional uint32 tcb_evaluation_status = 4;</code>
+     * <code>optional uint32 tcbEvaluationStatus = 4;</code>
      */
     int getTcbEvaluationStatus();
 
     /**
-     * <code>optional uint32 pse_evaluation_status = 5;</code>
+     * <code>optional uint32 pseEvaluationStatus = 5;</code>
      */
     boolean hasPseEvaluationStatus();
     /**
-     * <code>optional uint32 pse_evaluation_status = 5;</code>
+     * <code>optional uint32 pseEvaluationStatus = 5;</code>
      */
     int getPseEvaluationStatus();
 
     /**
-     * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+     * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getLatestEquivalentTcbPsvnList();
     /**
-     * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+     * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
      */
     int getLatestEquivalentTcbPsvnCount();
     /**
-     * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+     * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
      */
     int getLatestEquivalentTcbPsvn(int index);
 
     /**
-     * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+     * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getLatestPseIsvsvnList();
     /**
-     * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+     * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
      */
     int getLatestPseIsvsvnCount();
     /**
-     * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+     * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
      */
     int getLatestPseIsvsvn(int index);
 
     /**
-     * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+     * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getLatestPsdaSvnList();
     /**
-     * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+     * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
      */
     int getLatestPsdaSvnCount();
     /**
-     * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+     * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
      */
     int getLatestPsdaSvn(int index);
 
     /**
-     * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+     * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getPerformanceRekeyGidList();
     /**
-     * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+     * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
      */
     int getPerformanceRekeyGidCount();
     /**
-     * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+     * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
      */
     int getPerformanceRekeyGid(int index);
 
     /**
-     * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+     * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getEcSign256XList();
     /**
-     * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+     * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
      */
     int getEcSign256XCount();
     /**
-     * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+     * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
      */
     int getEcSign256X(int index);
 
     /**
-     * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+     * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getEcSign256YList();
     /**
-     * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+     * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
      */
     int getEcSign256YCount();
     /**
-     * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+     * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
      */
     int getEcSign256Y(int index);
 
     /**
-     * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+     * <code>repeated uint32 macSmk = 12 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getMacSmkList();
     /**
-     * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+     * <code>repeated uint32 macSmk = 12 [packed = true];</code>
      */
     int getMacSmkCount();
     /**
-     * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+     * <code>repeated uint32 macSmk = 12 [packed = true];</code>
      */
     int getMacSmk(int index);
 
     /**
-     * <code>optional uint32 result_size = 13;</code>
+     * <code>optional uint32 resultSize = 13;</code>
      */
     boolean hasResultSize();
     /**
-     * <code>optional uint32 result_size = 13;</code>
+     * <code>optional uint32 resultSize = 13;</code>
      */
     int getResultSize();
 
@@ -5913,15 +5967,15 @@ public final class Messages {
     int getReserved(int index);
 
     /**
-     * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+     * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
      */
     java.util.List<java.lang.Integer> getPayloadTagList();
     /**
-     * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+     * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
      */
     int getPayloadTagCount();
     /**
-     * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+     * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
      */
     int getPayloadTag(int index);
 
@@ -5991,8 +6045,14 @@ public final class Messages {
               break;
             }
             case 8: {
-              bitField0_ |= 0x00000001;
-              type_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
               break;
             }
             case 16: {
@@ -6301,17 +6361,17 @@ public final class Messages {
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private Messages.Type type_;
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 type = 1;</code>
+     * <code>required .Messages.Type type = 1;</code>
      */
-    public int getType() {
+    public Messages.Type getType() {
       return type_;
     }
 
@@ -6330,222 +6390,222 @@ public final class Messages {
       return size_;
     }
 
-    public static final int EPID_GROUP_STATUS_FIELD_NUMBER = 3;
+    public static final int EPIDGROUPSTATUS_FIELD_NUMBER = 3;
     private int epidGroupStatus_;
     /**
-     * <code>optional uint32 epid_group_status = 3;</code>
+     * <code>optional uint32 epidGroupStatus = 3;</code>
      */
     public boolean hasEpidGroupStatus() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional uint32 epid_group_status = 3;</code>
+     * <code>optional uint32 epidGroupStatus = 3;</code>
      */
     public int getEpidGroupStatus() {
       return epidGroupStatus_;
     }
 
-    public static final int TCB_EVALUATION_STATUS_FIELD_NUMBER = 4;
+    public static final int TCBEVALUATIONSTATUS_FIELD_NUMBER = 4;
     private int tcbEvaluationStatus_;
     /**
-     * <code>optional uint32 tcb_evaluation_status = 4;</code>
+     * <code>optional uint32 tcbEvaluationStatus = 4;</code>
      */
     public boolean hasTcbEvaluationStatus() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional uint32 tcb_evaluation_status = 4;</code>
+     * <code>optional uint32 tcbEvaluationStatus = 4;</code>
      */
     public int getTcbEvaluationStatus() {
       return tcbEvaluationStatus_;
     }
 
-    public static final int PSE_EVALUATION_STATUS_FIELD_NUMBER = 5;
+    public static final int PSEEVALUATIONSTATUS_FIELD_NUMBER = 5;
     private int pseEvaluationStatus_;
     /**
-     * <code>optional uint32 pse_evaluation_status = 5;</code>
+     * <code>optional uint32 pseEvaluationStatus = 5;</code>
      */
     public boolean hasPseEvaluationStatus() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional uint32 pse_evaluation_status = 5;</code>
+     * <code>optional uint32 pseEvaluationStatus = 5;</code>
      */
     public int getPseEvaluationStatus() {
       return pseEvaluationStatus_;
     }
 
-    public static final int LATEST_EQUIVALENT_TCB_PSVN_FIELD_NUMBER = 6;
+    public static final int LATESTEQUIVALENTTCBPSVN_FIELD_NUMBER = 6;
     private java.util.List<java.lang.Integer> latestEquivalentTcbPsvn_;
     /**
-     * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+     * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getLatestEquivalentTcbPsvnList() {
       return latestEquivalentTcbPsvn_;
     }
     /**
-     * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+     * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
      */
     public int getLatestEquivalentTcbPsvnCount() {
       return latestEquivalentTcbPsvn_.size();
     }
     /**
-     * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+     * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
      */
     public int getLatestEquivalentTcbPsvn(int index) {
       return latestEquivalentTcbPsvn_.get(index);
     }
     private int latestEquivalentTcbPsvnMemoizedSerializedSize = -1;
 
-    public static final int LATEST_PSE_ISVSVN_FIELD_NUMBER = 7;
+    public static final int LATESTPSEISVSVN_FIELD_NUMBER = 7;
     private java.util.List<java.lang.Integer> latestPseIsvsvn_;
     /**
-     * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+     * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getLatestPseIsvsvnList() {
       return latestPseIsvsvn_;
     }
     /**
-     * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+     * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
      */
     public int getLatestPseIsvsvnCount() {
       return latestPseIsvsvn_.size();
     }
     /**
-     * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+     * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
      */
     public int getLatestPseIsvsvn(int index) {
       return latestPseIsvsvn_.get(index);
     }
     private int latestPseIsvsvnMemoizedSerializedSize = -1;
 
-    public static final int LATEST_PSDA_SVN_FIELD_NUMBER = 8;
+    public static final int LATESTPSDASVN_FIELD_NUMBER = 8;
     private java.util.List<java.lang.Integer> latestPsdaSvn_;
     /**
-     * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+     * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getLatestPsdaSvnList() {
       return latestPsdaSvn_;
     }
     /**
-     * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+     * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
      */
     public int getLatestPsdaSvnCount() {
       return latestPsdaSvn_.size();
     }
     /**
-     * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+     * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
      */
     public int getLatestPsdaSvn(int index) {
       return latestPsdaSvn_.get(index);
     }
     private int latestPsdaSvnMemoizedSerializedSize = -1;
 
-    public static final int PERFORMANCE_REKEY_GID_FIELD_NUMBER = 9;
+    public static final int PERFORMANCEREKEYGID_FIELD_NUMBER = 9;
     private java.util.List<java.lang.Integer> performanceRekeyGid_;
     /**
-     * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+     * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getPerformanceRekeyGidList() {
       return performanceRekeyGid_;
     }
     /**
-     * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+     * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
      */
     public int getPerformanceRekeyGidCount() {
       return performanceRekeyGid_.size();
     }
     /**
-     * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+     * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
      */
     public int getPerformanceRekeyGid(int index) {
       return performanceRekeyGid_.get(index);
     }
     private int performanceRekeyGidMemoizedSerializedSize = -1;
 
-    public static final int EC_SIGN256_X_FIELD_NUMBER = 10;
+    public static final int ECSIGN256X_FIELD_NUMBER = 10;
     private java.util.List<java.lang.Integer> ecSign256X_;
     /**
-     * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+     * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getEcSign256XList() {
       return ecSign256X_;
     }
     /**
-     * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+     * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
      */
     public int getEcSign256XCount() {
       return ecSign256X_.size();
     }
     /**
-     * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+     * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
      */
     public int getEcSign256X(int index) {
       return ecSign256X_.get(index);
     }
     private int ecSign256XMemoizedSerializedSize = -1;
 
-    public static final int EC_SIGN256_Y_FIELD_NUMBER = 11;
+    public static final int ECSIGN256Y_FIELD_NUMBER = 11;
     private java.util.List<java.lang.Integer> ecSign256Y_;
     /**
-     * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+     * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getEcSign256YList() {
       return ecSign256Y_;
     }
     /**
-     * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+     * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
      */
     public int getEcSign256YCount() {
       return ecSign256Y_.size();
     }
     /**
-     * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+     * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
      */
     public int getEcSign256Y(int index) {
       return ecSign256Y_.get(index);
     }
     private int ecSign256YMemoizedSerializedSize = -1;
 
-    public static final int MAC_SMK_FIELD_NUMBER = 12;
+    public static final int MACSMK_FIELD_NUMBER = 12;
     private java.util.List<java.lang.Integer> macSmk_;
     /**
-     * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+     * <code>repeated uint32 macSmk = 12 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getMacSmkList() {
       return macSmk_;
     }
     /**
-     * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+     * <code>repeated uint32 macSmk = 12 [packed = true];</code>
      */
     public int getMacSmkCount() {
       return macSmk_.size();
     }
     /**
-     * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+     * <code>repeated uint32 macSmk = 12 [packed = true];</code>
      */
     public int getMacSmk(int index) {
       return macSmk_.get(index);
     }
     private int macSmkMemoizedSerializedSize = -1;
 
-    public static final int RESULT_SIZE_FIELD_NUMBER = 13;
+    public static final int RESULTSIZE_FIELD_NUMBER = 13;
     private int resultSize_;
     /**
-     * <code>optional uint32 result_size = 13;</code>
+     * <code>optional uint32 resultSize = 13;</code>
      */
     public boolean hasResultSize() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>optional uint32 result_size = 13;</code>
+     * <code>optional uint32 resultSize = 13;</code>
      */
     public int getResultSize() {
       return resultSize_;
@@ -6574,23 +6634,23 @@ public final class Messages {
     }
     private int reservedMemoizedSerializedSize = -1;
 
-    public static final int PAYLOAD_TAG_FIELD_NUMBER = 15;
+    public static final int PAYLOADTAG_FIELD_NUMBER = 15;
     private java.util.List<java.lang.Integer> payloadTag_;
     /**
-     * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+     * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
      */
     public java.util.List<java.lang.Integer>
         getPayloadTagList() {
       return payloadTag_;
     }
     /**
-     * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+     * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
      */
     public int getPayloadTagCount() {
       return payloadTag_.size();
     }
     /**
-     * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+     * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
      */
     public int getPayloadTag(int index) {
       return payloadTag_.get(index);
@@ -6621,7 +6681,7 @@ public final class Messages {
     private int payloadMemoizedSerializedSize = -1;
 
     private void initFields() {
-      type_ = 0;
+      type_ = Messages.Type.RA_MSG0;
       size_ = 0;
       epidGroupStatus_ = 0;
       tcbEvaluationStatus_ = 0;
@@ -6660,7 +6720,7 @@ public final class Messages {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, type_);
+        output.writeEnum(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, size_);
@@ -6758,7 +6818,7 @@ public final class Messages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, type_);
+          .computeEnumSize(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -7037,7 +7097,7 @@ public final class Messages {
 
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         bitField0_ = (bitField0_ & ~0x00000001);
         size_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -7340,34 +7400,37 @@ public final class Messages {
       }
       private int bitField0_;
 
-      private int type_ ;
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public int getType() {
+      public Messages.Type getType() {
         return type_;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
-      public Builder setType(int value) {
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000001;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 type = 1;</code>
+       * <code>required .Messages.Type type = 1;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
+        type_ = Messages.Type.RA_MSG0;
         onChanged();
         return this;
       }
@@ -7406,19 +7469,19 @@ public final class Messages {
 
       private int epidGroupStatus_ ;
       /**
-       * <code>optional uint32 epid_group_status = 3;</code>
+       * <code>optional uint32 epidGroupStatus = 3;</code>
        */
       public boolean hasEpidGroupStatus() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional uint32 epid_group_status = 3;</code>
+       * <code>optional uint32 epidGroupStatus = 3;</code>
        */
       public int getEpidGroupStatus() {
         return epidGroupStatus_;
       }
       /**
-       * <code>optional uint32 epid_group_status = 3;</code>
+       * <code>optional uint32 epidGroupStatus = 3;</code>
        */
       public Builder setEpidGroupStatus(int value) {
         bitField0_ |= 0x00000004;
@@ -7427,7 +7490,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional uint32 epid_group_status = 3;</code>
+       * <code>optional uint32 epidGroupStatus = 3;</code>
        */
       public Builder clearEpidGroupStatus() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -7438,19 +7501,19 @@ public final class Messages {
 
       private int tcbEvaluationStatus_ ;
       /**
-       * <code>optional uint32 tcb_evaluation_status = 4;</code>
+       * <code>optional uint32 tcbEvaluationStatus = 4;</code>
        */
       public boolean hasTcbEvaluationStatus() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional uint32 tcb_evaluation_status = 4;</code>
+       * <code>optional uint32 tcbEvaluationStatus = 4;</code>
        */
       public int getTcbEvaluationStatus() {
         return tcbEvaluationStatus_;
       }
       /**
-       * <code>optional uint32 tcb_evaluation_status = 4;</code>
+       * <code>optional uint32 tcbEvaluationStatus = 4;</code>
        */
       public Builder setTcbEvaluationStatus(int value) {
         bitField0_ |= 0x00000008;
@@ -7459,7 +7522,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional uint32 tcb_evaluation_status = 4;</code>
+       * <code>optional uint32 tcbEvaluationStatus = 4;</code>
        */
       public Builder clearTcbEvaluationStatus() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -7470,19 +7533,19 @@ public final class Messages {
 
       private int pseEvaluationStatus_ ;
       /**
-       * <code>optional uint32 pse_evaluation_status = 5;</code>
+       * <code>optional uint32 pseEvaluationStatus = 5;</code>
        */
       public boolean hasPseEvaluationStatus() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional uint32 pse_evaluation_status = 5;</code>
+       * <code>optional uint32 pseEvaluationStatus = 5;</code>
        */
       public int getPseEvaluationStatus() {
         return pseEvaluationStatus_;
       }
       /**
-       * <code>optional uint32 pse_evaluation_status = 5;</code>
+       * <code>optional uint32 pseEvaluationStatus = 5;</code>
        */
       public Builder setPseEvaluationStatus(int value) {
         bitField0_ |= 0x00000010;
@@ -7491,7 +7554,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional uint32 pse_evaluation_status = 5;</code>
+       * <code>optional uint32 pseEvaluationStatus = 5;</code>
        */
       public Builder clearPseEvaluationStatus() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -7508,26 +7571,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+       * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getLatestEquivalentTcbPsvnList() {
         return java.util.Collections.unmodifiableList(latestEquivalentTcbPsvn_);
       }
       /**
-       * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+       * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
        */
       public int getLatestEquivalentTcbPsvnCount() {
         return latestEquivalentTcbPsvn_.size();
       }
       /**
-       * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+       * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
        */
       public int getLatestEquivalentTcbPsvn(int index) {
         return latestEquivalentTcbPsvn_.get(index);
       }
       /**
-       * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+       * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
        */
       public Builder setLatestEquivalentTcbPsvn(
           int index, int value) {
@@ -7537,7 +7600,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+       * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
        */
       public Builder addLatestEquivalentTcbPsvn(int value) {
         ensureLatestEquivalentTcbPsvnIsMutable();
@@ -7546,7 +7609,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+       * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
        */
       public Builder addAllLatestEquivalentTcbPsvn(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -7557,7 +7620,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_equivalent_tcb_psvn = 6 [packed = true];</code>
+       * <code>repeated uint32 latestEquivalentTcbPsvn = 6 [packed = true];</code>
        */
       public Builder clearLatestEquivalentTcbPsvn() {
         latestEquivalentTcbPsvn_ = java.util.Collections.emptyList();
@@ -7574,26 +7637,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+       * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getLatestPseIsvsvnList() {
         return java.util.Collections.unmodifiableList(latestPseIsvsvn_);
       }
       /**
-       * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+       * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
        */
       public int getLatestPseIsvsvnCount() {
         return latestPseIsvsvn_.size();
       }
       /**
-       * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+       * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
        */
       public int getLatestPseIsvsvn(int index) {
         return latestPseIsvsvn_.get(index);
       }
       /**
-       * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+       * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
        */
       public Builder setLatestPseIsvsvn(
           int index, int value) {
@@ -7603,7 +7666,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+       * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
        */
       public Builder addLatestPseIsvsvn(int value) {
         ensureLatestPseIsvsvnIsMutable();
@@ -7612,7 +7675,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+       * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
        */
       public Builder addAllLatestPseIsvsvn(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -7623,7 +7686,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_pse_isvsvn = 7 [packed = true];</code>
+       * <code>repeated uint32 latestPseIsvsvn = 7 [packed = true];</code>
        */
       public Builder clearLatestPseIsvsvn() {
         latestPseIsvsvn_ = java.util.Collections.emptyList();
@@ -7640,26 +7703,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+       * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getLatestPsdaSvnList() {
         return java.util.Collections.unmodifiableList(latestPsdaSvn_);
       }
       /**
-       * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+       * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
        */
       public int getLatestPsdaSvnCount() {
         return latestPsdaSvn_.size();
       }
       /**
-       * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+       * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
        */
       public int getLatestPsdaSvn(int index) {
         return latestPsdaSvn_.get(index);
       }
       /**
-       * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+       * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
        */
       public Builder setLatestPsdaSvn(
           int index, int value) {
@@ -7669,7 +7732,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+       * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
        */
       public Builder addLatestPsdaSvn(int value) {
         ensureLatestPsdaSvnIsMutable();
@@ -7678,7 +7741,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+       * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
        */
       public Builder addAllLatestPsdaSvn(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -7689,7 +7752,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 latest_psda_svn = 8 [packed = true];</code>
+       * <code>repeated uint32 latestPsdaSvn = 8 [packed = true];</code>
        */
       public Builder clearLatestPsdaSvn() {
         latestPsdaSvn_ = java.util.Collections.emptyList();
@@ -7706,26 +7769,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+       * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getPerformanceRekeyGidList() {
         return java.util.Collections.unmodifiableList(performanceRekeyGid_);
       }
       /**
-       * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+       * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
        */
       public int getPerformanceRekeyGidCount() {
         return performanceRekeyGid_.size();
       }
       /**
-       * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+       * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
        */
       public int getPerformanceRekeyGid(int index) {
         return performanceRekeyGid_.get(index);
       }
       /**
-       * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+       * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
        */
       public Builder setPerformanceRekeyGid(
           int index, int value) {
@@ -7735,7 +7798,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+       * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
        */
       public Builder addPerformanceRekeyGid(int value) {
         ensurePerformanceRekeyGidIsMutable();
@@ -7744,7 +7807,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+       * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
        */
       public Builder addAllPerformanceRekeyGid(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -7755,7 +7818,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 performance_rekey_gid = 9 [packed = true];</code>
+       * <code>repeated uint32 performanceRekeyGid = 9 [packed = true];</code>
        */
       public Builder clearPerformanceRekeyGid() {
         performanceRekeyGid_ = java.util.Collections.emptyList();
@@ -7772,26 +7835,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+       * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getEcSign256XList() {
         return java.util.Collections.unmodifiableList(ecSign256X_);
       }
       /**
-       * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+       * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
        */
       public int getEcSign256XCount() {
         return ecSign256X_.size();
       }
       /**
-       * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+       * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
        */
       public int getEcSign256X(int index) {
         return ecSign256X_.get(index);
       }
       /**
-       * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+       * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
        */
       public Builder setEcSign256X(
           int index, int value) {
@@ -7801,7 +7864,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+       * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
        */
       public Builder addEcSign256X(int value) {
         ensureEcSign256XIsMutable();
@@ -7810,7 +7873,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+       * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
        */
       public Builder addAllEcSign256X(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -7821,7 +7884,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 ec_sign256_x = 10 [packed = true];</code>
+       * <code>repeated uint32 ecSign256X = 10 [packed = true];</code>
        */
       public Builder clearEcSign256X() {
         ecSign256X_ = java.util.Collections.emptyList();
@@ -7838,26 +7901,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+       * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getEcSign256YList() {
         return java.util.Collections.unmodifiableList(ecSign256Y_);
       }
       /**
-       * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+       * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
        */
       public int getEcSign256YCount() {
         return ecSign256Y_.size();
       }
       /**
-       * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+       * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
        */
       public int getEcSign256Y(int index) {
         return ecSign256Y_.get(index);
       }
       /**
-       * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+       * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
        */
       public Builder setEcSign256Y(
           int index, int value) {
@@ -7867,7 +7930,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+       * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
        */
       public Builder addEcSign256Y(int value) {
         ensureEcSign256YIsMutable();
@@ -7876,7 +7939,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+       * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
        */
       public Builder addAllEcSign256Y(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -7887,7 +7950,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 ec_sign256_y = 11 [packed = true];</code>
+       * <code>repeated uint32 ecSign256Y = 11 [packed = true];</code>
        */
       public Builder clearEcSign256Y() {
         ecSign256Y_ = java.util.Collections.emptyList();
@@ -7904,26 +7967,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+       * <code>repeated uint32 macSmk = 12 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getMacSmkList() {
         return java.util.Collections.unmodifiableList(macSmk_);
       }
       /**
-       * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+       * <code>repeated uint32 macSmk = 12 [packed = true];</code>
        */
       public int getMacSmkCount() {
         return macSmk_.size();
       }
       /**
-       * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+       * <code>repeated uint32 macSmk = 12 [packed = true];</code>
        */
       public int getMacSmk(int index) {
         return macSmk_.get(index);
       }
       /**
-       * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+       * <code>repeated uint32 macSmk = 12 [packed = true];</code>
        */
       public Builder setMacSmk(
           int index, int value) {
@@ -7933,7 +7996,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+       * <code>repeated uint32 macSmk = 12 [packed = true];</code>
        */
       public Builder addMacSmk(int value) {
         ensureMacSmkIsMutable();
@@ -7942,7 +8005,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+       * <code>repeated uint32 macSmk = 12 [packed = true];</code>
        */
       public Builder addAllMacSmk(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -7953,7 +8016,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 mac_smk = 12 [packed = true];</code>
+       * <code>repeated uint32 macSmk = 12 [packed = true];</code>
        */
       public Builder clearMacSmk() {
         macSmk_ = java.util.Collections.emptyList();
@@ -7964,19 +8027,19 @@ public final class Messages {
 
       private int resultSize_ ;
       /**
-       * <code>optional uint32 result_size = 13;</code>
+       * <code>optional uint32 resultSize = 13;</code>
        */
       public boolean hasResultSize() {
         return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
-       * <code>optional uint32 result_size = 13;</code>
+       * <code>optional uint32 resultSize = 13;</code>
        */
       public int getResultSize() {
         return resultSize_;
       }
       /**
-       * <code>optional uint32 result_size = 13;</code>
+       * <code>optional uint32 resultSize = 13;</code>
        */
       public Builder setResultSize(int value) {
         bitField0_ |= 0x00001000;
@@ -7985,7 +8048,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>optional uint32 result_size = 13;</code>
+       * <code>optional uint32 resultSize = 13;</code>
        */
       public Builder clearResultSize() {
         bitField0_ = (bitField0_ & ~0x00001000);
@@ -8068,26 +8131,26 @@ public final class Messages {
          }
       }
       /**
-       * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+       * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getPayloadTagList() {
         return java.util.Collections.unmodifiableList(payloadTag_);
       }
       /**
-       * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+       * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
        */
       public int getPayloadTagCount() {
         return payloadTag_.size();
       }
       /**
-       * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+       * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
        */
       public int getPayloadTag(int index) {
         return payloadTag_.get(index);
       }
       /**
-       * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+       * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
        */
       public Builder setPayloadTag(
           int index, int value) {
@@ -8097,7 +8160,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+       * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
        */
       public Builder addPayloadTag(int value) {
         ensurePayloadTagIsMutable();
@@ -8106,7 +8169,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+       * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
        */
       public Builder addAllPayloadTag(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -8117,7 +8180,7 @@ public final class Messages {
         return this;
       }
       /**
-       * <code>repeated uint32 payload_tag = 15 [packed = true];</code>
+       * <code>repeated uint32 payloadTag = 15 [packed = true];</code>
        */
       public Builder clearPayloadTag() {
         payloadTag_ = java.util.Collections.emptyList();
@@ -8203,6 +8266,1827 @@ public final class Messages {
     // @@protoc_insertion_point(class_scope:Messages.AttestationMessage)
   }
 
+  public interface AllInOneMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Messages.AllInOneMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required .Messages.Type type = 1;</code>
+     */
+    boolean hasType();
+    /**
+     * <code>required .Messages.Type type = 1;</code>
+     */
+    Messages.Type getType();
+
+    /**
+     * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+     */
+    boolean hasSecretMsg();
+    /**
+     * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+     */
+    Messages.SecretMessage getSecretMsg();
+    /**
+     * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+     */
+    Messages.SecretMessageOrBuilder getSecretMsgOrBuilder();
+
+    /**
+     * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+     */
+    boolean hasInitMsg();
+    /**
+     * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+     */
+    Messages.InitialMessage getInitMsg();
+    /**
+     * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+     */
+    Messages.InitialMessageOrBuilder getInitMsgOrBuilder();
+
+    /**
+     * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+     */
+    boolean hasMsg0();
+    /**
+     * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+     */
+    Messages.MessageMSG0 getMsg0();
+    /**
+     * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+     */
+    Messages.MessageMSG0OrBuilder getMsg0OrBuilder();
+
+    /**
+     * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+     */
+    boolean hasMsg1();
+    /**
+     * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+     */
+    Messages.MessageMSG1 getMsg1();
+    /**
+     * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+     */
+    Messages.MessageMSG1OrBuilder getMsg1OrBuilder();
+
+    /**
+     * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+     */
+    boolean hasMsg2();
+    /**
+     * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+     */
+    Messages.MessageMSG2 getMsg2();
+    /**
+     * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+     */
+    Messages.MessageMSG2OrBuilder getMsg2OrBuilder();
+
+    /**
+     * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+     */
+    boolean hasMsg3();
+    /**
+     * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+     */
+    Messages.MessageMSG3 getMsg3();
+    /**
+     * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+     */
+    Messages.MessageMSG3OrBuilder getMsg3OrBuilder();
+
+    /**
+     * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+     */
+    boolean hasAttestMsg();
+    /**
+     * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+     */
+    Messages.AttestationMessage getAttestMsg();
+    /**
+     * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+     */
+    Messages.AttestationMessageOrBuilder getAttestMsgOrBuilder();
+  }
+  /**
+   * Protobuf type {@code Messages.AllInOneMessage}
+   */
+  public static final class AllInOneMessage extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:Messages.AllInOneMessage)
+      AllInOneMessageOrBuilder {
+    // Use AllInOneMessage.newBuilder() to construct.
+    private AllInOneMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private AllInOneMessage(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final AllInOneMessage defaultInstance;
+    public static AllInOneMessage getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public AllInOneMessage getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AllInOneMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              Messages.Type value = Messages.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
+              break;
+            }
+            case 18: {
+              Messages.SecretMessage.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = secretMsg_.toBuilder();
+              }
+              secretMsg_ = input.readMessage(Messages.SecretMessage.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(secretMsg_);
+                secretMsg_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 26: {
+              Messages.InitialMessage.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = initMsg_.toBuilder();
+              }
+              initMsg_ = input.readMessage(Messages.InitialMessage.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(initMsg_);
+                initMsg_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            case 34: {
+              Messages.MessageMSG0.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                subBuilder = msg0_.toBuilder();
+              }
+              msg0_ = input.readMessage(Messages.MessageMSG0.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(msg0_);
+                msg0_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000008;
+              break;
+            }
+            case 42: {
+              Messages.MessageMSG1.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = msg1_.toBuilder();
+              }
+              msg1_ = input.readMessage(Messages.MessageMSG1.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(msg1_);
+                msg1_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
+              break;
+            }
+            case 50: {
+              Messages.MessageMSG2.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000020) == 0x00000020)) {
+                subBuilder = msg2_.toBuilder();
+              }
+              msg2_ = input.readMessage(Messages.MessageMSG2.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(msg2_);
+                msg2_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000020;
+              break;
+            }
+            case 58: {
+              Messages.MessageMSG3.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000040) == 0x00000040)) {
+                subBuilder = msg3_.toBuilder();
+              }
+              msg3_ = input.readMessage(Messages.MessageMSG3.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(msg3_);
+                msg3_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000040;
+              break;
+            }
+            case 66: {
+              Messages.AttestationMessage.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000080) == 0x00000080)) {
+                subBuilder = attestMsg_.toBuilder();
+              }
+              attestMsg_ = input.readMessage(Messages.AttestationMessage.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(attestMsg_);
+                attestMsg_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000080;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return Messages.internal_static_Messages_AllInOneMessage_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Messages.internal_static_Messages_AllInOneMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Messages.AllInOneMessage.class, Messages.AllInOneMessage.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<AllInOneMessage> PARSER =
+        new com.google.protobuf.AbstractParser<AllInOneMessage>() {
+      public AllInOneMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AllInOneMessage(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AllInOneMessage> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private Messages.Type type_;
+    /**
+     * <code>required .Messages.Type type = 1;</code>
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .Messages.Type type = 1;</code>
+     */
+    public Messages.Type getType() {
+      return type_;
+    }
+
+    public static final int SECRETMSG_FIELD_NUMBER = 2;
+    private Messages.SecretMessage secretMsg_;
+    /**
+     * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+     */
+    public boolean hasSecretMsg() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+     */
+    public Messages.SecretMessage getSecretMsg() {
+      return secretMsg_;
+    }
+    /**
+     * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+     */
+    public Messages.SecretMessageOrBuilder getSecretMsgOrBuilder() {
+      return secretMsg_;
+    }
+
+    public static final int INITMSG_FIELD_NUMBER = 3;
+    private Messages.InitialMessage initMsg_;
+    /**
+     * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+     */
+    public boolean hasInitMsg() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+     */
+    public Messages.InitialMessage getInitMsg() {
+      return initMsg_;
+    }
+    /**
+     * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+     */
+    public Messages.InitialMessageOrBuilder getInitMsgOrBuilder() {
+      return initMsg_;
+    }
+
+    public static final int MSG0_FIELD_NUMBER = 4;
+    private Messages.MessageMSG0 msg0_;
+    /**
+     * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+     */
+    public boolean hasMsg0() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+     */
+    public Messages.MessageMSG0 getMsg0() {
+      return msg0_;
+    }
+    /**
+     * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+     */
+    public Messages.MessageMSG0OrBuilder getMsg0OrBuilder() {
+      return msg0_;
+    }
+
+    public static final int MSG1_FIELD_NUMBER = 5;
+    private Messages.MessageMSG1 msg1_;
+    /**
+     * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+     */
+    public boolean hasMsg1() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+     */
+    public Messages.MessageMSG1 getMsg1() {
+      return msg1_;
+    }
+    /**
+     * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+     */
+    public Messages.MessageMSG1OrBuilder getMsg1OrBuilder() {
+      return msg1_;
+    }
+
+    public static final int MSG2_FIELD_NUMBER = 6;
+    private Messages.MessageMSG2 msg2_;
+    /**
+     * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+     */
+    public boolean hasMsg2() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+     */
+    public Messages.MessageMSG2 getMsg2() {
+      return msg2_;
+    }
+    /**
+     * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+     */
+    public Messages.MessageMSG2OrBuilder getMsg2OrBuilder() {
+      return msg2_;
+    }
+
+    public static final int MSG3_FIELD_NUMBER = 7;
+    private Messages.MessageMSG3 msg3_;
+    /**
+     * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+     */
+    public boolean hasMsg3() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+     */
+    public Messages.MessageMSG3 getMsg3() {
+      return msg3_;
+    }
+    /**
+     * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+     */
+    public Messages.MessageMSG3OrBuilder getMsg3OrBuilder() {
+      return msg3_;
+    }
+
+    public static final int ATTESTMSG_FIELD_NUMBER = 8;
+    private Messages.AttestationMessage attestMsg_;
+    /**
+     * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+     */
+    public boolean hasAttestMsg() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+     */
+    public Messages.AttestationMessage getAttestMsg() {
+      return attestMsg_;
+    }
+    /**
+     * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+     */
+    public Messages.AttestationMessageOrBuilder getAttestMsgOrBuilder() {
+      return attestMsg_;
+    }
+
+    private void initFields() {
+      type_ = Messages.Type.RA_MSG0;
+      secretMsg_ = Messages.SecretMessage.getDefaultInstance();
+      initMsg_ = Messages.InitialMessage.getDefaultInstance();
+      msg0_ = Messages.MessageMSG0.getDefaultInstance();
+      msg1_ = Messages.MessageMSG1.getDefaultInstance();
+      msg2_ = Messages.MessageMSG2.getDefaultInstance();
+      msg3_ = Messages.MessageMSG3.getDefaultInstance();
+      attestMsg_ = Messages.AttestationMessage.getDefaultInstance();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (hasSecretMsg()) {
+        if (!getSecretMsg().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasInitMsg()) {
+        if (!getInitMsg().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasMsg0()) {
+        if (!getMsg0().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasMsg1()) {
+        if (!getMsg1().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasMsg2()) {
+        if (!getMsg2().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasMsg3()) {
+        if (!getMsg3().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasAttestMsg()) {
+        if (!getAttestMsg().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, secretMsg_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeMessage(3, initMsg_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeMessage(4, msg0_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeMessage(5, msg1_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeMessage(6, msg2_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeMessage(7, msg3_);
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeMessage(8, attestMsg_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, secretMsg_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, initMsg_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, msg0_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, msg1_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, msg2_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, msg3_);
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, attestMsg_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static Messages.AllInOneMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Messages.AllInOneMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Messages.AllInOneMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Messages.AllInOneMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Messages.AllInOneMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static Messages.AllInOneMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static Messages.AllInOneMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static Messages.AllInOneMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static Messages.AllInOneMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static Messages.AllInOneMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(Messages.AllInOneMessage prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Messages.AllInOneMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Messages.AllInOneMessage)
+        Messages.AllInOneMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Messages.internal_static_Messages_AllInOneMessage_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Messages.internal_static_Messages_AllInOneMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Messages.AllInOneMessage.class, Messages.AllInOneMessage.Builder.class);
+      }
+
+      // Construct using Messages.AllInOneMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getSecretMsgFieldBuilder();
+          getInitMsgFieldBuilder();
+          getMsg0FieldBuilder();
+          getMsg1FieldBuilder();
+          getMsg2FieldBuilder();
+          getMsg3FieldBuilder();
+          getAttestMsgFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        type_ = Messages.Type.RA_MSG0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (secretMsgBuilder_ == null) {
+          secretMsg_ = Messages.SecretMessage.getDefaultInstance();
+        } else {
+          secretMsgBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (initMsgBuilder_ == null) {
+          initMsg_ = Messages.InitialMessage.getDefaultInstance();
+        } else {
+          initMsgBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        if (msg0Builder_ == null) {
+          msg0_ = Messages.MessageMSG0.getDefaultInstance();
+        } else {
+          msg0Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (msg1Builder_ == null) {
+          msg1_ = Messages.MessageMSG1.getDefaultInstance();
+        } else {
+          msg1Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        if (msg2Builder_ == null) {
+          msg2_ = Messages.MessageMSG2.getDefaultInstance();
+        } else {
+          msg2Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000020);
+        if (msg3Builder_ == null) {
+          msg3_ = Messages.MessageMSG3.getDefaultInstance();
+        } else {
+          msg3Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000040);
+        if (attestMsgBuilder_ == null) {
+          attestMsg_ = Messages.AttestationMessage.getDefaultInstance();
+        } else {
+          attestMsgBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return Messages.internal_static_Messages_AllInOneMessage_descriptor;
+      }
+
+      public Messages.AllInOneMessage getDefaultInstanceForType() {
+        return Messages.AllInOneMessage.getDefaultInstance();
+      }
+
+      public Messages.AllInOneMessage build() {
+        Messages.AllInOneMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public Messages.AllInOneMessage buildPartial() {
+        Messages.AllInOneMessage result = new Messages.AllInOneMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (secretMsgBuilder_ == null) {
+          result.secretMsg_ = secretMsg_;
+        } else {
+          result.secretMsg_ = secretMsgBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        if (initMsgBuilder_ == null) {
+          result.initMsg_ = initMsg_;
+        } else {
+          result.initMsg_ = initMsgBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        if (msg0Builder_ == null) {
+          result.msg0_ = msg0_;
+        } else {
+          result.msg0_ = msg0Builder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        if (msg1Builder_ == null) {
+          result.msg1_ = msg1_;
+        } else {
+          result.msg1_ = msg1Builder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        if (msg2Builder_ == null) {
+          result.msg2_ = msg2_;
+        } else {
+          result.msg2_ = msg2Builder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        if (msg3Builder_ == null) {
+          result.msg3_ = msg3_;
+        } else {
+          result.msg3_ = msg3Builder_.build();
+        }
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        if (attestMsgBuilder_ == null) {
+          result.attestMsg_ = attestMsg_;
+        } else {
+          result.attestMsg_ = attestMsgBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Messages.AllInOneMessage) {
+          return mergeFrom((Messages.AllInOneMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Messages.AllInOneMessage other) {
+        if (other == Messages.AllInOneMessage.getDefaultInstance()) return this;
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        if (other.hasSecretMsg()) {
+          mergeSecretMsg(other.getSecretMsg());
+        }
+        if (other.hasInitMsg()) {
+          mergeInitMsg(other.getInitMsg());
+        }
+        if (other.hasMsg0()) {
+          mergeMsg0(other.getMsg0());
+        }
+        if (other.hasMsg1()) {
+          mergeMsg1(other.getMsg1());
+        }
+        if (other.hasMsg2()) {
+          mergeMsg2(other.getMsg2());
+        }
+        if (other.hasMsg3()) {
+          mergeMsg3(other.getMsg3());
+        }
+        if (other.hasAttestMsg()) {
+          mergeAttestMsg(other.getAttestMsg());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasType()) {
+          
+          return false;
+        }
+        if (hasSecretMsg()) {
+          if (!getSecretMsg().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasInitMsg()) {
+          if (!getInitMsg().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasMsg0()) {
+          if (!getMsg0().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasMsg1()) {
+          if (!getMsg1().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasMsg2()) {
+          if (!getMsg2().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasMsg3()) {
+          if (!getMsg3().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasAttestMsg()) {
+          if (!getAttestMsg().isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Messages.AllInOneMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (Messages.AllInOneMessage) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private Messages.Type type_ = Messages.Type.RA_MSG0;
+      /**
+       * <code>required .Messages.Type type = 1;</code>
+       */
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .Messages.Type type = 1;</code>
+       */
+      public Messages.Type getType() {
+        return type_;
+      }
+      /**
+       * <code>required .Messages.Type type = 1;</code>
+       */
+      public Builder setType(Messages.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .Messages.Type type = 1;</code>
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        type_ = Messages.Type.RA_MSG0;
+        onChanged();
+        return this;
+      }
+
+      private Messages.SecretMessage secretMsg_ = Messages.SecretMessage.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.SecretMessage, Messages.SecretMessage.Builder, Messages.SecretMessageOrBuilder> secretMsgBuilder_;
+      /**
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+       */
+      public boolean hasSecretMsg() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+       */
+      public Messages.SecretMessage getSecretMsg() {
+        if (secretMsgBuilder_ == null) {
+          return secretMsg_;
+        } else {
+          return secretMsgBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+       */
+      public Builder setSecretMsg(Messages.SecretMessage value) {
+        if (secretMsgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          secretMsg_ = value;
+          onChanged();
+        } else {
+          secretMsgBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+       */
+      public Builder setSecretMsg(
+          Messages.SecretMessage.Builder builderForValue) {
+        if (secretMsgBuilder_ == null) {
+          secretMsg_ = builderForValue.build();
+          onChanged();
+        } else {
+          secretMsgBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+       */
+      public Builder mergeSecretMsg(Messages.SecretMessage value) {
+        if (secretMsgBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              secretMsg_ != Messages.SecretMessage.getDefaultInstance()) {
+            secretMsg_ =
+              Messages.SecretMessage.newBuilder(secretMsg_).mergeFrom(value).buildPartial();
+          } else {
+            secretMsg_ = value;
+          }
+          onChanged();
+        } else {
+          secretMsgBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+       */
+      public Builder clearSecretMsg() {
+        if (secretMsgBuilder_ == null) {
+          secretMsg_ = Messages.SecretMessage.getDefaultInstance();
+          onChanged();
+        } else {
+          secretMsgBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      /**
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+       */
+      public Messages.SecretMessage.Builder getSecretMsgBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getSecretMsgFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+       */
+      public Messages.SecretMessageOrBuilder getSecretMsgOrBuilder() {
+        if (secretMsgBuilder_ != null) {
+          return secretMsgBuilder_.getMessageOrBuilder();
+        } else {
+          return secretMsg_;
+        }
+      }
+      /**
+       * <code>optional .Messages.SecretMessage secretMsg = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.SecretMessage, Messages.SecretMessage.Builder, Messages.SecretMessageOrBuilder> 
+          getSecretMsgFieldBuilder() {
+        if (secretMsgBuilder_ == null) {
+          secretMsgBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              Messages.SecretMessage, Messages.SecretMessage.Builder, Messages.SecretMessageOrBuilder>(
+                  getSecretMsg(),
+                  getParentForChildren(),
+                  isClean());
+          secretMsg_ = null;
+        }
+        return secretMsgBuilder_;
+      }
+
+      private Messages.InitialMessage initMsg_ = Messages.InitialMessage.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.InitialMessage, Messages.InitialMessage.Builder, Messages.InitialMessageOrBuilder> initMsgBuilder_;
+      /**
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+       */
+      public boolean hasInitMsg() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+       */
+      public Messages.InitialMessage getInitMsg() {
+        if (initMsgBuilder_ == null) {
+          return initMsg_;
+        } else {
+          return initMsgBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+       */
+      public Builder setInitMsg(Messages.InitialMessage value) {
+        if (initMsgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          initMsg_ = value;
+          onChanged();
+        } else {
+          initMsgBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+       */
+      public Builder setInitMsg(
+          Messages.InitialMessage.Builder builderForValue) {
+        if (initMsgBuilder_ == null) {
+          initMsg_ = builderForValue.build();
+          onChanged();
+        } else {
+          initMsgBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+       */
+      public Builder mergeInitMsg(Messages.InitialMessage value) {
+        if (initMsgBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              initMsg_ != Messages.InitialMessage.getDefaultInstance()) {
+            initMsg_ =
+              Messages.InitialMessage.newBuilder(initMsg_).mergeFrom(value).buildPartial();
+          } else {
+            initMsg_ = value;
+          }
+          onChanged();
+        } else {
+          initMsgBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+       */
+      public Builder clearInitMsg() {
+        if (initMsgBuilder_ == null) {
+          initMsg_ = Messages.InitialMessage.getDefaultInstance();
+          onChanged();
+        } else {
+          initMsgBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      /**
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+       */
+      public Messages.InitialMessage.Builder getInitMsgBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getInitMsgFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+       */
+      public Messages.InitialMessageOrBuilder getInitMsgOrBuilder() {
+        if (initMsgBuilder_ != null) {
+          return initMsgBuilder_.getMessageOrBuilder();
+        } else {
+          return initMsg_;
+        }
+      }
+      /**
+       * <code>optional .Messages.InitialMessage initMsg = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.InitialMessage, Messages.InitialMessage.Builder, Messages.InitialMessageOrBuilder> 
+          getInitMsgFieldBuilder() {
+        if (initMsgBuilder_ == null) {
+          initMsgBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              Messages.InitialMessage, Messages.InitialMessage.Builder, Messages.InitialMessageOrBuilder>(
+                  getInitMsg(),
+                  getParentForChildren(),
+                  isClean());
+          initMsg_ = null;
+        }
+        return initMsgBuilder_;
+      }
+
+      private Messages.MessageMSG0 msg0_ = Messages.MessageMSG0.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG0, Messages.MessageMSG0.Builder, Messages.MessageMSG0OrBuilder> msg0Builder_;
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public boolean hasMsg0() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public Messages.MessageMSG0 getMsg0() {
+        if (msg0Builder_ == null) {
+          return msg0_;
+        } else {
+          return msg0Builder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public Builder setMsg0(Messages.MessageMSG0 value) {
+        if (msg0Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msg0_ = value;
+          onChanged();
+        } else {
+          msg0Builder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public Builder setMsg0(
+          Messages.MessageMSG0.Builder builderForValue) {
+        if (msg0Builder_ == null) {
+          msg0_ = builderForValue.build();
+          onChanged();
+        } else {
+          msg0Builder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public Builder mergeMsg0(Messages.MessageMSG0 value) {
+        if (msg0Builder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008) &&
+              msg0_ != Messages.MessageMSG0.getDefaultInstance()) {
+            msg0_ =
+              Messages.MessageMSG0.newBuilder(msg0_).mergeFrom(value).buildPartial();
+          } else {
+            msg0_ = value;
+          }
+          onChanged();
+        } else {
+          msg0Builder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public Builder clearMsg0() {
+        if (msg0Builder_ == null) {
+          msg0_ = Messages.MessageMSG0.getDefaultInstance();
+          onChanged();
+        } else {
+          msg0Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public Messages.MessageMSG0.Builder getMsg0Builder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getMsg0FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      public Messages.MessageMSG0OrBuilder getMsg0OrBuilder() {
+        if (msg0Builder_ != null) {
+          return msg0Builder_.getMessageOrBuilder();
+        } else {
+          return msg0_;
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG0 msg0 = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG0, Messages.MessageMSG0.Builder, Messages.MessageMSG0OrBuilder> 
+          getMsg0FieldBuilder() {
+        if (msg0Builder_ == null) {
+          msg0Builder_ = new com.google.protobuf.SingleFieldBuilder<
+              Messages.MessageMSG0, Messages.MessageMSG0.Builder, Messages.MessageMSG0OrBuilder>(
+                  getMsg0(),
+                  getParentForChildren(),
+                  isClean());
+          msg0_ = null;
+        }
+        return msg0Builder_;
+      }
+
+      private Messages.MessageMSG1 msg1_ = Messages.MessageMSG1.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG1, Messages.MessageMSG1.Builder, Messages.MessageMSG1OrBuilder> msg1Builder_;
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public boolean hasMsg1() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public Messages.MessageMSG1 getMsg1() {
+        if (msg1Builder_ == null) {
+          return msg1_;
+        } else {
+          return msg1Builder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public Builder setMsg1(Messages.MessageMSG1 value) {
+        if (msg1Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msg1_ = value;
+          onChanged();
+        } else {
+          msg1Builder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public Builder setMsg1(
+          Messages.MessageMSG1.Builder builderForValue) {
+        if (msg1Builder_ == null) {
+          msg1_ = builderForValue.build();
+          onChanged();
+        } else {
+          msg1Builder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public Builder mergeMsg1(Messages.MessageMSG1 value) {
+        if (msg1Builder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              msg1_ != Messages.MessageMSG1.getDefaultInstance()) {
+            msg1_ =
+              Messages.MessageMSG1.newBuilder(msg1_).mergeFrom(value).buildPartial();
+          } else {
+            msg1_ = value;
+          }
+          onChanged();
+        } else {
+          msg1Builder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public Builder clearMsg1() {
+        if (msg1Builder_ == null) {
+          msg1_ = Messages.MessageMSG1.getDefaultInstance();
+          onChanged();
+        } else {
+          msg1Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public Messages.MessageMSG1.Builder getMsg1Builder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getMsg1FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      public Messages.MessageMSG1OrBuilder getMsg1OrBuilder() {
+        if (msg1Builder_ != null) {
+          return msg1Builder_.getMessageOrBuilder();
+        } else {
+          return msg1_;
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG1 msg1 = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG1, Messages.MessageMSG1.Builder, Messages.MessageMSG1OrBuilder> 
+          getMsg1FieldBuilder() {
+        if (msg1Builder_ == null) {
+          msg1Builder_ = new com.google.protobuf.SingleFieldBuilder<
+              Messages.MessageMSG1, Messages.MessageMSG1.Builder, Messages.MessageMSG1OrBuilder>(
+                  getMsg1(),
+                  getParentForChildren(),
+                  isClean());
+          msg1_ = null;
+        }
+        return msg1Builder_;
+      }
+
+      private Messages.MessageMSG2 msg2_ = Messages.MessageMSG2.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG2, Messages.MessageMSG2.Builder, Messages.MessageMSG2OrBuilder> msg2Builder_;
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public boolean hasMsg2() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public Messages.MessageMSG2 getMsg2() {
+        if (msg2Builder_ == null) {
+          return msg2_;
+        } else {
+          return msg2Builder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public Builder setMsg2(Messages.MessageMSG2 value) {
+        if (msg2Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msg2_ = value;
+          onChanged();
+        } else {
+          msg2Builder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public Builder setMsg2(
+          Messages.MessageMSG2.Builder builderForValue) {
+        if (msg2Builder_ == null) {
+          msg2_ = builderForValue.build();
+          onChanged();
+        } else {
+          msg2Builder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public Builder mergeMsg2(Messages.MessageMSG2 value) {
+        if (msg2Builder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020) &&
+              msg2_ != Messages.MessageMSG2.getDefaultInstance()) {
+            msg2_ =
+              Messages.MessageMSG2.newBuilder(msg2_).mergeFrom(value).buildPartial();
+          } else {
+            msg2_ = value;
+          }
+          onChanged();
+        } else {
+          msg2Builder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public Builder clearMsg2() {
+        if (msg2Builder_ == null) {
+          msg2_ = Messages.MessageMSG2.getDefaultInstance();
+          onChanged();
+        } else {
+          msg2Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000020);
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public Messages.MessageMSG2.Builder getMsg2Builder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getMsg2FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      public Messages.MessageMSG2OrBuilder getMsg2OrBuilder() {
+        if (msg2Builder_ != null) {
+          return msg2Builder_.getMessageOrBuilder();
+        } else {
+          return msg2_;
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG2 msg2 = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG2, Messages.MessageMSG2.Builder, Messages.MessageMSG2OrBuilder> 
+          getMsg2FieldBuilder() {
+        if (msg2Builder_ == null) {
+          msg2Builder_ = new com.google.protobuf.SingleFieldBuilder<
+              Messages.MessageMSG2, Messages.MessageMSG2.Builder, Messages.MessageMSG2OrBuilder>(
+                  getMsg2(),
+                  getParentForChildren(),
+                  isClean());
+          msg2_ = null;
+        }
+        return msg2Builder_;
+      }
+
+      private Messages.MessageMSG3 msg3_ = Messages.MessageMSG3.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG3, Messages.MessageMSG3.Builder, Messages.MessageMSG3OrBuilder> msg3Builder_;
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public boolean hasMsg3() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public Messages.MessageMSG3 getMsg3() {
+        if (msg3Builder_ == null) {
+          return msg3_;
+        } else {
+          return msg3Builder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public Builder setMsg3(Messages.MessageMSG3 value) {
+        if (msg3Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msg3_ = value;
+          onChanged();
+        } else {
+          msg3Builder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public Builder setMsg3(
+          Messages.MessageMSG3.Builder builderForValue) {
+        if (msg3Builder_ == null) {
+          msg3_ = builderForValue.build();
+          onChanged();
+        } else {
+          msg3Builder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public Builder mergeMsg3(Messages.MessageMSG3 value) {
+        if (msg3Builder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040) &&
+              msg3_ != Messages.MessageMSG3.getDefaultInstance()) {
+            msg3_ =
+              Messages.MessageMSG3.newBuilder(msg3_).mergeFrom(value).buildPartial();
+          } else {
+            msg3_ = value;
+          }
+          onChanged();
+        } else {
+          msg3Builder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public Builder clearMsg3() {
+        if (msg3Builder_ == null) {
+          msg3_ = Messages.MessageMSG3.getDefaultInstance();
+          onChanged();
+        } else {
+          msg3Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000040);
+        return this;
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public Messages.MessageMSG3.Builder getMsg3Builder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getMsg3FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      public Messages.MessageMSG3OrBuilder getMsg3OrBuilder() {
+        if (msg3Builder_ != null) {
+          return msg3Builder_.getMessageOrBuilder();
+        } else {
+          return msg3_;
+        }
+      }
+      /**
+       * <code>optional .Messages.MessageMSG3 msg3 = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.MessageMSG3, Messages.MessageMSG3.Builder, Messages.MessageMSG3OrBuilder> 
+          getMsg3FieldBuilder() {
+        if (msg3Builder_ == null) {
+          msg3Builder_ = new com.google.protobuf.SingleFieldBuilder<
+              Messages.MessageMSG3, Messages.MessageMSG3.Builder, Messages.MessageMSG3OrBuilder>(
+                  getMsg3(),
+                  getParentForChildren(),
+                  isClean());
+          msg3_ = null;
+        }
+        return msg3Builder_;
+      }
+
+      private Messages.AttestationMessage attestMsg_ = Messages.AttestationMessage.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.AttestationMessage, Messages.AttestationMessage.Builder, Messages.AttestationMessageOrBuilder> attestMsgBuilder_;
+      /**
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+       */
+      public boolean hasAttestMsg() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+       */
+      public Messages.AttestationMessage getAttestMsg() {
+        if (attestMsgBuilder_ == null) {
+          return attestMsg_;
+        } else {
+          return attestMsgBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+       */
+      public Builder setAttestMsg(Messages.AttestationMessage value) {
+        if (attestMsgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          attestMsg_ = value;
+          onChanged();
+        } else {
+          attestMsgBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+       */
+      public Builder setAttestMsg(
+          Messages.AttestationMessage.Builder builderForValue) {
+        if (attestMsgBuilder_ == null) {
+          attestMsg_ = builderForValue.build();
+          onChanged();
+        } else {
+          attestMsgBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+       */
+      public Builder mergeAttestMsg(Messages.AttestationMessage value) {
+        if (attestMsgBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) == 0x00000080) &&
+              attestMsg_ != Messages.AttestationMessage.getDefaultInstance()) {
+            attestMsg_ =
+              Messages.AttestationMessage.newBuilder(attestMsg_).mergeFrom(value).buildPartial();
+          } else {
+            attestMsg_ = value;
+          }
+          onChanged();
+        } else {
+          attestMsgBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+       */
+      public Builder clearAttestMsg() {
+        if (attestMsgBuilder_ == null) {
+          attestMsg_ = Messages.AttestationMessage.getDefaultInstance();
+          onChanged();
+        } else {
+          attestMsgBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+       */
+      public Messages.AttestationMessage.Builder getAttestMsgBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return getAttestMsgFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+       */
+      public Messages.AttestationMessageOrBuilder getAttestMsgOrBuilder() {
+        if (attestMsgBuilder_ != null) {
+          return attestMsgBuilder_.getMessageOrBuilder();
+        } else {
+          return attestMsg_;
+        }
+      }
+      /**
+       * <code>optional .Messages.AttestationMessage attestMsg = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          Messages.AttestationMessage, Messages.AttestationMessage.Builder, Messages.AttestationMessageOrBuilder> 
+          getAttestMsgFieldBuilder() {
+        if (attestMsgBuilder_ == null) {
+          attestMsgBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              Messages.AttestationMessage, Messages.AttestationMessage.Builder, Messages.AttestationMessageOrBuilder>(
+                  getAttestMsg(),
+                  getParentForChildren(),
+                  isClean());
+          attestMsg_ = null;
+        }
+        return attestMsgBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:Messages.AllInOneMessage)
+    }
+
+    static {
+      defaultInstance = new AllInOneMessage(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:Messages.AllInOneMessage)
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Messages_SecretMessage_descriptor;
   private static
@@ -8214,10 +10098,10 @@ public final class Messages {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_Messages_InitialMessage_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Messages_MessageMsg0_descriptor;
+    internal_static_Messages_MessageMSG0_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_Messages_MessageMsg0_fieldAccessorTable;
+      internal_static_Messages_MessageMSG0_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Messages_MessageMSG1_descriptor;
   private static
@@ -8238,6 +10122,11 @@ public final class Messages {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_Messages_AttestationMessage_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Messages_AllInOneMessage_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_Messages_AllInOneMessage_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -8247,37 +10136,47 @@ public final class Messages {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016Messages.proto\022\010Messages\"+\n\rSecretMess" +
-      "age\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002 \001(\r\",\n\016Initi" +
-      "alMessage\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002 \001(\r\"9\n" +
-      "\013MessageMsg0\022\014\n\004type\030\001 \002(\r\022\014\n\004epid\030\002 \002(\r" +
-      "\022\016\n\006status\030\003 \001(\r\"N\n\013MessageMSG1\022\014\n\004type\030" +
-      "\001 \002(\r\022\017\n\003GaX\030\002 \003(\rB\002\020\001\022\017\n\003GaY\030\003 \003(\rB\002\020\001\022" +
-      "\017\n\003GID\030\004 \003(\rB\002\020\001\"\205\002\n\013MessageMSG2\022\014\n\004type" +
-      "\030\001 \002(\r\022\014\n\004size\030\002 \001(\r\022\031\n\rpublic_key_gx\030\003 " +
-      "\003(\rB\002\020\001\022\031\n\rpublic_key_gy\030\004 \003(\rB\002\020\001\022\022\n\nqu" +
-      "ote_type\030\005 \001(\r\022\020\n\004spid\030\006 \003(\rB\002\020\001\022\023\n\013cmac",
-      "_kdf_id\030\007 \001(\r\022\027\n\013signature_x\030\010 \003(\rB\002\020\001\022\027" +
-      "\n\013signature_y\030\t \003(\rB\002\020\001\022\020\n\004smac\030\n \003(\rB\002\020" +
-      "\001\022\022\n\nsize_sigrl\030\013 \001(\r\022\021\n\005sigrl\030\014 \003(\rB\002\020\001" +
-      "\"\227\001\n\013MessageMSG3\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002" +
-      " \001(\r\022\023\n\007sgx_mac\030\003 \003(\rB\002\020\001\022\024\n\010gax_msg3\030\004 " +
-      "\003(\rB\002\020\001\022\024\n\010gay_msg3\030\005 \003(\rB\002\020\001\022\030\n\014sec_pro" +
-      "perty\030\006 \003(\rB\002\020\001\022\021\n\005quote\030\007 \003(\rB\002\020\001\"\262\003\n\022A" +
-      "ttestationMessage\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030" +
-      "\002 \002(\r\022\031\n\021epid_group_status\030\003 \001(\r\022\035\n\025tcb_" +
-      "evaluation_status\030\004 \001(\r\022\035\n\025pse_evaluatio",
-      "n_status\030\005 \001(\r\022&\n\032latest_equivalent_tcb_" +
-      "psvn\030\006 \003(\rB\002\020\001\022\035\n\021latest_pse_isvsvn\030\007 \003(" +
-      "\rB\002\020\001\022\033\n\017latest_psda_svn\030\010 \003(\rB\002\020\001\022!\n\025pe" +
-      "rformance_rekey_gid\030\t \003(\rB\002\020\001\022\030\n\014ec_sign" +
-      "256_x\030\n \003(\rB\002\020\001\022\030\n\014ec_sign256_y\030\013 \003(\rB\002\020" +
-      "\001\022\023\n\007mac_smk\030\014 \003(\rB\002\020\001\022\023\n\013result_size\030\r " +
-      "\001(\r\022\024\n\010reserved\030\016 \003(\rB\002\020\001\022\027\n\013payload_tag" +
-      "\030\017 \003(\rB\002\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001*u\n\004Type\022" +
-      "\013\n\007RA_MSG0\020\000\022\013\n\007RA_MSG1\020\001\022\013\n\007RA_MSG2\020\002\022\013" +
-      "\n\007RA_MSG3\020\003\022\021\n\rRA_ATT_RESULT\020\004\022\023\n\017RA_VER",
-      "IFICATION\020\005\022\021\n\rRA_APP_ATT_OK\020\006"
+      "\n\016Messages.proto\022\010Messages\";\n\rSecretMess" +
+      "age\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022\014\n\004siz" +
+      "e\030\002 \001(\r\"<\n\016InitialMessage\022\034\n\004type\030\001 \002(\0162" +
+      "\016.Messages.Type\022\014\n\004size\030\002 \001(\r\"I\n\013Message" +
+      "MSG0\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022\014\n\004ep" +
+      "id\030\002 \002(\r\022\016\n\006status\030\003 \001(\r\"^\n\013MessageMSG1\022" +
+      "\034\n\004type\030\001 \002(\0162\016.Messages.Type\022\017\n\003GaX\030\002 \003" +
+      "(\rB\002\020\001\022\017\n\003GaY\030\003 \003(\rB\002\020\001\022\017\n\003GID\030\004 \003(\rB\002\020\001" +
+      "\"\213\002\n\013MessageMSG2\022\034\n\004type\030\001 \002(\0162\016.Message" +
+      "s.Type\022\014\n\004size\030\002 \001(\r\022\027\n\013publicKeyGx\030\003 \003(",
+      "\rB\002\020\001\022\027\n\013publicKeyGy\030\004 \003(\rB\002\020\001\022\021\n\tquoteT" +
+      "ype\030\005 \001(\r\022\020\n\004spid\030\006 \003(\rB\002\020\001\022\021\n\tcmacKdfId" +
+      "\030\007 \001(\r\022\026\n\nsignatureX\030\010 \003(\rB\002\020\001\022\026\n\nsignat" +
+      "ureY\030\t \003(\rB\002\020\001\022\020\n\004smac\030\n \003(\rB\002\020\001\022\021\n\tsize" +
+      "Sigrl\030\013 \001(\r\022\021\n\005sigrl\030\014 \003(\rB\002\020\001\"\243\001\n\013Messa" +
+      "geMSG3\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022\014\n\004" +
+      "size\030\002 \001(\r\022\022\n\006sgxMac\030\003 \003(\rB\002\020\001\022\023\n\007gaxMsg" +
+      "3\030\004 \003(\rB\002\020\001\022\023\n\007gayMsg3\030\005 \003(\rB\002\020\001\022\027\n\013secP" +
+      "roperty\030\006 \003(\rB\002\020\001\022\021\n\005quote\030\007 \003(\rB\002\020\001\"\254\003\n" +
+      "\022AttestationMessage\022\034\n\004type\030\001 \002(\0162\016.Mess",
+      "ages.Type\022\014\n\004size\030\002 \002(\r\022\027\n\017epidGroupStat" +
+      "us\030\003 \001(\r\022\033\n\023tcbEvaluationStatus\030\004 \001(\r\022\033\n" +
+      "\023pseEvaluationStatus\030\005 \001(\r\022#\n\027latestEqui" +
+      "valentTcbPsvn\030\006 \003(\rB\002\020\001\022\033\n\017latestPseIsvs" +
+      "vn\030\007 \003(\rB\002\020\001\022\031\n\rlatestPsdaSvn\030\010 \003(\rB\002\020\001\022" +
+      "\037\n\023performanceRekeyGid\030\t \003(\rB\002\020\001\022\026\n\necSi" +
+      "gn256X\030\n \003(\rB\002\020\001\022\026\n\necSign256Y\030\013 \003(\rB\002\020\001" +
+      "\022\022\n\006macSmk\030\014 \003(\rB\002\020\001\022\022\n\nresultSize\030\r \001(\r" +
+      "\022\024\n\010reserved\030\016 \003(\rB\002\020\001\022\026\n\npayloadTag\030\017 \003" +
+      "(\rB\002\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001\"\313\002\n\017AllInOne",
+      "Message\022\034\n\004type\030\001 \002(\0162\016.Messages.Type\022*\n" +
+      "\tsecretMsg\030\002 \001(\0132\027.Messages.SecretMessag" +
+      "e\022)\n\007initMsg\030\003 \001(\0132\030.Messages.InitialMes" +
+      "sage\022#\n\004msg0\030\004 \001(\0132\025.Messages.MessageMSG" +
+      "0\022#\n\004msg1\030\005 \001(\0132\025.Messages.MessageMSG1\022#" +
+      "\n\004msg2\030\006 \001(\0132\025.Messages.MessageMSG2\022#\n\004m" +
+      "sg3\030\007 \001(\0132\025.Messages.MessageMSG3\022/\n\tatte" +
+      "stMsg\030\010 \001(\0132\034.Messages.AttestationMessag" +
+      "e*u\n\004Type\022\013\n\007RA_MSG0\020\000\022\013\n\007RA_MSG1\020\001\022\013\n\007R" +
+      "A_MSG2\020\002\022\013\n\007RA_MSG3\020\003\022\021\n\rRA_ATT_RESULT\020\004",
+      "\022\023\n\017RA_VERIFICATION\020\005\022\021\n\rRA_APP_ATT_OK\020\006"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8303,11 +10202,11 @@ public final class Messages {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_Messages_InitialMessage_descriptor,
         new java.lang.String[] { "Type", "Size", });
-    internal_static_Messages_MessageMsg0_descriptor =
+    internal_static_Messages_MessageMSG0_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_Messages_MessageMsg0_fieldAccessorTable = new
+    internal_static_Messages_MessageMSG0_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_Messages_MessageMsg0_descriptor,
+        internal_static_Messages_MessageMSG0_descriptor,
         new java.lang.String[] { "Type", "Epid", "Status", });
     internal_static_Messages_MessageMSG1_descriptor =
       getDescriptor().getMessageTypes().get(3);
@@ -8333,6 +10232,12 @@ public final class Messages {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_Messages_AttestationMessage_descriptor,
         new java.lang.String[] { "Type", "Size", "EpidGroupStatus", "TcbEvaluationStatus", "PseEvaluationStatus", "LatestEquivalentTcbPsvn", "LatestPseIsvsvn", "LatestPsdaSvn", "PerformanceRekeyGid", "EcSign256X", "EcSign256Y", "MacSmk", "ResultSize", "Reserved", "PayloadTag", "Payload", });
+    internal_static_Messages_AllInOneMessage_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_Messages_AllInOneMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_Messages_AllInOneMessage_descriptor,
+        new java.lang.String[] { "Type", "SecretMsg", "InitMsg", "Msg0", "Msg1", "Msg2", "Msg3", "AttestMsg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

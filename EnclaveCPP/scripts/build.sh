@@ -2,11 +2,12 @@
 usage()
 {
 cat << EOF
-    build.sh [option] -l <jnilib_des_path> -j <javafile_des_path>
-        options:
-                -r: indicate rebuilding java file to create new c header file
+    usage:
+          build.sh [option] -l <jnilib_des_path> -j <javafile_des_path>
+            options:
                 -l: the destination path of the new created jni library
                 -j: the destination path of the new java file
+                -m: make mode, can only be HW or SIM, default is HW
                 -t: for test, copy java and .so file to my test project
 EOF
 }
@@ -37,7 +38,7 @@ projectdir=`cd $basedir/../../tools/EnclaveBridge/src/main/;pwd`
 jnidir=$projectdir/jnilib
 javadir=$projectdir/java
 homedir=$basedir/..
-targetdir=`cd $homedir/../target; pwd`
+targetdir=$homedir/../target
 
 RED='\033[0;31m'
 HRED='\033[1;31m'
@@ -45,15 +46,20 @@ GREEN='\033[0;32m'
 HGREEN='\033[1;32m'
 NC='\033[0m'
 
-rebuild="no"
 is_test="no"
+make_mode="HW"
 
-CMD=`getopt -o "trl:j:d:" -a -l "test,rebuild,jnilib:,javafile:,targetdir:" -n "usage" -- "$@"`
+if [ ! -e "$targetdir" ]; then
+    mkdir -p $targetdir
+fi
+
+CMD=`getopt -o "tl:j:d:m:" -a -l "test,jnilib:,javafile:,targetdir:,mode:" -n "usage" -- "$@"`
 if [ $? != 0 ]; then
     verbose ERROR "Parameter error, terminate" >&2
     exit 1
 fi
 
+if [ $# = 0 ]; then usage; exit 1; fi
 
 eval set -- "$CMD"
 
@@ -61,10 +67,6 @@ while true; do
     case "$1" in
         -t|--test|-test)
             is_test="yes"
-            shift
-            ;;
-        -r|--rebuild|-rebuild)
-            rebuild="yes"
             shift
             ;;
         -l|--jnilib|-jnilib)
@@ -77,6 +79,10 @@ while true; do
             ;;
         -d|--targetdir|-targetdir)
             targetdir=$2
+            shift 2
+            ;;
+        -m|--mode|-mode)
+            make_mode=$2
             shift 2
             ;;
         --)
@@ -96,30 +102,28 @@ if [ ! -d "$targetdir" ]; then
 fi
 
 ### regenerate header file according to java file {{{
-if [ x"$rebuild" = x"yes" ]; then
-    if [ ! -d "$jnidir" ]; then
-        verbose ERROR "JNI  directory($jnidir) doesn't exist"
-        exit 1
-    fi
-    if [ ! -d "$javadir" ]; then
-        verbose ERROR "JAVA directory($javadir) doesn't exist"
-        exit 1
-    fi
-    cd $homedir
-    javac $javafile
-    javah ${javafile%.*}
-    #line=`sed -n '/^#include/h;${x;=}' $headerfile`
-    line=`grep -rin "^#include" $headerfile | tail -n 1 | awk -F: '{print $1}'`
-    sed -i "$line a#include \"MessageHandler.h\"" $headerfile
-    cd -
+if [ ! -d "$jnidir" ]; then
+    verbose ERROR "JNI  directory($jnidir) doesn't exist"
+    exit 1
 fi
+if [ ! -d "$javadir" ]; then
+    verbose ERROR "JAVA directory($javadir) doesn't exist"
+    exit 1
+fi
+cd $homedir
+javac $javafile
+javah ${javafile%.*}
+#line=`sed -n '/^#include/h;${x;=}' $headerfile`
+line=`grep -rin "^#include" $headerfile | tail -n 1 | awk -F: '{print $1}'`
+sed -i "$line a#include \"MessageHandler.h\"" $headerfile
+cd -
 ### }}}
 
 ### building .so file {{{
 cd $homedir
-verbose INFO "Rebuilding jnilib file..."
+verbose INFO "Rebuilding jnilib file($make_mode mode)..."
 make clean
-make
+make SGX_MODE=$make_mode SGX_PRERELEASE=1
 if [ $? -ne 0 ]; then
     verbose ERROR "Building jni library failed!"
     exit 1
