@@ -1,0 +1,15 @@
+#app-header {
+  border-bottom: 1px solid $color-text-light;
+  padding: $half-space 0;
+  margin-bottom: $base-space;
+
+  #app-logo {
+    width: 80px;
+    padding-right: $half-space
+  }
+
+  #app-name {
+    color: $color-text;
+    font-size: 24px
+  }
+}
