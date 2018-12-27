@@ -1,9 +1,7 @@
-const {
-  RA_VERIFICATION
-} = require("../metadata/messageTypes");
+import { RA_VERIFICATION } from "../metadata/messageTypes";
 
 
-function getInitMsg() {
+const getInitMsg = () => {
   return {
     type: RA_VERIFICATION,
     size: 1
@@ -11,4 +9,4 @@ function getInitMsg() {
 }
 
 
-module.exports = getInitMsg;
+export default getInitMsg;

@@ -1,23 +1,22 @@
-const aesCmac = require("node-aes-cmac").aesCmac;
-const EC = require('elliptic').ec;
-const ec = new EC('p256');
-const bigInt = require("big-integer");
-
-const findKeys = require("../utils/keys");
-
-const {
+import {
   MSG2_SIZE,
   SIGRL,
   SIZE_SIGRL,
   AES_CMAC_KDF_ID,
   SAMPLE_QUOTE_LINKABLE_SIGNATURE
-} = require("../metadata/constants");
-const {
+} from "../metadata/constants";
+import {
   RA_MSG2
-} = require("../metadata/messageTypes");
+} from "../metadata/messageTypes";
+
+const aesCmac = require("node-aes-cmac").aesCmac;
+const EC = require('elliptic').ec;
+const ec = new EC('p256');
+const bigInt = require("big-integer");
+const findKeys = require("../utils/keys");
 
 
-function getPayload(ecPublicKey) {
+const getMsg2 = ecPublicKey => {
   const {
     MY_PRIVATE_KEY,
     MY_PUBLIC_KEY,
@@ -56,4 +55,4 @@ function getPayload(ecPublicKey) {
 }
 
 
-module.exports = getPayload;
+export default getMsg2;

@@ -1,12 +1,5 @@
-const encrypt = require("node-aes-gcm").gcm;
-const aesCmac = require("node-aes-cmac").aesCmac;
-
-const findKeys = require("../utils/keys");
-
-const {
-  RA_ATT_RESULT
-} = require("../metadata/messageTypes");
-const {
+import { RA_ATT_RESULT } from "../metadata/messageTypes";
+import {
   ATT_SIZE,
   IAS_EPID_GROUP_STATUS_REVOKED_BIT_POS,
   IAS_EPID_GROUP_STATUS_REKEY_AVAILABLE_BIT_POS,
@@ -26,7 +19,11 @@ const {
   SIGNATURE_Y,
   RESULT_SIZE,
   RESERVED
-} = require("../metadata/constants");
+} from "../metadata/constants";
+
+const encrypt = require("node-aes-gcm").gcm;
+const aesCmac = require("node-aes-cmac").aesCmac;
+const findKeys = require("../utils/keys");
 
 
 const epidGroupStatus = (
@@ -48,8 +45,7 @@ const pseEvaluationStatus = (
 );
 
 
-function getPayload() {
-
+const getAttMsg = () => {
   const { SHORT_KEY } = findKeys();
 
   /**
@@ -87,4 +83,5 @@ function getPayload() {
   };
 }
 
-module.exports = getPayload;
+
+export default getAttMsg;

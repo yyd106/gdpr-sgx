@@ -1,27 +1,82 @@
 import React from "react";
+import protobuf from "protobufjs";
 import proto from "./messages.proto";
 
-// import registry from "./metadata/messageTypes";
-import getInitMsg from "./msgs/initMsg";
-import getMsg2 from "./msgs/msg2";
-import getAttMsg from "./msgs/attMsg";
+import registry, {
+  RA_VERIFICATION
+} from "./metadata/messageTypes";
 
-import { ecPublicKey } from "./utils/mocks";
+let PROTO, WEB_SOCKET;
 
-// const protobuf = require("protobufjs");
-// const promise = protobuf.load(proto);
+
+/**
+ * @desc load .proto file
+ */
+protobuf.load(proto)
+  .then(root => {
+    PROTO = root;
+  }).catch(error => {
+    console.log("error", error);
+  });
+
 
 class GDPRDemo extends React.Component {
-  componentDidMount() {
-    const initMsg = getInitMsg();
-    console.log("initial message", initMsg);
-
-    const msg2 = getMsg2(ecPublicKey);
-    console.log("message 2", msg2);
-
-    const attMsg = getAttMsg();
-    console.log("attestation message", attMsg);
+  constructor() {
+    super();
+    this.setupWebSocket();
   }
+
+  setupWebSocket() {
+    if (WEB_SOCKET) return;
+
+    WEB_SOCKET = new WebSocket("wss://echo.websocket.org"); // test ws 
+    // WEB_SOCKET = new WebSocket("ws://localhost:8080/com.sgxtrial/websocketendpoint");
+
+    WEB_SOCKET.onopen = evt => {
+      console.log("Connection open ...");
+      this.assembleMessage(RA_VERIFICATION);
+    };
+
+    WEB_SOCKET.onmessage = evt => {
+      console.log("Received Message: " + evt.data);
+      WEB_SOCKET.close();
+    };
+
+    WEB_SOCKET.onclose = evt => {
+      console.log("Connection closing...");
+    };
+  }
+
+  assembleMessage(type) {
+    const { name, getPayload } = registry[type];
+
+    /**
+     * @desc assemble wrapped message
+     */
+    const wrappedMsgDef = PROTO.lookupType(`Messages.${name}`);
+    const wrappedPayload = getPayload();
+    const wrappedMsg = wrappedMsgDef.create(wrappedPayload);
+    console.log("wrappedMsg", wrappedMsg);
+
+    /**
+     * @desc assemble all-in-one message
+     */
+    const allInOneMsgDef = PROTO.lookupType("Messages.AllInOneMessage");
+    const allInOnePayload = {
+      type,
+      [name]: wrappedMsg
+    };
+    const allInOneMsg = allInOneMsgDef.create(allInOnePayload);
+    console.log("allInOneMsg", allInOneMsg);
+
+    /**
+     * @desc encode message and send to web socket
+     */
+    const buffer = allInOneMsgDef.encode(allInOneMsg).finish();
+    // WEB_SOCKET.send(buffer);
+    WEB_SOCKET.send("Hello WebSockets!");
+  }
+
 
   render() {
     return (
@@ -31,5 +86,6 @@ class GDPRDemo extends React.Component {
     );
   }
 }
+
 
 export default GDPRDemo;
