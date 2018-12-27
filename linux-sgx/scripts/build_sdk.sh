@@ -52,7 +52,8 @@ EOF
 }
 
 ############### MAIN BODY ###############
-basedir=`dirname $0` basedir=`cd $basedir;pwd` 
+basedir=`dirname $0`
+basedir=`cd $basedir;pwd` 
 homedir=`cd $basedir/..;pwd`
 sdkdir=$homedir/sdk
 bindir=$homedir/linux/installer/bin

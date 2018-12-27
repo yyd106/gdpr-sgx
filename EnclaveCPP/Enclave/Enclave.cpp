@@ -112,21 +112,3 @@ sgx_status_t Enclave::getStatus() {
 sgx_ra_context_t Enclave::getContext() {
     return this->context;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

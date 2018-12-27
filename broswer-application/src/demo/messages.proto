@@ -1,0 +1,92 @@
+package Messages;
+syntax = "proto3";
+
+enum Type {
+    RA_MSG0 = 0;
+    RA_MSG1 = 1;
+    RA_MSG2 = 2;
+    RA_MSG3 = 3;
+    RA_ATT_RESULT = 4;
+    RA_VERIFICATION = 5;
+    RA_APP_ATT_OK = 6;
+}
+
+message SecretMessage {
+	required Type type = 1;
+	optional uint32 size = 2;
+}
+
+message InitialMessage {
+	required Type type = 1;
+	optional uint32 size = 2;
+} 
+
+message MessageMSG0 {
+	required Type type = 1;
+	required uint32 epid = 2;
+	optional uint32 status = 3;
+}
+
+message MessageMSG1 {
+	required Type type = 1;
+	repeated uint32 GaX = 2 [packed=true];
+	repeated uint32 GaY = 3 [packed=true];
+	repeated uint32 GID = 4 [packed=true];
+}
+
+message MessageMSG2 {
+	required Type type = 1;
+	optional uint32 size = 2;
+	repeated uint32 publicKeyGx = 3 [packed=true];
+	repeated uint32 publicKeyGy = 4 [packed=true];
+	optional uint32 quoteType = 5;
+	repeated uint32 spid = 6 [packed=true];
+	optional uint32 cmacKdfId = 7;
+	repeated uint32 signatureX = 8 [packed=true];
+	repeated uint32 signatureY = 9 [packed=true];
+	repeated uint32 smac = 10 [packed=true];
+	optional uint32 sizeSigrl = 11;
+	repeated uint32 sigrl = 12 [packed=true];
+}
+
+message MessageMSG3 {
+	required Type type = 1;
+	optional uint32 size = 2;
+	repeated uint32 sgxMac = 3 [packed=true];
+	repeated uint32 gaxMsg3 = 4 [packed=true];
+	repeated uint32 gayMsg3 = 5 [packed=true];
+	repeated uint32 secProperty = 6 [packed=true];
+	repeated uint32 quote = 7 [packed=true];
+}
+
+message AttestationMessage {
+	required Type type = 1;
+	required uint32 size = 2;
+
+	optional uint32 epidGroupStatus = 3;
+	optional uint32 tcbEvaluationStatus = 4;
+	optional uint32 pseEvaluationStatus = 5;
+	repeated uint32 latestEquivalentTcbPsvn = 6 [packed=true];
+	repeated uint32 latestPseIsvsvn = 7 [packed=true];
+	repeated uint32 latestPsdaSvn = 8 [packed=true];
+	repeated uint32 performanceRekeyGid = 9 [packed=true];
+	repeated uint32 ecSign256X = 10 [packed=true];
+	repeated uint32 ecSign256Y = 11 [packed=true];
+	repeated uint32 macSmk = 12 [packed=true];
+
+	optional uint32 resultSize = 13;
+	repeated uint32 reserved = 14 [packed=true];
+	repeated uint32 payloadTag = 15 [packed=true];
+	repeated uint32 payload = 16 [packed=true];
+}
+
+message AllInOneMessage {
+    required Type type = 1;
+    optional SecretMessage secretMsg = 2;
+    optional InitialMessage initMsg = 3;
+    optional MessageMSG0 msg0 = 4;
+    optional MessageMSG1 msg1 = 5;
+    optional MessageMSG2 msg2 = 6;
+    optional MessageMSG3 msg3 = 7;
+    optional AttestationMessage attestMsg = 8;
+}
