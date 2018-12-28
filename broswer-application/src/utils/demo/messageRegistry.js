@@ -1,4 +1,4 @@
-import getMsg from "../messages";
+import getMsg from "./messages";
 import {
   RA_MSG0,
   RA_MSG1,
@@ -7,7 +7,7 @@ import {
   RA_ATT_RESULT,
   RA_VERIFICATION,
   RA_APP_ATT_OK,
-} from "./messageTypes";
+} from "../../metadata/messageTypes";
 
 
 const registry = {

@@ -1,4 +1,4 @@
-import { RA_ATT_RESULT } from "../metadata/messageTypes";
+import { RA_ATT_RESULT } from "../../../metadata/messageTypes";
 import {
   ATT_SIZE,
   IAS_EPID_GROUP_STATUS_REVOKED_BIT_POS,
@@ -19,11 +19,11 @@ import {
   SIGNATURE_Y,
   RESULT_SIZE,
   RESERVED
-} from "../metadata/constants";
+} from "../../../metadata/ecConstants";
 
 const encrypt = require("node-aes-gcm").gcm;
 const aesCmac = require("node-aes-cmac").aesCmac;
-const findKeys = require("../utils/keys");
+const findKeys = require("../keys/findKeys");
 
 
 const epidGroupStatus = (

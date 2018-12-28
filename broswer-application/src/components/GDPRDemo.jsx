@@ -1,14 +1,12 @@
 import React from "react";
 import protobuf from "protobufjs";
-import proto from "./messages.proto";
-
-
-import registry from "./metadata/messageRegistry";
+import proto from "../utils/demo/messages.proto";
+import registry from "../utils/demo/messageRegistry";
 import {
   RA_VERIFICATION, RA_MSG0, RA_MSG1, RA_MSG3, RA_MSG2, RA_ATT_RESULT
-} from "./metadata/messageTypes";
+} from "../metadata/messageTypes";
 
-import getEcMsg from "./utils/mock";
+import getEcMsg from "../utils/demo/mock";
 
 let PROTO, WEB_SOCKET;
 

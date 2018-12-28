@@ -1,5 +1,5 @@
-import { RA_MSG0, RA_MSG1, RA_MSG3 } from "../metadata/messageTypes";
-import registry from "../metadata/messageRegistry";
+import { RA_MSG0, RA_MSG1, RA_MSG3 } from "../../metadata/messageTypes";
+import registry from "./messageRegistry";
 
 const EC_PUBLIC_KEY = {
   X: "37139192525400767396954351293006657235352209374019103420088709115342038670395",

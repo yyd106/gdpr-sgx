@@ -4,16 +4,16 @@ import {
   SIZE_SIGRL,
   AES_CMAC_KDF_ID,
   SAMPLE_QUOTE_LINKABLE_SIGNATURE
-} from "../metadata/constants";
+} from "../../../metadata/ecConstants";
 import {
   RA_MSG2
-} from "../metadata/messageTypes";
+} from "../../../metadata/messageTypes";
 
 const aesCmac = require("node-aes-cmac").aesCmac;
 const EC = require('elliptic').ec;
 const ec = new EC('p256');
 const bigInt = require("big-integer");
-const findKeys = require("../utils/keys");
+const findKeys = require("../keys/findKeys");
 
 
 const getMsg2 = ecPublicKey => {

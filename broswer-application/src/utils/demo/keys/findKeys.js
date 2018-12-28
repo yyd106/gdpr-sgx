@@ -1,8 +1,9 @@
+const bigInt = require("big-integer");
 const {
   myPrivateKey,
   getMyPublicKey,
   getMySharedKey
-} = require("../utils/ecdh");
+} = require("./ecdh");
 
 
 let MY_PRIVATE_KEY, MY_PUBLIC_KEY, MY_SHARED_KEY, SHARED_KEY, SHORT_KEY;
@@ -26,7 +27,7 @@ function findKeys(ecPublicKey = {}) {
   SHARED_KEY = SHARED_KEY ? SHARED_KEY : MY_SHARED_KEY.X + MY_SHARED_KEY.Y;
 
   // typeof SHORT_KEY: String
-  SHORT_KEY = SHORT_KEY ? SHORT_KEY : SHARED_KEY.slice(0, 32);
+  SHORT_KEY = SHORT_KEY ? SHORT_KEY : bigInt(MY_SHARED_KEY.X).toString(16).slice(0, 32);
 
   return {
     MY_PRIVATE_KEY,
