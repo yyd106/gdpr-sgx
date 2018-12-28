@@ -132,8 +132,6 @@ extern "C" sgx_status_t sgx_ra_get_ga(
             break;
         }
 
-        if(fix_data->g_key_flag == 0){
-            // ecc_state should be closed when exit.
 
             se_ret = sgx_ecc256_open_context(&ecc_state);
             if (SGX_SUCCESS != se_ret)
@@ -149,6 +147,8 @@ extern "C" sgx_status_t sgx_ra_get_ga(
                     se_ret = SGX_ERROR_UNEXPECTED;
                 break;
             }
+        if(fix_data->g_key_flag == 0){
+            // ecc_state should be closed when exit.
             memcpy(&g_priv_key, &priv_key, sizeof(item->a));
             memcpy(&g_pub_key, &pub_key, sizeof(item->g_a));  // Fix one  item->a   ->  item->g_a
 
@@ -201,6 +201,8 @@ extern "C" sgx_status_t sgx_ra_get_ga(
                 return retUnseal;
             }
             memcpy(&pub_key, &fix_data->ec256_public_key, sizeof(sgx_ec256_public_t));
+            memcpy(fix_data->p_ecc_state, (uint8_t*)ecc_state, 16);
+            //memcpy(fix_data->p_ecc_state, (uint8_t*)ecc_state, sizeof(ecc_state));
             //memcpy(&priv_key, &fix_data->ec256_private_key, sizeof(sgx_ec256_private_t));
         }
         memcpy(&item->a, &priv_key, sizeof(item->a));
@@ -368,6 +370,23 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
             se_ret = SGX_ERROR_KDF_MISMATCH;
             break;
         }
+        /*
+        if(NULL != ra_key_cb)
+        {
+            memcpy(&smkey, &dh_key, sizeof(smkey));
+            memcpy(&skey, &dh_key, sizeof(smkey));
+            memcpy(&mkey, &dh_key, sizeof(smkey));
+            memcpy(&vkey, &dh_key, sizeof(smkey));
+        }
+        else if (p_msg2->kdf_id == 0x0001)
+        {
+            memcpy(&smkey, &dh_key, sizeof(smkey));
+            memcpy(&skey, &dh_key, sizeof(smkey));
+            memcpy(&mkey, &dh_key, sizeof(smkey));
+            memcpy(&vkey, &dh_key, sizeof(smkey));
+
+        }
+        */
 
         sgx_cmac_128bit_tag_t mac;
         uint32_t maced_size = offsetof(sgx_ra_msg2_t, mac);

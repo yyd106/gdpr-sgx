@@ -1,0 +1,36 @@
+export const SAMPLE_QUOTE_LINKABLE_SIGNATURE = 1;
+export const AES_CMAC_KDF_ID = 0x0001;
+
+
+export const IAS_EPID_GROUP_STATUS_REVOKED_BIT_POS = 0x00;
+export const IAS_EPID_GROUP_STATUS_REKEY_AVAILABLE_BIT_POS = 0x01;
+
+export const IAS_TCB_EVAL_STATUS_CPUSVN_OUT_OF_DATE_BIT_POS = 0x00;
+export const IAS_TCB_EVAL_STATUS_ISVSVN_OUT_OF_DATE_BIT_POS = 0x01;
+
+export const IAS_PSE_EVAL_STATUS_ISVSVN_OUT_OF_DATE_BIT_POS = 0x00;
+export const IAS_PSE_EVAL_STATUS_EPID_GROUP_REVOKED_BIT_POS = 0x01;
+export const IAS_PSE_EVAL_STATUS_PSDASVN_OUT_OF_DATE_BIT_POS = 0x02;
+export const IAS_PSE_EVAL_STATUS_SIGRL_OUT_OF_DATE_BIT_POS = 0x03;
+export const IAS_PSE_EVAL_STATUS_PRIVRL_OUT_OF_DATE_BIT_POS = 0x04;
+
+/**
+ * platform_info_blob simplified
+ */
+export const PLATFORM_INFO_BLOB = "0000000000000000000000000000000000000000000000000000000000000000"; //64 bits
+export const LATEST_EQUIVALENT_TCB_PSVN = "000000000000000000"; // 18 bits
+export const LATEST_PSE_ISVSVN = "00"; // 2 bits
+export const LATEST_PSDA_SVN = "0000"; // 4bits
+export const PERFORMANCE_REKEY_GID = "0000"; // 4 bits
+export const SIGNATURE_X = "0000000000000000"; //16 bits
+export const SIGNATURE_Y = "0000000000000000"; //16 bits
+
+/**
+ * Hardcode values
+ */
+export const MSG2_SIZE = 168;
+export const ATT_SIZE = 145;
+export const SIZE_SIGRL = 0;
+export const SIGRL = null;
+export const RESERVED = 12;
+export const RESULT_SIZE = 2;

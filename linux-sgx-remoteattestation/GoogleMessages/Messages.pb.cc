@@ -20,6 +20,9 @@ namespace Messages {
 
 namespace {
 
+const ::google::protobuf::Descriptor* SecretMessage_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  SecretMessage_reflection_ = NULL;
 const ::google::protobuf::Descriptor* InitialMessage_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   InitialMessage_reflection_ = NULL;
@@ -38,9 +41,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* AttestationMessage_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   AttestationMessage_reflection_ = NULL;
-const ::google::protobuf::Descriptor* SecretMessage_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  SecretMessage_reflection_ = NULL;
+const ::google::protobuf::EnumDescriptor* Type_descriptor_ = NULL;
 
 }  // namespace
 
@@ -51,7 +52,23 @@ void protobuf_AssignDesc_Messages_2eproto() {
     ::google::protobuf::DescriptorPool::generated_pool()->FindFileByName(
       "Messages.proto");
   GOOGLE_CHECK(file != NULL);
-  InitialMessage_descriptor_ = file->message_type(0);
+  SecretMessage_descriptor_ = file->message_type(0);
+  static const int SecretMessage_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, type_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, size_),
+  };
+  SecretMessage_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      SecretMessage_descriptor_,
+      SecretMessage::default_instance_,
+      SecretMessage_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(SecretMessage));
+  InitialMessage_descriptor_ = file->message_type(1);
   static const int InitialMessage_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InitialMessage, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InitialMessage, size_),
@@ -67,7 +84,7 @@ void protobuf_AssignDesc_Messages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(InitialMessage));
-  MessageMsg0_descriptor_ = file->message_type(1);
+  MessageMsg0_descriptor_ = file->message_type(2);
   static const int MessageMsg0_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMsg0, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMsg0, epid_),
@@ -84,7 +101,7 @@ void protobuf_AssignDesc_Messages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(MessageMsg0));
-  MessageMSG1_descriptor_ = file->message_type(2);
+  MessageMSG1_descriptor_ = file->message_type(3);
   static const int MessageMSG1_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG1, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG1, gax_),
@@ -102,7 +119,7 @@ void protobuf_AssignDesc_Messages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(MessageMSG1));
-  MessageMSG2_descriptor_ = file->message_type(3);
+  MessageMSG2_descriptor_ = file->message_type(4);
   static const int MessageMSG2_offsets_[12] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG2, size_),
@@ -128,7 +145,7 @@ void protobuf_AssignDesc_Messages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(MessageMSG2));
-  MessageMSG3_descriptor_ = file->message_type(4);
+  MessageMSG3_descriptor_ = file->message_type(5);
   static const int MessageMSG3_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG3, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageMSG3, size_),
@@ -149,7 +166,7 @@ void protobuf_AssignDesc_Messages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(MessageMSG3));
-  AttestationMessage_descriptor_ = file->message_type(5);
+  AttestationMessage_descriptor_ = file->message_type(6);
   static const int AttestationMessage_offsets_[16] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AttestationMessage, size_),
@@ -179,30 +196,7 @@ void protobuf_AssignDesc_Messages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(AttestationMessage));
-  SecretMessage_descriptor_ = file->message_type(6);
-  static const int SecretMessage_offsets_[10] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, type_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, size_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, encryped_pkey_size_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, encryped_x509_size_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, encrypted_content_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, mac_smk_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, encrypted_pkey_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, encrypted_pkey_mac_smk_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, encrypted_x509_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, encrypted_x509_mac_smk_),
-  };
-  SecretMessage_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      SecretMessage_descriptor_,
-      SecretMessage::default_instance_,
-      SecretMessage_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SecretMessage, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(SecretMessage));
+  Type_descriptor_ = file->enum_type(0);
 }
 
 namespace {
@@ -216,6 +210,8 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    SecretMessage_descriptor_, &SecretMessage::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     InitialMessage_descriptor_, &InitialMessage::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     MessageMsg0_descriptor_, &MessageMsg0::default_instance());
@@ -227,13 +223,13 @@ void protobuf_RegisterTypes(const ::std::string&) {
     MessageMSG3_descriptor_, &MessageMSG3::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     AttestationMessage_descriptor_, &AttestationMessage::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    SecretMessage_descriptor_, &SecretMessage::default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_Messages_2eproto() {
+  delete SecretMessage::default_instance_;
+  delete SecretMessage_reflection_;
   delete InitialMessage::default_instance_;
   delete InitialMessage_reflection_;
   delete MessageMsg0::default_instance_;
@@ -246,8 +242,6 @@ void protobuf_ShutdownFile_Messages_2eproto() {
   delete MessageMSG3_reflection_;
   delete AttestationMessage::default_instance_;
   delete AttestationMessage_reflection_;
-  delete SecretMessage::default_instance_;
-  delete SecretMessage_reflection_;
 }
 
 void protobuf_AddDesc_Messages_2eproto() {
@@ -257,56 +251,53 @@ void protobuf_AddDesc_Messages_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\016Messages.proto\022\010Messages\",\n\016InitialMes"
-    "sage\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002 \001(\r\"9\n\013Mess"
-    "ageMsg0\022\014\n\004type\030\001 \002(\r\022\014\n\004epid\030\002 \002(\r\022\016\n\006s"
-    "tatus\030\003 \001(\r\"N\n\013MessageMSG1\022\014\n\004type\030\001 \002(\r"
-    "\022\017\n\003GaX\030\002 \003(\rB\002\020\001\022\017\n\003GaY\030\003 \003(\rB\002\020\001\022\017\n\003GI"
-    "D\030\004 \003(\rB\002\020\001\"\205\002\n\013MessageMSG2\022\014\n\004type\030\001 \002("
-    "\r\022\014\n\004size\030\002 \001(\r\022\031\n\rpublic_key_gx\030\003 \003(\rB\002"
-    "\020\001\022\031\n\rpublic_key_gy\030\004 \003(\rB\002\020\001\022\022\n\nquote_t"
-    "ype\030\005 \001(\r\022\020\n\004spid\030\006 \003(\rB\002\020\001\022\023\n\013cmac_kdf_"
-    "id\030\007 \001(\r\022\027\n\013signature_x\030\010 \003(\rB\002\020\001\022\027\n\013sig"
-    "nature_y\030\t \003(\rB\002\020\001\022\020\n\004smac\030\n \003(\rB\002\020\001\022\022\n\n"
-    "size_sigrl\030\013 \001(\r\022\021\n\005sigrl\030\014 \003(\rB\002\020\001\"\227\001\n\013"
-    "MessageMSG3\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002 \001(\r\022"
-    "\023\n\007sgx_mac\030\003 \003(\rB\002\020\001\022\024\n\010gax_msg3\030\004 \003(\rB\002"
-    "\020\001\022\024\n\010gay_msg3\030\005 \003(\rB\002\020\001\022\030\n\014sec_property"
-    "\030\006 \003(\rB\002\020\001\022\021\n\005quote\030\007 \003(\rB\002\020\001\"\262\003\n\022Attest"
-    "ationMessage\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002 \002(\r"
-    "\022\031\n\021epid_group_status\030\003 \001(\r\022\035\n\025tcb_evalu"
-    "ation_status\030\004 \001(\r\022\035\n\025pse_evaluation_sta"
-    "tus\030\005 \001(\r\022&\n\032latest_equivalent_tcb_psvn\030"
-    "\006 \003(\rB\002\020\001\022\035\n\021latest_pse_isvsvn\030\007 \003(\rB\002\020\001"
-    "\022\033\n\017latest_psda_svn\030\010 \003(\rB\002\020\001\022!\n\025perform"
-    "ance_rekey_gid\030\t \003(\rB\002\020\001\022\030\n\014ec_sign256_x"
-    "\030\n \003(\rB\002\020\001\022\030\n\014ec_sign256_y\030\013 \003(\rB\002\020\001\022\023\n\007"
-    "mac_smk\030\014 \003(\rB\002\020\001\022\023\n\013result_size\030\r \001(\r\022\024"
-    "\n\010reserved\030\016 \003(\rB\002\020\001\022\027\n\013payload_tag\030\017 \003("
-    "\rB\002\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001\"\227\002\n\rSecretMes"
-    "sage\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002 \002(\r\022\032\n\022encr"
-    "yped_pkey_size\030\003 \001(\r\022\032\n\022encryped_x509_si"
-    "ze\030\004 \001(\r\022\035\n\021encrypted_content\030\005 \003(\rB\002\020\001\022"
-    "\023\n\007mac_smk\030\006 \003(\rB\002\020\001\022\032\n\016encrypted_pkey\030\007"
-    " \003(\rB\002\020\001\022\"\n\026encrypted_pkey_mac_smk\030\010 \003(\r"
-    "B\002\020\001\022\032\n\016encrypted_x509\030\t \003(\rB\002\020\001\022\"\n\026encr"
-    "ypted_x509_mac_smk\030\n \003(\rB\002\020\001", 1348);
+    "\n\016Messages.proto\022\010Messages\"+\n\rSecretMess"
+    "age\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002 \001(\r\",\n\016Initi"
+    "alMessage\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002 \001(\r\"9\n"
+    "\013MessageMsg0\022\014\n\004type\030\001 \002(\r\022\014\n\004epid\030\002 \002(\r"
+    "\022\016\n\006status\030\003 \001(\r\"N\n\013MessageMSG1\022\014\n\004type\030"
+    "\001 \002(\r\022\017\n\003GaX\030\002 \003(\rB\002\020\001\022\017\n\003GaY\030\003 \003(\rB\002\020\001\022"
+    "\017\n\003GID\030\004 \003(\rB\002\020\001\"\205\002\n\013MessageMSG2\022\014\n\004type"
+    "\030\001 \002(\r\022\014\n\004size\030\002 \001(\r\022\031\n\rpublic_key_gx\030\003 "
+    "\003(\rB\002\020\001\022\031\n\rpublic_key_gy\030\004 \003(\rB\002\020\001\022\022\n\nqu"
+    "ote_type\030\005 \001(\r\022\020\n\004spid\030\006 \003(\rB\002\020\001\022\023\n\013cmac"
+    "_kdf_id\030\007 \001(\r\022\027\n\013signature_x\030\010 \003(\rB\002\020\001\022\027"
+    "\n\013signature_y\030\t \003(\rB\002\020\001\022\020\n\004smac\030\n \003(\rB\002\020"
+    "\001\022\022\n\nsize_sigrl\030\013 \001(\r\022\021\n\005sigrl\030\014 \003(\rB\002\020\001"
+    "\"\227\001\n\013MessageMSG3\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030\002"
+    " \001(\r\022\023\n\007sgx_mac\030\003 \003(\rB\002\020\001\022\024\n\010gax_msg3\030\004 "
+    "\003(\rB\002\020\001\022\024\n\010gay_msg3\030\005 \003(\rB\002\020\001\022\030\n\014sec_pro"
+    "perty\030\006 \003(\rB\002\020\001\022\021\n\005quote\030\007 \003(\rB\002\020\001\"\262\003\n\022A"
+    "ttestationMessage\022\014\n\004type\030\001 \002(\r\022\014\n\004size\030"
+    "\002 \002(\r\022\031\n\021epid_group_status\030\003 \001(\r\022\035\n\025tcb_"
+    "evaluation_status\030\004 \001(\r\022\035\n\025pse_evaluatio"
+    "n_status\030\005 \001(\r\022&\n\032latest_equivalent_tcb_"
+    "psvn\030\006 \003(\rB\002\020\001\022\035\n\021latest_pse_isvsvn\030\007 \003("
+    "\rB\002\020\001\022\033\n\017latest_psda_svn\030\010 \003(\rB\002\020\001\022!\n\025pe"
+    "rformance_rekey_gid\030\t \003(\rB\002\020\001\022\030\n\014ec_sign"
+    "256_x\030\n \003(\rB\002\020\001\022\030\n\014ec_sign256_y\030\013 \003(\rB\002\020"
+    "\001\022\023\n\007mac_smk\030\014 \003(\rB\002\020\001\022\023\n\013result_size\030\r "
+    "\001(\r\022\024\n\010reserved\030\016 \003(\rB\002\020\001\022\027\n\013payload_tag"
+    "\030\017 \003(\rB\002\020\001\022\023\n\007payload\030\020 \003(\rB\002\020\001*u\n\004Type\022"
+    "\013\n\007RA_MSG0\020\000\022\013\n\007RA_MSG1\020\001\022\013\n\007RA_MSG2\020\002\022\013"
+    "\n\007RA_MSG3\020\003\022\021\n\rRA_ATT_RESULT\020\004\022\023\n\017RA_VER"
+    "IFICATION\020\005\022\021\n\rRA_APP_ATT_OK\020\006", 1230);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Messages.proto", &protobuf_RegisterTypes);
+  SecretMessage::default_instance_ = new SecretMessage();
   InitialMessage::default_instance_ = new InitialMessage();
   MessageMsg0::default_instance_ = new MessageMsg0();
   MessageMSG1::default_instance_ = new MessageMSG1();
   MessageMSG2::default_instance_ = new MessageMSG2();
   MessageMSG3::default_instance_ = new MessageMSG3();
   AttestationMessage::default_instance_ = new AttestationMessage();
-  SecretMessage::default_instance_ = new SecretMessage();
+  SecretMessage::default_instance_->InitAsDefaultInstance();
   InitialMessage::default_instance_->InitAsDefaultInstance();
   MessageMsg0::default_instance_->InitAsDefaultInstance();
   MessageMSG1::default_instance_->InitAsDefaultInstance();
   MessageMSG2::default_instance_->InitAsDefaultInstance();
   MessageMSG3::default_instance_->InitAsDefaultInstance();
   AttestationMessage::default_instance_->InitAsDefaultInstance();
-  SecretMessage::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Messages_2eproto);
 }
 
@@ -316,6 +307,300 @@ struct StaticDescriptorInitializer_Messages_2eproto {
     protobuf_AddDesc_Messages_2eproto();
   }
 } static_descriptor_initializer_Messages_2eproto_;
+const ::google::protobuf::EnumDescriptor* Type_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return Type_descriptor_;
+}
+bool Type_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      return true;
+    default:
+      return false;
+  }
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int SecretMessage::kTypeFieldNumber;
+const int SecretMessage::kSizeFieldNumber;
+#endif  // !_MSC_VER
+
+SecretMessage::SecretMessage()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Messages.SecretMessage)
+}
+
+void SecretMessage::InitAsDefaultInstance() {
+}
+
+SecretMessage::SecretMessage(const SecretMessage& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:Messages.SecretMessage)
+}
+
+void SecretMessage::SharedCtor() {
+  _cached_size_ = 0;
+  type_ = 0u;
+  size_ = 0u;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+SecretMessage::~SecretMessage() {
+  // @@protoc_insertion_point(destructor:Messages.SecretMessage)
+  SharedDtor();
+}
+
+void SecretMessage::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void SecretMessage::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* SecretMessage::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return SecretMessage_descriptor_;
+}
+
+const SecretMessage& SecretMessage::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Messages_2eproto();
+  return *default_instance_;
+}
+
+SecretMessage* SecretMessage::default_instance_ = NULL;
+
+SecretMessage* SecretMessage::New() const {
+  return new SecretMessage;
+}
+
+void SecretMessage::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<SecretMessage*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(type_, size_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool SecretMessage::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Messages.SecretMessage)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required uint32 type = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &type_)));
+          set_has_type();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_size;
+        break;
+      }
+
+      // optional uint32 size = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_size:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &size_)));
+          set_has_size();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Messages.SecretMessage)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Messages.SecretMessage)
+  return false;
+#undef DO_
+}
+
+void SecretMessage::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Messages.SecretMessage)
+  // required uint32 type = 1;
+  if (has_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->type(), output);
+  }
+
+  // optional uint32 size = 2;
+  if (has_size()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->size(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Messages.SecretMessage)
+}
+
+::google::protobuf::uint8* SecretMessage::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Messages.SecretMessage)
+  // required uint32 type = 1;
+  if (has_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->type(), target);
+  }
+
+  // optional uint32 size = 2;
+  if (has_size()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->size(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Messages.SecretMessage)
+  return target;
+}
+
+int SecretMessage::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required uint32 type = 1;
+    if (has_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->type());
+    }
+
+    // optional uint32 size = 2;
+    if (has_size()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->size());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void SecretMessage::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const SecretMessage* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const SecretMessage*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void SecretMessage::MergeFrom(const SecretMessage& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_type()) {
+      set_type(from.type());
+    }
+    if (from.has_size()) {
+      set_size(from.size());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void SecretMessage::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SecretMessage::CopyFrom(const SecretMessage& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SecretMessage::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void SecretMessage::Swap(SecretMessage* other) {
+  if (other != this) {
+    std::swap(type_, other->type_);
+    std::swap(size_, other->size_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata SecretMessage::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = SecretMessage_descriptor_;
+  metadata.reflection = SecretMessage_reflection_;
+  return metadata;
+}
+
 
 // ===================================================================
 
@@ -3804,735 +4089,6 @@ void AttestationMessage::Swap(AttestationMessage* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = AttestationMessage_descriptor_;
   metadata.reflection = AttestationMessage_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int SecretMessage::kTypeFieldNumber;
-const int SecretMessage::kSizeFieldNumber;
-const int SecretMessage::kEncrypedPkeySizeFieldNumber;
-const int SecretMessage::kEncrypedX509SizeFieldNumber;
-const int SecretMessage::kEncryptedContentFieldNumber;
-const int SecretMessage::kMacSmkFieldNumber;
-const int SecretMessage::kEncryptedPkeyFieldNumber;
-const int SecretMessage::kEncryptedPkeyMacSmkFieldNumber;
-const int SecretMessage::kEncryptedX509FieldNumber;
-const int SecretMessage::kEncryptedX509MacSmkFieldNumber;
-#endif  // !_MSC_VER
-
-SecretMessage::SecretMessage()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:Messages.SecretMessage)
-}
-
-void SecretMessage::InitAsDefaultInstance() {
-}
-
-SecretMessage::SecretMessage(const SecretMessage& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:Messages.SecretMessage)
-}
-
-void SecretMessage::SharedCtor() {
-  _cached_size_ = 0;
-  type_ = 0u;
-  size_ = 0u;
-  encryped_pkey_size_ = 0u;
-  encryped_x509_size_ = 0u;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-SecretMessage::~SecretMessage() {
-  // @@protoc_insertion_point(destructor:Messages.SecretMessage)
-  SharedDtor();
-}
-
-void SecretMessage::SharedDtor() {
-  if (this != default_instance_) {
-  }
-}
-
-void SecretMessage::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* SecretMessage::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return SecretMessage_descriptor_;
-}
-
-const SecretMessage& SecretMessage::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_Messages_2eproto();
-  return *default_instance_;
-}
-
-SecretMessage* SecretMessage::default_instance_ = NULL;
-
-SecretMessage* SecretMessage::New() const {
-  return new SecretMessage;
-}
-
-void SecretMessage::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<SecretMessage*>(16)->f) - \
-   reinterpret_cast<char*>(16))
-
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
-
-  ZR_(type_, encryped_x509_size_);
-
-#undef OFFSET_OF_FIELD_
-#undef ZR_
-
-  encrypted_content_.Clear();
-  mac_smk_.Clear();
-  encrypted_pkey_.Clear();
-  encrypted_pkey_mac_smk_.Clear();
-  encrypted_x509_.Clear();
-  encrypted_x509_mac_smk_.Clear();
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool SecretMessage::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Messages.SecretMessage)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required uint32 type = 1;
-      case 1: {
-        if (tag == 8) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &type_)));
-          set_has_type();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(16)) goto parse_size;
-        break;
-      }
-
-      // required uint32 size = 2;
-      case 2: {
-        if (tag == 16) {
-         parse_size:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &size_)));
-          set_has_size();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(24)) goto parse_encryped_pkey_size;
-        break;
-      }
-
-      // optional uint32 encryped_pkey_size = 3;
-      case 3: {
-        if (tag == 24) {
-         parse_encryped_pkey_size:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &encryped_pkey_size_)));
-          set_has_encryped_pkey_size();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(32)) goto parse_encryped_x509_size;
-        break;
-      }
-
-      // optional uint32 encryped_x509_size = 4;
-      case 4: {
-        if (tag == 32) {
-         parse_encryped_x509_size:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &encryped_x509_size_)));
-          set_has_encryped_x509_size();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(42)) goto parse_encrypted_content;
-        break;
-      }
-
-      // repeated uint32 encrypted_content = 5 [packed = true];
-      case 5: {
-        if (tag == 42) {
-         parse_encrypted_content:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_encrypted_content())));
-        } else if (tag == 40) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 42, input, this->mutable_encrypted_content())));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(50)) goto parse_mac_smk;
-        break;
-      }
-
-      // repeated uint32 mac_smk = 6 [packed = true];
-      case 6: {
-        if (tag == 50) {
-         parse_mac_smk:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_mac_smk())));
-        } else if (tag == 48) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 50, input, this->mutable_mac_smk())));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(58)) goto parse_encrypted_pkey;
-        break;
-      }
-
-      // repeated uint32 encrypted_pkey = 7 [packed = true];
-      case 7: {
-        if (tag == 58) {
-         parse_encrypted_pkey:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_encrypted_pkey())));
-        } else if (tag == 56) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 58, input, this->mutable_encrypted_pkey())));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(66)) goto parse_encrypted_pkey_mac_smk;
-        break;
-      }
-
-      // repeated uint32 encrypted_pkey_mac_smk = 8 [packed = true];
-      case 8: {
-        if (tag == 66) {
-         parse_encrypted_pkey_mac_smk:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_encrypted_pkey_mac_smk())));
-        } else if (tag == 64) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 66, input, this->mutable_encrypted_pkey_mac_smk())));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(74)) goto parse_encrypted_x509;
-        break;
-      }
-
-      // repeated uint32 encrypted_x509 = 9 [packed = true];
-      case 9: {
-        if (tag == 74) {
-         parse_encrypted_x509:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_encrypted_x509())));
-        } else if (tag == 72) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 74, input, this->mutable_encrypted_x509())));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(82)) goto parse_encrypted_x509_mac_smk;
-        break;
-      }
-
-      // repeated uint32 encrypted_x509_mac_smk = 10 [packed = true];
-      case 10: {
-        if (tag == 82) {
-         parse_encrypted_x509_mac_smk:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, this->mutable_encrypted_x509_mac_smk())));
-        } else if (tag == 80) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 1, 82, input, this->mutable_encrypted_x509_mac_smk())));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectAtEnd()) goto success;
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:Messages.SecretMessage)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:Messages.SecretMessage)
-  return false;
-#undef DO_
-}
-
-void SecretMessage::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Messages.SecretMessage)
-  // required uint32 type = 1;
-  if (has_type()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->type(), output);
-  }
-
-  // required uint32 size = 2;
-  if (has_size()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->size(), output);
-  }
-
-  // optional uint32 encryped_pkey_size = 3;
-  if (has_encryped_pkey_size()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->encryped_pkey_size(), output);
-  }
-
-  // optional uint32 encryped_x509_size = 4;
-  if (has_encryped_x509_size()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->encryped_x509_size(), output);
-  }
-
-  // repeated uint32 encrypted_content = 5 [packed = true];
-  if (this->encrypted_content_size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteTag(5, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_encrypted_content_cached_byte_size_);
-  }
-  for (int i = 0; i < this->encrypted_content_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->encrypted_content(i), output);
-  }
-
-  // repeated uint32 mac_smk = 6 [packed = true];
-  if (this->mac_smk_size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteTag(6, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_mac_smk_cached_byte_size_);
-  }
-  for (int i = 0; i < this->mac_smk_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->mac_smk(i), output);
-  }
-
-  // repeated uint32 encrypted_pkey = 7 [packed = true];
-  if (this->encrypted_pkey_size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteTag(7, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_encrypted_pkey_cached_byte_size_);
-  }
-  for (int i = 0; i < this->encrypted_pkey_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->encrypted_pkey(i), output);
-  }
-
-  // repeated uint32 encrypted_pkey_mac_smk = 8 [packed = true];
-  if (this->encrypted_pkey_mac_smk_size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteTag(8, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_encrypted_pkey_mac_smk_cached_byte_size_);
-  }
-  for (int i = 0; i < this->encrypted_pkey_mac_smk_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->encrypted_pkey_mac_smk(i), output);
-  }
-
-  // repeated uint32 encrypted_x509 = 9 [packed = true];
-  if (this->encrypted_x509_size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteTag(9, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_encrypted_x509_cached_byte_size_);
-  }
-  for (int i = 0; i < this->encrypted_x509_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->encrypted_x509(i), output);
-  }
-
-  // repeated uint32 encrypted_x509_mac_smk = 10 [packed = true];
-  if (this->encrypted_x509_mac_smk_size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteTag(10, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_encrypted_x509_mac_smk_cached_byte_size_);
-  }
-  for (int i = 0; i < this->encrypted_x509_mac_smk_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
-      this->encrypted_x509_mac_smk(i), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:Messages.SecretMessage)
-}
-
-::google::protobuf::uint8* SecretMessage::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Messages.SecretMessage)
-  // required uint32 type = 1;
-  if (has_type()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->type(), target);
-  }
-
-  // required uint32 size = 2;
-  if (has_size()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->size(), target);
-  }
-
-  // optional uint32 encryped_pkey_size = 3;
-  if (has_encryped_pkey_size()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->encryped_pkey_size(), target);
-  }
-
-  // optional uint32 encryped_x509_size = 4;
-  if (has_encryped_x509_size()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->encryped_x509_size(), target);
-  }
-
-  // repeated uint32 encrypted_content = 5 [packed = true];
-  if (this->encrypted_content_size() > 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
-      5,
-      ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
-      target);
-    target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _encrypted_content_cached_byte_size_, target);
-  }
-  for (int i = 0; i < this->encrypted_content_size(); i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->encrypted_content(i), target);
-  }
-
-  // repeated uint32 mac_smk = 6 [packed = true];
-  if (this->mac_smk_size() > 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
-      6,
-      ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
-      target);
-    target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _mac_smk_cached_byte_size_, target);
-  }
-  for (int i = 0; i < this->mac_smk_size(); i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->mac_smk(i), target);
-  }
-
-  // repeated uint32 encrypted_pkey = 7 [packed = true];
-  if (this->encrypted_pkey_size() > 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
-      7,
-      ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
-      target);
-    target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _encrypted_pkey_cached_byte_size_, target);
-  }
-  for (int i = 0; i < this->encrypted_pkey_size(); i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->encrypted_pkey(i), target);
-  }
-
-  // repeated uint32 encrypted_pkey_mac_smk = 8 [packed = true];
-  if (this->encrypted_pkey_mac_smk_size() > 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
-      8,
-      ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
-      target);
-    target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _encrypted_pkey_mac_smk_cached_byte_size_, target);
-  }
-  for (int i = 0; i < this->encrypted_pkey_mac_smk_size(); i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->encrypted_pkey_mac_smk(i), target);
-  }
-
-  // repeated uint32 encrypted_x509 = 9 [packed = true];
-  if (this->encrypted_x509_size() > 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
-      9,
-      ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
-      target);
-    target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _encrypted_x509_cached_byte_size_, target);
-  }
-  for (int i = 0; i < this->encrypted_x509_size(); i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->encrypted_x509(i), target);
-  }
-
-  // repeated uint32 encrypted_x509_mac_smk = 10 [packed = true];
-  if (this->encrypted_x509_mac_smk_size() > 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
-      10,
-      ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
-      target);
-    target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-      _encrypted_x509_mac_smk_cached_byte_size_, target);
-  }
-  for (int i = 0; i < this->encrypted_x509_mac_smk_size(); i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteUInt32NoTagToArray(this->encrypted_x509_mac_smk(i), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:Messages.SecretMessage)
-  return target;
-}
-
-int SecretMessage::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required uint32 type = 1;
-    if (has_type()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->type());
-    }
-
-    // required uint32 size = 2;
-    if (has_size()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->size());
-    }
-
-    // optional uint32 encryped_pkey_size = 3;
-    if (has_encryped_pkey_size()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->encryped_pkey_size());
-    }
-
-    // optional uint32 encryped_x509_size = 4;
-    if (has_encryped_x509_size()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->encryped_x509_size());
-    }
-
-  }
-  // repeated uint32 encrypted_content = 5 [packed = true];
-  {
-    int data_size = 0;
-    for (int i = 0; i < this->encrypted_content_size(); i++) {
-      data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->encrypted_content(i));
-    }
-    if (data_size > 0) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
-    }
-    GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _encrypted_content_cached_byte_size_ = data_size;
-    GOOGLE_SAFE_CONCURRENT_WRITES_END();
-    total_size += data_size;
-  }
-
-  // repeated uint32 mac_smk = 6 [packed = true];
-  {
-    int data_size = 0;
-    for (int i = 0; i < this->mac_smk_size(); i++) {
-      data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->mac_smk(i));
-    }
-    if (data_size > 0) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
-    }
-    GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _mac_smk_cached_byte_size_ = data_size;
-    GOOGLE_SAFE_CONCURRENT_WRITES_END();
-    total_size += data_size;
-  }
-
-  // repeated uint32 encrypted_pkey = 7 [packed = true];
-  {
-    int data_size = 0;
-    for (int i = 0; i < this->encrypted_pkey_size(); i++) {
-      data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->encrypted_pkey(i));
-    }
-    if (data_size > 0) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
-    }
-    GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _encrypted_pkey_cached_byte_size_ = data_size;
-    GOOGLE_SAFE_CONCURRENT_WRITES_END();
-    total_size += data_size;
-  }
-
-  // repeated uint32 encrypted_pkey_mac_smk = 8 [packed = true];
-  {
-    int data_size = 0;
-    for (int i = 0; i < this->encrypted_pkey_mac_smk_size(); i++) {
-      data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->encrypted_pkey_mac_smk(i));
-    }
-    if (data_size > 0) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
-    }
-    GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _encrypted_pkey_mac_smk_cached_byte_size_ = data_size;
-    GOOGLE_SAFE_CONCURRENT_WRITES_END();
-    total_size += data_size;
-  }
-
-  // repeated uint32 encrypted_x509 = 9 [packed = true];
-  {
-    int data_size = 0;
-    for (int i = 0; i < this->encrypted_x509_size(); i++) {
-      data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->encrypted_x509(i));
-    }
-    if (data_size > 0) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
-    }
-    GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _encrypted_x509_cached_byte_size_ = data_size;
-    GOOGLE_SAFE_CONCURRENT_WRITES_END();
-    total_size += data_size;
-  }
-
-  // repeated uint32 encrypted_x509_mac_smk = 10 [packed = true];
-  {
-    int data_size = 0;
-    for (int i = 0; i < this->encrypted_x509_mac_smk_size(); i++) {
-      data_size += ::google::protobuf::internal::WireFormatLite::
-        UInt32Size(this->encrypted_x509_mac_smk(i));
-    }
-    if (data_size > 0) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
-    }
-    GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _encrypted_x509_mac_smk_cached_byte_size_ = data_size;
-    GOOGLE_SAFE_CONCURRENT_WRITES_END();
-    total_size += data_size;
-  }
-
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void SecretMessage::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const SecretMessage* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const SecretMessage*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void SecretMessage::MergeFrom(const SecretMessage& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  encrypted_content_.MergeFrom(from.encrypted_content_);
-  mac_smk_.MergeFrom(from.mac_smk_);
-  encrypted_pkey_.MergeFrom(from.encrypted_pkey_);
-  encrypted_pkey_mac_smk_.MergeFrom(from.encrypted_pkey_mac_smk_);
-  encrypted_x509_.MergeFrom(from.encrypted_x509_);
-  encrypted_x509_mac_smk_.MergeFrom(from.encrypted_x509_mac_smk_);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_type()) {
-      set_type(from.type());
-    }
-    if (from.has_size()) {
-      set_size(from.size());
-    }
-    if (from.has_encryped_pkey_size()) {
-      set_encryped_pkey_size(from.encryped_pkey_size());
-    }
-    if (from.has_encryped_x509_size()) {
-      set_encryped_x509_size(from.encryped_x509_size());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void SecretMessage::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void SecretMessage::CopyFrom(const SecretMessage& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool SecretMessage::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
-
-  return true;
-}
-
-void SecretMessage::Swap(SecretMessage* other) {
-  if (other != this) {
-    std::swap(type_, other->type_);
-    std::swap(size_, other->size_);
-    std::swap(encryped_pkey_size_, other->encryped_pkey_size_);
-    std::swap(encryped_x509_size_, other->encryped_x509_size_);
-    encrypted_content_.Swap(&other->encrypted_content_);
-    mac_smk_.Swap(&other->mac_smk_);
-    encrypted_pkey_.Swap(&other->encrypted_pkey_);
-    encrypted_pkey_mac_smk_.Swap(&other->encrypted_pkey_mac_smk_);
-    encrypted_x509_.Swap(&other->encrypted_x509_);
-    encrypted_x509_mac_smk_.Swap(&other->encrypted_x509_mac_smk_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata SecretMessage::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = SecretMessage_descriptor_;
-  metadata.reflection = SecretMessage_reflection_;
   return metadata;
 }
 
