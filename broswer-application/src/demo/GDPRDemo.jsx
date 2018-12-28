@@ -2,9 +2,13 @@ import React from "react";
 import protobuf from "protobufjs";
 import proto from "./messages.proto";
 
-import registry, {
-  RA_VERIFICATION
+
+import registry from "./metadata/messageRegistry";
+import {
+  RA_VERIFICATION, RA_MSG0, RA_MSG1, RA_MSG3, RA_MSG2, RA_ATT_RESULT
 } from "./metadata/messageTypes";
+
+import getEcMsg from "./utils/mock";
 
 let PROTO, WEB_SOCKET;
 
@@ -34,12 +38,23 @@ class GDPRDemo extends React.Component {
 
     WEB_SOCKET.onopen = evt => {
       console.log("Connection open ...");
-      this.assembleMessage(RA_VERIFICATION);
+
+      const initMsg = this.assemble(RA_VERIFICATION);
+      WEB_SOCKET.send(initMsg);
+      console.log("======== Initial message sent ========\n\n\n\n\n");
     };
 
     WEB_SOCKET.onmessage = evt => {
-      console.log("Received Message: " + evt.data);
-      WEB_SOCKET.close();
+      // console.log("Received Message: " + evt.data);
+
+      //mock message
+      const ecMsg = getEcMsg(PROTO);
+      if (ecMsg) {
+        this.handleMessage(ecMsg);
+      } else {
+        WEB_SOCKET.close();
+        return;
+      }
     };
 
     WEB_SOCKET.onclose = evt => {
@@ -47,16 +62,16 @@ class GDPRDemo extends React.Component {
     };
   }
 
-  assembleMessage(type) {
-    const { name, getPayload } = registry[type];
+  assemble(type, ecPublicKey = {}) {
+    const { defName, getPayload, fieldName } = registry[type];
 
     /**
      * @desc assemble wrapped message
      */
-    const wrappedMsgDef = PROTO.lookupType(`Messages.${name}`);
-    const wrappedPayload = getPayload();
+    const wrappedMsgDef = PROTO.lookupType(`Messages.${defName}`);
+    const wrappedPayload = getPayload(ecPublicKey);
     const wrappedMsg = wrappedMsgDef.create(wrappedPayload);
-    console.log("wrappedMsg", wrappedMsg);
+    // console.log("wrappedMsg", wrappedMsg);
 
     /**
      * @desc assemble all-in-one message
@@ -64,17 +79,73 @@ class GDPRDemo extends React.Component {
     const allInOneMsgDef = PROTO.lookupType("Messages.AllInOneMessage");
     const allInOnePayload = {
       type,
-      [name]: wrappedMsg
+      [fieldName]: wrappedMsg
     };
     const allInOneMsg = allInOneMsgDef.create(allInOnePayload);
-    console.log("allInOneMsg", allInOneMsg);
+    // console.log("allInOneMsg", allInOneMsg);
+
 
     /**
      * @desc encode message and send to web socket
      */
     const buffer = allInOneMsgDef.encode(allInOneMsg).finish();
-    // WEB_SOCKET.send(buffer);
-    WEB_SOCKET.send("Hello WebSockets!");
+    const decoded = allInOneMsgDef.decode(buffer);
+    console.log("Message to sent:", decoded);
+
+    return buffer;
+  }
+
+
+  disassemble(buffer, type = "allInOneMsg") {
+    const handler = registry[type] || {};
+    const { defName = "AllInOneMessage" } = handler;
+
+    const msgDef = PROTO.lookupType(`Messages.${defName}`);
+    const message = msgDef.decode(buffer);
+
+    return message;
+  }
+
+
+  handleMessage(buffer) {
+    const message = this.disassemble(buffer);
+
+    const { type } = message;
+    const { defName } = registry[type];
+
+    console.log("======== ", defName, "received ========");
+    console.log("Received message:", message);
+
+    let msgToSent;
+
+    switch (type) {
+      case RA_MSG0:
+        msgToSent = this.assemble(RA_MSG0);
+        break;
+
+      case RA_MSG1:
+        const { msg1 } = message;
+        const { GaX, GaY } = msg1;
+        const ecPublicKey = {
+          X: GaX.join("").toString(),
+          Y: GaY.join("").toString()
+        }
+        msgToSent = this.assemble(RA_MSG2, ecPublicKey);
+        break;
+
+      case RA_MSG3:
+        msgToSent = this.assemble(RA_ATT_RESULT);
+        break;
+
+      default:
+        break;
+    }
+
+    if (!msgToSent) return
+
+    WEB_SOCKET.send(msgToSent);
+    // console.log("Message content:", msgToSent);
+    console.log("======== Message sent ========\n\n\n\n\n");
   }
 
 

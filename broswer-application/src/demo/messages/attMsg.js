@@ -59,7 +59,7 @@ const getAttMsg = () => {
   const bufferKey = new Buffer(SHORT_KEY, 'hex');
   const plainPayload = new Buffer('01', 'hex');
   const aes_gcm_iv = new Buffer('000000000000', 'hex');
-  const { ciphertext, auth_tag } = encrypt(bufferKey, aes_gcm_iv, plainPayload, new Buffer([]));
+  // const { ciphertext, auth_tag } = encrypt(bufferKey, aes_gcm_iv, plainPayload, new Buffer([]));
 
   return {
     type: RA_ATT_RESULT,
@@ -78,8 +78,8 @@ const getAttMsg = () => {
     macSmk,
     resultSize: RESULT_SIZE,
     reserved: RESERVED,
-    payloadTag: auth_tag,
-    payload: ciphertext
+    // payloadTag: auth_tag,
+    // payload: ciphertext
   };
 }
 
