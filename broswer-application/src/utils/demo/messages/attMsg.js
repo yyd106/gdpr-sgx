@@ -1,12 +1,5 @@
-const encrypt = require("node-aes-gcm").gcm;
-const aesCmac = require("node-aes-cmac").aesCmac;
-
-const findKeys = require("../utils/keys");
-
-const {
-  RA_ATT_RESULT
-} = require("../metadata/messageTypes");
-const {
+import { RA_ATT_RESULT } from "../../../metadata/messageTypes";
+import {
   ATT_SIZE,
   IAS_EPID_GROUP_STATUS_REVOKED_BIT_POS,
   IAS_EPID_GROUP_STATUS_REKEY_AVAILABLE_BIT_POS,
@@ -26,7 +19,11 @@ const {
   SIGNATURE_Y,
   RESULT_SIZE,
   RESERVED
-} = require("../metadata/constants");
+} from "../../../metadata/ecConstants";
+
+const encrypt = require("node-aes-gcm").gcm;
+const aesCmac = require("node-aes-cmac").aesCmac;
+const findKeys = require("../keys/findKeys");
 
 
 const epidGroupStatus = (
@@ -48,8 +45,7 @@ const pseEvaluationStatus = (
 );
 
 
-function getPayload() {
-
+const getAttMsg = () => {
   const { SHORT_KEY } = findKeys();
 
   /**
@@ -63,7 +59,7 @@ function getPayload() {
   const bufferKey = new Buffer(SHORT_KEY, 'hex');
   const plainPayload = new Buffer('01', 'hex');
   const aes_gcm_iv = new Buffer('000000000000', 'hex');
-  const { ciphertext, auth_tag } = encrypt(bufferKey, aes_gcm_iv, plainPayload, new Buffer([]));
+  // const { ciphertext, auth_tag } = encrypt(bufferKey, aes_gcm_iv, plainPayload, new Buffer([]));
 
   return {
     type: RA_ATT_RESULT,
@@ -82,9 +78,10 @@ function getPayload() {
     macSmk,
     resultSize: RESULT_SIZE,
     reserved: RESERVED,
-    payloadTag: auth_tag,
-    payload: ciphertext
+    // payloadTag: auth_tag,
+    // payload: ciphertext
   };
 }
 
-module.exports = getPayload;
+
+export default getAttMsg;

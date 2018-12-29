@@ -1,23 +1,23 @@
-const aesCmac = require("node-aes-cmac").aesCmac;
-const EC = require('elliptic').ec;
-const ec = new EC('p256');
-const bigInt = require("big-integer");
-
-const findKeys = require("../utils/keys");
-
-const {
+import {
   MSG2_SIZE,
   SIGRL,
   SIZE_SIGRL,
   AES_CMAC_KDF_ID,
   SAMPLE_QUOTE_LINKABLE_SIGNATURE
-} = require("../metadata/constants");
-const {
+} from "../../../metadata/ecConstants";
+import {
   RA_MSG2
-} = require("../metadata/messageTypes");
+} from "../../../metadata/messageTypes";
+import { switchEndian, toHex } from "../../hexHelpers";
+
+const aesCmac = require("node-aes-cmac").aesCmac;
+const EC = require('elliptic').ec;
+const ec = new EC('p256');
+const bigInt = require("big-integer");
+const findKeys = require("../keys/findKeys");
 
 
-function getPayload(ecPublicKey) {
+const getMsg2 = ecPublicKey => {
   const {
     MY_PRIVATE_KEY,
     MY_PUBLIC_KEY,
@@ -36,14 +36,16 @@ function getPayload(ecPublicKey) {
   /**
    * @desc get smac
    */
+  const publicKeyGx = toHex(MY_PUBLIC_KEY.X);
+  const publicKeyGy = toHex(MY_PUBLIC_KEY.Y);
   const sMyPublicKey = bigInt(MY_PUBLIC_KEY.X + MY_PUBLIC_KEY.Y).toString(16);
   const smac = aesCmac(SHORT_KEY, sMyPublicKey);
 
   return {
     type: RA_MSG2,
     size: MSG2_SIZE,
-    publicKeyGx: MY_PUBLIC_KEY.X,
-    publicKeyGy: MY_PUBLIC_KEY.Y,
+    publicKeyGx: switchEndian(publicKeyGx),
+    publicKeyGy: switchEndian(publicKeyGy),
     quoteType: SAMPLE_QUOTE_LINKABLE_SIGNATURE,
     spid: 0,
     cmacKdfId: AES_CMAC_KDF_ID,
@@ -56,4 +58,4 @@ function getPayload(ecPublicKey) {
 }
 
 
-module.exports = getPayload;
+export default getMsg2;
