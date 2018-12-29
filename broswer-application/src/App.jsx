@@ -14,7 +14,7 @@ import Login from "./views/login/Login";
 import Header from "./views/header/Header";
 import Register from "./views/register/Register";
 
-import Demo from "./demo/GDPRDemo";
+import Demo from "./components/GDPRDemo";
 
 const sagaMiddleware = createSagaMiddleware();
 

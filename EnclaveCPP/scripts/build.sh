@@ -39,6 +39,7 @@ jnidir=$projectdir/jnilib
 javadir=$projectdir/java
 homedir=$basedir/..
 targetdir=$homedir/../target
+TMPFILE=$basedir/tmp.$$
 
 RED='\033[0;31m'
 HRED='\033[1;31m'
@@ -58,8 +59,6 @@ if [ $? != 0 ]; then
     verbose ERROR "Parameter error, terminate" >&2
     exit 1
 fi
-
-if [ $# = 0 ]; then usage; exit 1; fi
 
 eval set -- "$CMD"
 
@@ -113,11 +112,9 @@ fi
 cd $homedir
 javac $javafile
 javah ${javafile%.*}
-#line=`sed -n '/^#include/h;${x;=}' $headerfile`
-#line=`grep -rin "^#include" $headerfile | tail -n 1 | awk -F: '{print $1}'`
-line=`cat $headerfile | sed -n '/^#include/=' | sed -n '$p'`
-sed -i "$line a#include \"MessageHandler.h\"" $headerfile
-
+cp $headerfile $TMPFILE
+line=`tac $TMPFILE | sed '0,/^#include/{s/^#include/#include "MessageHandler.h"\n#include/}' | tac > $headerfile`
+unlink $TMPFILE
 cd -
 ### }}}
 
