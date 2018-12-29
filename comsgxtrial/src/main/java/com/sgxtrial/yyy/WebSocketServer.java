@@ -25,33 +25,15 @@ public class WebSocketServer {
 
     @OnMessage
     public void onMessage(byte[] message, Session session){
-        logger.info("receving msg" + Thread.currentThread().toString());
-        // every time call enclave, message seq add 1.
-        if (messageSeq == 0) {
-            // EnclaveBridge bridge = EnclaveThreadManager.getInstance().getBridge();
-            // bridge.sendMessage2(message);
-            logger.info("receving msg1");
-            Messages.MessageMsg0 msg0 = Messages.MessageMsg0.newBuilder().setEpid(123).setType(1).build();
-            Messages.MessageMSG1 msg1 = Messages.MessageMSG1.newBuilder().setGaX(0, 456).build();
-            sendMsgAsByteBuffer(session, msg0.toByteArray());
-            sendMsgAsByteBuffer(session, msg1.toByteArray());
-            logger.info("sending msg0 and msg1");
-        } else if (messageSeq == 1) {
-            logger.info("receving msg2");
-            try {
-                Messages.MessageMSG2 msg2 = Messages.MessageMSG2.parseFrom(ByteBuffer.wrap(message));
-                logger.info("getting msg2");
-                logger.info("" + msg2.getSignatureX(0));
-                logger.info("sending msg3");
-                Messages.MessageMSG3 msg3 = Messages.MessageMSG3.newBuilder().setGaxMsg3(0, 789).build();
-                sendMsgAsByteBuffer(session, msg3.toByteArray());
-            } catch (InvalidProtocolBufferException ie) {
-                logger.fine(ie.toString());
-            }
-        } else if (messageSeq == 2) {
-            logger.info("getting secret");
+        logger.info("receive msg with thread: " + Thread.currentThread().toString());
+        logger.info("js msg:" + message.toString());
+        byte[] enclaveResults = EnclaveThreadManager.getInstance().getBridge().callEnclave(message);
+        logger.info("enclave msg:" + enclaveResults.toString());
+        try {
+            session.getBasicRemote().sendBinary(ByteBuffer.wrap(enclaveResults));
+        } catch (java.io.IOException e) {
+            logger.info("error occured when send msg back to js " + e.toString());
         }
-        messageSeq++;
     }
 
     @OnError
@@ -59,12 +41,5 @@ public class WebSocketServer {
         logger.info(e.toString());
     }
 
-    private void sendMsgAsByteBuffer(Session s, byte[] bytes) {
-        try {
-            s.getBasicRemote().sendBinary(ByteBuffer.wrap(bytes));
-        } catch (java.io.IOException e) {
-            logger.info(e.toString());
-        }
-    }
 
 }

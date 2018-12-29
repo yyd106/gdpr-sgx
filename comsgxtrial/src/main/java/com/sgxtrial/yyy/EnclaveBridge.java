@@ -1,20 +1,22 @@
 package com.sgxtrial.yyy;
 
-import java.util.Map;
 
 public class EnclaveBridge {
-
-    public native void sgxCreateEnclave(String enclaveName, boolean sgxDebugFlag);
-    public native void doAttestation(String eid, Map<String, String> p);
-    public native byte[] sendMessage2(byte[] msg2);
-    public native byte[] sendMessage4(byte[] msg4);
-
     static {
-        System.loadLibrary("SgxBridgeImpl");
+        System.loadLibrary("EnclaveBridge");
     }
 
+    private long messageHandlerOBJ;
+
     public EnclaveBridge() {
-        sgxCreateEnclave("test123", true);
+        messageHandlerOBJ = createMessageHandlerOBJ();
+    }
+
+    private native long createMessageHandlerOBJ();
+    private native byte[] handleMessages(long msgHandlerAddr, byte[] msg);
+
+    public byte[] callEnclave(byte[] msg) {
+        return handleMessages(messageHandlerOBJ, msg);
     }
 
 }
