@@ -24,11 +24,11 @@
 ### connect EnclaveBridge in webserver to cpp library
 1. in EnclaveCPP, build libEnclaveBridge.so
 2. Following https://wiki.apache.org/tomcat/HowTo#I.27m_encountering_classloader_problems_when_using_JNI_under_Tomcat
-   2.1. create a directory, ${tomcat}/shared/lib, copy libEnclaveBridge.so into it.
-   2.2. edit ${tomcat}/conf/catalina.properties, look for "shared.loader", edit this line to: shared.loader="${catalina.home}/shared/lib/"
+   > create a directory, ${tomcat}/shared/lib, copy libEnclaveBridge.so into it.
+   > edit ${tomcat}/conf/catalina.properties, look for "shared.loader", edit this line to: shared.loader="${catalina.home}/shared/lib/"
 3. restart tomcat, and the EnclaveBridge should be connected to .so.
-   3.1. if logs shows "java.lang.RuntimeException: no EnclaveBridge in java.library.path", edit ${tomcat}/bin/catalina.sh, look for "JAVA_OPTS", edit this line to: JAVA_OPTS="$JAVA_OPTS $JSSE_OPTS -Djava.library.path=$CATALINA_HOME/shared/lib"
-   3.2. restart tomcat, it should be working.
+   > if logs shows "java.lang.RuntimeException: no EnclaveBridge in java.library.path", edit ${tomcat}/bin/catalina.sh, look for "JAVA_OPTS", edit this line to: JAVA_OPTS="$JAVA_OPTS $JSSE_OPTS -Djava.library.path=$CATALINA_HOME/shared/lib"
+   > restart tomcat, it should be working.
 
 ### compile and deploy
 1. $ cd comsgxtrial
