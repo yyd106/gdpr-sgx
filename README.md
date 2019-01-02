@@ -21,6 +21,11 @@
   * ***-h*** show usage information
 
 ## Web Server
+### connect EnclaveBridge in webserver to cpp library
+1. in EnclaveCPP, build libEnclaveBridge.so
+2. run $ export LD_LIBRARY_PATH=`pwd`:$LD_LIBRARY_PATH
+3. start webserver after 1&2 are done
+
 ### compile and deploy
 1. $ cd comsgxtrial
 2. $ mvn package

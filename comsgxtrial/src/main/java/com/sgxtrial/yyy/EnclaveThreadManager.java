@@ -7,10 +7,11 @@ public class EnclaveThreadManager {
 
     private EnclaveThreadManager() {
         // init enclave here for sharing enclave
-        // or init enclave in EnclaveThread for per thread per enclave
+        // or init multiple EnclaveThread for load balancing
         this.bridge = new EnclaveBridge();
     }
 
+    // TODO: might need to remove synchronized
     public synchronized static EnclaveThreadManager getInstance() {
         return instance;
     }
