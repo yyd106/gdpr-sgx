@@ -57,7 +57,7 @@ function buildEnclaveJNI()
 {
     cd $jnidir
     verbose INFO "Building jni library..."
-    ./scripts/build.sh -r -d "$targetdir"
+    ./scripts/build.sh -d "$targetdir"
     cd -
 }
 
