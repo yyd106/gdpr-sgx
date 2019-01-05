@@ -1,5 +1,4 @@
 #include "com_sgxtrial_yyy_EnclaveBridge.h"
-#include <jni.h>
 
 /*
 char* jstringToChar(JNIEnv* env, jstring jstr) {
@@ -93,13 +92,25 @@ JNIEXPORT jbyteArray JNICALL Java_com_sgxtrial_yyy_EnclaveBridge_handleMessages(
     return result;
     */
     //char p_msg[env->GetArrayLength(msg)]
+    char *chars = NULL;
+    jbyte *bytes;
+    bytes = env->GetByteArrayElements(msg, 0);
+    int chars_len = env->GetArrayLength(msg);
+    chars = new char[chars_len + 1];
+    memset(chars,0,chars_len + 1);
+    memcpy(chars, bytes, chars_len);
+    chars[chars_len] = 0;
+    env->ReleaseByteArrayElements(msg, bytes, 0);
+ 
+	/*
     printf("this is a test");
     const char *p_msg = (const char*)env->GetByteArrayElements(msg,0);
-    //const char parry[8] = {0x08,0x05,0x1a,0x04,0x08,0x01,0x10,0x02};
-    string MSG(p_msg);
-    //string MSG(parry);
-    //string res = ((MessageHandler*)msgHandlerAddr)->handleMessages(MSG);
-    return string2jbyteArray(env, MSG);
+    const char parry[8] = {0x08,0x05,0x1a,0x04,0x08,0x01,0x10,0x08};
+    string MSG(parry);
+    */
+    string MSG(chars);
+    string res = ((MessageHandler*)msgHandlerAddr)->handleMessages(MSG);
+    return string2jbyteArray(env, res);
 
     /*
     jclass cls = env->FindClass("java/lang/String");

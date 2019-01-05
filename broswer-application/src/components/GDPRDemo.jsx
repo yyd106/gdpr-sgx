@@ -92,6 +92,7 @@ class GDPRDemo extends React.Component {
     const buffer = allInOneMsgDef.encode(allInOneMsg).finish();
     const decoded = allInOneMsgDef.decode(buffer);
     console.log("Message to sent:", decoded);
+    console.log("buffer:", buffer);
 
     return buffer;
   }
