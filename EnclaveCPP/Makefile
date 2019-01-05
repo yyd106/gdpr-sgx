@@ -181,7 +181,8 @@ Enclave/%.o: Enclave/%.cpp
 	@$(CXX) $(App_Cpp_Flags) -c $< -o $@
 	@echo "CXX  <=  $<"
 
-Enclave/EnclaveBridge.o: EnclaveBridge.c
+#Enclave/EnclaveBridge.o: EnclaveBridge.c
+Enclave/EnclaveBridge.o: com_sgxtrial_yyy_EnclaveBridge.c
 	@$(CXX) $(App_Cpp_Flags) $(Java_Link_Flags) -c $< -o $@
 	@echo "CXX  <=  $<"
 

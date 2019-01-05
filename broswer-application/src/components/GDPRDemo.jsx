@@ -6,7 +6,6 @@ import {
   RA_VERIFICATION, RA_MSG0, RA_MSG1, RA_MSG3, RA_MSG2, RA_ATT_RESULT
 } from "../metadata/messageTypes";
 
-import getEcMsg from "../utils/demo/mock";
 
 let PROTO, WEB_SOCKET;
 
@@ -31,8 +30,8 @@ class GDPRDemo extends React.Component {
   setupWebSocket() {
     if (WEB_SOCKET) return;
 
-    WEB_SOCKET = new WebSocket("wss://echo.websocket.org"); // test ws 
-    // WEB_SOCKET = new WebSocket("ws://localhost:8080/com.sgxtrial/websocketendpoint");
+    // WEB_SOCKET = new WebSocket("wss://echo.websocket.org"); // test ws 
+    WEB_SOCKET = new WebSocket("ws://localhost:8080/com.sgxtrial/websocketendpoint");
 
     WEB_SOCKET.onopen = evt => {
       console.log("Connection open ...");
@@ -43,15 +42,19 @@ class GDPRDemo extends React.Component {
     };
 
     WEB_SOCKET.onmessage = evt => {
-      // console.log("Received Message: " + evt.data);
+      const reader = new FileReader();
+      reader.readAsArrayBuffer(evt.data);
 
-      //mock message
-      const ecMsg = getEcMsg(PROTO);
-      if (ecMsg) {
-        this.handleMessage(ecMsg);
-      } else {
-        WEB_SOCKET.close();
-        return;
+      reader.onload = () => {
+        const ecMsg = new Uint8Array(reader.result);
+        console.log(ecMsg)
+
+        if (ecMsg) {
+          this.handleMessage(ecMsg);
+  
+        } else {
+          WEB_SOCKET.close();
+        }
       }
     };
 
@@ -112,7 +115,7 @@ class GDPRDemo extends React.Component {
     const { defName } = registry[type];
 
     console.log("======== ", defName, "received ========");
-    console.log("Received message:", message);
+    console.log("Message Received:", message);
 
     let msgToSent;
 
