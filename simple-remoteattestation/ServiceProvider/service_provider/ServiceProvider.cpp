@@ -297,7 +297,7 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         }
 
         // ------------- test Signature algorithm
-        sample_ec256_private_t test_prikey = {0};
+        sample_ec256_private_t test_prikey = {1};
         sample_ec256_signature_t test_signature;
         sample_ret = sample_ecdsa_sign((uint8_t *)&test_prikey, sizeof(sample_ec256_private_t),
                                        (sample_ec256_private_t *)&g_sp_priv_key,
