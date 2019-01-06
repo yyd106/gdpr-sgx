@@ -323,6 +323,10 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
                                        (sample_ec256_signature_t *)&p_msg2->sign_gb_ga,
                                        ecc_state);
 
+        unsigned char sign_buf[sizeof(sample_ec256_signature_t)];
+        memcpy(sign_buf,(unsigned char *)&p_msg2->sign_gb_ga,sizeof(sample_ec256_signature_t));
+        Log("\t SP Signature: (%s)", ByteArrayToString(sign_buf, sizeof(sample_ec256_signature_t)));
+
         if (SAMPLE_SUCCESS != sample_ret) {
             Log("Error, sign ga_gb fail", log::error);
             ret = SP_INTERNAL_ERROR;
