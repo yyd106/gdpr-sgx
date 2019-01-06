@@ -305,11 +305,11 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
                                        ecc_state);
         
         unsigned char test_prikey_buf[sizeof(sgx_ec256_private_t)];
-        memcpy(test_prikey_buf,(unsigned char *)&g_sp_priv_key,sizeof(sgx_ec256_private_t));
+        memcpy(test_prikey_buf,(unsigned char *)&test_prikey,sizeof(sgx_ec256_private_t));
         Log("\t Plant text Key: (%s)", ByteArrayToString(test_prikey_buf, sizeof(sgx_ec256_private_t)));
 
         unsigned char test_plantext_buf[sizeof(sgx_ec256_private_t)];
-        memcpy(test_plantext_buf,(unsigned char *)&test_prikey,sizeof(sgx_ec256_private_t));
+        memcpy(test_plantext_buf,(unsigned char *)&g_sp_priv_key,sizeof(sgx_ec256_private_t));
         Log("\t Private Key: (%s)", ByteArrayToString(test_plantext_buf, sizeof(sgx_ec256_private_t)));
 
 
