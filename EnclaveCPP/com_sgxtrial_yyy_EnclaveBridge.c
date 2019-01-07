@@ -69,29 +69,8 @@ JNIEXPORT jlong JNICALL Java_com_sgxtrial_yyy_EnclaveBridge_createMessageHandler
 
 JNIEXPORT jbyteArray JNICALL Java_com_sgxtrial_yyy_EnclaveBridge_handleMessages(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jbyteArray msg)
 {
-    /*
-    printf("call sgx\n");
-    jclass cls = env->FindClass("java/lang/String");
-    jobjectArray result = (jobjectArray)env->NewObjectArray(2, cls, NULL);
-
-    int len = env->GetArrayLength(data);
-    if(len != 2) {
-        printf("[ERROR] Input array length can only be two!");
-        return result;
-    }
-    jstring jType = (jstring) (env->GetObjectArrayElement(data, 0));
-    jstring jMsg = (jstring) (env->GetObjectArrayElement(data, 1));
-    string TYPE = jstring2string(env, jType);
-    printf("type is:%s\n",TYPE.c_str());
-    int rType = atoi(TYPE.c_str());
-    string MSG = jstring2string(env, jMsg);
-
-    string *res = ((MessageHandler*)msgHandlerAddr)->handleMessages(MSG,rType);
-    env->SetObjectArrayElement(result, 0, charTojstring(env, res[0].c_str()));
-    env->SetObjectArrayElement(result, 1, charTojstring(env, res[1].c_str()));
-    return result;
-    */
-    //char p_msg[env->GetArrayLength(msg)]
+    printf("========== receive serivce provider message ==========\n");
+    fflush(stdout);
     char *chars = NULL;
     jbyte *bytes;
     bytes = env->GetByteArrayElements(msg, 0);
@@ -112,11 +91,4 @@ JNIEXPORT jbyteArray JNICALL Java_com_sgxtrial_yyy_EnclaveBridge_handleMessages(
     string res = ((MessageHandler*)msgHandlerAddr)->handleMessages(MSG);
     return string2jbyteArray(env, res);
 
-    /*
-    jclass cls = env->FindClass("java/lang/String");
-    jobjectArray result = (jobjectArray)env->NewObjectArray(2, cls, NULL);
-    env->SetObjectArrayElement(result, 0, charTojstring(env, res[0].c_str()));
-    env->SetObjectArrayElement(result, 1, charTojstring(env, res[1].c_str()));
-    return result;
-    */
 }

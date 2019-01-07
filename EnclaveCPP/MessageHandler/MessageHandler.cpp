@@ -61,28 +61,32 @@ uint32_t MessageHandler::getExtendedEPID_GID(uint32_t *extended_epid_group_id) {
 
 string MessageHandler::generateMSG0() {
     Log("Call MSG0 generate");
+    string s;
 
     uint32_t extended_epid_group_id;
     int ret = this->getExtendedEPID_GID(&extended_epid_group_id);
 
-    Messages::MessageMSG0 msg;
-    msg.set_type(Messages::Type::RA_MSG0);
+    Messages::MessageMSG0 *msg = new Messages::MessageMSG0();
+    msg->set_type(Messages::Type::RA_MSG0);
 
     if (ret == SGX_SUCCESS) {
-        msg.set_epid(extended_epid_group_id);
+        msg->set_epid(extended_epid_group_id);
     } else {
-        msg.set_status(TYPE_TERMINATE);
-        msg.set_epid(0);
+        msg->set_status(TYPE_TERMINATE);
+        msg->set_epid(0);
     }
-    string s;
-    if(msg.SerializeToString(&s)) {
+    Messages::AllInOneMessage aio_ret_msg;
+    aio_ret_msg.set_type(Messages::Type::RA_MSG0);
+    aio_ret_msg.set_allocated_msg0(msg);
+    if(aio_ret_msg.SerializeToString(&s)) {
         Log("Serialization successful");
-        return s;
     }
     else {
         Log("Serialization failed", log::error);
-        return "";
+        s = "";
     }
+
+    return s;
 }
 
 
@@ -154,21 +158,30 @@ string MessageHandler::generateMSG1() {
 
 
     if (SGX_SUCCESS == retGIDStatus) {
-        Messages::MessageMSG1 msg;
-        msg.set_type(Messages::Type::RA_MSG1);
+        Messages::MessageMSG1 *msg = new Messages::MessageMSG1();
+        msg->set_type(Messages::Type::RA_MSG1);
 
         for (auto x : sgxMsg1Obj.g_a.gx)
-            msg.add_gax(x);
+            msg->add_gax(x);
 
         for (auto x : sgxMsg1Obj.g_a.gy)
-            msg.add_gay(x);
+            msg->add_gay(x);
 
         for (auto x : sgxMsg1Obj.gid) {
-            msg.add_gid(x);
+            msg->add_gid(x);
         }
 
         string s;
-        msg.SerializeToString(&s);
+        Messages::AllInOneMessage aio_ret_msg;
+        aio_ret_msg.set_type(Messages::Type::RA_MSG1);
+        aio_ret_msg.set_allocated_msg1(msg);
+        if(aio_ret_msg.SerializeToString(&s)) {
+            Log("Serialization successful");
+        }
+        else {
+            Log("Serialization failed", log::error);
+            s = "";
+        }
         return s;
     }
 
@@ -258,32 +271,41 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
     } else {
         Log("Call sgx_ra_proc_msg2 success");
 
-        Messages::MessageMSG3 msg3;
+        Messages::MessageMSG3 *msg3 = new Messages::MessageMSG3();
 
-        msg3.set_type(Messages::Type::RA_MSG3);
-        msg3.set_size(msg3_size);
+        msg3->set_type(Messages::Type::RA_MSG3);
+        msg3->set_size(msg3_size);
 
         for (int i=0; i<SGX_MAC_SIZE; i++)
-            msg3.add_sgxmac(p_msg3->mac[i]);
+            msg3->add_sgxmac(p_msg3->mac[i]);
 
         for (int i=0; i<SGX_ECP256_KEY_SIZE; i++) {
-            msg3.add_gaxmsg3(p_msg3->g_a.gx[i]);
-            msg3.add_gaymsg3(p_msg3->g_a.gy[i]);
+            msg3->add_gaxmsg3(p_msg3->g_a.gx[i]);
+            msg3->add_gaymsg3(p_msg3->g_a.gy[i]);
         }
 
         for (int i=0; i<256; i++) {
-            msg3.add_secproperty(p_msg3->ps_sec_prop.sgx_ps_sec_prop_desc[i]);
+            msg3->add_secproperty(p_msg3->ps_sec_prop.sgx_ps_sec_prop_desc[i]);
         }
 
 
         for (int i=0; i<1116; i++) {
-            msg3.add_quote(p_msg3->quote[i]);
+            msg3->add_quote(p_msg3->quote[i]);
         }
 
         SafeFree(p_msg3);
 
         string s;
-        msg3.SerializeToString(&s);
+        Messages::AllInOneMessage aio_ret_msg;
+        aio_ret_msg.set_type(Messages::Type::RA_MSG3);
+        aio_ret_msg.set_allocated_msg3(msg3);
+        if(aio_ret_msg.SerializeToString(&s)) {
+            Log("Serialization successful");
+        }
+        else {
+            Log("Serialization failed", log::error);
+            s = "";
+        }
         return s;
     }
 
@@ -397,12 +419,21 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
         } else {
             Log("Send attestation okay");
 
-            Messages::InitialMessage msg;
-            msg.set_type(Messages::Type::RA_APP_ATT_OK);
-            msg.set_size(0);
+            Messages::InitialMessage *msg = new Messages::InitialMessage();
+            msg->set_type(Messages::Type::RA_APP_ATT_OK);
+            msg->set_size(0);
 
             string s;
-            msg.SerializeToString(&s);
+            Messages::AllInOneMessage aio_ret_msg;
+            aio_ret_msg.set_type(Messages::Type::RA_APP_ATT_OK);
+            aio_ret_msg.set_allocated_initmsg(msg);
+            if(aio_ret_msg.SerializeToString(&s)) {
+                Log("Serialization successful");
+            }
+            else {
+                Log("Serialization failed", log::error);
+                s = "";
+            }
             return s;
         }
     }
@@ -467,6 +498,7 @@ string MessageHandler::handleMessages(string v) {
     ret = aio_msg.ParseFromString(v);
     if (! ret) {
         Log("Parse message failed!", log::error);
+        fflush(stdout);
         return res;
     }
     Log("type is:%d", aio_msg.type());
@@ -476,7 +508,7 @@ string MessageHandler::handleMessages(string v) {
     switch (aio_msg.type()) {
     case Messages::Type::RA_VERIFICATION: {	//Verification request
         Messages::InitialMessage init_msg = aio_msg.initmsg();
-        s = this->handleVerification();
+        res = this->handleVerification();
     }
     break;
     case Messages::Type::RA_MSG0: {		//Reply to MSG0
@@ -501,8 +533,7 @@ string MessageHandler::handleMessages(string v) {
         Log("Unknown type", log::error);
         break;
     }
-
-    res = s;
+    fflush(stdout);
 
     return res;
 }

@@ -45,6 +45,7 @@ class GDPRDemo extends React.Component {
 
       reader.onload = () => {
         const ecMsg = new Uint8Array(reader.result);
+        console.log("onmessage", ecMsg)
 
         if (ecMsg) {
           this.handleMessage(ecMsg);
