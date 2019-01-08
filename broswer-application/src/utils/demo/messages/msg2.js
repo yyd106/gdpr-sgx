@@ -1,5 +1,6 @@
 import {
   MSG2_SIZE,
+  SPID,
   SIGRL,
   SIZE_SIGRL,
   AES_CMAC_KDF_ID,
@@ -8,18 +9,21 @@ import {
 import {
   RA_MSG2
 } from "../../../metadata/messageTypes";
-import { switchEndian, toHex } from "../../hexHelpers";
+import {
+  switchEndian,
+  toHex
+} from "../../hexHelpers";
 
 const aesCmac = require("node-aes-cmac").aesCmac;
 const EC = require('elliptic').ec;
-const ec = new EC('p256');
+// const ec = new EC('p256');
 const bigInt = require("big-integer");
 const findKeys = require("../keys/findKeys");
 
 
 const getMsg2 = ecPublicKey => {
   const {
-    MY_PRIVATE_KEY,
+    // MY_PRIVATE_KEY,
     MY_PUBLIC_KEY,
     SHORT_KEY
   } = findKeys(ecPublicKey);
@@ -27,11 +31,11 @@ const getMsg2 = ecPublicKey => {
   /**
    * @desc get signature: sign publck keys with my private key
    */
-  const signKey = ec.keyFromPrivate(MY_PRIVATE_KEY);
-  const sign_x = signKey.sign(MY_PUBLIC_KEY.X + ecPublicKey.X);
-  const sign_y = signKey.sign(MY_PUBLIC_KEY.Y + ecPublicKey.Y);
-  const signatureX = sign_x.toDER();
-  const signatureY = sign_y.toDER();
+  // const signKey = ec.keyFromPrivate(MY_PRIVATE_KEY);
+  // const sign_x = signKey.sign(MY_PUBLIC_KEY.X + ecPublicKey.X);
+  // const sign_y = signKey.sign(MY_PUBLIC_KEY.Y + ecPublicKey.Y);
+  // const signatureX = sign_x.toDER();
+  // const signatureY = sign_y.toDER();
 
   /**
    * @desc get smac
@@ -47,11 +51,11 @@ const getMsg2 = ecPublicKey => {
     publicKeyGx: switchEndian(publicKeyGx),
     publicKeyGy: switchEndian(publicKeyGy),
     quoteType: SAMPLE_QUOTE_LINKABLE_SIGNATURE,
-    spid: 0,
+    spid: SPID,
     cmacKdfId: AES_CMAC_KDF_ID,
-    signatureX,
-    signatureY,
-    smac,
+    signatureX: publicKeyGx,
+    signatureY: publicKeyGy,
+    smac: switchEndian(smac),
     sizeSigrl: SIZE_SIGRL,
     sigrl: SIGRL
   }
