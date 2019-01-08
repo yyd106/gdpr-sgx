@@ -42,7 +42,8 @@ public:
     string handleAttestationResult(Messages::AttestationMessage msg);
     //string* handleMessages(string v, int type);
     //vector<string> handleMessages(string v, int type);
-    string handleMessages(string v);
+    //string handleMessages(string v);
+    string handleMessages(unsigned char *bytes, int len);
     //string handleAttestationResult(string v);
     void assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_msg2);
     string handleMSG2(Messages::MessageMSG2 msg);

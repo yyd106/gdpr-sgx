@@ -5,7 +5,7 @@ const getMsg0 = () => {
   return {
     type: RA_MSG0,
     epid: 0,
-    status: 1
+    status: 0
   };
 }
 

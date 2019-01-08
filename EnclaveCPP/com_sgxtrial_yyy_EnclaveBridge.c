@@ -70,16 +70,20 @@ JNIEXPORT jlong JNICALL Java_com_sgxtrial_yyy_EnclaveBridge_createMessageHandler
 JNIEXPORT jbyteArray JNICALL Java_com_sgxtrial_yyy_EnclaveBridge_handleMessages(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jbyteArray msg)
 {
     printf("========== receive serivce provider message ==========\n");
-    fflush(stdout);
-    char *chars = NULL;
-    jbyte *bytes;
-    bytes = env->GetByteArrayElements(msg, 0);
+
+    /*
+    jbyte *bytes = env->GetByteArrayElements(msg, 0);
     int chars_len = env->GetArrayLength(msg);
-    chars = new char[chars_len + 1];
+    printf("===== msg:(%d)\n",chars_len);
+    char *chars = (char*)malloc(chars_len + 1);
     memset(chars,0,chars_len + 1);
     memcpy(chars, bytes, chars_len);
     chars[chars_len] = 0;
     env->ReleaseByteArrayElements(msg, bytes, 0);
+    */
+    int len = env->GetArrayLength (msg);
+    unsigned char* buf = new unsigned char[len];
+    env->GetByteArrayRegion (msg, 0, len, reinterpret_cast<jbyte*>(buf)); 
  
 	/*
     printf("this is a test");
@@ -87,8 +91,13 @@ JNIEXPORT jbyteArray JNICALL Java_com_sgxtrial_yyy_EnclaveBridge_handleMessages(
     const char parry[8] = {0x08,0x05,0x1a,0x04,0x08,0x01,0x10,0x08};
     string MSG(parry);
     */
-    string MSG(chars);
-    string res = ((MessageHandler*)msgHandlerAddr)->handleMessages(MSG);
+    //printf("===== chars strlen:(%d)\n",strlen(chars));
+    //printf("===== chars sizeof:(%d)\n",sizeof(chars));
+    //string MSG(chars);
+    //string res = ((MessageHandler*)msgHandlerAddr)->handleMessages(MSG);
+    string res = ((MessageHandler*)msgHandlerAddr)->handleMessages(buf, len);
+    fflush(stdout);
+    //free(chars);
     return string2jbyteArray(env, res);
 
 }

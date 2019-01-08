@@ -27,6 +27,7 @@ public class WebSocketServer {
     public void onMessage(byte[] message, Session session){
         logger.info("receive msg with thread: " + Thread.currentThread().toString());
         logger.info("js msg:" + message.toString());
+        logger.info("js msg lenght:" + message.length);
         byte[] enclaveResults = EnclaveThreadManager.getInstance().getBridge().callEnclave(message);
         logger.info("enclave msg:" + enclaveResults.toString());
         try {

@@ -79,7 +79,7 @@ sgx_status_t Enclave::createEnclave() {
                                  &this->enclave_id, NULL);
 
         if (SGX_SUCCESS != ret) {
-            Log("Error, call sgx_create_enclave fail", log::error);
+            Log("Error, call sgx_create_enclave fail! ErrorCode:%lx", log::error, ret);
             print_error_message(ret);
             break;
         } else {

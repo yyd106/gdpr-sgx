@@ -95,9 +95,11 @@ string MessageHandler::generateMSG1() {
     int count = 0;
     sgx_ra_msg1_t sgxMsg1Obj;
     Log("========== SEALED ENCLAVE PUB KEY ==========");
-    Log("\tgot ec256 key is:%d", local_ec256_fix_data.g_key_flag);
+    //Log("\tgot ec256 key is:%d", local_ec256_fix_data.g_key_flag);
+    local_ec256_fix_data.g_key_flag = 0;
 
     while (1) {
+        /*
         // read public and sealed private key from file
         ifstream pri_stream(Settings::ec_pri_key_path);
         //ifstream pri_stream_u(Settings::ec_pri_key_path_u);
@@ -120,6 +122,7 @@ string MessageHandler::generateMSG1() {
 
         Log("\tbefore public  key:%s",pub_str);
         Log("\tsealed private dat:%s",pri_s_str);
+        */
 
 
         retGIDStatus = sgx_ra_get_msg1(this->enclave->getContext(),
@@ -489,41 +492,46 @@ string MessageHandler::createInitMsg(int type, string msg) {
 */
 
 
-string MessageHandler::handleMessages(string v) {
+//string MessageHandler::handleMessages(string v) {
+string MessageHandler::handleMessages(unsigned char* bytes, int len) {
     string res;
     string s;
     bool ret;
 
     Messages::AllInOneMessage aio_msg;
-    ret = aio_msg.ParseFromString(v);
+    //ret = aio_msg.ParseFromString(v);
+    //ret = aio_msg.ParseFromIstream(&is);
+    ret = aio_msg.ParseFromArray(bytes, len);
     if (! ret) {
         Log("Parse message failed!", log::error);
         fflush(stdout);
         return res;
     }
     Log("type is:%d", aio_msg.type());
-    Log("expe is:%d", Messages::Type::RA_VERIFICATION);
 
-    Log("========== handle messages ==========");
     switch (aio_msg.type()) {
     case Messages::Type::RA_VERIFICATION: {	//Verification request
+        Log("========== Generate Msg0 ==========");
         Messages::InitialMessage init_msg = aio_msg.initmsg();
         res = this->handleVerification();
     }
     break;
     case Messages::Type::RA_MSG0: {		//Reply to MSG0
+        Log("========== Generate Msg1 ==========");
         Messages::MessageMSG0 msg0 = aio_msg.msg0();
         // generate MSG1 and send to SP
         s = this->handleMSG0(msg0);
     }
     break;
     case Messages::Type::RA_MSG2: {		//MSG2
+        Log("========== Generate Msg3 ==========");
         Messages::MessageMSG2 msg2 = aio_msg.msg2();
         // generate MSG3 and send to SP
         s = this->handleMSG2(msg2);
     }
     break;
     case Messages::Type::RA_ATT_RESULT: {	//Reply to MSG3
+        Log("========== Generate att msg ==========");
         Messages::AttestationMessage att_msg = aio_msg.attestmsg();
         // receive attestation msg and verify encrypted secret
         s = this->handleAttestationResult(att_msg);
