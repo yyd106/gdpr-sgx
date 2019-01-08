@@ -1,5 +1,6 @@
-#include "EnclaveBridge.h"
+#include "com_sgxtrial_yyy_EnclaveBridge.h"
 
+/*
 char* jstringToChar(JNIEnv* env, jstring jstr) {
     char* rtn = NULL;
     jclass clsstring = env->FindClass("java/lang/String");
@@ -50,6 +51,7 @@ string jstring2string(JNIEnv *env, jstring jStr) {
     env->DeleteLocalRef(stringClass);
     return ret;
 }
+*/
 
 jbyteArray string2jbyteArray(JNIEnv *env, string str) {
     jbyteArray arr = env->NewByteArray(str.length());
@@ -60,50 +62,42 @@ jbyteArray string2jbyteArray(JNIEnv *env, string str) {
 
 //=============== MAIN FUNCTION ===============//
 
-JNIEXPORT jlong JNICALL Java_EnclaveBridge_createMessageHandlerOBJ(JNIEnv *env, jobject obj)
+JNIEXPORT jlong JNICALL Java_com_sgxtrial_yyy_EnclaveBridge_createMessageHandlerOBJ(JNIEnv *env, jobject obj)
 {
     return (jlong) new MessageHandler();
 }
 
-JNIEXPORT jbyteArray JNICALL Java_EnclaveBridge_handleMessages(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jbyteArray msg)
+JNIEXPORT jbyteArray JNICALL Java_com_sgxtrial_yyy_EnclaveBridge_handleMessages(JNIEnv *env, jobject obj, jlong msgHandlerAddr, jbyteArray msg)
 {
+    printf("========== receive serivce provider message ==========\n");
+
     /*
-    printf("call sgx\n");
-    jclass cls = env->FindClass("java/lang/String");
-    jobjectArray result = (jobjectArray)env->NewObjectArray(2, cls, NULL);
-
-    int len = env->GetArrayLength(data);
-    if(len != 2) {
-        printf("[ERROR] Input array length can only be two!");
-        return result;
-    }
-    jstring jType = (jstring) (env->GetObjectArrayElement(data, 0));
-    jstring jMsg = (jstring) (env->GetObjectArrayElement(data, 1));
-    string TYPE = jstring2string(env, jType);
-    printf("type is:%s\n",TYPE.c_str());
-    int rType = atoi(TYPE.c_str());
-    string MSG = jstring2string(env, jMsg);
-
-    string *res = ((MessageHandler*)msgHandlerAddr)->handleMessages(MSG,rType);
-    env->SetObjectArrayElement(result, 0, charTojstring(env, res[0].c_str()));
-    env->SetObjectArrayElement(result, 1, charTojstring(env, res[1].c_str()));
-    return result;
+    jbyte *bytes = env->GetByteArrayElements(msg, 0);
+    int chars_len = env->GetArrayLength(msg);
+    printf("===== msg:(%d)\n",chars_len);
+    char *chars = (char*)malloc(chars_len + 1);
+    memset(chars,0,chars_len + 1);
+    memcpy(chars, bytes, chars_len);
+    chars[chars_len] = 0;
+    env->ReleaseByteArrayElements(msg, bytes, 0);
     */
-    //char p_msg[env->GetArrayLength(msg)]
+    int len = env->GetArrayLength (msg);
+    unsigned char* buf = new unsigned char[len];
+    env->GetByteArrayRegion (msg, 0, len, reinterpret_cast<jbyte*>(buf)); 
+ 
+	/*
     printf("this is a test");
     const char *p_msg = (const char*)env->GetByteArrayElements(msg,0);
-    const char parry[8] = {0x08,0x05,0x1a,0x04,0x08,0x01,0x10,0x02};
-    //string MSG(p_msg);
+    const char parry[8] = {0x08,0x05,0x1a,0x04,0x08,0x01,0x10,0x08};
     string MSG(parry);
+    */
+    //printf("===== chars strlen:(%d)\n",strlen(chars));
+    //printf("===== chars sizeof:(%d)\n",sizeof(chars));
+    //string MSG(chars);
     //string res = ((MessageHandler*)msgHandlerAddr)->handleMessages(MSG);
-    string res = "yaoz";
+    string res = ((MessageHandler*)msgHandlerAddr)->handleMessages(buf, len);
+    fflush(stdout);
+    //free(chars);
     return string2jbyteArray(env, res);
 
-    /*
-    jclass cls = env->FindClass("java/lang/String");
-    jobjectArray result = (jobjectArray)env->NewObjectArray(2, cls, NULL);
-    env->SetObjectArrayElement(result, 0, charTojstring(env, res[0].c_str()));
-    env->SetObjectArrayElement(result, 1, charTojstring(env, res[1].c_str()));
-    return result;
-    */
 }

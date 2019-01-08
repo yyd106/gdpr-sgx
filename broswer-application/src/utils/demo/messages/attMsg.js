@@ -21,7 +21,7 @@ import {
   RESERVED
 } from "../../../metadata/ecConstants";
 
-const encrypt = require("node-aes-gcm").gcm;
+const crypto = require('crypto');
 const aesCmac = require("node-aes-cmac").aesCmac;
 const findKeys = require("../keys/findKeys");
 
@@ -45,6 +45,24 @@ const pseEvaluationStatus = (
 );
 
 
+function encrypt(key) {
+  const text = new Buffer('01', 'hex');
+  const iv = new Buffer('000000000000', 'hex');
+  const bufferKey = new Buffer(key, 'hex');
+
+  const cipher = crypto.createCipheriv('aes-128-gcm', bufferKey, iv);
+
+  var encrypted = cipher.update(text, 'utf8', 'hex')
+  encrypted += cipher.final('hex');
+  const tag = cipher.getAuthTag();
+
+  return {
+    content: encrypted,
+    tag: tag
+  };
+}
+
+
 const getAttMsg = () => {
   const { SHORT_KEY } = findKeys();
 
@@ -56,10 +74,7 @@ const getAttMsg = () => {
   /**
    * @desc calc encrypted payload & payload_tag
    */
-  const bufferKey = new Buffer(SHORT_KEY, 'hex');
-  const plainPayload = new Buffer('01', 'hex');
-  const aes_gcm_iv = new Buffer('000000000000', 'hex');
-  const { ciphertext, auth_tag } = encrypt(bufferKey, aes_gcm_iv, plainPayload, new Buffer([]));
+  const { content, tag } = encrypt(SHORT_KEY);
 
   return {
     type: RA_ATT_RESULT,
@@ -78,8 +93,8 @@ const getAttMsg = () => {
     macSmk,
     resultSize: RESULT_SIZE,
     reserved: RESERVED,
-    // payloadTag: auth_tag,
-    // payload: ciphertext
+    payloadTag: tag,
+    payload: content
   };
 }
 

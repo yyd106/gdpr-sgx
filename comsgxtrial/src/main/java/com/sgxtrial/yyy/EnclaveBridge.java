@@ -9,7 +9,11 @@ public class EnclaveBridge {
     private long messageHandlerOBJ;
 
     public EnclaveBridge() {
-        messageHandlerOBJ = createMessageHandlerOBJ();
+        try {
+            messageHandlerOBJ = createMessageHandlerOBJ();
+        } catch(Throwable t){
+            t.printStackTrace();
+        }
     }
 
     private native long createMessageHandlerOBJ();
