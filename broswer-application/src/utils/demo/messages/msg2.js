@@ -1,5 +1,6 @@
 import {
   MSG2_SIZE,
+  SPID,
   SIGRL,
   SIZE_SIGRL,
   AES_CMAC_KDF_ID,
@@ -8,7 +9,10 @@ import {
 import {
   RA_MSG2
 } from "../../../metadata/messageTypes";
-import { switchEndian, toHex } from "../../hexHelpers";
+import {
+  switchEndian,
+  toHex
+} from "../../hexHelpers";
 
 const aesCmac = require("node-aes-cmac").aesCmac;
 const EC = require('elliptic').ec;
@@ -47,10 +51,10 @@ const getMsg2 = ecPublicKey => {
     publicKeyGx: switchEndian(publicKeyGx),
     publicKeyGy: switchEndian(publicKeyGy),
     quoteType: SAMPLE_QUOTE_LINKABLE_SIGNATURE,
-    spid: 0,
+    spid: SPID,
     cmacKdfId: AES_CMAC_KDF_ID,
-    signatureX,
-    signatureY,
+    signatureX: publicKeyGx,
+    signatureY: publicKeyGy,
     smac,
     sizeSigrl: SIZE_SIGRL,
     sigrl: SIGRL

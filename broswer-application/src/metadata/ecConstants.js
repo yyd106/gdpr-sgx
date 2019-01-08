@@ -34,3 +34,4 @@ export const SIZE_SIGRL = 0;
 export const SIGRL = null;
 export const RESERVED = 12;
 export const RESULT_SIZE = 2;
+export const SPID = "4F2229E41A0ECA12BAE6EDB36E87EAFE";
