@@ -193,6 +193,7 @@ string MessageHandler::generateMSG1() {
 
 
 void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_msg2) {
+    Log("=== assembleMSG2 1");
     uint32_t size = msg.size();
 
     sgx_ra_msg2_t *p_msg2 = NULL;
@@ -212,6 +213,7 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
     for (int i=0; i<16; i++) {
         spid.id[i] = msg.spid(i);
     }
+    Log("=== assembleMSG2 2");
 
     for (int i=0; i<8; i++) {
         sign_gb_ga.x[i] = msg.signaturex(i);
@@ -223,6 +225,8 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
     memcpy(&p_msg2->sign_gb_ga, &sign_gb_ga, sizeof(sign_gb_ga));
     memcpy(&p_msg2->spid, &spid, sizeof(spid));
 
+    Log("=== assembleMSG2 3");
+
     p_msg2->quote_type = (uint16_t)msg.quotetype();
     p_msg2->kdf_id = msg.cmackdfid();
 
@@ -232,6 +236,8 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
 
     memcpy(&p_msg2->mac, &smac, sizeof(smac));
 
+    Log("=== assembleMSG2 4");
+
     p_msg2->sig_rl_size = msg.sizesigrl();
     uint8_t *sigrl = (uint8_t*) malloc(sizeof(uint8_t) * msg.sizesigrl());
 
@@ -239,6 +245,8 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
         sigrl[i] = msg.sigrl(i);
 
     memcpy(&p_msg2->sig_rl, &sigrl, msg.sizesigrl());
+
+    Log("=== assembleMSG2 5");
 
     *pp_msg2 = p_msg2;
 }
@@ -495,12 +503,10 @@ string MessageHandler::createInitMsg(int type, string msg) {
 //string MessageHandler::handleMessages(string v) {
 string MessageHandler::handleMessages(unsigned char* bytes, int len) {
     string res;
-    string s;
     bool ret;
 
     Messages::AllInOneMessage aio_msg;
     //ret = aio_msg.ParseFromString(v);
-    //ret = aio_msg.ParseFromIstream(&is);
     ret = aio_msg.ParseFromArray(bytes, len);
     if (! ret) {
         Log("Parse message failed!", log::error);
@@ -520,21 +526,21 @@ string MessageHandler::handleMessages(unsigned char* bytes, int len) {
         Log("========== Generate Msg1 ==========");
         Messages::MessageMSG0 msg0 = aio_msg.msg0();
         // generate MSG1 and send to SP
-        s = this->handleMSG0(msg0);
+        res = this->handleMSG0(msg0);
     }
     break;
     case Messages::Type::RA_MSG2: {		//MSG2
         Log("========== Generate Msg3 ==========");
         Messages::MessageMSG2 msg2 = aio_msg.msg2();
         // generate MSG3 and send to SP
-        s = this->handleMSG2(msg2);
+        res = this->handleMSG2(msg2);
     }
     break;
     case Messages::Type::RA_ATT_RESULT: {	//Reply to MSG3
         Log("========== Generate att msg ==========");
         Messages::AttestationMessage att_msg = aio_msg.attestmsg();
         // receive attestation msg and verify encrypted secret
-        s = this->handleAttestationResult(att_msg);
+        res = this->handleAttestationResult(att_msg);
     }
     break;
     default:
