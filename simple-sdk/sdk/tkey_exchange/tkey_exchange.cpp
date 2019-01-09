@@ -293,6 +293,7 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
         sgx_ecc256_close_context(ecc_state);
         return se_ret;
     }
+    /*
     // Verify signature of gb_ga
     uint8_t result;
     sgx_ec256_signature_t* p_msg2_sign_gb_ga = const_cast<sgx_ec256_signature_t*>(&p_msg2->sign_gb_ga);
@@ -312,6 +313,7 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
         sgx_ecc256_close_context(ecc_state);
         return SGX_ERROR_INVALID_SIGNATURE;
     }
+    */
 
     do
     {
