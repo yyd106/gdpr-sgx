@@ -317,6 +317,7 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
 
     do
     {
+        // @@@@@@@@@@@@@@@@@@@@@@   following code block is lagacy logic
         /*
         if(NULL != ra_key_cb)
         {
@@ -374,7 +375,9 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
             break;
         }
         */
-        
+
+
+        // @@@@@@@@@@@@@@@@@@@@@@ >>>>>>>>>>>>>>>>>>>>>>  following code block is new logic  >>>>>>>>>>>>>>>>>>>>>>>
         if(NULL != ra_key_cb)
         {
             memcpy(&smkey, &dh_key, sizeof(smkey));
@@ -388,13 +391,14 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
             memcpy(&skey, &dh_key, sizeof(smkey));
             memcpy(&mkey, &dh_key, sizeof(smkey));
             memcpy(&vkey, &dh_key, sizeof(smkey));
-
         }
         else
         {
             se_ret = SGX_ERROR_KDF_MISMATCH;
             break;
         }
+        // @@@@@@@@@@@@@@@@@@@@@@  <<<<<<<<<<<<<<<<<<<<<<<<< upper code block is new logic  <<<<<<<<<<<<<<<<<<<<
+
 
         sgx_cmac_128bit_tag_t mac;
         uint32_t maced_size = offsetof(sgx_ra_msg2_t, mac);

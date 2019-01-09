@@ -410,12 +410,16 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
         if (SGX_SUCCESS != ret) {
             Log("Error, attestation result message secret using SK based AESGCM failed(ret)", log::error);
             print_error_message(ret);
-        } else if (SGX_SUCCESS != status) {
+        } 
+        /*
+        else if (SGX_SUCCESS != status) {
             Log("Error, attestation result message secret using SK based AESGCM failed(status)", log::error);
             Log("========== status ==========");
             Log("\tstatus:%lx",status);
             print_error_message(status);
-        } else {
+        } 
+        */
+        else {
             Log("Send attestation okay");
 
             Messages::InitialMessage msg;
@@ -430,6 +434,8 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
 
     return "";
 }
+
+
 
 
 string MessageHandler::handleMSG0(Messages::MessageMsg0 msg) {
@@ -526,6 +532,20 @@ vector<string> MessageHandler::incomingHandler(string v, int type) {
         ret = seal_msg.ParseFromString(v);
         if (ret && seal_msg.type() == SGX_SEAL_SECRET){
             Log("========== SP send a secret ==========");
+        }
+    }
+    case SGX_SEAL_PHONE: {
+        Messages::AttestationMessage seal_msg;
+        ret = seal_msg.ParseFromString(v);
+        if (ret && seal_msg.type() == SGX_SEAL_SECRET){
+            Log("========== SP send a phone ==========");
+        }
+    }
+    case SGX_SMS_ID: {
+        Messages::AttestationMessage seal_msg;
+        ret = seal_msg.ParseFromString(v);
+        if (ret && seal_msg.type() == SGX_SEAL_SECRET){
+            Log("========== SP send a SMS request with message ==========");
         }
     }
     break;

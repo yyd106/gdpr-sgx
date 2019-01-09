@@ -11,7 +11,9 @@ typedef enum _ra_msg_types {
     RA_ATT_RESULT,
     RA_VERIFICATION,
     RA_APP_ATT_OK,
-    SGX_SEAL_SECRET
+    SGX_SEAL_SECRET,
+    SGX_SEAL_PHONE,
+    SGX_SMS_ID
 } ra_msg_types;
 
 

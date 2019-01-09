@@ -296,11 +296,42 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
             break;
         }
 
+        // ------------- test Signature algorithm
+        sample_ec256_private_t test_text = {1};
+        sample_ec256_signature_t test_signature = {{0},{0}};
+
+
+        unsigned char test_sign_buf[sizeof(sample_ec256_signature_t)];
+        memcpy(test_sign_buf,(unsigned char *)&test_signature,sizeof(sample_ec256_signature_t));
+        Log("\t Before Signature : (%s)", ByteArrayToString(test_sign_buf, sizeof(sample_ec256_signature_t)));
+
+        sample_ret = sample_ecdsa_sign((uint8_t *)&test_text, sizeof(sample_ec256_private_t),
+                                       (sample_ec256_private_t *)&g_sp_priv_key,
+                                       (sample_ec256_signature_t *)&test_signature,
+                                       ecc_state);
+        
+        unsigned char test_test_buf[sizeof(sgx_ec256_private_t)];
+        memcpy(test_test_buf,(unsigned char *)&test_text,sizeof(sgx_ec256_private_t));
+        Log("\t Plant text: (%s)", ByteArrayToString(test_test_buf, sizeof(sgx_ec256_private_t)));
+
+        unsigned char test_plantext_buf[sizeof(sgx_ec256_private_t)];
+        memcpy(test_plantext_buf,(unsigned char *)&g_sp_priv_key,sizeof(sgx_ec256_private_t));
+        Log("\t Private Key: (%s)", ByteArrayToString(test_plantext_buf, sizeof(sgx_ec256_private_t)));
+
+
+        //unsigned char test_sign_buf[sizeof(sample_ec256_signature_t)];
+        memcpy(test_sign_buf,(unsigned char *)&test_signature,sizeof(sample_ec256_signature_t));
+        Log("\t After Signature: (%s)", ByteArrayToString(test_sign_buf, sizeof(sample_ec256_signature_t)));
+
         // Sign gb_ga
         sample_ret = sample_ecdsa_sign((uint8_t *)&gb_ga, sizeof(gb_ga),
                                        (sample_ec256_private_t *)&g_sp_priv_key,
                                        (sample_ec256_signature_t *)&p_msg2->sign_gb_ga,
                                        ecc_state);
+
+        unsigned char sign_buf[sizeof(sample_ec256_signature_t)];
+        memcpy(sign_buf,(unsigned char *)&p_msg2->sign_gb_ga,sizeof(sample_ec256_signature_t));
+        Log("\t SP Signature: (%s)", ByteArrayToString(sign_buf, sizeof(sample_ec256_signature_t)));
 
         if (SAMPLE_SUCCESS != sample_ret) {
             Log("Error, sign ga_gb fail", log::error);
