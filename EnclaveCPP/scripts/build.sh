@@ -31,6 +31,7 @@ verbose()
 
 basedir=`dirname $0`
 basedir=`cd $basedir; pwd`
+isvSignFile="isv_enclave.signed.so"
 libfile="libEnclaveBridge.so"
 javafile="EnclaveBridge.java"
 headerfile="EnclaveBridge.h"
@@ -128,7 +129,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 verbose INFO "Copying java and .so file to $targetdir..."
-cp $libfile $javafile $targetdir
+cp $isvSignFile $libfile $javafile $targetdir
 cd -
 ### }}}
 
