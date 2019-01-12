@@ -101,7 +101,7 @@ if [ ! -d "$targetdir" ]; then
     exit 1
 fi
 
-### regenerate header file according to java file {{{
+##### regenerate header file according to java file {{{
 if [ ! -d "$jnidir" ]; then
     verbose ERROR "JNI  directory($jnidir) doesn't exist"
     exit 1
@@ -117,11 +117,26 @@ cp $headerfile $TMPFILE
 line=`tac $TMPFILE | sed '0,/^#include/{s/^#include/#include "MessageHandler.h"\n#include/}' | tac > $headerfile`
 unlink $TMPFILE
 cd -
-### }}}
+##### }}}
 
-### building .so file {{{
+##### building .so file {{{
 cd $homedir
 verbose INFO "Rebuilding jnilib file($make_mode mode)..."
+# check if JAVA_HOME is set
+if [ x"$JAVA_HOME" = x"" ]; then
+    verbose ERROR "JAVA_HOME is not set! Please check and set." h
+    exit 1
+fi
+# check if sgxsdk lib has been imported
+sgxsdkdir=/opt/intel/sgxsdk
+if [ ! -d "$sgxsdkdir" ]; then
+    verbose ERROR "SGX is not installed in $sgxsdkdir!" h
+    exit 1
+fi
+if ! echo "$LD_LIBRARY_PATH" | grep "$sgxsdkdir/sdk_libs" &>/dev/null; then
+    export LD_LIBRARY_PATH=$sgxsdkdir/sdk_libs:$LD_LIBRARY_PATH
+fi
+# make target
 make clean
 make SGX_MODE=$make_mode SGX_PRERELEASE=1
 if [ $? -ne 0 ]; then
@@ -131,9 +146,9 @@ fi
 verbose INFO "Copying java and .so file to $targetdir..."
 cp $isvSignFile $libfile $javafile $targetdir
 cd -
-### }}}
+##### }}}
 
-### for test {{{
+##### for test {{{
 if [ x"$is_test" = x"yes" ]; then
     verbose INFO "Copying jnilib file and java file to indicated directory"
     verbose INFO "JNI  des dir is:$jnidir"
@@ -141,6 +156,6 @@ if [ x"$is_test" = x"yes" ]; then
     cp $libfile $jnidir
     cp $javafile $javadir
 fi
-### }}}
+##### }}}
 
 verbose INFO "Build jni library Succeed!" h

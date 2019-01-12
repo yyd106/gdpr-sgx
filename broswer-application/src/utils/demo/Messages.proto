@@ -1,5 +1,4 @@
 package Messages;
-syntax = "proto3";
 
 enum Type {
     RA_MSG0 = 0;

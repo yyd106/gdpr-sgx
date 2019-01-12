@@ -168,6 +168,7 @@ sgx_status_t sgx_get_quote(
     if ((p_sig_rl == NULL && sig_rl_size != 0) ||
         (p_sig_rl != NULL && sig_rl_size == 0) )
         return SGX_ERROR_INVALID_PARAMETER;
+        //return SGX_ERR_MAC_FIX_TEST2;
 
     aesm_error_t    result = AESM_UNEXPECTED_ERROR;
 
