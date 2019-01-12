@@ -1,11 +1,12 @@
 import React from "react";
 import protobuf from "protobufjs";
-import proto from "../utils/demo/messages.proto";
+import proto from "../utils/demo/Messages.proto";
 import registry from "../utils/demo/messageRegistry";
 import {
   RA_VERIFICATION, RA_MSG0, RA_MSG1, RA_MSG3, RA_MSG2, RA_ATT_RESULT
 } from "../metadata/messageTypes";
 
+const messages = require('../utils/demo/Messages_pb');
 
 let PROTO, WEB_SOCKET;
 
@@ -49,7 +50,7 @@ class GDPRDemo extends React.Component {
 
         if (ecMsg) {
           this.handleMessage(ecMsg);
-  
+
         } else {
           WEB_SOCKET.close();
         }
@@ -98,6 +99,37 @@ class GDPRDemo extends React.Component {
     return message;
   }
 
+  assembleMsg2(type, ecPublicKey = {}) {
+    const { getPayload } = registry[type];
+
+    var wrappedMsg = new messages.MessageMSG2();
+    const wrappedPayload = getPayload(ecPublicKey);
+
+    const { size, publicKeyGx, publicKeyGy, quoteType, spid, cmacKdfId, signatureX, signatureY, smac, sizeSigrl, sigrl } = wrappedPayload;
+    wrappedMsg.setType(type);
+    wrappedMsg.setSize(size);
+    wrappedMsg.setPublickeygxList(publicKeyGx);
+    wrappedMsg.setPublickeygyList(publicKeyGy);
+    wrappedMsg.setQuotetype(quoteType);
+    wrappedMsg.setSpidList(spid);
+    wrappedMsg.setCmackdfid(cmacKdfId);
+    wrappedMsg.setSignaturexList(signatureX);
+    wrappedMsg.setSignatureyList(signatureY);
+    wrappedMsg.setSmacList(smac);
+    wrappedMsg.setSizesigrl(sizeSigrl);
+    wrappedMsg.setSigrlList(sigrl);
+
+    var allInOneMsg = new messages.AllInOneMessage();
+    allInOneMsg.setType(type);
+    allInOneMsg.setMsg2(wrappedMsg);
+
+    const buffer = allInOneMsg.serializeBinary();
+    console.log("Payload to sent:", wrappedPayload);
+    console.log("Buffer to sent: ", buffer);
+
+    return buffer;
+  }
+
 
   handleMessage(buffer) {
     const message = this.disassemble(buffer);
@@ -123,7 +155,7 @@ class GDPRDemo extends React.Component {
           X: GaX.join("").toString(),
           Y: GaY.join("").toString()
         }
-        msgToSent = this.assemble(RA_MSG2, ecPublicKey);
+        msgToSent = this.assembleMsg2(RA_MSG2, ecPublicKey);
         break;
 
       case RA_MSG3:
