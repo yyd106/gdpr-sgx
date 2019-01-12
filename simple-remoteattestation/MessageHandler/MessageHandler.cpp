@@ -241,6 +241,10 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
     Log("Received MSG2");
 
     uint32_t size = msg.size();
+    
+    unsigned char* tmpbuf = new unsigned char[sizeof(msg.spid())];
+    memcpy(tmpbuf, (unsigned char*)&msg.spid(), sizeof(msg.spid()));
+    Log("\tspid:%s",ByteArrayToString(tmpbuf,sizeof(msg.spid())));
 
     sgx_ra_msg2_t *p_msg2;
     this->assembleMSG2(msg, &p_msg2);

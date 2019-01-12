@@ -264,9 +264,12 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
     Log("\tspid:(%s)",ByteArrayToString(buff1, sizeof(msg.spid())));
     //printf("========= spid:%s\n",ByteArrayToString(&msg.spid(),sizeof(msg.spid())));
     //Log("\tspid:(%s)",buff1);
+    unsigned char* tmpbuf = new unsigned char[sizeof(msg.spid())];
     for(int i=0;i<sizeof(msg.spid());i++) {
-        printf("0x%d,",msg.spid(i));
+        tmpbuf[i] = msg.spid(i);
+        //printf("0x%c,",msg.spid(i));
     }
+    Log("\tspid2:(%s)",ByteArrayToString(tmpbuf, sizeof(msg.spid())));
     printf("\n");
 
     unsigned char* buff = new unsigned char[64];
