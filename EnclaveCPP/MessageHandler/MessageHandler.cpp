@@ -257,8 +257,40 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
 
     uint32_t size = msg.size();
 
+    Log("\tsize of msg:(%d)",sizeof(msg));
+    Log("\tsize of spid:(%d)",sizeof(msg.spid()));
+    char* buff1 = new char[sizeof(msg.spid())];
+    memcpy(buff1, (char*)&msg.spid(), sizeof(msg.spid()));
+    //Log("\tspid:(%s)",ByteArrayToString(buff1, sizeof(msg.spid())));
+    printf("========= spid:%s\n",buff1);
+    //Log("\tspid:(%s)",buff1);
+    for(int i=0;i<sizeof(msg.spid());i++) {
+        printf("0x%d,",msg.spid(i));
+    }
+    printf("\n");
+
+    unsigned char* buff = new unsigned char[64];
+    memcpy(buff, (unsigned char*)&msg.signaturey(), 64);
+    Log("\tsignature y:(%s)",ByteArrayToString(buff, 64));
+    Log("\tsize:(%d)",msg.size());
     sgx_ra_msg2_t *p_msg2;
     this->assembleMSG2(msg, &p_msg2);
+    Log("========== p_msg2 content ==========");
+    unsigned char buf1[sizeof(sgx_ec256_public_t)];
+    memcpy(buf1, (unsigned char*)&p_msg2->g_b, sizeof(sgx_ec256_public_t));
+    Log("\tg_b:(%s)",ByteArrayToString(buf1,sizeof(sgx_ec256_public_t)));
+    unsigned char* buf2 = new unsigned char[sizeof(sgx_spid_t)];
+    memcpy(buf2, (unsigned char*)&p_msg2->spid, sizeof(sgx_spid_t));
+    Log("\tspid:(%s)",ByteArrayToString(buf2,sizeof(sgx_spid_t)));
+    Log("\tquote type:(%d)",p_msg2->quote_type);
+    Log("\tkdf id:(%d)",p_msg2->kdf_id);
+    unsigned char* buf3 = new unsigned char[sizeof(sgx_ec256_signature_t)];
+    memcpy(buf3, (unsigned char*)&p_msg2->sign_gb_ga, sizeof(sgx_ec256_signature_t));
+    Log("\tsign_gb_ga:(%s)",ByteArrayToString(buf3,sizeof(sgx_ec256_signature_t)));
+    unsigned char* buf4 = new unsigned char[sizeof(sgx_mac_t)];
+    memcpy(buf4, (unsigned char*)&p_msg2->mac, sizeof(sgx_mac_t));
+    Log("\tmac:(%s)",ByteArrayToString(buf4,sizeof(sgx_mac_t)));
+    Log("\tsigrl size:(%d)",p_msg2->sig_rl_size);
 
     sgx_ra_msg3_t *p_msg3 = NULL;
     uint32_t msg3_size;
@@ -504,6 +536,10 @@ string MessageHandler::createInitMsg(int type, string msg) {
 string MessageHandler::handleMessages(unsigned char* bytes, int len) {
     string res;
     bool ret;
+    for(int i=0;i<len;i++) {
+        printf("0x%d,",bytes[i]);
+    }
+    printf("\n");
 
     Messages::AllInOneMessage aio_msg;
     //ret = aio_msg.ParseFromString(v);

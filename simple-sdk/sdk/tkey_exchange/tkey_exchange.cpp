@@ -277,7 +277,8 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
     {
         if(SGX_ERROR_OUT_OF_MEMORY != se_ret)
             se_ret = SGX_ERROR_UNEXPECTED;
-        return se_ret;
+        return SGX_ERR_MAC_ADD_TXT_LEN;
+        //return se_ret;
     }
 
     sgx_ec256_dh_shared_t dh_key;
@@ -291,7 +292,8 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
         if (SGX_ERROR_OUT_OF_MEMORY != se_ret)
             se_ret = SGX_ERROR_UNEXPECTED;
         sgx_ecc256_close_context(ecc_state);
-        return se_ret;
+        return SGX_ERR_MAC_ENC_LEN;
+        //return se_ret;
     }
     /*
     // Verify signature of gb_ga
@@ -407,7 +409,8 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
         if (SGX_SUCCESS != se_ret)
         {
             if(SGX_ERROR_OUT_OF_MEMORY != se_ret)
-                se_ret = SGX_ERROR_UNEXPECTED;
+                //se_ret = SGX_ERROR_UNEXPECTED;
+                se_ret = SGX_ERR_MAC_FIX_TEST1;
             break;
         }
         //Check mac
@@ -422,7 +425,8 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
         if (SGX_SUCCESS != se_ret)
         {
             if(SGX_ERROR_OUT_OF_MEMORY != se_ret)
-                se_ret = SGX_ERROR_UNEXPECTED;
+                //se_ret = SGX_ERROR_UNEXPECTED;
+                se_ret = SGX_ERR_MAC_FIX_TEST2;
             break;
         }
 
@@ -451,7 +455,8 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
         if(SGX_SUCCESS != se_ret)
         {
             if (SGX_ERROR_OUT_OF_MEMORY != se_ret)
-                se_ret = SGX_ERROR_UNEXPECTED;
+                //se_ret = SGX_ERROR_UNEXPECTED;
+                se_ret = SGX_ERR_MAC_FIX_SPB;
             sgx_spin_unlock(&item->item_lock);
             break;
         }
@@ -460,7 +465,8 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
         if (SGX_SUCCESS != se_ret)
         {
             if(SGX_ERROR_OUT_OF_MEMORY != se_ret)
-                se_ret = SGX_ERROR_UNEXPECTED;
+                //se_ret = SGX_ERROR_UNEXPECTED;
+                se_ret = SGX_ERR_MAC_SEALED_DATA_LEN;
             sgx_spin_unlock(&item->item_lock);
             break;
         }
