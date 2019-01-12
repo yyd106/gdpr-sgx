@@ -54,8 +54,8 @@ const getMsg2 = ecPublicKey => {
     quoteType: SAMPLE_QUOTE_LINKABLE_SIGNATURE,
     spid: hexStringToArray(SPID, 2),
     cmacKdfId: AES_CMAC_KDF_ID,
-    signatureX: bigInt(publicKeyGx, 16),
-    signatureY: bigInt(publicKeyGy, 16),
+    signatureX: hexStringToArray(publicKeyGx, 2),
+    signatureY: hexStringToArray(publicKeyGy, 2),
     smac: hexStringToArray(switchEndian(smac), 2),
     sizeSigrl: SIZE_SIGRL,
     sigrl: SIGRL
