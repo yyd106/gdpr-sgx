@@ -11,7 +11,8 @@ import {
 } from "../../../metadata/messageTypes";
 import {
   switchEndian,
-  toHex
+  toHex,
+  hexStringToArray
 } from "../../hexHelpers";
 
 const aesCmac = require("node-aes-cmac").aesCmac;
@@ -51,7 +52,7 @@ const getMsg2 = ecPublicKey => {
     publicKeyGx: switchEndian(publicKeyGx),
     publicKeyGy: switchEndian(publicKeyGy),
     quoteType: SAMPLE_QUOTE_LINKABLE_SIGNATURE,
-    spid: SPID,
+    spid: hexStringToArray(SPID, 2),
     cmacKdfId: AES_CMAC_KDF_ID,
     signatureX: publicKeyGx,
     signatureY: publicKeyGy,
@@ -60,6 +61,5 @@ const getMsg2 = ecPublicKey => {
     sigrl: SIGRL
   }
 }
-
 
 export default getMsg2;

@@ -6,7 +6,7 @@ const bigInt = require("big-integer");
  * @returns {String} result
  */
 export function switchEndian(string) {
-  if (string.length % 2) throw new Error;
+  if (string.length % 2) throw new Error();
 
   let result = []
   for (let i = 0; i < string.length; i = i + 2) {
@@ -24,4 +24,22 @@ export function switchEndian(string) {
  */
 export function toHex(input) {
   return bigInt(input).toString(16);
+}
+
+/**
+ * @method hexStringToArray
+ * @param {String} str
+ * @returns {Array} result
+ */
+export function hexStringToArray(str, step) {
+  if (str.length % step) throw new Error();
+
+  let result = [];
+  for (let i = 0; i < str.length; i = i + step) {
+    const chunk = str.slice(i, i + step);
+    const num = parseInt(chunk, 16);
+    result.push(num);
+  }
+
+  return result;
 }
