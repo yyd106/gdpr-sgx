@@ -49,14 +49,14 @@ const getMsg2 = ecPublicKey => {
   return {
     type: RA_MSG2,
     size: MSG2_SIZE,
-    publicKeyGx: bigInt(switchEndian(publicKeyGx), 16),
-    publicKeyGy: bigInt(switchEndian(publicKeyGy), 16),
+    publicKeyGx: hexStringToArray(switchEndian(publicKeyGx), 2),
+    publicKeyGy: hexStringToArray(switchEndian(publicKeyGy), 2),
     quoteType: SAMPLE_QUOTE_LINKABLE_SIGNATURE,
     spid: hexStringToArray(SPID, 2),
     cmacKdfId: AES_CMAC_KDF_ID,
     signatureX: bigInt(publicKeyGx, 16),
     signatureY: bigInt(publicKeyGy, 16),
-    smac: bigInt(switchEndian(smac), 16),
+    smac: hexStringToArray(switchEndian(smac), 2),
     sizeSigrl: SIZE_SIGRL,
     sigrl: SIGRL
   }
