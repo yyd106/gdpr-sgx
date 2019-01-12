@@ -262,7 +262,7 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
     char* buff1 = new char[sizeof(msg.spid())];
     memcpy(buff1, (char*)&msg.spid(), sizeof(msg.spid()));
     //Log("\tspid:(%s)",ByteArrayToString(buff1, sizeof(msg.spid())));
-    printf("========= spid:%s\n",buff1);
+    printf("========= spid:%s\n",ByteArrayToString(msg.spid(),sizeof(msg.spid())));
     //Log("\tspid:(%s)",buff1);
     for(int i=0;i<sizeof(msg.spid());i++) {
         printf("0x%d,",msg.spid(i));

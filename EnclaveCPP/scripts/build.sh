@@ -129,7 +129,7 @@ if [ x"$JAVA_HOME" = x"" ]; then
 fi
 # check if sgxsdk lib has been imported
 sgxsdkdir=/opt/intel/sgxsdk
-if [ -d "$sgxsdkdir" ]; then
+if [ ! -d "$sgxsdkdir" ]; then
     verbose ERROR "SGX is not installed in $sgxsdkdir!" h
     exit 1
 fi
