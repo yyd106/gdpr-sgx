@@ -43,7 +43,9 @@ const getMsg2 = ecPublicKey => {
    */
   const publicKeyGx = toHex(MY_PUBLIC_KEY.X);
   const publicKeyGy = toHex(MY_PUBLIC_KEY.Y);
-  const sMyPublicKey = bigInt(MY_PUBLIC_KEY.X + MY_PUBLIC_KEY.Y).toString(16);
+  //const sMyPublicKey = bigInt(MY_PUBLIC_KEY.X + MY_PUBLIC_KEY.Y).toString(16);
+  const sMyPublicKey = switchEndian(bigInt(MY_PUBLIC_KEY.X).toString(16),2) + switchEndian(bigInt(MY_PUBLIC_KEY.Y).toString(16),2);
+
   const smac = aesCmac(SHORT_KEY, sMyPublicKey);
 
   return {
