@@ -416,12 +416,13 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
             break;
         }
         //Check mac
+        /*   @@@@@@@@@@ removed the Mac checking for msg 2
         if(0 == consttime_memequal(mac, p_msg2->mac, sizeof(mac)))
         {
             se_ret = SGX_TESTING_8;
             break;
         }
-
+        */
         //create a nonce
         se_ret =sgx_read_rand((uint8_t*)p_nonce, sizeof(sgx_quote_nonce_t));
         if (SGX_SUCCESS != se_ret)
