@@ -49,8 +49,8 @@ const getMsg2 = ecPublicKey => {
   return {
     type: RA_MSG2,
     size: MSG2_SIZE,
-    publicKeyGx: hexStringToArray(publicKeyGx, 2),
-    publicKeyGy: hexStringToArray(publicKeyGy, 2),
+    publicKeyGx: hexStringToArray(switchEndian(publicKeyGx), 2),
+    publicKeyGy: hexStringToArray(switchEndian(publicKeyGy), 2),
     quoteType: SAMPLE_QUOTE_LINKABLE_SIGNATURE,
     spid: hexStringToArray(SPID, 2),
     cmacKdfId: AES_CMAC_KDF_ID,
