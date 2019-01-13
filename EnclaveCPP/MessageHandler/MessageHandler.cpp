@@ -309,7 +309,6 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
                                &p_msg3,
                                &msg3_size);
     } while (SGX_ERROR_BUSY == ret && busy_retry_time--);
-
     SafeFree(p_msg2);
 
     if (SGX_SUCCESS != (sgx_status_t)ret) {

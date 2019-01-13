@@ -292,8 +292,7 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
         if (SGX_ERROR_OUT_OF_MEMORY != se_ret)
             se_ret = SGX_ERROR_UNEXPECTED;
         sgx_ecc256_close_context(ecc_state);
-        return SGX_ERR_MAC_ENC_LEN;
-        //return se_ret;
+        return SGX_TESTING_9;        //return se_ret;
     }
     /*
     // Verify signature of gb_ga

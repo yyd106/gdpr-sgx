@@ -132,7 +132,8 @@ sgx_status_t sgx_ra_proc_msg2(
         if(memcpy_s(&qe_target_info, sizeof(qe_target_info),
                  &g_qe_target_info, sizeof(g_qe_target_info)) != 0)
         {
-            ret = SGX_ERROR_UNEXPECTED;
+            //ret = SGX_ERROR_UNEXPECTED;       // Changed here
+            ret = SGX_TESTING_1;
             g_ukey_spin_lock.unlock();
             goto CLEANUP;
         }
