@@ -149,6 +149,7 @@ sgx_status_t sgx_ra_proc_msg2(
             ret = status;
             goto CLEANUP;
         }
+        return SGX_TESTING_7;
 
         uint32_t quote_size = 0;
         ret = sgx_calc_quote_size(p_msg2->sig_rl_size ?
