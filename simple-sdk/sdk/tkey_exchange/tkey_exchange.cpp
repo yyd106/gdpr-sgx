@@ -404,7 +404,7 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
         sgx_cmac_128bit_tag_t mac;
         //uint32_t maced_size = offsetof(sgx_ra_msg2_t, mac);  // @@@@@@@@@@ Changed Maced sized to pubKey size.
         uint32_t maced_size = sizeof(sgx_ec256_public_t);
-        se_ret = sgx_rijndael128_cmac_msg(&smkey, (const uint8_t *)p_msg2->gb, maced_size, &mac);
+        se_ret = sgx_rijndael128_cmac_msg(&smkey, (const uint8_t *)&p_msg2->gb, maced_size, &mac);
         if (SGX_SUCCESS != se_ret)
         {
             if(SGX_ERROR_OUT_OF_MEMORY != se_ret)
