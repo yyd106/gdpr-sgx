@@ -415,7 +415,7 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
         //Check mac
         if(0 == consttime_memequal(mac, p_msg2->mac, sizeof(mac)))
         {
-            se_ret = SGX_ERROR_MAC_MISMATCH;
+            se_ret = SGX_TESTING_8;
             break;
         }
 

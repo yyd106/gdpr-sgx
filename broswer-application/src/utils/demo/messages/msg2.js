@@ -57,7 +57,7 @@ const getMsg2 = ecPublicKey => {
     signatureX: hexStringToArray(publicKeyGx, 2),
     signatureY: hexStringToArray(publicKeyGy, 2),
     //smac: hexStringToArray(switchEndian(smac), 2),
-    smac: hexStringToArray(smac, 2),
+    smac: hexStringToArray(switchEndian(smac), 2),
 
     sizeSigrl: SIZE_SIGRL,
     sigrl: SIGRL
