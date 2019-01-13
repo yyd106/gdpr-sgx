@@ -112,7 +112,6 @@ sgx_status_t sgx_ra_proc_msg2(
         return SGX_ERROR_INVALID_PARAMETER;
     if(msg2_size != sizeof(sgx_ra_msg2_t) + p_msg2->sig_rl_size)
         return SGX_ERROR_INVALID_PARAMETER;
-    return SGX_TESTING_6;
 
     sgx_status_t ret = SGX_ERROR_UNEXPECTED;
     sgx_report_t report;
@@ -133,8 +132,7 @@ sgx_status_t sgx_ra_proc_msg2(
         if(memcpy_s(&qe_target_info, sizeof(qe_target_info),
                  &g_qe_target_info, sizeof(g_qe_target_info)) != 0)
         {
-            //ret = SGX_ERROR_UNEXPECTED;       // Changed here
-            ret = SGX_TESTING_1;
+            ret = SGX_ERROR_UNEXPECTED;       // Changed here
             g_ukey_spin_lock.unlock();
             goto CLEANUP;
         }
@@ -150,7 +148,6 @@ sgx_status_t sgx_ra_proc_msg2(
             ret = status;
             goto CLEANUP;
         }
-        return SGX_TESTING_7;
 
         uint32_t quote_size = 0;
         ret = sgx_calc_quote_size(p_msg2->sig_rl_size ?
