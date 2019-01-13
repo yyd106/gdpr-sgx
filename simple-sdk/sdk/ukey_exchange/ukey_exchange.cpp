@@ -112,7 +112,7 @@ sgx_status_t sgx_ra_proc_msg2(
         return SGX_ERROR_INVALID_PARAMETER;
     if(msg2_size != sizeof(sgx_ra_msg2_t) + p_msg2->sig_rl_size)
         return SGX_ERROR_INVALID_PARAMETER;
-    return SGX_TESTING_6;
+    //return SGX_TESTING_6;
 
     sgx_status_t ret = SGX_ERROR_UNEXPECTED;
     sgx_report_t report;
