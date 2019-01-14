@@ -365,13 +365,13 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     ra_samp_response_header_t* p_att_result_msg_full = NULL;
     Log("Could I get msg size?");
     int msg_size = msg.size();    
-    Log("Att msg size", msg_size);
+    Log("Att msg size %d", msg_size);
 
     int msg_resultsize = msg.resultsize();
-    Log("Att msg result size", msg_resultsize);
+    Log("Att msg result size %d", msg_resultsize);
 
     int total_size = msg.size() + sizeof(ra_samp_response_header_t) + msg.resultsize();
-    Log("Att result total size", total_size);
+    Log("Att result total size %d", total_size);
 
     p_att_result_msg_full = (ra_samp_response_header_t*) malloc(total_size);
 
@@ -379,8 +379,8 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
 
     p_att_result_msg_full->type = Messages::Type::RA_ATT_RESULT;
     p_att_result_msg_full->size = msg.size();
-    Log("Att result type:", p_att_result_msg_full->type);
-    Log("Att result size:", p_att_result_msg_full->size);
+    Log("Att result type: %s", p_att_result_msg_full->type);
+    Log("Att result size: %s", p_att_result_msg_full->size);
 
     p_att_result_msg = (sample_ra_att_result_msg_t *) p_att_result_msg_full->body;
 
