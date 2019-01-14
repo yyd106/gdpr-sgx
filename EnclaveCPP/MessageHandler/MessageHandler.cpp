@@ -370,18 +370,24 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     memset(p_att_result_msg_full, 0, total_size);
     p_att_result_msg_full->type = Messages::Type::RA_ATT_RESULT;
     p_att_result_msg_full->size = msg.size();
+    Log("Att result type:", p_att_result_msg_full->type);
+    Log("Att result size:", p_att_result_msg_full->size);
 
     p_att_result_msg = (sample_ra_att_result_msg_t *) p_att_result_msg_full->body;
 
     p_att_result_msg->platform_info_blob.sample_epid_group_status = msg.epidgroupstatus();
+    Log("Att result epid_group_status:", p_att_result_msg->platform_info_blob.sample_epid_group_status);
+
     p_att_result_msg->platform_info_blob.sample_tcb_evaluation_status = msg.tcbevaluationstatus();
     p_att_result_msg->platform_info_blob.pse_evaluation_status = msg.pseevaluationstatus();
+    Log("Att result pse_evaluation_status:", p_att_result_msg->platform_info_blob.pse_evaluation_status);
 
     for (int i=0; i<PSVN_SIZE; i++)
         p_att_result_msg->platform_info_blob.latest_equivalent_tcb_psvn[i] = msg.latestequivalenttcbpsvn(i);
 
     for (int i=0; i<ISVSVN_SIZE; i++)
         p_att_result_msg->platform_info_blob.latest_pse_isvsvn[i] = msg.latestpseisvsvn(i);
+    Log("Att result latest_pse_isvsvn generated");
 
     for (int i=0; i<PSDA_SVN_SIZE; i++)
         p_att_result_msg->platform_info_blob.latest_psda_svn[i] = msg.latestpsdasvn(i);
@@ -396,12 +402,15 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
 
     for (int i=0; i<SAMPLE_MAC_SIZE; i++)
         p_att_result_msg->mac[i] = msg.macsmk(i);
+    Log("Att result mac generated");
+
 
 
     p_att_result_msg->secret.payload_size = msg.resultsize();
 
     for (int i=0; i<12; i++)
         p_att_result_msg->secret.reserved[i] = msg.reserved(i);
+
 
     for (int i=0; i<SAMPLE_SP_TAG_SIZE; i++)
         p_att_result_msg->secret.payload_tag[i] = msg.payloadtag(i);
@@ -418,7 +427,7 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
 
 
 string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg) {
-    Log("Received Attestation result");
+    Log("Received Attestation result, start to sssemble");
 
     ra_samp_response_header_t *p_att_result_msg_full = NULL;
     this->assembleAttestationMSG(msg, &p_att_result_msg_full);
