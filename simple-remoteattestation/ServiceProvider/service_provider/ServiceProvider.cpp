@@ -405,9 +405,12 @@ int ServiceProvider::sp_ra_proc_msg1_req(Messages::MessageMSG1 msg1, Messages::M
         
         uint8_t mac[SAMPLE_EC_MAC_SIZE] = {0};
         //@@@@@@@@@@@@@@@@@@ Please use node-aes-cmac function instead of sample_rijndael128_cmac_msg
+        //uint32_t cmac_size = offsetof(sgx_ra_msg2_t, mac);
+        //uint32_t cmac_size = sizeof(sample_ec256_public_t);
+        //sample_ret = sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&p_msg2->g_b, cmac_size, &mac);
+        //uint8_t mac[SAMPLE_EC_MAC_SIZE] = {0};
         uint32_t cmac_size = offsetof(sgx_ra_msg2_t, mac);
         sample_ret = sample_rijndael128_cmac_msg(&g_sp_db.smk_key, (uint8_t *)&p_msg2->g_b, cmac_size, &mac);
-        
 
         if (SAMPLE_SUCCESS != sample_ret) {
             Log("Error, cmac fail", log::error);

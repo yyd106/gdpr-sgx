@@ -43,20 +43,24 @@ const getMsg2 = ecPublicKey => {
    */
   const publicKeyGx = toHex(MY_PUBLIC_KEY.X);
   const publicKeyGy = toHex(MY_PUBLIC_KEY.Y);
-  const sMyPublicKey = bigInt(MY_PUBLIC_KEY.X + MY_PUBLIC_KEY.Y).toString(16);
+  //const sMyPublicKey = bigInt(MY_PUBLIC_KEY.X + MY_PUBLIC_KEY.Y).toString(16);
+  const sMyPublicKey = switchEndian(bigInt(MY_PUBLIC_KEY.X).toString(16),2) + switchEndian(bigInt(MY_PUBLIC_KEY.Y).toString(16),2);
+
   const smac = aesCmac(SHORT_KEY, sMyPublicKey);
 
   return {
     type: RA_MSG2,
     size: MSG2_SIZE,
-    publicKeyGx: bigInt(switchEndian(publicKeyGx), 16),
-    publicKeyGy: bigInt(switchEndian(publicKeyGy), 16),
+    publicKeyGx: hexStringToArray(switchEndian(publicKeyGx), 2),
+    publicKeyGy: hexStringToArray(switchEndian(publicKeyGy), 2),
     quoteType: SAMPLE_QUOTE_LINKABLE_SIGNATURE,
     spid: hexStringToArray(SPID, 2),
     cmacKdfId: AES_CMAC_KDF_ID,
-    signatureX: bigInt(publicKeyGx, 16),
-    signatureY: bigInt(publicKeyGy, 16),
-    smac: bigInt(switchEndian(smac), 16),
+    signatureX: hexStringToArray(publicKeyGx, 2),
+    signatureY: hexStringToArray(publicKeyGy, 2),
+    //smac: hexStringToArray(switchEndian(smac), 2),
+    smac: hexStringToArray(smac, 2),
+
     sizeSigrl: SIZE_SIGRL,
     sigrl: SIGRL
   }
