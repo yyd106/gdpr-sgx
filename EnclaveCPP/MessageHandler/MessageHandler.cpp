@@ -440,7 +440,7 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
 
     ra_samp_response_header_t *p_att_result_msg_full = NULL;
     this->assembleAttestationMSG(msg, &p_att_result_msg_full);
-    Log("Assemble Success", log::error);
+    Log("Assemble Success");
 
     sample_ra_att_result_msg_t *p_att_result_msg_body = (sample_ra_att_result_msg_t *) ((uint8_t*) p_att_result_msg_full + sizeof(ra_samp_response_header_t));
 
@@ -454,6 +454,7 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
                                 sizeof(ias_platform_info_blob_t),
                                 (uint8_t*)&p_att_result_msg_body->mac,
                                 sizeof(sgx_mac_t));
+    Log("Verify Success");
 
 
     if ((SGX_SUCCESS != ret) || (SGX_SUCCESS != status)) {
