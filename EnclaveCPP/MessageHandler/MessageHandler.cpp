@@ -483,10 +483,14 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
         SafeFree(p_att_result_msg_full);
 
         if (SGX_SUCCESS != ret) {
-            Log("Error, attestation result message secret using SK based AESGCM failed", log::error);
+            Log("Error, attestation result message secret using SK based AESGCM failed1", log::error);
+            Log("Error, attestation result message secret using SK based AESGCM failed1 %d", ret);
+
             print_error_message(ret);
         } else if (SGX_SUCCESS != status) {
-            Log("Error, attestation result message secret using SK based AESGCM failed", log::error);
+            Log("Error, attestation result message secret using SK based AESGCM failed2", log::error);
+            Log("Error, attestation result message secret using SK based AESGCM failed2 %d", ret);
+
             print_error_message(status);
         } else {
             Log("Send attestation okay");
