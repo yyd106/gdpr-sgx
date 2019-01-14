@@ -451,7 +451,7 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
 
     sgx_status_t status;
     sgx_status_t ret;
-
+/*  @@@@@@@@@@@@@ To do
     ret = verify_att_result_mac(this->enclave->getID(),
                                 &status,
                                 this->enclave->getContext(),
@@ -460,10 +460,12 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
                                 (uint8_t*)&p_att_result_msg_body->mac,
                                 sizeof(sgx_mac_t));
 
+
     if ((SGX_SUCCESS != ret) || (SGX_SUCCESS != status)) {
         Log("Error: INTEGRITY FAILED - attestation result message MK based cmac failed", log::error);
         return "";
     }
+*/
     //Log("Verify Mac Success", log::error);
 
     if (0 != p_att_result_msg_full->status[0] || 0 != p_att_result_msg_full->status[1]) {
