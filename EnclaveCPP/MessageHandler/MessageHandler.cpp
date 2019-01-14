@@ -364,6 +364,11 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     sample_ra_att_result_msg_t *p_att_result_msg = NULL;
     ra_samp_response_header_t* p_att_result_msg_full = NULL;
     Log("Could I get msg size?");
+    int msg_size = msg.size();    
+    Log("Att msg size", msg_size);
+
+    int msg_resultsize = msg.resultsize();
+    Log("Att msg result size", msg_resultsize);
 
     int total_size = msg.size() + sizeof(ra_samp_response_header_t) + msg.resultsize();
     Log("Att result total size", total_size);
