@@ -380,7 +380,7 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     p_att_result_msg_full->type = Messages::Type::RA_ATT_RESULT;
     p_att_result_msg_full->size = msg.size();
     Log("Att result type: %d", p_att_result_msg_full->type);
-    Log("Att platform_info_blob_t size: %d", sizeof(ias_platform_info_blob_t);
+    Log("Att platform_info_blob_t size: %d", sizeof(ias_platform_info_blob_t));
 
     p_att_result_msg = (sample_ra_att_result_msg_t *) p_att_result_msg_full->body;
 
