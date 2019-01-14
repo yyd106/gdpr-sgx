@@ -487,12 +487,16 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
             Log("Error, attestation result message secret using SK based AESGCM failed1 %d", ret);
 
             print_error_message(ret);
-        } else if (SGX_SUCCESS != status) {
+        } 
+        /*  @@@@@@@@@@ Todo
+        else if (SGX_SUCCESS != status) {
             Log("Error, attestation result message secret using SK based AESGCM failed2", log::error);
             Log("Error, attestation result message secret using SK based AESGCM failed2 %d", ret);
 
             print_error_message(status);
-        } else {
+        } 
+        */
+        else {
             Log("Send attestation okay");
 
             Messages::InitialMessage *msg = new Messages::InitialMessage();
