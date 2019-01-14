@@ -416,6 +416,7 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
 
 
     p_att_result_msg->secret.payload_size = msg.resultsize();
+    Log("Att result payload_size: %d", p_att_result_msg->secret.payload_size);
 
     for (int i=0; i<12; i++)
         p_att_result_msg->secret.reserved[i] = msg.reserved(i);
