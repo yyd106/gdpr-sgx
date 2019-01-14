@@ -292,8 +292,7 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
         if (SGX_ERROR_OUT_OF_MEMORY != se_ret)
             se_ret = SGX_ERROR_UNEXPECTED;
         sgx_ecc256_close_context(ecc_state);
-        return SGX_ERR_MAC_ENC_LEN;
-        //return se_ret;
+        return SGX_TESTING_9;        //return se_ret;
     }
     /*
     // Verify signature of gb_ga
@@ -403,8 +402,11 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
 
 
         sgx_cmac_128bit_tag_t mac;
-        uint32_t maced_size = offsetof(sgx_ra_msg2_t, mac);
+        //uint32_t maced_size = offsetof(sgx_ra_msg2_t, mac);  // @@@@@@@@@@ Changed Maced sized to pubKey size.
+        //uint32_t maced_size = sizeof(sgx_ec256_public_t);
+        //se_ret = sgx_rijndael128_cmac_msg(&smkey, (const uint8_t *)p_msg2, maced_size, &mac);
 
+        uint32_t maced_size = offsetof(sgx_ra_msg2_t, mac);
         se_ret = sgx_rijndael128_cmac_msg(&smkey, (const uint8_t *)p_msg2, maced_size, &mac);
         if (SGX_SUCCESS != se_ret)
         {
@@ -414,10 +416,10 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
             break;
         }
         //Check mac
-        /*
+        /*   @@@@@@@@@@ removed the Mac checking for msg 2
         if(0 == consttime_memequal(mac, p_msg2->mac, sizeof(mac)))
         {
-            se_ret = SGX_ERROR_MAC_MISMATCH;
+            se_ret = SGX_TESTING_8;
             break;
         }
         */

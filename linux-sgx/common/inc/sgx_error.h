@@ -72,6 +72,17 @@ typedef enum _status_t
     SGX_ERROR_INVALID_CPUSVN     = SGX_MK_ERROR(0x3003),      /* The cpu svn is beyond platform's cpu svn value */
     SGX_ERROR_INVALID_ISVSVN     = SGX_MK_ERROR(0x3004),      /* The isv svn is greater than the enclave's isv svn */
     SGX_ERROR_INVALID_KEYNAME    = SGX_MK_ERROR(0x3005),      /* The key name is an unsupported value */
+    
+    SGX_TESTING_0 = SGX_MK_ERROR(0x3330),
+    SGX_TESTING_1 = SGX_MK_ERROR(0x3331),
+    SGX_TESTING_2 = SGX_MK_ERROR(0x3332),
+    SGX_TESTING_3 = SGX_MK_ERROR(0x3333),
+    SGX_TESTING_4 = SGX_MK_ERROR(0x3334),
+    SGX_TESTING_5 = SGX_MK_ERROR(0x3335),
+    SGX_TESTING_6 = SGX_MK_ERROR(0x3336),
+    SGX_TESTING_7 = SGX_MK_ERROR(0x3337),
+    SGX_TESTING_8 = SGX_MK_ERROR(0x3338),
+    SGX_TESTING_9 = SGX_MK_ERROR(0x3339),
 
     SGX_ERROR_SERVICE_UNAVAILABLE       = SGX_MK_ERROR(0x4001),   /* Indicates aesm didn't respond or the requested service is not supported */
     SGX_ERROR_SERVICE_TIMEOUT           = SGX_MK_ERROR(0x4002),   /* The request to aesm timed out */

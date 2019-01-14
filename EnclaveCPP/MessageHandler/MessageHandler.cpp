@@ -295,7 +295,6 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
                                &p_msg3,
                                &msg3_size);
     } while (SGX_ERROR_BUSY == ret && busy_retry_time--);
-
     SafeFree(p_msg2);
 
     if (SGX_SUCCESS != (sgx_status_t)ret) {
@@ -351,26 +350,40 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     Log("\t========= assemble attestation msg 1");
     sample_ra_att_result_msg_t *p_att_result_msg = NULL;
     ra_samp_response_header_t* p_att_result_msg_full = NULL;
+    Log("Could I get msg size?");
+    int msg_size = msg.size();    
+    Log("Att msg size %d", msg_size);
+
+    int msg_resultsize = msg.resultsize();
+    Log("Att msg result size %d", msg_resultsize);
 
     int total_size = msg.size() + sizeof(ra_samp_response_header_t) + msg.resultsize();
+    Log("Att result total size %d", total_size);
+
     p_att_result_msg_full = (ra_samp_response_header_t*) malloc(total_size);
 
     memset(p_att_result_msg_full, 0, total_size);
+
     p_att_result_msg_full->type = Messages::Type::RA_ATT_RESULT;
     p_att_result_msg_full->size = msg.size();
+    Log("Att result type: %d", p_att_result_msg_full->type);
+    Log("Att platform_info_blob_t size: %d", sizeof(ias_platform_info_blob_t);
 
     p_att_result_msg = (sample_ra_att_result_msg_t *) p_att_result_msg_full->body;
 
     p_att_result_msg->platform_info_blob.sample_epid_group_status = msg.epidgroupstatus();
+    Log("Att result epid_group_status: %s", p_att_result_msg->platform_info_blob.sample_epid_group_status);
+
     p_att_result_msg->platform_info_blob.sample_tcb_evaluation_status = msg.tcbevaluationstatus();
     p_att_result_msg->platform_info_blob.pse_evaluation_status = msg.pseevaluationstatus();
-    Log("\t========= assemble attestation msg 2");
+    Log("Att result pse_evaluation_status: %s", p_att_result_msg->platform_info_blob.pse_evaluation_status);
 
     for (int i=0; i<PSVN_SIZE; i++)
         p_att_result_msg->platform_info_blob.latest_equivalent_tcb_psvn[i] = msg.latestequivalenttcbpsvn(i);
 
     for (int i=0; i<ISVSVN_SIZE; i++)
         p_att_result_msg->platform_info_blob.latest_pse_isvsvn[i] = msg.latestpseisvsvn(i);
+    Log("Att result latest_pse_isvsvn generated");
 
     for (int i=0; i<PSDA_SVN_SIZE; i++)
         p_att_result_msg->platform_info_blob.latest_psda_svn[i] = msg.latestpsdasvn(i);
@@ -385,41 +398,45 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
 
     for (int i=0; i<SAMPLE_MAC_SIZE; i++)
         p_att_result_msg->mac[i] = msg.macsmk(i);
+    Log("Att result mac generated");
+
 
     Log("\t========= assemble attestation msg 3");
 
 
     p_att_result_msg->secret.payload_size = msg.resultsize();
-    Log("\t========= assemble attestation msg 4");
+    Log("Att result payload_size: %d", p_att_result_msg->secret.payload_size);
 
     /*
     for (int i=0; i<12; i++)
         p_att_result_msg->secret.reserved[i] = msg.reserved(i);
+    Log("Att result reserved");
     */
-    Log("\t========= assemble attestation msg 5");
 
     for (int i=0; i<SAMPLE_SP_TAG_SIZE; i++)
         p_att_result_msg->secret.payload_tag[i] = msg.payloadtag(i);
-    Log("\t========= assemble attestation msg 6");
+    Log("Att result payload_tag");
 
     for (int i=0; i<SAMPLE_SP_TAG_SIZE; i++)
         p_att_result_msg->secret.payload_tag[i] = msg.payloadtag(i);
-    Log("\t========= assemble attestation msg 7");
+    Log("Att result payload_tag");
 
     for (int i=0; i<msg.resultsize(); i++) {
         p_att_result_msg->secret.payload[i] = (uint8_t)msg.payload(i);
     }
-    Log("\t========= assemble attestation msg 8");
+    Log("Att result payload");
 
     *pp_att_msg = p_att_result_msg_full;
 }
 
 
 string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg) {
-    Log("Received Attestation result");
+    Log("Received Attestation result, start to sssemble");
 
     ra_samp_response_header_t *p_att_result_msg_full = NULL;
     this->assembleAttestationMSG(msg, &p_att_result_msg_full);
+    Log("Assemble Success");
+
     sample_ra_att_result_msg_t *p_att_result_msg_body = (sample_ra_att_result_msg_t *) ((uint8_t*) p_att_result_msg_full + sizeof(ra_samp_response_header_t));
 
     sgx_status_t status;
@@ -433,12 +450,12 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
                                 (uint8_t*)&p_att_result_msg_body->mac,
                                 sizeof(sgx_mac_t));
 
-
     if ((SGX_SUCCESS != ret) || (SGX_SUCCESS != status)) {
         Log("Error: INTEGRITY FAILED - attestation result message MK based cmac failed. ret:%lx",ret);
         Log("Error: INTEGRITY FAILED - attestation result message MK based cmac failed. status:%lx",status);
         return "";
     }
+    Log("Verify Mac Success", log::error);
 
     if (0 != p_att_result_msg_full->status[0] || 0 != p_att_result_msg_full->status[1]) {
         Log("Error, attestation mac result message MK based cmac failed", log::error);
