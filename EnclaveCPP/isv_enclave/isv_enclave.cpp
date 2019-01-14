@@ -293,8 +293,8 @@ sgx_status_t verify_secret_data (
                                          (const sgx_aes_gcm_128bit_tag_t *) (p_gcm_mac));
 
         if (SGX_SUCCESS == ret) {
-            if (decrypted[0] == 0) {
-                if (decrypted[1] != 1) {
+            if (decrypted[0] == 6) {
+                if (decrypted[1] != 7) {
                     ret = SGX_ERROR_INVALID_SIGNATURE;
                 }
             } else {
