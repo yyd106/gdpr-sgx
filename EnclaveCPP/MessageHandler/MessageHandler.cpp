@@ -380,7 +380,7 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     p_att_result_msg_full->type = Messages::Type::RA_ATT_RESULT;
     p_att_result_msg_full->size = msg.size();
     Log("Att result type: %d", p_att_result_msg_full->type);
-    Log("Att result size: %d", p_att_result_msg_full->size);
+    Log("Att platform_info_blob_t size: %d", sizeof(ias_platform_info_blob_t);
 
     p_att_result_msg = (sample_ra_att_result_msg_t *) p_att_result_msg_full->body;
 
@@ -459,8 +459,6 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
                                 sizeof(ias_platform_info_blob_t),
                                 (uint8_t*)&p_att_result_msg_body->mac,
                                 sizeof(sgx_mac_t));
-    Log("Verify Success");
-
 
     if ((SGX_SUCCESS != ret) || (SGX_SUCCESS != status)) {
         Log("Error: INTEGRITY FAILED - attestation result message MK based cmac failed", log::error);
