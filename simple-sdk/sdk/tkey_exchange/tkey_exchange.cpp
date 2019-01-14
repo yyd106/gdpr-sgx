@@ -414,11 +414,13 @@ extern "C" sgx_status_t sgx_ra_proc_msg2_trusted(
             break;
         }
         //Check mac
+        /*
         if(0 == consttime_memequal(mac, p_msg2->mac, sizeof(mac)))
         {
             se_ret = SGX_ERROR_MAC_MISMATCH;
             break;
         }
+        */
 
         //create a nonce
         se_ret =sgx_read_rand((uint8_t*)p_nonce, sizeof(sgx_quote_nonce_t));

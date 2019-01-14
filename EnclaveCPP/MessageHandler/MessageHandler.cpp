@@ -1,5 +1,6 @@
 #include "MessageHandler.h"
 #include "sgx_tseal.h"
+#include <inttypes.h>
 
 using namespace util;
 
@@ -193,7 +194,7 @@ string MessageHandler::generateMSG1() {
 
 
 void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_msg2) {
-    Log("=== assembleMSG2 1");
+    Log("=============== ASSEMBLE MSG2 ===============");
     uint32_t size = msg.size();
 
     sgx_ra_msg2_t *p_msg2 = NULL;
@@ -209,44 +210,53 @@ void MessageHandler::assembleMSG2(Messages::MessageMSG2 msg, sgx_ra_msg2_t **pp_
         pub_key_gx[i] = msg.publickeygx(i);
         pub_key_gy[i] = msg.publickeygy(i);
     }
+    Log("\tpub key gx:%s",ByteArrayToString(pub_key_gx,32));
+    Log("\tpub key gy:%s",ByteArrayToString(pub_key_gy,32));
 
     for (int i=0; i<16; i++) {
         spid.id[i] = msg.spid(i);
     }
-    Log("=== assembleMSG2 2");
+    Log("\tspid:%s",ByteArrayToString(spid.id,16));
 
     for (int i=0; i<8; i++) {
         sign_gb_ga.x[i] = msg.signaturex(i);
         sign_gb_ga.y[i] = msg.signaturey(i);
     }
+    for(int i=0;i<8;i++){
+        printf("%" PRIu32 ",",sign_gb_ga.x[i]);
+    }
+    printf("\n");
+    for(int i=0;i<8;i++){
+        printf("%" PRIu32 ",",sign_gb_ga.y[i]);
+    }
+    printf("\n");
 
     memcpy(&p_msg2->g_b.gx, &pub_key_gx, sizeof(pub_key_gx));
     memcpy(&p_msg2->g_b.gy, &pub_key_gy, sizeof(pub_key_gy));
     memcpy(&p_msg2->sign_gb_ga, &sign_gb_ga, sizeof(sign_gb_ga));
     memcpy(&p_msg2->spid, &spid, sizeof(spid));
 
-    Log("=== assembleMSG2 3");
-
     p_msg2->quote_type = (uint16_t)msg.quotetype();
     p_msg2->kdf_id = msg.cmackdfid();
+    Log("\tquote type:%d",p_msg2->quote_type);
+    Log("\tkdf id    :%d",p_msg2->kdf_id);
 
     uint8_t smac[16];
     for (int i=0; i<16; i++)
         smac[i] = msg.smac(i);
+    Log("\tsmac:%s",ByteArrayToString(smac,16));
 
     memcpy(&p_msg2->mac, &smac, sizeof(smac));
 
-    Log("=== assembleMSG2 4");
-
     p_msg2->sig_rl_size = msg.sizesigrl();
     uint8_t *sigrl = (uint8_t*) malloc(sizeof(uint8_t) * msg.sizesigrl());
+    Log("\tsig rl size:%d",p_msg2->sig_rl_size);
 
     for (int i=0; i<msg.sizesigrl(); i++)
         sigrl[i] = msg.sigrl(i);
+    Log("\tsigrl:%s",ByteArrayToString(sigrl, p_msg2->sig_rl_size));
 
     memcpy(&p_msg2->sig_rl, &sigrl, msg.sizesigrl());
-
-    Log("=== assembleMSG2 5");
 
     *pp_msg2 = p_msg2;
 }
@@ -257,47 +267,23 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
 
     uint32_t size = msg.size();
 
-    Log("\tsize of msg:(%d)",sizeof(msg));
-    Log("\tsize of spid:(%d)",sizeof(msg.spid()));
-    unsigned char* buff1 = new unsigned char[sizeof(msg.spid())];
-    memcpy(buff1, (unsigned char*)&msg.spid(), sizeof(msg.spid()));
-    Log("\tspid:(%s)",ByteArrayToString(buff1, sizeof(msg.spid())));
-    //printf("========= spid:%s\n",ByteArrayToString(&msg.spid(),sizeof(msg.spid())));
-    //Log("\tspid:(%s)",buff1);
-    unsigned char* tmpbuf = new unsigned char[sizeof(msg.spid())];
-    for(int i=0;i<sizeof(msg.spid());i++) {
-        tmpbuf[i] = msg.spid(i);
-        //printf("0x%c,",msg.spid(i));
-    }
-    Log("\tspid2:(%s)",ByteArrayToString(tmpbuf, sizeof(msg.spid())));
-    printf("\n");
-
-    unsigned char* buff = new unsigned char[64];
-    memcpy(buff, (unsigned char*)&msg.signaturey(), 64);
-    Log("\tsignature y:(%s)",ByteArrayToString(buff, 64));
-    Log("\tsize:(%d)",msg.size());
     sgx_ra_msg2_t *p_msg2;
     this->assembleMSG2(msg, &p_msg2);
-    Log("========== p_msg2 content ==========");
-    unsigned char buf1[sizeof(sgx_ec256_public_t)];
-    memcpy(buf1, (unsigned char*)&p_msg2->g_b, sizeof(sgx_ec256_public_t));
-    Log("\tg_b:(%s)",ByteArrayToString(buf1,sizeof(sgx_ec256_public_t)));
-    unsigned char* buf2 = new unsigned char[sizeof(sgx_spid_t)];
-    memcpy(buf2, (unsigned char*)&p_msg2->spid, sizeof(sgx_spid_t));
-    Log("\tspid:(%s)",ByteArrayToString(buf2,sizeof(sgx_spid_t)));
-    Log("\tquote type:(%d)",p_msg2->quote_type);
-    Log("\tkdf id:(%d)",p_msg2->kdf_id);
-    unsigned char* buf3 = new unsigned char[sizeof(sgx_ec256_signature_t)];
-    memcpy(buf3, (unsigned char*)&p_msg2->sign_gb_ga, sizeof(sgx_ec256_signature_t));
-    Log("\tsign_gb_ga:(%s)",ByteArrayToString(buf3,sizeof(sgx_ec256_signature_t)));
-    unsigned char* buf4 = new unsigned char[sizeof(sgx_mac_t)];
-    memcpy(buf4, (unsigned char*)&p_msg2->mac, sizeof(sgx_mac_t));
-    Log("\tmac:(%s)",ByteArrayToString(buf4,sizeof(sgx_mac_t)));
-    Log("\tsigrl size:(%d)",p_msg2->sig_rl_size);
 
     sgx_ra_msg3_t *p_msg3 = NULL;
     uint32_t msg3_size;
     int ret = 0;
+
+    Log("========== sgx ra proc msg2 para ==========");
+    uint8_t cbuf1[sizeof(sgx_ra_context_t)];
+    sgx_ra_context_t tmp_context = this->enclave->getContext();
+    memcpy(cbuf1, (uint8_t*)&tmp_context,sizeof(sgx_ra_context_t));
+    Log("\tcontext:%s",ByteArrayToString(cbuf1,sizeof(sgx_ra_context_t)));
+    Log("\tsize:%d",size);
+    uint8_t cbuf2[sizeof(sgx_ra_msg2_t)];
+    memcpy(cbuf2, (uint8_t*)p_msg2, sizeof(sgx_ra_msg2_t));
+    Log("\tp_msg2:%s",ByteArrayToString(cbuf2,sizeof(sgx_ra_msg2_t)));
+    printf("%" PRIu64 "\n",this->enclave->getID());
 
     do {
         ret = sgx_ra_proc_msg2(this->enclave->getContext(),
@@ -362,6 +348,7 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
 
 
 void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra_samp_response_header_t **pp_att_msg) {
+    Log("\t========= assemble attestation msg 1");
     sample_ra_att_result_msg_t *p_att_result_msg = NULL;
     ra_samp_response_header_t* p_att_result_msg_full = NULL;
 
@@ -377,6 +364,7 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     p_att_result_msg->platform_info_blob.sample_epid_group_status = msg.epidgroupstatus();
     p_att_result_msg->platform_info_blob.sample_tcb_evaluation_status = msg.tcbevaluationstatus();
     p_att_result_msg->platform_info_blob.pse_evaluation_status = msg.pseevaluationstatus();
+    Log("\t========= assemble attestation msg 2");
 
     for (int i=0; i<PSVN_SIZE; i++)
         p_att_result_msg->platform_info_blob.latest_equivalent_tcb_psvn[i] = msg.latestequivalenttcbpsvn(i);
@@ -398,21 +386,30 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     for (int i=0; i<SAMPLE_MAC_SIZE; i++)
         p_att_result_msg->mac[i] = msg.macsmk(i);
 
+    Log("\t========= assemble attestation msg 3");
+
 
     p_att_result_msg->secret.payload_size = msg.resultsize();
+    Log("\t========= assemble attestation msg 4");
 
+    /*
     for (int i=0; i<12; i++)
         p_att_result_msg->secret.reserved[i] = msg.reserved(i);
+    */
+    Log("\t========= assemble attestation msg 5");
 
     for (int i=0; i<SAMPLE_SP_TAG_SIZE; i++)
         p_att_result_msg->secret.payload_tag[i] = msg.payloadtag(i);
+    Log("\t========= assemble attestation msg 6");
 
     for (int i=0; i<SAMPLE_SP_TAG_SIZE; i++)
         p_att_result_msg->secret.payload_tag[i] = msg.payloadtag(i);
+    Log("\t========= assemble attestation msg 7");
 
     for (int i=0; i<msg.resultsize(); i++) {
         p_att_result_msg->secret.payload[i] = (uint8_t)msg.payload(i);
     }
+    Log("\t========= assemble attestation msg 8");
 
     *pp_att_msg = p_att_result_msg_full;
 }
@@ -438,7 +435,8 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
 
 
     if ((SGX_SUCCESS != ret) || (SGX_SUCCESS != status)) {
-        Log("Error: INTEGRITY FAILED - attestation result message MK based cmac failed", log::error);
+        Log("Error: INTEGRITY FAILED - attestation result message MK based cmac failed. ret:%lx",ret);
+        Log("Error: INTEGRITY FAILED - attestation result message MK based cmac failed. status:%lx",status);
         return "";
     }
 
@@ -457,10 +455,10 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
         SafeFree(p_att_result_msg_full);
 
         if (SGX_SUCCESS != ret) {
-            Log("Error, attestation result message secret using SK based AESGCM failed", log::error);
+            Log("Error, attestation result message secret using SK based AESGCM failed. ret:%lx",ret, log::error);
             print_error_message(ret);
         } else if (SGX_SUCCESS != status) {
-            Log("Error, attestation result message secret using SK based AESGCM failed", log::error);
+            Log("Error, attestation result message secret using SK based AESGCM failed. status:%lx",status, log::error);
             print_error_message(status);
         } else {
             Log("Send attestation okay");

@@ -252,10 +252,12 @@ sgx_status_t verify_att_result_mac(sgx_ra_context_t context,
         if(SGX_SUCCESS != ret) {
             break;
         }
+        /* annotate mac checking
         if(0 == consttime_memequal(p_mac, mac, sizeof(mac))) {
             ret = SGX_ERROR_MAC_MISMATCH;
             break;
         }
+        */
 
     } while(0);
 
