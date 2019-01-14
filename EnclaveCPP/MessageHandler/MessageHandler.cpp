@@ -422,6 +422,8 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
 
     ra_samp_response_header_t *p_att_result_msg_full = NULL;
     this->assembleAttestationMSG(msg, &p_att_result_msg_full);
+    Log("Assemble Success", log::error);
+
     sample_ra_att_result_msg_t *p_att_result_msg_body = (sample_ra_att_result_msg_t *) ((uint8_t*) p_att_result_msg_full + sizeof(ra_samp_response_header_t));
 
     sgx_status_t status;
@@ -440,6 +442,7 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
         Log("Error: INTEGRITY FAILED - attestation result message MK based cmac failed", log::error);
         return "";
     }
+    Log("Verify Mac Success", log::error);
 
     if (0 != p_att_result_msg_full->status[0] || 0 != p_att_result_msg_full->status[1]) {
         Log("Error, attestation mac result message MK based cmac failed", log::error);
