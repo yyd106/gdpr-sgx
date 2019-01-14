@@ -368,6 +368,8 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     p_att_result_msg_full = (ra_samp_response_header_t*) malloc(total_size);
 
     memset(p_att_result_msg_full, 0, total_size);
+    Log("Att result total size", total_size);
+
     p_att_result_msg_full->type = Messages::Type::RA_ATT_RESULT;
     p_att_result_msg_full->size = msg.size();
     Log("Att result type:", p_att_result_msg_full->type);
