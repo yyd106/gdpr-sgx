@@ -363,12 +363,14 @@ string MessageHandler::handleMSG2(Messages::MessageMSG2 msg) {
 void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra_samp_response_header_t **pp_att_msg) {
     sample_ra_att_result_msg_t *p_att_result_msg = NULL;
     ra_samp_response_header_t* p_att_result_msg_full = NULL;
+    Log("Could I get msg size?");
 
     int total_size = msg.size() + sizeof(ra_samp_response_header_t) + msg.resultsize();
+    Log("Att result total size", total_size);
+
     p_att_result_msg_full = (ra_samp_response_header_t*) malloc(total_size);
 
     memset(p_att_result_msg_full, 0, total_size);
-    Log("Att result total size", total_size);
 
     p_att_result_msg_full->type = Messages::Type::RA_ATT_RESULT;
     p_att_result_msg_full->size = msg.size();
