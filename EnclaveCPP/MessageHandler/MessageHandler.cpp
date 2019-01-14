@@ -419,17 +419,21 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
 
     for (int i=0; i<12; i++)
         p_att_result_msg->secret.reserved[i] = msg.reserved(i);
+    Log("Att result reserved");
 
 
     for (int i=0; i<SAMPLE_SP_TAG_SIZE; i++)
         p_att_result_msg->secret.payload_tag[i] = msg.payloadtag(i);
-
+    Log("Att result payload_tag");
+/*
     for (int i=0; i<SAMPLE_SP_TAG_SIZE; i++)
         p_att_result_msg->secret.payload_tag[i] = msg.payloadtag(i);
-
+    Log("Att result payload_tag");
+*/
     for (int i=0; i<msg.resultsize(); i++) {
         p_att_result_msg->secret.payload[i] = (uint8_t)msg.payload(i);
     }
+    Log("Att result payload");
 
     *pp_att_msg = p_att_result_msg_full;
 }
