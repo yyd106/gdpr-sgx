@@ -437,7 +437,7 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
 
     sgx_status_t status;
     sgx_status_t ret;
-
+/*  @@@@@@@@@@@@@ To do
     ret = verify_att_result_mac(this->enclave->getID(),
                                 &status,
                                 this->enclave->getContext(),
@@ -446,12 +446,14 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
                                 (uint8_t*)&p_att_result_msg_body->mac,
                                 sizeof(sgx_mac_t));
 
+
     if ((SGX_SUCCESS != ret) || (SGX_SUCCESS != status)) {
         Log("Error: INTEGRITY FAILED - attestation result message MK based cmac failed. ret:%lx",ret);
         Log("Error: INTEGRITY FAILED - attestation result message MK based cmac failed. status:%lx",status);
         return "";
     }
-    Log("Verify Mac Success", log::error);
+*/
+    //Log("Verify Mac Success", log::error);
 
     if (0 != p_att_result_msg_full->status[0] || 0 != p_att_result_msg_full->status[1]) {
         Log("Error, attestation mac result message MK based cmac failed", log::error);
@@ -468,12 +470,20 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
         SafeFree(p_att_result_msg_full);
 
         if (SGX_SUCCESS != ret) {
-            Log("Error, attestation result message secret using SK based AESGCM failed. ret:%lx",ret, log::error);
+            Log("Error, attestation result message secret using SK based AESGCM failed1", log::error);
+            Log("Error, attestation result message secret using SK based AESGCM failed1 %d", ret);
+
             print_error_message(ret);
-        } else if (SGX_SUCCESS != status) {
-            Log("Error, attestation result message secret using SK based AESGCM failed. status:%lx",status, log::error);
+        } 
+        /*  @@@@@@@@@@ Todo
+        else if (SGX_SUCCESS != status) {
+            Log("Error, attestation result message secret using SK based AESGCM failed2", log::error);
+            Log("Error, attestation result message secret using SK based AESGCM failed2 %d", ret);
+
             print_error_message(status);
-        } else {
+        } 
+        */
+        else {
             Log("Send attestation okay");
 
             Messages::InitialMessage *msg = new Messages::InitialMessage();
