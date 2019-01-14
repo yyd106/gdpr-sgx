@@ -379,17 +379,17 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
 
     p_att_result_msg_full->type = Messages::Type::RA_ATT_RESULT;
     p_att_result_msg_full->size = msg.size();
-    Log("Att result type: %s", p_att_result_msg_full->type);
-    Log("Att result size: %s", p_att_result_msg_full->size);
+    Log("Att result type: %d", p_att_result_msg_full->type);
+    Log("Att result size: %d", p_att_result_msg_full->size);
 
     p_att_result_msg = (sample_ra_att_result_msg_t *) p_att_result_msg_full->body;
 
     p_att_result_msg->platform_info_blob.sample_epid_group_status = msg.epidgroupstatus();
-    Log("Att result epid_group_status:", p_att_result_msg->platform_info_blob.sample_epid_group_status);
+    Log("Att result epid_group_status: %s", p_att_result_msg->platform_info_blob.sample_epid_group_status);
 
     p_att_result_msg->platform_info_blob.sample_tcb_evaluation_status = msg.tcbevaluationstatus();
     p_att_result_msg->platform_info_blob.pse_evaluation_status = msg.pseevaluationstatus();
-    Log("Att result pse_evaluation_status:", p_att_result_msg->platform_info_blob.pse_evaluation_status);
+    Log("Att result pse_evaluation_status: %s", p_att_result_msg->platform_info_blob.pse_evaluation_status);
 
     for (int i=0; i<PSVN_SIZE; i++)
         p_att_result_msg->platform_info_blob.latest_equivalent_tcb_psvn[i] = msg.latestequivalenttcbpsvn(i);
