@@ -367,7 +367,7 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     p_att_result_msg_full->type = Messages::Type::RA_ATT_RESULT;
     p_att_result_msg_full->size = msg.size();
     Log("Att result type: %d", p_att_result_msg_full->type);
-    Log("Att platform_info_blob_t size: %d", sizeof(ias_platform_info_blob_t);
+    Log("Att platform_info_blob_t size: %d", sizeof(ias_platform_info_blob_t));
 
     p_att_result_msg = (sample_ra_att_result_msg_t *) p_att_result_msg_full->body;
 
@@ -399,10 +399,6 @@ void MessageHandler::assembleAttestationMSG(Messages::AttestationMessage msg, ra
     for (int i=0; i<SAMPLE_MAC_SIZE; i++)
         p_att_result_msg->mac[i] = msg.macsmk(i);
     Log("Att result mac generated");
-
-
-    Log("\t========= assemble attestation msg 3");
-
 
     p_att_result_msg->secret.payload_size = msg.resultsize();
     Log("Att result payload_size: %d", p_att_result_msg->secret.payload_size);
