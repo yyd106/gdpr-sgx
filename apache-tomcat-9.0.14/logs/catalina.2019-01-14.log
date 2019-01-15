@@ -1,0 +1,201 @@
+14-Jan-2019 16:09:49.906 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.14
+14-Jan-2019 16:09:49.908 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Dec 6 2018 21:13:53 UTC
+14-Jan-2019 16:09:49.908 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.14.0
+14-Jan-2019 16:09:49.908 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+14-Jan-2019 16:09:49.908 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.15.0-43-generic
+14-Jan-2019 16:09:49.908 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+14-Jan-2019 16:09:49.908 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/jdk1.8.0_191/jre
+14-Jan-2019 16:09:49.908 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_191-b12
+14-Jan-2019 16:09:49.908 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+14-Jan-2019 16:09:49.908 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/vdeadmin/tools/apache-tomcat-9.0.14
+14-Jan-2019 16:09:49.908 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/vdeadmin/tools/apache-tomcat-9.0.14
+14-Jan-2019 16:09:49.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/vdeadmin/tools/apache-tomcat-current/conf/logging.properties
+14-Jan-2019 16:09:49.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+14-Jan-2019 16:09:49.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+14-Jan-2019 16:09:49.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.library.path=/home/vdeadmin/tools/apache-tomcat-current/shared/lib
+14-Jan-2019 16:09:49.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+14-Jan-2019 16:09:49.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+14-Jan-2019 16:09:49.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+14-Jan-2019 16:09:49.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/vdeadmin/tools/apache-tomcat-current
+14-Jan-2019 16:09:49.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/vdeadmin/tools/apache-tomcat-current
+14-Jan-2019 16:09:49.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/vdeadmin/tools/apache-tomcat-current/temp
+14-Jan-2019 16:09:49.909 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/home/vdeadmin/tools/apache-tomcat-current/shared/lib]
+14-Jan-2019 16:09:50.101 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+14-Jan-2019 16:09:50.144 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+14-Jan-2019 16:09:50.148 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [672] milliseconds
+14-Jan-2019 16:09:50.208 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+14-Jan-2019 16:09:50.208 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.14]
+14-Jan-2019 16:09:50.236 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/com.sgxtrial.war]
+14-Jan-2019 16:09:50.708 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+14-Jan-2019 16:09:50.775 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/com.sgxtrial.war] has finished in [539] ms
+14-Jan-2019 16:09:50.776 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/manager]
+14-Jan-2019 16:09:50.805 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/manager] has finished in [29] ms
+14-Jan-2019 16:09:50.805 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/host-manager]
+14-Jan-2019 16:09:50.831 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/host-manager] has finished in [26] ms
+14-Jan-2019 16:09:50.835 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/ROOT]
+14-Jan-2019 16:09:50.862 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/ROOT] has finished in [27] ms
+14-Jan-2019 16:09:50.862 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/docs]
+14-Jan-2019 16:09:50.884 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/docs] has finished in [22] ms
+14-Jan-2019 16:09:50.884 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/examples]
+14-Jan-2019 16:09:51.131 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/examples] has finished in [247] ms
+14-Jan-2019 16:09:51.134 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+14-Jan-2019 16:09:51.149 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+14-Jan-2019 16:09:51.161 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1,012] milliseconds
+14-Jan-2019 16:09:55.305 INFO [http-nio-8080-exec-1] com.sgxtrial.yyy.WebSocketServer.onOpen websocket connected.Thread[http-nio-8080-exec-1,5,main]
+14-Jan-2019 16:09:55.310 INFO [http-nio-8080-exec-1] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-1,5,main]
+14-Jan-2019 16:09:55.310 INFO [http-nio-8080-exec-1] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@245b22bb
+14-Jan-2019 16:09:55.311 INFO [http-nio-8080-exec-1] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:8
+14-Jan-2019 16:09:55.325 INFO [http-nio-8080-exec-1] com.sgxtrial.yyy.WebSocketServer.onMessage enclave msg:[B@d3a0cba
+14-Jan-2019 16:09:55.344 INFO [http-nio-8080-exec-2] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-2,5,main]
+14-Jan-2019 16:09:55.344 INFO [http-nio-8080-exec-2] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@3cf9c4b4
+14-Jan-2019 16:09:55.344 INFO [http-nio-8080-exec-2] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:10
+14-Jan-2019 16:09:55.349 INFO [http-nio-8080-exec-2] com.sgxtrial.yyy.WebSocketServer.onMessage enclave msg:[B@38c647f3
+14-Jan-2019 16:09:55.457 INFO [http-nio-8080-exec-3] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-3,5,main]
+14-Jan-2019 16:09:55.457 INFO [http-nio-8080-exec-3] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@720a0123
+14-Jan-2019 16:09:55.457 INFO [http-nio-8080-exec-3] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:260
+14-Jan-2019 16:09:55.459 INFO [http-nio-8080-exec-3] com.sgxtrial.yyy.WebSocketServer.onMessage enclave msg:[B@7ccdf112
+14-Jan-2019 16:09:55.495 INFO [http-nio-8080-exec-4] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-4,5,main]
+14-Jan-2019 16:09:55.496 INFO [http-nio-8080-exec-4] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@5527eacb
+14-Jan-2019 16:09:55.496 INFO [http-nio-8080-exec-4] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:158
+14-Jan-2019 17:08:38.199 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.14
+14-Jan-2019 17:08:38.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Dec 6 2018 21:13:53 UTC
+14-Jan-2019 17:08:38.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.14.0
+14-Jan-2019 17:08:38.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+14-Jan-2019 17:08:38.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.15.0-43-generic
+14-Jan-2019 17:08:38.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+14-Jan-2019 17:08:38.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/jdk1.8.0_191/jre
+14-Jan-2019 17:08:38.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_191-b12
+14-Jan-2019 17:08:38.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+14-Jan-2019 17:08:38.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/vdeadmin/tools/apache-tomcat-9.0.14
+14-Jan-2019 17:08:38.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/vdeadmin/tools/apache-tomcat-9.0.14
+14-Jan-2019 17:08:38.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/vdeadmin/tools/apache-tomcat-current/conf/logging.properties
+14-Jan-2019 17:08:38.203 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+14-Jan-2019 17:08:38.203 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+14-Jan-2019 17:08:38.203 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.library.path=/home/vdeadmin/tools/apache-tomcat-current/shared/lib
+14-Jan-2019 17:08:38.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+14-Jan-2019 17:08:38.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+14-Jan-2019 17:08:38.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+14-Jan-2019 17:08:38.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/vdeadmin/tools/apache-tomcat-current
+14-Jan-2019 17:08:38.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/vdeadmin/tools/apache-tomcat-current
+14-Jan-2019 17:08:38.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/vdeadmin/tools/apache-tomcat-current/temp
+14-Jan-2019 17:08:38.204 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/home/vdeadmin/tools/apache-tomcat-current/shared/lib]
+14-Jan-2019 17:08:38.401 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+14-Jan-2019 17:08:38.436 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+14-Jan-2019 17:08:38.440 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [674] milliseconds
+14-Jan-2019 17:08:38.481 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+14-Jan-2019 17:08:38.482 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.14]
+14-Jan-2019 17:08:38.505 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/com.sgxtrial.war]
+14-Jan-2019 17:08:38.995 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+14-Jan-2019 17:08:39.060 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/com.sgxtrial.war] has finished in [555] ms
+14-Jan-2019 17:08:39.061 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/manager]
+14-Jan-2019 17:08:39.097 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/manager] has finished in [36] ms
+14-Jan-2019 17:08:39.097 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/host-manager]
+14-Jan-2019 17:08:39.120 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/host-manager] has finished in [23] ms
+14-Jan-2019 17:08:39.123 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/ROOT]
+14-Jan-2019 17:08:39.139 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/ROOT] has finished in [15] ms
+14-Jan-2019 17:08:39.139 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/docs]
+14-Jan-2019 17:08:39.161 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/docs] has finished in [22] ms
+14-Jan-2019 17:08:39.162 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/examples]
+14-Jan-2019 17:08:39.404 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/examples] has finished in [241] ms
+14-Jan-2019 17:08:39.407 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+14-Jan-2019 17:08:39.422 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+14-Jan-2019 17:08:39.429 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [988] milliseconds
+14-Jan-2019 17:08:42.230 INFO [http-nio-8080-exec-1] com.sgxtrial.yyy.WebSocketServer.onOpen websocket connected.Thread[http-nio-8080-exec-1,5,main]
+14-Jan-2019 17:08:42.233 INFO [http-nio-8080-exec-1] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-1,5,main]
+14-Jan-2019 17:08:42.233 INFO [http-nio-8080-exec-1] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@6e72a452
+14-Jan-2019 17:08:42.233 INFO [http-nio-8080-exec-1] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:8
+14-Jan-2019 17:08:42.248 INFO [http-nio-8080-exec-1] com.sgxtrial.yyy.WebSocketServer.onMessage enclave msg:[B@629a2bd0
+14-Jan-2019 17:08:42.258 INFO [http-nio-8080-exec-2] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-2,5,main]
+14-Jan-2019 17:08:42.259 INFO [http-nio-8080-exec-2] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@1f028c15
+14-Jan-2019 17:08:42.259 INFO [http-nio-8080-exec-2] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:10
+14-Jan-2019 17:08:42.263 INFO [http-nio-8080-exec-2] com.sgxtrial.yyy.WebSocketServer.onMessage enclave msg:[B@1b3d1b2d
+14-Jan-2019 17:08:42.358 INFO [http-nio-8080-exec-3] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-3,5,main]
+14-Jan-2019 17:08:42.358 INFO [http-nio-8080-exec-3] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@4afd5a7
+14-Jan-2019 17:08:42.358 INFO [http-nio-8080-exec-3] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:271
+14-Jan-2019 17:08:42.359 INFO [http-nio-8080-exec-3] com.sgxtrial.yyy.WebSocketServer.onMessage enclave msg:[B@a682b42
+14-Jan-2019 17:08:42.385 INFO [http-nio-8080-exec-4] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-4,5,main]
+14-Jan-2019 17:08:42.385 INFO [http-nio-8080-exec-4] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@3413ff90
+14-Jan-2019 17:08:42.385 INFO [http-nio-8080-exec-4] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:169
+14-Jan-2019 17:08:42.386 INFO [http-nio-8080-exec-4] com.sgxtrial.yyy.WebSocketServer.onMessage enclave msg:[B@3ad41762
+14-Jan-2019 22:57:05.672 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+14-Jan-2019 22:57:05.673 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+14-Jan-2019 22:57:05.680 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+14-Jan-2019 22:57:05.687 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+14-Jan-2019 22:57:05.709 INFO [main] com.sgxtrial.yyy.WebSocketServer.onClose websocket closed
+14-Jan-2019 22:57:05.726 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+14-Jan-2019 22:57:05.747 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+14-Jan-2019 22:57:05.769 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+14-Jan-2019 22:57:05.771 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+14-Jan-2019 22:57:06.671 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.14
+14-Jan-2019 22:57:06.673 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Dec 6 2018 21:13:53 UTC
+14-Jan-2019 22:57:06.674 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.14.0
+14-Jan-2019 22:57:06.674 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+14-Jan-2019 22:57:06.674 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.15.0-43-generic
+14-Jan-2019 22:57:06.674 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+14-Jan-2019 22:57:06.674 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/jdk1.8.0_191/jre
+14-Jan-2019 22:57:06.674 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_191-b12
+14-Jan-2019 22:57:06.674 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+14-Jan-2019 22:57:06.675 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/vdeadmin/tools/apache-tomcat-9.0.14
+14-Jan-2019 22:57:06.675 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/vdeadmin/tools/apache-tomcat-9.0.14
+14-Jan-2019 22:57:06.675 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/vdeadmin/tools/apache-tomcat-current/conf/logging.properties
+14-Jan-2019 22:57:06.675 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+14-Jan-2019 22:57:06.676 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+14-Jan-2019 22:57:06.676 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.library.path=/home/vdeadmin/tools/apache-tomcat-current/shared/lib
+14-Jan-2019 22:57:06.676 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+14-Jan-2019 22:57:06.676 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+14-Jan-2019 22:57:06.677 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+14-Jan-2019 22:57:06.677 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/vdeadmin/tools/apache-tomcat-current
+14-Jan-2019 22:57:06.677 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/vdeadmin/tools/apache-tomcat-current
+14-Jan-2019 22:57:06.677 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/vdeadmin/tools/apache-tomcat-current/temp
+14-Jan-2019 22:57:06.678 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/home/vdeadmin/tools/apache-tomcat-current/shared/lib]
+14-Jan-2019 22:57:06.853 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+14-Jan-2019 22:57:06.876 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+14-Jan-2019 22:57:06.882 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [741] milliseconds
+14-Jan-2019 22:57:06.938 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+14-Jan-2019 22:57:06.939 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.14]
+14-Jan-2019 22:57:06.960 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/com.sgxtrial.war]
+14-Jan-2019 22:57:07.432 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+14-Jan-2019 22:57:07.491 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/com.sgxtrial.war] has finished in [531] ms
+14-Jan-2019 22:57:07.492 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/manager]
+14-Jan-2019 22:57:07.522 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/manager] has finished in [31] ms
+14-Jan-2019 22:57:07.522 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/host-manager]
+14-Jan-2019 22:57:07.541 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/host-manager] has finished in [19] ms
+14-Jan-2019 22:57:07.541 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/ROOT]
+14-Jan-2019 22:57:07.561 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/ROOT] has finished in [20] ms
+14-Jan-2019 22:57:07.562 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/docs]
+14-Jan-2019 22:57:07.583 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/docs] has finished in [21] ms
+14-Jan-2019 22:57:07.584 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/examples]
+14-Jan-2019 22:57:07.821 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/vdeadmin/tools/apache-tomcat-9.0.14/webapps/examples] has finished in [238] ms
+14-Jan-2019 22:57:07.824 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+14-Jan-2019 22:57:07.845 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+14-Jan-2019 22:57:07.850 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [967] milliseconds
+14-Jan-2019 22:57:24.748 INFO [http-nio-8080-exec-2] com.sgxtrial.yyy.WebSocketServer.onOpen websocket connected.Thread[http-nio-8080-exec-2,5,main]
+14-Jan-2019 22:57:24.751 INFO [http-nio-8080-exec-2] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-2,5,main]
+14-Jan-2019 22:57:24.751 INFO [http-nio-8080-exec-2] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@396653f6
+14-Jan-2019 22:57:24.751 INFO [http-nio-8080-exec-2] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:8
+14-Jan-2019 22:57:24.760 INFO [http-nio-8080-exec-2] com.sgxtrial.yyy.WebSocketServer.onMessage enclave msg:[B@7534c17c
+14-Jan-2019 22:57:24.770 INFO [http-nio-8080-exec-1] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-1,5,main]
+14-Jan-2019 22:57:24.771 INFO [http-nio-8080-exec-1] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@3ad41762
+14-Jan-2019 22:57:24.771 INFO [http-nio-8080-exec-1] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:10
+14-Jan-2019 22:57:24.774 INFO [http-nio-8080-exec-1] com.sgxtrial.yyy.WebSocketServer.onMessage enclave msg:[B@3eeb94e0
+14-Jan-2019 22:57:24.856 INFO [http-nio-8080-exec-3] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-3,5,main]
+14-Jan-2019 22:57:24.857 INFO [http-nio-8080-exec-3] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@3284ba59
+14-Jan-2019 22:57:24.857 INFO [http-nio-8080-exec-3] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:254
+14-Jan-2019 22:57:24.859 INFO [http-nio-8080-exec-3] com.sgxtrial.yyy.WebSocketServer.onMessage enclave msg:[B@3c434279
+14-Jan-2019 22:57:24.884 INFO [http-nio-8080-exec-4] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-4,5,main]
+14-Jan-2019 22:57:24.884 INFO [http-nio-8080-exec-4] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@76fac6e5
+14-Jan-2019 22:57:24.884 INFO [http-nio-8080-exec-4] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:171
+14-Jan-2019 22:57:24.884 INFO [http-nio-8080-exec-4] com.sgxtrial.yyy.WebSocketServer.onMessage enclave msg:[B@783d364a
+14-Jan-2019 23:10:44.689 INFO [http-nio-8080-exec-6] com.sgxtrial.yyy.WebSocketServer.onClose websocket closed
+14-Jan-2019 23:10:49.310 INFO [http-nio-8080-exec-7] com.sgxtrial.yyy.WebSocketServer.onOpen websocket connected.Thread[http-nio-8080-exec-7,5,main]
+14-Jan-2019 23:10:49.344 INFO [http-nio-8080-exec-9] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-9,5,main]
+14-Jan-2019 23:10:49.344 INFO [http-nio-8080-exec-9] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@3cf9c4b4
+14-Jan-2019 23:10:49.345 INFO [http-nio-8080-exec-9] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:8
+14-Jan-2019 23:10:49.345 INFO [http-nio-8080-exec-9] com.sgxtrial.yyy.WebSocketServer.onMessage enclave msg:[B@38c647f3
+14-Jan-2019 23:10:49.390 INFO [http-nio-8080-exec-5] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-5,5,main]
+14-Jan-2019 23:10:49.390 INFO [http-nio-8080-exec-5] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@197ee339
+14-Jan-2019 23:10:49.390 INFO [http-nio-8080-exec-5] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:10
+14-Jan-2019 23:10:49.397 INFO [http-nio-8080-exec-5] com.sgxtrial.yyy.WebSocketServer.onMessage enclave msg:[B@17b90e66
+14-Jan-2019 23:10:49.563 INFO [http-nio-8080-exec-8] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-8,5,main]
+14-Jan-2019 23:10:49.563 INFO [http-nio-8080-exec-8] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@17b98701
+14-Jan-2019 23:10:49.563 INFO [http-nio-8080-exec-8] com.sgxtrial.yyy.WebSocketServer.onMessage js msg lenght:383

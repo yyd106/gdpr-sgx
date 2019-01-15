@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [11/Jan/2019:00:01:07 +0800] "GET /com.sgxtrial/websocketendpoint HTTP/1.1" 101 -
+0:0:0:0:0:0:0:1 - - [11/Jan/2019:00:01:14 +0800] "GET /com.sgxtrial/websocketendpoint HTTP/1.1" 101 -

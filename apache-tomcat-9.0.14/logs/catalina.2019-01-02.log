@@ -1,0 +1,147 @@
+02-Jan-2019 18:09:40.492 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.14
+02-Jan-2019 18:09:40.494 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Dec 6 2018 21:13:53 UTC
+02-Jan-2019 18:09:40.494 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.14.0
+02-Jan-2019 18:09:40.494 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+02-Jan-2019 18:09:40.494 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.4.0-31-generic
+02-Jan-2019 18:09:40.494 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+02-Jan-2019 18:09:40.494 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-8-openjdk-amd64/jre
+02-Jan-2019 18:09:40.494 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_191-8u191-b12-0ubuntu0.16.04.1-b12
+02-Jan-2019 18:09:40.494 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+02-Jan-2019 18:09:40.494 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/mengxie/Desktop/apache-tomcat-9.0.14
+02-Jan-2019 18:09:40.495 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/mengxie/Desktop/apache-tomcat-9.0.14
+02-Jan-2019 18:09:40.495 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/mengxie/Desktop/apache-tomcat-9.0.14/conf/logging.properties
+02-Jan-2019 18:09:40.495 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+02-Jan-2019 18:09:40.495 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+02-Jan-2019 18:09:40.495 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+02-Jan-2019 18:09:40.495 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+02-Jan-2019 18:09:40.495 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+02-Jan-2019 18:09:40.495 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/mengxie/Desktop/apache-tomcat-9.0.14
+02-Jan-2019 18:09:40.496 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/mengxie/Desktop/apache-tomcat-9.0.14
+02-Jan-2019 18:09:40.496 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/mengxie/Desktop/apache-tomcat-9.0.14/temp
+02-Jan-2019 18:09:40.496 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/opt/intel/sgxsdk/sdk_libs:/opt/intel/sgxsdk/sdk_libs::/opt/intel/sgxsdk/sdk_libs:/opt/intel/sgxsdk/sdk_libs:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+02-Jan-2019 18:09:40.562 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+02-Jan-2019 18:09:40.580 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+02-Jan-2019 18:09:40.600 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [446] milliseconds
+02-Jan-2019 18:09:40.618 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+02-Jan-2019 18:09:40.618 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.14]
+02-Jan-2019 18:09:40.634 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/com.sgxtrial.war]
+02-Jan-2019 18:09:41.036 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Jan-2019 18:09:41.070 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/com.sgxtrial.war] has finished in [436] ms
+02-Jan-2019 18:09:41.071 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/manager]
+02-Jan-2019 18:09:41.117 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/manager] has finished in [45] ms
+02-Jan-2019 18:09:41.117 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/host-manager]
+02-Jan-2019 18:09:41.134 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/host-manager] has finished in [17] ms
+02-Jan-2019 18:09:41.134 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/docs]
+02-Jan-2019 18:09:41.145 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/docs] has finished in [11] ms
+02-Jan-2019 18:09:41.145 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/ROOT]
+02-Jan-2019 18:09:41.158 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/ROOT] has finished in [13] ms
+02-Jan-2019 18:09:41.158 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/examples]
+02-Jan-2019 18:09:41.304 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/examples] has finished in [145] ms
+02-Jan-2019 18:09:41.308 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+02-Jan-2019 18:09:41.322 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+02-Jan-2019 18:09:41.331 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [730] milliseconds
+02-Jan-2019 18:09:50.268 INFO [http-nio-8080-exec-9] com.sgxtrial.yyy.WebSocketServer.onOpen websocket connected.Thread[http-nio-8080-exec-9,5,main]
+02-Jan-2019 18:09:52.926 INFO [http-nio-8080-exec-10] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-10,5,main]
+02-Jan-2019 18:09:52.927 INFO [http-nio-8080-exec-10] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@46b5db1f
+02-Jan-2019 18:09:52.928 INFO [http-nio-8080-exec-10] com.sgxtrial.yyy.WebSocketServer.onError java.lang.RuntimeException: no EnclaveBridge in java.library.path
+02-Jan-2019 18:09:52.930 INFO [http-nio-8080-exec-10] com.sgxtrial.yyy.WebSocketServer.onClose websocket closed
+02-Jan-2019 18:13:51.993 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+02-Jan-2019 18:13:51.994 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+02-Jan-2019 18:13:52.001 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+02-Jan-2019 18:13:52.007 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+02-Jan-2019 18:13:52.034 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+02-Jan-2019 18:13:52.040 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+02-Jan-2019 18:13:52.049 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+02-Jan-2019 18:13:52.050 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+02-Jan-2019 18:13:54.696 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.14
+02-Jan-2019 18:13:54.697 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Dec 6 2018 21:13:53 UTC
+02-Jan-2019 18:13:54.697 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.14.0
+02-Jan-2019 18:13:54.697 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+02-Jan-2019 18:13:54.697 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.4.0-31-generic
+02-Jan-2019 18:13:54.697 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+02-Jan-2019 18:13:54.697 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-8-openjdk-amd64/jre
+02-Jan-2019 18:13:54.697 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_191-8u191-b12-0ubuntu0.16.04.1-b12
+02-Jan-2019 18:13:54.697 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+02-Jan-2019 18:13:54.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/mengxie/Desktop/apache-tomcat-9.0.14
+02-Jan-2019 18:13:54.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/mengxie/Desktop/apache-tomcat-9.0.14
+02-Jan-2019 18:13:54.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/mengxie/Desktop/apache-tomcat-9.0.14/conf/logging.properties
+02-Jan-2019 18:13:54.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+02-Jan-2019 18:13:54.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+02-Jan-2019 18:13:54.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.library.path=/home/mengxie/Desktop/apache-tomcat-9.0.14/shared/lib
+02-Jan-2019 18:13:54.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+02-Jan-2019 18:13:54.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+02-Jan-2019 18:13:54.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+02-Jan-2019 18:13:54.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/mengxie/Desktop/apache-tomcat-9.0.14
+02-Jan-2019 18:13:54.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/mengxie/Desktop/apache-tomcat-9.0.14
+02-Jan-2019 18:13:54.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/mengxie/Desktop/apache-tomcat-9.0.14/temp
+02-Jan-2019 18:13:54.698 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/home/mengxie/Desktop/apache-tomcat-9.0.14/shared/lib]
+02-Jan-2019 18:13:54.766 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+02-Jan-2019 18:13:54.783 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+02-Jan-2019 18:13:54.787 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [391] milliseconds
+02-Jan-2019 18:13:54.808 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+02-Jan-2019 18:13:54.808 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.14]
+02-Jan-2019 18:13:54.824 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/com.sgxtrial.war]
+02-Jan-2019 18:13:55.125 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Jan-2019 18:13:55.143 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/com.sgxtrial.war] has finished in [319] ms
+02-Jan-2019 18:13:55.144 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/manager]
+02-Jan-2019 18:13:55.183 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/manager] has finished in [39] ms
+02-Jan-2019 18:13:55.183 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/host-manager]
+02-Jan-2019 18:13:55.197 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/host-manager] has finished in [14] ms
+02-Jan-2019 18:13:55.197 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/docs]
+02-Jan-2019 18:13:55.211 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/docs] has finished in [13] ms
+02-Jan-2019 18:13:55.211 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/ROOT]
+02-Jan-2019 18:13:55.222 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/ROOT] has finished in [11] ms
+02-Jan-2019 18:13:55.222 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/examples]
+02-Jan-2019 18:13:55.340 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/examples] has finished in [118] ms
+02-Jan-2019 18:13:55.343 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+02-Jan-2019 18:13:55.352 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+02-Jan-2019 18:13:55.356 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [569] milliseconds
+02-Jan-2019 18:14:00.734 INFO [http-nio-8080-exec-8] com.sgxtrial.yyy.WebSocketServer.onOpen websocket connected.Thread[http-nio-8080-exec-8,5,main]
+02-Jan-2019 18:14:02.488 INFO [http-nio-8080-exec-9] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-9,5,main]
+02-Jan-2019 18:14:02.489 INFO [http-nio-8080-exec-9] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@46b5db1f
+02-Jan-2019 18:19:36.155 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.14
+02-Jan-2019 18:19:36.157 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Dec 6 2018 21:13:53 UTC
+02-Jan-2019 18:19:36.157 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.14.0
+02-Jan-2019 18:19:36.157 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+02-Jan-2019 18:19:36.157 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.4.0-31-generic
+02-Jan-2019 18:19:36.157 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+02-Jan-2019 18:19:36.157 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-8-openjdk-amd64/jre
+02-Jan-2019 18:19:36.157 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_191-8u191-b12-0ubuntu0.16.04.1-b12
+02-Jan-2019 18:19:36.157 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+02-Jan-2019 18:19:36.157 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/mengxie/Desktop/apache-tomcat-9.0.14
+02-Jan-2019 18:19:36.157 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/mengxie/Desktop/apache-tomcat-9.0.14
+02-Jan-2019 18:19:36.157 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/mengxie/Desktop/apache-tomcat-9.0.14/conf/logging.properties
+02-Jan-2019 18:19:36.157 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+02-Jan-2019 18:19:36.157 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+02-Jan-2019 18:19:36.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.library.path=/home/mengxie/Desktop/apache-tomcat-9.0.14/shared/lib
+02-Jan-2019 18:19:36.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+02-Jan-2019 18:19:36.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+02-Jan-2019 18:19:36.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+02-Jan-2019 18:19:36.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/mengxie/Desktop/apache-tomcat-9.0.14
+02-Jan-2019 18:19:36.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/mengxie/Desktop/apache-tomcat-9.0.14
+02-Jan-2019 18:19:36.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/mengxie/Desktop/apache-tomcat-9.0.14/temp
+02-Jan-2019 18:19:36.158 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/home/mengxie/Desktop/apache-tomcat-9.0.14/shared/lib]
+02-Jan-2019 18:19:36.216 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+02-Jan-2019 18:19:36.232 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+02-Jan-2019 18:19:36.250 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [363] milliseconds
+02-Jan-2019 18:19:36.269 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+02-Jan-2019 18:19:36.269 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.14]
+02-Jan-2019 18:19:36.286 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/com.sgxtrial.war]
+02-Jan-2019 18:19:36.622 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Jan-2019 18:19:36.642 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/com.sgxtrial.war] has finished in [356] ms
+02-Jan-2019 18:19:36.643 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/manager]
+02-Jan-2019 18:19:36.675 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/manager] has finished in [32] ms
+02-Jan-2019 18:19:36.676 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/host-manager]
+02-Jan-2019 18:19:36.689 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/host-manager] has finished in [13] ms
+02-Jan-2019 18:19:36.689 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/docs]
+02-Jan-2019 18:19:36.702 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/docs] has finished in [13] ms
+02-Jan-2019 18:19:36.703 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/ROOT]
+02-Jan-2019 18:19:36.716 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/ROOT] has finished in [14] ms
+02-Jan-2019 18:19:36.716 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/examples]
+02-Jan-2019 18:19:36.851 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/mengxie/Desktop/apache-tomcat-9.0.14/webapps/examples] has finished in [134] ms
+02-Jan-2019 18:19:36.854 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+02-Jan-2019 18:19:36.862 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+02-Jan-2019 18:19:36.867 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [617] milliseconds
+02-Jan-2019 18:19:47.387 INFO [http-nio-8080-exec-8] com.sgxtrial.yyy.WebSocketServer.onOpen websocket connected.Thread[http-nio-8080-exec-8,5,main]
+02-Jan-2019 18:19:49.775 INFO [http-nio-8080-exec-9] com.sgxtrial.yyy.WebSocketServer.onMessage receive msg with thread: Thread[http-nio-8080-exec-9,5,main]
+02-Jan-2019 18:19:49.775 INFO [http-nio-8080-exec-9] com.sgxtrial.yyy.WebSocketServer.onMessage js msg:[B@5bbc3e5f
