@@ -46,7 +46,7 @@ const pseEvaluationStatus = (
 
 
 function encrypt(key) {
-  const text = new Buffer('01', 'hex');
+  const text = new Buffer('15021128363', 'hex');
   const iv = new Buffer('000000000000', 'hex');
   const bufferKey = new Buffer(key, 'hex');
 

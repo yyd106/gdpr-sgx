@@ -1,9 +1,0 @@
-127.0.0.1 - - [02/Jan/2019:18:09:50 +0800] "GET /com.sgxtrial/webclient.html HTTP/1.1" 304 -
-127.0.0.1 - - [02/Jan/2019:18:09:50 +0800] "GET /com.sgxtrial/resources/js/jsbn.js HTTP/1.1" 200 15180
-127.0.0.1 - - [02/Jan/2019:18:09:50 +0800] "GET /com.sgxtrial/resources/js/jsbn2.js HTTP/1.1" 200 18583
-127.0.0.1 - - [02/Jan/2019:18:09:50 +0800] "GET /com.sgxtrial/resources/js/prng4.js HTTP/1.1" 304 -
-127.0.0.1 - - [02/Jan/2019:18:09:50 +0800] "GET /com.sgxtrial/resources/js/rng.js HTTP/1.1" 304 -
-127.0.0.1 - - [02/Jan/2019:18:09:50 +0800] "GET /com.sgxtrial/resources/js/sec.js HTTP/1.1" 304 -
-127.0.0.1 - - [02/Jan/2019:18:09:50 +0800] "GET /com.sgxtrial/resources/js/ec.js HTTP/1.1" 304 -
-127.0.0.1 - - [02/Jan/2019:18:09:50 +0800] "GET /com.sgxtrial/resources/js/protobuf_msg.js HTTP/1.1" 304 -
-127.0.0.1 - - [02/Jan/2019:18:09:50 +0800] "GET /com.sgxtrial/websocketendpoint HTTP/1.1" 101 -

@@ -1,7 +1,0 @@
-0:0:0:0:0:0:0:1 - - [06/Jan/2019:09:46:32 +0800] "GET /com.sgxtrial/websocketendpoint HTTP/1.1" 101 -
-0:0:0:0:0:0:0:1 - - [06/Jan/2019:10:04:32 +0800] "GET /com.sgxtrial/websocketendpoint HTTP/1.1" 101 -
-0:0:0:0:0:0:0:1 - - [06/Jan/2019:10:11:39 +0800] "GET /com.sgxtrial/websocketendpoint HTTP/1.1" 101 -
-0:0:0:0:0:0:0:1 - - [06/Jan/2019:19:45:45 +0800] "GET /com.sgxtrial/websocketendpoint HTTP/1.1" 101 -
-0:0:0:0:0:0:0:1 - - [06/Jan/2019:19:49:44 +0800] "GET /com.sgxtrial/websocketendpoint HTTP/1.1" 101 -
-0:0:0:0:0:0:0:1 - - [06/Jan/2019:19:51:32 +0800] "GET /com.sgxtrial/websocketendpoint HTTP/1.1" 101 -
-0:0:0:0:0:0:0:1 - - [06/Jan/2019:19:53:09 +0800] "GET /com.sgxtrial/websocketendpoint HTTP/1.1" 101 -
