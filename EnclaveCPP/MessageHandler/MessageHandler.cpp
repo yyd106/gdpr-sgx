@@ -458,7 +458,9 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
     if (0 != p_att_result_msg_full->status[0] || 0 != p_att_result_msg_full->status[1]) {
         Log("Error, attestation mac result message MK based cmac failed", log::error);
     } else {
+        //uint8_t *p_phoneNum = new uint8_t[16];
         uint8_t *p_phoneNum = new uint8_t[32];
+        memset(p_phoneNum,'\0',32);
         ret = verify_secret_data(this->enclave->getID(),
                                  &status,
                                  this->enclave->getContext(),
@@ -468,7 +470,7 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
                                  MAX_VERIFICATION_RESULT,
                                  p_phoneNum);
 
-        Log("=============== phone num:%s",ByteArrayToString(p_phoneNum,16));
+        Log("=============== phone num:[%s]",p_phoneNum);
 
         SafeFree(p_att_result_msg_full);
 

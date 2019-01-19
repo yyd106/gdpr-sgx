@@ -88,6 +88,10 @@ function restart_web()
     tail -f logs/catalina.out
 }
 
+
+############### MAIN BODY ###############
+
+
 basedir=$(cd `dirname $0`;pwd)
 webdir=$basedir/../comsgxtrial
 uidir=$basedir/../broswer-application
