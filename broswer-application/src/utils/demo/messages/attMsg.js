@@ -20,6 +20,9 @@ import {
   RESULT_SIZE,
   RESERVED
 } from "../../../metadata/ecConstants";
+import {
+  switchEndian,
+} from "../../hexHelpers";
 
 const crypto = require('crypto');
 const aesCmac = require("node-aes-cmac").aesCmac;
@@ -46,11 +49,13 @@ const pseEvaluationStatus = (
 
 
 function encrypt(key) {
-  const text = new Buffer('01', 'hex');
+  const text = new Buffer('67', 'hex');
   const iv = new Buffer('000000000000', 'hex');
   const bufferKey = new Buffer(key, 'hex');
 
   const cipher = crypto.createCipheriv('aes-128-gcm', bufferKey, iv);
+
+  console.log("=====shared key is:",bufferKey);
 
   var encrypted = cipher.update(text, 'utf8', 'hex')
   encrypted += cipher.final('hex');

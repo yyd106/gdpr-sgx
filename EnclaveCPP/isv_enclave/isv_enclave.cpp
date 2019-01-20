@@ -280,6 +280,7 @@ sgx_status_t verify_secret_data (
         if (SGX_SUCCESS != ret) {
             break;
         }
+        memcpy(p_ret,(uint8_t*)sk_key,sizeof(sgx_ec_key_128bit_t));
 
         uint8_t *decrypted = (uint8_t*) malloc(sizeof(uint8_t) * secret_size);
         uint8_t aes_gcm_iv[12] = {0};
@@ -294,11 +295,11 @@ sgx_status_t verify_secret_data (
                                          0,
                                          (const sgx_aes_gcm_128bit_tag_t *) (p_gcm_mac));
 
-        memcpy(p_ret,(uint8_t*)"my name is:qilei",sizeof("my name is:qilei"));
+        //memcpy(p_ret,(uint8_t*)"my name is:qilei",sizeof("my name is:qilei"));
         //memcpy(p_ret,decrypted,2);
         if (SGX_SUCCESS == ret) {
-            if (decrypted[0] == 0) {
-                if (decrypted[1] != 1) {
+            if (decrypted[0] == 6) {
+                if (decrypted[1] != 7) {
                     ret = SGX_ERROR_INVALID_SIGNATURE;
                 }
             } else {

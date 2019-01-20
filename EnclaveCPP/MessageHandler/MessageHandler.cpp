@@ -471,6 +471,10 @@ string MessageHandler::handleAttestationResult(Messages::AttestationMessage msg)
                                  p_phoneNum);
 
         Log("=============== phone num:[%s]",p_phoneNum);
+        for(int i=0;i<sizeof(sgx_ec_key_128bit_t);i++){
+            printf("%u,",p_phoneNum[i]);
+        }
+        printf("\n");
 
         SafeFree(p_att_result_msg_full);
 
